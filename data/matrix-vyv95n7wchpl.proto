@@ -1,0 +1,51 @@
+syntax = "proto2";
+option java_package = "icepackai.Matrix";
+package Matrix;
+// https://docs.icepack.ai/distance-matrix/
+
+// https://docs.icepack.ai/distance-matrix/geocode/
+message Geocode {
+  // long and lat values in decimal degrees
+  required float longitude = 1;
+  required float latitude = 2;
+}
+
+// a unique location
+// https://docs.icepack.ai/distance-matrix/location/
+message Location {
+  required string id = 1;
+  required Geocode geocode = 2;
+}
+
+// https://docs.icepack.ai/distance-matrix/matrix-request/
+message MatrixRequest{
+  enum eDurationUnit{
+    SECONDS = 0;
+    MINUTES = 1;
+    HOURS = 2;
+    DAYS = 3;
+  }
+  enum eDistanceUnit {
+    KILOMETRES = 0;
+    MILES = 1;
+  }
+  repeated Location locations = 1;
+  repeated string sources = 2;
+  repeated string destinations = 3;   // if empty, computes all n^2 distances/times
+                                      // if specified, computes all pairs between source->destination.
+  required eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
+  required eDurationUnit durationUnit = 5 [default = MINUTES];
+}
+
+// https://docs.icepack.ai/distance-matrix/matrix-response/
+message MatrixResponse{
+  message Element{
+    required string fromId = 1;
+    required string toId = 2;
+    required float distance = 3;
+    required float duration = 4;
+  }
+  repeated Element elements = 1;
+}
+
+

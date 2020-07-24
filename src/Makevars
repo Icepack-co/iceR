@@ -1,0 +1,26 @@
+CXX = g++-4.8.1
+PKG_CXXFLAGS = -std=c++11
+PKG_LIBS = -L/usr/local/lib -lprotobuf
+
+PROTOC=/usr/local/bin/protoc
+
+all: protofiles
+
+protofiles:
+	$(PROTOC) --proto_path=../data/ --cpp_out=. \
+	cvrp-jkfdoctmp51n.proto \
+	cvrptw-acyas3nzweqb.proto \
+	ivr7-kt461v8eoaif.proto \
+	ivr8-yni1c9k2swof.proto \
+	tsp-mcvfz472gty6.proto \
+	tsptw-kcxbievqo879.proto \
+	nvd-hap0j2y4zlm1.proto \
+	ivrdata-o43e0dvs78zq.proto \
+	ns3-tbfvuwtge2iq.proto \
+	matrix-vyv95n7wchpl.proto \
+	problem.proto
+
+clean:
+	rm -f $(OBJECTS)
+
+.PHONY: all

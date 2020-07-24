@@ -1,0 +1,50 @@
+syntax = "proto2";
+option java_package = "icepackai.problem";
+package problem;
+
+// This package deals with defining all optimisation problem types currently 
+// being processed by the Icepack APIs. It's used as a container for all model types
+// so that implementing a new model is independent of the solver.
+
+// https://docs.icepack.ai/model-overview/problem_envelope/
+
+// This is the input message for the solver
+// used in conjunction with a POST
+// returns a Request GUID if successful
+message ProblemEnvelope {
+    enum SubType {
+        INPUT = 0;
+        OUTPUT = 1;
+    }
+    
+    required string type = 1;                       // The model type: i.e. "tsp-mcvfz472gty6"
+    required SubType subType = 2 [default = INPUT]; // The subtype: INPUT for sending a model to the api
+    optional bytes content = 3;                     // The serialised model content, see https://github.com/Icepack-co/examples
+}
+
+// Defines a message type returned in the logs from the solver (see parent structure below)
+message SolverInfo {
+    required int64 unixDateTime = 1;                // The time in seconds (UTC) the message was created
+    required string infoMessage = 2;                // Message content (I.e. "Solve successful")
+    enum SolverMessageType {
+        INFO = 0;                                   // Information type
+        WARNING = 1;                                // Warning type
+        ERROR = 2;                                  // Error type
+    }
+    required SolverMessageType type = 3;            // The type of the particular message returned.
+}
+
+// Using the request GUID and a GET request
+// the API will return a SolverResponse object.
+message SolverResponse {
+    repeated SolverInfo logs = 1;                   // messages from the solver, including potential model errors that are detected
+    enum SolveState {
+        WIP = 0;                                    // Work In Progess
+        COMPLETED = 1;                              // The solve is complete
+        FAILED = 2;                                 // The solve has failed
+    }
+    required SolveState state = 2;                  // The current state of the solve-process
+    optional bytes solution = 3;                    // If a solution is available, it is retuned here.
+}
+
+

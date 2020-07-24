@@ -1,0 +1,71 @@
+syntax = "proto2";
+option java_package = "icepackai.CVRP";
+// This package deals with Capacitated Vehicle Routing Problems
+// Using either straight line, Haversine, or Roadnetwork distances
+// The objective is to minimise the cost of visitng all points within
+// the capacity constraints of the vehicle.
+
+package CVRP;
+
+// -- INPUT DEFINITIONS -- // 
+// https://docs.icepack.ai/vrp/cvrp/#input
+message Geocode {
+    required string id = 1;                     // unique identifier for this point
+    required float x = 2;                       // longitude for earth-routing
+    required float y = 3;                       // latitude for earth-routing
+    required float quantity = 4 [default = 0];  // the quantity is the amount added to a vehicle at each node
+}
+
+message CVRP {
+    enum eDistanceType {
+        RoadNetwork = 1;
+        Euclidean = 2;
+        Haversine = 3;
+    };
+    repeated Geocode points = 1;
+    required Geocode depot = 2;
+    required int32 NumberOfVehicles = 3;
+    required float VehicleCapacity = 4;
+    optional eDistanceType distancetype = 5 [default = RoadNetwork];
+}
+
+message SolveRequest {
+  enum SolveType {
+    Optimise = 0;           // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate = 1;           // Evaluates the provided visit sequence. Single solution response.
+    ReOptimise = 2;         // Uses routes as starting solution and continues to optimise.
+  }
+  optional CVRP model = 1;      // either model(1) or modelID(2) should be specified
+  optional string modelID = 2;  // the model ID from a data-upload type: https://docs.icepack.ai/ivr/ivrdata/
+
+  // for CVRPs, the visitSequence should conform to:
+  // depotid-a-b-c-depotid-d-e-f-depotid etc.
+  repeated string visitSequence = 3;  // for solveType = [Evaluate, ReOptimise].
+  optional SolveType solveType = 4 [default = Optimise];
+}
+
+// -- OUTPUT DEFINITIONS -- // 
+
+// https://docs.icepack.ai/vrp/cvrp/#output
+message Edge {
+    message Geometry{
+        required float x = 1;
+        required float y = 2;
+    }
+    required string from = 1;
+    required string to = 2;
+    optional float distance = 3;
+    // geometry is populated for road-network pathing.
+    repeated Geometry geometry = 4;
+}
+
+message SolutionResponse {
+    // Each vehicle produces a single route. 
+    message Route{
+        repeated string sequence = 1;
+        repeated Edge edges = 2;
+        repeated float visitCapacities = 3;
+    };
+    repeated Route routes = 1;
+    required float objective = 2;
+}

@@ -1,0 +1,219 @@
+syntax = "proto2";
+
+package NVD;
+// https://docs.icepack.ai/nvd/
+
+
+// https://docs.icepack.ai/nvd/configuration/
+message Configuration {
+  enum eMeasurementUnit {
+    SECONDS = 0;     // time
+    MINUTES = 1;     // time
+    HOURS = 2;       // time
+    DAYS = 3;        // time
+    KILOMETRES = 4;  // distance
+    MILES = 5;       // distance
+  }
+
+  required eMeasurementUnit timeUnit = 1 [default = MINUTES];
+  required float timeCoef = 2 [default = 1.0];
+  required float timeCostCoef = 3 [default = 1.0];           // cost per minute
+  required eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
+  required float distanceCostCoef = 5 [default = 1.0];           // cost per km
+  required float intraTerritoryBalance = 6 [default = 1.0];  // within
+  required float interTerritoryBalance = 7 [default = 1.0];  // between
+  required int32 weekLength =
+      8;  // i.e.  5/7  the weeklength must be a factor of the periodLength
+  required int32 periodLength =
+      9;  // i.e. 20/28 the number of days over which we're planning
+}
+
+// https://docs.icepack.ai/nvd/geocode/
+message Geocode {
+  // long and lat values in decimal degrees
+  required float longitude = 1;
+  required float latitude = 2;
+}
+
+// https://docs.icepack.ai/nvd/profile/
+message Profile {
+  enum eFrequency {
+    CUSTOM = 0;
+    SEVEN_TIMES_A_WEEK = 1;
+    SIX_TIMES_A_WEEK = 2;
+    FIVE_TIMES_A_WEEK = 3;
+    FOUR_TIMES_A_WEEK = 4;
+    THREE_TIMES_A_WEEK = 5;
+    TWICE_A_WEEK = 6;
+    ONCE_A_WEEK = 7;
+    EVERY_SECOND_WEEK = 8;
+    ONCE_A_MONTH = 9;
+  }
+  message customCycle {
+    repeated bool visitProfile = 2;
+  }
+  required eFrequency frequencyType = 1;
+  repeated customCycle allowableCycles =
+      2;  // if custom is specified, a bit string can be provided mapping out
+          // allowable profile combinations.
+  optional int32 numVisits =
+      3;  // if custom is specified, this is the common frequency of all the
+          // visits in the allowbale cycles
+}
+
+// https://docs.icepack.ai/nvd/visit/
+message Visit {
+  message TerritoryRelation {
+    enum Type {
+      INCLUSIVE = 0;
+      EXCLUSIVE = 1;
+    }
+    required Type type = 1;
+    repeated string territoryIds = 2;
+  }
+
+  required string id = 1;
+  required Geocode location = 2;
+  required float visitTime = 3 [default = 0.0];
+  required Profile profile = 4;
+  optional TerritoryRelation territoryRelations =
+      5;  // if empty, all territories, otherwise select within allowbale
+          // territories
+}
+
+// https://docs.icepack.ai/nvd/territory/
+message Territory {
+  required string id = 1;
+  repeated float dailyStartTime = 2;
+  repeated float dailyEndTime = 3;
+  required Geocode location =
+      4;  // the starting location for each day within this territory.
+}
+
+// https://docs.icepack.ai/nvd/visit-sequence/
+message VisitSequence {
+  required string territoryId = 1;  // the vehicle these visits apply to
+  required int32 dayIndex = 2;      // the day index (zero-based)
+  repeated string visitId = 3;      // the visit sequence for this vehicle-day
+}
+
+// The encapsulating model.
+// Potentially versioned on the server side (through a data-upload - see https://docs.icepack.ai/ivr/ivrdata/)
+// https://docs.icepack.ai/nvd/model/
+message Model {
+  required Configuration configuration = 1;
+  repeated Visit visits = 2;
+  repeated Territory territories = 3;
+  repeated VisitSequence visitSequence = 4;
+}
+
+// Input message for this schema.
+// https://docs.icepack.ai/nvd/solve-request/
+message SolveRequest {
+  enum SolveType {
+    Optimise = 0;     // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate = 1;     // Evaluates the provided route sequence. Single solution response.
+    ReOptimise = 2;   // Uses routes as starting solution and continues to optimise.
+  }
+  optional Model model = 1;     // either model or modelID should be specified
+  optional string modelID = 2;  // the ID from a data-upload type: https://docs.icepack.ai/ivr/ivrdata/
+  repeated VisitSequence routes = 3;  // for solveType = [Evaluate, ReOptimise].
+  optional SolveType solveType = 4 [default = Optimise];
+}
+
+// -- OUTPUT DEFINITIONS -- //
+// https://docs.icepack.ai/nvd/solution-response/
+message SolutionResponse {
+  // https://docs.icepack.ai/nvd/solution-response/#stop-attribute
+  message StopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+    required float slackValue = 5;
+    required float slackCost = 6;
+    required float tardyValue = 7;
+    required float tardyCost = 8;
+  }
+  // https://docs.icepack.ai/nvd/solution-response/#interstopattribute
+  message InterStopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+  }
+  // https://docs.icepack.ai/nvd/solution-response/#stop
+  message Stop {
+    required int32 id = 1;
+    required int32 sequence = 2;
+    required string locationId = 3;
+    required string visitId = 4;
+    repeated StopAttribute attributes = 5;
+  }
+  // https://docs.icepack.ai/nvd/solution-response/#interstop
+  message InterStop {
+    required int32 fromStopId = 1;
+    required int32 toStopId = 2;
+    repeated InterStopAttribute attributes = 3;
+    repeated Geocode routeSegments = 4;
+  }
+  // https://docs.icepack.ai/nvd/solution-response/#transitruleattribute
+  message TransitRuleAttribute {
+    required string ruleId = 1;
+    required string dimId = 2;
+    required int32 fromStopId = 3;
+    required int32 toStopId = 4;
+    required float startValue = 5;
+    required float endValue = 6;
+    required float cost = 7;
+  }
+  // https://docs.icepack.ai/nvd/solution-response/#route
+  message Route {
+    message SummaryAttribute {
+      required string dimId = 1;
+      required float min = 2;
+      required float max = 3;
+      required float delta = 4;
+    }
+    required string vehicleId = 1;
+    repeated Stop stops = 2;
+    repeated InterStop interStops = 3;
+    repeated float fixedCost = 4;
+    repeated SummaryAttribute summaryAttributes = 5;
+    repeated TransitRuleAttribute transitRuleAttributes = 6;
+    required int32 day = 7;  // the visit day for this route.
+  }
+
+  // https://docs.icepack.ai/nvd/solution-response/#infeasibility
+  message Infeasibility {
+    required string taskId = 1;
+    message Info {
+      required string message = 1;
+      optional string dimId = 2;
+      optional float limit = 3;
+      optional float value = 4;
+      optional int64 count = 5;
+      repeated string constrainingTaskIds = 6;
+    }
+    repeated Info infeasibilityInfo = 2;
+  }
+
+  // defines the Parento frontier elements
+  // https://docs.icepack.ai/nvd/solution-response/#compact-solution
+  message CompactSolution {
+    repeated VisitSequence visitSequence = 1;
+    repeated float objectives = 2;
+    repeated string objectiveNames = 3;
+  }
+
+  // an instance of a solution from the pareto frontier, created using the eval
+  // sequence.
+  // https://docs.icepack.ai/nvd/solution-response/#solution-instance
+  message SolutionInstance {
+    repeated Route routes = 1;
+    repeated Infeasibility infeasibilities = 2;
+  }
+
+  repeated CompactSolution frontier = 1;
+  optional SolutionInstance instance = 2;
+}

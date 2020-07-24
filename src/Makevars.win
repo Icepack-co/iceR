@@ -1,0 +1,36 @@
+VERSION = 3.8.0
+COMPILED_BY ?= gcc-4.6.3
+RWINLIB = ../windows/protobuf-$(VERSION)
+TARGET = lib$(subst gcc,,$(COMPILED_BY))$(R_ARCH)
+
+PKG_CXXFLAGS = -I$(RWINLIB)/include/
+
+PKG_LIBS = -L$(RWINLIB)/$(TARGET) -L$(RWINLIB)/lib$(R_ARCH)	-lprotobuf
+
+all: clean winlibs protofiles
+
+CXX_STD = CXX11
+
+PROTOC = $(RWINLIB)/bin64/protoc.exe
+
+winlibs:
+	mkdir -p ../inst && "${R_HOME}/bin${R_ARCH_BIN}/Rscript.exe" --vanilla "../tools/winlibs.R" $(VERSION)
+
+protofiles:
+	$(PROTOC) --proto_path=../data/ --cpp_out=. \
+	cvrp-jkfdoctmp51n.proto \
+	cvrptw-acyas3nzweqb.proto \
+	ivr7-kt461v8eoaif.proto \
+	ivr8-yni1c9k2swof.proto \
+	tsp-mcvfz472gty6.proto \
+	tsptw-kcxbievqo879.proto \
+	nvd-hap0j2y4zlm1.proto \
+	ivrdata-o43e0dvs78zq.proto \
+	ns3-tbfvuwtge2iq.proto \
+	matrix-vyv95n7wchpl.proto \
+	problem.proto
+
+clean:
+	rm -f $(SHLIB) $(OBJECTS)
+
+.PHONY: all winlibs clean

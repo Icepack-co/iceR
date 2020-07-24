@@ -1,0 +1,40 @@
+Package: iceR
+Title: Wrap IVR Model Inputs and Outputs to the Icepack API
+Version: 0.0.1
+Authors@R: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
+Author: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
+Maintainer: Icepack <info@icepack.co>
+Description: Working with protobuf and nested model objects can be a pain. This package wraps the Icepack API in such a way as to return standard R dataframe-style objects
+Depends:
+    R (>= 3.4.4),
+    ggplot2 (>= 3.1.1),
+    sf (>= 0.9-0),
+    dplyr (>= 0.8.5),
+    purrr (>= 0.3.0),
+    Rcpp (>= 1.0.3),
+    devtools (>= 1.13.6),
+    httr (>= 1.4.0),
+    RProtoBuf (>= 0.4.12),
+    leaflet (>= 2.0.2),
+    jsonlite (>= 1.6.1),
+    magrittr (>= 1.5),
+    scales (>= 1.1.0)
+License: MIT
+Encoding: UTF-8
+LazyData: true
+LinkingTo:
+    Rcpp (>= 1.0.3)
+Imports:
+    ggplot2 (>= 3.1.1),
+    sf (>= 0.9-0),
+    dplyr (>= 0.8.5),
+    purrr (>= 0.3.0),
+    Rcpp (>= 1.0.3),
+    devtools (>= 1.13.6),
+    httr (>= 1.4.0),
+    RProtoBuf (>= 0.4.12),
+    leaflet (>= 2.0.2),
+    jsonlite (>= 1.6.1),
+    magrittr (>= 1.5),
+    scales (>= 1.1.0)
+RoxygenNote: 7.1.0

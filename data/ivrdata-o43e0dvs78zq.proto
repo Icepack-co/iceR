@@ -1,0 +1,33 @@
+syntax = "proto2";
+option java_package = "icepackai.IVRData";
+package IVRData;
+
+// https://docs.icepack.ai/ivr/ivrdata/
+
+
+// General transit set definition.
+message TransitSet {
+  message TransitValue {
+    required string fromId = 1;
+    required string toId = 2;
+    required float value = 3;
+  }
+  repeated TransitValue transits = 1;
+}
+
+// https://docs.icepack.ai/ivr/ivrdata/#cached-transit-set
+// Custom transit request message that user can send to the API to cache on our
+// side for performance reasons returns the requestID which can be used to reference
+// this payload in the IVR7/IVR8 TransitGenerator
+message CachedTransitSet {
+  required TransitSet transitSet = 1;
+}
+
+// https://docs.icepack.ai/ivr/ivrdata/#cached-model
+// Uploading a common model which can then be used for multiple request types.
+// Simplest use-case is to upload the model, then submit a optimise request.
+// Followed by a series of eval requests (when users modify the target routes)
+message CachedModel {
+  required bytes model = 1;
+}
+

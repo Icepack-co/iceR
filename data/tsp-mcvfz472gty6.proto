@@ -1,0 +1,62 @@
+syntax = "proto2";
+option java_package = "icepackai.TSP";
+
+// This package deals with Travelling Salesman Problems in two dimensions (x-y)
+// Using either straight line, Haversine, or Roadnetwork distances
+// The objective is to minimise the cost of the tour through all the points.
+
+package TSP;
+
+// -- INPUT DEFINITIONS -- // 
+// https://docs.icepack.ai/tsp/classic-tsp/#input
+message Geocode {
+    required string id = 1;
+    required float x = 2; //longitude for earth-routing
+    required float y = 3; //latitude for earth-routing
+}
+
+message TSP {
+    enum eDistanceType {
+        RoadNetwork = 1;
+        Euclidean = 2;
+        Haversine = 3;
+    };
+    repeated Geocode points = 1;
+    optional eDistanceType distancetype = 2 [default = RoadNetwork];
+}
+
+message SolveRequest {
+  enum SolveType {
+    Optimise =
+        0;  // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate =
+        1;  // Evaluates the provided route sequence. Single solution response.
+    ReOptimise =
+        2;  // Uses routes as starting solution and continues to optimise.
+  }
+  optional TSP model = 1;       // either model(1) or modelID(2) should be specified
+  optional string modelID = 2;  // the model ID from a previously optimised
+                                // request (for use with evaluate solve type)
+  repeated string visitSequence = 3;  // for solveType = [Evaluate, ReOptimise].
+  optional SolveType solveType = 4 [default = Optimise];
+}
+
+// -- OUTPUT DEFINITIONS -- // 
+// https://docs.icepack.ai/tsp/classic-tsp/#output
+message Edge {
+    message Geometry{
+        required float x = 1;
+        required float y = 2;
+    }
+    required string from = 1;
+    required string to = 2;
+    optional float distance = 3;
+    // geometry is populated for road-network pathing.
+    repeated Geometry geometry = 4;
+}
+
+message SolutionResponse {
+    //this is the tour produced by the solver.
+    repeated string tour = 1;
+    repeated Edge edges = 2;
+}

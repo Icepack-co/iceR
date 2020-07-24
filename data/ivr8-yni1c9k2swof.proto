@@ -1,0 +1,348 @@
+syntax = "proto2";
+option java_package = "icepackai.IVR8";
+package IVR8;
+
+// -- INPUT DEFINITIONS -- //
+
+// https://docs.icepack.ai/ivr/dimension/#internaldimension
+message InternalDimension {
+  enum eMeasurementUnit {
+    SECONDS = 0;     // timeConfig
+    MINUTES = 1;     // timeConfig
+    HOURS = 2;       // timeConfig
+    DAYS = 3;        // timeConfig
+    KILOMETRES = 4;  // distanceConfig
+    MILES = 5;       // distanceConfig
+  }
+  required string id = 1;
+  required eMeasurementUnit measurementUnit = 2;
+  optional float slackMax = 3 [default = 0];
+  optional float tardyMax = 4 [default = 0];
+}
+
+// https://docs.icepack.ai/ivr/dimension/#capacitydimension
+message CapacityDimension {
+  required string id = 1;
+  required string units = 2;
+  optional float slackMax = 3 [default = 0];
+  optional float tardyMax = 4 [default = 0];
+}
+
+// https://docs.icepack.ai/ivr/dimension/#dimensionconfiguration
+message DimensionConfiguration {
+  optional InternalDimension timeConfig = 1;
+  optional InternalDimension distanceConfig = 2;
+  repeated CapacityDimension capacityDimensions = 3;
+}
+
+// https://docs.icepack.ai/ivr/geocode/
+message Geocode {
+  // long and lat values in decimal degrees
+  required float longitude = 1;
+  required float latitude = 2;
+}
+
+// https://docs.icepack.ai/ivr/window/
+message Window {
+  required float start = 1;
+  required float end = 2;
+  optional float slackCostCoef = 3 [default = 0];
+  optional float tardyCostCoef = 4 [default = 0];
+  optional float slackMax = 5 [default = -1];
+  optional float tardyMax = 6 [default = -1];  // an override for the window to ignore the dimension value
+}
+
+// Locations allow us to uniquely identify the positions at which Tasks occur
+// https://docs.icepack.ai/ivr/location/
+message Location {
+  message Attribute {
+    required string dimensionId = 1;
+    optional string vehicleId = 2;
+    optional float quantity = 3;
+    repeated Window arrivalWindows = 4;
+    repeated Window departureWindows = 5;
+  }
+  required string id = 1;
+  optional Geocode geocode = 2;  
+  repeated Attribute attributes = 3;
+}
+
+// Job maps to a collection of Tasks (eg. pickup and dropoff can be one job)
+// All Tasks must be completed in the order specified
+// Penalty cost of not including a Job in the solution
+// Penalties should greater than 0, and preferable very large to force inclusion
+// Currently only singles Task and pickup+dropoff Tasks are supported
+// Jobs are also used to represent shifts on Vehicles with at most two Tasks
+// indicating the start and end location (which may be the same)
+// https://docs.icepack.ai/ivr/job/
+message Job {
+  // https://docs.icepack.ai/ivr/job/#job-vehicle-relation
+  message VehicleRelation {
+    enum Type {
+      INCLUSIVE = 0;
+      EXCLUSIVE = 1;
+    }
+    required Type type = 1;
+    repeated string vehicleIds = 2;
+  }
+  // https://docs.icepack.ai/ivr/job/#job-compartment-relation
+  message CompartmentRelation {
+    enum Type {
+      INCLUSIVE = 0;
+      EXCLUSIVE = 1;
+    }
+    required Type type = 1;
+    repeated string compartmentIds = 2;
+  }
+  // https://docs.icepack.ai/ivr/task/
+  message Task {
+    message Attribute {
+      required string dimensionId = 1;
+      optional float quantity = 2;
+      repeated Window windows = 3;
+    }
+    enum TripConstraint {
+      FIRST = 0;  // first on trip
+      LAST = 1;   // last on trip. Could have both first and last constraints.
+    }
+    required string taskId = 1;
+    required string locationId = 2;
+    repeated Attribute attributes = 3;
+    repeated TripConstraint tripConstraints = 4;  // if empty, no constraints
+  }
+
+  required string id = 1;
+  optional Task pickupTask = 2;
+  optional Task dropoffTask = 3;  // the assumption of this model is that the
+                                  // pickup and dropoff tasks occur on the same
+                                  // vehicle.
+  required float penalty = 4;
+  optional VehicleRelation vehicleRelations = 5;  // for specifying incl/excl
+  optional CompartmentRelation compartmentRelations = 6;
+}
+
+// https://docs.icepack.ai/ivr/transit-set/
+message TransitSet {
+  message TransitValue {
+    required string fromId = 1;
+    required string toId = 2;
+    required float value = 3;
+  }
+  repeated TransitValue transits = 1;
+}
+
+// https://docs.icepack.ai/ivr/transit-generator/
+message TransitGenerator {
+  required string id = 1;
+  optional string requestId = 2;        // used to recover a cached transitSet
+  optional TransitSet transitSet = 3;
+}
+
+// https://docs.icepack.ai/ivr/vehicle-class/
+message VehicleClass {
+  message Attribute {
+    required string dimensionId = 1;
+    optional string transitGeneratorId = 2;   // links to a transit-gen object
+    optional float transitCoef = 3;
+    optional float taskCoef = 4;
+    optional float locationCoef = 5;
+  }
+  required string id = 1;
+  repeated Attribute attributes = 2;
+  repeated string transitRuleIds = 3;
+  optional string compartmentSetId = 4;
+}
+// https://docs.icepack.ai/ivr/vehicle-cost-class/
+message VehicleCostClass {
+  message Attribute {
+    required string dimensionId = 1;
+    optional float transitCostCoef = 2;
+    optional float taskCostCoef = 3;
+    optional float locationCostCoef = 4;
+    optional float slackCostCoef = 5;
+    optional float tardyCostCoef = 6;
+  }
+  required string id = 1;
+  required float fixedCost = 2;
+  repeated Attribute attributes = 3;
+}
+// https://docs.icepack.ai/ivr/vehicle/
+message Vehicle {
+  message Task {
+    message Attribute {
+      required string dimensionId = 1;
+      optional float quantity = 2;
+      repeated Window windows = 3;
+    }
+    required string locationId = 1;
+    repeated Attribute attributes = 2;
+  }
+  message Shift {
+    required Task shiftStart = 1;
+    optional Task shiftEnd = 2;
+  }
+
+  message Capacity {
+    required string dimensionId = 1;
+    required float capacity = 2;
+  }
+  required string id = 1;
+  required string classId = 2;
+  required string costClassId = 3;
+  required Shift shift = 4;
+  repeated Capacity capacities = 5;
+  repeated string transitRuleIds = 6;
+  optional string compartmentSetId = 7;
+}
+
+// used to provide a partial solution for either evaluation or as
+// a seed to the optimisation problem (warm start)
+// https://docs.icepack.ai/ivr/task-sequence/
+message TaskSequence {
+  required string vehicleId = 1;
+  repeated string taskId = 2;
+  repeated string compartmentId = 3;
+}
+// https://docs.icepack.ai/ivr/transit-rule/
+message TransitRule {
+  message Trigger {
+    required float value = 1;     // value at which this is cut
+    required float quantity = 2;  // quantity that is applied
+  }
+  required string id = 1;
+  required string dimensionId = 2;
+  optional bool useStandingState = 3 [default = true];
+  optional bool useTransitState = 4 [default = false];
+  required string ruleIdPrefix = 5;
+  repeated Trigger triggers = 6;
+}
+
+// https://docs.icepack.ai/ivr/compartment/
+message Compartment {
+  message Capacity {
+    required string dimensionId = 1;
+    required float capacity = 2;
+  }
+  required string id = 1;
+  repeated Capacity capacities = 2;
+}
+
+// https://docs.icepack.ai/ivr/compartment-set/
+message CompartmentSet {
+  message GroupLimit {
+    repeated string compartmentIds = 1;
+    repeated float coefficients = 2;
+    required string dimensionId = 3;
+    required float limit = 4;
+    optional bool checkStandingState = 5 [default = false];
+  }
+  required string id = 1;
+  repeated string compartmentIds = 2;
+  repeated GroupLimit groupLimits = 3;
+}
+
+// The encapsulating model.
+// Potentially versioned on the server side (through the request ID - see https://docs.icepack.ai/ivr/ivrdata/)
+// https://docs.icepack.ai/ivr/model/
+message Model {
+  required DimensionConfiguration dimensions = 1;
+  repeated Location locations = 2;
+  repeated Job jobs = 3;
+  repeated Vehicle vehicles = 4;
+  repeated VehicleClass vehicleClasses = 5;
+  repeated VehicleCostClass vehicleCostClasses = 6;
+  repeated TransitRule transitRules = 7;
+  repeated TransitGenerator transitGenerators = 8;
+  repeated TaskSequence taskSequence = 9;
+  repeated Compartment compartments = 10;
+  repeated CompartmentSet compartmentSets = 11;
+}
+
+// Input message for this schema.
+// https://docs.icepack.ai/ivr/solve-request/
+message SolveRequest {
+  enum SolveType {
+    Optimise = 0;     // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate = 1;     // Evaluates the provided route sequence. Single solution response.
+    ReOptimise = 2;   // Uses routes as starting solution and continues to optimise.
+  }
+  optional Model model = 1;     // either model or modelID should be specified
+  optional string modelID = 2;  // the ID from a data-upload type: https://docs.icepack.ai/ivr/ivrdata/
+  repeated TaskSequence routes = 3;  // for solveType = [Evaluate, ReOptimise].
+  optional SolveType solveType = 4 [default = Optimise];
+}
+
+// -- OUTPUT DEFINITIONS -- //
+// https://docs.icepack.ai/ivr/solution-response/
+message SolutionResponse {
+  // https://docs.icepack.ai/ivr/solution-response/#stop-attribute
+  message StopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+    required float slackValue = 5;
+    required float slackCost = 6;
+    required float tardyValue = 7;
+    required float tardyCost = 8;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#interstopattribute
+  message InterStopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#stop
+  message Stop {
+    required int32 id = 1;
+    required int32 sequence = 2;
+    required string locationId = 3;
+    required string taskId = 4;
+    required string jobId = 5;
+    repeated StopAttribute attributes = 6;
+    optional string compartmentId = 7;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#interstop
+  message InterStop {
+    required int32 fromStopId = 1;
+    required int32 toStopId = 2;
+    repeated InterStopAttribute attributes = 3;
+    repeated Geocode routeSegments = 4;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#transitruleattribute
+  message TransitRuleAttribute {
+    required string ruleId = 1;
+    required string dimId = 2;
+    required int32 fromStopId = 3;
+    required int32 toStopId = 4;
+    required float startValue = 5;
+    required float endValue = 6;
+    required float cost = 7;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#route
+  message Route {
+    required string vehicleId = 1;
+    repeated Stop stops = 2;
+    repeated InterStop interStops = 3;
+    repeated float fixedCost = 4;
+    repeated TransitRuleAttribute transitRuleAttributes = 5;
+  }
+  // https://docs.icepack.ai/ivr/solution-response/#infeasibility
+  message Infeasibility {
+    required string taskId = 1;
+    message Info {
+      required string message = 1;
+      optional string dimId = 2;
+      optional float limit = 3;
+      optional float value = 4;
+      optional int64 count = 5;
+      repeated string constrainingTaskIds = 6;
+    }
+    repeated Info infeasibilityInfo = 2;
+  }
+
+  required float objective = 1;
+  repeated Route routes = 2;
+  repeated Infeasibility infeasibilities = 3;
+}
