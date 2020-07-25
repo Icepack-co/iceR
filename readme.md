@@ -27,6 +27,7 @@ Installation on windows is pretty straight forward if the package dependencies a
 ```
 devtools::install_github("icepack-co/iceR")
 ```
+
 ## Linux
 
 ### Prerequisites
@@ -55,9 +56,19 @@ devtools::install_github("icepack-co/iceR")
 
 ## Mac
 
-You'll need to install `protoc` (version >= 3.6.1) so that it's available in your path and `devtools` (in R) before installing `iceR`.
-After which, you can run the devtools installation:
+You'll require `protobuf`, `udunits` and `gdal` installed on your system which can be done using:
+
 ```
+brew install protobuf
+brew install udunits
+brew install gdal
+```
+
+Which will install protobuf 3.12.3 (which is >= 3.6.1).
+
+After which you can install `devtools` (in R) before installing `iceR`.
+```
+install.packages("devtools")
 devtools::install_github("icepack-co/iceR")
 ```
 
