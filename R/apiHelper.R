@@ -147,6 +147,7 @@ getResponse <- function(apiHelper, requestID){
                        "tsp-mcvfz472gty6"={read(TSP.SolutionResponse,solRes$solution)},
                        "cvrp-jkfdoctmp51n" ={read(CVRP.SolutionResponse,solRes$solution)},
                        'tsptw-kcxbievqo879'={read(TSPTW.SolutionResponse, solRes$solution)},
+                       "cvrptw-acyas3nzweqb" ={read(CVRPTW.SolutionResponse,solRes$solution)},
                        'ivr8-yni1c9k2swof' = {read(IVR8.SolutionResponse, solRes$solution)},
                        'ivr7-kt461v8eoaif' = {read(IVR7.SolutionResponse, solRes$solution)},
                        'nvd-hap0j2y4zlm1' = {read(NVD.SolutionResponse, solRes$solution)},
@@ -259,6 +260,9 @@ tabulatecvrp <- function(sr, resp){
 
   edges<- lapply(resp$routes, function(i){
     do.call(rbind, lapply(i$edges, function(j){
+      if(length(j$geometry) == 0){
+        return(NULL)
+      }
       xs <- lapply(j$geometry, function(k) { return(k$x)}) %>% unlist
       ys <- lapply(j$geometry, function(k) { return(k$y)}) %>% unlist
       geomdf <- data.frame(xs, ys) %>%  st_as_sf(coords = c(1,2)) %>% summarise(do_union = FALSE) %>%  st_cast("LINESTRING")
@@ -268,19 +272,28 @@ tabulatecvrp <- function(sr, resp){
       return(geomdf)
     }))
   })
+
   for(i in 1:length(edges)){
     if(!is.null(edges[[i]])){
       edges[[i]]$vehicleId <- i
     }
   }
   edges<- do.call(rbind, edges)
-  edges<- edges %>% left_join(pts %>% select(fromId = id, fx = x, fy = y), by = 'fromId') %>%
-    left_join(pts %>% select(toId = id, tx = x, ty = y), by = 'toId')
-  edges$vehicleId  %<>% as.character()
-
+  if(!is.null(edges)){
+    edges<- edges %>% left_join(pts %>% select(fromId = id, fx = x, fy = y), by = 'fromId') %>%
+      left_join(pts %>% select(toId = id, tx = x, ty = y), by = 'toId')
+    edges$vehicleId  %<>% as.character()
+  }
   nodes <- lapply(resp$routes, function(i){
-    return(data.frame(locationId =  i$sequence,
-                      quanity = cumsum(i$visitCapacities)))})
+    if("arrivalTimes" %in% names(i)){
+      return(data.frame(locationId =  i$sequence,
+                        quantity = cumsum(i$visitCapacities),
+                        arrivalTime = i$arrivalTimes))
+    }else{
+      return(data.frame(locationId =  i$sequence,
+                        quantity = cumsum(i$visitCapacities)))
+    }
+  })
 
   for(i in 1:length(nodes)){
     if(nrow(nodes[[i]]) > 0){

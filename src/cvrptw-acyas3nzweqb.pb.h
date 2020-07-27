@@ -1113,17 +1113,29 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
   const ::google::protobuf::RepeatedPtrField< ::CVRPTW::Edge >&
       edges() const;
 
-  // repeated float visitDistances = 3;
-  int visitdistances_size() const;
-  void clear_visitdistances();
-  static const int kVisitDistancesFieldNumber = 3;
-  float visitdistances(int index) const;
-  void set_visitdistances(int index, float value);
-  void add_visitdistances(float value);
+  // repeated float visitCapacities = 3;
+  int visitcapacities_size() const;
+  void clear_visitcapacities();
+  static const int kVisitCapacitiesFieldNumber = 3;
+  float visitcapacities(int index) const;
+  void set_visitcapacities(int index, float value);
+  void add_visitcapacities(float value);
   const ::google::protobuf::RepeatedField< float >&
-      visitdistances() const;
+      visitcapacities() const;
   ::google::protobuf::RepeatedField< float >*
-      mutable_visitdistances();
+      mutable_visitcapacities();
+
+  // repeated float arrivalTimes = 4;
+  int arrivaltimes_size() const;
+  void clear_arrivaltimes();
+  static const int kArrivalTimesFieldNumber = 4;
+  float arrivaltimes(int index) const;
+  void set_arrivaltimes(int index, float value);
+  void add_arrivaltimes(float value);
+  const ::google::protobuf::RepeatedField< float >&
+      arrivaltimes() const;
+  ::google::protobuf::RepeatedField< float >*
+      mutable_arrivaltimes();
 
   // @@protoc_insertion_point(class_scope:CVRPTW.SolutionResponse.Route)
  private:
@@ -1133,7 +1145,8 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::std::string> sequence_;
   ::google::protobuf::RepeatedPtrField< ::CVRPTW::Edge > edges_;
-  ::google::protobuf::RepeatedField< float > visitdistances_;
+  ::google::protobuf::RepeatedField< float > visitcapacities_;
+  ::google::protobuf::RepeatedField< float > arrivaltimes_;
   friend struct ::protobuf_cvrptw_2dacyas3nzweqb_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2194,34 +2207,64 @@ SolutionResponse_Route::edges() const {
   return edges_;
 }
 
-// repeated float visitDistances = 3;
-inline int SolutionResponse_Route::visitdistances_size() const {
-  return visitdistances_.size();
+// repeated float visitCapacities = 3;
+inline int SolutionResponse_Route::visitcapacities_size() const {
+  return visitcapacities_.size();
 }
-inline void SolutionResponse_Route::clear_visitdistances() {
-  visitdistances_.Clear();
+inline void SolutionResponse_Route::clear_visitcapacities() {
+  visitcapacities_.Clear();
 }
-inline float SolutionResponse_Route::visitdistances(int index) const {
-  // @@protoc_insertion_point(field_get:CVRPTW.SolutionResponse.Route.visitDistances)
-  return visitdistances_.Get(index);
+inline float SolutionResponse_Route::visitcapacities(int index) const {
+  // @@protoc_insertion_point(field_get:CVRPTW.SolutionResponse.Route.visitCapacities)
+  return visitcapacities_.Get(index);
 }
-inline void SolutionResponse_Route::set_visitdistances(int index, float value) {
-  visitdistances_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CVRPTW.SolutionResponse.Route.visitDistances)
+inline void SolutionResponse_Route::set_visitcapacities(int index, float value) {
+  visitcapacities_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CVRPTW.SolutionResponse.Route.visitCapacities)
 }
-inline void SolutionResponse_Route::add_visitdistances(float value) {
-  visitdistances_.Add(value);
-  // @@protoc_insertion_point(field_add:CVRPTW.SolutionResponse.Route.visitDistances)
+inline void SolutionResponse_Route::add_visitcapacities(float value) {
+  visitcapacities_.Add(value);
+  // @@protoc_insertion_point(field_add:CVRPTW.SolutionResponse.Route.visitCapacities)
 }
 inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_Route::visitdistances() const {
-  // @@protoc_insertion_point(field_list:CVRPTW.SolutionResponse.Route.visitDistances)
-  return visitdistances_;
+SolutionResponse_Route::visitcapacities() const {
+  // @@protoc_insertion_point(field_list:CVRPTW.SolutionResponse.Route.visitCapacities)
+  return visitcapacities_;
 }
 inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_Route::mutable_visitdistances() {
-  // @@protoc_insertion_point(field_mutable_list:CVRPTW.SolutionResponse.Route.visitDistances)
-  return &visitdistances_;
+SolutionResponse_Route::mutable_visitcapacities() {
+  // @@protoc_insertion_point(field_mutable_list:CVRPTW.SolutionResponse.Route.visitCapacities)
+  return &visitcapacities_;
+}
+
+// repeated float arrivalTimes = 4;
+inline int SolutionResponse_Route::arrivaltimes_size() const {
+  return arrivaltimes_.size();
+}
+inline void SolutionResponse_Route::clear_arrivaltimes() {
+  arrivaltimes_.Clear();
+}
+inline float SolutionResponse_Route::arrivaltimes(int index) const {
+  // @@protoc_insertion_point(field_get:CVRPTW.SolutionResponse.Route.arrivalTimes)
+  return arrivaltimes_.Get(index);
+}
+inline void SolutionResponse_Route::set_arrivaltimes(int index, float value) {
+  arrivaltimes_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CVRPTW.SolutionResponse.Route.arrivalTimes)
+}
+inline void SolutionResponse_Route::add_arrivaltimes(float value) {
+  arrivaltimes_.Add(value);
+  // @@protoc_insertion_point(field_add:CVRPTW.SolutionResponse.Route.arrivalTimes)
+}
+inline const ::google::protobuf::RepeatedField< float >&
+SolutionResponse_Route::arrivaltimes() const {
+  // @@protoc_insertion_point(field_list:CVRPTW.SolutionResponse.Route.arrivalTimes)
+  return arrivaltimes_;
+}
+inline ::google::protobuf::RepeatedField< float >*
+SolutionResponse_Route::mutable_arrivaltimes() {
+  // @@protoc_insertion_point(field_mutable_list:CVRPTW.SolutionResponse.Route.arrivalTimes)
+  return &arrivaltimes_;
 }
 
 // -------------------------------------------------------------------

@@ -71,7 +71,8 @@ message SolutionResponse {
     message Route{
         repeated string sequence = 1;
         repeated Edge edges = 2;
-        repeated float visitDistances = 3;
+        repeated float visitCapacities = 3;
+	    repeated float arrivalTimes = 4;
     };
     repeated Route routes = 1;
     required float objective = 2;

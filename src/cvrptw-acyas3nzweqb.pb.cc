@@ -255,7 +255,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::CVRPTW::SolutionResponse_Route, sequence_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::CVRPTW::SolutionResponse_Route, edges_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::CVRPTW::SolutionResponse_Route, visitdistances_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::CVRPTW::SolutionResponse_Route, visitcapacities_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::CVRPTW::SolutionResponse_Route, arrivaltimes_),
+  ~0u,
   ~0u,
   ~0u,
   ~0u,
@@ -275,8 +277,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 32, 41, sizeof(::CVRPTW::SolveRequest)},
   { 45, 52, sizeof(::CVRPTW::Edge_Geometry)},
   { 54, 63, sizeof(::CVRPTW::Edge)},
-  { 67, 75, sizeof(::CVRPTW::SolutionResponse_Route)},
-  { 78, 85, sizeof(::CVRPTW::SolutionResponse)},
+  { 67, 76, sizeof(::CVRPTW::SolutionResponse_Route)},
+  { 80, 87, sizeof(::CVRPTW::SolutionResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -328,14 +330,15 @@ void AddDescriptorsImpl() {
       "e\020\002\"}\n\004Edge\022\014\n\004from\030\001 \002(\t\022\n\n\002to\030\002 \002(\t\022\020\n"
       "\010distance\030\003 \001(\002\022\'\n\010geometry\030\005 \003(\0132\025.CVRP"
       "TW.Edge.Geometry\032 \n\010Geometry\022\t\n\001x\030\001 \002(\002\022"
-      "\t\n\001y\030\002 \002(\002\"\245\001\n\020SolutionResponse\022.\n\006route"
+      "\t\n\001y\030\002 \002(\002\"\274\001\n\020SolutionResponse\022.\n\006route"
       "s\030\001 \003(\0132\036.CVRPTW.SolutionResponse.Route\022"
-      "\021\n\tobjective\030\002 \002(\002\032N\n\005Route\022\020\n\010sequence\030"
-      "\001 \003(\t\022\033\n\005edges\030\002 \003(\0132\014.CVRPTW.Edge\022\026\n\016vi"
-      "sitDistances\030\003 \003(\002"
+      "\021\n\tobjective\030\002 \002(\002\032e\n\005Route\022\020\n\010sequence\030"
+      "\001 \003(\t\022\033\n\005edges\030\002 \003(\0132\014.CVRPTW.Edge\022\027\n\017vi"
+      "sitCapacities\030\003 \003(\002\022\024\n\014arrivalTimes\030\004 \003("
+      "\002"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 898);
+      descriptor, 921);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "cvrptw-acyas3nzweqb.proto", &protobuf_RegisterTypes);
 }
@@ -2428,7 +2431,8 @@ void SolutionResponse_Route::InitAsDefaultInstance() {
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SolutionResponse_Route::kSequenceFieldNumber;
 const int SolutionResponse_Route::kEdgesFieldNumber;
-const int SolutionResponse_Route::kVisitDistancesFieldNumber;
+const int SolutionResponse_Route::kVisitCapacitiesFieldNumber;
+const int SolutionResponse_Route::kArrivalTimesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SolutionResponse_Route::SolutionResponse_Route()
@@ -2444,7 +2448,8 @@ SolutionResponse_Route::SolutionResponse_Route(const SolutionResponse_Route& fro
       _has_bits_(from._has_bits_),
       sequence_(from.sequence_),
       edges_(from.edges_),
-      visitdistances_(from.visitdistances_) {
+      visitcapacities_(from.visitcapacities_),
+      arrivaltimes_(from.arrivaltimes_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:CVRPTW.SolutionResponse.Route)
 }
@@ -2482,7 +2487,8 @@ void SolutionResponse_Route::Clear() {
 
   sequence_.Clear();
   edges_.Clear();
-  visitdistances_.Clear();
+  visitcapacities_.Clear();
+  arrivaltimes_.Clear();
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -2526,19 +2532,38 @@ bool SolutionResponse_Route::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated float visitDistances = 3;
+      // repeated float visitCapacities = 3;
       case 3: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 29u, input, this->mutable_visitdistances())));
+                 1, 29u, input, this->mutable_visitcapacities())));
         } else if (
             static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_visitdistances())));
+                 input, this->mutable_visitcapacities())));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated float arrivalTimes = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 1, 37u, input, this->mutable_arrivaltimes())));
+        } else if (
+            static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, this->mutable_arrivaltimes())));
         } else {
           goto handle_unusual;
         }
@@ -2590,10 +2615,16 @@ void SolutionResponse_Route::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated float visitDistances = 3;
-  for (int i = 0, n = this->visitdistances_size(); i < n; i++) {
+  // repeated float visitCapacities = 3;
+  for (int i = 0, n = this->visitcapacities_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      3, this->visitdistances(i), output);
+      3, this->visitcapacities(i), output);
+  }
+
+  // repeated float arrivalTimes = 4;
+  for (int i = 0, n = this->arrivaltimes_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(
+      4, this->arrivaltimes(i), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2628,9 +2659,13 @@ void SolutionResponse_Route::SerializeWithCachedSizes(
         2, this->edges(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated float visitDistances = 3;
+  // repeated float visitCapacities = 3;
   target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(3, this->visitdistances_, target);
+    WriteFloatToArray(3, this->visitcapacities_, target);
+
+  // repeated float arrivalTimes = 4;
+  target = ::google::protobuf::internal::WireFormatLite::
+    WriteFloatToArray(4, this->arrivaltimes_, target);
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
@@ -2668,12 +2703,21 @@ size_t SolutionResponse_Route::ByteSizeLong() const {
     }
   }
 
-  // repeated float visitDistances = 3;
+  // repeated float visitCapacities = 3;
   {
-    unsigned int count = static_cast<unsigned int>(this->visitdistances_size());
+    unsigned int count = static_cast<unsigned int>(this->visitcapacities_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->visitdistances_size());
+                  ::google::protobuf::internal::FromIntSize(this->visitcapacities_size());
+    total_size += data_size;
+  }
+
+  // repeated float arrivalTimes = 4;
+  {
+    unsigned int count = static_cast<unsigned int>(this->arrivaltimes_size());
+    size_t data_size = 4UL * count;
+    total_size += 1 *
+                  ::google::protobuf::internal::FromIntSize(this->arrivaltimes_size());
     total_size += data_size;
   }
 
@@ -2706,7 +2750,8 @@ void SolutionResponse_Route::MergeFrom(const SolutionResponse_Route& from) {
 
   sequence_.MergeFrom(from.sequence_);
   edges_.MergeFrom(from.edges_);
-  visitdistances_.MergeFrom(from.visitdistances_);
+  visitcapacities_.MergeFrom(from.visitcapacities_);
+  arrivaltimes_.MergeFrom(from.arrivaltimes_);
 }
 
 void SolutionResponse_Route::CopyFrom(const ::google::protobuf::Message& from) {
@@ -2736,7 +2781,8 @@ void SolutionResponse_Route::InternalSwap(SolutionResponse_Route* other) {
   using std::swap;
   sequence_.InternalSwap(CastToBase(&other->sequence_));
   CastToBase(&edges_)->InternalSwap(CastToBase(&other->edges_));
-  visitdistances_.InternalSwap(&other->visitdistances_);
+  visitcapacities_.InternalSwap(&other->visitcapacities_);
+  arrivaltimes_.InternalSwap(&other->arrivaltimes_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }

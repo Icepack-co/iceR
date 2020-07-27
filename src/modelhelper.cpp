@@ -522,6 +522,10 @@ List tabulate(Reference solResponse, Reference solveRequest){
     Function tabcvrp("tabulatecvrp");
     return(tabcvrp(_["sr"] = solveRequest, _["resp"] = solResponse));
   }
+  if(srType == "CVRPTW.SolveRequest"){
+    Function tabcvrp("tabulatecvrp");
+    return(tabcvrp(_["sr"] = solveRequest, _["resp"] = solResponse));
+  }
   if(srType == "NVD.SolveRequest"){
     string outdata = bytesToString(solResp);
     string indata =  bytesToString(sr);
