@@ -39,7 +39,7 @@ namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[20];
+  static const ::google::protobuf::internal::ParseTable schema[23];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -50,9 +50,9 @@ namespace NS3 {
 class CostModel;
 class CostModelDefaultTypeInternal;
 extern CostModelDefaultTypeInternal _CostModel_default_instance_;
-class Dimension;
-class DimensionDefaultTypeInternal;
-extern DimensionDefaultTypeInternal _Dimension_default_instance_;
+class DimensionConfiguration;
+class DimensionConfigurationDefaultTypeInternal;
+extern DimensionConfigurationDefaultTypeInternal _DimensionConfiguration_default_instance_;
 class DimensionRange;
 class DimensionRangeDefaultTypeInternal;
 extern DimensionRangeDefaultTypeInternal _DimensionRange_default_instance_;
@@ -65,6 +65,9 @@ extern FlowDimensionalConstraintDefaultTypeInternal _FlowDimensionalConstraint_d
 class Geocode;
 class GeocodeDefaultTypeInternal;
 extern GeocodeDefaultTypeInternal _Geocode_default_instance_;
+class InternalDimension;
+class InternalDimensionDefaultTypeInternal;
+extern InternalDimensionDefaultTypeInternal _InternalDimension_default_instance_;
 class LaneRate;
 class LaneRateDefaultTypeInternal;
 extern LaneRateDefaultTypeInternal _LaneRate_default_instance_;
@@ -92,30 +95,37 @@ extern SolutionResponseDefaultTypeInternal _SolutionResponse_default_instance_;
 class SolutionResponse_Assignment;
 class SolutionResponse_AssignmentDefaultTypeInternal;
 extern SolutionResponse_AssignmentDefaultTypeInternal _SolutionResponse_Assignment_default_instance_;
-class SolutionResponse_GeometryEdgeSummary;
-class SolutionResponse_GeometryEdgeSummaryDefaultTypeInternal;
-extern SolutionResponse_GeometryEdgeSummaryDefaultTypeInternal _SolutionResponse_GeometryEdgeSummary_default_instance_;
+class SolutionResponse_GeometrySequence;
+class SolutionResponse_GeometrySequenceDefaultTypeInternal;
+extern SolutionResponse_GeometrySequenceDefaultTypeInternal _SolutionResponse_GeometrySequence_default_instance_;
 class SolutionResponse_NodeFlow;
 class SolutionResponse_NodeFlowDefaultTypeInternal;
 extern SolutionResponse_NodeFlowDefaultTypeInternal _SolutionResponse_NodeFlow_default_instance_;
 class SolutionResponse_NodeProductFlow;
 class SolutionResponse_NodeProductFlowDefaultTypeInternal;
 extern SolutionResponse_NodeProductFlowDefaultTypeInternal _SolutionResponse_NodeProductFlow_default_instance_;
+class SolutionResponse_Route;
+class SolutionResponse_RouteDefaultTypeInternal;
+extern SolutionResponse_RouteDefaultTypeInternal _SolutionResponse_Route_default_instance_;
 class SolveRequest;
 class SolveRequestDefaultTypeInternal;
 extern SolveRequestDefaultTypeInternal _SolveRequest_default_instance_;
 class UnitDimensionCost;
 class UnitDimensionCostDefaultTypeInternal;
 extern UnitDimensionCostDefaultTypeInternal _UnitDimensionCost_default_instance_;
+class UserDimension;
+class UserDimensionDefaultTypeInternal;
+extern UserDimensionDefaultTypeInternal _UserDimension_default_instance_;
 }  // namespace NS3
 namespace google {
 namespace protobuf {
 template<> ::NS3::CostModel* Arena::CreateMaybeMessage<::NS3::CostModel>(Arena*);
-template<> ::NS3::Dimension* Arena::CreateMaybeMessage<::NS3::Dimension>(Arena*);
+template<> ::NS3::DimensionConfiguration* Arena::CreateMaybeMessage<::NS3::DimensionConfiguration>(Arena*);
 template<> ::NS3::DimensionRange* Arena::CreateMaybeMessage<::NS3::DimensionRange>(Arena*);
 template<> ::NS3::FixedDimensionCost* Arena::CreateMaybeMessage<::NS3::FixedDimensionCost>(Arena*);
 template<> ::NS3::FlowDimensionalConstraint* Arena::CreateMaybeMessage<::NS3::FlowDimensionalConstraint>(Arena*);
 template<> ::NS3::Geocode* Arena::CreateMaybeMessage<::NS3::Geocode>(Arena*);
+template<> ::NS3::InternalDimension* Arena::CreateMaybeMessage<::NS3::InternalDimension>(Arena*);
 template<> ::NS3::LaneRate* Arena::CreateMaybeMessage<::NS3::LaneRate>(Arena*);
 template<> ::NS3::Model* Arena::CreateMaybeMessage<::NS3::Model>(Arena*);
 template<> ::NS3::Node* Arena::CreateMaybeMessage<::NS3::Node>(Arena*);
@@ -125,15 +135,40 @@ template<> ::NS3::ProductGroup* Arena::CreateMaybeMessage<::NS3::ProductGroup>(A
 template<> ::NS3::ProductGroup_ProductSpecification* Arena::CreateMaybeMessage<::NS3::ProductGroup_ProductSpecification>(Arena*);
 template<> ::NS3::SolutionResponse* Arena::CreateMaybeMessage<::NS3::SolutionResponse>(Arena*);
 template<> ::NS3::SolutionResponse_Assignment* Arena::CreateMaybeMessage<::NS3::SolutionResponse_Assignment>(Arena*);
-template<> ::NS3::SolutionResponse_GeometryEdgeSummary* Arena::CreateMaybeMessage<::NS3::SolutionResponse_GeometryEdgeSummary>(Arena*);
+template<> ::NS3::SolutionResponse_GeometrySequence* Arena::CreateMaybeMessage<::NS3::SolutionResponse_GeometrySequence>(Arena*);
 template<> ::NS3::SolutionResponse_NodeFlow* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeFlow>(Arena*);
 template<> ::NS3::SolutionResponse_NodeProductFlow* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeProductFlow>(Arena*);
+template<> ::NS3::SolutionResponse_Route* Arena::CreateMaybeMessage<::NS3::SolutionResponse_Route>(Arena*);
 template<> ::NS3::SolveRequest* Arena::CreateMaybeMessage<::NS3::SolveRequest>(Arena*);
 template<> ::NS3::UnitDimensionCost* Arena::CreateMaybeMessage<::NS3::UnitDimensionCost>(Arena*);
+template<> ::NS3::UserDimension* Arena::CreateMaybeMessage<::NS3::UserDimension>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace NS3 {
 
+enum InternalDimension_eMeasurementUnit {
+  InternalDimension_eMeasurementUnit_SECONDS = 0,
+  InternalDimension_eMeasurementUnit_MINUTES = 1,
+  InternalDimension_eMeasurementUnit_HOURS = 2,
+  InternalDimension_eMeasurementUnit_DAYS = 3,
+  InternalDimension_eMeasurementUnit_KILOMETRES = 4,
+  InternalDimension_eMeasurementUnit_MILES = 5
+};
+bool InternalDimension_eMeasurementUnit_IsValid(int value);
+const InternalDimension_eMeasurementUnit InternalDimension_eMeasurementUnit_eMeasurementUnit_MIN = InternalDimension_eMeasurementUnit_SECONDS;
+const InternalDimension_eMeasurementUnit InternalDimension_eMeasurementUnit_eMeasurementUnit_MAX = InternalDimension_eMeasurementUnit_MILES;
+const int InternalDimension_eMeasurementUnit_eMeasurementUnit_ARRAYSIZE = InternalDimension_eMeasurementUnit_eMeasurementUnit_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* InternalDimension_eMeasurementUnit_descriptor();
+inline const ::std::string& InternalDimension_eMeasurementUnit_Name(InternalDimension_eMeasurementUnit value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    InternalDimension_eMeasurementUnit_descriptor(), value);
+}
+inline bool InternalDimension_eMeasurementUnit_Parse(
+    const ::std::string& name, InternalDimension_eMeasurementUnit* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<InternalDimension_eMeasurementUnit>(
+    InternalDimension_eMeasurementUnit_descriptor(), name, value);
+}
 enum SolveRequest_SolveType {
   SolveRequest_SolveType_Optimise = 0
 };
@@ -152,26 +187,45 @@ inline bool SolveRequest_SolveType_Parse(
   return ::google::protobuf::internal::ParseNamedEnum<SolveRequest_SolveType>(
     SolveRequest_SolveType_descriptor(), name, value);
 }
+enum SolveRequest_GeometryOutput {
+  SolveRequest_GeometryOutput_None = 0,
+  SolveRequest_GeometryOutput_Aggregate = 1
+};
+bool SolveRequest_GeometryOutput_IsValid(int value);
+const SolveRequest_GeometryOutput SolveRequest_GeometryOutput_GeometryOutput_MIN = SolveRequest_GeometryOutput_None;
+const SolveRequest_GeometryOutput SolveRequest_GeometryOutput_GeometryOutput_MAX = SolveRequest_GeometryOutput_Aggregate;
+const int SolveRequest_GeometryOutput_GeometryOutput_ARRAYSIZE = SolveRequest_GeometryOutput_GeometryOutput_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* SolveRequest_GeometryOutput_descriptor();
+inline const ::std::string& SolveRequest_GeometryOutput_Name(SolveRequest_GeometryOutput value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    SolveRequest_GeometryOutput_descriptor(), value);
+}
+inline bool SolveRequest_GeometryOutput_Parse(
+    const ::std::string& name, SolveRequest_GeometryOutput* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<SolveRequest_GeometryOutput>(
+    SolveRequest_GeometryOutput_descriptor(), name, value);
+}
 // ===================================================================
 
-class Dimension : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.Dimension) */ {
+class InternalDimension : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.InternalDimension) */ {
  public:
-  Dimension();
-  virtual ~Dimension();
+  InternalDimension();
+  virtual ~InternalDimension();
 
-  Dimension(const Dimension& from);
+  InternalDimension(const InternalDimension& from);
 
-  inline Dimension& operator=(const Dimension& from) {
+  inline InternalDimension& operator=(const InternalDimension& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  Dimension(Dimension&& from) noexcept
-    : Dimension() {
+  InternalDimension(InternalDimension&& from) noexcept
+    : InternalDimension() {
     *this = ::std::move(from);
   }
 
-  inline Dimension& operator=(Dimension&& from) noexcept {
+  inline InternalDimension& operator=(InternalDimension&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -188,34 +242,34 @@ class Dimension : public ::google::protobuf::Message /* @@protoc_insertion_point
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const Dimension& default_instance();
+  static const InternalDimension& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const Dimension* internal_default_instance() {
-    return reinterpret_cast<const Dimension*>(
-               &_Dimension_default_instance_);
+  static inline const InternalDimension* internal_default_instance() {
+    return reinterpret_cast<const InternalDimension*>(
+               &_InternalDimension_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  void Swap(Dimension* other);
-  friend void swap(Dimension& a, Dimension& b) {
+  void Swap(InternalDimension* other);
+  friend void swap(InternalDimension& a, InternalDimension& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline Dimension* New() const final {
-    return CreateMaybeMessage<Dimension>(NULL);
+  inline InternalDimension* New() const final {
+    return CreateMaybeMessage<InternalDimension>(NULL);
   }
 
-  Dimension* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<Dimension>(arena);
+  InternalDimension* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<InternalDimension>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const Dimension& from);
-  void MergeFrom(const Dimension& from);
+  void CopyFrom(const InternalDimension& from);
+  void MergeFrom(const InternalDimension& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -232,7 +286,176 @@ class Dimension : public ::google::protobuf::Message /* @@protoc_insertion_point
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(Dimension* other);
+  void InternalSwap(InternalDimension* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef InternalDimension_eMeasurementUnit eMeasurementUnit;
+  static const eMeasurementUnit SECONDS =
+    InternalDimension_eMeasurementUnit_SECONDS;
+  static const eMeasurementUnit MINUTES =
+    InternalDimension_eMeasurementUnit_MINUTES;
+  static const eMeasurementUnit HOURS =
+    InternalDimension_eMeasurementUnit_HOURS;
+  static const eMeasurementUnit DAYS =
+    InternalDimension_eMeasurementUnit_DAYS;
+  static const eMeasurementUnit KILOMETRES =
+    InternalDimension_eMeasurementUnit_KILOMETRES;
+  static const eMeasurementUnit MILES =
+    InternalDimension_eMeasurementUnit_MILES;
+  static inline bool eMeasurementUnit_IsValid(int value) {
+    return InternalDimension_eMeasurementUnit_IsValid(value);
+  }
+  static const eMeasurementUnit eMeasurementUnit_MIN =
+    InternalDimension_eMeasurementUnit_eMeasurementUnit_MIN;
+  static const eMeasurementUnit eMeasurementUnit_MAX =
+    InternalDimension_eMeasurementUnit_eMeasurementUnit_MAX;
+  static const int eMeasurementUnit_ARRAYSIZE =
+    InternalDimension_eMeasurementUnit_eMeasurementUnit_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  eMeasurementUnit_descriptor() {
+    return InternalDimension_eMeasurementUnit_descriptor();
+  }
+  static inline const ::std::string& eMeasurementUnit_Name(eMeasurementUnit value) {
+    return InternalDimension_eMeasurementUnit_Name(value);
+  }
+  static inline bool eMeasurementUnit_Parse(const ::std::string& name,
+      eMeasurementUnit* value) {
+    return InternalDimension_eMeasurementUnit_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // required string id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
+  #if LANG_CXX11
+  void set_id(::std::string&& value);
+  #endif
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
+
+  // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+  bool has_measurementunit() const;
+  void clear_measurementunit();
+  static const int kMeasurementUnitFieldNumber = 2;
+  ::NS3::InternalDimension_eMeasurementUnit measurementunit() const;
+  void set_measurementunit(::NS3::InternalDimension_eMeasurementUnit value);
+
+  // @@protoc_insertion_point(class_scope:NS3.InternalDimension)
+ private:
+  void set_has_id();
+  void clear_has_id();
+  void set_has_measurementunit();
+  void clear_has_measurementunit();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  int measurementunit_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class UserDimension : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.UserDimension) */ {
+ public:
+  UserDimension();
+  virtual ~UserDimension();
+
+  UserDimension(const UserDimension& from);
+
+  inline UserDimension& operator=(const UserDimension& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UserDimension(UserDimension&& from) noexcept
+    : UserDimension() {
+    *this = ::std::move(from);
+  }
+
+  inline UserDimension& operator=(UserDimension&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UserDimension& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UserDimension* internal_default_instance() {
+    return reinterpret_cast<const UserDimension*>(
+               &_UserDimension_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(UserDimension* other);
+  friend void swap(UserDimension& a, UserDimension& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UserDimension* New() const final {
+    return CreateMaybeMessage<UserDimension>(NULL);
+  }
+
+  UserDimension* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UserDimension>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UserDimension& from);
+  void MergeFrom(const UserDimension& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UserDimension* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -248,30 +471,198 @@ class Dimension : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
-  // required string name = 1;
-  bool has_name() const;
-  void clear_name();
-  static const int kNameFieldNumber = 1;
-  const ::std::string& name() const;
-  void set_name(const ::std::string& value);
+  // required string id = 1;
+  bool has_id() const;
+  void clear_id();
+  static const int kIdFieldNumber = 1;
+  const ::std::string& id() const;
+  void set_id(const ::std::string& value);
   #if LANG_CXX11
-  void set_name(::std::string&& value);
+  void set_id(::std::string&& value);
   #endif
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  ::std::string* mutable_name();
-  ::std::string* release_name();
-  void set_allocated_name(::std::string* name);
+  void set_id(const char* value);
+  void set_id(const char* value, size_t size);
+  ::std::string* mutable_id();
+  ::std::string* release_id();
+  void set_allocated_id(::std::string* id);
 
-  // @@protoc_insertion_point(class_scope:NS3.Dimension)
+  // required string units = 2;
+  bool has_units() const;
+  void clear_units();
+  static const int kUnitsFieldNumber = 2;
+  const ::std::string& units() const;
+  void set_units(const ::std::string& value);
+  #if LANG_CXX11
+  void set_units(::std::string&& value);
+  #endif
+  void set_units(const char* value);
+  void set_units(const char* value, size_t size);
+  ::std::string* mutable_units();
+  ::std::string* release_units();
+  void set_allocated_units(::std::string* units);
+
+  // @@protoc_insertion_point(class_scope:NS3.UserDimension)
  private:
-  void set_has_name();
-  void clear_has_name();
+  void set_has_id();
+  void clear_has_id();
+  void set_has_units();
+  void clear_has_units();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr name_;
+  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr units_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class DimensionConfiguration : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.DimensionConfiguration) */ {
+ public:
+  DimensionConfiguration();
+  virtual ~DimensionConfiguration();
+
+  DimensionConfiguration(const DimensionConfiguration& from);
+
+  inline DimensionConfiguration& operator=(const DimensionConfiguration& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  DimensionConfiguration(DimensionConfiguration&& from) noexcept
+    : DimensionConfiguration() {
+    *this = ::std::move(from);
+  }
+
+  inline DimensionConfiguration& operator=(DimensionConfiguration&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const DimensionConfiguration& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const DimensionConfiguration* internal_default_instance() {
+    return reinterpret_cast<const DimensionConfiguration*>(
+               &_DimensionConfiguration_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(DimensionConfiguration* other);
+  friend void swap(DimensionConfiguration& a, DimensionConfiguration& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline DimensionConfiguration* New() const final {
+    return CreateMaybeMessage<DimensionConfiguration>(NULL);
+  }
+
+  DimensionConfiguration* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<DimensionConfiguration>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const DimensionConfiguration& from);
+  void MergeFrom(const DimensionConfiguration& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(DimensionConfiguration* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .NS3.UserDimension userDimensions = 3;
+  int userdimensions_size() const;
+  void clear_userdimensions();
+  static const int kUserDimensionsFieldNumber = 3;
+  ::NS3::UserDimension* mutable_userdimensions(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::UserDimension >*
+      mutable_userdimensions();
+  const ::NS3::UserDimension& userdimensions(int index) const;
+  ::NS3::UserDimension* add_userdimensions();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::UserDimension >&
+      userdimensions() const;
+
+  // optional .NS3.InternalDimension timeConfig = 1;
+  bool has_timeconfig() const;
+  void clear_timeconfig();
+  static const int kTimeConfigFieldNumber = 1;
+  private:
+  const ::NS3::InternalDimension& _internal_timeconfig() const;
+  public:
+  const ::NS3::InternalDimension& timeconfig() const;
+  ::NS3::InternalDimension* release_timeconfig();
+  ::NS3::InternalDimension* mutable_timeconfig();
+  void set_allocated_timeconfig(::NS3::InternalDimension* timeconfig);
+
+  // optional .NS3.InternalDimension distanceConfig = 2;
+  bool has_distanceconfig() const;
+  void clear_distanceconfig();
+  static const int kDistanceConfigFieldNumber = 2;
+  private:
+  const ::NS3::InternalDimension& _internal_distanceconfig() const;
+  public:
+  const ::NS3::InternalDimension& distanceconfig() const;
+  ::NS3::InternalDimension* release_distanceconfig();
+  ::NS3::InternalDimension* mutable_distanceconfig();
+  void set_allocated_distanceconfig(::NS3::InternalDimension* distanceconfig);
+
+  // @@protoc_insertion_point(class_scope:NS3.DimensionConfiguration)
+ private:
+  void set_has_timeconfig();
+  void clear_has_timeconfig();
+  void set_has_distanceconfig();
+  void clear_has_distanceconfig();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::UserDimension > userdimensions_;
+  ::NS3::InternalDimension* timeconfig_;
+  ::NS3::InternalDimension* distanceconfig_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -318,7 +709,7 @@ class Geocode : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Geocode_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   void Swap(Geocode* other);
   friend void swap(Geocode& a, Geocode& b) {
@@ -445,7 +836,7 @@ class UnitDimensionCost : public ::google::protobuf::Message /* @@protoc_inserti
                &_UnitDimensionCost_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   void Swap(UnitDimensionCost* other);
   friend void swap(UnitDimensionCost& a, UnitDimensionCost& b) {
@@ -595,7 +986,7 @@ class FixedDimensionCost : public ::google::protobuf::Message /* @@protoc_insert
                &_FixedDimensionCost_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    5;
 
   void Swap(FixedDimensionCost* other);
   friend void swap(FixedDimensionCost& a, FixedDimensionCost& b) {
@@ -732,7 +1123,7 @@ class FlowDimensionalConstraint : public ::google::protobuf::Message /* @@protoc
                &_FlowDimensionalConstraint_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    6;
 
   void Swap(FlowDimensionalConstraint* other);
   friend void swap(FlowDimensionalConstraint& a, FlowDimensionalConstraint& b) {
@@ -895,7 +1286,7 @@ class DimensionRange : public ::google::protobuf::Message /* @@protoc_insertion_
                &_DimensionRange_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    7;
 
   void Swap(DimensionRange* other);
   friend void swap(DimensionRange& a, DimensionRange& b) {
@@ -1050,7 +1441,7 @@ class Node_ProductFlow : public ::google::protobuf::Message /* @@protoc_insertio
                &_Node_ProductFlow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    8;
 
   void Swap(Node_ProductFlow* other);
   friend void swap(Node_ProductFlow& a, Node_ProductFlow& b) {
@@ -1211,7 +1602,7 @@ class Node_Flow : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_Node_Flow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    9;
 
   void Swap(Node_Flow* other);
   friend void swap(Node_Flow& a, Node_Flow& b) {
@@ -1354,7 +1745,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Node_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    10;
 
   void Swap(Node* other);
   friend void swap(Node& a, Node& b) {
@@ -1467,32 +1858,10 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::std::string>& allowablesources() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_allowablesources();
 
-  // repeated string allowableServiceClasses = 9;
-  int allowableserviceclasses_size() const;
-  void clear_allowableserviceclasses();
-  static const int kAllowableServiceClassesFieldNumber = 9;
-  const ::std::string& allowableserviceclasses(int index) const;
-  ::std::string* mutable_allowableserviceclasses(int index);
-  void set_allowableserviceclasses(int index, const ::std::string& value);
-  #if LANG_CXX11
-  void set_allowableserviceclasses(int index, ::std::string&& value);
-  #endif
-  void set_allowableserviceclasses(int index, const char* value);
-  void set_allowableserviceclasses(int index, const char* value, size_t size);
-  ::std::string* add_allowableserviceclasses();
-  void add_allowableserviceclasses(const ::std::string& value);
-  #if LANG_CXX11
-  void add_allowableserviceclasses(::std::string&& value);
-  #endif
-  void add_allowableserviceclasses(const char* value);
-  void add_allowableserviceclasses(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& allowableserviceclasses() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_allowableserviceclasses();
-
-  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
+  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
   int flowconstraints_size() const;
   void clear_flowconstraints();
-  static const int kFlowConstraintsFieldNumber = 10;
+  static const int kFlowConstraintsFieldNumber = 9;
   ::NS3::FlowDimensionalConstraint* mutable_flowconstraints(int index);
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint >*
       mutable_flowconstraints();
@@ -1568,7 +1937,6 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductFlow > consumption_;
   ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductFlow > productflows_;
   ::google::protobuf::RepeatedPtrField< ::std::string> allowablesources_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> allowableserviceclasses_;
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint > flowconstraints_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::NS3::Geocode* geocode_;
@@ -1620,7 +1988,7 @@ class ProductGroup_ProductSpecification : public ::google::protobuf::Message /* 
                &_ProductGroup_ProductSpecification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    11;
 
   void Swap(ProductGroup_ProductSpecification* other);
   friend void swap(ProductGroup_ProductSpecification& a, ProductGroup_ProductSpecification& b) {
@@ -1778,7 +2146,7 @@ class ProductGroup : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_ProductGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(ProductGroup* other);
   friend void swap(ProductGroup& a, ProductGroup& b) {
@@ -1936,7 +2304,7 @@ class LaneRate : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_LaneRate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(LaneRate* other);
   friend void swap(LaneRate& a, LaneRate& b) {
@@ -2169,7 +2537,7 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_CostModel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(CostModel* other);
   friend void swap(CostModel& a, CostModel& b) {
@@ -2312,21 +2680,6 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_destination();
   void set_allocated_destination(::std::string* destination);
 
-  // optional string serviceClass = 8;
-  bool has_serviceclass() const;
-  void clear_serviceclass();
-  static const int kServiceClassFieldNumber = 8;
-  const ::std::string& serviceclass() const;
-  void set_serviceclass(const ::std::string& value);
-  #if LANG_CXX11
-  void set_serviceclass(::std::string&& value);
-  #endif
-  void set_serviceclass(const char* value);
-  void set_serviceclass(const char* value, size_t size);
-  ::std::string* mutable_serviceclass();
-  ::std::string* release_serviceclass();
-  void set_allocated_serviceclass(::std::string* serviceclass);
-
   // @@protoc_insertion_point(class_scope:NS3.CostModel)
  private:
   void set_has_id();
@@ -2335,8 +2688,6 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   void clear_has_source();
   void set_has_destination();
   void clear_has_destination();
-  void set_has_serviceclass();
-  void clear_has_serviceclass();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -2350,7 +2701,6 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr source_;
   ::google::protobuf::internal::ArenaStringPtr destination_;
-  ::google::protobuf::internal::ArenaStringPtr serviceclass_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2397,7 +2747,7 @@ class Model : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Model_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(Model* other);
   friend void swap(Model& a, Model& b) {
@@ -2449,18 +2799,6 @@ class Model : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
 
   // accessors -------------------------------------------------------
 
-  // repeated .NS3.Dimension dimensions = 1;
-  int dimensions_size() const;
-  void clear_dimensions();
-  static const int kDimensionsFieldNumber = 1;
-  ::NS3::Dimension* mutable_dimensions(int index);
-  ::google::protobuf::RepeatedPtrField< ::NS3::Dimension >*
-      mutable_dimensions();
-  const ::NS3::Dimension& dimensions(int index) const;
-  ::NS3::Dimension* add_dimensions();
-  const ::google::protobuf::RepeatedPtrField< ::NS3::Dimension >&
-      dimensions() const;
-
   // repeated .NS3.Node nodes = 2;
   int nodes_size() const;
   void clear_nodes();
@@ -2509,17 +2847,31 @@ class Model : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
   const ::google::protobuf::RepeatedPtrField< ::NS3::ProductGroup >&
       productgroups() const;
 
+  // required .NS3.DimensionConfiguration dimensions = 1;
+  bool has_dimensions() const;
+  void clear_dimensions();
+  static const int kDimensionsFieldNumber = 1;
+  private:
+  const ::NS3::DimensionConfiguration& _internal_dimensions() const;
+  public:
+  const ::NS3::DimensionConfiguration& dimensions() const;
+  ::NS3::DimensionConfiguration* release_dimensions();
+  ::NS3::DimensionConfiguration* mutable_dimensions();
+  void set_allocated_dimensions(::NS3::DimensionConfiguration* dimensions);
+
   // @@protoc_insertion_point(class_scope:NS3.Model)
  private:
+  void set_has_dimensions();
+  void clear_has_dimensions();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::NS3::Dimension > dimensions_;
   ::google::protobuf::RepeatedPtrField< ::NS3::Node > nodes_;
   ::google::protobuf::RepeatedPtrField< ::NS3::LaneRate > lanerates_;
   ::google::protobuf::RepeatedPtrField< ::NS3::CostModel > costmodels_;
   ::google::protobuf::RepeatedPtrField< ::NS3::ProductGroup > productgroups_;
+  ::NS3::DimensionConfiguration* dimensions_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2566,7 +2918,7 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_SolveRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(SolveRequest* other);
   friend void swap(SolveRequest& a, SolveRequest& b) {
@@ -2640,6 +2992,32 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
     return SolveRequest_SolveType_Parse(name, value);
   }
 
+  typedef SolveRequest_GeometryOutput GeometryOutput;
+  static const GeometryOutput None =
+    SolveRequest_GeometryOutput_None;
+  static const GeometryOutput Aggregate =
+    SolveRequest_GeometryOutput_Aggregate;
+  static inline bool GeometryOutput_IsValid(int value) {
+    return SolveRequest_GeometryOutput_IsValid(value);
+  }
+  static const GeometryOutput GeometryOutput_MIN =
+    SolveRequest_GeometryOutput_GeometryOutput_MIN;
+  static const GeometryOutput GeometryOutput_MAX =
+    SolveRequest_GeometryOutput_GeometryOutput_MAX;
+  static const int GeometryOutput_ARRAYSIZE =
+    SolveRequest_GeometryOutput_GeometryOutput_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  GeometryOutput_descriptor() {
+    return SolveRequest_GeometryOutput_descriptor();
+  }
+  static inline const ::std::string& GeometryOutput_Name(GeometryOutput value) {
+    return SolveRequest_GeometryOutput_Name(value);
+  }
+  static inline bool GeometryOutput_Parse(const ::std::string& name,
+      GeometryOutput* value) {
+    return SolveRequest_GeometryOutput_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   // optional string modelID = 2;
@@ -2676,6 +3054,13 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::NS3::SolveRequest_SolveType solvetype() const;
   void set_solvetype(::NS3::SolveRequest_SolveType value);
 
+  // optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+  bool has_geometryoutput() const;
+  void clear_geometryoutput();
+  static const int kGeometryOutputFieldNumber = 5;
+  ::NS3::SolveRequest_GeometryOutput geometryoutput() const;
+  void set_geometryoutput(::NS3::SolveRequest_GeometryOutput value);
+
   // @@protoc_insertion_point(class_scope:NS3.SolveRequest)
  private:
   void set_has_model();
@@ -2684,6 +3069,8 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
   void clear_has_modelid();
   void set_has_solvetype();
   void clear_has_solvetype();
+  void set_has_geometryoutput();
+  void clear_has_geometryoutput();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
@@ -2691,6 +3078,7 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::ArenaStringPtr modelid_;
   ::NS3::Model* model_;
   int solvetype_;
+  int geometryoutput_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2737,7 +3125,7 @@ class SolutionResponse_Assignment : public ::google::protobuf::Message /* @@prot
                &_SolutionResponse_Assignment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(SolutionResponse_Assignment* other);
   friend void swap(SolutionResponse_Assignment& a, SolutionResponse_Assignment& b) {
@@ -2987,7 +3375,7 @@ class SolutionResponse_NodeProductFlow : public ::google::protobuf::Message /* @
                &_SolutionResponse_NodeProductFlow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(SolutionResponse_NodeProductFlow* other);
   friend void swap(SolutionResponse_NodeProductFlow& a, SolutionResponse_NodeProductFlow& b) {
@@ -3230,7 +3618,7 @@ class SolutionResponse_NodeFlow : public ::google::protobuf::Message /* @@protoc
                &_SolutionResponse_NodeFlow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(SolutionResponse_NodeFlow* other);
   friend void swap(SolutionResponse_NodeFlow& a, SolutionResponse_NodeFlow& b) {
@@ -3433,24 +3821,24 @@ class SolutionResponse_NodeFlow : public ::google::protobuf::Message /* @@protoc
 };
 // -------------------------------------------------------------------
 
-class SolutionResponse_GeometryEdgeSummary : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse.GeometryEdgeSummary) */ {
+class SolutionResponse_GeometrySequence : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse.GeometrySequence) */ {
  public:
-  SolutionResponse_GeometryEdgeSummary();
-  virtual ~SolutionResponse_GeometryEdgeSummary();
+  SolutionResponse_GeometrySequence();
+  virtual ~SolutionResponse_GeometrySequence();
 
-  SolutionResponse_GeometryEdgeSummary(const SolutionResponse_GeometryEdgeSummary& from);
+  SolutionResponse_GeometrySequence(const SolutionResponse_GeometrySequence& from);
 
-  inline SolutionResponse_GeometryEdgeSummary& operator=(const SolutionResponse_GeometryEdgeSummary& from) {
+  inline SolutionResponse_GeometrySequence& operator=(const SolutionResponse_GeometrySequence& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  SolutionResponse_GeometryEdgeSummary(SolutionResponse_GeometryEdgeSummary&& from) noexcept
-    : SolutionResponse_GeometryEdgeSummary() {
+  SolutionResponse_GeometrySequence(SolutionResponse_GeometrySequence&& from) noexcept
+    : SolutionResponse_GeometrySequence() {
     *this = ::std::move(from);
   }
 
-  inline SolutionResponse_GeometryEdgeSummary& operator=(SolutionResponse_GeometryEdgeSummary&& from) noexcept {
+  inline SolutionResponse_GeometrySequence& operator=(SolutionResponse_GeometrySequence&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -3467,34 +3855,34 @@ class SolutionResponse_GeometryEdgeSummary : public ::google::protobuf::Message 
   }
 
   static const ::google::protobuf::Descriptor* descriptor();
-  static const SolutionResponse_GeometryEdgeSummary& default_instance();
+  static const SolutionResponse_GeometrySequence& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SolutionResponse_GeometryEdgeSummary* internal_default_instance() {
-    return reinterpret_cast<const SolutionResponse_GeometryEdgeSummary*>(
-               &_SolutionResponse_GeometryEdgeSummary_default_instance_);
+  static inline const SolutionResponse_GeometrySequence* internal_default_instance() {
+    return reinterpret_cast<const SolutionResponse_GeometrySequence*>(
+               &_SolutionResponse_GeometrySequence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
-  void Swap(SolutionResponse_GeometryEdgeSummary* other);
-  friend void swap(SolutionResponse_GeometryEdgeSummary& a, SolutionResponse_GeometryEdgeSummary& b) {
+  void Swap(SolutionResponse_GeometrySequence* other);
+  friend void swap(SolutionResponse_GeometrySequence& a, SolutionResponse_GeometrySequence& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline SolutionResponse_GeometryEdgeSummary* New() const final {
-    return CreateMaybeMessage<SolutionResponse_GeometryEdgeSummary>(NULL);
+  inline SolutionResponse_GeometrySequence* New() const final {
+    return CreateMaybeMessage<SolutionResponse_GeometrySequence>(NULL);
   }
 
-  SolutionResponse_GeometryEdgeSummary* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SolutionResponse_GeometryEdgeSummary>(arena);
+  SolutionResponse_GeometrySequence* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SolutionResponse_GeometrySequence>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SolutionResponse_GeometryEdgeSummary& from);
-  void MergeFrom(const SolutionResponse_GeometryEdgeSummary& from);
+  void CopyFrom(const SolutionResponse_GeometrySequence& from);
+  void MergeFrom(const SolutionResponse_GeometrySequence& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -3511,7 +3899,7 @@ class SolutionResponse_GeometryEdgeSummary : public ::google::protobuf::Message 
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(SolutionResponse_GeometryEdgeSummary* other);
+  void InternalSwap(SolutionResponse_GeometrySequence* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -3527,90 +3915,194 @@ class SolutionResponse_GeometryEdgeSummary : public ::google::protobuf::Message 
 
   // accessors -------------------------------------------------------
 
-  // repeated float fxs = 1;
-  int fxs_size() const;
-  void clear_fxs();
-  static const int kFxsFieldNumber = 1;
-  float fxs(int index) const;
-  void set_fxs(int index, float value);
-  void add_fxs(float value);
+  // repeated float x = 1;
+  int x_size() const;
+  void clear_x();
+  static const int kXFieldNumber = 1;
+  float x(int index) const;
+  void set_x(int index, float value);
+  void add_x(float value);
   const ::google::protobuf::RepeatedField< float >&
-      fxs() const;
+      x() const;
   ::google::protobuf::RepeatedField< float >*
-      mutable_fxs();
+      mutable_x();
 
-  // repeated float fys = 2;
-  int fys_size() const;
-  void clear_fys();
-  static const int kFysFieldNumber = 2;
-  float fys(int index) const;
-  void set_fys(int index, float value);
-  void add_fys(float value);
+  // repeated float y = 2;
+  int y_size() const;
+  void clear_y();
+  static const int kYFieldNumber = 2;
+  float y(int index) const;
+  void set_y(int index, float value);
+  void add_y(float value);
   const ::google::protobuf::RepeatedField< float >&
-      fys() const;
+      y() const;
   ::google::protobuf::RepeatedField< float >*
-      mutable_fys();
+      mutable_y();
 
-  // repeated float txs = 3;
-  int txs_size() const;
-  void clear_txs();
-  static const int kTxsFieldNumber = 3;
-  float txs(int index) const;
-  void set_txs(int index, float value);
-  void add_txs(float value);
-  const ::google::protobuf::RepeatedField< float >&
-      txs() const;
-  ::google::protobuf::RepeatedField< float >*
-      mutable_txs();
-
-  // repeated float tys = 4;
-  int tys_size() const;
-  void clear_tys();
-  static const int kTysFieldNumber = 4;
-  float tys(int index) const;
-  void set_tys(int index, float value);
-  void add_tys(float value);
-  const ::google::protobuf::RepeatedField< float >&
-      tys() const;
-  ::google::protobuf::RepeatedField< float >*
-      mutable_tys();
-
-  // repeated float weights = 5;
-  int weights_size() const;
-  void clear_weights();
-  static const int kWeightsFieldNumber = 5;
-  float weights(int index) const;
-  void set_weights(int index, float value);
-  void add_weights(float value);
-  const ::google::protobuf::RepeatedField< float >&
-      weights() const;
-  ::google::protobuf::RepeatedField< float >*
-      mutable_weights();
-
-  // repeated int32 types = 6;
-  int types_size() const;
-  void clear_types();
-  static const int kTypesFieldNumber = 6;
-  ::google::protobuf::int32 types(int index) const;
-  void set_types(int index, ::google::protobuf::int32 value);
-  void add_types(::google::protobuf::int32 value);
-  const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-      types() const;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-      mutable_types();
-
-  // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.GeometrySequence)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::RepeatedField< float > fxs_;
-  ::google::protobuf::RepeatedField< float > fys_;
-  ::google::protobuf::RepeatedField< float > txs_;
-  ::google::protobuf::RepeatedField< float > tys_;
-  ::google::protobuf::RepeatedField< float > weights_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > types_;
+  ::google::protobuf::RepeatedField< float > x_;
+  ::google::protobuf::RepeatedField< float > y_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse.Route) */ {
+ public:
+  SolutionResponse_Route();
+  virtual ~SolutionResponse_Route();
+
+  SolutionResponse_Route(const SolutionResponse_Route& from);
+
+  inline SolutionResponse_Route& operator=(const SolutionResponse_Route& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SolutionResponse_Route(SolutionResponse_Route&& from) noexcept
+    : SolutionResponse_Route() {
+    *this = ::std::move(from);
+  }
+
+  inline SolutionResponse_Route& operator=(SolutionResponse_Route&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SolutionResponse_Route& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SolutionResponse_Route* internal_default_instance() {
+    return reinterpret_cast<const SolutionResponse_Route*>(
+               &_SolutionResponse_Route_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    21;
+
+  void Swap(SolutionResponse_Route* other);
+  friend void swap(SolutionResponse_Route& a, SolutionResponse_Route& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SolutionResponse_Route* New() const final {
+    return CreateMaybeMessage<SolutionResponse_Route>(NULL);
+  }
+
+  SolutionResponse_Route* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SolutionResponse_Route>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SolutionResponse_Route& from);
+  void MergeFrom(const SolutionResponse_Route& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SolutionResponse_Route* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated int32 geometrySequence = 3;
+  int geometrysequence_size() const;
+  void clear_geometrysequence();
+  static const int kGeometrySequenceFieldNumber = 3;
+  ::google::protobuf::int32 geometrysequence(int index) const;
+  void set_geometrysequence(int index, ::google::protobuf::int32 value);
+  void add_geometrysequence(::google::protobuf::int32 value);
+  const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      geometrysequence() const;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_geometrysequence();
+
+  // required string fromId = 1;
+  bool has_fromid() const;
+  void clear_fromid();
+  static const int kFromIdFieldNumber = 1;
+  const ::std::string& fromid() const;
+  void set_fromid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_fromid(::std::string&& value);
+  #endif
+  void set_fromid(const char* value);
+  void set_fromid(const char* value, size_t size);
+  ::std::string* mutable_fromid();
+  ::std::string* release_fromid();
+  void set_allocated_fromid(::std::string* fromid);
+
+  // required string toId = 2;
+  bool has_toid() const;
+  void clear_toid();
+  static const int kToIdFieldNumber = 2;
+  const ::std::string& toid() const;
+  void set_toid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_toid(::std::string&& value);
+  #endif
+  void set_toid(const char* value);
+  void set_toid(const char* value, size_t size);
+  ::std::string* mutable_toid();
+  ::std::string* release_toid();
+  void set_allocated_toid(::std::string* toid);
+
+  // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.Route)
+ private:
+  void set_has_fromid();
+  void clear_has_fromid();
+  void set_has_toid();
+  void clear_has_toid();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > geometrysequence_;
+  ::google::protobuf::internal::ArenaStringPtr fromid_;
+  ::google::protobuf::internal::ArenaStringPtr toid_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -3657,7 +4149,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
                &_SolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    22;
 
   void Swap(SolutionResponse* other);
   friend void swap(SolutionResponse& a, SolutionResponse& b) {
@@ -3710,7 +4202,8 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   typedef SolutionResponse_Assignment Assignment;
   typedef SolutionResponse_NodeProductFlow NodeProductFlow;
   typedef SolutionResponse_NodeFlow NodeFlow;
-  typedef SolutionResponse_GeometryEdgeSummary GeometryEdgeSummary;
+  typedef SolutionResponse_GeometrySequence GeometrySequence;
+  typedef SolutionResponse_Route Route;
 
   // accessors -------------------------------------------------------
 
@@ -3750,17 +4243,29 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductFlow >&
       nodeproductflows() const;
 
-  // repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
-  int geometryedgesummary_size() const;
-  void clear_geometryedgesummary();
-  static const int kGeometryEdgeSummaryFieldNumber = 7;
-  ::NS3::SolutionResponse_GeometryEdgeSummary* mutable_geometryedgesummary(int index);
-  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometryEdgeSummary >*
-      mutable_geometryedgesummary();
-  const ::NS3::SolutionResponse_GeometryEdgeSummary& geometryedgesummary(int index) const;
-  ::NS3::SolutionResponse_GeometryEdgeSummary* add_geometryedgesummary();
-  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometryEdgeSummary >&
-      geometryedgesummary() const;
+  // repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
+  int geometrysequence_size() const;
+  void clear_geometrysequence();
+  static const int kGeometrySequenceFieldNumber = 7;
+  ::NS3::SolutionResponse_GeometrySequence* mutable_geometrysequence(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence >*
+      mutable_geometrysequence();
+  const ::NS3::SolutionResponse_GeometrySequence& geometrysequence(int index) const;
+  ::NS3::SolutionResponse_GeometrySequence* add_geometrysequence();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence >&
+      geometrysequence() const;
+
+  // repeated .NS3.SolutionResponse.Route routes = 8;
+  int routes_size() const;
+  void clear_routes();
+  static const int kRoutesFieldNumber = 8;
+  ::NS3::SolutionResponse_Route* mutable_routes(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route >*
+      mutable_routes();
+  const ::NS3::SolutionResponse_Route& routes(int index) const;
+  ::NS3::SolutionResponse_Route* add_routes();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route >&
+      routes() const;
 
   // required float objective = 1;
   bool has_objective() const;
@@ -3798,7 +4303,8 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Assignment > assignments_;
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeFlow > nodeflows_;
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductFlow > nodeproductflows_;
-  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometryEdgeSummary > geometryedgesummary_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence > geometrysequence_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route > routes_;
   float objective_;
   float lowerbound_;
   float optimalitygap_;
@@ -3813,72 +4319,383 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// Dimension
+// InternalDimension
 
-// required string name = 1;
-inline bool Dimension::has_name() const {
+// required string id = 1;
+inline bool InternalDimension::has_id() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Dimension::set_has_name() {
+inline void InternalDimension::set_has_id() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Dimension::clear_has_name() {
+inline void InternalDimension::clear_has_id() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Dimension::clear_name() {
-  name_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_name();
+inline void InternalDimension::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_id();
 }
-inline const ::std::string& Dimension::name() const {
-  // @@protoc_insertion_point(field_get:NS3.Dimension.name)
-  return name_.GetNoArena();
+inline const ::std::string& InternalDimension::id() const {
+  // @@protoc_insertion_point(field_get:NS3.InternalDimension.id)
+  return id_.GetNoArena();
 }
-inline void Dimension::set_name(const ::std::string& value) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.Dimension.name)
+inline void InternalDimension::set_id(const ::std::string& value) {
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.InternalDimension.id)
 }
 #if LANG_CXX11
-inline void Dimension::set_name(::std::string&& value) {
-  set_has_name();
-  name_.SetNoArena(
+inline void InternalDimension::set_id(::std::string&& value) {
+  set_has_id();
+  id_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.Dimension.name)
+  // @@protoc_insertion_point(field_set_rvalue:NS3.InternalDimension.id)
 }
 #endif
-inline void Dimension::set_name(const char* value) {
+inline void InternalDimension::set_id(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.Dimension.name)
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.InternalDimension.id)
 }
-inline void Dimension::set_name(const char* value, size_t size) {
-  set_has_name();
-  name_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+inline void InternalDimension::set_id(const char* value, size_t size) {
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.Dimension.name)
+  // @@protoc_insertion_point(field_set_pointer:NS3.InternalDimension.id)
 }
-inline ::std::string* Dimension::mutable_name() {
-  set_has_name();
-  // @@protoc_insertion_point(field_mutable:NS3.Dimension.name)
-  return name_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* InternalDimension::mutable_id() {
+  set_has_id();
+  // @@protoc_insertion_point(field_mutable:NS3.InternalDimension.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Dimension::release_name() {
-  // @@protoc_insertion_point(field_release:NS3.Dimension.name)
-  if (!has_name()) {
+inline ::std::string* InternalDimension::release_id() {
+  // @@protoc_insertion_point(field_release:NS3.InternalDimension.id)
+  if (!has_id()) {
     return NULL;
   }
-  clear_has_name();
-  return name_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_id();
+  return id_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Dimension::set_allocated_name(::std::string* name) {
-  if (name != NULL) {
-    set_has_name();
+inline void InternalDimension::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    set_has_id();
   } else {
-    clear_has_name();
+    clear_has_id();
   }
-  name_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), name);
-  // @@protoc_insertion_point(field_set_allocated:NS3.Dimension.name)
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:NS3.InternalDimension.id)
+}
+
+// required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+inline bool InternalDimension::has_measurementunit() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void InternalDimension::set_has_measurementunit() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void InternalDimension::clear_has_measurementunit() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void InternalDimension::clear_measurementunit() {
+  measurementunit_ = 0;
+  clear_has_measurementunit();
+}
+inline ::NS3::InternalDimension_eMeasurementUnit InternalDimension::measurementunit() const {
+  // @@protoc_insertion_point(field_get:NS3.InternalDimension.measurementUnit)
+  return static_cast< ::NS3::InternalDimension_eMeasurementUnit >(measurementunit_);
+}
+inline void InternalDimension::set_measurementunit(::NS3::InternalDimension_eMeasurementUnit value) {
+  assert(::NS3::InternalDimension_eMeasurementUnit_IsValid(value));
+  set_has_measurementunit();
+  measurementunit_ = value;
+  // @@protoc_insertion_point(field_set:NS3.InternalDimension.measurementUnit)
+}
+
+// -------------------------------------------------------------------
+
+// UserDimension
+
+// required string id = 1;
+inline bool UserDimension::has_id() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void UserDimension::set_has_id() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void UserDimension::clear_has_id() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void UserDimension::clear_id() {
+  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_id();
+}
+inline const ::std::string& UserDimension::id() const {
+  // @@protoc_insertion_point(field_get:NS3.UserDimension.id)
+  return id_.GetNoArena();
+}
+inline void UserDimension::set_id(const ::std::string& value) {
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.UserDimension.id)
+}
+#if LANG_CXX11
+inline void UserDimension::set_id(::std::string&& value) {
+  set_has_id();
+  id_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.UserDimension.id)
+}
+#endif
+inline void UserDimension::set_id(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.UserDimension.id)
+}
+inline void UserDimension::set_id(const char* value, size_t size) {
+  set_has_id();
+  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.UserDimension.id)
+}
+inline ::std::string* UserDimension::mutable_id() {
+  set_has_id();
+  // @@protoc_insertion_point(field_mutable:NS3.UserDimension.id)
+  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UserDimension::release_id() {
+  // @@protoc_insertion_point(field_release:NS3.UserDimension.id)
+  if (!has_id()) {
+    return NULL;
+  }
+  clear_has_id();
+  return id_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UserDimension::set_allocated_id(::std::string* id) {
+  if (id != NULL) {
+    set_has_id();
+  } else {
+    clear_has_id();
+  }
+  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
+  // @@protoc_insertion_point(field_set_allocated:NS3.UserDimension.id)
+}
+
+// required string units = 2;
+inline bool UserDimension::has_units() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void UserDimension::set_has_units() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void UserDimension::clear_has_units() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void UserDimension::clear_units() {
+  units_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_units();
+}
+inline const ::std::string& UserDimension::units() const {
+  // @@protoc_insertion_point(field_get:NS3.UserDimension.units)
+  return units_.GetNoArena();
+}
+inline void UserDimension::set_units(const ::std::string& value) {
+  set_has_units();
+  units_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.UserDimension.units)
+}
+#if LANG_CXX11
+inline void UserDimension::set_units(::std::string&& value) {
+  set_has_units();
+  units_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.UserDimension.units)
+}
+#endif
+inline void UserDimension::set_units(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_units();
+  units_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.UserDimension.units)
+}
+inline void UserDimension::set_units(const char* value, size_t size) {
+  set_has_units();
+  units_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.UserDimension.units)
+}
+inline ::std::string* UserDimension::mutable_units() {
+  set_has_units();
+  // @@protoc_insertion_point(field_mutable:NS3.UserDimension.units)
+  return units_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UserDimension::release_units() {
+  // @@protoc_insertion_point(field_release:NS3.UserDimension.units)
+  if (!has_units()) {
+    return NULL;
+  }
+  clear_has_units();
+  return units_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UserDimension::set_allocated_units(::std::string* units) {
+  if (units != NULL) {
+    set_has_units();
+  } else {
+    clear_has_units();
+  }
+  units_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), units);
+  // @@protoc_insertion_point(field_set_allocated:NS3.UserDimension.units)
+}
+
+// -------------------------------------------------------------------
+
+// DimensionConfiguration
+
+// optional .NS3.InternalDimension timeConfig = 1;
+inline bool DimensionConfiguration::has_timeconfig() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void DimensionConfiguration::set_has_timeconfig() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void DimensionConfiguration::clear_has_timeconfig() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void DimensionConfiguration::clear_timeconfig() {
+  if (timeconfig_ != NULL) timeconfig_->Clear();
+  clear_has_timeconfig();
+}
+inline const ::NS3::InternalDimension& DimensionConfiguration::_internal_timeconfig() const {
+  return *timeconfig_;
+}
+inline const ::NS3::InternalDimension& DimensionConfiguration::timeconfig() const {
+  const ::NS3::InternalDimension* p = timeconfig_;
+  // @@protoc_insertion_point(field_get:NS3.DimensionConfiguration.timeConfig)
+  return p != NULL ? *p : *reinterpret_cast<const ::NS3::InternalDimension*>(
+      &::NS3::_InternalDimension_default_instance_);
+}
+inline ::NS3::InternalDimension* DimensionConfiguration::release_timeconfig() {
+  // @@protoc_insertion_point(field_release:NS3.DimensionConfiguration.timeConfig)
+  clear_has_timeconfig();
+  ::NS3::InternalDimension* temp = timeconfig_;
+  timeconfig_ = NULL;
+  return temp;
+}
+inline ::NS3::InternalDimension* DimensionConfiguration::mutable_timeconfig() {
+  set_has_timeconfig();
+  if (timeconfig_ == NULL) {
+    auto* p = CreateMaybeMessage<::NS3::InternalDimension>(GetArenaNoVirtual());
+    timeconfig_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:NS3.DimensionConfiguration.timeConfig)
+  return timeconfig_;
+}
+inline void DimensionConfiguration::set_allocated_timeconfig(::NS3::InternalDimension* timeconfig) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete timeconfig_;
+  }
+  if (timeconfig) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      timeconfig = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, timeconfig, submessage_arena);
+    }
+    set_has_timeconfig();
+  } else {
+    clear_has_timeconfig();
+  }
+  timeconfig_ = timeconfig;
+  // @@protoc_insertion_point(field_set_allocated:NS3.DimensionConfiguration.timeConfig)
+}
+
+// optional .NS3.InternalDimension distanceConfig = 2;
+inline bool DimensionConfiguration::has_distanceconfig() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void DimensionConfiguration::set_has_distanceconfig() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void DimensionConfiguration::clear_has_distanceconfig() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void DimensionConfiguration::clear_distanceconfig() {
+  if (distanceconfig_ != NULL) distanceconfig_->Clear();
+  clear_has_distanceconfig();
+}
+inline const ::NS3::InternalDimension& DimensionConfiguration::_internal_distanceconfig() const {
+  return *distanceconfig_;
+}
+inline const ::NS3::InternalDimension& DimensionConfiguration::distanceconfig() const {
+  const ::NS3::InternalDimension* p = distanceconfig_;
+  // @@protoc_insertion_point(field_get:NS3.DimensionConfiguration.distanceConfig)
+  return p != NULL ? *p : *reinterpret_cast<const ::NS3::InternalDimension*>(
+      &::NS3::_InternalDimension_default_instance_);
+}
+inline ::NS3::InternalDimension* DimensionConfiguration::release_distanceconfig() {
+  // @@protoc_insertion_point(field_release:NS3.DimensionConfiguration.distanceConfig)
+  clear_has_distanceconfig();
+  ::NS3::InternalDimension* temp = distanceconfig_;
+  distanceconfig_ = NULL;
+  return temp;
+}
+inline ::NS3::InternalDimension* DimensionConfiguration::mutable_distanceconfig() {
+  set_has_distanceconfig();
+  if (distanceconfig_ == NULL) {
+    auto* p = CreateMaybeMessage<::NS3::InternalDimension>(GetArenaNoVirtual());
+    distanceconfig_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:NS3.DimensionConfiguration.distanceConfig)
+  return distanceconfig_;
+}
+inline void DimensionConfiguration::set_allocated_distanceconfig(::NS3::InternalDimension* distanceconfig) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete distanceconfig_;
+  }
+  if (distanceconfig) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      distanceconfig = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, distanceconfig, submessage_arena);
+    }
+    set_has_distanceconfig();
+  } else {
+    clear_has_distanceconfig();
+  }
+  distanceconfig_ = distanceconfig;
+  // @@protoc_insertion_point(field_set_allocated:NS3.DimensionConfiguration.distanceConfig)
+}
+
+// repeated .NS3.UserDimension userDimensions = 3;
+inline int DimensionConfiguration::userdimensions_size() const {
+  return userdimensions_.size();
+}
+inline void DimensionConfiguration::clear_userdimensions() {
+  userdimensions_.Clear();
+}
+inline ::NS3::UserDimension* DimensionConfiguration::mutable_userdimensions(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.DimensionConfiguration.userDimensions)
+  return userdimensions_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::UserDimension >*
+DimensionConfiguration::mutable_userdimensions() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.DimensionConfiguration.userDimensions)
+  return &userdimensions_;
+}
+inline const ::NS3::UserDimension& DimensionConfiguration::userdimensions(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.DimensionConfiguration.userDimensions)
+  return userdimensions_.Get(index);
+}
+inline ::NS3::UserDimension* DimensionConfiguration::add_userdimensions() {
+  // @@protoc_insertion_point(field_add:NS3.DimensionConfiguration.userDimensions)
+  return userdimensions_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::UserDimension >&
+DimensionConfiguration::userdimensions() const {
+  // @@protoc_insertion_point(field_list:NS3.DimensionConfiguration.userDimensions)
+  return userdimensions_;
 }
 
 // -------------------------------------------------------------------
@@ -5073,76 +5890,7 @@ inline void Node::set_maximumsources(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:NS3.Node.maximumSources)
 }
 
-// repeated string allowableServiceClasses = 9;
-inline int Node::allowableserviceclasses_size() const {
-  return allowableserviceclasses_.size();
-}
-inline void Node::clear_allowableserviceclasses() {
-  allowableserviceclasses_.Clear();
-}
-inline const ::std::string& Node::allowableserviceclasses(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.Node.allowableServiceClasses)
-  return allowableserviceclasses_.Get(index);
-}
-inline ::std::string* Node::mutable_allowableserviceclasses(int index) {
-  // @@protoc_insertion_point(field_mutable:NS3.Node.allowableServiceClasses)
-  return allowableserviceclasses_.Mutable(index);
-}
-inline void Node::set_allowableserviceclasses(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:NS3.Node.allowableServiceClasses)
-  allowableserviceclasses_.Mutable(index)->assign(value);
-}
-#if LANG_CXX11
-inline void Node::set_allowableserviceclasses(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:NS3.Node.allowableServiceClasses)
-  allowableserviceclasses_.Mutable(index)->assign(std::move(value));
-}
-#endif
-inline void Node::set_allowableserviceclasses(int index, const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  allowableserviceclasses_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:NS3.Node.allowableServiceClasses)
-}
-inline void Node::set_allowableserviceclasses(int index, const char* value, size_t size) {
-  allowableserviceclasses_.Mutable(index)->assign(
-    reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:NS3.Node.allowableServiceClasses)
-}
-inline ::std::string* Node::add_allowableserviceclasses() {
-  // @@protoc_insertion_point(field_add_mutable:NS3.Node.allowableServiceClasses)
-  return allowableserviceclasses_.Add();
-}
-inline void Node::add_allowableserviceclasses(const ::std::string& value) {
-  allowableserviceclasses_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:NS3.Node.allowableServiceClasses)
-}
-#if LANG_CXX11
-inline void Node::add_allowableserviceclasses(::std::string&& value) {
-  allowableserviceclasses_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:NS3.Node.allowableServiceClasses)
-}
-#endif
-inline void Node::add_allowableserviceclasses(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  allowableserviceclasses_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:NS3.Node.allowableServiceClasses)
-}
-inline void Node::add_allowableserviceclasses(const char* value, size_t size) {
-  allowableserviceclasses_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:NS3.Node.allowableServiceClasses)
-}
-inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-Node::allowableserviceclasses() const {
-  // @@protoc_insertion_point(field_list:NS3.Node.allowableServiceClasses)
-  return allowableserviceclasses_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-Node::mutable_allowableserviceclasses() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.Node.allowableServiceClasses)
-  return &allowableserviceclasses_;
-}
-
-// repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
+// repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
 inline int Node::flowconstraints_size() const {
   return flowconstraints_.size();
 }
@@ -6238,104 +6986,66 @@ CostModel::flowconstraints() const {
   return flowconstraints_;
 }
 
-// optional string serviceClass = 8;
-inline bool CostModel::has_serviceclass() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void CostModel::set_has_serviceclass() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void CostModel::clear_has_serviceclass() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void CostModel::clear_serviceclass() {
-  serviceclass_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_serviceclass();
-}
-inline const ::std::string& CostModel::serviceclass() const {
-  // @@protoc_insertion_point(field_get:NS3.CostModel.serviceClass)
-  return serviceclass_.GetNoArena();
-}
-inline void CostModel::set_serviceclass(const ::std::string& value) {
-  set_has_serviceclass();
-  serviceclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.CostModel.serviceClass)
-}
-#if LANG_CXX11
-inline void CostModel::set_serviceclass(::std::string&& value) {
-  set_has_serviceclass();
-  serviceclass_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.CostModel.serviceClass)
-}
-#endif
-inline void CostModel::set_serviceclass(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_serviceclass();
-  serviceclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.CostModel.serviceClass)
-}
-inline void CostModel::set_serviceclass(const char* value, size_t size) {
-  set_has_serviceclass();
-  serviceclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.CostModel.serviceClass)
-}
-inline ::std::string* CostModel::mutable_serviceclass() {
-  set_has_serviceclass();
-  // @@protoc_insertion_point(field_mutable:NS3.CostModel.serviceClass)
-  return serviceclass_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* CostModel::release_serviceclass() {
-  // @@protoc_insertion_point(field_release:NS3.CostModel.serviceClass)
-  if (!has_serviceclass()) {
-    return NULL;
-  }
-  clear_has_serviceclass();
-  return serviceclass_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void CostModel::set_allocated_serviceclass(::std::string* serviceclass) {
-  if (serviceclass != NULL) {
-    set_has_serviceclass();
-  } else {
-    clear_has_serviceclass();
-  }
-  serviceclass_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), serviceclass);
-  // @@protoc_insertion_point(field_set_allocated:NS3.CostModel.serviceClass)
-}
-
 // -------------------------------------------------------------------
 
 // Model
 
-// repeated .NS3.Dimension dimensions = 1;
-inline int Model::dimensions_size() const {
-  return dimensions_.size();
+// required .NS3.DimensionConfiguration dimensions = 1;
+inline bool Model::has_dimensions() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Model::set_has_dimensions() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Model::clear_has_dimensions() {
+  _has_bits_[0] &= ~0x00000001u;
 }
 inline void Model::clear_dimensions() {
-  dimensions_.Clear();
+  if (dimensions_ != NULL) dimensions_->Clear();
+  clear_has_dimensions();
 }
-inline ::NS3::Dimension* Model::mutable_dimensions(int index) {
-  // @@protoc_insertion_point(field_mutable:NS3.Model.dimensions)
-  return dimensions_.Mutable(index);
+inline const ::NS3::DimensionConfiguration& Model::_internal_dimensions() const {
+  return *dimensions_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::NS3::Dimension >*
-Model::mutable_dimensions() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.Model.dimensions)
-  return &dimensions_;
-}
-inline const ::NS3::Dimension& Model::dimensions(int index) const {
+inline const ::NS3::DimensionConfiguration& Model::dimensions() const {
+  const ::NS3::DimensionConfiguration* p = dimensions_;
   // @@protoc_insertion_point(field_get:NS3.Model.dimensions)
-  return dimensions_.Get(index);
+  return p != NULL ? *p : *reinterpret_cast<const ::NS3::DimensionConfiguration*>(
+      &::NS3::_DimensionConfiguration_default_instance_);
 }
-inline ::NS3::Dimension* Model::add_dimensions() {
-  // @@protoc_insertion_point(field_add:NS3.Model.dimensions)
-  return dimensions_.Add();
+inline ::NS3::DimensionConfiguration* Model::release_dimensions() {
+  // @@protoc_insertion_point(field_release:NS3.Model.dimensions)
+  clear_has_dimensions();
+  ::NS3::DimensionConfiguration* temp = dimensions_;
+  dimensions_ = NULL;
+  return temp;
 }
-inline const ::google::protobuf::RepeatedPtrField< ::NS3::Dimension >&
-Model::dimensions() const {
-  // @@protoc_insertion_point(field_list:NS3.Model.dimensions)
+inline ::NS3::DimensionConfiguration* Model::mutable_dimensions() {
+  set_has_dimensions();
+  if (dimensions_ == NULL) {
+    auto* p = CreateMaybeMessage<::NS3::DimensionConfiguration>(GetArenaNoVirtual());
+    dimensions_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:NS3.Model.dimensions)
   return dimensions_;
+}
+inline void Model::set_allocated_dimensions(::NS3::DimensionConfiguration* dimensions) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete dimensions_;
+  }
+  if (dimensions) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      dimensions = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, dimensions, submessage_arena);
+    }
+    set_has_dimensions();
+  } else {
+    clear_has_dimensions();
+  }
+  dimensions_ = dimensions;
+  // @@protoc_insertion_point(field_set_allocated:NS3.Model.dimensions)
 }
 
 // repeated .NS3.Node nodes = 2;
@@ -6609,6 +7319,31 @@ inline void SolveRequest::set_solvetype(::NS3::SolveRequest_SolveType value) {
   set_has_solvetype();
   solvetype_ = value;
   // @@protoc_insertion_point(field_set:NS3.SolveRequest.solveType)
+}
+
+// optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+inline bool SolveRequest::has_geometryoutput() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void SolveRequest::set_has_geometryoutput() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void SolveRequest::clear_has_geometryoutput() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void SolveRequest::clear_geometryoutput() {
+  geometryoutput_ = 0;
+  clear_has_geometryoutput();
+}
+inline ::NS3::SolveRequest_GeometryOutput SolveRequest::geometryoutput() const {
+  // @@protoc_insertion_point(field_get:NS3.SolveRequest.geometryOutput)
+  return static_cast< ::NS3::SolveRequest_GeometryOutput >(geometryoutput_);
+}
+inline void SolveRequest::set_geometryoutput(::NS3::SolveRequest_GeometryOutput value) {
+  assert(::NS3::SolveRequest_GeometryOutput_IsValid(value));
+  set_has_geometryoutput();
+  geometryoutput_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolveRequest.geometryOutput)
 }
 
 // -------------------------------------------------------------------
@@ -7807,186 +8542,232 @@ inline void SolutionResponse_NodeFlow::set_consumptioncost(float value) {
 
 // -------------------------------------------------------------------
 
-// SolutionResponse_GeometryEdgeSummary
+// SolutionResponse_GeometrySequence
 
-// repeated float fxs = 1;
-inline int SolutionResponse_GeometryEdgeSummary::fxs_size() const {
-  return fxs_.size();
+// repeated float x = 1;
+inline int SolutionResponse_GeometrySequence::x_size() const {
+  return x_.size();
 }
-inline void SolutionResponse_GeometryEdgeSummary::clear_fxs() {
-  fxs_.Clear();
+inline void SolutionResponse_GeometrySequence::clear_x() {
+  x_.Clear();
 }
-inline float SolutionResponse_GeometryEdgeSummary::fxs(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.fxs)
-  return fxs_.Get(index);
+inline float SolutionResponse_GeometrySequence::x(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometrySequence.x)
+  return x_.Get(index);
 }
-inline void SolutionResponse_GeometryEdgeSummary::set_fxs(int index, float value) {
-  fxs_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.fxs)
+inline void SolutionResponse_GeometrySequence::set_x(int index, float value) {
+  x_.Set(index, value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometrySequence.x)
 }
-inline void SolutionResponse_GeometryEdgeSummary::add_fxs(float value) {
-  fxs_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.fxs)
+inline void SolutionResponse_GeometrySequence::add_x(float value) {
+  x_.Add(value);
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometrySequence.x)
 }
 inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_GeometryEdgeSummary::fxs() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.fxs)
-  return fxs_;
+SolutionResponse_GeometrySequence::x() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometrySequence.x)
+  return x_;
 }
 inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_GeometryEdgeSummary::mutable_fxs() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.fxs)
-  return &fxs_;
+SolutionResponse_GeometrySequence::mutable_x() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometrySequence.x)
+  return &x_;
 }
 
-// repeated float fys = 2;
-inline int SolutionResponse_GeometryEdgeSummary::fys_size() const {
-  return fys_.size();
+// repeated float y = 2;
+inline int SolutionResponse_GeometrySequence::y_size() const {
+  return y_.size();
 }
-inline void SolutionResponse_GeometryEdgeSummary::clear_fys() {
-  fys_.Clear();
+inline void SolutionResponse_GeometrySequence::clear_y() {
+  y_.Clear();
 }
-inline float SolutionResponse_GeometryEdgeSummary::fys(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.fys)
-  return fys_.Get(index);
+inline float SolutionResponse_GeometrySequence::y(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometrySequence.y)
+  return y_.Get(index);
 }
-inline void SolutionResponse_GeometryEdgeSummary::set_fys(int index, float value) {
-  fys_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.fys)
+inline void SolutionResponse_GeometrySequence::set_y(int index, float value) {
+  y_.Set(index, value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometrySequence.y)
 }
-inline void SolutionResponse_GeometryEdgeSummary::add_fys(float value) {
-  fys_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.fys)
+inline void SolutionResponse_GeometrySequence::add_y(float value) {
+  y_.Add(value);
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometrySequence.y)
 }
 inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_GeometryEdgeSummary::fys() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.fys)
-  return fys_;
+SolutionResponse_GeometrySequence::y() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometrySequence.y)
+  return y_;
 }
 inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_GeometryEdgeSummary::mutable_fys() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.fys)
-  return &fys_;
+SolutionResponse_GeometrySequence::mutable_y() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometrySequence.y)
+  return &y_;
 }
 
-// repeated float txs = 3;
-inline int SolutionResponse_GeometryEdgeSummary::txs_size() const {
-  return txs_.size();
+// -------------------------------------------------------------------
+
+// SolutionResponse_Route
+
+// required string fromId = 1;
+inline bool SolutionResponse_Route::has_fromid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void SolutionResponse_GeometryEdgeSummary::clear_txs() {
-  txs_.Clear();
+inline void SolutionResponse_Route::set_has_fromid() {
+  _has_bits_[0] |= 0x00000001u;
 }
-inline float SolutionResponse_GeometryEdgeSummary::txs(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.txs)
-  return txs_.Get(index);
+inline void SolutionResponse_Route::clear_has_fromid() {
+  _has_bits_[0] &= ~0x00000001u;
 }
-inline void SolutionResponse_GeometryEdgeSummary::set_txs(int index, float value) {
-  txs_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.txs)
+inline void SolutionResponse_Route::clear_fromid() {
+  fromid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_fromid();
 }
-inline void SolutionResponse_GeometryEdgeSummary::add_txs(float value) {
-  txs_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.txs)
+inline const ::std::string& SolutionResponse_Route::fromid() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.Route.fromId)
+  return fromid_.GetNoArena();
 }
-inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_GeometryEdgeSummary::txs() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.txs)
-  return txs_;
+inline void SolutionResponse_Route::set_fromid(const ::std::string& value) {
+  set_has_fromid();
+  fromid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.Route.fromId)
 }
-inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_GeometryEdgeSummary::mutable_txs() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.txs)
-  return &txs_;
+#if LANG_CXX11
+inline void SolutionResponse_Route::set_fromid(::std::string&& value) {
+  set_has_fromid();
+  fromid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.SolutionResponse.Route.fromId)
+}
+#endif
+inline void SolutionResponse_Route::set_fromid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_fromid();
+  fromid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.SolutionResponse.Route.fromId)
+}
+inline void SolutionResponse_Route::set_fromid(const char* value, size_t size) {
+  set_has_fromid();
+  fromid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.SolutionResponse.Route.fromId)
+}
+inline ::std::string* SolutionResponse_Route::mutable_fromid() {
+  set_has_fromid();
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.Route.fromId)
+  return fromid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SolutionResponse_Route::release_fromid() {
+  // @@protoc_insertion_point(field_release:NS3.SolutionResponse.Route.fromId)
+  if (!has_fromid()) {
+    return NULL;
+  }
+  clear_has_fromid();
+  return fromid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SolutionResponse_Route::set_allocated_fromid(::std::string* fromid) {
+  if (fromid != NULL) {
+    set_has_fromid();
+  } else {
+    clear_has_fromid();
+  }
+  fromid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), fromid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.SolutionResponse.Route.fromId)
 }
 
-// repeated float tys = 4;
-inline int SolutionResponse_GeometryEdgeSummary::tys_size() const {
-  return tys_.size();
+// required string toId = 2;
+inline bool SolutionResponse_Route::has_toid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void SolutionResponse_GeometryEdgeSummary::clear_tys() {
-  tys_.Clear();
+inline void SolutionResponse_Route::set_has_toid() {
+  _has_bits_[0] |= 0x00000002u;
 }
-inline float SolutionResponse_GeometryEdgeSummary::tys(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.tys)
-  return tys_.Get(index);
+inline void SolutionResponse_Route::clear_has_toid() {
+  _has_bits_[0] &= ~0x00000002u;
 }
-inline void SolutionResponse_GeometryEdgeSummary::set_tys(int index, float value) {
-  tys_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.tys)
+inline void SolutionResponse_Route::clear_toid() {
+  toid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_toid();
 }
-inline void SolutionResponse_GeometryEdgeSummary::add_tys(float value) {
-  tys_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.tys)
+inline const ::std::string& SolutionResponse_Route::toid() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.Route.toId)
+  return toid_.GetNoArena();
 }
-inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_GeometryEdgeSummary::tys() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.tys)
-  return tys_;
+inline void SolutionResponse_Route::set_toid(const ::std::string& value) {
+  set_has_toid();
+  toid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.Route.toId)
 }
-inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_GeometryEdgeSummary::mutable_tys() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.tys)
-  return &tys_;
+#if LANG_CXX11
+inline void SolutionResponse_Route::set_toid(::std::string&& value) {
+  set_has_toid();
+  toid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.SolutionResponse.Route.toId)
+}
+#endif
+inline void SolutionResponse_Route::set_toid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_toid();
+  toid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.SolutionResponse.Route.toId)
+}
+inline void SolutionResponse_Route::set_toid(const char* value, size_t size) {
+  set_has_toid();
+  toid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.SolutionResponse.Route.toId)
+}
+inline ::std::string* SolutionResponse_Route::mutable_toid() {
+  set_has_toid();
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.Route.toId)
+  return toid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SolutionResponse_Route::release_toid() {
+  // @@protoc_insertion_point(field_release:NS3.SolutionResponse.Route.toId)
+  if (!has_toid()) {
+    return NULL;
+  }
+  clear_has_toid();
+  return toid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SolutionResponse_Route::set_allocated_toid(::std::string* toid) {
+  if (toid != NULL) {
+    set_has_toid();
+  } else {
+    clear_has_toid();
+  }
+  toid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), toid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.SolutionResponse.Route.toId)
 }
 
-// repeated float weights = 5;
-inline int SolutionResponse_GeometryEdgeSummary::weights_size() const {
-  return weights_.size();
+// repeated int32 geometrySequence = 3;
+inline int SolutionResponse_Route::geometrysequence_size() const {
+  return geometrysequence_.size();
 }
-inline void SolutionResponse_GeometryEdgeSummary::clear_weights() {
-  weights_.Clear();
+inline void SolutionResponse_Route::clear_geometrysequence() {
+  geometrysequence_.Clear();
 }
-inline float SolutionResponse_GeometryEdgeSummary::weights(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.weights)
-  return weights_.Get(index);
+inline ::google::protobuf::int32 SolutionResponse_Route::geometrysequence(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.Route.geometrySequence)
+  return geometrysequence_.Get(index);
 }
-inline void SolutionResponse_GeometryEdgeSummary::set_weights(int index, float value) {
-  weights_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.weights)
+inline void SolutionResponse_Route::set_geometrysequence(int index, ::google::protobuf::int32 value) {
+  geometrysequence_.Set(index, value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.Route.geometrySequence)
 }
-inline void SolutionResponse_GeometryEdgeSummary::add_weights(float value) {
-  weights_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.weights)
-}
-inline const ::google::protobuf::RepeatedField< float >&
-SolutionResponse_GeometryEdgeSummary::weights() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.weights)
-  return weights_;
-}
-inline ::google::protobuf::RepeatedField< float >*
-SolutionResponse_GeometryEdgeSummary::mutable_weights() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.weights)
-  return &weights_;
-}
-
-// repeated int32 types = 6;
-inline int SolutionResponse_GeometryEdgeSummary::types_size() const {
-  return types_.size();
-}
-inline void SolutionResponse_GeometryEdgeSummary::clear_types() {
-  types_.Clear();
-}
-inline ::google::protobuf::int32 SolutionResponse_GeometryEdgeSummary::types(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.GeometryEdgeSummary.types)
-  return types_.Get(index);
-}
-inline void SolutionResponse_GeometryEdgeSummary::set_types(int index, ::google::protobuf::int32 value) {
-  types_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.GeometryEdgeSummary.types)
-}
-inline void SolutionResponse_GeometryEdgeSummary::add_types(::google::protobuf::int32 value) {
-  types_.Add(value);
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.GeometryEdgeSummary.types)
+inline void SolutionResponse_Route::add_geometrysequence(::google::protobuf::int32 value) {
+  geometrysequence_.Add(value);
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.Route.geometrySequence)
 }
 inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-SolutionResponse_GeometryEdgeSummary::types() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.GeometryEdgeSummary.types)
-  return types_;
+SolutionResponse_Route::geometrysequence() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.Route.geometrySequence)
+  return geometrysequence_;
 }
 inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-SolutionResponse_GeometryEdgeSummary::mutable_types() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.GeometryEdgeSummary.types)
-  return &types_;
+SolutionResponse_Route::mutable_geometrysequence() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.Route.geometrySequence)
+  return &geometrysequence_;
 }
 
 // -------------------------------------------------------------------
@@ -8155,39 +8936,75 @@ SolutionResponse::nodeproductflows() const {
   return nodeproductflows_;
 }
 
-// repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
-inline int SolutionResponse::geometryedgesummary_size() const {
-  return geometryedgesummary_.size();
+// repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
+inline int SolutionResponse::geometrysequence_size() const {
+  return geometrysequence_.size();
 }
-inline void SolutionResponse::clear_geometryedgesummary() {
-  geometryedgesummary_.Clear();
+inline void SolutionResponse::clear_geometrysequence() {
+  geometrysequence_.Clear();
 }
-inline ::NS3::SolutionResponse_GeometryEdgeSummary* SolutionResponse::mutable_geometryedgesummary(int index) {
-  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.geometryEdgeSummary)
-  return geometryedgesummary_.Mutable(index);
+inline ::NS3::SolutionResponse_GeometrySequence* SolutionResponse::mutable_geometrysequence(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.geometrySequence)
+  return geometrysequence_.Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometryEdgeSummary >*
-SolutionResponse::mutable_geometryedgesummary() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.geometryEdgeSummary)
-  return &geometryedgesummary_;
+inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence >*
+SolutionResponse::mutable_geometrysequence() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.geometrySequence)
+  return &geometrysequence_;
 }
-inline const ::NS3::SolutionResponse_GeometryEdgeSummary& SolutionResponse::geometryedgesummary(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.geometryEdgeSummary)
-  return geometryedgesummary_.Get(index);
+inline const ::NS3::SolutionResponse_GeometrySequence& SolutionResponse::geometrysequence(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.geometrySequence)
+  return geometrysequence_.Get(index);
 }
-inline ::NS3::SolutionResponse_GeometryEdgeSummary* SolutionResponse::add_geometryedgesummary() {
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.geometryEdgeSummary)
-  return geometryedgesummary_.Add();
+inline ::NS3::SolutionResponse_GeometrySequence* SolutionResponse::add_geometrysequence() {
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.geometrySequence)
+  return geometrysequence_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometryEdgeSummary >&
-SolutionResponse::geometryedgesummary() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.geometryEdgeSummary)
-  return geometryedgesummary_;
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence >&
+SolutionResponse::geometrysequence() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.geometrySequence)
+  return geometrysequence_;
+}
+
+// repeated .NS3.SolutionResponse.Route routes = 8;
+inline int SolutionResponse::routes_size() const {
+  return routes_.size();
+}
+inline void SolutionResponse::clear_routes() {
+  routes_.Clear();
+}
+inline ::NS3::SolutionResponse_Route* SolutionResponse::mutable_routes(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.routes)
+  return routes_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route >*
+SolutionResponse::mutable_routes() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.routes)
+  return &routes_;
+}
+inline const ::NS3::SolutionResponse_Route& SolutionResponse::routes(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.routes)
+  return routes_.Get(index);
+}
+inline ::NS3::SolutionResponse_Route* SolutionResponse::add_routes() {
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.routes)
+  return routes_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route >&
+SolutionResponse::routes() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.routes)
+  return routes_;
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -8234,10 +9051,20 @@ SolutionResponse::geometryedgesummary() const {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::NS3::InternalDimension_eMeasurementUnit> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::NS3::InternalDimension_eMeasurementUnit>() {
+  return ::NS3::InternalDimension_eMeasurementUnit_descriptor();
+}
 template <> struct is_proto_enum< ::NS3::SolveRequest_SolveType> : ::std::true_type {};
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::NS3::SolveRequest_SolveType>() {
   return ::NS3::SolveRequest_SolveType_descriptor();
+}
+template <> struct is_proto_enum< ::NS3::SolveRequest_GeometryOutput> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::NS3::SolveRequest_GeometryOutput>() {
+  return ::NS3::SolveRequest_GeometryOutput_descriptor();
 }
 
 }  // namespace protobuf

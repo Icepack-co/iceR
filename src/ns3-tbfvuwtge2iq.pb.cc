@@ -20,19 +20,22 @@
 // @@protoc_insertion_point(includes)
 
 namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Dimension;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_DimensionRange;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FixedDimensionCost;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_FlowDimensionalConstraint;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Geocode;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_InternalDimension;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ProductGroup_ProductSpecification;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_GeometryEdgeSummary;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_GeometrySequence;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_NodeFlow;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_NodeProductFlow;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Route;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UnitDimensionCost;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_UserDimension;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_ProductGroup;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Assignment;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_CostModel;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_DimensionConfiguration;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_LaneRate;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Node_Flow;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Node_ProductFlow;
@@ -40,11 +43,21 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_ns3_2dtbfvuwtge2iq_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_Model;
 }  // namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto
 namespace NS3 {
-class DimensionDefaultTypeInternal {
+class InternalDimensionDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Dimension>
+  ::google::protobuf::internal::ExplicitlyConstructed<InternalDimension>
       _instance;
-} _Dimension_default_instance_;
+} _InternalDimension_default_instance_;
+class UserDimensionDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<UserDimension>
+      _instance;
+} _UserDimension_default_instance_;
+class DimensionConfigurationDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<DimensionConfiguration>
+      _instance;
+} _DimensionConfiguration_default_instance_;
 class GeocodeDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<Geocode>
@@ -130,11 +143,16 @@ class SolutionResponse_NodeFlowDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_NodeFlow>
       _instance;
 } _SolutionResponse_NodeFlow_default_instance_;
-class SolutionResponse_GeometryEdgeSummaryDefaultTypeInternal {
+class SolutionResponse_GeometrySequenceDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_GeometryEdgeSummary>
+  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_GeometrySequence>
       _instance;
-} _SolutionResponse_GeometryEdgeSummary_default_instance_;
+} _SolutionResponse_GeometrySequence_default_instance_;
+class SolutionResponse_RouteDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Route>
+      _instance;
+} _SolutionResponse_Route_default_instance_;
 class SolutionResponseDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse>
@@ -142,19 +160,49 @@ class SolutionResponseDefaultTypeInternal {
 } _SolutionResponse_default_instance_;
 }  // namespace NS3
 namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto {
-static void InitDefaultsDimension() {
+static void InitDefaultsInternalDimension() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::NS3::_Dimension_default_instance_;
-    new (ptr) ::NS3::Dimension();
+    void* ptr = &::NS3::_InternalDimension_default_instance_;
+    new (ptr) ::NS3::InternalDimension();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::NS3::Dimension::InitAsDefaultInstance();
+  ::NS3::InternalDimension::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Dimension =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsDimension}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_InternalDimension =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsInternalDimension}, {}};
+
+static void InitDefaultsUserDimension() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NS3::_UserDimension_default_instance_;
+    new (ptr) ::NS3::UserDimension();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NS3::UserDimension::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_UserDimension =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUserDimension}, {}};
+
+static void InitDefaultsDimensionConfiguration() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NS3::_DimensionConfiguration_default_instance_;
+    new (ptr) ::NS3::DimensionConfiguration();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NS3::DimensionConfiguration::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<2> scc_info_DimensionConfiguration =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsDimensionConfiguration}, {
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_InternalDimension.base,
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_UserDimension.base,}};
 
 static void InitDefaultsGeocode() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -352,7 +400,7 @@ static void InitDefaultsModel() {
 
 ::google::protobuf::internal::SCCInfo<5> scc_info_Model =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsModel}, {
-      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_Dimension.base,
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_DimensionConfiguration.base,
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_Node.base,
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_LaneRate.base,
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_CostModel.base,
@@ -416,19 +464,33 @@ static void InitDefaultsSolutionResponse_NodeFlow() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_NodeFlow =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_NodeFlow}, {}};
 
-static void InitDefaultsSolutionResponse_GeometryEdgeSummary() {
+static void InitDefaultsSolutionResponse_GeometrySequence() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::NS3::_SolutionResponse_GeometryEdgeSummary_default_instance_;
-    new (ptr) ::NS3::SolutionResponse_GeometryEdgeSummary();
+    void* ptr = &::NS3::_SolutionResponse_GeometrySequence_default_instance_;
+    new (ptr) ::NS3::SolutionResponse_GeometrySequence();
     ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::NS3::SolutionResponse_GeometryEdgeSummary::InitAsDefaultInstance();
+  ::NS3::SolutionResponse_GeometrySequence::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_GeometryEdgeSummary =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_GeometryEdgeSummary}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_GeometrySequence =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_GeometrySequence}, {}};
+
+static void InitDefaultsSolutionResponse_Route() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::NS3::_SolutionResponse_Route_default_instance_;
+    new (ptr) ::NS3::SolutionResponse_Route();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::NS3::SolutionResponse_Route::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Route =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_Route}, {}};
 
 static void InitDefaultsSolutionResponse() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -441,15 +503,18 @@ static void InitDefaultsSolutionResponse() {
   ::NS3::SolutionResponse::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_SolutionResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsSolutionResponse}, {
+::google::protobuf::internal::SCCInfo<5> scc_info_SolutionResponse =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsSolutionResponse}, {
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_Assignment.base,
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_NodeFlow.base,
       &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_NodeProductFlow.base,
-      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometryEdgeSummary.base,}};
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometrySequence.base,
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_Route.base,}};
 
 void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Dimension.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_InternalDimension.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_UserDimension.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_DimensionConfiguration.base);
   ::google::protobuf::internal::InitSCC(&scc_info_Geocode.base);
   ::google::protobuf::internal::InitSCC(&scc_info_UnitDimensionCost.base);
   ::google::protobuf::internal::InitSCC(&scc_info_FixedDimensionCost.base);
@@ -467,21 +532,44 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Assignment.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_NodeProductFlow.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_NodeFlow.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_GeometryEdgeSummary.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_GeometrySequence.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Route.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[20];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[1];
+::google::protobuf::Metadata file_level_metadata[23];
+const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[3];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Dimension, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Dimension, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::InternalDimension, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::InternalDimension, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Dimension, name_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::InternalDimension, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::InternalDimension, measurementunit_),
   0,
+  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::UserDimension, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::UserDimension, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::UserDimension, id_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::UserDimension, units_),
+  0,
+  1,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::DimensionConfiguration, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::DimensionConfiguration, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::DimensionConfiguration, timeconfig_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::DimensionConfiguration, distanceconfig_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::DimensionConfiguration, userdimensions_),
+  0,
+  1,
+  ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Geocode, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Geocode, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -574,7 +662,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Node, productflows_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Node, allowablesources_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Node, maximumsources_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Node, allowableserviceclasses_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Node, flowconstraints_),
   0,
   1,
@@ -584,7 +671,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,
   ~0u,
   3,
-  ~0u,
   ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::ProductGroup_ProductSpecification, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::ProductGroup_ProductSpecification, _internal_metadata_),
@@ -638,14 +724,12 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, productgroupids_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, unitdimensioncost_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, flowconstraints_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, serviceclass_),
   0,
   1,
   2,
   ~0u,
   ~0u,
   ~0u,
-  3,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Model, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Model, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -656,7 +740,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Model, lanerates_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Model, costmodels_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::Model, productgroups_),
-  ~0u,
+  0,
   ~0u,
   ~0u,
   ~0u,
@@ -669,9 +753,11 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolveRequest, model_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolveRequest, modelid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolveRequest, solvetype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolveRequest, geometryoutput_),
   1,
   0,
   2,
+  3,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Assignment, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Assignment, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -757,22 +843,25 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   10,
   11,
   12,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, _internal_metadata_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometrySequence, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometrySequence, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, fxs_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, fys_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, txs_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, tys_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, weights_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometryEdgeSummary, types_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometrySequence, x_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_GeometrySequence, y_),
   ~0u,
   ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Route, _has_bits_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Route, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Route, fromid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Route, toid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse_Route, geometrysequence_),
+  0,
+  1,
   ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, _internal_metadata_),
@@ -785,7 +874,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, assignments_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, nodeflows_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, nodeproductflows_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, geometryedgesummary_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, geometrysequence_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::SolutionResponse, routes_),
   0,
   1,
   2,
@@ -793,32 +883,38 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   ~0u,
   ~0u,
   ~0u,
+  ~0u,
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 6, sizeof(::NS3::Dimension)},
-  { 7, 14, sizeof(::NS3::Geocode)},
-  { 16, 24, sizeof(::NS3::UnitDimensionCost)},
-  { 27, 34, sizeof(::NS3::FixedDimensionCost)},
-  { 36, 45, sizeof(::NS3::FlowDimensionalConstraint)},
-  { 49, 58, sizeof(::NS3::DimensionRange)},
-  { 62, 71, sizeof(::NS3::Node_ProductFlow)},
-  { 75, 83, sizeof(::NS3::Node_Flow)},
-  { 86, 101, sizeof(::NS3::Node)},
-  { 111, 119, sizeof(::NS3::ProductGroup_ProductSpecification)},
-  { 122, 130, sizeof(::NS3::ProductGroup)},
-  { 133, 145, sizeof(::NS3::LaneRate)},
-  { 152, 164, sizeof(::NS3::CostModel)},
-  { 171, 181, sizeof(::NS3::Model)},
-  { 186, 194, sizeof(::NS3::SolveRequest)},
-  { 197, 212, sizeof(::NS3::SolutionResponse_Assignment)},
-  { 222, 239, sizeof(::NS3::SolutionResponse_NodeProductFlow)},
-  { 251, 269, sizeof(::NS3::SolutionResponse_NodeFlow)},
-  { 282, 293, sizeof(::NS3::SolutionResponse_GeometryEdgeSummary)},
-  { 299, 311, sizeof(::NS3::SolutionResponse)},
+  { 0, 7, sizeof(::NS3::InternalDimension)},
+  { 9, 16, sizeof(::NS3::UserDimension)},
+  { 18, 26, sizeof(::NS3::DimensionConfiguration)},
+  { 29, 36, sizeof(::NS3::Geocode)},
+  { 38, 46, sizeof(::NS3::UnitDimensionCost)},
+  { 49, 56, sizeof(::NS3::FixedDimensionCost)},
+  { 58, 67, sizeof(::NS3::FlowDimensionalConstraint)},
+  { 71, 80, sizeof(::NS3::DimensionRange)},
+  { 84, 93, sizeof(::NS3::Node_ProductFlow)},
+  { 97, 105, sizeof(::NS3::Node_Flow)},
+  { 108, 122, sizeof(::NS3::Node)},
+  { 131, 139, sizeof(::NS3::ProductGroup_ProductSpecification)},
+  { 142, 150, sizeof(::NS3::ProductGroup)},
+  { 153, 165, sizeof(::NS3::LaneRate)},
+  { 172, 183, sizeof(::NS3::CostModel)},
+  { 189, 199, sizeof(::NS3::Model)},
+  { 204, 213, sizeof(::NS3::SolveRequest)},
+  { 217, 232, sizeof(::NS3::SolutionResponse_Assignment)},
+  { 242, 259, sizeof(::NS3::SolutionResponse_NodeProductFlow)},
+  { 271, 289, sizeof(::NS3::SolutionResponse_NodeFlow)},
+  { 302, 309, sizeof(::NS3::SolutionResponse_GeometrySequence)},
+  { 311, 319, sizeof(::NS3::SolutionResponse_Route)},
+  { 322, 335, sizeof(::NS3::SolutionResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_Dimension_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_InternalDimension_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_UserDimension_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_DimensionConfiguration_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_Geocode_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_UnitDimensionCost_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_FixedDimensionCost_default_instance_),
@@ -836,7 +932,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_Assignment_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_NodeProductFlow_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_NodeFlow_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_GeometryEdgeSummary_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_GeometrySequence_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_Route_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NS3::_SolutionResponse_default_instance_),
 };
 
@@ -855,101 +952,113 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 20);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 23);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\026ns3-tbfvuwtge2iq.proto\022\003NS3\"\031\n\tDimensi"
-      "on\022\014\n\004name\030\001 \002(\t\".\n\007Geocode\022\021\n\tlongitude"
-      "\030\001 \002(\002\022\020\n\010latitude\030\002 \002(\002\"]\n\021UnitDimensio"
-      "nCost\022\024\n\014dimensionIds\030\001 \003(\t\022\035\n\025dimension"
-      "Coefficients\030\002 \003(\002\022\023\n\013costPerUnit\030\003 \002(\002\""
-      "=\n\022FixedDimensionCost\022\024\n\014dimensionIds\030\001 "
-      "\003(\t\022\021\n\tfixedCost\030\002 \002(\002\"r\n\031FlowDimensiona"
-      "lConstraint\022\024\n\014dimensionIds\030\001 \003(\t\022\035\n\025dim"
-      "ensionCoefficients\030\002 \003(\002\022\017\n\007flowMin\030\003 \002("
-      "\002\022\017\n\007flowMax\030\004 \002(\002\"d\n\016DimensionRange\022\023\n\013"
-      "dimensionId\030\001 \002(\t\022\023\n\010minRange\030\002 \002(\002:\0010\022\020"
-      "\n\010maxRange\030\003 \002(\002\022\026\n\013flowPenalty\030\004 \002(\002:\0010"
-      "\"\264\005\n\004Node\022\n\n\002id\030\001 \002(\t\022\035\n\007geocode\030\002 \002(\0132\014"
-      ".NS3.Geocode\022)\n\nproduction\030\003 \003(\0132\025.NS3.N"
-      "ode.ProductFlow\022*\n\013consumption\030\004 \003(\0132\025.N"
-      "S3.Node.ProductFlow\022\034\n\004flow\030\005 \001(\0132\016.NS3."
-      "Node.Flow\022+\n\014productFlows\030\006 \003(\0132\025.NS3.No"
-      "de.ProductFlow\022\030\n\020allowableSources\030\007 \003(\t"
-      "\022\026\n\016maximumSources\030\010 \001(\005\022\037\n\027allowableSer"
-      "viceClasses\030\t \003(\t\0227\n\017flowConstraints\030\n \003"
-      "(\0132\036.NS3.FlowDimensionalConstraint\032\261\001\n\013P"
-      "roductFlow\022\n\n\002id\030\001 \002(\t\022,\n\017dimensionRange"
-      "s\030\002 \003(\0132\023.NS3.DimensionRange\0224\n\023FixedDim"
-      "ensionCosts\030\003 \003(\0132\027.NS3.FixedDimensionCo"
-      "st\0222\n\022unitDimensionCosts\030\004 \003(\0132\026.NS3.Uni"
-      "tDimensionCost\032\236\001\n\004Flow\022,\n\017dimensionRang"
-      "es\030\001 \003(\0132\023.NS3.DimensionRange\0224\n\023FixedDi"
-      "mensionCosts\030\002 \003(\0132\027.NS3.FixedDimensionC"
-      "ost\0222\n\022unitDimensionCosts\030\003 \003(\0132\026.NS3.Un"
-      "itDimensionCost\"\332\001\n\014ProductGroup\022\017\n\007prod"
-      "uct\030\001 \002(\t\022\024\n\014productGroup\030\002 \002(\t\022D\n\024produ"
-      "ctSpecification\030\003 \003(\0132&.NS3.ProductGroup"
-      ".ProductSpecification\032]\n\024ProductSpecific"
-      "ation\022\025\n\rbaseDimension\030\001 \002(\t\022\027\n\017targetDi"
-      "mension\030\002 \003(\t\022\025\n\rtargetPerBase\030\003 \003(\002\"\325\001\n"
-      "\010LaneRate\022\n\n\002id\030\001 \002(\t\022\016\n\006source\030\003 \002(\t\022\023\n"
-      "\013destination\030\004 \002(\t\022\022\n\nproductIds\030\005 \003(\t\022\027"
-      "\n\017productGroupIds\030\006 \003(\t\0222\n\022unitDimension"
-      "Costs\030\007 \003(\0132\026.NS3.UnitDimensionCost\0227\n\017f"
-      "lowConstraints\030\010 \003(\0132\036.NS3.FlowDimension"
-      "alConstraint\"\327\001\n\tCostModel\022\n\n\002id\030\001 \002(\t\022\016"
-      "\n\006source\030\003 \002(\t\022\023\n\013destination\030\004 \001(\t\022\027\n\017p"
-      "roductGroupIds\030\005 \003(\t\0221\n\021unitDimensionCos"
-      "t\030\006 \003(\0132\026.NS3.UnitDimensionCost\0227\n\017flowC"
-      "onstraints\030\007 \003(\0132\036.NS3.FlowDimensionalCo"
-      "nstraint\022\024\n\014serviceClass\030\010 \001(\t\"\265\001\n\005Model"
-      "\022\"\n\ndimensions\030\001 \003(\0132\016.NS3.Dimension\022\030\n\005"
-      "nodes\030\002 \003(\0132\t.NS3.Node\022 \n\tlaneRates\030\003 \003("
-      "\0132\r.NS3.LaneRate\022\"\n\ncostModels\030\004 \003(\0132\016.N"
-      "S3.CostModel\022(\n\rproductGroups\030\005 \003(\0132\021.NS"
-      "3.ProductGroup\"\217\001\n\014SolveRequest\022\031\n\005model"
-      "\030\001 \001(\0132\n.NS3.Model\022\017\n\007modelID\030\002 \001(\t\0228\n\ts"
-      "olveType\030\004 \001(\0162\033.NS3.SolveRequest.SolveT"
-      "ype:\010Optimise\"\031\n\tSolveType\022\014\n\010Optimise\020\000"
-      "\"\315\t\n\020SolutionResponse\022\021\n\tobjective\030\001 \002(\002"
-      "\022\022\n\nlowerBound\030\002 \001(\002\022\025\n\roptimalityGap\030\003 "
-      "\001(\002\0225\n\013assignments\030\004 \003(\0132 .NS3.SolutionR"
-      "esponse.Assignment\0221\n\tnodeFlows\030\005 \003(\0132\036."
-      "NS3.SolutionResponse.NodeFlow\022\?\n\020nodePro"
-      "ductFlows\030\006 \003(\0132%.NS3.SolutionResponse.N"
-      "odeProductFlow\022F\n\023geometryEdgeSummary\030\007 "
-      "\003(\0132).NS3.SolutionResponse.GeometryEdgeS"
-      "ummary\032\317\001\n\nAssignment\022\016\n\006source\030\001 \002(\t\022\023\n"
-      "\013destination\030\002 \002(\t\022\021\n\tproductId\030\003 \002(\t\022\016\n"
-      "\006amount\030\004 \002(\002\022\014\n\004cost\030\005 \002(\002\022\022\n\nlaneRateI"
-      "d\030\006 \001(\t\022\023\n\013costModelId\030\007 \001(\t\022\020\n\010distance"
-      "\030\010 \002(\002\022\020\n\010duration\030\t \002(\002\022\036\n\010geometry\030\n \003"
-      "(\0132\014.NS3.Geocode\032\227\002\n\017NodeProductFlow\022\016\n\006"
-      "nodeId\030\001 \002(\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFlo"
-      "w\030\003 \002(\002\022\017\n\007outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 \002"
-      "(\002\022\021\n\tfixedCost\030\006 \002(\002\022\030\n\020productionAmoun"
-      "t\030\007 \002(\002\022\031\n\021productionPenalty\030\010 \002(\002\022\026\n\016pr"
-      "oductionCost\030\t \002(\002\022\031\n\021consumptionAmount\030"
-      "\n \002(\002\022\032\n\022consumptionPenalty\030\013 \002(\002\022\027\n\017con"
-      "sumptionCost\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006nodeI"
-      "d\030\001 \002(\t\022\016\n\006inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002(\002"
-      "\022\020\n\010flowCost\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027\n"
-      "\017productFlowCost\030\006 \002(\002\022\030\n\020productFixedCo"
-      "st\030\007 \002(\002\022\030\n\020productionAmount\030\010 \002(\002\022\031\n\021pr"
-      "oductionPenalty\030\t \002(\002\022\026\n\016productionCost\030"
-      "\n \002(\002\022\031\n\021consumptionAmount\030\013 \002(\002\022\032\n\022cons"
-      "umptionPenalty\030\014 \002(\002\022\027\n\017consumptionCost\030"
-      "\r \002(\002\032i\n\023GeometryEdgeSummary\022\013\n\003fxs\030\001 \003("
-      "\002\022\013\n\003fys\030\002 \003(\002\022\013\n\003txs\030\003 \003(\002\022\013\n\003tys\030\004 \003(\002"
-      "\022\017\n\007weights\030\005 \003(\002\022\r\n\005types\030\006 \003(\005B\017\n\ricep"
-      "ackai.NS3"
+      "\n\026ns3-tbfvuwtge2iq.proto\022\003NS3\"\277\001\n\021Intern"
+      "alDimension\022\n\n\002id\030\001 \002(\t\022@\n\017measurementUn"
+      "it\030\002 \002(\0162\'.NS3.InternalDimension.eMeasur"
+      "ementUnit\"\\\n\020eMeasurementUnit\022\013\n\007SECONDS"
+      "\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003\022\016\n\n"
+      "KILOMETRES\020\004\022\t\n\005MILES\020\005\"*\n\rUserDimension"
+      "\022\n\n\002id\030\001 \002(\t\022\r\n\005units\030\002 \002(\t\"\240\001\n\026Dimensio"
+      "nConfiguration\022*\n\ntimeConfig\030\001 \001(\0132\026.NS3"
+      ".InternalDimension\022.\n\016distanceConfig\030\002 \001"
+      "(\0132\026.NS3.InternalDimension\022*\n\016userDimens"
+      "ions\030\003 \003(\0132\022.NS3.UserDimension\".\n\007Geocod"
+      "e\022\021\n\tlongitude\030\001 \002(\002\022\020\n\010latitude\030\002 \002(\002\"]"
+      "\n\021UnitDimensionCost\022\024\n\014dimensionIds\030\001 \003("
+      "\t\022\035\n\025dimensionCoefficients\030\002 \003(\002\022\023\n\013cost"
+      "PerUnit\030\003 \002(\002\"=\n\022FixedDimensionCost\022\024\n\014d"
+      "imensionIds\030\001 \003(\t\022\021\n\tfixedCost\030\002 \002(\002\"r\n\031"
+      "FlowDimensionalConstraint\022\024\n\014dimensionId"
+      "s\030\001 \003(\t\022\035\n\025dimensionCoefficients\030\002 \003(\002\022\017"
+      "\n\007flowMin\030\003 \002(\002\022\017\n\007flowMax\030\004 \002(\002\"d\n\016Dime"
+      "nsionRange\022\023\n\013dimensionId\030\001 \002(\t\022\023\n\010minRa"
+      "nge\030\002 \002(\002:\0010\022\020\n\010maxRange\030\003 \002(\002\022\026\n\013flowPe"
+      "nalty\030\004 \002(\002:\0010\"\223\005\n\004Node\022\n\n\002id\030\001 \002(\t\022\035\n\007g"
+      "eocode\030\002 \002(\0132\014.NS3.Geocode\022)\n\nproduction"
+      "\030\003 \003(\0132\025.NS3.Node.ProductFlow\022*\n\013consump"
+      "tion\030\004 \003(\0132\025.NS3.Node.ProductFlow\022\034\n\004flo"
+      "w\030\005 \001(\0132\016.NS3.Node.Flow\022+\n\014productFlows\030"
+      "\006 \003(\0132\025.NS3.Node.ProductFlow\022\030\n\020allowabl"
+      "eSources\030\007 \003(\t\022\026\n\016maximumSources\030\010 \001(\005\0227"
+      "\n\017flowConstraints\030\t \003(\0132\036.NS3.FlowDimens"
+      "ionalConstraint\032\261\001\n\013ProductFlow\022\n\n\002id\030\001 "
+      "\002(\t\022,\n\017dimensionRanges\030\002 \003(\0132\023.NS3.Dimen"
+      "sionRange\0224\n\023FixedDimensionCosts\030\003 \003(\0132\027"
+      ".NS3.FixedDimensionCost\0222\n\022unitDimension"
+      "Costs\030\004 \003(\0132\026.NS3.UnitDimensionCost\032\236\001\n\004"
+      "Flow\022,\n\017dimensionRanges\030\001 \003(\0132\023.NS3.Dime"
+      "nsionRange\0224\n\023FixedDimensionCosts\030\002 \003(\0132"
+      "\027.NS3.FixedDimensionCost\0222\n\022unitDimensio"
+      "nCosts\030\003 \003(\0132\026.NS3.UnitDimensionCost\"\332\001\n"
+      "\014ProductGroup\022\017\n\007product\030\001 \002(\t\022\024\n\014produc"
+      "tGroup\030\002 \002(\t\022D\n\024productSpecification\030\003 \003"
+      "(\0132&.NS3.ProductGroup.ProductSpecificati"
+      "on\032]\n\024ProductSpecification\022\025\n\rbaseDimens"
+      "ion\030\001 \002(\t\022\027\n\017targetDimension\030\002 \003(\t\022\025\n\rta"
+      "rgetPerBase\030\003 \003(\002\"\325\001\n\010LaneRate\022\n\n\002id\030\001 \002"
+      "(\t\022\016\n\006source\030\003 \002(\t\022\023\n\013destination\030\004 \002(\t\022"
+      "\022\n\nproductIds\030\005 \003(\t\022\027\n\017productGroupIds\030\006"
+      " \003(\t\0222\n\022unitDimensionCosts\030\007 \003(\0132\026.NS3.U"
+      "nitDimensionCost\0227\n\017flowConstraints\030\010 \003("
+      "\0132\036.NS3.FlowDimensionalConstraint\"\301\001\n\tCo"
+      "stModel\022\n\n\002id\030\001 \002(\t\022\016\n\006source\030\003 \002(\t\022\023\n\013d"
+      "estination\030\004 \001(\t\022\027\n\017productGroupIds\030\005 \003("
+      "\t\0221\n\021unitDimensionCost\030\006 \003(\0132\026.NS3.UnitD"
+      "imensionCost\0227\n\017flowConstraints\030\007 \003(\0132\036."
+      "NS3.FlowDimensionalConstraint\"\302\001\n\005Model\022"
+      "/\n\ndimensions\030\001 \002(\0132\033.NS3.DimensionConfi"
+      "guration\022\030\n\005nodes\030\002 \003(\0132\t.NS3.Node\022 \n\tla"
+      "neRates\030\003 \003(\0132\r.NS3.LaneRate\022\"\n\ncostMode"
+      "ls\030\004 \003(\0132\016.NS3.CostModel\022(\n\rproductGroup"
+      "s\030\005 \003(\0132\021.NS3.ProductGroup\"\372\001\n\014SolveRequ"
+      "est\022\031\n\005model\030\001 \001(\0132\n.NS3.Model\022\017\n\007modelI"
+      "D\030\002 \001(\t\0228\n\tsolveType\030\004 \001(\0162\033.NS3.SolveRe"
+      "quest.SolveType:\010Optimise\022>\n\016geometryOut"
+      "put\030\005 \001(\0162 .NS3.SolveRequest.GeometryOut"
+      "put:\004None\"\031\n\tSolveType\022\014\n\010Optimise\020\000\")\n\016"
+      "GeometryOutput\022\010\n\004None\020\000\022\r\n\tAggregate\020\001\""
+      "\364\t\n\020SolutionResponse\022\021\n\tobjective\030\001 \002(\002\022"
+      "\022\n\nlowerBound\030\002 \001(\002\022\025\n\roptimalityGap\030\003 \001"
+      "(\002\0225\n\013assignments\030\004 \003(\0132 .NS3.SolutionRe"
+      "sponse.Assignment\0221\n\tnodeFlows\030\005 \003(\0132\036.N"
+      "S3.SolutionResponse.NodeFlow\022\?\n\020nodeProd"
+      "uctFlows\030\006 \003(\0132%.NS3.SolutionResponse.No"
+      "deProductFlow\022@\n\020geometrySequence\030\007 \003(\0132"
+      "&.NS3.SolutionResponse.GeometrySequence\022"
+      "+\n\006routes\030\010 \003(\0132\033.NS3.SolutionResponse.R"
+      "oute\032\317\001\n\nAssignment\022\016\n\006source\030\001 \002(\t\022\023\n\013d"
+      "estination\030\002 \002(\t\022\021\n\tproductId\030\003 \002(\t\022\016\n\006a"
+      "mount\030\004 \002(\002\022\014\n\004cost\030\005 \002(\002\022\022\n\nlaneRateId\030"
+      "\006 \001(\t\022\023\n\013costModelId\030\007 \001(\t\022\020\n\010distance\030\010"
+      " \002(\002\022\020\n\010duration\030\t \002(\002\022\036\n\010geometry\030\n \003(\013"
+      "2\014.NS3.Geocode\032\227\002\n\017NodeProductFlow\022\016\n\006no"
+      "deId\030\001 \002(\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFlow\030"
+      "\003 \002(\002\022\017\n\007outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 \002(\002"
+      "\022\021\n\tfixedCost\030\006 \002(\002\022\030\n\020productionAmount\030"
+      "\007 \002(\002\022\031\n\021productionPenalty\030\010 \002(\002\022\026\n\016prod"
+      "uctionCost\030\t \002(\002\022\031\n\021consumptionAmount\030\n "
+      "\002(\002\022\032\n\022consumptionPenalty\030\013 \002(\002\022\027\n\017consu"
+      "mptionCost\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006nodeId\030"
+      "\001 \002(\t\022\016\n\006inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002(\002\022\020"
+      "\n\010flowCost\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027\n\017p"
+      "roductFlowCost\030\006 \002(\002\022\030\n\020productFixedCost"
+      "\030\007 \002(\002\022\030\n\020productionAmount\030\010 \002(\002\022\031\n\021prod"
+      "uctionPenalty\030\t \002(\002\022\026\n\016productionCost\030\n "
+      "\002(\002\022\031\n\021consumptionAmount\030\013 \002(\002\022\032\n\022consum"
+      "ptionPenalty\030\014 \002(\002\022\027\n\017consumptionCost\030\r "
+      "\002(\002\032(\n\020GeometrySequence\022\t\n\001x\030\001 \003(\002\022\t\n\001y\030"
+      "\002 \003(\002\032\?\n\005Route\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002"
+      " \002(\t\022\030\n\020geometrySequence\030\003 \003(\005B\017\n\ricepac"
+      "kai.NS3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3409);
+      descriptor, 3887);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ns3-tbfvuwtge2iq.proto", &protobuf_RegisterTypes);
 }
@@ -966,9 +1075,38 @@ struct StaticDescriptorInitializer {
 } static_descriptor_initializer;
 }  // namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto
 namespace NS3 {
-const ::google::protobuf::EnumDescriptor* SolveRequest_SolveType_descriptor() {
+const ::google::protobuf::EnumDescriptor* InternalDimension_eMeasurementUnit_descriptor() {
   protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
   return protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_enum_descriptors[0];
+}
+bool InternalDimension_eMeasurementUnit_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const InternalDimension_eMeasurementUnit InternalDimension::SECONDS;
+const InternalDimension_eMeasurementUnit InternalDimension::MINUTES;
+const InternalDimension_eMeasurementUnit InternalDimension::HOURS;
+const InternalDimension_eMeasurementUnit InternalDimension::DAYS;
+const InternalDimension_eMeasurementUnit InternalDimension::KILOMETRES;
+const InternalDimension_eMeasurementUnit InternalDimension::MILES;
+const InternalDimension_eMeasurementUnit InternalDimension::eMeasurementUnit_MIN;
+const InternalDimension_eMeasurementUnit InternalDimension::eMeasurementUnit_MAX;
+const int InternalDimension::eMeasurementUnit_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* SolveRequest_SolveType_descriptor() {
+  protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_enum_descriptors[1];
 }
 bool SolveRequest_SolveType_IsValid(int value) {
   switch (value) {
@@ -985,95 +1123,140 @@ const SolveRequest_SolveType SolveRequest::SolveType_MIN;
 const SolveRequest_SolveType SolveRequest::SolveType_MAX;
 const int SolveRequest::SolveType_ARRAYSIZE;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+const ::google::protobuf::EnumDescriptor* SolveRequest_GeometryOutput_descriptor() {
+  protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_enum_descriptors[2];
+}
+bool SolveRequest_GeometryOutput_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const SolveRequest_GeometryOutput SolveRequest::None;
+const SolveRequest_GeometryOutput SolveRequest::Aggregate;
+const SolveRequest_GeometryOutput SolveRequest::GeometryOutput_MIN;
+const SolveRequest_GeometryOutput SolveRequest::GeometryOutput_MAX;
+const int SolveRequest::GeometryOutput_ARRAYSIZE;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 // ===================================================================
 
-void Dimension::InitAsDefaultInstance() {
+void InternalDimension::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Dimension::kNameFieldNumber;
+const int InternalDimension::kIdFieldNumber;
+const int InternalDimension::kMeasurementUnitFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Dimension::Dimension()
+InternalDimension::InternalDimension()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_Dimension.base);
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_InternalDimension.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:NS3.Dimension)
+  // @@protoc_insertion_point(constructor:NS3.InternalDimension)
 }
-Dimension::Dimension(const Dimension& from)
+InternalDimension::InternalDimension(const InternalDimension& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_name()) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_id()) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
   }
-  // @@protoc_insertion_point(copy_constructor:NS3.Dimension)
+  measurementunit_ = from.measurementunit_;
+  // @@protoc_insertion_point(copy_constructor:NS3.InternalDimension)
 }
 
-void Dimension::SharedCtor() {
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void InternalDimension::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  measurementunit_ = 0;
 }
 
-Dimension::~Dimension() {
-  // @@protoc_insertion_point(destructor:NS3.Dimension)
+InternalDimension::~InternalDimension() {
+  // @@protoc_insertion_point(destructor:NS3.InternalDimension)
   SharedDtor();
 }
 
-void Dimension::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+void InternalDimension::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
-void Dimension::SetCachedSize(int size) const {
+void InternalDimension::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Dimension::descriptor() {
+const ::google::protobuf::Descriptor* InternalDimension::descriptor() {
   ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const Dimension& Dimension::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_Dimension.base);
+const InternalDimension& InternalDimension::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_InternalDimension.base);
   return *internal_default_instance();
 }
 
 
-void Dimension::Clear() {
-// @@protoc_insertion_point(message_clear_start:NS3.Dimension)
+void InternalDimension::Clear() {
+// @@protoc_insertion_point(message_clear_start:NS3.InternalDimension)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    name_.ClearNonDefaultToEmptyNoArena();
+    id_.ClearNonDefaultToEmptyNoArena();
   }
+  measurementunit_ = 0;
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
 
-bool Dimension::MergePartialFromCodedStream(
+bool InternalDimension::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:NS3.Dimension)
+  // @@protoc_insertion_point(parse_start:NS3.InternalDimension)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string name = 1;
+      // required string id = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
+                input, this->mutable_id()));
           ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->name().data(), static_cast<int>(this->name().length()),
+            this->id().data(), static_cast<int>(this->id().length()),
             ::google::protobuf::internal::WireFormat::PARSE,
-            "NS3.Dimension.name");
+            "NS3.InternalDimension.id");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::NS3::InternalDimension_eMeasurementUnit_IsValid(value)) {
+            set_measurementunit(static_cast< ::NS3::InternalDimension_eMeasurementUnit >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(
+                2, static_cast< ::google::protobuf::uint64>(value));
+          }
         } else {
           goto handle_unusual;
         }
@@ -1092,67 +1275,98 @@ bool Dimension::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:NS3.Dimension)
+  // @@protoc_insertion_point(parse_success:NS3.InternalDimension)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:NS3.Dimension)
+  // @@protoc_insertion_point(parse_failure:NS3.InternalDimension)
   return false;
 #undef DO_
 }
 
-void Dimension::SerializeWithCachedSizes(
+void InternalDimension::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:NS3.Dimension)
+  // @@protoc_insertion_point(serialize_start:NS3.InternalDimension)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required string name = 1;
+  // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->id().data(), static_cast<int>(this->id().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.Dimension.name");
+      "NS3.InternalDimension.id");
     ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->name(), output);
+      1, this->id(), output);
+  }
+
+  // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      2, this->measurementunit(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:NS3.Dimension)
+  // @@protoc_insertion_point(serialize_end:NS3.InternalDimension)
 }
 
-::google::protobuf::uint8* Dimension::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* InternalDimension::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:NS3.Dimension)
+  // @@protoc_insertion_point(serialize_to_array_start:NS3.InternalDimension)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  // required string name = 1;
+  // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->name().data(), static_cast<int>(this->name().length()),
+      this->id().data(), static_cast<int>(this->id().length()),
       ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.Dimension.name");
+      "NS3.InternalDimension.id");
     target =
       ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->name(), target);
+        1, this->id(), target);
+  }
+
+  // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      2, this->measurementunit(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:NS3.Dimension)
+  // @@protoc_insertion_point(serialize_to_array_end:NS3.InternalDimension)
   return target;
 }
 
-size_t Dimension::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NS3.Dimension)
+size_t InternalDimension::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:NS3.InternalDimension)
+  size_t total_size = 0;
+
+  if (has_id()) {
+    // required string id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  if (has_measurementunit()) {
+    // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->measurementunit());
+  }
+
+  return total_size;
+}
+size_t InternalDimension::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NS3.InternalDimension)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1160,77 +1374,778 @@ size_t Dimension::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // required string name = 1;
-  if (has_name()) {
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required string id = 1;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
+        this->id());
+
+    // required .NS3.InternalDimension.eMeasurementUnit measurementUnit = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::EnumSize(this->measurementunit());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
   }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
 }
 
-void Dimension::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:NS3.Dimension)
+void InternalDimension::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NS3.InternalDimension)
   GOOGLE_DCHECK_NE(&from, this);
-  const Dimension* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Dimension>(
+  const InternalDimension* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const InternalDimension>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.Dimension)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.InternalDimension)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.Dimension)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.InternalDimension)
     MergeFrom(*source);
   }
 }
 
-void Dimension::MergeFrom(const Dimension& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:NS3.Dimension)
+void InternalDimension::MergeFrom(const InternalDimension& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NS3.InternalDimension)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from.has_name()) {
-    set_has_name();
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_has_id();
+      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+    }
+    if (cached_has_bits & 0x00000002u) {
+      measurementunit_ = from.measurementunit_;
+    }
+    _has_bits_[0] |= cached_has_bits;
   }
 }
 
-void Dimension::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:NS3.Dimension)
+void InternalDimension::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NS3.InternalDimension)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void Dimension::CopyFrom(const Dimension& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NS3.Dimension)
+void InternalDimension::CopyFrom(const InternalDimension& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NS3.InternalDimension)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool Dimension::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+bool InternalDimension::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
   return true;
 }
 
-void Dimension::Swap(Dimension* other) {
+void InternalDimension::Swap(InternalDimension* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void Dimension::InternalSwap(Dimension* other) {
+void InternalDimension::InternalSwap(InternalDimension* other) {
   using std::swap;
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(measurementunit_, other->measurementunit_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata InternalDimension::GetMetadata() const {
+  protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void UserDimension::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int UserDimension::kIdFieldNumber;
+const int UserDimension::kUnitsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+UserDimension::UserDimension()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_UserDimension.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NS3.UserDimension)
+}
+UserDimension::UserDimension(const UserDimension& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_id()) {
+    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+  }
+  units_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_units()) {
+    units_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.units_);
+  }
+  // @@protoc_insertion_point(copy_constructor:NS3.UserDimension)
+}
+
+void UserDimension::SharedCtor() {
+  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  units_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+UserDimension::~UserDimension() {
+  // @@protoc_insertion_point(destructor:NS3.UserDimension)
+  SharedDtor();
+}
+
+void UserDimension::SharedDtor() {
+  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  units_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void UserDimension::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* UserDimension::descriptor() {
+  ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const UserDimension& UserDimension::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_UserDimension.base);
+  return *internal_default_instance();
+}
+
+
+void UserDimension::Clear() {
+// @@protoc_insertion_point(message_clear_start:NS3.UserDimension)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      id_.ClearNonDefaultToEmptyNoArena();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      units_.ClearNonDefaultToEmptyNoArena();
+    }
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool UserDimension::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:NS3.UserDimension)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string id = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_id()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->id().data(), static_cast<int>(this->id().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "NS3.UserDimension.id");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required string units = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_units()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->units().data(), static_cast<int>(this->units().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "NS3.UserDimension.units");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:NS3.UserDimension)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:NS3.UserDimension)
+  return false;
+#undef DO_
+}
+
+void UserDimension::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:NS3.UserDimension)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required string id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.UserDimension.id");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->id(), output);
+  }
+
+  // required string units = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->units().data(), static_cast<int>(this->units().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.UserDimension.units");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->units(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:NS3.UserDimension)
+}
+
+::google::protobuf::uint8* UserDimension::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:NS3.UserDimension)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required string id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->id().data(), static_cast<int>(this->id().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.UserDimension.id");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->id(), target);
+  }
+
+  // required string units = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->units().data(), static_cast<int>(this->units().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.UserDimension.units");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->units(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NS3.UserDimension)
+  return target;
+}
+
+size_t UserDimension::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:NS3.UserDimension)
+  size_t total_size = 0;
+
+  if (has_id()) {
+    // required string id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+  }
+
+  if (has_units()) {
+    // required string units = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->units());
+  }
+
+  return total_size;
+}
+size_t UserDimension::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NS3.UserDimension)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required string id = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->id());
+
+    // required string units = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->units());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void UserDimension::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NS3.UserDimension)
+  GOOGLE_DCHECK_NE(&from, this);
+  const UserDimension* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const UserDimension>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.UserDimension)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.UserDimension)
+    MergeFrom(*source);
+  }
+}
+
+void UserDimension::MergeFrom(const UserDimension& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NS3.UserDimension)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_has_id();
+      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+    }
+    if (cached_has_bits & 0x00000002u) {
+      set_has_units();
+      units_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.units_);
+    }
+  }
+}
+
+void UserDimension::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NS3.UserDimension)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void UserDimension::CopyFrom(const UserDimension& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NS3.UserDimension)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UserDimension::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  return true;
+}
+
+void UserDimension::Swap(UserDimension* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void UserDimension::InternalSwap(UserDimension* other) {
+  using std::swap;
+  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  units_.Swap(&other->units_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata Dimension::GetMetadata() const {
+::google::protobuf::Metadata UserDimension::GetMetadata() const {
+  protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void DimensionConfiguration::InitAsDefaultInstance() {
+  ::NS3::_DimensionConfiguration_default_instance_._instance.get_mutable()->timeconfig_ = const_cast< ::NS3::InternalDimension*>(
+      ::NS3::InternalDimension::internal_default_instance());
+  ::NS3::_DimensionConfiguration_default_instance_._instance.get_mutable()->distanceconfig_ = const_cast< ::NS3::InternalDimension*>(
+      ::NS3::InternalDimension::internal_default_instance());
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int DimensionConfiguration::kTimeConfigFieldNumber;
+const int DimensionConfiguration::kDistanceConfigFieldNumber;
+const int DimensionConfiguration::kUserDimensionsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+DimensionConfiguration::DimensionConfiguration()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_DimensionConfiguration.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NS3.DimensionConfiguration)
+}
+DimensionConfiguration::DimensionConfiguration(const DimensionConfiguration& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      userdimensions_(from.userdimensions_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_timeconfig()) {
+    timeconfig_ = new ::NS3::InternalDimension(*from.timeconfig_);
+  } else {
+    timeconfig_ = NULL;
+  }
+  if (from.has_distanceconfig()) {
+    distanceconfig_ = new ::NS3::InternalDimension(*from.distanceconfig_);
+  } else {
+    distanceconfig_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:NS3.DimensionConfiguration)
+}
+
+void DimensionConfiguration::SharedCtor() {
+  ::memset(&timeconfig_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&distanceconfig_) -
+      reinterpret_cast<char*>(&timeconfig_)) + sizeof(distanceconfig_));
+}
+
+DimensionConfiguration::~DimensionConfiguration() {
+  // @@protoc_insertion_point(destructor:NS3.DimensionConfiguration)
+  SharedDtor();
+}
+
+void DimensionConfiguration::SharedDtor() {
+  if (this != internal_default_instance()) delete timeconfig_;
+  if (this != internal_default_instance()) delete distanceconfig_;
+}
+
+void DimensionConfiguration::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* DimensionConfiguration::descriptor() {
+  ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const DimensionConfiguration& DimensionConfiguration::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_DimensionConfiguration.base);
+  return *internal_default_instance();
+}
+
+
+void DimensionConfiguration::Clear() {
+// @@protoc_insertion_point(message_clear_start:NS3.DimensionConfiguration)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  userdimensions_.Clear();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(timeconfig_ != NULL);
+      timeconfig_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(distanceconfig_ != NULL);
+      distanceconfig_->Clear();
+    }
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool DimensionConfiguration::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:NS3.DimensionConfiguration)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // optional .NS3.InternalDimension timeConfig = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_timeconfig()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // optional .NS3.InternalDimension distanceConfig = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_distanceconfig()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .NS3.UserDimension userDimensions = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_userdimensions()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:NS3.DimensionConfiguration)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:NS3.DimensionConfiguration)
+  return false;
+#undef DO_
+}
+
+void DimensionConfiguration::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:NS3.DimensionConfiguration)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .NS3.InternalDimension timeConfig = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->_internal_timeconfig(), output);
+  }
+
+  // optional .NS3.InternalDimension distanceConfig = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->_internal_distanceconfig(), output);
+  }
+
+  // repeated .NS3.UserDimension userDimensions = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->userdimensions_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3,
+      this->userdimensions(static_cast<int>(i)),
+      output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:NS3.DimensionConfiguration)
+}
+
+::google::protobuf::uint8* DimensionConfiguration::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:NS3.DimensionConfiguration)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // optional .NS3.InternalDimension timeConfig = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        1, this->_internal_timeconfig(), deterministic, target);
+  }
+
+  // optional .NS3.InternalDimension distanceConfig = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->_internal_distanceconfig(), deterministic, target);
+  }
+
+  // repeated .NS3.UserDimension userDimensions = 3;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->userdimensions_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->userdimensions(static_cast<int>(i)), deterministic, target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NS3.DimensionConfiguration)
+  return target;
+}
+
+size_t DimensionConfiguration::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NS3.DimensionConfiguration)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  // repeated .NS3.UserDimension userDimensions = 3;
+  {
+    unsigned int count = static_cast<unsigned int>(this->userdimensions_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->userdimensions(static_cast<int>(i)));
+    }
+  }
+
+  if (_has_bits_[0 / 32] & 3u) {
+    // optional .NS3.InternalDimension timeConfig = 1;
+    if (has_timeconfig()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *timeconfig_);
+    }
+
+    // optional .NS3.InternalDimension distanceConfig = 2;
+    if (has_distanceconfig()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *distanceconfig_);
+    }
+
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void DimensionConfiguration::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NS3.DimensionConfiguration)
+  GOOGLE_DCHECK_NE(&from, this);
+  const DimensionConfiguration* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const DimensionConfiguration>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.DimensionConfiguration)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.DimensionConfiguration)
+    MergeFrom(*source);
+  }
+}
+
+void DimensionConfiguration::MergeFrom(const DimensionConfiguration& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NS3.DimensionConfiguration)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  userdimensions_.MergeFrom(from.userdimensions_);
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      mutable_timeconfig()->::NS3::InternalDimension::MergeFrom(from.timeconfig());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      mutable_distanceconfig()->::NS3::InternalDimension::MergeFrom(from.distanceconfig());
+    }
+  }
+}
+
+void DimensionConfiguration::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NS3.DimensionConfiguration)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void DimensionConfiguration::CopyFrom(const DimensionConfiguration& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NS3.DimensionConfiguration)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool DimensionConfiguration::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(this->userdimensions())) return false;
+  if (has_timeconfig()) {
+    if (!this->timeconfig_->IsInitialized()) return false;
+  }
+  if (has_distanceconfig()) {
+    if (!this->distanceconfig_->IsInitialized()) return false;
+  }
+  return true;
+}
+
+void DimensionConfiguration::Swap(DimensionConfiguration* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void DimensionConfiguration::InternalSwap(DimensionConfiguration* other) {
+  using std::swap;
+  CastToBase(&userdimensions_)->InternalSwap(CastToBase(&other->userdimensions_));
+  swap(timeconfig_, other->timeconfig_);
+  swap(distanceconfig_, other->distanceconfig_);
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata DimensionConfiguration::GetMetadata() const {
   protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -3626,7 +4541,6 @@ const int Node::kFlowFieldNumber;
 const int Node::kProductFlowsFieldNumber;
 const int Node::kAllowableSourcesFieldNumber;
 const int Node::kMaximumSourcesFieldNumber;
-const int Node::kAllowableServiceClassesFieldNumber;
 const int Node::kFlowConstraintsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -3645,7 +4559,6 @@ Node::Node(const Node& from)
       consumption_(from.consumption_),
       productflows_(from.productflows_),
       allowablesources_(from.allowablesources_),
-      allowableserviceclasses_(from.allowableserviceclasses_),
       flowconstraints_(from.flowconstraints_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -3708,7 +4621,6 @@ void Node::Clear() {
   consumption_.Clear();
   productflows_.Clear();
   allowablesources_.Clear();
-  allowableserviceclasses_.Clear();
   flowconstraints_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 7u) {
@@ -3846,27 +4758,10 @@ bool Node::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated string allowableServiceClasses = 9;
+      // repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
       case 9: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_allowableserviceclasses()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->allowableserviceclasses(this->allowableserviceclasses_size() - 1).data(),
-            static_cast<int>(this->allowableserviceclasses(this->allowableserviceclasses_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "NS3.Node.allowableServiceClasses");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
-      case 10: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_flowconstraints()));
         } else {
@@ -3966,21 +4861,11 @@ void Node::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->maximumsources(), output);
   }
 
-  // repeated string allowableServiceClasses = 9;
-  for (int i = 0, n = this->allowableserviceclasses_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->allowableserviceclasses(i).data(), static_cast<int>(this->allowableserviceclasses(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.Node.allowableServiceClasses");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      9, this->allowableserviceclasses(i), output);
-  }
-
-  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
+  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flowconstraints_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      10,
+      9,
       this->flowconstraints(static_cast<int>(i)),
       output);
   }
@@ -4064,22 +4949,12 @@ void Node::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->maximumsources(), target);
   }
 
-  // repeated string allowableServiceClasses = 9;
-  for (int i = 0, n = this->allowableserviceclasses_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->allowableserviceclasses(i).data(), static_cast<int>(this->allowableserviceclasses(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.Node.allowableServiceClasses");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(9, this->allowableserviceclasses(i), target);
-  }
-
-  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
+  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->flowconstraints_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        10, this->flowconstraints(static_cast<int>(i)), deterministic, target);
+        9, this->flowconstraints(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -4174,15 +5049,7 @@ size_t Node::ByteSizeLong() const {
       this->allowablesources(i));
   }
 
-  // repeated string allowableServiceClasses = 9;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->allowableserviceclasses_size());
-  for (int i = 0, n = this->allowableserviceclasses_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->allowableserviceclasses(i));
-  }
-
-  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 10;
+  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 9;
   {
     unsigned int count = static_cast<unsigned int>(this->flowconstraints_size());
     total_size += 1UL * count;
@@ -4240,7 +5107,6 @@ void Node::MergeFrom(const Node& from) {
   consumption_.MergeFrom(from.consumption_);
   productflows_.MergeFrom(from.productflows_);
   allowablesources_.MergeFrom(from.allowablesources_);
-  allowableserviceclasses_.MergeFrom(from.allowableserviceclasses_);
   flowconstraints_.MergeFrom(from.flowconstraints_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 15u) {
@@ -4300,7 +5166,6 @@ void Node::InternalSwap(Node* other) {
   CastToBase(&consumption_)->InternalSwap(CastToBase(&other->consumption_));
   CastToBase(&productflows_)->InternalSwap(CastToBase(&other->productflows_));
   allowablesources_.InternalSwap(CastToBase(&other->allowablesources_));
-  allowableserviceclasses_.InternalSwap(CastToBase(&other->allowableserviceclasses_));
   CastToBase(&flowconstraints_)->InternalSwap(CastToBase(&other->flowconstraints_));
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -5646,7 +6511,6 @@ const int CostModel::kDestinationFieldNumber;
 const int CostModel::kProductGroupIdsFieldNumber;
 const int CostModel::kUnitDimensionCostFieldNumber;
 const int CostModel::kFlowConstraintsFieldNumber;
-const int CostModel::kServiceClassFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CostModel::CostModel()
@@ -5676,10 +6540,6 @@ CostModel::CostModel(const CostModel& from)
   if (from.has_destination()) {
     destination_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.destination_);
   }
-  serviceclass_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_serviceclass()) {
-    serviceclass_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.serviceclass_);
-  }
   // @@protoc_insertion_point(copy_constructor:NS3.CostModel)
 }
 
@@ -5687,7 +6547,6 @@ void CostModel::SharedCtor() {
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   source_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   destination_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  serviceclass_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 CostModel::~CostModel() {
@@ -5699,7 +6558,6 @@ void CostModel::SharedDtor() {
   id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   source_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   destination_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  serviceclass_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
 void CostModel::SetCachedSize(int size) const {
@@ -5726,7 +6584,7 @@ void CostModel::Clear() {
   unitdimensioncost_.Clear();
   flowconstraints_.Clear();
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 15u) {
+  if (cached_has_bits & 7u) {
     if (cached_has_bits & 0x00000001u) {
       id_.ClearNonDefaultToEmptyNoArena();
     }
@@ -5735,9 +6593,6 @@ void CostModel::Clear() {
     }
     if (cached_has_bits & 0x00000004u) {
       destination_.ClearNonDefaultToEmptyNoArena();
-    }
-    if (cached_has_bits & 0x00000008u) {
-      serviceclass_.ClearNonDefaultToEmptyNoArena();
     }
   }
   _has_bits_.Clear();
@@ -5843,22 +6698,6 @@ bool CostModel::MergePartialFromCodedStream(
         break;
       }
 
-      // optional string serviceClass = 8;
-      case 8: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_serviceclass()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->serviceclass().data(), static_cast<int>(this->serviceclass().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "NS3.CostModel.serviceClass");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -5944,16 +6783,6 @@ void CostModel::SerializeWithCachedSizes(
       output);
   }
 
-  // optional string serviceClass = 8;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->serviceclass().data(), static_cast<int>(this->serviceclass().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.CostModel.serviceClass");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      8, this->serviceclass(), output);
-  }
-
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6026,17 +6855,6 @@ void CostModel::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
         7, this->flowconstraints(static_cast<int>(i)), deterministic, target);
-  }
-
-  // optional string serviceClass = 8;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->serviceclass().data(), static_cast<int>(this->serviceclass().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NS3.CostModel.serviceClass");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        8, this->serviceclass(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -6120,22 +6938,13 @@ size_t CostModel::ByteSizeLong() const {
     }
   }
 
-  if (_has_bits_[0 / 32] & 12u) {
-    // optional string destination = 4;
-    if (has_destination()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->destination());
-    }
-
-    // optional string serviceClass = 8;
-    if (has_serviceclass()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->serviceclass());
-    }
-
+  // optional string destination = 4;
+  if (has_destination()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->destination());
   }
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -6167,7 +6976,7 @@ void CostModel::MergeFrom(const CostModel& from) {
   unitdimensioncost_.MergeFrom(from.unitdimensioncost_);
   flowconstraints_.MergeFrom(from.flowconstraints_);
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
+  if (cached_has_bits & 7u) {
     if (cached_has_bits & 0x00000001u) {
       set_has_id();
       id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
@@ -6179,10 +6988,6 @@ void CostModel::MergeFrom(const CostModel& from) {
     if (cached_has_bits & 0x00000004u) {
       set_has_destination();
       destination_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.destination_);
-    }
-    if (cached_has_bits & 0x00000008u) {
-      set_has_serviceclass();
-      serviceclass_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.serviceclass_);
     }
   }
 }
@@ -6223,8 +7028,6 @@ void CostModel::InternalSwap(CostModel* other) {
     GetArenaNoVirtual());
   destination_.Swap(&other->destination_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  serviceclass_.Swap(&other->serviceclass_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
@@ -6238,6 +7041,8 @@ void CostModel::InternalSwap(CostModel* other) {
 // ===================================================================
 
 void Model::InitAsDefaultInstance() {
+  ::NS3::_Model_default_instance_._instance.get_mutable()->dimensions_ = const_cast< ::NS3::DimensionConfiguration*>(
+      ::NS3::DimensionConfiguration::internal_default_instance());
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Model::kDimensionsFieldNumber;
@@ -6258,16 +7063,21 @@ Model::Model(const Model& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      dimensions_(from.dimensions_),
       nodes_(from.nodes_),
       lanerates_(from.lanerates_),
       costmodels_(from.costmodels_),
       productgroups_(from.productgroups_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_dimensions()) {
+    dimensions_ = new ::NS3::DimensionConfiguration(*from.dimensions_);
+  } else {
+    dimensions_ = NULL;
+  }
   // @@protoc_insertion_point(copy_constructor:NS3.Model)
 }
 
 void Model::SharedCtor() {
+  dimensions_ = NULL;
 }
 
 Model::~Model() {
@@ -6276,6 +7086,7 @@ Model::~Model() {
 }
 
 void Model::SharedDtor() {
+  if (this != internal_default_instance()) delete dimensions_;
 }
 
 void Model::SetCachedSize(int size) const {
@@ -6298,11 +7109,15 @@ void Model::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  dimensions_.Clear();
   nodes_.Clear();
   lanerates_.Clear();
   costmodels_.Clear();
   productgroups_.Clear();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    GOOGLE_DCHECK(dimensions_ != NULL);
+    dimensions_->Clear();
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -6317,12 +7132,12 @@ bool Model::MergePartialFromCodedStream(
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .NS3.Dimension dimensions = 1;
+      // required .NS3.DimensionConfiguration dimensions = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_dimensions()));
+               input, mutable_dimensions()));
         } else {
           goto handle_unusual;
         }
@@ -6403,13 +7218,11 @@ void Model::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .NS3.Dimension dimensions = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->dimensions_size()); i < n; i++) {
+  cached_has_bits = _has_bits_[0];
+  // required .NS3.DimensionConfiguration dimensions = 1;
+  if (cached_has_bits & 0x00000001u) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->dimensions(static_cast<int>(i)),
-      output);
+      1, this->_internal_dimensions(), output);
   }
 
   // repeated .NS3.Node nodes = 2;
@@ -6462,12 +7275,12 @@ void Model::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .NS3.Dimension dimensions = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->dimensions_size()); i < n; i++) {
+  cached_has_bits = _has_bits_[0];
+  // required .NS3.DimensionConfiguration dimensions = 1;
+  if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        1, this->dimensions(static_cast<int>(i)), deterministic, target);
+        1, this->_internal_dimensions(), deterministic, target);
   }
 
   // repeated .NS3.Node nodes = 2;
@@ -6519,17 +7332,12 @@ size_t Model::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated .NS3.Dimension dimensions = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->dimensions_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->dimensions(static_cast<int>(i)));
-    }
+  // required .NS3.DimensionConfiguration dimensions = 1;
+  if (has_dimensions()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *dimensions_);
   }
-
   // repeated .NS3.Node nodes = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->nodes_size());
@@ -6601,11 +7409,13 @@ void Model::MergeFrom(const Model& from) {
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  dimensions_.MergeFrom(from.dimensions_);
   nodes_.MergeFrom(from.nodes_);
   lanerates_.MergeFrom(from.lanerates_);
   costmodels_.MergeFrom(from.costmodels_);
   productgroups_.MergeFrom(from.productgroups_);
+  if (from.has_dimensions()) {
+    mutable_dimensions()->::NS3::DimensionConfiguration::MergeFrom(from.dimensions());
+  }
 }
 
 void Model::CopyFrom(const ::google::protobuf::Message& from) {
@@ -6623,11 +7433,14 @@ void Model::CopyFrom(const Model& from) {
 }
 
 bool Model::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->dimensions())) return false;
+  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->nodes())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->lanerates())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->costmodels())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->productgroups())) return false;
+  if (has_dimensions()) {
+    if (!this->dimensions_->IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -6637,11 +7450,11 @@ void Model::Swap(Model* other) {
 }
 void Model::InternalSwap(Model* other) {
   using std::swap;
-  CastToBase(&dimensions_)->InternalSwap(CastToBase(&other->dimensions_));
   CastToBase(&nodes_)->InternalSwap(CastToBase(&other->nodes_));
   CastToBase(&lanerates_)->InternalSwap(CastToBase(&other->lanerates_));
   CastToBase(&costmodels_)->InternalSwap(CastToBase(&other->costmodels_));
   CastToBase(&productgroups_)->InternalSwap(CastToBase(&other->productgroups_));
+  swap(dimensions_, other->dimensions_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
@@ -6662,6 +7475,7 @@ void SolveRequest::InitAsDefaultInstance() {
 const int SolveRequest::kModelFieldNumber;
 const int SolveRequest::kModelIDFieldNumber;
 const int SolveRequest::kSolveTypeFieldNumber;
+const int SolveRequest::kGeometryOutputFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SolveRequest::SolveRequest()
@@ -6685,15 +7499,17 @@ SolveRequest::SolveRequest(const SolveRequest& from)
   } else {
     model_ = NULL;
   }
-  solvetype_ = from.solvetype_;
+  ::memcpy(&solvetype_, &from.solvetype_,
+    static_cast<size_t>(reinterpret_cast<char*>(&geometryoutput_) -
+    reinterpret_cast<char*>(&solvetype_)) + sizeof(geometryoutput_));
   // @@protoc_insertion_point(copy_constructor:NS3.SolveRequest)
 }
 
 void SolveRequest::SharedCtor() {
   modelid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&solvetype_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(solvetype_));
+      reinterpret_cast<char*>(&geometryoutput_) -
+      reinterpret_cast<char*>(&model_)) + sizeof(geometryoutput_));
 }
 
 SolveRequest::~SolveRequest() {
@@ -6736,7 +7552,11 @@ void SolveRequest::Clear() {
       model_->Clear();
     }
   }
-  solvetype_ = 0;
+  if (cached_has_bits & 12u) {
+    ::memset(&solvetype_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&geometryoutput_) -
+        reinterpret_cast<char*>(&solvetype_)) + sizeof(geometryoutput_));
+  }
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
@@ -6799,6 +7619,26 @@ bool SolveRequest::MergePartialFromCodedStream(
         break;
       }
 
+      // optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+          int value;
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::NS3::SolveRequest_GeometryOutput_IsValid(value)) {
+            set_geometryoutput(static_cast< ::NS3::SolveRequest_GeometryOutput >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(
+                5, static_cast< ::google::protobuf::uint64>(value));
+          }
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -6848,6 +7688,12 @@ void SolveRequest::SerializeWithCachedSizes(
       4, this->solvetype(), output);
   }
 
+  // optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+  if (cached_has_bits & 0x00000008u) {
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      5, this->geometryoutput(), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -6887,6 +7733,12 @@ void SolveRequest::SerializeWithCachedSizes(
       4, this->solvetype(), target);
   }
 
+  // optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+  if (cached_has_bits & 0x00000008u) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      5, this->geometryoutput(), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -6904,7 +7756,7 @@ size_t SolveRequest::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  if (_has_bits_[0 / 32] & 7u) {
+  if (_has_bits_[0 / 32] & 15u) {
     // optional string modelID = 2;
     if (has_modelid()) {
       total_size += 1 +
@@ -6923,6 +7775,12 @@ size_t SolveRequest::ByteSizeLong() const {
     if (has_solvetype()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::EnumSize(this->solvetype());
+    }
+
+    // optional .NS3.SolveRequest.GeometryOutput geometryOutput = 5 [default = None];
+    if (has_geometryoutput()) {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->geometryoutput());
     }
 
   }
@@ -6954,7 +7812,7 @@ void SolveRequest::MergeFrom(const SolveRequest& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  if (cached_has_bits & 15u) {
     if (cached_has_bits & 0x00000001u) {
       set_has_modelid();
       modelid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modelid_);
@@ -6964,6 +7822,9 @@ void SolveRequest::MergeFrom(const SolveRequest& from) {
     }
     if (cached_has_bits & 0x00000004u) {
       solvetype_ = from.solvetype_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      geometryoutput_ = from.geometryoutput_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -7000,6 +7861,7 @@ void SolveRequest::InternalSwap(SolveRequest* other) {
     GetArenaNoVirtual());
   swap(model_, other->model_);
   swap(solvetype_, other->solvetype_);
+  swap(geometryoutput_, other->geometryoutput_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
@@ -9201,197 +10063,109 @@ void SolutionResponse_NodeFlow::InternalSwap(SolutionResponse_NodeFlow* other) {
 
 // ===================================================================
 
-void SolutionResponse_GeometryEdgeSummary::InitAsDefaultInstance() {
+void SolutionResponse_GeometrySequence::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_GeometryEdgeSummary::kFxsFieldNumber;
-const int SolutionResponse_GeometryEdgeSummary::kFysFieldNumber;
-const int SolutionResponse_GeometryEdgeSummary::kTxsFieldNumber;
-const int SolutionResponse_GeometryEdgeSummary::kTysFieldNumber;
-const int SolutionResponse_GeometryEdgeSummary::kWeightsFieldNumber;
-const int SolutionResponse_GeometryEdgeSummary::kTypesFieldNumber;
+const int SolutionResponse_GeometrySequence::kXFieldNumber;
+const int SolutionResponse_GeometrySequence::kYFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-SolutionResponse_GeometryEdgeSummary::SolutionResponse_GeometryEdgeSummary()
+SolutionResponse_GeometrySequence::SolutionResponse_GeometrySequence()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
   ::google::protobuf::internal::InitSCC(
-      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometryEdgeSummary.base);
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometrySequence.base);
   SharedCtor();
-  // @@protoc_insertion_point(constructor:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(constructor:NS3.SolutionResponse.GeometrySequence)
 }
-SolutionResponse_GeometryEdgeSummary::SolutionResponse_GeometryEdgeSummary(const SolutionResponse_GeometryEdgeSummary& from)
+SolutionResponse_GeometrySequence::SolutionResponse_GeometrySequence(const SolutionResponse_GeometrySequence& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      fxs_(from.fxs_),
-      fys_(from.fys_),
-      txs_(from.txs_),
-      tys_(from.tys_),
-      weights_(from.weights_),
-      types_(from.types_) {
+      x_(from.x_),
+      y_(from.y_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(copy_constructor:NS3.SolutionResponse.GeometrySequence)
 }
 
-void SolutionResponse_GeometryEdgeSummary::SharedCtor() {
+void SolutionResponse_GeometrySequence::SharedCtor() {
 }
 
-SolutionResponse_GeometryEdgeSummary::~SolutionResponse_GeometryEdgeSummary() {
-  // @@protoc_insertion_point(destructor:NS3.SolutionResponse.GeometryEdgeSummary)
+SolutionResponse_GeometrySequence::~SolutionResponse_GeometrySequence() {
+  // @@protoc_insertion_point(destructor:NS3.SolutionResponse.GeometrySequence)
   SharedDtor();
 }
 
-void SolutionResponse_GeometryEdgeSummary::SharedDtor() {
+void SolutionResponse_GeometrySequence::SharedDtor() {
 }
 
-void SolutionResponse_GeometryEdgeSummary::SetCachedSize(int size) const {
+void SolutionResponse_GeometrySequence::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SolutionResponse_GeometryEdgeSummary::descriptor() {
+const ::google::protobuf::Descriptor* SolutionResponse_GeometrySequence::descriptor() {
   ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
 }
 
-const SolutionResponse_GeometryEdgeSummary& SolutionResponse_GeometryEdgeSummary::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometryEdgeSummary.base);
+const SolutionResponse_GeometrySequence& SolutionResponse_GeometrySequence::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_GeometrySequence.base);
   return *internal_default_instance();
 }
 
 
-void SolutionResponse_GeometryEdgeSummary::Clear() {
-// @@protoc_insertion_point(message_clear_start:NS3.SolutionResponse.GeometryEdgeSummary)
+void SolutionResponse_GeometrySequence::Clear() {
+// @@protoc_insertion_point(message_clear_start:NS3.SolutionResponse.GeometrySequence)
   ::google::protobuf::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  fxs_.Clear();
-  fys_.Clear();
-  txs_.Clear();
-  tys_.Clear();
-  weights_.Clear();
-  types_.Clear();
+  x_.Clear();
+  y_.Clear();
   _has_bits_.Clear();
   _internal_metadata_.Clear();
 }
 
-bool SolutionResponse_GeometryEdgeSummary::MergePartialFromCodedStream(
+bool SolutionResponse_GeometrySequence::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
 #define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(parse_start:NS3.SolutionResponse.GeometrySequence)
   for (;;) {
     ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated float fxs = 1;
+      // repeated float x = 1;
       case 1: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 13u, input, this->mutable_fxs())));
+                 1, 13u, input, this->mutable_x())));
         } else if (
             static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_fxs())));
+                 input, this->mutable_x())));
         } else {
           goto handle_unusual;
         }
         break;
       }
 
-      // repeated float fys = 2;
+      // repeated float y = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 21u, input, this->mutable_fys())));
+                 1, 21u, input, this->mutable_y())));
         } else if (
             static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_fys())));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated float txs = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 29u, input, this->mutable_txs())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_txs())));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated float tys = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 37u, input, this->mutable_tys())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_tys())));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated float weights = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 45u, input, this->mutable_weights())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_weights())));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated int32 types = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 1, 48u, input, this->mutable_types())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, this->mutable_types())));
+                 input, this->mutable_y())));
         } else {
           goto handle_unusual;
         }
@@ -9410,104 +10184,64 @@ bool SolutionResponse_GeometryEdgeSummary::MergePartialFromCodedStream(
     }
   }
 success:
-  // @@protoc_insertion_point(parse_success:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(parse_success:NS3.SolutionResponse.GeometrySequence)
   return true;
 failure:
-  // @@protoc_insertion_point(parse_failure:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(parse_failure:NS3.SolutionResponse.GeometrySequence)
   return false;
 #undef DO_
 }
 
-void SolutionResponse_GeometryEdgeSummary::SerializeWithCachedSizes(
+void SolutionResponse_GeometrySequence::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(serialize_start:NS3.SolutionResponse.GeometrySequence)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated float fxs = 1;
-  for (int i = 0, n = this->fxs_size(); i < n; i++) {
+  // repeated float x = 1;
+  for (int i = 0, n = this->x_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      1, this->fxs(i), output);
+      1, this->x(i), output);
   }
 
-  // repeated float fys = 2;
-  for (int i = 0, n = this->fys_size(); i < n; i++) {
+  // repeated float y = 2;
+  for (int i = 0, n = this->y_size(); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      2, this->fys(i), output);
-  }
-
-  // repeated float txs = 3;
-  for (int i = 0, n = this->txs_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      3, this->txs(i), output);
-  }
-
-  // repeated float tys = 4;
-  for (int i = 0, n = this->tys_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      4, this->tys(i), output);
-  }
-
-  // repeated float weights = 5;
-  for (int i = 0, n = this->weights_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(
-      5, this->weights(i), output);
-  }
-
-  // repeated int32 types = 6;
-  for (int i = 0, n = this->types_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(
-      6, this->types(i), output);
+      2, this->y(i), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
   }
-  // @@protoc_insertion_point(serialize_end:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(serialize_end:NS3.SolutionResponse.GeometrySequence)
 }
 
-::google::protobuf::uint8* SolutionResponse_GeometryEdgeSummary::InternalSerializeWithCachedSizesToArray(
+::google::protobuf::uint8* SolutionResponse_GeometrySequence::InternalSerializeWithCachedSizesToArray(
     bool deterministic, ::google::protobuf::uint8* target) const {
   (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(serialize_to_array_start:NS3.SolutionResponse.GeometrySequence)
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated float fxs = 1;
+  // repeated float x = 1;
   target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(1, this->fxs_, target);
+    WriteFloatToArray(1, this->x_, target);
 
-  // repeated float fys = 2;
+  // repeated float y = 2;
   target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(2, this->fys_, target);
-
-  // repeated float txs = 3;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(3, this->txs_, target);
-
-  // repeated float tys = 4;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(4, this->tys_, target);
-
-  // repeated float weights = 5;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteFloatToArray(5, this->weights_, target);
-
-  // repeated int32 types = 6;
-  target = ::google::protobuf::internal::WireFormatLite::
-    WriteInt32ToArray(6, this->types_, target);
+    WriteFloatToArray(2, this->y_, target);
 
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(serialize_to_array_end:NS3.SolutionResponse.GeometrySequence)
   return target;
 }
 
-size_t SolutionResponse_GeometryEdgeSummary::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NS3.SolutionResponse.GeometryEdgeSummary)
+size_t SolutionResponse_GeometrySequence::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NS3.SolutionResponse.GeometrySequence)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -9515,57 +10249,21 @@ size_t SolutionResponse_GeometryEdgeSummary::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
         _internal_metadata_.unknown_fields());
   }
-  // repeated float fxs = 1;
+  // repeated float x = 1;
   {
-    unsigned int count = static_cast<unsigned int>(this->fxs_size());
+    unsigned int count = static_cast<unsigned int>(this->x_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->fxs_size());
+                  ::google::protobuf::internal::FromIntSize(this->x_size());
     total_size += data_size;
   }
 
-  // repeated float fys = 2;
+  // repeated float y = 2;
   {
-    unsigned int count = static_cast<unsigned int>(this->fys_size());
+    unsigned int count = static_cast<unsigned int>(this->y_size());
     size_t data_size = 4UL * count;
     total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->fys_size());
-    total_size += data_size;
-  }
-
-  // repeated float txs = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->txs_size());
-    size_t data_size = 4UL * count;
-    total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->txs_size());
-    total_size += data_size;
-  }
-
-  // repeated float tys = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->tys_size());
-    size_t data_size = 4UL * count;
-    total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->tys_size());
-    total_size += data_size;
-  }
-
-  // repeated float weights = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->weights_size());
-    size_t data_size = 4UL * count;
-    total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->weights_size());
-    total_size += data_size;
-  }
-
-  // repeated int32 types = 6;
-  {
-    size_t data_size = ::google::protobuf::internal::WireFormatLite::
-      Int32Size(this->types_);
-    total_size += 1 *
-                  ::google::protobuf::internal::FromIntSize(this->types_size());
+                  ::google::protobuf::internal::FromIntSize(this->y_size());
     total_size += data_size;
   }
 
@@ -9574,71 +10272,442 @@ size_t SolutionResponse_GeometryEdgeSummary::ByteSizeLong() const {
   return total_size;
 }
 
-void SolutionResponse_GeometryEdgeSummary::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:NS3.SolutionResponse.GeometryEdgeSummary)
+void SolutionResponse_GeometrySequence::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NS3.SolutionResponse.GeometrySequence)
   GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_GeometryEdgeSummary* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_GeometryEdgeSummary>(
+  const SolutionResponse_GeometrySequence* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_GeometrySequence>(
           &from);
   if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.SolutionResponse.GeometrySequence)
     ::google::protobuf::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.SolutionResponse.GeometryEdgeSummary)
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.SolutionResponse.GeometrySequence)
     MergeFrom(*source);
   }
 }
 
-void SolutionResponse_GeometryEdgeSummary::MergeFrom(const SolutionResponse_GeometryEdgeSummary& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:NS3.SolutionResponse.GeometryEdgeSummary)
+void SolutionResponse_GeometrySequence::MergeFrom(const SolutionResponse_GeometrySequence& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NS3.SolutionResponse.GeometrySequence)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  fxs_.MergeFrom(from.fxs_);
-  fys_.MergeFrom(from.fys_);
-  txs_.MergeFrom(from.txs_);
-  tys_.MergeFrom(from.tys_);
-  weights_.MergeFrom(from.weights_);
-  types_.MergeFrom(from.types_);
+  x_.MergeFrom(from.x_);
+  y_.MergeFrom(from.y_);
 }
 
-void SolutionResponse_GeometryEdgeSummary::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:NS3.SolutionResponse.GeometryEdgeSummary)
+void SolutionResponse_GeometrySequence::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NS3.SolutionResponse.GeometrySequence)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-void SolutionResponse_GeometryEdgeSummary::CopyFrom(const SolutionResponse_GeometryEdgeSummary& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NS3.SolutionResponse.GeometryEdgeSummary)
+void SolutionResponse_GeometrySequence::CopyFrom(const SolutionResponse_GeometrySequence& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NS3.SolutionResponse.GeometrySequence)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool SolutionResponse_GeometryEdgeSummary::IsInitialized() const {
+bool SolutionResponse_GeometrySequence::IsInitialized() const {
   return true;
 }
 
-void SolutionResponse_GeometryEdgeSummary::Swap(SolutionResponse_GeometryEdgeSummary* other) {
+void SolutionResponse_GeometrySequence::Swap(SolutionResponse_GeometrySequence* other) {
   if (other == this) return;
   InternalSwap(other);
 }
-void SolutionResponse_GeometryEdgeSummary::InternalSwap(SolutionResponse_GeometryEdgeSummary* other) {
+void SolutionResponse_GeometrySequence::InternalSwap(SolutionResponse_GeometrySequence* other) {
   using std::swap;
-  fxs_.InternalSwap(&other->fxs_);
-  fys_.InternalSwap(&other->fys_);
-  txs_.InternalSwap(&other->txs_);
-  tys_.InternalSwap(&other->tys_);
-  weights_.InternalSwap(&other->weights_);
-  types_.InternalSwap(&other->types_);
+  x_.InternalSwap(&other->x_);
+  y_.InternalSwap(&other->y_);
   swap(_has_bits_[0], other->_has_bits_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
-::google::protobuf::Metadata SolutionResponse_GeometryEdgeSummary::GetMetadata() const {
+::google::protobuf::Metadata SolutionResponse_GeometrySequence::GetMetadata() const {
+  protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void SolutionResponse_Route::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int SolutionResponse_Route::kFromIdFieldNumber;
+const int SolutionResponse_Route::kToIdFieldNumber;
+const int SolutionResponse_Route::kGeometrySequenceFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+SolutionResponse_Route::SolutionResponse_Route()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_Route.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:NS3.SolutionResponse.Route)
+}
+SolutionResponse_Route::SolutionResponse_Route(const SolutionResponse_Route& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _has_bits_(from._has_bits_),
+      geometrysequence_(from.geometrysequence_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_fromid()) {
+    fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+  }
+  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.has_toid()) {
+    toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+  }
+  // @@protoc_insertion_point(copy_constructor:NS3.SolutionResponse.Route)
+}
+
+void SolutionResponse_Route::SharedCtor() {
+  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+SolutionResponse_Route::~SolutionResponse_Route() {
+  // @@protoc_insertion_point(destructor:NS3.SolutionResponse.Route)
+  SharedDtor();
+}
+
+void SolutionResponse_Route::SharedDtor() {
+  fromid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  toid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void SolutionResponse_Route::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* SolutionResponse_Route::descriptor() {
+  ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const SolutionResponse_Route& SolutionResponse_Route::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_ns3_2dtbfvuwtge2iq_2eproto::scc_info_SolutionResponse_Route.base);
+  return *internal_default_instance();
+}
+
+
+void SolutionResponse_Route::Clear() {
+// @@protoc_insertion_point(message_clear_start:NS3.SolutionResponse.Route)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  geometrysequence_.Clear();
+  cached_has_bits = _has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      fromid_.ClearNonDefaultToEmptyNoArena();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      toid_.ClearNonDefaultToEmptyNoArena();
+    }
+  }
+  _has_bits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool SolutionResponse_Route::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:NS3.SolutionResponse.Route)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // required string fromId = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_fromid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->fromid().data(), static_cast<int>(this->fromid().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "NS3.SolutionResponse.Route.fromId");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // required string toId = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_toid()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->toid().data(), static_cast<int>(this->toid().length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "NS3.SolutionResponse.Route.toId");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated int32 geometrySequence = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 1, 24u, input, this->mutable_geometrysequence())));
+        } else if (
+            static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, this->mutable_geometrysequence())));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:NS3.SolutionResponse.Route)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:NS3.SolutionResponse.Route)
+  return false;
+#undef DO_
+}
+
+void SolutionResponse_Route::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:NS3.SolutionResponse.Route)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required string fromId = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromid().data(), static_cast<int>(this->fromid().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.SolutionResponse.Route.fromId");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->fromid(), output);
+  }
+
+  // required string toId = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->toid().data(), static_cast<int>(this->toid().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.SolutionResponse.Route.toId");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->toid(), output);
+  }
+
+  // repeated int32 geometrySequence = 3;
+  for (int i = 0, n = this->geometrysequence_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(
+      3, this->geometrysequence(i), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:NS3.SolutionResponse.Route)
+}
+
+::google::protobuf::uint8* SolutionResponse_Route::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:NS3.SolutionResponse.Route)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _has_bits_[0];
+  // required string fromId = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->fromid().data(), static_cast<int>(this->fromid().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.SolutionResponse.Route.fromId");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->fromid(), target);
+  }
+
+  // required string toId = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->toid().data(), static_cast<int>(this->toid().length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "NS3.SolutionResponse.Route.toId");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->toid(), target);
+  }
+
+  // repeated int32 geometrySequence = 3;
+  target = ::google::protobuf::internal::WireFormatLite::
+    WriteInt32ToArray(3, this->geometrysequence_, target);
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:NS3.SolutionResponse.Route)
+  return target;
+}
+
+size_t SolutionResponse_Route::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:NS3.SolutionResponse.Route)
+  size_t total_size = 0;
+
+  if (has_fromid()) {
+    // required string fromId = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->fromid());
+  }
+
+  if (has_toid()) {
+    // required string toId = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->toid());
+  }
+
+  return total_size;
+}
+size_t SolutionResponse_Route::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:NS3.SolutionResponse.Route)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required string fromId = 1;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->fromid());
+
+    // required string toId = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->toid());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  // repeated int32 geometrySequence = 3;
+  {
+    size_t data_size = ::google::protobuf::internal::WireFormatLite::
+      Int32Size(this->geometrysequence_);
+    total_size += 1 *
+                  ::google::protobuf::internal::FromIntSize(this->geometrysequence_size());
+    total_size += data_size;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SolutionResponse_Route::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:NS3.SolutionResponse.Route)
+  GOOGLE_DCHECK_NE(&from, this);
+  const SolutionResponse_Route* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Route>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NS3.SolutionResponse.Route)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:NS3.SolutionResponse.Route)
+    MergeFrom(*source);
+  }
+}
+
+void SolutionResponse_Route::MergeFrom(const SolutionResponse_Route& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:NS3.SolutionResponse.Route)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  geometrysequence_.MergeFrom(from.geometrysequence_);
+  cached_has_bits = from._has_bits_[0];
+  if (cached_has_bits & 3u) {
+    if (cached_has_bits & 0x00000001u) {
+      set_has_fromid();
+      fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+    }
+    if (cached_has_bits & 0x00000002u) {
+      set_has_toid();
+      toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+    }
+  }
+}
+
+void SolutionResponse_Route::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:NS3.SolutionResponse.Route)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void SolutionResponse_Route::CopyFrom(const SolutionResponse_Route& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:NS3.SolutionResponse.Route)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SolutionResponse_Route::IsInitialized() const {
+  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+  return true;
+}
+
+void SolutionResponse_Route::Swap(SolutionResponse_Route* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void SolutionResponse_Route::InternalSwap(SolutionResponse_Route* other) {
+  using std::swap;
+  geometrysequence_.InternalSwap(&other->geometrysequence_);
+  fromid_.Swap(&other->fromid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  toid_.Swap(&other->toid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(_has_bits_[0], other->_has_bits_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata SolutionResponse_Route::GetMetadata() const {
   protobuf_ns3_2dtbfvuwtge2iq_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -9655,7 +10724,8 @@ const int SolutionResponse::kOptimalityGapFieldNumber;
 const int SolutionResponse::kAssignmentsFieldNumber;
 const int SolutionResponse::kNodeFlowsFieldNumber;
 const int SolutionResponse::kNodeProductFlowsFieldNumber;
-const int SolutionResponse::kGeometryEdgeSummaryFieldNumber;
+const int SolutionResponse::kGeometrySequenceFieldNumber;
+const int SolutionResponse::kRoutesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SolutionResponse::SolutionResponse()
@@ -9672,7 +10742,8 @@ SolutionResponse::SolutionResponse(const SolutionResponse& from)
       assignments_(from.assignments_),
       nodeflows_(from.nodeflows_),
       nodeproductflows_(from.nodeproductflows_),
-      geometryedgesummary_(from.geometryedgesummary_) {
+      geometrysequence_(from.geometrysequence_),
+      routes_(from.routes_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&objective_, &from.objective_,
     static_cast<size_t>(reinterpret_cast<char*>(&optimalitygap_) -
@@ -9717,7 +10788,8 @@ void SolutionResponse::Clear() {
   assignments_.Clear();
   nodeflows_.Clear();
   nodeproductflows_.Clear();
-  geometryedgesummary_.Clear();
+  geometrysequence_.Clear();
+  routes_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 7u) {
     ::memset(&objective_, 0, static_cast<size_t>(
@@ -9816,12 +10888,24 @@ bool SolutionResponse::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
+      // repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
       case 7: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_geometryedgesummary()));
+                input, add_geometrysequence()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .NS3.SolutionResponse.Route routes = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_routes()));
         } else {
           goto handle_unusual;
         }
@@ -9897,12 +10981,21 @@ void SolutionResponse::SerializeWithCachedSizes(
       output);
   }
 
-  // repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
+  // repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometryedgesummary_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->geometrysequence_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       7,
-      this->geometryedgesummary(static_cast<int>(i)),
+      this->geometrysequence(static_cast<int>(i)),
+      output);
+  }
+
+  // repeated .NS3.SolutionResponse.Route routes = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      8,
+      this->routes(static_cast<int>(i)),
       output);
   }
 
@@ -9960,12 +11053,20 @@ void SolutionResponse::SerializeWithCachedSizes(
         6, this->nodeproductflows(static_cast<int>(i)), deterministic, target);
   }
 
-  // repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
+  // repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometryedgesummary_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->geometrysequence_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        7, this->geometryedgesummary(static_cast<int>(i)), deterministic, target);
+        7, this->geometrysequence(static_cast<int>(i)), deterministic, target);
+  }
+
+  // repeated .NS3.SolutionResponse.Route routes = 8;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        8, this->routes(static_cast<int>(i)), deterministic, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -10022,14 +11123,25 @@ size_t SolutionResponse::ByteSizeLong() const {
     }
   }
 
-  // repeated .NS3.SolutionResponse.GeometryEdgeSummary geometryEdgeSummary = 7;
+  // repeated .NS3.SolutionResponse.GeometrySequence geometrySequence = 7;
   {
-    unsigned int count = static_cast<unsigned int>(this->geometryedgesummary_size());
+    unsigned int count = static_cast<unsigned int>(this->geometrysequence_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->geometryedgesummary(static_cast<int>(i)));
+          this->geometrysequence(static_cast<int>(i)));
+    }
+  }
+
+  // repeated .NS3.SolutionResponse.Route routes = 8;
+  {
+    unsigned int count = static_cast<unsigned int>(this->routes_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->routes(static_cast<int>(i)));
     }
   }
 
@@ -10075,7 +11187,8 @@ void SolutionResponse::MergeFrom(const SolutionResponse& from) {
   assignments_.MergeFrom(from.assignments_);
   nodeflows_.MergeFrom(from.nodeflows_);
   nodeproductflows_.MergeFrom(from.nodeproductflows_);
-  geometryedgesummary_.MergeFrom(from.geometryedgesummary_);
+  geometrysequence_.MergeFrom(from.geometrysequence_);
+  routes_.MergeFrom(from.routes_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 7u) {
     if (cached_has_bits & 0x00000001u) {
@@ -10110,6 +11223,7 @@ bool SolutionResponse::IsInitialized() const {
   if (!::google::protobuf::internal::AllAreInitialized(this->assignments())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->nodeflows())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->nodeproductflows())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->routes())) return false;
   return true;
 }
 
@@ -10122,7 +11236,8 @@ void SolutionResponse::InternalSwap(SolutionResponse* other) {
   CastToBase(&assignments_)->InternalSwap(CastToBase(&other->assignments_));
   CastToBase(&nodeflows_)->InternalSwap(CastToBase(&other->nodeflows_));
   CastToBase(&nodeproductflows_)->InternalSwap(CastToBase(&other->nodeproductflows_));
-  CastToBase(&geometryedgesummary_)->InternalSwap(CastToBase(&other->geometryedgesummary_));
+  CastToBase(&geometrysequence_)->InternalSwap(CastToBase(&other->geometrysequence_));
+  CastToBase(&routes_)->InternalSwap(CastToBase(&other->routes_));
   swap(objective_, other->objective_);
   swap(lowerbound_, other->lowerbound_);
   swap(optimalitygap_, other->optimalitygap_);
@@ -10140,8 +11255,14 @@ void SolutionResponse::InternalSwap(SolutionResponse* other) {
 }  // namespace NS3
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::Dimension* Arena::CreateMaybeMessage< ::NS3::Dimension >(Arena* arena) {
-  return Arena::CreateInternal< ::NS3::Dimension >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::InternalDimension* Arena::CreateMaybeMessage< ::NS3::InternalDimension >(Arena* arena) {
+  return Arena::CreateInternal< ::NS3::InternalDimension >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::UserDimension* Arena::CreateMaybeMessage< ::NS3::UserDimension >(Arena* arena) {
+  return Arena::CreateInternal< ::NS3::UserDimension >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::DimensionConfiguration* Arena::CreateMaybeMessage< ::NS3::DimensionConfiguration >(Arena* arena) {
+  return Arena::CreateInternal< ::NS3::DimensionConfiguration >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::Geocode* Arena::CreateMaybeMessage< ::NS3::Geocode >(Arena* arena) {
   return Arena::CreateInternal< ::NS3::Geocode >(arena);
@@ -10194,8 +11315,11 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse_NodeProduc
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse_NodeFlow* Arena::CreateMaybeMessage< ::NS3::SolutionResponse_NodeFlow >(Arena* arena) {
   return Arena::CreateInternal< ::NS3::SolutionResponse_NodeFlow >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse_GeometryEdgeSummary* Arena::CreateMaybeMessage< ::NS3::SolutionResponse_GeometryEdgeSummary >(Arena* arena) {
-  return Arena::CreateInternal< ::NS3::SolutionResponse_GeometryEdgeSummary >(arena);
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse_GeometrySequence* Arena::CreateMaybeMessage< ::NS3::SolutionResponse_GeometrySequence >(Arena* arena) {
+  return Arena::CreateInternal< ::NS3::SolutionResponse_GeometrySequence >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse_Route* Arena::CreateMaybeMessage< ::NS3::SolutionResponse_Route >(Arena* arena) {
+  return Arena::CreateInternal< ::NS3::SolutionResponse_Route >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NS3::SolutionResponse* Arena::CreateMaybeMessage< ::NS3::SolutionResponse >(Arena* arena) {
   return Arena::CreateInternal< ::NS3::SolutionResponse >(arena);

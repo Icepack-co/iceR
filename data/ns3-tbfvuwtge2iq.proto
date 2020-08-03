@@ -4,12 +4,31 @@ package NS3;
 
 // -- INPUT DEFINITIONS -- //
 // https://docs.icepack.ai/ns3/dimension/
-message Dimension {
-  required string name = 1;
-  // reserved dimensions names are:
-  // 1. distance_km
-  // 2. time_hour
+
+message InternalDimension {
+  enum eMeasurementUnit {
+    SECONDS = 0;     // timeConfig
+    MINUTES = 1;     // timeConfig
+    HOURS = 2;       // timeConfig
+    DAYS = 3;        // timeConfig
+    KILOMETRES = 4;  // distanceConfig
+    MILES = 5;       // distanceConfig
+  }
+  required string id = 1;
+  required eMeasurementUnit measurementUnit = 2;
 }
+
+message UserDimension {
+  required string id = 1;
+  required string units = 2;
+}
+
+message DimensionConfiguration {
+  optional InternalDimension timeConfig = 1;     // if you want to use road-network time in the model
+  optional InternalDimension distanceConfig = 2; // if you want to use road-network distance in the model
+  repeated UserDimension userDimensions = 3;
+}
+
 
 // we have a network sourcing problem in this context.
 // it's going to be framed as a multi-commodity-flow problem
@@ -82,8 +101,7 @@ message Node {
   repeated ProductFlow productFlows = 6;  // individual product flows that are applied at a node level (mostly intermediate nodes).
   repeated string allowableSources = 7;   // can be a sinlge source, or many.
   optional int32 maximumSources = 8;      // set to 1 where a single source decision is required.
-  repeated string allowableServiceClasses = 9;
-  repeated FlowDimensionalConstraint flowConstraints = 10;// the maximum flow over this node (sum of all incoming arcs | unit+dims)
+  repeated FlowDimensionalConstraint flowConstraints = 9;// the maximum flow over this node (sum of all incoming arcs | unit+dims)
   
 }
 
@@ -128,12 +146,11 @@ message CostModel {
   repeated string productGroupIds = 5; // cost models only work with product groups.
   repeated UnitDimensionCost unitDimensionCost = 6;
   repeated FlowDimensionalConstraint flowConstraints = 7;
-  optional string serviceClass = 8;
 }
 
 // https://docs.icepack.ai/ns3/model/
 message Model {
-  repeated Dimension dimensions = 1;
+  required DimensionConfiguration dimensions = 1;
   repeated Node nodes = 2;
   repeated LaneRate laneRates = 3;
   repeated CostModel costModels = 4;
@@ -146,10 +163,16 @@ message SolveRequest {
   enum SolveType {
     Optimise =  0; 
   }
+  enum GeometryOutput{
+    None = 0;
+    Aggregate = 1;
+  }
+
   optional Model model = 1;     // either model or modelID should be specified
   optional string modelID = 2;  // the model ID from a previously optimised
                                 // request (for use with evaluate solve type)
   optional SolveType solveType = 4 [default = Optimise];
+  optional GeometryOutput geometryOutput = 5 [default = None];
 }
 
 // -- OUTPUT DEFINITIONS -- //
@@ -206,14 +229,14 @@ message SolutionResponse {
     required float consumptionCost = 13;
   }
 
-  message GeometryEdgeSummary {
-    repeated float fxs = 1;
-    repeated float fys = 2;
-    repeated float txs = 3;
-    repeated float tys = 4;
-    repeated float weights = 5;
-    repeated int32 types = 6;    // 1 for destinations that end in a production or
-                                // warehouse, 0 for destinations that end in a customer node
+  message GeometrySequence {
+    repeated float x = 1;
+    repeated float y = 2;
+  }
+  message Route{
+    required string fromId = 1;
+    required string toId  = 2;
+    repeated int32 geometrySequence = 3;
   }
 
   required float objective = 1;
@@ -222,5 +245,6 @@ message SolutionResponse {
   repeated Assignment assignments = 4;
   repeated NodeFlow nodeFlows = 5;
   repeated NodeProductFlow nodeProductFlows = 6;
-  repeated GeometryEdgeSummary geometryEdgeSummary = 7;
+  repeated GeometrySequence geometrySequence = 7;
+  repeated Route routes = 8;
 }
