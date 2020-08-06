@@ -1529,25 +1529,25 @@ class Node_ProductFlow : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
       unitdimensioncosts() const;
 
-  // required string id = 1;
-  bool has_id() const;
-  void clear_id();
-  static const int kIdFieldNumber = 1;
-  const ::std::string& id() const;
-  void set_id(const ::std::string& value);
+  // required string productId = 1;
+  bool has_productid() const;
+  void clear_productid();
+  static const int kProductIdFieldNumber = 1;
+  const ::std::string& productid() const;
+  void set_productid(const ::std::string& value);
   #if LANG_CXX11
-  void set_id(::std::string&& value);
+  void set_productid(::std::string&& value);
   #endif
-  void set_id(const char* value);
-  void set_id(const char* value, size_t size);
-  ::std::string* mutable_id();
-  ::std::string* release_id();
-  void set_allocated_id(::std::string* id);
+  void set_productid(const char* value);
+  void set_productid(const char* value, size_t size);
+  ::std::string* mutable_productid();
+  ::std::string* release_productid();
+  void set_allocated_productid(::std::string* productid);
 
   // @@protoc_insertion_point(class_scope:NS3.Node.ProductFlow)
  private:
-  void set_has_id();
-  void clear_has_id();
+  void set_has_productid();
+  void clear_has_productid();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
@@ -1555,7 +1555,7 @@ class Node_ProductFlow : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange > dimensionranges_;
   ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost > fixeddimensioncosts_;
   ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost > unitdimensioncosts_;
-  ::google::protobuf::internal::ArenaStringPtr id_;
+  ::google::protobuf::internal::ArenaStringPtr productid_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -1909,7 +1909,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::NS3::Node_Flow* mutable_flow();
   void set_allocated_flow(::NS3::Node_Flow* flow);
 
-  // optional int32 maximumSources = 8;
+  // optional int32 maximumSources = 8 [default = -1];
   bool has_maximumsources() const;
   void clear_maximumsources();
   static const int kMaximumSourcesFieldNumber = 8;
@@ -2212,42 +2212,42 @@ class ProductGroup : public ::google::protobuf::Message /* @@protoc_insertion_po
   const ::google::protobuf::RepeatedPtrField< ::NS3::ProductGroup_ProductSpecification >&
       productspecification() const;
 
-  // required string product = 1;
-  bool has_product() const;
-  void clear_product();
-  static const int kProductFieldNumber = 1;
-  const ::std::string& product() const;
-  void set_product(const ::std::string& value);
+  // required string productId = 1;
+  bool has_productid() const;
+  void clear_productid();
+  static const int kProductIdFieldNumber = 1;
+  const ::std::string& productid() const;
+  void set_productid(const ::std::string& value);
   #if LANG_CXX11
-  void set_product(::std::string&& value);
+  void set_productid(::std::string&& value);
   #endif
-  void set_product(const char* value);
-  void set_product(const char* value, size_t size);
-  ::std::string* mutable_product();
-  ::std::string* release_product();
-  void set_allocated_product(::std::string* product);
+  void set_productid(const char* value);
+  void set_productid(const char* value, size_t size);
+  ::std::string* mutable_productid();
+  ::std::string* release_productid();
+  void set_allocated_productid(::std::string* productid);
 
-  // required string productGroup = 2;
-  bool has_productgroup() const;
-  void clear_productgroup();
-  static const int kProductGroupFieldNumber = 2;
-  const ::std::string& productgroup() const;
-  void set_productgroup(const ::std::string& value);
+  // required string productGroupId = 2;
+  bool has_productgroupid() const;
+  void clear_productgroupid();
+  static const int kProductGroupIdFieldNumber = 2;
+  const ::std::string& productgroupid() const;
+  void set_productgroupid(const ::std::string& value);
   #if LANG_CXX11
-  void set_productgroup(::std::string&& value);
+  void set_productgroupid(::std::string&& value);
   #endif
-  void set_productgroup(const char* value);
-  void set_productgroup(const char* value, size_t size);
-  ::std::string* mutable_productgroup();
-  ::std::string* release_productgroup();
-  void set_allocated_productgroup(::std::string* productgroup);
+  void set_productgroupid(const char* value);
+  void set_productgroupid(const char* value, size_t size);
+  ::std::string* mutable_productgroupid();
+  ::std::string* release_productgroupid();
+  void set_allocated_productgroupid(::std::string* productgroupid);
 
   // @@protoc_insertion_point(class_scope:NS3.ProductGroup)
  private:
-  void set_has_product();
-  void clear_has_product();
-  void set_has_productgroup();
-  void clear_has_productgroup();
+  void set_has_productid();
+  void clear_has_productid();
+  void set_has_productgroupid();
+  void clear_has_productgroupid();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -2256,8 +2256,8 @@ class ProductGroup : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::NS3::ProductGroup_ProductSpecification > productspecification_;
-  ::google::protobuf::internal::ArenaStringPtr product_;
-  ::google::protobuf::internal::ArenaStringPtr productgroup_;
+  ::google::protobuf::internal::ArenaStringPtr productid_;
+  ::google::protobuf::internal::ArenaStringPtr productgroupid_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2589,10 +2589,10 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
-  // repeated string productGroupIds = 5;
+  // repeated string productGroupIds = 3;
   int productgroupids_size() const;
   void clear_productgroupids();
-  static const int kProductGroupIdsFieldNumber = 5;
+  static const int kProductGroupIdsFieldNumber = 3;
   const ::std::string& productgroupids(int index) const;
   ::std::string* mutable_productgroupids(int index);
   void set_productgroupids(int index, const ::std::string& value);
@@ -2611,10 +2611,10 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   const ::google::protobuf::RepeatedPtrField< ::std::string>& productgroupids() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_productgroupids();
 
-  // repeated .NS3.UnitDimensionCost unitDimensionCost = 6;
+  // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
   int unitdimensioncost_size() const;
   void clear_unitdimensioncost();
-  static const int kUnitDimensionCostFieldNumber = 6;
+  static const int kUnitDimensionCostFieldNumber = 4;
   ::NS3::UnitDimensionCost* mutable_unitdimensioncost(int index);
   ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >*
       mutable_unitdimensioncost();
@@ -2623,10 +2623,10 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
       unitdimensioncost() const;
 
-  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 7;
+  // repeated .NS3.FlowDimensionalConstraint flowConstraints = 5;
   int flowconstraints_size() const;
   void clear_flowconstraints();
-  static const int kFlowConstraintsFieldNumber = 7;
+  static const int kFlowConstraintsFieldNumber = 5;
   ::NS3::FlowDimensionalConstraint* mutable_flowconstraints(int index);
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint >*
       mutable_flowconstraints();
@@ -2650,10 +2650,10 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
-  // required string source = 3;
+  // required string source = 2;
   bool has_source() const;
   void clear_source();
-  static const int kSourceFieldNumber = 3;
+  static const int kSourceFieldNumber = 2;
   const ::std::string& source() const;
   void set_source(const ::std::string& value);
   #if LANG_CXX11
@@ -2665,29 +2665,12 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_source();
   void set_allocated_source(::std::string* source);
 
-  // optional string destination = 4;
-  bool has_destination() const;
-  void clear_destination();
-  static const int kDestinationFieldNumber = 4;
-  const ::std::string& destination() const;
-  void set_destination(const ::std::string& value);
-  #if LANG_CXX11
-  void set_destination(::std::string&& value);
-  #endif
-  void set_destination(const char* value);
-  void set_destination(const char* value, size_t size);
-  ::std::string* mutable_destination();
-  ::std::string* release_destination();
-  void set_allocated_destination(::std::string* destination);
-
   // @@protoc_insertion_point(class_scope:NS3.CostModel)
  private:
   void set_has_id();
   void clear_has_id();
   void set_has_source();
   void clear_has_source();
-  void set_has_destination();
-  void clear_has_destination();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -2700,7 +2683,6 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint > flowconstraints_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr source_;
-  ::google::protobuf::internal::ArenaStringPtr destination_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -3177,18 +3159,6 @@ class SolutionResponse_Assignment : public ::google::protobuf::Message /* @@prot
 
   // accessors -------------------------------------------------------
 
-  // repeated .NS3.Geocode geometry = 10;
-  int geometry_size() const;
-  void clear_geometry();
-  static const int kGeometryFieldNumber = 10;
-  ::NS3::Geocode* mutable_geometry(int index);
-  ::google::protobuf::RepeatedPtrField< ::NS3::Geocode >*
-      mutable_geometry();
-  const ::NS3::Geocode& geometry(int index) const;
-  ::NS3::Geocode* add_geometry();
-  const ::google::protobuf::RepeatedPtrField< ::NS3::Geocode >&
-      geometry() const;
-
   // required string source = 1;
   bool has_source() const;
   void clear_source();
@@ -3319,7 +3289,6 @@ class SolutionResponse_Assignment : public ::google::protobuf::Message /* @@prot
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::RepeatedPtrField< ::NS3::Geocode > geometry_;
   ::google::protobuf::internal::ArenaStringPtr source_;
   ::google::protobuf::internal::ArenaStringPtr destination_;
   ::google::protobuf::internal::ArenaStringPtr productid_;
@@ -5271,70 +5240,70 @@ inline void DimensionRange::set_flowpenalty(float value) {
 
 // Node_ProductFlow
 
-// required string id = 1;
-inline bool Node_ProductFlow::has_id() const {
+// required string productId = 1;
+inline bool Node_ProductFlow::has_productid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void Node_ProductFlow::set_has_id() {
+inline void Node_ProductFlow::set_has_productid() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void Node_ProductFlow::clear_has_id() {
+inline void Node_ProductFlow::clear_has_productid() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void Node_ProductFlow::clear_id() {
-  id_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_id();
+inline void Node_ProductFlow::clear_productid() {
+  productid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
 }
-inline const ::std::string& Node_ProductFlow::id() const {
-  // @@protoc_insertion_point(field_get:NS3.Node.ProductFlow.id)
-  return id_.GetNoArena();
+inline const ::std::string& Node_ProductFlow::productid() const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductFlow.productId)
+  return productid_.GetNoArena();
 }
-inline void Node_ProductFlow::set_id(const ::std::string& value) {
-  set_has_id();
-  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.Node.ProductFlow.id)
+inline void Node_ProductFlow::set_productid(const ::std::string& value) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.Node.ProductFlow.productId)
 }
 #if LANG_CXX11
-inline void Node_ProductFlow::set_id(::std::string&& value) {
-  set_has_id();
-  id_.SetNoArena(
+inline void Node_ProductFlow::set_productid(::std::string&& value) {
+  set_has_productid();
+  productid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.Node.ProductFlow.id)
+  // @@protoc_insertion_point(field_set_rvalue:NS3.Node.ProductFlow.productId)
 }
 #endif
-inline void Node_ProductFlow::set_id(const char* value) {
+inline void Node_ProductFlow::set_productid(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_id();
-  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.Node.ProductFlow.id)
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.Node.ProductFlow.productId)
 }
-inline void Node_ProductFlow::set_id(const char* value, size_t size) {
-  set_has_id();
-  id_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+inline void Node_ProductFlow::set_productid(const char* value, size_t size) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.Node.ProductFlow.id)
+  // @@protoc_insertion_point(field_set_pointer:NS3.Node.ProductFlow.productId)
 }
-inline ::std::string* Node_ProductFlow::mutable_id() {
-  set_has_id();
-  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductFlow.id)
-  return id_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* Node_ProductFlow::mutable_productid() {
+  set_has_productid();
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductFlow.productId)
+  return productid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* Node_ProductFlow::release_id() {
-  // @@protoc_insertion_point(field_release:NS3.Node.ProductFlow.id)
-  if (!has_id()) {
+inline ::std::string* Node_ProductFlow::release_productid() {
+  // @@protoc_insertion_point(field_release:NS3.Node.ProductFlow.productId)
+  if (!has_productid()) {
     return NULL;
   }
-  clear_has_id();
-  return id_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
+  return productid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void Node_ProductFlow::set_allocated_id(::std::string* id) {
-  if (id != NULL) {
-    set_has_id();
+inline void Node_ProductFlow::set_allocated_productid(::std::string* productid) {
+  if (productid != NULL) {
+    set_has_productid();
   } else {
-    clear_has_id();
+    clear_has_productid();
   }
-  id_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), id);
-  // @@protoc_insertion_point(field_set_allocated:NS3.Node.ProductFlow.id)
+  productid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.Node.ProductFlow.productId)
 }
 
 // repeated .NS3.DimensionRange dimensionRanges = 2;
@@ -5866,7 +5835,7 @@ Node::mutable_allowablesources() {
   return &allowablesources_;
 }
 
-// optional int32 maximumSources = 8;
+// optional int32 maximumSources = 8 [default = -1];
 inline bool Node::has_maximumsources() const {
   return (_has_bits_[0] & 0x00000008u) != 0;
 }
@@ -5877,7 +5846,7 @@ inline void Node::clear_has_maximumsources() {
   _has_bits_[0] &= ~0x00000008u;
 }
 inline void Node::clear_maximumsources() {
-  maximumsources_ = 0;
+  maximumsources_ = -1;
   clear_has_maximumsources();
 }
 inline ::google::protobuf::int32 Node::maximumsources() const {
@@ -6093,136 +6062,136 @@ ProductGroup_ProductSpecification::mutable_targetperbase() {
 
 // ProductGroup
 
-// required string product = 1;
-inline bool ProductGroup::has_product() const {
+// required string productId = 1;
+inline bool ProductGroup::has_productid() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void ProductGroup::set_has_product() {
+inline void ProductGroup::set_has_productid() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void ProductGroup::clear_has_product() {
+inline void ProductGroup::clear_has_productid() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void ProductGroup::clear_product() {
-  product_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_product();
+inline void ProductGroup::clear_productid() {
+  productid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
 }
-inline const ::std::string& ProductGroup::product() const {
-  // @@protoc_insertion_point(field_get:NS3.ProductGroup.product)
-  return product_.GetNoArena();
+inline const ::std::string& ProductGroup::productid() const {
+  // @@protoc_insertion_point(field_get:NS3.ProductGroup.productId)
+  return productid_.GetNoArena();
 }
-inline void ProductGroup::set_product(const ::std::string& value) {
-  set_has_product();
-  product_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.ProductGroup.product)
+inline void ProductGroup::set_productid(const ::std::string& value) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.ProductGroup.productId)
 }
 #if LANG_CXX11
-inline void ProductGroup::set_product(::std::string&& value) {
-  set_has_product();
-  product_.SetNoArena(
+inline void ProductGroup::set_productid(::std::string&& value) {
+  set_has_productid();
+  productid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.ProductGroup.product)
+  // @@protoc_insertion_point(field_set_rvalue:NS3.ProductGroup.productId)
 }
 #endif
-inline void ProductGroup::set_product(const char* value) {
+inline void ProductGroup::set_productid(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_product();
-  product_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.ProductGroup.product)
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.ProductGroup.productId)
 }
-inline void ProductGroup::set_product(const char* value, size_t size) {
-  set_has_product();
-  product_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+inline void ProductGroup::set_productid(const char* value, size_t size) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.ProductGroup.product)
+  // @@protoc_insertion_point(field_set_pointer:NS3.ProductGroup.productId)
 }
-inline ::std::string* ProductGroup::mutable_product() {
-  set_has_product();
-  // @@protoc_insertion_point(field_mutable:NS3.ProductGroup.product)
-  return product_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* ProductGroup::mutable_productid() {
+  set_has_productid();
+  // @@protoc_insertion_point(field_mutable:NS3.ProductGroup.productId)
+  return productid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ProductGroup::release_product() {
-  // @@protoc_insertion_point(field_release:NS3.ProductGroup.product)
-  if (!has_product()) {
+inline ::std::string* ProductGroup::release_productid() {
+  // @@protoc_insertion_point(field_release:NS3.ProductGroup.productId)
+  if (!has_productid()) {
     return NULL;
   }
-  clear_has_product();
-  return product_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
+  return productid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProductGroup::set_allocated_product(::std::string* product) {
-  if (product != NULL) {
-    set_has_product();
+inline void ProductGroup::set_allocated_productid(::std::string* productid) {
+  if (productid != NULL) {
+    set_has_productid();
   } else {
-    clear_has_product();
+    clear_has_productid();
   }
-  product_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), product);
-  // @@protoc_insertion_point(field_set_allocated:NS3.ProductGroup.product)
+  productid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.ProductGroup.productId)
 }
 
-// required string productGroup = 2;
-inline bool ProductGroup::has_productgroup() const {
+// required string productGroupId = 2;
+inline bool ProductGroup::has_productgroupid() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void ProductGroup::set_has_productgroup() {
+inline void ProductGroup::set_has_productgroupid() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void ProductGroup::clear_has_productgroup() {
+inline void ProductGroup::clear_has_productgroupid() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void ProductGroup::clear_productgroup() {
-  productgroup_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_productgroup();
+inline void ProductGroup::clear_productgroupid() {
+  productgroupid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productgroupid();
 }
-inline const ::std::string& ProductGroup::productgroup() const {
-  // @@protoc_insertion_point(field_get:NS3.ProductGroup.productGroup)
-  return productgroup_.GetNoArena();
+inline const ::std::string& ProductGroup::productgroupid() const {
+  // @@protoc_insertion_point(field_get:NS3.ProductGroup.productGroupId)
+  return productgroupid_.GetNoArena();
 }
-inline void ProductGroup::set_productgroup(const ::std::string& value) {
-  set_has_productgroup();
-  productgroup_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.ProductGroup.productGroup)
+inline void ProductGroup::set_productgroupid(const ::std::string& value) {
+  set_has_productgroupid();
+  productgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.ProductGroup.productGroupId)
 }
 #if LANG_CXX11
-inline void ProductGroup::set_productgroup(::std::string&& value) {
-  set_has_productgroup();
-  productgroup_.SetNoArena(
+inline void ProductGroup::set_productgroupid(::std::string&& value) {
+  set_has_productgroupid();
+  productgroupid_.SetNoArena(
     &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.ProductGroup.productGroup)
+  // @@protoc_insertion_point(field_set_rvalue:NS3.ProductGroup.productGroupId)
 }
 #endif
-inline void ProductGroup::set_productgroup(const char* value) {
+inline void ProductGroup::set_productgroupid(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  set_has_productgroup();
-  productgroup_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.ProductGroup.productGroup)
+  set_has_productgroupid();
+  productgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.ProductGroup.productGroupId)
 }
-inline void ProductGroup::set_productgroup(const char* value, size_t size) {
-  set_has_productgroup();
-  productgroup_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+inline void ProductGroup::set_productgroupid(const char* value, size_t size) {
+  set_has_productgroupid();
+  productgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
       ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.ProductGroup.productGroup)
+  // @@protoc_insertion_point(field_set_pointer:NS3.ProductGroup.productGroupId)
 }
-inline ::std::string* ProductGroup::mutable_productgroup() {
-  set_has_productgroup();
-  // @@protoc_insertion_point(field_mutable:NS3.ProductGroup.productGroup)
-  return productgroup_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline ::std::string* ProductGroup::mutable_productgroupid() {
+  set_has_productgroupid();
+  // @@protoc_insertion_point(field_mutable:NS3.ProductGroup.productGroupId)
+  return productgroupid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::std::string* ProductGroup::release_productgroup() {
-  // @@protoc_insertion_point(field_release:NS3.ProductGroup.productGroup)
-  if (!has_productgroup()) {
+inline ::std::string* ProductGroup::release_productgroupid() {
+  // @@protoc_insertion_point(field_release:NS3.ProductGroup.productGroupId)
+  if (!has_productgroupid()) {
     return NULL;
   }
-  clear_has_productgroup();
-  return productgroup_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productgroupid();
+  return productgroupid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void ProductGroup::set_allocated_productgroup(::std::string* productgroup) {
-  if (productgroup != NULL) {
-    set_has_productgroup();
+inline void ProductGroup::set_allocated_productgroupid(::std::string* productgroupid) {
+  if (productgroupid != NULL) {
+    set_has_productgroupid();
   } else {
-    clear_has_productgroup();
+    clear_has_productgroupid();
   }
-  productgroup_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productgroup);
-  // @@protoc_insertion_point(field_set_allocated:NS3.ProductGroup.productGroup)
+  productgroupid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productgroupid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.ProductGroup.productGroupId)
 }
 
 // repeated .NS3.ProductGroup.ProductSpecification productSpecification = 3;
@@ -6725,7 +6694,7 @@ inline void CostModel::set_allocated_id(::std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:NS3.CostModel.id)
 }
 
-// required string source = 3;
+// required string source = 2;
 inline bool CostModel::has_source() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -6791,73 +6760,7 @@ inline void CostModel::set_allocated_source(::std::string* source) {
   // @@protoc_insertion_point(field_set_allocated:NS3.CostModel.source)
 }
 
-// optional string destination = 4;
-inline bool CostModel::has_destination() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void CostModel::set_has_destination() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void CostModel::clear_has_destination() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void CostModel::clear_destination() {
-  destination_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_destination();
-}
-inline const ::std::string& CostModel::destination() const {
-  // @@protoc_insertion_point(field_get:NS3.CostModel.destination)
-  return destination_.GetNoArena();
-}
-inline void CostModel::set_destination(const ::std::string& value) {
-  set_has_destination();
-  destination_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NS3.CostModel.destination)
-}
-#if LANG_CXX11
-inline void CostModel::set_destination(::std::string&& value) {
-  set_has_destination();
-  destination_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NS3.CostModel.destination)
-}
-#endif
-inline void CostModel::set_destination(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_destination();
-  destination_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NS3.CostModel.destination)
-}
-inline void CostModel::set_destination(const char* value, size_t size) {
-  set_has_destination();
-  destination_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NS3.CostModel.destination)
-}
-inline ::std::string* CostModel::mutable_destination() {
-  set_has_destination();
-  // @@protoc_insertion_point(field_mutable:NS3.CostModel.destination)
-  return destination_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* CostModel::release_destination() {
-  // @@protoc_insertion_point(field_release:NS3.CostModel.destination)
-  if (!has_destination()) {
-    return NULL;
-  }
-  clear_has_destination();
-  return destination_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void CostModel::set_allocated_destination(::std::string* destination) {
-  if (destination != NULL) {
-    set_has_destination();
-  } else {
-    clear_has_destination();
-  }
-  destination_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), destination);
-  // @@protoc_insertion_point(field_set_allocated:NS3.CostModel.destination)
-}
-
-// repeated string productGroupIds = 5;
+// repeated string productGroupIds = 3;
 inline int CostModel::productgroupids_size() const {
   return productgroupids_.size();
 }
@@ -6926,7 +6829,7 @@ CostModel::mutable_productgroupids() {
   return &productgroupids_;
 }
 
-// repeated .NS3.UnitDimensionCost unitDimensionCost = 6;
+// repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
 inline int CostModel::unitdimensioncost_size() const {
   return unitdimensioncost_.size();
 }
@@ -6956,7 +6859,7 @@ CostModel::unitdimensioncost() const {
   return unitdimensioncost_;
 }
 
-// repeated .NS3.FlowDimensionalConstraint flowConstraints = 7;
+// repeated .NS3.FlowDimensionalConstraint flowConstraints = 5;
 inline int CostModel::flowconstraints_size() const {
   return flowconstraints_.size();
 }
@@ -7774,36 +7677,6 @@ inline void SolutionResponse_Assignment::set_duration(float value) {
   set_has_duration();
   duration_ = value;
   // @@protoc_insertion_point(field_set:NS3.SolutionResponse.Assignment.duration)
-}
-
-// repeated .NS3.Geocode geometry = 10;
-inline int SolutionResponse_Assignment::geometry_size() const {
-  return geometry_.size();
-}
-inline void SolutionResponse_Assignment::clear_geometry() {
-  geometry_.Clear();
-}
-inline ::NS3::Geocode* SolutionResponse_Assignment::mutable_geometry(int index) {
-  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.Assignment.geometry)
-  return geometry_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::NS3::Geocode >*
-SolutionResponse_Assignment::mutable_geometry() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.Assignment.geometry)
-  return &geometry_;
-}
-inline const ::NS3::Geocode& SolutionResponse_Assignment::geometry(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.Assignment.geometry)
-  return geometry_.Get(index);
-}
-inline ::NS3::Geocode* SolutionResponse_Assignment::add_geometry() {
-  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.Assignment.geometry)
-  return geometry_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::NS3::Geocode >&
-SolutionResponse_Assignment::geometry() const {
-  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.Assignment.geometry)
-  return geometry_;
 }
 
 // -------------------------------------------------------------------
