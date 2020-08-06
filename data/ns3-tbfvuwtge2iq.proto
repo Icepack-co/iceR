@@ -82,7 +82,7 @@ message DimensionRange {
 // https://docs.icepack.ai/ns3/node/
 message Node {
   message ProductFlow {
-    required string id = 1;
+    required string productId = 1;
     repeated DimensionRange dimensionRanges = 2;
     repeated FixedDimensionCost FixedDimensionCosts = 3;
     repeated UnitDimensionCost unitDimensionCosts = 4; // individual factoring and costs per dimension.
@@ -100,9 +100,8 @@ message Node {
   optional Flow flow = 5;                 // summing across all products+ dimensions, applies ranges, dimension costs etc.
   repeated ProductFlow productFlows = 6;  // individual product flows that are applied at a node level (mostly intermediate nodes).
   repeated string allowableSources = 7;   // can be a sinlge source, or many.
-  optional int32 maximumSources = 8;      // set to 1 where a single source decision is required.
+  optional int32 maximumSources = 8 [default = -1];      // set to 1 where a single source decision is required.
   repeated FlowDimensionalConstraint flowConstraints = 9;// the maximum flow over this node (sum of all incoming arcs | unit+dims)
-  
 }
 
 // https://docs.icepack.ai/ns3/product-group/
@@ -140,13 +139,12 @@ message LaneRate {
 // https://docs.icepack.ai/ns3/cost-model/
 message CostModel {
   required string id = 1;
-  required string source = 3;
-  optional string destination = 4; // when destination is optional, 
-                                   // edges are created to all nodes that have an OUT node attribute
-  repeated string productGroupIds = 5; // cost models only work with product groups.
-  repeated UnitDimensionCost unitDimensionCost = 6;
-  repeated FlowDimensionalConstraint flowConstraints = 7;
+  required string source = 2;
+  repeated string productGroupIds = 3; // cost models only work with product groups.
+  repeated UnitDimensionCost unitDimensionCost = 4;
+  repeated FlowDimensionalConstraint flowConstraints = 5;
 }
+
 
 // https://docs.icepack.ai/ns3/model/
 message Model {
@@ -183,7 +181,6 @@ message SolutionResponse {
   // lane rate assigned volumes and costs
 
 
-  // TODO: Update the solution output to include the product dimensions.
   message Assignment {
     required string source = 1;
     required string destination = 2;
@@ -194,7 +191,6 @@ message SolutionResponse {
     optional string costModelId = 7;
     required float distance = 8;
     required float duration = 9;
-    repeated Geocode geometry = 10;
   }
 
 
