@@ -66,7 +66,7 @@ apiHelper <- setRefClass("apiHelper",
                }
                # grab the route associated with the model type.
                modelroutes <- rep(x = 'vehicle-router/solve/', times = length(models))
-               modelroutes[models == 'ns3-tbfvuwtge2iq'] <- 'network-sourcing/solve/'
+                 modelroutes[models == 'ns3-tbfvuwtge2iq'] <- 'network-sourcing/solve/'
                modelroutes[models == 'matrix-vyv95n7wchpl'] <- 'matrix/'
                modelroutes[models == 'ivrdata-o43e0dvs78zq'] <- 'vehicle-router/data/'
                .self$route <- modelroutes[match(modelType, models)]
@@ -151,6 +151,7 @@ getResponse <- function(apiHelper, requestID){
                        'ivr8-yni1c9k2swof' = {read(IVR8.SolutionResponse, solRes$solution)},
                        'ivr7-kt461v8eoaif' = {read(IVR7.SolutionResponse, solRes$solution)},
                        'nvd-hap0j2y4zlm1' = {read(NVD.SolutionResponse, solRes$solution)},
+                       'ns3-tbfvuwtge2iq' = {read(NS3.SolutionResponse, solRes$solution)},
                        'matrix-vyv95n7wchpl' = {read(Matrix.MatrixResponse, solRes$solution)},
         )
         )
@@ -185,19 +186,23 @@ plotResponseLeaflet <- function(solutionResponse, solveRequest){
     m <- m %>%
       addCircleMarkers(data = l$nodes, lng = ~x, lat = ~y, color = 'black', radius = 5,  popup = ~label)
   }
-  if(!is.null(l$edges$geometry)){
-    if('vehicleId' %in% names(l$edges)){
-      uv <- unique(l$edges$vehicleId)
-      cols <- colorRampPalette(c("blue", "red"))(length(uv))
-      for(i in 1:length(uv)){
-        m <- m %>% addPolylines(data = l$edges %>%
-                                  filter(vehicleId == uv[i]) %>% select(geometry), color = ~cols[i])
+  if(solveRequest@type == 'NS3.SolveRequest'){
+    m <- m %>% addPolylines(data = st_as_sf(l$routes %>% select(geometry)))
+  }else{
+    if(!is.null(l$edges$geometry)){
+      if('vehicleId' %in% names(l$edges)){
+        uv <- unique(l$edges$vehicleId)
+        cols <- colorRampPalette(c("blue", "red"))(length(uv))
+        for(i in 1:length(uv)){
+          m <- m %>% addPolylines(data = l$edges %>%
+                                    filter(vehicleId == uv[i]) %>% select(geometry), color = ~cols[i])
+        }
+      }else{
+        m <- m %>% addPolylines(data = l$edges$geometry)
       }
     }else{
-      m <- m %>% addPolylines(data = l$edges$geometry)
+      cat("Seems like there are no geometries defined for this model. Plotting points only\n")
     }
-  }else{
-    cat("Seems like there are no geometries defined for this model. Plotting points only\n")
   }
   return(m)
 }
@@ -219,24 +224,49 @@ plotResponse <- function(solutionResponse, solveRequest,
   }else{
     p <- ggplot() + theme_bw() + xlab('') + ylab('')
     if(addSegments){
-      p <- p + geom_segment(data = l$edges, aes(x = fx, xend = tx, y = fy, yend = ty), col = 'grey')
-      if(is.null(l$edges$geometry) || !addGeometry){
-        p <- p + coord_equal()
+      if(solveRequest@type == 'NS3.SolveRequest'){
+        ss<- l$assignments %>% left_join(l$nodes %>%
+                                        select(id, FX = x, FY = y),
+                                        by = c('source' = "id")) %>%
+                                left_join(l$nodes %>%
+                                          select(id, TX = x, TY = y),
+                                          by = c('destination' = "id"))
+        p <- p + geom_segment(data = ss, aes(x = FX, xend = TX, y = FY, yend = TY), col = 'grey')
+        if(is.null(l$routes$geometry) || !addGeometry){
+          p <- p + coord_equal()
+        }
+      }else{
+        p <- p + geom_segment(data = l$edges, aes(x = fx, xend = tx, y = fy, yend = ty), col = 'grey')
+        if(is.null(l$edges$geometry) || !addGeometry){
+          p <- p + coord_equal()
+        }
       }
     }
-    if(addGeometry && !is.null(l$edges$geometry)){
-      p <- p + geom_sf(data = l$edges, aes(geometry = geometry))
+    if(addGeometry){
+      if(solveRequest@type == 'NS3.SolveRequest'){
+        if(!is.null(l$routes$geometry)){
+          p <- p + geom_sf(data = l$routes, aes(geometry = geometry))
+        }
+      }else{
+        if(!is.null(l$edges$geometry)){
+          p <- p + geom_sf(data = l$edges, aes(geometry = geometry))
+        }
+      }
     }
     if(addNodes){
       p <- p + geom_point(data = l$nodes, aes(x = x, y = y))
     }
     if(addNodeLabels){
-      if(all(c('vehicleId', 'sequence', 'taskId', 'jobId') %in% names(l$nodes))){
-        l$nodes %<>% mutate(label = paste0("V: ",vehicleId,'\nStop:',sequence,"\nT:",taskId, "\nJ:", jobId))
+      if(solveRequest@type == 'NS3.SolveRequest'){
+        p <- p + geom_label(data = l$nodes, aes(x = x, y = y, label = id))
       }else{
-        l$nodes %<>% mutate(label = paste0("V: ",vehicleId,'\nStop:',sequence))
+        if(all(c('vehicleId', 'sequence', 'taskId', 'jobId') %in% names(l$nodes))){
+          l$nodes %<>% mutate(label = paste0("V: ",vehicleId,'\nStop:',sequence,"\nT:",taskId, "\nJ:", jobId))
+        }else{
+          l$nodes %<>% mutate(label = paste0("V: ",vehicleId,'\nStop:',sequence))
+        }
+        p <- p + geom_label(data = l$nodes, aes(x = x, y = y, label = label))
       }
-      p <- p + geom_label(data = l$nodes, aes(x = x, y = y, label = label))
     }
     if('day' %in% names(l$nodes)){
       # this is then a ndd plot at we can facet by the day

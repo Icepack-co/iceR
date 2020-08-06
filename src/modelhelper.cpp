@@ -467,6 +467,73 @@ DataFrame matrixToDf(string& indata, string& outdata){
                             _["stringsAsFactors"] = false);
 }
 
+List ns3ToTable(string& indata, string& outdata){
+  ns3_tabular tab = tabulateNS3(indata, outdata);
+
+  DataFrame node_df = DataFrame::create(
+    _["id"] = tab.nodes.Id,
+    _["x"] = tab.nodes.xs,
+    _["y"] = tab.nodes.ys,
+    _["stringsAsFactors"] = false);
+
+  DataFrame route_df = DataFrame::create(
+    _["fromId"] = tab.geomtab.fromId,
+    _["toId"] = tab.geomtab.toId,
+    _["geometry"] = geomVecsToSfDf(tab.geomtab.geom),
+    _["stringsAsFactors"] = false);
+
+  DataFrame nodeflow_df = DataFrame::create(
+    _["nodeId"] = tab.nodeflowtab.nodeId,
+    _["inFlow"] = tab.nodeflowtab.inFlow,
+    _["outFlow"] = tab.nodeflowtab.outFlow,
+    _["flowCost"] = tab.nodeflowtab.flowCost,
+    _["fixedCost"] = tab.nodeflowtab.fixedCost,
+    _["productFlowCost"] = tab.nodeflowtab.productFlowCost,
+    _["productFixedCost"] = tab.nodeflowtab.productFixedCost,
+    _["productionAmount"] = tab.nodeflowtab.productionAmount,
+    _["productionPenalty"] = tab.nodeflowtab.productionPenalty,
+    _["productionCost"] = tab.nodeflowtab.productionCost,
+    _["consumptionAmount"] = tab.nodeflowtab.consumptionAmount,
+    _["consumptionPenalty"] = tab.nodeflowtab.consumptionPenalty,
+    _["consumptionCost"] = tab.nodeflowtab.consumptionCost,
+    _["stringsAsFactors"] = false);
+
+  DataFrame nodeprodflow_df = DataFrame::create(
+    _["nodeId"] = tab.nodeflowproducttab.nodeId,
+    _["productId"] = tab.nodeflowproducttab.productId,
+    _["inFlow"] = tab.nodeflowproducttab.inFlow,
+    _["outFlow"] = tab.nodeflowproducttab.outFlow,
+    _["flowCost"] = tab.nodeflowproducttab.flowCost,
+    _["fixedCost"] = tab.nodeflowproducttab.fixedCost,
+    _["productionAmount"] = tab.nodeflowproducttab.productionAmount,
+    _["productionPenalty"] = tab.nodeflowproducttab.productionPenalty,
+    _["productionCost"] = tab.nodeflowproducttab.productionCost,
+    _["consumptionAmount"] = tab.nodeflowproducttab.consumptionAmount,
+    _["consumptionPenalty"] = tab.nodeflowproducttab.consumptionPenalty,
+    _["consumptionCost"] = tab.nodeflowproducttab.consumptionCost,
+    _["stringsAsFactors"] = false
+  );
+
+  DataFrame assignment_df = DataFrame::create(
+    _["source"] = tab.assignmenttab.source,
+    _["destination"] = tab.assignmenttab.destination,
+    _["productId"] = tab.assignmenttab.productId,
+    _["amount"] = tab.assignmenttab.amount,
+    _["cost"] = tab.assignmenttab.cost,
+    _["laneRateId"] = tab.assignmenttab.laneRateId,
+    _["costModelId"] = tab.assignmenttab.costModelId,
+    _["distance"] = tab.assignmenttab.distance,
+    _["duration"] = tab.assignmenttab.duration,
+    _["stringsAsFactors"] = false
+  );
+
+  return(List::create(_["nodes"] = node_df,
+                      _["routes"] = route_df,
+                      _["nodeFlow"] = nodeflow_df,
+                      _["nodeProductFlow"] = nodeprodflow_df,
+                      _["assignments"] = assignment_df));
+}
+
 
 //' @name tabulate
 //' @title tabulates a solution response (requires the base request)
@@ -543,6 +610,11 @@ List tabulate(Reference solResponse, Reference solveRequest){
     string indata =  bytesToString(sr);
     auto t = matrixToDf(indata, outdata); // long form tabulation
     return List::create(_["elements"] = t);
+  }
+  if(srType == "NS3.SolveRequest"){
+    string outdata = bytesToString(solResp);
+    string indata =  bytesToString(sr);
+    return ns3ToTable(indata, outdata);
   }
   return NULL;
 }

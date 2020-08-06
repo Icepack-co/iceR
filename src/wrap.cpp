@@ -5,6 +5,7 @@
 #include "ivr8-yni1c9k2swof.pb.h"
 #include "nvd-hap0j2y4zlm1.pb.h"
 #include "matrix-vyv95n7wchpl.pb.h"
+#include "ns3-tbfvuwtge2iq.pb.h"
 #include "wrap.h"
 #include <unordered_map>
 using namespace std;
@@ -509,3 +510,85 @@ matrix_tabular tabulateMatrix(string& matrixRequest, string& matrixResp){
   }
   return matrix_tabular();
 }
+
+/// NS3
+ns3_tabular tabulateNS3(string& ns3Request, string& ns3Resp){
+  ns3_tabular n;
+  NS3::SolveRequest sr;
+  if(sr.ParseFromString(ns3Request)){
+    auto& m = sr.model();
+    for(int i = 0; i < m.nodes_size(); i++){
+      auto& node = m.nodes(i);
+      n.nodes.Id.push_back(node.id());
+      n.nodes.xs.push_back(node.geocode().longitude());
+      n.nodes.ys.push_back(node.geocode().latitude());
+    }
+
+    NS3::SolutionResponse r;
+    if(r.ParseFromString(ns3Resp)){
+      auto &na = n.assignmenttab;
+      for(int i = 0; i < r.assignments_size(); i++){
+        auto &a = r.assignments(i);
+        na.source.push_back(a.source());
+        na.destination.push_back(a.destination());
+        na.productId.push_back(a.productid());
+        na.amount.push_back(a.amount());
+        na.cost.push_back(a.cost());
+        na.laneRateId.push_back(a.lanerateid());
+        na.costModelId.push_back(a.costmodelid());
+        na.distance.push_back(a.distance());
+        na.duration.push_back(a.duration());
+      }
+      auto &nfpt = n.nodeflowproducttab;
+      for(int i = 0; i < r.nodeproductflows_size(); i++){
+        auto &nf = r.nodeproductflows(i);
+        nfpt.nodeId.push_back(nf.nodeid());
+        nfpt.productId.push_back(nf.productid());
+        nfpt.inFlow.push_back(nf.inflow());
+        nfpt.outFlow.push_back(nf.outflow());
+        nfpt.flowCost.push_back(nf.flowcost());
+        nfpt.fixedCost.push_back(nf.fixedcost());
+        nfpt.productionAmount.push_back(nf.productionamount());
+        nfpt.productionPenalty.push_back(nf.productionpenalty());
+        nfpt.productionCost.push_back(nf.productioncost());
+        nfpt.consumptionAmount.push_back(nf.consumptionamount());
+        nfpt.consumptionPenalty.push_back(nf.consumptionpenalty());
+        nfpt.consumptionCost.push_back(nf.consumptioncost());
+      }
+      auto &nft = n.nodeflowtab;
+      for(int i = 0; i < r.nodeflows_size(); i++){
+        auto &nf = r.nodeflows(i);
+        nft.nodeId.push_back(nf.nodeid());
+        nft.inFlow.push_back(nf.inflow());
+        nft.outFlow.push_back(nf.outflow());
+        nft.flowCost.push_back(nf.flowcost());
+        nft.fixedCost.push_back(nf.fixedcost());
+        nft.productFlowCost.push_back(nf.productflowcost());
+        nft.productFixedCost.push_back(nf.productfixedcost());
+        nft.productionAmount.push_back(nf.productionamount());
+        nft.productionPenalty.push_back(nf.productionpenalty());
+        nft.productionCost.push_back(nf.productioncost());
+        nft.consumptionAmount.push_back(nf.consumptionamount());
+        nft.consumptionPenalty.push_back(nf.consumptionpenalty());
+        nft.consumptionCost.push_back(nf.consumptioncost());
+      }
+      for(int i =0 ; i < r.routes_size(); i++){
+        auto rt = r.routes(i);
+        n.geomtab.fromId.push_back(rt.fromid());
+        n.geomtab.toId.push_back(rt.toid());
+        geomvecs gv;
+        for(int j = 0; j < rt.geometrysequence_size(); j++){
+          int gind = rt.geometrysequence(j);
+          auto& gs = r.geometrysequence(gind);
+          for(int p = 0; p < gs.x_size(); p++){
+            gv.xs.push_back(gs.x(p));
+            gv.ys.push_back(gs.y(p));
+          }
+        }
+        n.geomtab.geom.push_back(gv);
+      }
+    }
+  }
+  return n;
+}
+

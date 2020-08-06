@@ -118,9 +118,73 @@ struct nvd_tabular{
 
 // -- END NVD OBJECTS
 
+// -- NS3 OBJECTS
+// just a note, R likes things in columnar format.
+// this this effectively extracts everything in columnar format
+// so that we can just coerce it into a data-frame afterwards
+struct ns3_nodeflow_tab{
+  vector<string> nodeId;
+  vector<double> inFlow;
+  vector<double> outFlow;
+  vector<double> flowCost;
+  vector<double> fixedCost;
+  vector<double> productFlowCost;
+  vector<double> productFixedCost;
+  vector<double> productionAmount;
+  vector<double> productionPenalty;
+  vector<double> productionCost;
+  vector<double> consumptionAmount;
+  vector<double> consumptionPenalty;
+  vector<double> consumptionCost;
+};
+struct ns3_nodepflow_tab{
+  vector<string> nodeId;
+  vector<string> productId;
+  vector<float> inFlow;
+  vector<float> outFlow;
+  vector<float> flowCost;
+  vector<float> fixedCost;
+  vector<float> productionAmount;
+  vector<float> productionPenalty;
+  vector<float> productionCost;
+  vector<float> consumptionAmount;
+  vector<float> consumptionPenalty;
+  vector<float> consumptionCost;
+};
+struct ns3_assignmnet_tab{
+  vector<string> source;
+  vector<string> destination;
+  vector<string> productId;
+  vector<double> amount;
+  vector<double> cost;
+  vector<string> laneRateId;
+  vector<string> costModelId;
+  vector<double> distance;
+  vector<double> duration;
+};
+struct ns3_geom_tab{
+  vector<string> fromId;
+  vector<string> toId;
+  vector<geomvecs> geom;
+};
+struct ns3_nodes{
+  vector<string> Id;
+  vector<double> xs;
+  vector<double> ys;
+};
+struct ns3_tabular{
+  ns3_nodes nodes;
+  ns3_nodeflow_tab nodeflowtab;
+  ns3_nodepflow_tab nodeflowproducttab;
+  ns3_assignmnet_tab assignmenttab;
+  ns3_geom_tab geomtab;
+};
+// -- END NS3 OBJECTS
+
 tspTabular tabulateTSPdata(string& tspSolveRequest, string& solRespString);
 tspTabular tabulateTSPTWdata(string& tspSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR7(string& ivrSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR8(string& ivrSolveRequest, string& solRespString);
 nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString);
 matrix_tabular tabulateMatrix(string& matrixRequest, string& matrixResp);
+ns3_tabular tabulateNS3(string& ns3Request, string& ns3Resp);
