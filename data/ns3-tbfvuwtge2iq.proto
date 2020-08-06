@@ -111,8 +111,8 @@ message ProductGroup {
     repeated string targetDimension = 2;
     repeated float targetPerBase = 3;
   }
-  required string product = 1;
-  required string productGroup = 2;
+  required string productId = 1;
+  required string productGroupId = 2;
   repeated ProductSpecification productSpecification = 3;
 }
 
@@ -167,8 +167,7 @@ message SolveRequest {
   }
 
   optional Model model = 1;     // either model or modelID should be specified
-  optional string modelID = 2;  // the model ID from a previously optimised
-                                // request (for use with evaluate solve type)
+  optional string modelID = 2;  // the model ID can be obtained by uploading a cached model to the api.
   optional SolveType solveType = 4 [default = Optimise];
   optional GeometryOutput geometryOutput = 5 [default = None];
 }
