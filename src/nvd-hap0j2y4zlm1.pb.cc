@@ -25,7 +25,6 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Profile_customCycle;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Infeasibility_Info;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_InterStopAttribute;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Route_SummaryAttribute;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_StopAttribute;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_TransitRuleAttribute;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_VisitSequence;
@@ -37,9 +36,9 @@ extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::pr
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Territory;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_InterStop;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_SolutionInstance;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_SolutionResponse_Route;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_Visit;
 extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_Model;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_nvd_2dhap0j2y4zlm1_2eproto ::google::protobuf::internal::SCCInfo<4> scc_info_SolutionResponse_Route;
 }  // namespace protobuf_nvd_2dhap0j2y4zlm1_2eproto
 namespace NVD {
 class ConfigurationDefaultTypeInternal {
@@ -117,11 +116,6 @@ class SolutionResponse_TransitRuleAttributeDefaultTypeInternal {
   ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_TransitRuleAttribute>
       _instance;
 } _SolutionResponse_TransitRuleAttribute_default_instance_;
-class SolutionResponse_Route_SummaryAttributeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Route_SummaryAttribute>
-      _instance;
-} _SolutionResponse_Route_SummaryAttribute_default_instance_;
 class SolutionResponse_RouteDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Route>
@@ -378,20 +372,6 @@ static void InitDefaultsSolutionResponse_TransitRuleAttribute() {
 ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_TransitRuleAttribute =
     {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_TransitRuleAttribute}, {}};
 
-static void InitDefaultsSolutionResponse_Route_SummaryAttribute() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::NVD::_SolutionResponse_Route_SummaryAttribute_default_instance_;
-    new (ptr) ::NVD::SolutionResponse_Route_SummaryAttribute();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::NVD::SolutionResponse_Route_SummaryAttribute::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Route_SummaryAttribute =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_Route_SummaryAttribute}, {}};
-
 static void InitDefaultsSolutionResponse_Route() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -403,11 +383,10 @@ static void InitDefaultsSolutionResponse_Route() {
   ::NVD::SolutionResponse_Route::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<4> scc_info_SolutionResponse_Route =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsSolutionResponse_Route}, {
+::google::protobuf::internal::SCCInfo<3> scc_info_SolutionResponse_Route =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsSolutionResponse_Route}, {
       &protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_Stop.base,
       &protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_InterStop.base,
-      &protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_Route_SummaryAttribute.base,
       &protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_TransitRuleAttribute.base,}};
 
 static void InitDefaultsSolutionResponse_Infeasibility_Info() {
@@ -502,7 +481,6 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Stop.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_InterStop.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_TransitRuleAttribute.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Route_SummaryAttribute.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Route.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Infeasibility_Info.base);
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Infeasibility.base);
@@ -511,7 +489,7 @@ void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[22];
+::google::protobuf::Metadata file_level_metadata[21];
 const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[4];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
@@ -720,19 +698,6 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   4,
   5,
   6,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, dimid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, min_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, max_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route_SummaryAttribute, delta_),
-  0,
-  1,
-  2,
-  3,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -742,11 +707,9 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, stops_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, interstops_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, fixedcost_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, summaryattributes_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, transitruleattributes_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NVD::SolutionResponse_Route, day_),
   0,
-  ~0u,
   ~0u,
   ~0u,
   ~0u,
@@ -824,13 +787,12 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 158, 168, sizeof(::NVD::SolutionResponse_Stop)},
   { 173, 182, sizeof(::NVD::SolutionResponse_InterStop)},
   { 186, 198, sizeof(::NVD::SolutionResponse_TransitRuleAttribute)},
-  { 205, 214, sizeof(::NVD::SolutionResponse_Route_SummaryAttribute)},
-  { 218, 230, sizeof(::NVD::SolutionResponse_Route)},
-  { 237, 248, sizeof(::NVD::SolutionResponse_Infeasibility_Info)},
-  { 254, 261, sizeof(::NVD::SolutionResponse_Infeasibility)},
-  { 263, 271, sizeof(::NVD::SolutionResponse_CompactSolution)},
-  { 274, 281, sizeof(::NVD::SolutionResponse_SolutionInstance)},
-  { 283, 290, sizeof(::NVD::SolutionResponse)},
+  { 205, 216, sizeof(::NVD::SolutionResponse_Route)},
+  { 222, 233, sizeof(::NVD::SolutionResponse_Infeasibility_Info)},
+  { 239, 246, sizeof(::NVD::SolutionResponse_Infeasibility)},
+  { 248, 256, sizeof(::NVD::SolutionResponse_CompactSolution)},
+  { 259, 266, sizeof(::NVD::SolutionResponse_SolutionInstance)},
+  { 268, 275, sizeof(::NVD::SolutionResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -849,7 +811,6 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_Stop_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_InterStop_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_TransitRuleAttribute_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_Route_SummaryAttribute_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_Route_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_Infeasibility_Info_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&::NVD::_SolutionResponse_Infeasibility_default_instance_),
@@ -873,7 +834,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 22);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 21);
 }
 
 void AddDescriptorsImpl() {
@@ -922,7 +883,7 @@ void AddDescriptorsImpl() {
       "\003 \003(\0132\022.NVD.VisitSequence\0228\n\tsolveType\030\004"
       " \001(\0162\033.NVD.SolveRequest.SolveType:\010Optim"
       "ise\"7\n\tSolveType\022\014\n\010Optimise\020\000\022\014\n\010Evalua"
-      "te\020\001\022\016\n\nReOptimise\020\002\"\356\014\n\020SolutionRespons"
+      "te\020\001\022\016\n\nReOptimise\020\002\"\331\013\n\020SolutionRespons"
       "e\0227\n\010frontier\030\001 \003(\0132%.NVD.SolutionRespon"
       "se.CompactSolution\0228\n\010instance\030\002 \001(\0132&.N"
       "VD.SolutionResponse.SolutionInstance\032\240\001\n"
@@ -942,31 +903,27 @@ void AddDescriptorsImpl() {
       ".NVD.Geocode\032\217\001\n\024TransitRuleAttribute\022\016\n"
       "\006ruleId\030\001 \002(\t\022\r\n\005dimId\030\002 \002(\t\022\022\n\nfromStop"
       "Id\030\003 \002(\005\022\020\n\010toStopId\030\004 \002(\005\022\022\n\nstartValue"
-      "\030\005 \002(\002\022\020\n\010endValue\030\006 \002(\002\022\014\n\004cost\030\007 \002(\002\032\372"
-      "\002\n\005Route\022\021\n\tvehicleId\030\001 \002(\t\022)\n\005stops\030\002 \003"
+      "\030\005 \002(\002\022\020\n\010endValue\030\006 \002(\002\022\014\n\004cost\030\007 \002(\002\032\345"
+      "\001\n\005Route\022\021\n\tvehicleId\030\001 \002(\t\022)\n\005stops\030\002 \003"
       "(\0132\032.NVD.SolutionResponse.Stop\0223\n\ninterS"
       "tops\030\003 \003(\0132\037.NVD.SolutionResponse.InterS"
-      "top\022\021\n\tfixedCost\030\004 \003(\002\022G\n\021summaryAttribu"
-      "tes\030\005 \003(\0132,.NVD.SolutionResponse.Route.S"
-      "ummaryAttribute\022I\n\025transitRuleAttributes"
-      "\030\006 \003(\0132*.NVD.SolutionResponse.TransitRul"
-      "eAttribute\022\013\n\003day\030\007 \002(\005\032J\n\020SummaryAttrib"
-      "ute\022\r\n\005dimId\030\001 \002(\t\022\013\n\003min\030\002 \002(\002\022\013\n\003max\030\003"
-      " \002(\002\022\r\n\005delta\030\004 \002(\002\032\326\001\n\rInfeasibility\022\016\n"
-      "\006taskId\030\001 \002(\t\022C\n\021infeasibilityInfo\030\002 \003(\013"
-      "2(.NVD.SolutionResponse.Infeasibility.In"
-      "fo\032p\n\004Info\022\017\n\007message\030\001 \002(\t\022\r\n\005dimId\030\002 \001"
-      "(\t\022\r\n\005limit\030\003 \001(\002\022\r\n\005value\030\004 \001(\002\022\r\n\005coun"
-      "t\030\005 \001(\003\022\033\n\023constrainingTaskIds\030\006 \003(\t\032h\n\017"
-      "CompactSolution\022)\n\rvisitSequence\030\001 \003(\0132\022"
-      ".NVD.VisitSequence\022\022\n\nobjectives\030\002 \003(\002\022\026"
-      "\n\016objectiveNames\030\003 \003(\t\032}\n\020SolutionInstan"
-      "ce\022+\n\006routes\030\001 \003(\0132\033.NVD.SolutionRespons"
-      "e.Route\022<\n\017infeasibilities\030\002 \003(\0132#.NVD.S"
-      "olutionResponse.Infeasibility"
+      "top\022\021\n\tfixedCost\030\004 \003(\002\022I\n\025transitRuleAtt"
+      "ributes\030\005 \003(\0132*.NVD.SolutionResponse.Tra"
+      "nsitRuleAttribute\022\013\n\003day\030\006 \002(\005\032\326\001\n\rInfea"
+      "sibility\022\016\n\006taskId\030\001 \002(\t\022C\n\021infeasibilit"
+      "yInfo\030\002 \003(\0132(.NVD.SolutionResponse.Infea"
+      "sibility.Info\032p\n\004Info\022\017\n\007message\030\001 \002(\t\022\r"
+      "\n\005dimId\030\002 \001(\t\022\r\n\005limit\030\003 \001(\002\022\r\n\005value\030\004 "
+      "\001(\002\022\r\n\005count\030\005 \001(\003\022\033\n\023constrainingTaskId"
+      "s\030\006 \003(\t\032h\n\017CompactSolution\022)\n\rvisitSeque"
+      "nce\030\001 \003(\0132\022.NVD.VisitSequence\022\022\n\nobjecti"
+      "ves\030\002 \003(\002\022\026\n\016objectiveNames\030\003 \003(\t\032}\n\020Sol"
+      "utionInstance\022+\n\006routes\030\001 \003(\0132\033.NVD.Solu"
+      "tionResponse.Route\022<\n\017infeasibilities\030\002 "
+      "\003(\0132#.NVD.SolutionResponse.Infeasibility"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3389);
+      descriptor, 3240);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "nvd-hap0j2y4zlm1.proto", &protobuf_RegisterTypes);
 }
@@ -7204,398 +7161,6 @@ void SolutionResponse_TransitRuleAttribute::InternalSwap(SolutionResponse_Transi
 
 // ===================================================================
 
-void SolutionResponse_Route_SummaryAttribute::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Route_SummaryAttribute::kDimIdFieldNumber;
-const int SolutionResponse_Route_SummaryAttribute::kMinFieldNumber;
-const int SolutionResponse_Route_SummaryAttribute::kMaxFieldNumber;
-const int SolutionResponse_Route_SummaryAttribute::kDeltaFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_Route_SummaryAttribute::SolutionResponse_Route_SummaryAttribute()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_Route_SummaryAttribute.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:NVD.SolutionResponse.Route.SummaryAttribute)
-}
-SolutionResponse_Route_SummaryAttribute::SolutionResponse_Route_SummaryAttribute(const SolutionResponse_Route_SummaryAttribute& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_dimid()) {
-    dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
-  }
-  ::memcpy(&min_, &from.min_,
-    static_cast<size_t>(reinterpret_cast<char*>(&delta_) -
-    reinterpret_cast<char*>(&min_)) + sizeof(delta_));
-  // @@protoc_insertion_point(copy_constructor:NVD.SolutionResponse.Route.SummaryAttribute)
-}
-
-void SolutionResponse_Route_SummaryAttribute::SharedCtor() {
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&min_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&delta_) -
-      reinterpret_cast<char*>(&min_)) + sizeof(delta_));
-}
-
-SolutionResponse_Route_SummaryAttribute::~SolutionResponse_Route_SummaryAttribute() {
-  // @@protoc_insertion_point(destructor:NVD.SolutionResponse.Route.SummaryAttribute)
-  SharedDtor();
-}
-
-void SolutionResponse_Route_SummaryAttribute::SharedDtor() {
-  dimid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-
-void SolutionResponse_Route_SummaryAttribute::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Route_SummaryAttribute::descriptor() {
-  ::protobuf_nvd_2dhap0j2y4zlm1_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_nvd_2dhap0j2y4zlm1_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
-const SolutionResponse_Route_SummaryAttribute& SolutionResponse_Route_SummaryAttribute::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_nvd_2dhap0j2y4zlm1_2eproto::scc_info_SolutionResponse_Route_SummaryAttribute.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Route_SummaryAttribute::Clear() {
-// @@protoc_insertion_point(message_clear_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    dimid_.ClearNonDefaultToEmptyNoArena();
-  }
-  if (cached_has_bits & 14u) {
-    ::memset(&min_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&delta_) -
-        reinterpret_cast<char*>(&min_)) + sizeof(delta_));
-  }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
-}
-
-bool SolutionResponse_Route_SummaryAttribute::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string dimId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_dimid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->dimid().data(), static_cast<int>(this->dimid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "NVD.SolutionResponse.Route.SummaryAttribute.dimId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float min = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_min();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &min_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float max = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_max();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &max_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float delta = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_delta();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &delta_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:NVD.SolutionResponse.Route.SummaryAttribute)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:NVD.SolutionResponse.Route.SummaryAttribute)
-  return false;
-#undef DO_
-}
-
-void SolutionResponse_Route_SummaryAttribute::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // required string dimId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NVD.SolutionResponse.Route.SummaryAttribute.dimId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->dimid(), output);
-  }
-
-  // required float min = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->min(), output);
-  }
-
-  // required float max = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->max(), output);
-  }
-
-  // required float delta = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->delta(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:NVD.SolutionResponse.Route.SummaryAttribute)
-}
-
-::google::protobuf::uint8* SolutionResponse_Route_SummaryAttribute::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
-  // @@protoc_insertion_point(serialize_to_array_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _has_bits_[0];
-  // required string dimId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "NVD.SolutionResponse.Route.SummaryAttribute.dimId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->dimid(), target);
-  }
-
-  // required float min = 2;
-  if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->min(), target);
-  }
-
-  // required float max = 3;
-  if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->max(), target);
-  }
-
-  // required float delta = 4;
-  if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->delta(), target);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:NVD.SolutionResponse.Route.SummaryAttribute)
-  return target;
-}
-
-size_t SolutionResponse_Route_SummaryAttribute::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  size_t total_size = 0;
-
-  if (has_dimid()) {
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-  }
-
-  if (has_min()) {
-    // required float min = 2;
-    total_size += 1 + 4;
-  }
-
-  if (has_max()) {
-    // required float max = 3;
-    total_size += 1 + 4;
-  }
-
-  if (has_delta()) {
-    // required float delta = 4;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_Route_SummaryAttribute::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  size_t total_size = 0;
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-
-    // required float min = 2;
-    total_size += 1 + 4;
-
-    // required float max = 3;
-    total_size += 1 + 4;
-
-    // required float delta = 4;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_Route_SummaryAttribute::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Route_SummaryAttribute* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Route_SummaryAttribute>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:NVD.SolutionResponse.Route.SummaryAttribute)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:NVD.SolutionResponse.Route.SummaryAttribute)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_Route_SummaryAttribute::MergeFrom(const SolutionResponse_Route_SummaryAttribute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_dimid();
-      dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      min_ = from.min_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      max_ = from.max_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      delta_ = from.delta_;
-    }
-    _has_bits_[0] |= cached_has_bits;
-  }
-}
-
-void SolutionResponse_Route_SummaryAttribute::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-void SolutionResponse_Route_SummaryAttribute::CopyFrom(const SolutionResponse_Route_SummaryAttribute& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NVD.SolutionResponse.Route.SummaryAttribute)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool SolutionResponse_Route_SummaryAttribute::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
-  return true;
-}
-
-void SolutionResponse_Route_SummaryAttribute::Swap(SolutionResponse_Route_SummaryAttribute* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
-void SolutionResponse_Route_SummaryAttribute::InternalSwap(SolutionResponse_Route_SummaryAttribute* other) {
-  using std::swap;
-  dimid_.Swap(&other->dimid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(min_, other->min_);
-  swap(max_, other->max_);
-  swap(delta_, other->delta_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-}
-
-::google::protobuf::Metadata SolutionResponse_Route_SummaryAttribute::GetMetadata() const {
-  protobuf_nvd_2dhap0j2y4zlm1_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_nvd_2dhap0j2y4zlm1_2eproto::file_level_metadata[kIndexInFileMessages];
-}
-
-
-// ===================================================================
-
 void SolutionResponse_Route::InitAsDefaultInstance() {
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -7603,7 +7168,6 @@ const int SolutionResponse_Route::kVehicleIdFieldNumber;
 const int SolutionResponse_Route::kStopsFieldNumber;
 const int SolutionResponse_Route::kInterStopsFieldNumber;
 const int SolutionResponse_Route::kFixedCostFieldNumber;
-const int SolutionResponse_Route::kSummaryAttributesFieldNumber;
 const int SolutionResponse_Route::kTransitRuleAttributesFieldNumber;
 const int SolutionResponse_Route::kDayFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -7622,7 +7186,6 @@ SolutionResponse_Route::SolutionResponse_Route(const SolutionResponse_Route& fro
       stops_(from.stops_),
       interstops_(from.interstops_),
       fixedcost_(from.fixedcost_),
-      summaryattributes_(from.summaryattributes_),
       transitruleattributes_(from.transitruleattributes_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   vehicleid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -7670,7 +7233,6 @@ void SolutionResponse_Route::Clear() {
   stops_.Clear();
   interstops_.Clear();
   fixedcost_.Clear();
-  summaryattributes_.Clear();
   transitruleattributes_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
@@ -7750,22 +7312,10 @@ bool SolutionResponse_Route::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
+      // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
       case 5: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_summaryattributes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_transitruleattributes()));
         } else {
@@ -7774,10 +7324,10 @@ bool SolutionResponse_Route::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 day = 7;
-      case 7: {
+      // required int32 day = 6;
+      case 6: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
           set_has_day();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -7849,27 +7399,18 @@ void SolutionResponse_Route::SerializeWithCachedSizes(
       4, this->fixedcost(i), output);
   }
 
-  // repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->summaryattributes_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->summaryattributes(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
+  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->transitruleattributes_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6,
+      5,
       this->transitruleattributes(static_cast<int>(i)),
       output);
   }
 
-  // required int32 day = 7;
+  // required int32 day = 6;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(7, this->day(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->day(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7918,25 +7459,17 @@ void SolutionResponse_Route::SerializeWithCachedSizes(
   target = ::google::protobuf::internal::WireFormatLite::
     WriteFloatToArray(4, this->fixedcost_, target);
 
-  // repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->summaryattributes_size()); i < n; i++) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->summaryattributes(static_cast<int>(i)), deterministic, target);
-  }
-
-  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
+  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
   for (unsigned int i = 0,
       n = static_cast<unsigned int>(this->transitruleattributes_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        6, this->transitruleattributes(static_cast<int>(i)), deterministic, target);
+        5, this->transitruleattributes(static_cast<int>(i)), deterministic, target);
   }
 
-  // required int32 day = 7;
+  // required int32 day = 6;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(7, this->day(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->day(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -7959,7 +7492,7 @@ size_t SolutionResponse_Route::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_day()) {
-    // required int32 day = 7;
+    // required int32 day = 6;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->day());
@@ -7982,7 +7515,7 @@ size_t SolutionResponse_Route::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->vehicleid());
 
-    // required int32 day = 7;
+    // required int32 day = 6;
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->day());
@@ -8021,18 +7554,7 @@ size_t SolutionResponse_Route::ByteSizeLong() const {
     total_size += data_size;
   }
 
-  // repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->summaryattributes_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->summaryattributes(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
+  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
   {
     unsigned int count = static_cast<unsigned int>(this->transitruleattributes_size());
     total_size += 1UL * count;
@@ -8073,7 +7595,6 @@ void SolutionResponse_Route::MergeFrom(const SolutionResponse_Route& from) {
   stops_.MergeFrom(from.stops_);
   interstops_.MergeFrom(from.interstops_);
   fixedcost_.MergeFrom(from.fixedcost_);
-  summaryattributes_.MergeFrom(from.summaryattributes_);
   transitruleattributes_.MergeFrom(from.transitruleattributes_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 3u) {
@@ -8106,7 +7627,6 @@ bool SolutionResponse_Route::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->stops())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->interstops())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->summaryattributes())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->transitruleattributes())) return false;
   return true;
 }
@@ -8120,7 +7640,6 @@ void SolutionResponse_Route::InternalSwap(SolutionResponse_Route* other) {
   CastToBase(&stops_)->InternalSwap(CastToBase(&other->stops_));
   CastToBase(&interstops_)->InternalSwap(CastToBase(&other->interstops_));
   fixedcost_.InternalSwap(&other->fixedcost_);
-  CastToBase(&summaryattributes_)->InternalSwap(CastToBase(&other->summaryattributes_));
   CastToBase(&transitruleattributes_)->InternalSwap(CastToBase(&other->transitruleattributes_));
   vehicleid_.Swap(&other->vehicleid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
@@ -9856,9 +9375,6 @@ template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NVD::SolutionResponse_InterStop*
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NVD::SolutionResponse_TransitRuleAttribute* Arena::CreateMaybeMessage< ::NVD::SolutionResponse_TransitRuleAttribute >(Arena* arena) {
   return Arena::CreateInternal< ::NVD::SolutionResponse_TransitRuleAttribute >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NVD::SolutionResponse_Route_SummaryAttribute* Arena::CreateMaybeMessage< ::NVD::SolutionResponse_Route_SummaryAttribute >(Arena* arena) {
-  return Arena::CreateInternal< ::NVD::SolutionResponse_Route_SummaryAttribute >(arena);
 }
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::NVD::SolutionResponse_Route* Arena::CreateMaybeMessage< ::NVD::SolutionResponse_Route >(Arena* arena) {
   return Arena::CreateInternal< ::NVD::SolutionResponse_Route >(arena);

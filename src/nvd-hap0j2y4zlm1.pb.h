@@ -39,7 +39,7 @@ namespace protobuf_nvd_2dhap0j2y4zlm1_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[22];
+  static const ::google::protobuf::internal::ParseTable schema[21];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -83,9 +83,6 @@ extern SolutionResponse_InterStopAttributeDefaultTypeInternal _SolutionResponse_
 class SolutionResponse_Route;
 class SolutionResponse_RouteDefaultTypeInternal;
 extern SolutionResponse_RouteDefaultTypeInternal _SolutionResponse_Route_default_instance_;
-class SolutionResponse_Route_SummaryAttribute;
-class SolutionResponse_Route_SummaryAttributeDefaultTypeInternal;
-extern SolutionResponse_Route_SummaryAttributeDefaultTypeInternal _SolutionResponse_Route_SummaryAttribute_default_instance_;
 class SolutionResponse_SolutionInstance;
 class SolutionResponse_SolutionInstanceDefaultTypeInternal;
 extern SolutionResponse_SolutionInstanceDefaultTypeInternal _SolutionResponse_SolutionInstance_default_instance_;
@@ -128,7 +125,6 @@ template<> ::NVD::SolutionResponse_Infeasibility_Info* Arena::CreateMaybeMessage
 template<> ::NVD::SolutionResponse_InterStop* Arena::CreateMaybeMessage<::NVD::SolutionResponse_InterStop>(Arena*);
 template<> ::NVD::SolutionResponse_InterStopAttribute* Arena::CreateMaybeMessage<::NVD::SolutionResponse_InterStopAttribute>(Arena*);
 template<> ::NVD::SolutionResponse_Route* Arena::CreateMaybeMessage<::NVD::SolutionResponse_Route>(Arena*);
-template<> ::NVD::SolutionResponse_Route_SummaryAttribute* Arena::CreateMaybeMessage<::NVD::SolutionResponse_Route_SummaryAttribute>(Arena*);
 template<> ::NVD::SolutionResponse_SolutionInstance* Arena::CreateMaybeMessage<::NVD::SolutionResponse_SolutionInstance>(Arena*);
 template<> ::NVD::SolutionResponse_Stop* Arena::CreateMaybeMessage<::NVD::SolutionResponse_Stop>(Arena*);
 template<> ::NVD::SolutionResponse_StopAttribute* Arena::CreateMaybeMessage<::NVD::SolutionResponse_StopAttribute>(Arena*);
@@ -2776,161 +2772,6 @@ class SolutionResponse_TransitRuleAttribute : public ::google::protobuf::Message
 };
 // -------------------------------------------------------------------
 
-class SolutionResponse_Route_SummaryAttribute : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NVD.SolutionResponse.Route.SummaryAttribute) */ {
- public:
-  SolutionResponse_Route_SummaryAttribute();
-  virtual ~SolutionResponse_Route_SummaryAttribute();
-
-  SolutionResponse_Route_SummaryAttribute(const SolutionResponse_Route_SummaryAttribute& from);
-
-  inline SolutionResponse_Route_SummaryAttribute& operator=(const SolutionResponse_Route_SummaryAttribute& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  SolutionResponse_Route_SummaryAttribute(SolutionResponse_Route_SummaryAttribute&& from) noexcept
-    : SolutionResponse_Route_SummaryAttribute() {
-    *this = ::std::move(from);
-  }
-
-  inline SolutionResponse_Route_SummaryAttribute& operator=(SolutionResponse_Route_SummaryAttribute&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _internal_metadata_.unknown_fields();
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return _internal_metadata_.mutable_unknown_fields();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const SolutionResponse_Route_SummaryAttribute& default_instance();
-
-  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const SolutionResponse_Route_SummaryAttribute* internal_default_instance() {
-    return reinterpret_cast<const SolutionResponse_Route_SummaryAttribute*>(
-               &_SolutionResponse_Route_SummaryAttribute_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    15;
-
-  void Swap(SolutionResponse_Route_SummaryAttribute* other);
-  friend void swap(SolutionResponse_Route_SummaryAttribute& a, SolutionResponse_Route_SummaryAttribute& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline SolutionResponse_Route_SummaryAttribute* New() const final {
-    return CreateMaybeMessage<SolutionResponse_Route_SummaryAttribute>(NULL);
-  }
-
-  SolutionResponse_Route_SummaryAttribute* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<SolutionResponse_Route_SummaryAttribute>(arena);
-  }
-  void CopyFrom(const ::google::protobuf::Message& from) final;
-  void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const SolutionResponse_Route_SummaryAttribute& from);
-  void MergeFrom(const SolutionResponse_Route_SummaryAttribute& from);
-  void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) final;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const final;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(SolutionResponse_Route_SummaryAttribute* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required string dimId = 1;
-  bool has_dimid() const;
-  void clear_dimid();
-  static const int kDimIdFieldNumber = 1;
-  const ::std::string& dimid() const;
-  void set_dimid(const ::std::string& value);
-  #if LANG_CXX11
-  void set_dimid(::std::string&& value);
-  #endif
-  void set_dimid(const char* value);
-  void set_dimid(const char* value, size_t size);
-  ::std::string* mutable_dimid();
-  ::std::string* release_dimid();
-  void set_allocated_dimid(::std::string* dimid);
-
-  // required float min = 2;
-  bool has_min() const;
-  void clear_min();
-  static const int kMinFieldNumber = 2;
-  float min() const;
-  void set_min(float value);
-
-  // required float max = 3;
-  bool has_max() const;
-  void clear_max();
-  static const int kMaxFieldNumber = 3;
-  float max() const;
-  void set_max(float value);
-
-  // required float delta = 4;
-  bool has_delta() const;
-  void clear_delta();
-  static const int kDeltaFieldNumber = 4;
-  float delta() const;
-  void set_delta(float value);
-
-  // @@protoc_insertion_point(class_scope:NVD.SolutionResponse.Route.SummaryAttribute)
- private:
-  void set_has_dimid();
-  void clear_has_dimid();
-  void set_has_min();
-  void clear_has_min();
-  void set_has_max();
-  void clear_has_max();
-  void set_has_delta();
-  void clear_has_delta();
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::internal::HasBits<1> _has_bits_;
-  mutable ::google::protobuf::internal::CachedSize _cached_size_;
-  ::google::protobuf::internal::ArenaStringPtr dimid_;
-  float min_;
-  float max_;
-  float delta_;
-  friend struct ::protobuf_nvd_2dhap0j2y4zlm1_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
 class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NVD.SolutionResponse.Route) */ {
  public:
   SolutionResponse_Route();
@@ -2973,7 +2814,7 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
                &_SolutionResponse_Route_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   void Swap(SolutionResponse_Route* other);
   friend void swap(SolutionResponse_Route& a, SolutionResponse_Route& b) {
@@ -3023,8 +2864,6 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
 
   // nested types ----------------------------------------------------
 
-  typedef SolutionResponse_Route_SummaryAttribute SummaryAttribute;
-
   // accessors -------------------------------------------------------
 
   // repeated .NVD.SolutionResponse.Stop stops = 2;
@@ -3063,22 +2902,10 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
   ::google::protobuf::RepeatedField< float >*
       mutable_fixedcost();
 
-  // repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
-  int summaryattributes_size() const;
-  void clear_summaryattributes();
-  static const int kSummaryAttributesFieldNumber = 5;
-  ::NVD::SolutionResponse_Route_SummaryAttribute* mutable_summaryattributes(int index);
-  ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Route_SummaryAttribute >*
-      mutable_summaryattributes();
-  const ::NVD::SolutionResponse_Route_SummaryAttribute& summaryattributes(int index) const;
-  ::NVD::SolutionResponse_Route_SummaryAttribute* add_summaryattributes();
-  const ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Route_SummaryAttribute >&
-      summaryattributes() const;
-
-  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
+  // repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
   int transitruleattributes_size() const;
   void clear_transitruleattributes();
-  static const int kTransitRuleAttributesFieldNumber = 6;
+  static const int kTransitRuleAttributesFieldNumber = 5;
   ::NVD::SolutionResponse_TransitRuleAttribute* mutable_transitruleattributes(int index);
   ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_TransitRuleAttribute >*
       mutable_transitruleattributes();
@@ -3102,10 +2929,10 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
   ::std::string* release_vehicleid();
   void set_allocated_vehicleid(::std::string* vehicleid);
 
-  // required int32 day = 7;
+  // required int32 day = 6;
   bool has_day() const;
   void clear_day();
-  static const int kDayFieldNumber = 7;
+  static const int kDayFieldNumber = 6;
   ::google::protobuf::int32 day() const;
   void set_day(::google::protobuf::int32 value);
 
@@ -3125,7 +2952,6 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
   ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Stop > stops_;
   ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_InterStop > interstops_;
   ::google::protobuf::RepeatedField< float > fixedcost_;
-  ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Route_SummaryAttribute > summaryattributes_;
   ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_TransitRuleAttribute > transitruleattributes_;
   ::google::protobuf::internal::ArenaStringPtr vehicleid_;
   ::google::protobuf::int32 day_;
@@ -3175,7 +3001,7 @@ class SolutionResponse_Infeasibility_Info : public ::google::protobuf::Message /
                &_SolutionResponse_Infeasibility_Info_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   void Swap(SolutionResponse_Infeasibility_Info* other);
   friend void swap(SolutionResponse_Infeasibility_Info& a, SolutionResponse_Infeasibility_Info& b) {
@@ -3368,7 +3194,7 @@ class SolutionResponse_Infeasibility : public ::google::protobuf::Message /* @@p
                &_SolutionResponse_Infeasibility_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(SolutionResponse_Infeasibility* other);
   friend void swap(SolutionResponse_Infeasibility& a, SolutionResponse_Infeasibility& b) {
@@ -3505,7 +3331,7 @@ class SolutionResponse_CompactSolution : public ::google::protobuf::Message /* @
                &_SolutionResponse_CompactSolution_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   void Swap(SolutionResponse_CompactSolution* other);
   friend void swap(SolutionResponse_CompactSolution& a, SolutionResponse_CompactSolution& b) {
@@ -3658,7 +3484,7 @@ class SolutionResponse_SolutionInstance : public ::google::protobuf::Message /* 
                &_SolutionResponse_SolutionInstance_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   void Swap(SolutionResponse_SolutionInstance* other);
   friend void swap(SolutionResponse_SolutionInstance& a, SolutionResponse_SolutionInstance& b) {
@@ -3788,7 +3614,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
                &_SolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   void Swap(SolutionResponse* other);
   friend void swap(SolutionResponse& a, SolutionResponse& b) {
@@ -6300,148 +6126,6 @@ inline void SolutionResponse_TransitRuleAttribute::set_cost(float value) {
 
 // -------------------------------------------------------------------
 
-// SolutionResponse_Route_SummaryAttribute
-
-// required string dimId = 1;
-inline bool SolutionResponse_Route_SummaryAttribute::has_dimid() const {
-  return (_has_bits_[0] & 0x00000001u) != 0;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_has_dimid() {
-  _has_bits_[0] |= 0x00000001u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_has_dimid() {
-  _has_bits_[0] &= ~0x00000001u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_dimid() {
-  dimid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  clear_has_dimid();
-}
-inline const ::std::string& SolutionResponse_Route_SummaryAttribute::dimid() const {
-  // @@protoc_insertion_point(field_get:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-  return dimid_.GetNoArena();
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_dimid(const ::std::string& value) {
-  set_has_dimid();
-  dimid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
-  // @@protoc_insertion_point(field_set:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-}
-#if LANG_CXX11
-inline void SolutionResponse_Route_SummaryAttribute::set_dimid(::std::string&& value) {
-  set_has_dimid();
-  dimid_.SetNoArena(
-    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-}
-#endif
-inline void SolutionResponse_Route_SummaryAttribute::set_dimid(const char* value) {
-  GOOGLE_DCHECK(value != NULL);
-  set_has_dimid();
-  dimid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_dimid(const char* value, size_t size) {
-  set_has_dimid();
-  dimid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-}
-inline ::std::string* SolutionResponse_Route_SummaryAttribute::mutable_dimid() {
-  set_has_dimid();
-  // @@protoc_insertion_point(field_mutable:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-  return dimid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline ::std::string* SolutionResponse_Route_SummaryAttribute::release_dimid() {
-  // @@protoc_insertion_point(field_release:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-  if (!has_dimid()) {
-    return NULL;
-  }
-  clear_has_dimid();
-  return dimid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_allocated_dimid(::std::string* dimid) {
-  if (dimid != NULL) {
-    set_has_dimid();
-  } else {
-    clear_has_dimid();
-  }
-  dimid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), dimid);
-  // @@protoc_insertion_point(field_set_allocated:NVD.SolutionResponse.Route.SummaryAttribute.dimId)
-}
-
-// required float min = 2;
-inline bool SolutionResponse_Route_SummaryAttribute::has_min() const {
-  return (_has_bits_[0] & 0x00000002u) != 0;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_has_min() {
-  _has_bits_[0] |= 0x00000002u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_has_min() {
-  _has_bits_[0] &= ~0x00000002u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_min() {
-  min_ = 0;
-  clear_has_min();
-}
-inline float SolutionResponse_Route_SummaryAttribute::min() const {
-  // @@protoc_insertion_point(field_get:NVD.SolutionResponse.Route.SummaryAttribute.min)
-  return min_;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_min(float value) {
-  set_has_min();
-  min_ = value;
-  // @@protoc_insertion_point(field_set:NVD.SolutionResponse.Route.SummaryAttribute.min)
-}
-
-// required float max = 3;
-inline bool SolutionResponse_Route_SummaryAttribute::has_max() const {
-  return (_has_bits_[0] & 0x00000004u) != 0;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_has_max() {
-  _has_bits_[0] |= 0x00000004u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_has_max() {
-  _has_bits_[0] &= ~0x00000004u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_max() {
-  max_ = 0;
-  clear_has_max();
-}
-inline float SolutionResponse_Route_SummaryAttribute::max() const {
-  // @@protoc_insertion_point(field_get:NVD.SolutionResponse.Route.SummaryAttribute.max)
-  return max_;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_max(float value) {
-  set_has_max();
-  max_ = value;
-  // @@protoc_insertion_point(field_set:NVD.SolutionResponse.Route.SummaryAttribute.max)
-}
-
-// required float delta = 4;
-inline bool SolutionResponse_Route_SummaryAttribute::has_delta() const {
-  return (_has_bits_[0] & 0x00000008u) != 0;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_has_delta() {
-  _has_bits_[0] |= 0x00000008u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_has_delta() {
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline void SolutionResponse_Route_SummaryAttribute::clear_delta() {
-  delta_ = 0;
-  clear_has_delta();
-}
-inline float SolutionResponse_Route_SummaryAttribute::delta() const {
-  // @@protoc_insertion_point(field_get:NVD.SolutionResponse.Route.SummaryAttribute.delta)
-  return delta_;
-}
-inline void SolutionResponse_Route_SummaryAttribute::set_delta(float value) {
-  set_has_delta();
-  delta_ = value;
-  // @@protoc_insertion_point(field_set:NVD.SolutionResponse.Route.SummaryAttribute.delta)
-}
-
-// -------------------------------------------------------------------
-
 // SolutionResponse_Route
 
 // required string vehicleId = 1;
@@ -6600,37 +6284,7 @@ SolutionResponse_Route::mutable_fixedcost() {
   return &fixedcost_;
 }
 
-// repeated .NVD.SolutionResponse.Route.SummaryAttribute summaryAttributes = 5;
-inline int SolutionResponse_Route::summaryattributes_size() const {
-  return summaryattributes_.size();
-}
-inline void SolutionResponse_Route::clear_summaryattributes() {
-  summaryattributes_.Clear();
-}
-inline ::NVD::SolutionResponse_Route_SummaryAttribute* SolutionResponse_Route::mutable_summaryattributes(int index) {
-  // @@protoc_insertion_point(field_mutable:NVD.SolutionResponse.Route.summaryAttributes)
-  return summaryattributes_.Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Route_SummaryAttribute >*
-SolutionResponse_Route::mutable_summaryattributes() {
-  // @@protoc_insertion_point(field_mutable_list:NVD.SolutionResponse.Route.summaryAttributes)
-  return &summaryattributes_;
-}
-inline const ::NVD::SolutionResponse_Route_SummaryAttribute& SolutionResponse_Route::summaryattributes(int index) const {
-  // @@protoc_insertion_point(field_get:NVD.SolutionResponse.Route.summaryAttributes)
-  return summaryattributes_.Get(index);
-}
-inline ::NVD::SolutionResponse_Route_SummaryAttribute* SolutionResponse_Route::add_summaryattributes() {
-  // @@protoc_insertion_point(field_add:NVD.SolutionResponse.Route.summaryAttributes)
-  return summaryattributes_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::NVD::SolutionResponse_Route_SummaryAttribute >&
-SolutionResponse_Route::summaryattributes() const {
-  // @@protoc_insertion_point(field_list:NVD.SolutionResponse.Route.summaryAttributes)
-  return summaryattributes_;
-}
-
-// repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 6;
+// repeated .NVD.SolutionResponse.TransitRuleAttribute transitRuleAttributes = 5;
 inline int SolutionResponse_Route::transitruleattributes_size() const {
   return transitruleattributes_.size();
 }
@@ -6660,7 +6314,7 @@ SolutionResponse_Route::transitruleattributes() const {
   return transitruleattributes_;
 }
 
-// required int32 day = 7;
+// required int32 day = 6;
 inline bool SolutionResponse_Route::has_day() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -7353,8 +7007,6 @@ inline void SolutionResponse::set_allocated_instance(::NVD::SolutionResponse_Sol
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -720,7 +720,7 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, id_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, source_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, productgroupids_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, unitdimensioncost_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, unitdimensioncosts_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::NS3::CostModel, flowconstraints_),
   0,
   1,
@@ -1002,57 +1002,57 @@ void AddDescriptorsImpl() {
       "oductGroupIds\030\006 \003(\t\0222\n\022unitDimensionCost"
       "s\030\007 \003(\0132\026.NS3.UnitDimensionCost\0227\n\017flowC"
       "onstraints\030\010 \003(\0132\036.NS3.FlowDimensionalCo"
-      "nstraint\"\254\001\n\tCostModel\022\n\n\002id\030\001 \002(\t\022\016\n\006so"
-      "urce\030\002 \002(\t\022\027\n\017productGroupIds\030\003 \003(\t\0221\n\021u"
-      "nitDimensionCost\030\004 \003(\0132\026.NS3.UnitDimensi"
-      "onCost\0227\n\017flowConstraints\030\005 \003(\0132\036.NS3.Fl"
-      "owDimensionalConstraint\"\302\001\n\005Model\022/\n\ndim"
-      "ensions\030\001 \002(\0132\033.NS3.DimensionConfigurati"
-      "on\022\030\n\005nodes\030\002 \003(\0132\t.NS3.Node\022 \n\tlaneRate"
-      "s\030\003 \003(\0132\r.NS3.LaneRate\022\"\n\ncostModels\030\004 \003"
-      "(\0132\016.NS3.CostModel\022(\n\rproductGroups\030\005 \003("
-      "\0132\021.NS3.ProductGroup\"\372\001\n\014SolveRequest\022\031\n"
-      "\005model\030\001 \001(\0132\n.NS3.Model\022\017\n\007modelID\030\002 \001("
-      "\t\0228\n\tsolveType\030\004 \001(\0162\033.NS3.SolveRequest."
-      "SolveType:\010Optimise\022>\n\016geometryOutput\030\005 "
-      "\001(\0162 .NS3.SolveRequest.GeometryOutput:\004N"
-      "one\"\031\n\tSolveType\022\014\n\010Optimise\020\000\")\n\016Geomet"
-      "ryOutput\022\010\n\004None\020\000\022\r\n\tAggregate\020\001\"\324\t\n\020So"
-      "lutionResponse\022\021\n\tobjective\030\001 \002(\002\022\022\n\nlow"
-      "erBound\030\002 \001(\002\022\025\n\roptimalityGap\030\003 \001(\002\0225\n\013"
-      "assignments\030\004 \003(\0132 .NS3.SolutionResponse"
-      ".Assignment\0221\n\tnodeFlows\030\005 \003(\0132\036.NS3.Sol"
-      "utionResponse.NodeFlow\022\?\n\020nodeProductFlo"
-      "ws\030\006 \003(\0132%.NS3.SolutionResponse.NodeProd"
-      "uctFlow\022@\n\020geometrySequence\030\007 \003(\0132&.NS3."
-      "SolutionResponse.GeometrySequence\022+\n\006rou"
-      "tes\030\010 \003(\0132\033.NS3.SolutionResponse.Route\032\257"
-      "\001\n\nAssignment\022\016\n\006source\030\001 \002(\t\022\023\n\013destina"
-      "tion\030\002 \002(\t\022\021\n\tproductId\030\003 \002(\t\022\016\n\006amount\030"
-      "\004 \002(\002\022\014\n\004cost\030\005 \002(\002\022\022\n\nlaneRateId\030\006 \001(\t\022"
-      "\023\n\013costModelId\030\007 \001(\t\022\020\n\010distance\030\010 \002(\002\022\020"
-      "\n\010duration\030\t \002(\002\032\227\002\n\017NodeProductFlow\022\016\n\006"
-      "nodeId\030\001 \002(\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFlo"
-      "w\030\003 \002(\002\022\017\n\007outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 \002"
-      "(\002\022\021\n\tfixedCost\030\006 \002(\002\022\030\n\020productionAmoun"
-      "t\030\007 \002(\002\022\031\n\021productionPenalty\030\010 \002(\002\022\026\n\016pr"
-      "oductionCost\030\t \002(\002\022\031\n\021consumptionAmount\030"
-      "\n \002(\002\022\032\n\022consumptionPenalty\030\013 \002(\002\022\027\n\017con"
-      "sumptionCost\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006nodeI"
-      "d\030\001 \002(\t\022\016\n\006inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002(\002"
-      "\022\020\n\010flowCost\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027\n"
-      "\017productFlowCost\030\006 \002(\002\022\030\n\020productFixedCo"
-      "st\030\007 \002(\002\022\030\n\020productionAmount\030\010 \002(\002\022\031\n\021pr"
-      "oductionPenalty\030\t \002(\002\022\026\n\016productionCost\030"
-      "\n \002(\002\022\031\n\021consumptionAmount\030\013 \002(\002\022\032\n\022cons"
-      "umptionPenalty\030\014 \002(\002\022\027\n\017consumptionCost\030"
-      "\r \002(\002\032(\n\020GeometrySequence\022\t\n\001x\030\001 \003(\002\022\t\n\001"
-      "y\030\002 \003(\002\032\?\n\005Route\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId"
-      "\030\002 \002(\t\022\030\n\020geometrySequence\030\003 \003(\005B\017\n\ricep"
-      "ackai.NS3"
+      "nstraint\"\255\001\n\tCostModel\022\n\n\002id\030\001 \002(\t\022\016\n\006so"
+      "urce\030\002 \002(\t\022\027\n\017productGroupIds\030\003 \003(\t\0222\n\022u"
+      "nitDimensionCosts\030\004 \003(\0132\026.NS3.UnitDimens"
+      "ionCost\0227\n\017flowConstraints\030\005 \003(\0132\036.NS3.F"
+      "lowDimensionalConstraint\"\302\001\n\005Model\022/\n\ndi"
+      "mensions\030\001 \002(\0132\033.NS3.DimensionConfigurat"
+      "ion\022\030\n\005nodes\030\002 \003(\0132\t.NS3.Node\022 \n\tlaneRat"
+      "es\030\003 \003(\0132\r.NS3.LaneRate\022\"\n\ncostModels\030\004 "
+      "\003(\0132\016.NS3.CostModel\022(\n\rproductGroups\030\005 \003"
+      "(\0132\021.NS3.ProductGroup\"\372\001\n\014SolveRequest\022\031"
+      "\n\005model\030\001 \001(\0132\n.NS3.Model\022\017\n\007modelID\030\002 \001"
+      "(\t\0228\n\tsolveType\030\004 \001(\0162\033.NS3.SolveRequest"
+      ".SolveType:\010Optimise\022>\n\016geometryOutput\030\005"
+      " \001(\0162 .NS3.SolveRequest.GeometryOutput:\004"
+      "None\"\031\n\tSolveType\022\014\n\010Optimise\020\000\")\n\016Geome"
+      "tryOutput\022\010\n\004None\020\000\022\r\n\tAggregate\020\001\"\324\t\n\020S"
+      "olutionResponse\022\021\n\tobjective\030\001 \002(\002\022\022\n\nlo"
+      "werBound\030\002 \001(\002\022\025\n\roptimalityGap\030\003 \001(\002\0225\n"
+      "\013assignments\030\004 \003(\0132 .NS3.SolutionRespons"
+      "e.Assignment\0221\n\tnodeFlows\030\005 \003(\0132\036.NS3.So"
+      "lutionResponse.NodeFlow\022\?\n\020nodeProductFl"
+      "ows\030\006 \003(\0132%.NS3.SolutionResponse.NodePro"
+      "ductFlow\022@\n\020geometrySequence\030\007 \003(\0132&.NS3"
+      ".SolutionResponse.GeometrySequence\022+\n\006ro"
+      "utes\030\010 \003(\0132\033.NS3.SolutionResponse.Route\032"
+      "\257\001\n\nAssignment\022\016\n\006source\030\001 \002(\t\022\023\n\013destin"
+      "ation\030\002 \002(\t\022\021\n\tproductId\030\003 \002(\t\022\016\n\006amount"
+      "\030\004 \002(\002\022\014\n\004cost\030\005 \002(\002\022\022\n\nlaneRateId\030\006 \001(\t"
+      "\022\023\n\013costModelId\030\007 \001(\t\022\020\n\010distance\030\010 \002(\002\022"
+      "\020\n\010duration\030\t \002(\002\032\227\002\n\017NodeProductFlow\022\016\n"
+      "\006nodeId\030\001 \002(\t\022\021\n\tproductId\030\002 \002(\t\022\016\n\006inFl"
+      "ow\030\003 \002(\002\022\017\n\007outFlow\030\004 \002(\002\022\020\n\010flowCost\030\005 "
+      "\002(\002\022\021\n\tfixedCost\030\006 \002(\002\022\030\n\020productionAmou"
+      "nt\030\007 \002(\002\022\031\n\021productionPenalty\030\010 \002(\002\022\026\n\016p"
+      "roductionCost\030\t \002(\002\022\031\n\021consumptionAmount"
+      "\030\n \002(\002\022\032\n\022consumptionPenalty\030\013 \002(\002\022\027\n\017co"
+      "nsumptionCost\030\014 \002(\002\032\260\002\n\010NodeFlow\022\016\n\006node"
+      "Id\030\001 \002(\t\022\016\n\006inFlow\030\002 \002(\002\022\017\n\007outFlow\030\003 \002("
+      "\002\022\020\n\010flowCost\030\004 \002(\002\022\021\n\tfixedCost\030\005 \002(\002\022\027"
+      "\n\017productFlowCost\030\006 \002(\002\022\030\n\020productFixedC"
+      "ost\030\007 \002(\002\022\030\n\020productionAmount\030\010 \002(\002\022\031\n\021p"
+      "roductionPenalty\030\t \002(\002\022\026\n\016productionCost"
+      "\030\n \002(\002\022\031\n\021consumptionAmount\030\013 \002(\002\022\032\n\022con"
+      "sumptionPenalty\030\014 \002(\002\022\027\n\017consumptionCost"
+      "\030\r \002(\002\032(\n\020GeometrySequence\022\t\n\001x\030\001 \003(\002\022\t\n"
+      "\001y\030\002 \003(\002\032\?\n\005Route\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toI"
+      "d\030\002 \002(\t\022\030\n\020geometrySequence\030\003 \003(\005B\017\n\rice"
+      "packai.NS3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3849);
+      descriptor, 3850);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ns3-tbfvuwtge2iq.proto", &protobuf_RegisterTypes);
 }
@@ -6503,7 +6503,7 @@ void CostModel::InitAsDefaultInstance() {
 const int CostModel::kIdFieldNumber;
 const int CostModel::kSourceFieldNumber;
 const int CostModel::kProductGroupIdsFieldNumber;
-const int CostModel::kUnitDimensionCostFieldNumber;
+const int CostModel::kUnitDimensionCostsFieldNumber;
 const int CostModel::kFlowConstraintsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
@@ -6519,7 +6519,7 @@ CostModel::CostModel(const CostModel& from)
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
       productgroupids_(from.productgroupids_),
-      unitdimensioncost_(from.unitdimensioncost_),
+      unitdimensioncosts_(from.unitdimensioncosts_),
       flowconstraints_(from.flowconstraints_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
@@ -6569,7 +6569,7 @@ void CostModel::Clear() {
   (void) cached_has_bits;
 
   productgroupids_.Clear();
-  unitdimensioncost_.Clear();
+  unitdimensioncosts_.Clear();
   flowconstraints_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 3u) {
@@ -6643,12 +6643,12 @@ bool CostModel::MergePartialFromCodedStream(
         break;
       }
 
-      // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
+      // repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
       case 4: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
             static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_unitdimensioncost()));
+                input, add_unitdimensioncosts()));
         } else {
           goto handle_unusual;
         }
@@ -6724,12 +6724,12 @@ void CostModel::SerializeWithCachedSizes(
       3, this->productgroupids(i), output);
   }
 
-  // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
+  // repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->unitdimensioncost_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->unitdimensioncosts_size()); i < n; i++) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       4,
-      this->unitdimensioncost(static_cast<int>(i)),
+      this->unitdimensioncosts(static_cast<int>(i)),
       output);
   }
 
@@ -6789,12 +6789,12 @@ void CostModel::SerializeWithCachedSizes(
       WriteStringToArray(3, this->productgroupids(i), target);
   }
 
-  // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
+  // repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
   for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->unitdimensioncost_size()); i < n; i++) {
+      n = static_cast<unsigned int>(this->unitdimensioncosts_size()); i < n; i++) {
     target = ::google::protobuf::internal::WireFormatLite::
       InternalWriteMessageToArray(
-        4, this->unitdimensioncost(static_cast<int>(i)), deterministic, target);
+        4, this->unitdimensioncosts(static_cast<int>(i)), deterministic, target);
   }
 
   // repeated .NS3.FlowDimensionalConstraint flowConstraints = 5;
@@ -6864,14 +6864,14 @@ size_t CostModel::ByteSizeLong() const {
       this->productgroupids(i));
   }
 
-  // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
+  // repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
   {
-    unsigned int count = static_cast<unsigned int>(this->unitdimensioncost_size());
+    unsigned int count = static_cast<unsigned int>(this->unitdimensioncosts_size());
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->unitdimensioncost(static_cast<int>(i)));
+          this->unitdimensioncosts(static_cast<int>(i)));
     }
   }
 
@@ -6914,7 +6914,7 @@ void CostModel::MergeFrom(const CostModel& from) {
   (void) cached_has_bits;
 
   productgroupids_.MergeFrom(from.productgroupids_);
-  unitdimensioncost_.MergeFrom(from.unitdimensioncost_);
+  unitdimensioncosts_.MergeFrom(from.unitdimensioncosts_);
   flowconstraints_.MergeFrom(from.flowconstraints_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 3u) {
@@ -6945,7 +6945,7 @@ void CostModel::CopyFrom(const CostModel& from) {
 
 bool CostModel::IsInitialized() const {
   if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->unitdimensioncost())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->unitdimensioncosts())) return false;
   if (!::google::protobuf::internal::AllAreInitialized(this->flowconstraints())) return false;
   return true;
 }
@@ -6957,7 +6957,7 @@ void CostModel::Swap(CostModel* other) {
 void CostModel::InternalSwap(CostModel* other) {
   using std::swap;
   productgroupids_.InternalSwap(CastToBase(&other->productgroupids_));
-  CastToBase(&unitdimensioncost_)->InternalSwap(CastToBase(&other->unitdimensioncost_));
+  CastToBase(&unitdimensioncosts_)->InternalSwap(CastToBase(&other->unitdimensioncosts_));
   CastToBase(&flowconstraints_)->InternalSwap(CastToBase(&other->flowconstraints_));
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());

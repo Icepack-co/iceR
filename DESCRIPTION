@@ -1,6 +1,6 @@
 Package: iceR
 Title: Wrap IVR Model Inputs and Outputs to the Icepack API
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
 Author: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
 Maintainer: Icepack <info@icepack.co>
@@ -18,7 +18,8 @@ Depends:
     leaflet (>= 2.0.2),
     jsonlite (>= 1.6.1),
     magrittr (>= 1.5),
-    scales (>= 1.1.0)
+    scales (>= 1.1.0),
+    lwgeom (>= 0.2-5)
 License: MIT
 Encoding: UTF-8
 LazyData: true
@@ -36,5 +37,6 @@ Imports:
     leaflet (>= 2.0.2),
     jsonlite (>= 1.6.1),
     magrittr (>= 1.5),
-    scales (>= 1.1.0)
+    scales (>= 1.1.0),
+    lwgeom (>= 0.2-5)
 RoxygenNote: 7.1.0
