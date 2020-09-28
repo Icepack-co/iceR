@@ -24,11 +24,12 @@ message UserDimension {
 }
 
 message DimensionConfiguration {
-  optional InternalDimension timeConfig = 1;     // if you want to use road-network time in the model
-  optional InternalDimension distanceConfig = 2; // if you want to use road-network distance in the model
+  optional InternalDimension timeConfig =
+      1;  // if you want to use road-network time in the model
+  optional InternalDimension distanceConfig =
+      2;  // if you want to use road-network distance in the model
   repeated UserDimension userDimensions = 3;
 }
-
 
 // we have a network sourcing problem in this context.
 // it's going to be framed as a multi-commodity-flow problem
@@ -42,21 +43,23 @@ message Geocode {
 
 // https://docs.icepack.ai/ns3/unit-dimension-cost/
 message UnitDimensionCost {
-  repeated string dimensionIds = 1;  
+  repeated string dimensionIds = 1;
   repeated float dimensionCoefficients = 2;
-  required float costPerUnit = 3;    
+  required float costPerUnit = 3;
   // example 1: kg's
   // kg's *f_1 * costperunit (i.e. cost per ton)
   // example 2: distance * f_1, kg's * f_2
   // (km's*f_1 * kg's * f_2)*costperunit (i.e. ton km's)
-  // no more than two of the dimensionids may be variable (can be multiple constants)
-  // if factors omitted, assumes a constant of 1.0 for each factor.
+  // no more than two of the dimensionids may be variable (can be multiple
+  // constants) if factors omitted, assumes a constant of 1.0 for each factor.
 }
 
 // https://docs.icepack.ai/ns3/fixed-dimension-cost/
 message FixedDimensionCost {
-  repeated string dimensionIds = 1; // the list of the dimensions which contribute to this fixed cost.
-  required float fixedCost = 2;    // the amount incurred for a non-zero flow amount.
+  repeated string dimensionIds =
+      1;  // the list of the dimensions which contribute to this fixed cost.
+  required float fixedCost =
+      2;  // the amount incurred for a non-zero flow amount.
 }
 
 // https://docs.icepack.ai/ns3/flow-dimensional-constraint/
@@ -68,15 +71,17 @@ message FlowDimensionalConstraint {
   // flowMin <= \sum_{i}{dim_i * factor_i} <= flowMax
 }
 
-// so for each node, we define its location in the network (for routing network calculations)
-// as well as (optionally) flow constraints on the node, either as flow input (production), 
-// or flow output (demand consumption nodes)
+// so for each node, we define its location in the network (for routing network
+// calculations) as well as (optionally) flow constraints on the node, either as
+// flow input (production), or flow output (demand consumption nodes)
 // https://docs.icepack.ai/ns3/dimension-range/
 message DimensionRange {
   required string dimensionId = 1;
   required float minRange = 2 [default = 0.0];
   required float maxRange = 3;
-  required float flowPenalty = 4 [default = 0.0]; // penalty applied if the final value is not within the range.
+  required float flowPenalty = 4
+      [default =
+           0.0];  // penalty applied if the final value is not within the range.
 }
 
 // https://docs.icepack.ai/ns3/node/
@@ -85,28 +90,35 @@ message Node {
     required string productId = 1;
     repeated DimensionRange dimensionRanges = 2;
     repeated FixedDimensionCost FixedDimensionCosts = 3;
-    repeated UnitDimensionCost unitDimensionCosts = 4; // individual factoring and costs per dimension.
+    repeated UnitDimensionCost unitDimensionCosts =
+        4;  // individual factoring and costs per dimension.
   }
-  message Flow { // across all products
+  message Flow {  // across all products
     repeated DimensionRange dimensionRanges = 1;
     repeated FixedDimensionCost FixedDimensionCosts = 2;
-    repeated UnitDimensionCost unitDimensionCosts = 3; 
+    repeated UnitDimensionCost unitDimensionCosts = 3;
   }
 
   required string id = 1;
   required Geocode geocode = 2;
   repeated ProductFlow production = 3;
-  repeated ProductFlow consumption = 4;   
-  optional Flow flow = 5;                 // summing across all products+ dimensions, applies ranges, dimension costs etc.
-  repeated ProductFlow productFlows = 6;  // individual product flows that are applied at a node level (mostly intermediate nodes).
-  repeated string allowableSources = 7;   // can be a sinlge source, or many.
-  optional int32 maximumSources = 8 [default = -1];      // set to 1 where a single source decision is required.
-  repeated FlowDimensionalConstraint flowConstraints = 9;// the maximum flow over this node (sum of all incoming arcs | unit+dims)
+  repeated ProductFlow consumption = 4;
+  optional Flow flow = 5;  // summing across all products+ dimensions, applies
+                           // ranges, dimension costs etc.
+  repeated ProductFlow productFlows =
+      6;  // individual product flows that are applied at a node level (mostly
+          // intermediate nodes).
+  repeated string allowableSources = 7;  // can be a sinlge source, or many.
+  optional int32 maximumSources = 8
+      [default = -1];  // set to 1 where a single source decision is required.
+  repeated FlowDimensionalConstraint flowConstraints =
+      9;  // the maximum flow over this node (sum of all incoming arcs |
+          // unit+dims)
 }
 
 // https://docs.icepack.ai/ns3/product-group/
 message ProductGroup {
-  message ProductSpecification{
+  message ProductSpecification {
     required string baseDimension = 1;
     repeated string targetDimension = 2;
     repeated float targetPerBase = 3;
@@ -122,13 +134,15 @@ message LaneRate {
   required string id = 1;
   required string source = 3;
   required string destination = 4;
-  repeated string productIds = 5;               // Allowable products on this lane rate
-  repeated string productGroupIds = 6;          // alternatively, the allowable product groups on this lane rate
-                                                // If both product ids and product group ids are specified, the intersection of these two is used.
+  repeated string productIds = 5;  // Allowable products on this lane rate
+  repeated string productGroupIds =
+      6;  // alternatively, the allowable product groups on this lane rate
+          // If both product ids and product group ids are specified, the
+          // intersection of these two is used.
   repeated UnitDimensionCost unitDimensionCosts = 7;
   // unit dimensions may be items such as a cost per load, cost per km,
-  // cost per unit km, or some combination of whatwhever. Mutliple units 
-  // may be aggregated to create a single linear contribution to the 
+  // cost per unit km, or some combination of whatwhever. Mutliple units
+  // may be aggregated to create a single linear contribution to the
   // objective function
 
   repeated FlowDimensionalConstraint flowConstraints = 8;
@@ -140,11 +154,11 @@ message LaneRate {
 message CostModel {
   required string id = 1;
   required string source = 2;
-  repeated string productGroupIds = 3; // cost models only work with product groups.
-  repeated UnitDimensionCost unitDimensionCost = 4;
+  repeated string productGroupIds =
+      3;  // cost models only work with product groups.
+  repeated UnitDimensionCost unitDimensionCosts = 4;
   repeated FlowDimensionalConstraint flowConstraints = 5;
 }
-
 
 // https://docs.icepack.ai/ns3/model/
 message Model {
@@ -158,16 +172,15 @@ message Model {
 // Input message for this schema.
 // https://docs.icepack.ai/ns3/solve-request/
 message SolveRequest {
-  enum SolveType {
-    Optimise =  0; 
-  }
-  enum GeometryOutput{
+  enum SolveType { Optimise = 0; }
+  enum GeometryOutput {
     None = 0;
     Aggregate = 1;
   }
 
   optional Model model = 1;     // either model or modelID should be specified
-  optional string modelID = 2;  // the model ID can be obtained by uploading a cached model to the api.
+  optional string modelID = 2;  // the model ID from a previously optimised
+                                // request (for use with evaluate solve type)
   optional SolveType solveType = 4 [default = Optimise];
   optional GeometryOutput geometryOutput = 5 [default = None];
 }
@@ -178,7 +191,6 @@ message SolutionResponse {
   // node level attributes.
   // node - source assignments, volumes, costs
   // lane rate assigned volumes and costs
-
 
   message Assignment {
     required string source = 1;
@@ -191,7 +203,6 @@ message SolutionResponse {
     required float distance = 8;
     required float duration = 9;
   }
-
 
   message NodeProductFlow {
     required string nodeId = 1;
@@ -208,7 +219,7 @@ message SolutionResponse {
     required float consumptionCost = 12;
   }
 
-  message NodeFlow{
+  message NodeFlow {
     required string nodeId = 1;
     required float inFlow = 2;
     required float outFlow = 3;
@@ -228,9 +239,9 @@ message SolutionResponse {
     repeated float x = 1;
     repeated float y = 2;
   }
-  message Route{
+  message Route {
     required string fromId = 1;
-    required string toId  = 2;
+    required string toId = 2;
     repeated int32 geometrySequence = 3;
   }
 

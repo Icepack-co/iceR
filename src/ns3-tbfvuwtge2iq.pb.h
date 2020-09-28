@@ -2611,17 +2611,17 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   const ::google::protobuf::RepeatedPtrField< ::std::string>& productgroupids() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_productgroupids();
 
-  // repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
-  int unitdimensioncost_size() const;
-  void clear_unitdimensioncost();
-  static const int kUnitDimensionCostFieldNumber = 4;
-  ::NS3::UnitDimensionCost* mutable_unitdimensioncost(int index);
+  // repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
+  int unitdimensioncosts_size() const;
+  void clear_unitdimensioncosts();
+  static const int kUnitDimensionCostsFieldNumber = 4;
+  ::NS3::UnitDimensionCost* mutable_unitdimensioncosts(int index);
   ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >*
-      mutable_unitdimensioncost();
-  const ::NS3::UnitDimensionCost& unitdimensioncost(int index) const;
-  ::NS3::UnitDimensionCost* add_unitdimensioncost();
+      mutable_unitdimensioncosts();
+  const ::NS3::UnitDimensionCost& unitdimensioncosts(int index) const;
+  ::NS3::UnitDimensionCost* add_unitdimensioncosts();
   const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
-      unitdimensioncost() const;
+      unitdimensioncosts() const;
 
   // repeated .NS3.FlowDimensionalConstraint flowConstraints = 5;
   int flowconstraints_size() const;
@@ -2679,7 +2679,7 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::std::string> productgroupids_;
-  ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost > unitdimensioncost_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost > unitdimensioncosts_;
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint > flowconstraints_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::google::protobuf::internal::ArenaStringPtr source_;
@@ -6829,34 +6829,34 @@ CostModel::mutable_productgroupids() {
   return &productgroupids_;
 }
 
-// repeated .NS3.UnitDimensionCost unitDimensionCost = 4;
-inline int CostModel::unitdimensioncost_size() const {
-  return unitdimensioncost_.size();
+// repeated .NS3.UnitDimensionCost unitDimensionCosts = 4;
+inline int CostModel::unitdimensioncosts_size() const {
+  return unitdimensioncosts_.size();
 }
-inline void CostModel::clear_unitdimensioncost() {
-  unitdimensioncost_.Clear();
+inline void CostModel::clear_unitdimensioncosts() {
+  unitdimensioncosts_.Clear();
 }
-inline ::NS3::UnitDimensionCost* CostModel::mutable_unitdimensioncost(int index) {
-  // @@protoc_insertion_point(field_mutable:NS3.CostModel.unitDimensionCost)
-  return unitdimensioncost_.Mutable(index);
+inline ::NS3::UnitDimensionCost* CostModel::mutable_unitdimensioncosts(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.CostModel.unitDimensionCosts)
+  return unitdimensioncosts_.Mutable(index);
 }
 inline ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >*
-CostModel::mutable_unitdimensioncost() {
-  // @@protoc_insertion_point(field_mutable_list:NS3.CostModel.unitDimensionCost)
-  return &unitdimensioncost_;
+CostModel::mutable_unitdimensioncosts() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.CostModel.unitDimensionCosts)
+  return &unitdimensioncosts_;
 }
-inline const ::NS3::UnitDimensionCost& CostModel::unitdimensioncost(int index) const {
-  // @@protoc_insertion_point(field_get:NS3.CostModel.unitDimensionCost)
-  return unitdimensioncost_.Get(index);
+inline const ::NS3::UnitDimensionCost& CostModel::unitdimensioncosts(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.CostModel.unitDimensionCosts)
+  return unitdimensioncosts_.Get(index);
 }
-inline ::NS3::UnitDimensionCost* CostModel::add_unitdimensioncost() {
-  // @@protoc_insertion_point(field_add:NS3.CostModel.unitDimensionCost)
-  return unitdimensioncost_.Add();
+inline ::NS3::UnitDimensionCost* CostModel::add_unitdimensioncosts() {
+  // @@protoc_insertion_point(field_add:NS3.CostModel.unitDimensionCosts)
+  return unitdimensioncosts_.Add();
 }
 inline const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
-CostModel::unitdimensioncost() const {
-  // @@protoc_insertion_point(field_list:NS3.CostModel.unitDimensionCost)
-  return unitdimensioncost_;
+CostModel::unitdimensioncosts() const {
+  // @@protoc_insertion_point(field_list:NS3.CostModel.unitDimensionCosts)
+  return unitdimensioncosts_;
 }
 
 // repeated .NS3.FlowDimensionalConstraint flowConstraints = 5;
