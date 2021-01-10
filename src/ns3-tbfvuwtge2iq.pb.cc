@@ -1073,7 +1073,7 @@ void AddDescriptorsImpl() {
       "orm\0223\n\ninputItems\030\001 \003(\0132\037.NS3.Node.Produ"
       "ctTransform.Item\0224\n\013outputItems\030\002 \003(\0132\037."
       "NS3.Node.ProductTransform.Item\032\307\001\n\004Item\022"
-      "\021\n\tproductId\030\001 \002(\t\022\024\n\014productRatio\030\002 \002(\002"
+      "\021\n\tproductId\030\001 \002(\t\022\024\n\014productRatio\030\002 \002(\005"
       "\022,\n\017dimensionRanges\030\003 \003(\0132\023.NS3.Dimensio"
       "nRange\0224\n\023fixedDimensionCosts\030\004 \003(\0132\027.NS"
       "3.FixedDimensionCost\0222\n\022unitDimensionCos"
@@ -4711,13 +4711,13 @@ bool Node_ProductTransform_Item::MergePartialFromCodedStream(
         break;
       }
 
-      // required float productRatio = 2;
+      // required int32 productRatio = 2;
       case 2: {
         if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
           set_has_productratio();
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
                  input, &productratio_)));
         } else {
           goto handle_unusual;
@@ -4798,9 +4798,9 @@ void Node_ProductTransform_Item::SerializeWithCachedSizes(
       1, this->productid(), output);
   }
 
-  // required float productRatio = 2;
+  // required int32 productRatio = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->productratio(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->productratio(), output);
   }
 
   // repeated .NS3.DimensionRange dimensionRanges = 3;
@@ -4856,9 +4856,9 @@ void Node_ProductTransform_Item::SerializeWithCachedSizes(
         1, this->productid(), target);
   }
 
-  // required float productRatio = 2;
+  // required int32 productRatio = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->productratio(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->productratio(), target);
   }
 
   // repeated .NS3.DimensionRange dimensionRanges = 3;
@@ -4905,8 +4905,10 @@ size_t Node_ProductTransform_Item::RequiredFieldsByteSizeFallback() const {
   }
 
   if (has_productratio()) {
-    // required float productRatio = 2;
-    total_size += 1 + 4;
+    // required int32 productRatio = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->productratio());
   }
 
   return total_size;
@@ -4926,8 +4928,10 @@ size_t Node_ProductTransform_Item::ByteSizeLong() const {
       ::google::protobuf::internal::WireFormatLite::StringSize(
         this->productid());
 
-    // required float productRatio = 2;
-    total_size += 1 + 4;
+    // required int32 productRatio = 2;
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->productratio());
 
   } else {
     total_size += RequiredFieldsByteSizeFallback();

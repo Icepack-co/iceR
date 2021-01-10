@@ -1856,12 +1856,12 @@ class Node_ProductTransform_Item : public ::google::protobuf::Message /* @@proto
   ::std::string* release_productid();
   void set_allocated_productid(::std::string* productid);
 
-  // required float productRatio = 2;
+  // required int32 productRatio = 2;
   bool has_productratio() const;
   void clear_productratio();
   static const int kProductRatioFieldNumber = 2;
-  float productratio() const;
-  void set_productratio(float value);
+  ::google::protobuf::int32 productratio() const;
+  void set_productratio(::google::protobuf::int32 value);
 
   // @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform.Item)
  private:
@@ -1880,7 +1880,7 @@ class Node_ProductTransform_Item : public ::google::protobuf::Message /* @@proto
   ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost > fixeddimensioncosts_;
   ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost > unitdimensioncosts_;
   ::google::protobuf::internal::ArenaStringPtr productid_;
-  float productratio_;
+  ::google::protobuf::int32 productratio_;
   friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -5888,7 +5888,7 @@ inline void Node_ProductTransform_Item::set_allocated_productid(::std::string* p
   // @@protoc_insertion_point(field_set_allocated:NS3.Node.ProductTransform.Item.productId)
 }
 
-// required float productRatio = 2;
+// required int32 productRatio = 2;
 inline bool Node_ProductTransform_Item::has_productratio() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -5902,11 +5902,11 @@ inline void Node_ProductTransform_Item::clear_productratio() {
   productratio_ = 0;
   clear_has_productratio();
 }
-inline float Node_ProductTransform_Item::productratio() const {
+inline ::google::protobuf::int32 Node_ProductTransform_Item::productratio() const {
   // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.productRatio)
   return productratio_;
 }
-inline void Node_ProductTransform_Item::set_productratio(float value) {
+inline void Node_ProductTransform_Item::set_productratio(::google::protobuf::int32 value) {
   set_has_productratio();
   productratio_ = value;
   // @@protoc_insertion_point(field_set:NS3.Node.ProductTransform.Item.productRatio)

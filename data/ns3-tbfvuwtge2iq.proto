@@ -105,7 +105,7 @@ message Node {
   message ProductTransform { 
     message Item {
       required string productId = 1;
-      required float productRatio = 2;
+      required int32 productRatio = 2;
       repeated DimensionRange dimensionRanges = 3;
       repeated FixedDimensionCost fixedDimensionCosts = 4;
       repeated UnitDimensionCost unitDimensionCosts = 5;
@@ -266,4 +266,3 @@ message SolutionResponse {
   repeated GeometrySequence geometrySequence = 7;
   repeated Route routes = 8;
 }
-
