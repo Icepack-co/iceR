@@ -90,8 +90,7 @@ message Node {
     required string productId = 1;
     repeated DimensionRange dimensionRanges = 2;
     repeated FixedDimensionCost FixedDimensionCosts = 3;
-    repeated UnitDimensionCost unitDimensionCosts =
-        4;  // individual factoring and costs per dimension.
+    repeated UnitDimensionCost unitDimensionCosts = 4;  // individual factoring and costs per dimension.
   }
   message Flow {  // across all products
     repeated DimensionRange dimensionRanges = 1;
@@ -99,21 +98,36 @@ message Node {
     repeated UnitDimensionCost unitDimensionCosts = 3;
   }
 
+  // essentially a Node.ProductTransform which may be applied at this node.
+  // this means that the node MAY convert the input products (in their respective ratios)
+  // into the output products (in their respective ratios). Costing at a transformer flow level can 
+  // be applied however granular.
+  message ProductTransform { 
+    message Item {
+      required string productId = 1;
+      required float productRatio = 2;
+      repeated DimensionRange dimensionRanges = 3;
+      repeated FixedDimensionCost fixedDimensionCosts = 4;
+      repeated UnitDimensionCost unitDimensionCosts = 5;
+    }
+    // input product id's defining the transform (with their respective ratio) 
+    // specify at least one.
+    repeated Item inputItems = 1;
+    // output product id's defining the transform (with their respective ratio) 
+    // specify at least one.
+    repeated Item outputItems = 2;
+  }
+
   required string id = 1;
   required Geocode geocode = 2;
   repeated ProductFlow production = 3;
   repeated ProductFlow consumption = 4;
-  optional Flow flow = 5;  // summing across all products+ dimensions, applies
-                           // ranges, dimension costs etc.
-  repeated ProductFlow productFlows =
-      6;  // individual product flows that are applied at a node level (mostly
-          // intermediate nodes).
-  repeated string allowableSources = 7;  // can be a sinlge source, or many.
-  optional int32 maximumSources = 8
-      [default = -1];  // set to 1 where a single source decision is required.
-  repeated FlowDimensionalConstraint flowConstraints =
-      9;  // the maximum flow over this node (sum of all incoming arcs |
-          // unit+dims)
+  optional Flow flow = 5;  // summing across all products+ dimensions, applies ranges, dimension costs etc.
+  repeated ProductFlow productFlows = 6;  // individual product flows that are applied at a node level (mostly intermediate nodes).
+  repeated string allowableSources = 7;   // can be a sinlge source, or many.
+  optional int32 maximumSources = 8 [default = -1];  // set to 1 where a single source decision is required.
+  repeated FlowDimensionalConstraint flowConstraints =  9;  // the maximum flow over this node (sum of all incoming arcs | unit+dims)
+  repeated ProductTransform productTransforms = 10; // set of product transformer which may be used to satisfy other flows.
 }
 
 // https://docs.icepack.ai/ns3/product-group/
@@ -135,10 +149,9 @@ message LaneRate {
   required string source = 3;
   required string destination = 4;
   repeated string productIds = 5;  // Allowable products on this lane rate
-  repeated string productGroupIds =
-      6;  // alternatively, the allowable product groups on this lane rate
-          // If both product ids and product group ids are specified, the
-          // intersection of these two is used.
+  repeated string productGroupIds = 6;  // alternatively, the allowable product groups on this lane rate
+                                        // If both product ids and product group ids are specified, the
+                                        // intersection of these two is used.
   repeated UnitDimensionCost unitDimensionCosts = 7;
   // unit dimensions may be items such as a cost per load, cost per km,
   // cost per unit km, or some combination of whatwhever. Mutliple units
@@ -154,8 +167,7 @@ message LaneRate {
 message CostModel {
   required string id = 1;
   required string source = 2;
-  repeated string productGroupIds =
-      3;  // cost models only work with product groups.
+  repeated string productGroupIds = 3;  // cost models only work with product groups.
   repeated UnitDimensionCost unitDimensionCosts = 4;
   repeated FlowDimensionalConstraint flowConstraints = 5;
 }
@@ -254,3 +266,4 @@ message SolutionResponse {
   repeated GeometrySequence geometrySequence = 7;
   repeated Route routes = 8;
 }
+

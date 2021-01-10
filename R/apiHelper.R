@@ -137,7 +137,7 @@ getResponse <- function(apiHelper, requestID){
 
     if (solRes$state != 1 &&
         solRes$logs[[length(solRes$logs)]]$type != 2) {
-      Sys.sleep(1.0)
+      Sys.sleep(0.05) # exponential back-off is implemented on the api, this isn't required.
     } else {
       apiHelper$activeProblems <- apiHelper$activeProblems[apiHelper$activeProblems != requestID]
       if(length(solRes$solution) == 0){
