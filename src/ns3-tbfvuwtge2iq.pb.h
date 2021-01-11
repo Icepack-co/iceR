@@ -39,7 +39,7 @@ namespace protobuf_ns3_2dtbfvuwtge2iq_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[23];
+  static const ::google::protobuf::internal::ParseTable schema[27];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -83,6 +83,12 @@ extern Node_FlowDefaultTypeInternal _Node_Flow_default_instance_;
 class Node_ProductFlow;
 class Node_ProductFlowDefaultTypeInternal;
 extern Node_ProductFlowDefaultTypeInternal _Node_ProductFlow_default_instance_;
+class Node_ProductTransform;
+class Node_ProductTransformDefaultTypeInternal;
+extern Node_ProductTransformDefaultTypeInternal _Node_ProductTransform_default_instance_;
+class Node_ProductTransform_Item;
+class Node_ProductTransform_ItemDefaultTypeInternal;
+extern Node_ProductTransform_ItemDefaultTypeInternal _Node_ProductTransform_Item_default_instance_;
 class ProductGroup;
 class ProductGroupDefaultTypeInternal;
 extern ProductGroupDefaultTypeInternal _ProductGroup_default_instance_;
@@ -104,6 +110,12 @@ extern SolutionResponse_NodeFlowDefaultTypeInternal _SolutionResponse_NodeFlow_d
 class SolutionResponse_NodeProductFlow;
 class SolutionResponse_NodeProductFlowDefaultTypeInternal;
 extern SolutionResponse_NodeProductFlowDefaultTypeInternal _SolutionResponse_NodeProductFlow_default_instance_;
+class SolutionResponse_NodeProductTransformAssignment;
+class SolutionResponse_NodeProductTransformAssignmentDefaultTypeInternal;
+extern SolutionResponse_NodeProductTransformAssignmentDefaultTypeInternal _SolutionResponse_NodeProductTransformAssignment_default_instance_;
+class SolutionResponse_NodeProductTransformAssignment_Item;
+class SolutionResponse_NodeProductTransformAssignment_ItemDefaultTypeInternal;
+extern SolutionResponse_NodeProductTransformAssignment_ItemDefaultTypeInternal _SolutionResponse_NodeProductTransformAssignment_Item_default_instance_;
 class SolutionResponse_Route;
 class SolutionResponse_RouteDefaultTypeInternal;
 extern SolutionResponse_RouteDefaultTypeInternal _SolutionResponse_Route_default_instance_;
@@ -131,6 +143,8 @@ template<> ::NS3::Model* Arena::CreateMaybeMessage<::NS3::Model>(Arena*);
 template<> ::NS3::Node* Arena::CreateMaybeMessage<::NS3::Node>(Arena*);
 template<> ::NS3::Node_Flow* Arena::CreateMaybeMessage<::NS3::Node_Flow>(Arena*);
 template<> ::NS3::Node_ProductFlow* Arena::CreateMaybeMessage<::NS3::Node_ProductFlow>(Arena*);
+template<> ::NS3::Node_ProductTransform* Arena::CreateMaybeMessage<::NS3::Node_ProductTransform>(Arena*);
+template<> ::NS3::Node_ProductTransform_Item* Arena::CreateMaybeMessage<::NS3::Node_ProductTransform_Item>(Arena*);
 template<> ::NS3::ProductGroup* Arena::CreateMaybeMessage<::NS3::ProductGroup>(Arena*);
 template<> ::NS3::ProductGroup_ProductSpecification* Arena::CreateMaybeMessage<::NS3::ProductGroup_ProductSpecification>(Arena*);
 template<> ::NS3::SolutionResponse* Arena::CreateMaybeMessage<::NS3::SolutionResponse>(Arena*);
@@ -138,6 +152,8 @@ template<> ::NS3::SolutionResponse_Assignment* Arena::CreateMaybeMessage<::NS3::
 template<> ::NS3::SolutionResponse_GeometrySequence* Arena::CreateMaybeMessage<::NS3::SolutionResponse_GeometrySequence>(Arena*);
 template<> ::NS3::SolutionResponse_NodeFlow* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeFlow>(Arena*);
 template<> ::NS3::SolutionResponse_NodeProductFlow* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeProductFlow>(Arena*);
+template<> ::NS3::SolutionResponse_NodeProductTransformAssignment* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeProductTransformAssignment>(Arena*);
+template<> ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* Arena::CreateMaybeMessage<::NS3::SolutionResponse_NodeProductTransformAssignment_Item>(Arena*);
 template<> ::NS3::SolutionResponse_Route* Arena::CreateMaybeMessage<::NS3::SolutionResponse_Route>(Arena*);
 template<> ::NS3::SolveRequest* Arena::CreateMaybeMessage<::NS3::SolveRequest>(Arena*);
 template<> ::NS3::UnitDimensionCost* Arena::CreateMaybeMessage<::NS3::UnitDimensionCost>(Arena*);
@@ -1703,6 +1719,330 @@ class Node_Flow : public ::google::protobuf::Message /* @@protoc_insertion_point
 };
 // -------------------------------------------------------------------
 
+class Node_ProductTransform_Item : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.Node.ProductTransform.Item) */ {
+ public:
+  Node_ProductTransform_Item();
+  virtual ~Node_ProductTransform_Item();
+
+  Node_ProductTransform_Item(const Node_ProductTransform_Item& from);
+
+  inline Node_ProductTransform_Item& operator=(const Node_ProductTransform_Item& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Node_ProductTransform_Item(Node_ProductTransform_Item&& from) noexcept
+    : Node_ProductTransform_Item() {
+    *this = ::std::move(from);
+  }
+
+  inline Node_ProductTransform_Item& operator=(Node_ProductTransform_Item&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Node_ProductTransform_Item& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Node_ProductTransform_Item* internal_default_instance() {
+    return reinterpret_cast<const Node_ProductTransform_Item*>(
+               &_Node_ProductTransform_Item_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(Node_ProductTransform_Item* other);
+  friend void swap(Node_ProductTransform_Item& a, Node_ProductTransform_Item& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Node_ProductTransform_Item* New() const final {
+    return CreateMaybeMessage<Node_ProductTransform_Item>(NULL);
+  }
+
+  Node_ProductTransform_Item* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Node_ProductTransform_Item>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Node_ProductTransform_Item& from);
+  void MergeFrom(const Node_ProductTransform_Item& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Node_ProductTransform_Item* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .NS3.DimensionRange dimensionRanges = 3;
+  int dimensionranges_size() const;
+  void clear_dimensionranges();
+  static const int kDimensionRangesFieldNumber = 3;
+  ::NS3::DimensionRange* mutable_dimensionranges(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange >*
+      mutable_dimensionranges();
+  const ::NS3::DimensionRange& dimensionranges(int index) const;
+  ::NS3::DimensionRange* add_dimensionranges();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange >&
+      dimensionranges() const;
+
+  // repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;
+  int fixeddimensioncosts_size() const;
+  void clear_fixeddimensioncosts();
+  static const int kFixedDimensionCostsFieldNumber = 4;
+  ::NS3::FixedDimensionCost* mutable_fixeddimensioncosts(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost >*
+      mutable_fixeddimensioncosts();
+  const ::NS3::FixedDimensionCost& fixeddimensioncosts(int index) const;
+  ::NS3::FixedDimensionCost* add_fixeddimensioncosts();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost >&
+      fixeddimensioncosts() const;
+
+  // repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;
+  int unitdimensioncosts_size() const;
+  void clear_unitdimensioncosts();
+  static const int kUnitDimensionCostsFieldNumber = 5;
+  ::NS3::UnitDimensionCost* mutable_unitdimensioncosts(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >*
+      mutable_unitdimensioncosts();
+  const ::NS3::UnitDimensionCost& unitdimensioncosts(int index) const;
+  ::NS3::UnitDimensionCost* add_unitdimensioncosts();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
+      unitdimensioncosts() const;
+
+  // required string productId = 1;
+  bool has_productid() const;
+  void clear_productid();
+  static const int kProductIdFieldNumber = 1;
+  const ::std::string& productid() const;
+  void set_productid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_productid(::std::string&& value);
+  #endif
+  void set_productid(const char* value);
+  void set_productid(const char* value, size_t size);
+  ::std::string* mutable_productid();
+  ::std::string* release_productid();
+  void set_allocated_productid(::std::string* productid);
+
+  // required int32 productRatio = 2;
+  bool has_productratio() const;
+  void clear_productratio();
+  static const int kProductRatioFieldNumber = 2;
+  ::google::protobuf::int32 productratio() const;
+  void set_productratio(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform.Item)
+ private:
+  void set_has_productid();
+  void clear_has_productid();
+  void set_has_productratio();
+  void clear_has_productratio();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange > dimensionranges_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost > fixeddimensioncosts_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost > unitdimensioncosts_;
+  ::google::protobuf::internal::ArenaStringPtr productid_;
+  ::google::protobuf::int32 productratio_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Node_ProductTransform : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.Node.ProductTransform) */ {
+ public:
+  Node_ProductTransform();
+  virtual ~Node_ProductTransform();
+
+  Node_ProductTransform(const Node_ProductTransform& from);
+
+  inline Node_ProductTransform& operator=(const Node_ProductTransform& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Node_ProductTransform(Node_ProductTransform&& from) noexcept
+    : Node_ProductTransform() {
+    *this = ::std::move(from);
+  }
+
+  inline Node_ProductTransform& operator=(Node_ProductTransform&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Node_ProductTransform& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Node_ProductTransform* internal_default_instance() {
+    return reinterpret_cast<const Node_ProductTransform*>(
+               &_Node_ProductTransform_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  void Swap(Node_ProductTransform* other);
+  friend void swap(Node_ProductTransform& a, Node_ProductTransform& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Node_ProductTransform* New() const final {
+    return CreateMaybeMessage<Node_ProductTransform>(NULL);
+  }
+
+  Node_ProductTransform* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Node_ProductTransform>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Node_ProductTransform& from);
+  void MergeFrom(const Node_ProductTransform& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Node_ProductTransform* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef Node_ProductTransform_Item Item;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .NS3.Node.ProductTransform.Item inputItems = 2;
+  int inputitems_size() const;
+  void clear_inputitems();
+  static const int kInputItemsFieldNumber = 2;
+  ::NS3::Node_ProductTransform_Item* mutable_inputitems(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >*
+      mutable_inputitems();
+  const ::NS3::Node_ProductTransform_Item& inputitems(int index) const;
+  ::NS3::Node_ProductTransform_Item* add_inputitems();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >&
+      inputitems() const;
+
+  // repeated .NS3.Node.ProductTransform.Item outputItems = 3;
+  int outputitems_size() const;
+  void clear_outputitems();
+  static const int kOutputItemsFieldNumber = 3;
+  ::NS3::Node_ProductTransform_Item* mutable_outputitems(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >*
+      mutable_outputitems();
+  const ::NS3::Node_ProductTransform_Item& outputitems(int index) const;
+  ::NS3::Node_ProductTransform_Item* add_outputitems();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >&
+      outputitems() const;
+
+  // required string productTransformId = 1;
+  bool has_producttransformid() const;
+  void clear_producttransformid();
+  static const int kProductTransformIdFieldNumber = 1;
+  const ::std::string& producttransformid() const;
+  void set_producttransformid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_producttransformid(::std::string&& value);
+  #endif
+  void set_producttransformid(const char* value);
+  void set_producttransformid(const char* value, size_t size);
+  ::std::string* mutable_producttransformid();
+  ::std::string* release_producttransformid();
+  void set_allocated_producttransformid(::std::string* producttransformid);
+
+  // @@protoc_insertion_point(class_scope:NS3.Node.ProductTransform)
+ private:
+  void set_has_producttransformid();
+  void clear_has_producttransformid();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item > inputitems_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item > outputitems_;
+  ::google::protobuf::internal::ArenaStringPtr producttransformid_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.Node) */ {
  public:
   Node();
@@ -1745,7 +2085,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
                &_Node_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    12;
 
   void Swap(Node* other);
   friend void swap(Node& a, Node& b) {
@@ -1797,6 +2137,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
 
   typedef Node_ProductFlow ProductFlow;
   typedef Node_Flow Flow;
+  typedef Node_ProductTransform ProductTransform;
 
   // accessors -------------------------------------------------------
 
@@ -1870,6 +2211,18 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   const ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint >&
       flowconstraints() const;
 
+  // repeated .NS3.Node.ProductTransform productTransforms = 10;
+  int producttransforms_size() const;
+  void clear_producttransforms();
+  static const int kProductTransformsFieldNumber = 10;
+  ::NS3::Node_ProductTransform* mutable_producttransforms(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform >*
+      mutable_producttransforms();
+  const ::NS3::Node_ProductTransform& producttransforms(int index) const;
+  ::NS3::Node_ProductTransform* add_producttransforms();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform >&
+      producttransforms() const;
+
   // required string id = 1;
   bool has_id() const;
   void clear_id();
@@ -1938,6 +2291,7 @@ class Node : public ::google::protobuf::Message /* @@protoc_insertion_point(clas
   ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductFlow > productflows_;
   ::google::protobuf::RepeatedPtrField< ::std::string> allowablesources_;
   ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstraint > flowconstraints_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform > producttransforms_;
   ::google::protobuf::internal::ArenaStringPtr id_;
   ::NS3::Geocode* geocode_;
   ::NS3::Node_Flow* flow_;
@@ -1988,7 +2342,7 @@ class ProductGroup_ProductSpecification : public ::google::protobuf::Message /* 
                &_ProductGroup_ProductSpecification_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    13;
 
   void Swap(ProductGroup_ProductSpecification* other);
   friend void swap(ProductGroup_ProductSpecification& a, ProductGroup_ProductSpecification& b) {
@@ -2146,7 +2500,7 @@ class ProductGroup : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_ProductGroup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    14;
 
   void Swap(ProductGroup* other);
   friend void swap(ProductGroup& a, ProductGroup& b) {
@@ -2304,7 +2658,7 @@ class LaneRate : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_LaneRate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    15;
 
   void Swap(LaneRate* other);
   friend void swap(LaneRate& a, LaneRate& b) {
@@ -2537,7 +2891,7 @@ class CostModel : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_CostModel_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    16;
 
   void Swap(CostModel* other);
   friend void swap(CostModel& a, CostModel& b) {
@@ -2729,7 +3083,7 @@ class Model : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Model_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    17;
 
   void Swap(Model* other);
   friend void swap(Model& a, Model& b) {
@@ -2900,7 +3254,7 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_SolveRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    18;
 
   void Swap(SolveRequest* other);
   friend void swap(SolveRequest& a, SolveRequest& b) {
@@ -3107,7 +3461,7 @@ class SolutionResponse_Assignment : public ::google::protobuf::Message /* @@prot
                &_SolutionResponse_Assignment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    19;
 
   void Swap(SolutionResponse_Assignment* other);
   friend void swap(SolutionResponse_Assignment& a, SolutionResponse_Assignment& b) {
@@ -3344,7 +3698,7 @@ class SolutionResponse_NodeProductFlow : public ::google::protobuf::Message /* @
                &_SolutionResponse_NodeProductFlow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    20;
 
   void Swap(SolutionResponse_NodeProductFlow* other);
   friend void swap(SolutionResponse_NodeProductFlow& a, SolutionResponse_NodeProductFlow& b) {
@@ -3587,7 +3941,7 @@ class SolutionResponse_NodeFlow : public ::google::protobuf::Message /* @@protoc
                &_SolutionResponse_NodeFlow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    21;
 
   void Swap(SolutionResponse_NodeFlow* other);
   friend void swap(SolutionResponse_NodeFlow& a, SolutionResponse_NodeFlow& b) {
@@ -3832,7 +4186,7 @@ class SolutionResponse_GeometrySequence : public ::google::protobuf::Message /* 
                &_SolutionResponse_GeometrySequence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    22;
 
   void Swap(SolutionResponse_GeometrySequence* other);
   friend void swap(SolutionResponse_GeometrySequence& a, SolutionResponse_GeometrySequence& b) {
@@ -3962,7 +4316,7 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
                &_SolutionResponse_Route_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    23;
 
   void Swap(SolutionResponse_Route* other);
   friend void swap(SolutionResponse_Route& a, SolutionResponse_Route& b) {
@@ -4076,6 +4430,352 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
 };
 // -------------------------------------------------------------------
 
+class SolutionResponse_NodeProductTransformAssignment_Item : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse.NodeProductTransformAssignment.Item) */ {
+ public:
+  SolutionResponse_NodeProductTransformAssignment_Item();
+  virtual ~SolutionResponse_NodeProductTransformAssignment_Item();
+
+  SolutionResponse_NodeProductTransformAssignment_Item(const SolutionResponse_NodeProductTransformAssignment_Item& from);
+
+  inline SolutionResponse_NodeProductTransformAssignment_Item& operator=(const SolutionResponse_NodeProductTransformAssignment_Item& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SolutionResponse_NodeProductTransformAssignment_Item(SolutionResponse_NodeProductTransformAssignment_Item&& from) noexcept
+    : SolutionResponse_NodeProductTransformAssignment_Item() {
+    *this = ::std::move(from);
+  }
+
+  inline SolutionResponse_NodeProductTransformAssignment_Item& operator=(SolutionResponse_NodeProductTransformAssignment_Item&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SolutionResponse_NodeProductTransformAssignment_Item& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SolutionResponse_NodeProductTransformAssignment_Item* internal_default_instance() {
+    return reinterpret_cast<const SolutionResponse_NodeProductTransformAssignment_Item*>(
+               &_SolutionResponse_NodeProductTransformAssignment_Item_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  void Swap(SolutionResponse_NodeProductTransformAssignment_Item* other);
+  friend void swap(SolutionResponse_NodeProductTransformAssignment_Item& a, SolutionResponse_NodeProductTransformAssignment_Item& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SolutionResponse_NodeProductTransformAssignment_Item* New() const final {
+    return CreateMaybeMessage<SolutionResponse_NodeProductTransformAssignment_Item>(NULL);
+  }
+
+  SolutionResponse_NodeProductTransformAssignment_Item* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SolutionResponse_NodeProductTransformAssignment_Item>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SolutionResponse_NodeProductTransformAssignment_Item& from);
+  void MergeFrom(const SolutionResponse_NodeProductTransformAssignment_Item& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SolutionResponse_NodeProductTransformAssignment_Item* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // required string productId = 1;
+  bool has_productid() const;
+  void clear_productid();
+  static const int kProductIdFieldNumber = 1;
+  const ::std::string& productid() const;
+  void set_productid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_productid(::std::string&& value);
+  #endif
+  void set_productid(const char* value);
+  void set_productid(const char* value, size_t size);
+  ::std::string* mutable_productid();
+  ::std::string* release_productid();
+  void set_allocated_productid(::std::string* productid);
+
+  // required float amount = 2;
+  bool has_amount() const;
+  void clear_amount();
+  static const int kAmountFieldNumber = 2;
+  float amount() const;
+  void set_amount(float value);
+
+  // required float cost = 3;
+  bool has_cost() const;
+  void clear_cost();
+  static const int kCostFieldNumber = 3;
+  float cost() const;
+  void set_cost(float value);
+
+  // required float fixedCost = 4;
+  bool has_fixedcost() const;
+  void clear_fixedcost();
+  static const int kFixedCostFieldNumber = 4;
+  float fixedcost() const;
+  void set_fixedcost(float value);
+
+  // required float penaltyAmount = 5;
+  bool has_penaltyamount() const;
+  void clear_penaltyamount();
+  static const int kPenaltyAmountFieldNumber = 5;
+  float penaltyamount() const;
+  void set_penaltyamount(float value);
+
+  // required float penaltyCost = 6;
+  bool has_penaltycost() const;
+  void clear_penaltycost();
+  static const int kPenaltyCostFieldNumber = 6;
+  float penaltycost() const;
+  void set_penaltycost(float value);
+
+  // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment.Item)
+ private:
+  void set_has_productid();
+  void clear_has_productid();
+  void set_has_amount();
+  void clear_has_amount();
+  void set_has_cost();
+  void clear_has_cost();
+  void set_has_fixedcost();
+  void clear_has_fixedcost();
+  void set_has_penaltyamount();
+  void clear_has_penaltyamount();
+  void set_has_penaltycost();
+  void clear_has_penaltycost();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::internal::ArenaStringPtr productid_;
+  float amount_;
+  float cost_;
+  float fixedcost_;
+  float penaltyamount_;
+  float penaltycost_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class SolutionResponse_NodeProductTransformAssignment : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse.NodeProductTransformAssignment) */ {
+ public:
+  SolutionResponse_NodeProductTransformAssignment();
+  virtual ~SolutionResponse_NodeProductTransformAssignment();
+
+  SolutionResponse_NodeProductTransformAssignment(const SolutionResponse_NodeProductTransformAssignment& from);
+
+  inline SolutionResponse_NodeProductTransformAssignment& operator=(const SolutionResponse_NodeProductTransformAssignment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  SolutionResponse_NodeProductTransformAssignment(SolutionResponse_NodeProductTransformAssignment&& from) noexcept
+    : SolutionResponse_NodeProductTransformAssignment() {
+    *this = ::std::move(from);
+  }
+
+  inline SolutionResponse_NodeProductTransformAssignment& operator=(SolutionResponse_NodeProductTransformAssignment&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const SolutionResponse_NodeProductTransformAssignment& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const SolutionResponse_NodeProductTransformAssignment* internal_default_instance() {
+    return reinterpret_cast<const SolutionResponse_NodeProductTransformAssignment*>(
+               &_SolutionResponse_NodeProductTransformAssignment_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  void Swap(SolutionResponse_NodeProductTransformAssignment* other);
+  friend void swap(SolutionResponse_NodeProductTransformAssignment& a, SolutionResponse_NodeProductTransformAssignment& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline SolutionResponse_NodeProductTransformAssignment* New() const final {
+    return CreateMaybeMessage<SolutionResponse_NodeProductTransformAssignment>(NULL);
+  }
+
+  SolutionResponse_NodeProductTransformAssignment* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<SolutionResponse_NodeProductTransformAssignment>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const SolutionResponse_NodeProductTransformAssignment& from);
+  void MergeFrom(const SolutionResponse_NodeProductTransformAssignment& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SolutionResponse_NodeProductTransformAssignment* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef SolutionResponse_NodeProductTransformAssignment_Item Item;
+
+  // accessors -------------------------------------------------------
+
+  // repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;
+  int inputitems_size() const;
+  void clear_inputitems();
+  static const int kInputItemsFieldNumber = 3;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* mutable_inputitems(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >*
+      mutable_inputitems();
+  const ::NS3::SolutionResponse_NodeProductTransformAssignment_Item& inputitems(int index) const;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* add_inputitems();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >&
+      inputitems() const;
+
+  // repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;
+  int outputitems_size() const;
+  void clear_outputitems();
+  static const int kOutputItemsFieldNumber = 4;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* mutable_outputitems(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >*
+      mutable_outputitems();
+  const ::NS3::SolutionResponse_NodeProductTransformAssignment_Item& outputitems(int index) const;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* add_outputitems();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >&
+      outputitems() const;
+
+  // required string nodeId = 1;
+  bool has_nodeid() const;
+  void clear_nodeid();
+  static const int kNodeIdFieldNumber = 1;
+  const ::std::string& nodeid() const;
+  void set_nodeid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_nodeid(::std::string&& value);
+  #endif
+  void set_nodeid(const char* value);
+  void set_nodeid(const char* value, size_t size);
+  ::std::string* mutable_nodeid();
+  ::std::string* release_nodeid();
+  void set_allocated_nodeid(::std::string* nodeid);
+
+  // required string productTransformId = 2;
+  bool has_producttransformid() const;
+  void clear_producttransformid();
+  static const int kProductTransformIdFieldNumber = 2;
+  const ::std::string& producttransformid() const;
+  void set_producttransformid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_producttransformid(::std::string&& value);
+  #endif
+  void set_producttransformid(const char* value);
+  void set_producttransformid(const char* value, size_t size);
+  ::std::string* mutable_producttransformid();
+  ::std::string* release_producttransformid();
+  void set_allocated_producttransformid(::std::string* producttransformid);
+
+  // @@protoc_insertion_point(class_scope:NS3.SolutionResponse.NodeProductTransformAssignment)
+ private:
+  void set_has_nodeid();
+  void clear_has_nodeid();
+  void set_has_producttransformid();
+  void clear_has_producttransformid();
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item > inputitems_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item > outputitems_;
+  ::google::protobuf::internal::ArenaStringPtr nodeid_;
+  ::google::protobuf::internal::ArenaStringPtr producttransformid_;
+  friend struct ::protobuf_ns3_2dtbfvuwtge2iq_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:NS3.SolutionResponse) */ {
  public:
   SolutionResponse();
@@ -4118,7 +4818,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
                &_SolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    26;
 
   void Swap(SolutionResponse* other);
   friend void swap(SolutionResponse& a, SolutionResponse& b) {
@@ -4173,6 +4873,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   typedef SolutionResponse_NodeFlow NodeFlow;
   typedef SolutionResponse_GeometrySequence GeometrySequence;
   typedef SolutionResponse_Route Route;
+  typedef SolutionResponse_NodeProductTransformAssignment NodeProductTransformAssignment;
 
   // accessors -------------------------------------------------------
 
@@ -4236,6 +4937,18 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route >&
       routes() const;
 
+  // repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;
+  int nodeproducttransformassignments_size() const;
+  void clear_nodeproducttransformassignments();
+  static const int kNodeProductTransformAssignmentsFieldNumber = 9;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment* mutable_nodeproducttransformassignments(int index);
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment >*
+      mutable_nodeproducttransformassignments();
+  const ::NS3::SolutionResponse_NodeProductTransformAssignment& nodeproducttransformassignments(int index) const;
+  ::NS3::SolutionResponse_NodeProductTransformAssignment* add_nodeproducttransformassignments();
+  const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment >&
+      nodeproducttransformassignments() const;
+
   // required float objective = 1;
   bool has_objective() const;
   void clear_objective();
@@ -4274,6 +4987,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductFlow > nodeproductflows_;
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_GeometrySequence > geometrysequence_;
   ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_Route > routes_;
+  ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment > nodeproducttransformassignments_;
   float objective_;
   float lowerbound_;
   float optimalitygap_;
@@ -5492,6 +6206,320 @@ Node_Flow::unitdimensioncosts() const {
 
 // -------------------------------------------------------------------
 
+// Node_ProductTransform_Item
+
+// required string productId = 1;
+inline bool Node_ProductTransform_Item::has_productid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Node_ProductTransform_Item::set_has_productid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Node_ProductTransform_Item::clear_has_productid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Node_ProductTransform_Item::clear_productid() {
+  productid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
+}
+inline const ::std::string& Node_ProductTransform_Item::productid() const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.productId)
+  return productid_.GetNoArena();
+}
+inline void Node_ProductTransform_Item::set_productid(const ::std::string& value) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.Node.ProductTransform.Item.productId)
+}
+#if LANG_CXX11
+inline void Node_ProductTransform_Item::set_productid(::std::string&& value) {
+  set_has_productid();
+  productid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.Node.ProductTransform.Item.productId)
+}
+#endif
+inline void Node_ProductTransform_Item::set_productid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.Node.ProductTransform.Item.productId)
+}
+inline void Node_ProductTransform_Item::set_productid(const char* value, size_t size) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.Node.ProductTransform.Item.productId)
+}
+inline ::std::string* Node_ProductTransform_Item::mutable_productid() {
+  set_has_productid();
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.Item.productId)
+  return productid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Node_ProductTransform_Item::release_productid() {
+  // @@protoc_insertion_point(field_release:NS3.Node.ProductTransform.Item.productId)
+  if (!has_productid()) {
+    return NULL;
+  }
+  clear_has_productid();
+  return productid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Node_ProductTransform_Item::set_allocated_productid(::std::string* productid) {
+  if (productid != NULL) {
+    set_has_productid();
+  } else {
+    clear_has_productid();
+  }
+  productid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.Node.ProductTransform.Item.productId)
+}
+
+// required int32 productRatio = 2;
+inline bool Node_ProductTransform_Item::has_productratio() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void Node_ProductTransform_Item::set_has_productratio() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void Node_ProductTransform_Item::clear_has_productratio() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void Node_ProductTransform_Item::clear_productratio() {
+  productratio_ = 0;
+  clear_has_productratio();
+}
+inline ::google::protobuf::int32 Node_ProductTransform_Item::productratio() const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.productRatio)
+  return productratio_;
+}
+inline void Node_ProductTransform_Item::set_productratio(::google::protobuf::int32 value) {
+  set_has_productratio();
+  productratio_ = value;
+  // @@protoc_insertion_point(field_set:NS3.Node.ProductTransform.Item.productRatio)
+}
+
+// repeated .NS3.DimensionRange dimensionRanges = 3;
+inline int Node_ProductTransform_Item::dimensionranges_size() const {
+  return dimensionranges_.size();
+}
+inline void Node_ProductTransform_Item::clear_dimensionranges() {
+  dimensionranges_.Clear();
+}
+inline ::NS3::DimensionRange* Node_ProductTransform_Item::mutable_dimensionranges(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.Item.dimensionRanges)
+  return dimensionranges_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange >*
+Node_ProductTransform_Item::mutable_dimensionranges() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.ProductTransform.Item.dimensionRanges)
+  return &dimensionranges_;
+}
+inline const ::NS3::DimensionRange& Node_ProductTransform_Item::dimensionranges(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.dimensionRanges)
+  return dimensionranges_.Get(index);
+}
+inline ::NS3::DimensionRange* Node_ProductTransform_Item::add_dimensionranges() {
+  // @@protoc_insertion_point(field_add:NS3.Node.ProductTransform.Item.dimensionRanges)
+  return dimensionranges_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::DimensionRange >&
+Node_ProductTransform_Item::dimensionranges() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.ProductTransform.Item.dimensionRanges)
+  return dimensionranges_;
+}
+
+// repeated .NS3.FixedDimensionCost fixedDimensionCosts = 4;
+inline int Node_ProductTransform_Item::fixeddimensioncosts_size() const {
+  return fixeddimensioncosts_.size();
+}
+inline void Node_ProductTransform_Item::clear_fixeddimensioncosts() {
+  fixeddimensioncosts_.Clear();
+}
+inline ::NS3::FixedDimensionCost* Node_ProductTransform_Item::mutable_fixeddimensioncosts(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.Item.fixedDimensionCosts)
+  return fixeddimensioncosts_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost >*
+Node_ProductTransform_Item::mutable_fixeddimensioncosts() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.ProductTransform.Item.fixedDimensionCosts)
+  return &fixeddimensioncosts_;
+}
+inline const ::NS3::FixedDimensionCost& Node_ProductTransform_Item::fixeddimensioncosts(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.fixedDimensionCosts)
+  return fixeddimensioncosts_.Get(index);
+}
+inline ::NS3::FixedDimensionCost* Node_ProductTransform_Item::add_fixeddimensioncosts() {
+  // @@protoc_insertion_point(field_add:NS3.Node.ProductTransform.Item.fixedDimensionCosts)
+  return fixeddimensioncosts_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::FixedDimensionCost >&
+Node_ProductTransform_Item::fixeddimensioncosts() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.ProductTransform.Item.fixedDimensionCosts)
+  return fixeddimensioncosts_;
+}
+
+// repeated .NS3.UnitDimensionCost unitDimensionCosts = 5;
+inline int Node_ProductTransform_Item::unitdimensioncosts_size() const {
+  return unitdimensioncosts_.size();
+}
+inline void Node_ProductTransform_Item::clear_unitdimensioncosts() {
+  unitdimensioncosts_.Clear();
+}
+inline ::NS3::UnitDimensionCost* Node_ProductTransform_Item::mutable_unitdimensioncosts(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.Item.unitDimensionCosts)
+  return unitdimensioncosts_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >*
+Node_ProductTransform_Item::mutable_unitdimensioncosts() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.ProductTransform.Item.unitDimensionCosts)
+  return &unitdimensioncosts_;
+}
+inline const ::NS3::UnitDimensionCost& Node_ProductTransform_Item::unitdimensioncosts(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.Item.unitDimensionCosts)
+  return unitdimensioncosts_.Get(index);
+}
+inline ::NS3::UnitDimensionCost* Node_ProductTransform_Item::add_unitdimensioncosts() {
+  // @@protoc_insertion_point(field_add:NS3.Node.ProductTransform.Item.unitDimensionCosts)
+  return unitdimensioncosts_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::UnitDimensionCost >&
+Node_ProductTransform_Item::unitdimensioncosts() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.ProductTransform.Item.unitDimensionCosts)
+  return unitdimensioncosts_;
+}
+
+// -------------------------------------------------------------------
+
+// Node_ProductTransform
+
+// required string productTransformId = 1;
+inline bool Node_ProductTransform::has_producttransformid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Node_ProductTransform::set_has_producttransformid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Node_ProductTransform::clear_has_producttransformid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Node_ProductTransform::clear_producttransformid() {
+  producttransformid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_producttransformid();
+}
+inline const ::std::string& Node_ProductTransform::producttransformid() const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.productTransformId)
+  return producttransformid_.GetNoArena();
+}
+inline void Node_ProductTransform::set_producttransformid(const ::std::string& value) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.Node.ProductTransform.productTransformId)
+}
+#if LANG_CXX11
+inline void Node_ProductTransform::set_producttransformid(::std::string&& value) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.Node.ProductTransform.productTransformId)
+}
+#endif
+inline void Node_ProductTransform::set_producttransformid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.Node.ProductTransform.productTransformId)
+}
+inline void Node_ProductTransform::set_producttransformid(const char* value, size_t size) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.Node.ProductTransform.productTransformId)
+}
+inline ::std::string* Node_ProductTransform::mutable_producttransformid() {
+  set_has_producttransformid();
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.productTransformId)
+  return producttransformid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Node_ProductTransform::release_producttransformid() {
+  // @@protoc_insertion_point(field_release:NS3.Node.ProductTransform.productTransformId)
+  if (!has_producttransformid()) {
+    return NULL;
+  }
+  clear_has_producttransformid();
+  return producttransformid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Node_ProductTransform::set_allocated_producttransformid(::std::string* producttransformid) {
+  if (producttransformid != NULL) {
+    set_has_producttransformid();
+  } else {
+    clear_has_producttransformid();
+  }
+  producttransformid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), producttransformid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.Node.ProductTransform.productTransformId)
+}
+
+// repeated .NS3.Node.ProductTransform.Item inputItems = 2;
+inline int Node_ProductTransform::inputitems_size() const {
+  return inputitems_.size();
+}
+inline void Node_ProductTransform::clear_inputitems() {
+  inputitems_.Clear();
+}
+inline ::NS3::Node_ProductTransform_Item* Node_ProductTransform::mutable_inputitems(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.inputItems)
+  return inputitems_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >*
+Node_ProductTransform::mutable_inputitems() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.ProductTransform.inputItems)
+  return &inputitems_;
+}
+inline const ::NS3::Node_ProductTransform_Item& Node_ProductTransform::inputitems(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.inputItems)
+  return inputitems_.Get(index);
+}
+inline ::NS3::Node_ProductTransform_Item* Node_ProductTransform::add_inputitems() {
+  // @@protoc_insertion_point(field_add:NS3.Node.ProductTransform.inputItems)
+  return inputitems_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >&
+Node_ProductTransform::inputitems() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.ProductTransform.inputItems)
+  return inputitems_;
+}
+
+// repeated .NS3.Node.ProductTransform.Item outputItems = 3;
+inline int Node_ProductTransform::outputitems_size() const {
+  return outputitems_.size();
+}
+inline void Node_ProductTransform::clear_outputitems() {
+  outputitems_.Clear();
+}
+inline ::NS3::Node_ProductTransform_Item* Node_ProductTransform::mutable_outputitems(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.ProductTransform.outputItems)
+  return outputitems_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >*
+Node_ProductTransform::mutable_outputitems() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.ProductTransform.outputItems)
+  return &outputitems_;
+}
+inline const ::NS3::Node_ProductTransform_Item& Node_ProductTransform::outputitems(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.ProductTransform.outputItems)
+  return outputitems_.Get(index);
+}
+inline ::NS3::Node_ProductTransform_Item* Node_ProductTransform::add_outputitems() {
+  // @@protoc_insertion_point(field_add:NS3.Node.ProductTransform.outputItems)
+  return outputitems_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform_Item >&
+Node_ProductTransform::outputitems() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.ProductTransform.outputItems)
+  return outputitems_;
+}
+
+// -------------------------------------------------------------------
+
 // Node
 
 // required string id = 1;
@@ -5887,6 +6915,36 @@ inline const ::google::protobuf::RepeatedPtrField< ::NS3::FlowDimensionalConstra
 Node::flowconstraints() const {
   // @@protoc_insertion_point(field_list:NS3.Node.flowConstraints)
   return flowconstraints_;
+}
+
+// repeated .NS3.Node.ProductTransform productTransforms = 10;
+inline int Node::producttransforms_size() const {
+  return producttransforms_.size();
+}
+inline void Node::clear_producttransforms() {
+  producttransforms_.Clear();
+}
+inline ::NS3::Node_ProductTransform* Node::mutable_producttransforms(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.Node.productTransforms)
+  return producttransforms_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform >*
+Node::mutable_producttransforms() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.Node.productTransforms)
+  return &producttransforms_;
+}
+inline const ::NS3::Node_ProductTransform& Node::producttransforms(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.Node.productTransforms)
+  return producttransforms_.Get(index);
+}
+inline ::NS3::Node_ProductTransform* Node::add_producttransforms() {
+  // @@protoc_insertion_point(field_add:NS3.Node.productTransforms)
+  return producttransforms_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::Node_ProductTransform >&
+Node::producttransforms() const {
+  // @@protoc_insertion_point(field_list:NS3.Node.productTransforms)
+  return producttransforms_;
 }
 
 // -------------------------------------------------------------------
@@ -8645,6 +9703,392 @@ SolutionResponse_Route::mutable_geometrysequence() {
 
 // -------------------------------------------------------------------
 
+// SolutionResponse_NodeProductTransformAssignment_Item
+
+// required string productId = 1;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_productid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_productid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_productid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_productid() {
+  productid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_productid();
+}
+inline const ::std::string& SolutionResponse_NodeProductTransformAssignment_Item::productid() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+  return productid_.GetNoArena();
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_productid(const ::std::string& value) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+}
+#if LANG_CXX11
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_productid(::std::string&& value) {
+  set_has_productid();
+  productid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+}
+#endif
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_productid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_productid(const char* value, size_t size) {
+  set_has_productid();
+  productid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment_Item::mutable_productid() {
+  set_has_productid();
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+  return productid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment_Item::release_productid() {
+  // @@protoc_insertion_point(field_release:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+  if (!has_productid()) {
+    return NULL;
+  }
+  clear_has_productid();
+  return productid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_allocated_productid(::std::string* productid) {
+  if (productid != NULL) {
+    set_has_productid();
+  } else {
+    clear_has_productid();
+  }
+  productid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.SolutionResponse.NodeProductTransformAssignment.Item.productId)
+}
+
+// required float amount = 2;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_amount() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_amount() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_amount() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_amount() {
+  amount_ = 0;
+  clear_has_amount();
+}
+inline float SolutionResponse_NodeProductTransformAssignment_Item::amount() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.amount)
+  return amount_;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_amount(float value) {
+  set_has_amount();
+  amount_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.amount)
+}
+
+// required float cost = 3;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_cost() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_cost() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_cost() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_cost() {
+  cost_ = 0;
+  clear_has_cost();
+}
+inline float SolutionResponse_NodeProductTransformAssignment_Item::cost() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.cost)
+  return cost_;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_cost(float value) {
+  set_has_cost();
+  cost_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.cost)
+}
+
+// required float fixedCost = 4;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_fixedcost() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_fixedcost() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_fixedcost() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_fixedcost() {
+  fixedcost_ = 0;
+  clear_has_fixedcost();
+}
+inline float SolutionResponse_NodeProductTransformAssignment_Item::fixedcost() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.fixedCost)
+  return fixedcost_;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_fixedcost(float value) {
+  set_has_fixedcost();
+  fixedcost_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.fixedCost)
+}
+
+// required float penaltyAmount = 5;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_penaltyamount() const {
+  return (_has_bits_[0] & 0x00000010u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_penaltyamount() {
+  _has_bits_[0] |= 0x00000010u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_penaltyamount() {
+  _has_bits_[0] &= ~0x00000010u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_penaltyamount() {
+  penaltyamount_ = 0;
+  clear_has_penaltyamount();
+}
+inline float SolutionResponse_NodeProductTransformAssignment_Item::penaltyamount() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyAmount)
+  return penaltyamount_;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_penaltyamount(float value) {
+  set_has_penaltyamount();
+  penaltyamount_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyAmount)
+}
+
+// required float penaltyCost = 6;
+inline bool SolutionResponse_NodeProductTransformAssignment_Item::has_penaltycost() const {
+  return (_has_bits_[0] & 0x00000020u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_has_penaltycost() {
+  _has_bits_[0] |= 0x00000020u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_has_penaltycost() {
+  _has_bits_[0] &= ~0x00000020u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::clear_penaltycost() {
+  penaltycost_ = 0;
+  clear_has_penaltycost();
+}
+inline float SolutionResponse_NodeProductTransformAssignment_Item::penaltycost() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyCost)
+  return penaltycost_;
+}
+inline void SolutionResponse_NodeProductTransformAssignment_Item::set_penaltycost(float value) {
+  set_has_penaltycost();
+  penaltycost_ = value;
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.Item.penaltyCost)
+}
+
+// -------------------------------------------------------------------
+
+// SolutionResponse_NodeProductTransformAssignment
+
+// required string nodeId = 1;
+inline bool SolutionResponse_NodeProductTransformAssignment::has_nodeid() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_has_nodeid() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_has_nodeid() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_nodeid() {
+  nodeid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_nodeid();
+}
+inline const ::std::string& SolutionResponse_NodeProductTransformAssignment::nodeid() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+  return nodeid_.GetNoArena();
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_nodeid(const ::std::string& value) {
+  set_has_nodeid();
+  nodeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+}
+#if LANG_CXX11
+inline void SolutionResponse_NodeProductTransformAssignment::set_nodeid(::std::string&& value) {
+  set_has_nodeid();
+  nodeid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+}
+#endif
+inline void SolutionResponse_NodeProductTransformAssignment::set_nodeid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_nodeid();
+  nodeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_nodeid(const char* value, size_t size) {
+  set_has_nodeid();
+  nodeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment::mutable_nodeid() {
+  set_has_nodeid();
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+  return nodeid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment::release_nodeid() {
+  // @@protoc_insertion_point(field_release:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+  if (!has_nodeid()) {
+    return NULL;
+  }
+  clear_has_nodeid();
+  return nodeid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_allocated_nodeid(::std::string* nodeid) {
+  if (nodeid != NULL) {
+    set_has_nodeid();
+  } else {
+    clear_has_nodeid();
+  }
+  nodeid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), nodeid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.SolutionResponse.NodeProductTransformAssignment.nodeId)
+}
+
+// required string productTransformId = 2;
+inline bool SolutionResponse_NodeProductTransformAssignment::has_producttransformid() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_has_producttransformid() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_has_producttransformid() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_producttransformid() {
+  producttransformid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clear_has_producttransformid();
+}
+inline const ::std::string& SolutionResponse_NodeProductTransformAssignment::producttransformid() const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+  return producttransformid_.GetNoArena();
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_producttransformid(const ::std::string& value) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+}
+#if LANG_CXX11
+inline void SolutionResponse_NodeProductTransformAssignment::set_producttransformid(::std::string&& value) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+}
+#endif
+inline void SolutionResponse_NodeProductTransformAssignment::set_producttransformid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_producttransformid(const char* value, size_t size) {
+  set_has_producttransformid();
+  producttransformid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment::mutable_producttransformid() {
+  set_has_producttransformid();
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+  return producttransformid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SolutionResponse_NodeProductTransformAssignment::release_producttransformid() {
+  // @@protoc_insertion_point(field_release:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+  if (!has_producttransformid()) {
+    return NULL;
+  }
+  clear_has_producttransformid();
+  return producttransformid_.ReleaseNonDefaultNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SolutionResponse_NodeProductTransformAssignment::set_allocated_producttransformid(::std::string* producttransformid) {
+  if (producttransformid != NULL) {
+    set_has_producttransformid();
+  } else {
+    clear_has_producttransformid();
+  }
+  producttransformid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), producttransformid);
+  // @@protoc_insertion_point(field_set_allocated:NS3.SolutionResponse.NodeProductTransformAssignment.productTransformId)
+}
+
+// repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item inputItems = 3;
+inline int SolutionResponse_NodeProductTransformAssignment::inputitems_size() const {
+  return inputitems_.size();
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_inputitems() {
+  inputitems_.Clear();
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* SolutionResponse_NodeProductTransformAssignment::mutable_inputitems(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.NodeProductTransformAssignment.inputItems)
+  return inputitems_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >*
+SolutionResponse_NodeProductTransformAssignment::mutable_inputitems() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.NodeProductTransformAssignment.inputItems)
+  return &inputitems_;
+}
+inline const ::NS3::SolutionResponse_NodeProductTransformAssignment_Item& SolutionResponse_NodeProductTransformAssignment::inputitems(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.inputItems)
+  return inputitems_.Get(index);
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* SolutionResponse_NodeProductTransformAssignment::add_inputitems() {
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.NodeProductTransformAssignment.inputItems)
+  return inputitems_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >&
+SolutionResponse_NodeProductTransformAssignment::inputitems() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.NodeProductTransformAssignment.inputItems)
+  return inputitems_;
+}
+
+// repeated .NS3.SolutionResponse.NodeProductTransformAssignment.Item outputItems = 4;
+inline int SolutionResponse_NodeProductTransformAssignment::outputitems_size() const {
+  return outputitems_.size();
+}
+inline void SolutionResponse_NodeProductTransformAssignment::clear_outputitems() {
+  outputitems_.Clear();
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* SolutionResponse_NodeProductTransformAssignment::mutable_outputitems(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.NodeProductTransformAssignment.outputItems)
+  return outputitems_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >*
+SolutionResponse_NodeProductTransformAssignment::mutable_outputitems() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.NodeProductTransformAssignment.outputItems)
+  return &outputitems_;
+}
+inline const ::NS3::SolutionResponse_NodeProductTransformAssignment_Item& SolutionResponse_NodeProductTransformAssignment::outputitems(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.NodeProductTransformAssignment.outputItems)
+  return outputitems_.Get(index);
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment_Item* SolutionResponse_NodeProductTransformAssignment::add_outputitems() {
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.NodeProductTransformAssignment.outputItems)
+  return outputitems_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment_Item >&
+SolutionResponse_NodeProductTransformAssignment::outputitems() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.NodeProductTransformAssignment.outputItems)
+  return outputitems_;
+}
+
+// -------------------------------------------------------------------
+
 // SolutionResponse
 
 // required float objective = 1;
@@ -8869,9 +10313,47 @@ SolutionResponse::routes() const {
   return routes_;
 }
 
+// repeated .NS3.SolutionResponse.NodeProductTransformAssignment nodeProductTransformAssignments = 9;
+inline int SolutionResponse::nodeproducttransformassignments_size() const {
+  return nodeproducttransformassignments_.size();
+}
+inline void SolutionResponse::clear_nodeproducttransformassignments() {
+  nodeproducttransformassignments_.Clear();
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment* SolutionResponse::mutable_nodeproducttransformassignments(int index) {
+  // @@protoc_insertion_point(field_mutable:NS3.SolutionResponse.nodeProductTransformAssignments)
+  return nodeproducttransformassignments_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment >*
+SolutionResponse::mutable_nodeproducttransformassignments() {
+  // @@protoc_insertion_point(field_mutable_list:NS3.SolutionResponse.nodeProductTransformAssignments)
+  return &nodeproducttransformassignments_;
+}
+inline const ::NS3::SolutionResponse_NodeProductTransformAssignment& SolutionResponse::nodeproducttransformassignments(int index) const {
+  // @@protoc_insertion_point(field_get:NS3.SolutionResponse.nodeProductTransformAssignments)
+  return nodeproducttransformassignments_.Get(index);
+}
+inline ::NS3::SolutionResponse_NodeProductTransformAssignment* SolutionResponse::add_nodeproducttransformassignments() {
+  // @@protoc_insertion_point(field_add:NS3.SolutionResponse.nodeProductTransformAssignments)
+  return nodeproducttransformassignments_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::NS3::SolutionResponse_NodeProductTransformAssignment >&
+SolutionResponse::nodeproducttransformassignments() const {
+  // @@protoc_insertion_point(field_list:NS3.SolutionResponse.nodeProductTransformAssignments)
+  return nodeproducttransformassignments_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -1,6 +1,6 @@
 Package: iceR
 Title: Wrap IVR Model Inputs and Outputs to the Icepack API
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
 Author: person("Icepack", "Info", email = "info@icepack.co", role = c("aut", "cre"))
 Maintainer: Icepack <info@icepack.co>

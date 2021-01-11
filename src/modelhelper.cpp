@@ -527,11 +527,25 @@ List ns3ToTable(string& indata, string& outdata){
     _["stringsAsFactors"] = false
   );
 
+  DataFrame transform_df = DataFrame::create(
+    _["nodeId"] = tab.prodtransformtab.nodeId,
+    _["productTransformId"] = tab.prodtransformtab.productTransformId,
+    _["productId"] = tab.prodtransformtab.productId,
+    _["transformState"] = tab.prodtransformtab.transformState,
+    _["amount"] = tab.prodtransformtab.amount,
+    _["cost"] = tab.prodtransformtab.cost,
+    _["fixedCost"] = tab.prodtransformtab.fixedCost,
+    _["penaltyAmount"] = tab.prodtransformtab.penaltyAmount,
+    _["penaltyCost"] = tab.prodtransformtab.penaltyCost,
+    _["stringsAsFactors"] = false
+  );
+
   return(List::create(_["nodes"] = node_df,
                       _["routes"] = route_df,
                       _["nodeFlow"] = nodeflow_df,
                       _["nodeProductFlow"] = nodeprodflow_df,
-                      _["assignments"] = assignment_df));
+                      _["assignments"] = assignment_df,
+                      _["nodeProductTransforms"] = transform_df));
 }
 
 
