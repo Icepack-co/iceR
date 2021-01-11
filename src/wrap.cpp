@@ -572,6 +572,35 @@ ns3_tabular tabulateNS3(string& ns3Request, string& ns3Resp){
         nft.consumptionPenalty.push_back(nf.consumptionpenalty());
         nft.consumptionCost.push_back(nf.consumptioncost());
       }
+      auto &pttab = n.prodtransformtab;
+      for(int i = 0; i < r.nodeproducttransformassignments_size(); i++){
+        auto& np = r.nodeproducttransformassignments(i);
+        for(int j =0 ; j < np.inputitems_size(); j++){
+          auto &item = np.inputitems(j);
+          pttab.productTransformId.push_back(np.producttransformid());
+          pttab.nodeId.push_back(np.nodeid());
+          pttab.productId.push_back(item.productid());
+          pttab.transformState.push_back("input");
+          pttab.amount.push_back(item.amount());
+          pttab.cost.push_back(item.cost());
+          pttab.fixedCost.push_back(item.fixedcost());
+          pttab.penaltyAmount.push_back(item.penaltyamount());
+          pttab.penaltyCost.push_back(item.penaltycost());
+        }
+        for(int j =0 ; j < np.outputitems_size(); j++){
+          auto &item = np.outputitems(j);
+          pttab.productTransformId.push_back(np.producttransformid());
+          pttab.nodeId.push_back(np.nodeid());
+          pttab.productId.push_back(item.productid());
+          pttab.transformState.push_back("output");
+          pttab.amount.push_back(item.amount());
+          pttab.cost.push_back(item.cost());
+          pttab.fixedCost.push_back(item.fixedcost());
+          pttab.penaltyAmount.push_back(item.penaltyamount());
+          pttab.penaltyCost.push_back(item.penaltycost());
+        }
+      }
+
       for(int i =0 ; i < r.routes_size(); i++){
         auto rt = r.routes(i);
         n.geomtab.fromId.push_back(rt.fromid());

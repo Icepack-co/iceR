@@ -167,6 +167,17 @@ struct ns3_geom_tab{
   vector<string> toId;
   vector<geomvecs> geom;
 };
+struct ns3_prod_transform_assigments{
+  vector<string> nodeId;
+  vector<string> productTransformId;
+  vector<string> productId;
+  vector<string> transformState; //either input or output.
+  vector<double> amount;
+  vector<double> cost;
+  vector<double> fixedCost;
+  vector<double> penaltyAmount;
+  vector<double> penaltyCost;
+};
 struct ns3_nodes{
   vector<string> Id;
   vector<double> xs;
@@ -178,6 +189,7 @@ struct ns3_tabular{
   ns3_nodepflow_tab nodeflowproducttab;
   ns3_assignmnet_tab assignmenttab;
   ns3_geom_tab geomtab;
+  ns3_prod_transform_assigments prodtransformtab;
 };
 // -- END NS3 OBJECTS
 
