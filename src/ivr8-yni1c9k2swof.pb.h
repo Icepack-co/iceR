@@ -39,7 +39,7 @@ namespace protobuf_ivr8_2dyni1c9k2swof_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[42];
+  static const ::google::protobuf::internal::ParseTable schema[43];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -83,6 +83,9 @@ extern Job_TaskDefaultTypeInternal _Job_Task_default_instance_;
 class Job_Task_Attribute;
 class Job_Task_AttributeDefaultTypeInternal;
 extern Job_Task_AttributeDefaultTypeInternal _Job_Task_Attribute_default_instance_;
+class Job_Task_TaskRelation;
+class Job_Task_TaskRelationDefaultTypeInternal;
+extern Job_Task_TaskRelationDefaultTypeInternal _Job_Task_TaskRelation_default_instance_;
 class Job_VehicleRelation;
 class Job_VehicleRelationDefaultTypeInternal;
 extern Job_VehicleRelationDefaultTypeInternal _Job_VehicleRelation_default_instance_;
@@ -188,6 +191,7 @@ template<> ::IVR8::Job* Arena::CreateMaybeMessage<::IVR8::Job>(Arena*);
 template<> ::IVR8::Job_CompartmentRelation* Arena::CreateMaybeMessage<::IVR8::Job_CompartmentRelation>(Arena*);
 template<> ::IVR8::Job_Task* Arena::CreateMaybeMessage<::IVR8::Job_Task>(Arena*);
 template<> ::IVR8::Job_Task_Attribute* Arena::CreateMaybeMessage<::IVR8::Job_Task_Attribute>(Arena*);
+template<> ::IVR8::Job_Task_TaskRelation* Arena::CreateMaybeMessage<::IVR8::Job_Task_TaskRelation>(Arena*);
 template<> ::IVR8::Job_VehicleRelation* Arena::CreateMaybeMessage<::IVR8::Job_VehicleRelation>(Arena*);
 template<> ::IVR8::Location* Arena::CreateMaybeMessage<::IVR8::Location>(Arena*);
 template<> ::IVR8::Location_Attribute* Arena::CreateMaybeMessage<::IVR8::Location_Attribute>(Arena*);
@@ -282,6 +286,25 @@ inline bool Job_CompartmentRelation_Type_Parse(
     const ::std::string& name, Job_CompartmentRelation_Type* value) {
   return ::google::protobuf::internal::ParseNamedEnum<Job_CompartmentRelation_Type>(
     Job_CompartmentRelation_Type_descriptor(), name, value);
+}
+enum Job_Task_TaskRelation_Type {
+  Job_Task_TaskRelation_Type_INCLUSIVE = 0,
+  Job_Task_TaskRelation_Type_EXCLUSIVE = 1
+};
+bool Job_Task_TaskRelation_Type_IsValid(int value);
+const Job_Task_TaskRelation_Type Job_Task_TaskRelation_Type_Type_MIN = Job_Task_TaskRelation_Type_INCLUSIVE;
+const Job_Task_TaskRelation_Type Job_Task_TaskRelation_Type_Type_MAX = Job_Task_TaskRelation_Type_EXCLUSIVE;
+const int Job_Task_TaskRelation_Type_Type_ARRAYSIZE = Job_Task_TaskRelation_Type_Type_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* Job_Task_TaskRelation_Type_descriptor();
+inline const ::std::string& Job_Task_TaskRelation_Type_Name(Job_Task_TaskRelation_Type value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    Job_Task_TaskRelation_Type_descriptor(), value);
+}
+inline bool Job_Task_TaskRelation_Type_Parse(
+    const ::std::string& name, Job_Task_TaskRelation_Type* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<Job_Task_TaskRelation_Type>(
+    Job_Task_TaskRelation_Type_descriptor(), name, value);
 }
 enum Job_Task_TripConstraint {
   Job_Task_TripConstraint_FIRST = 0,
@@ -1916,6 +1939,169 @@ class Job_Task_Attribute : public ::google::protobuf::Message /* @@protoc_insert
 };
 // -------------------------------------------------------------------
 
+class Job_Task_TaskRelation : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:IVR8.Job.Task.TaskRelation) */ {
+ public:
+  Job_Task_TaskRelation();
+  virtual ~Job_Task_TaskRelation();
+
+  Job_Task_TaskRelation(const Job_Task_TaskRelation& from);
+
+  inline Job_Task_TaskRelation& operator=(const Job_Task_TaskRelation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Job_Task_TaskRelation(Job_Task_TaskRelation&& from) noexcept
+    : Job_Task_TaskRelation() {
+    *this = ::std::move(from);
+  }
+
+  inline Job_Task_TaskRelation& operator=(Job_Task_TaskRelation&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields();
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Job_Task_TaskRelation& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Job_Task_TaskRelation* internal_default_instance() {
+    return reinterpret_cast<const Job_Task_TaskRelation*>(
+               &_Job_Task_TaskRelation_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(Job_Task_TaskRelation* other);
+  friend void swap(Job_Task_TaskRelation& a, Job_Task_TaskRelation& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Job_Task_TaskRelation* New() const final {
+    return CreateMaybeMessage<Job_Task_TaskRelation>(NULL);
+  }
+
+  Job_Task_TaskRelation* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Job_Task_TaskRelation>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Job_Task_TaskRelation& from);
+  void MergeFrom(const Job_Task_TaskRelation& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Job_Task_TaskRelation* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef Job_Task_TaskRelation_Type Type;
+  static const Type INCLUSIVE =
+    Job_Task_TaskRelation_Type_INCLUSIVE;
+  static const Type EXCLUSIVE =
+    Job_Task_TaskRelation_Type_EXCLUSIVE;
+  static inline bool Type_IsValid(int value) {
+    return Job_Task_TaskRelation_Type_IsValid(value);
+  }
+  static const Type Type_MIN =
+    Job_Task_TaskRelation_Type_Type_MIN;
+  static const Type Type_MAX =
+    Job_Task_TaskRelation_Type_Type_MAX;
+  static const int Type_ARRAYSIZE =
+    Job_Task_TaskRelation_Type_Type_ARRAYSIZE;
+  static inline const ::google::protobuf::EnumDescriptor*
+  Type_descriptor() {
+    return Job_Task_TaskRelation_Type_descriptor();
+  }
+  static inline const ::std::string& Type_Name(Type value) {
+    return Job_Task_TaskRelation_Type_Name(value);
+  }
+  static inline bool Type_Parse(const ::std::string& name,
+      Type* value) {
+    return Job_Task_TaskRelation_Type_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  // repeated string taskIds = 2;
+  int taskids_size() const;
+  void clear_taskids();
+  static const int kTaskIdsFieldNumber = 2;
+  const ::std::string& taskids(int index) const;
+  ::std::string* mutable_taskids(int index);
+  void set_taskids(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_taskids(int index, ::std::string&& value);
+  #endif
+  void set_taskids(int index, const char* value);
+  void set_taskids(int index, const char* value, size_t size);
+  ::std::string* add_taskids();
+  void add_taskids(const ::std::string& value);
+  #if LANG_CXX11
+  void add_taskids(::std::string&& value);
+  #endif
+  void add_taskids(const char* value);
+  void add_taskids(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& taskids() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_taskids();
+
+  // required .IVR8.Job.Task.TaskRelation.Type type = 1;
+  bool has_type() const;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::IVR8::Job_Task_TaskRelation_Type type() const;
+  void set_type(::IVR8::Job_Task_TaskRelation_Type value);
+
+  // @@protoc_insertion_point(class_scope:IVR8.Job.Task.TaskRelation)
+ private:
+  void set_has_type();
+  void clear_has_type();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::HasBits<1> _has_bits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> taskids_;
+  int type_;
+  friend struct ::protobuf_ivr8_2dyni1c9k2swof_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class Job_Task : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:IVR8.Job.Task) */ {
  public:
   Job_Task();
@@ -1958,7 +2144,7 @@ class Job_Task : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_Job_Task_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Job_Task* other);
   friend void swap(Job_Task& a, Job_Task& b) {
@@ -2009,6 +2195,7 @@ class Job_Task : public ::google::protobuf::Message /* @@protoc_insertion_point(
   // nested types ----------------------------------------------------
 
   typedef Job_Task_Attribute Attribute;
+  typedef Job_Task_TaskRelation TaskRelation;
 
   typedef Job_Task_TripConstraint TripConstraint;
   static const TripConstraint FIRST =
@@ -2090,12 +2277,40 @@ class Job_Task : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_locationid();
   void set_allocated_locationid(::std::string* locationid);
 
+  // optional .IVR8.Job.Task.TaskRelation predecessors = 5;
+  bool has_predecessors() const;
+  void clear_predecessors();
+  static const int kPredecessorsFieldNumber = 5;
+  private:
+  const ::IVR8::Job_Task_TaskRelation& _internal_predecessors() const;
+  public:
+  const ::IVR8::Job_Task_TaskRelation& predecessors() const;
+  ::IVR8::Job_Task_TaskRelation* release_predecessors();
+  ::IVR8::Job_Task_TaskRelation* mutable_predecessors();
+  void set_allocated_predecessors(::IVR8::Job_Task_TaskRelation* predecessors);
+
+  // optional .IVR8.Job.Task.TaskRelation successors = 6;
+  bool has_successors() const;
+  void clear_successors();
+  static const int kSuccessorsFieldNumber = 6;
+  private:
+  const ::IVR8::Job_Task_TaskRelation& _internal_successors() const;
+  public:
+  const ::IVR8::Job_Task_TaskRelation& successors() const;
+  ::IVR8::Job_Task_TaskRelation* release_successors();
+  ::IVR8::Job_Task_TaskRelation* mutable_successors();
+  void set_allocated_successors(::IVR8::Job_Task_TaskRelation* successors);
+
   // @@protoc_insertion_point(class_scope:IVR8.Job.Task)
  private:
   void set_has_taskid();
   void clear_has_taskid();
   void set_has_locationid();
   void clear_has_locationid();
+  void set_has_predecessors();
+  void clear_has_predecessors();
+  void set_has_successors();
+  void clear_has_successors();
 
   // helper for ByteSizeLong()
   size_t RequiredFieldsByteSizeFallback() const;
@@ -2107,6 +2322,8 @@ class Job_Task : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::google::protobuf::RepeatedField<int> tripconstraints_;
   ::google::protobuf::internal::ArenaStringPtr taskid_;
   ::google::protobuf::internal::ArenaStringPtr locationid_;
+  ::IVR8::Job_Task_TaskRelation* predecessors_;
+  ::IVR8::Job_Task_TaskRelation* successors_;
   friend struct ::protobuf_ivr8_2dyni1c9k2swof_2eproto::TableStruct;
 };
 // -------------------------------------------------------------------
@@ -2153,7 +2370,7 @@ class Job : public ::google::protobuf::Message /* @@protoc_insertion_point(class
                &_Job_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   void Swap(Job* other);
   friend void swap(Job& a, Job& b) {
@@ -2352,7 +2569,7 @@ class TransitSet_TransitValue : public ::google::protobuf::Message /* @@protoc_i
                &_TransitSet_TransitValue_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   void Swap(TransitSet_TransitValue* other);
   friend void swap(TransitSet_TransitValue& a, TransitSet_TransitValue& b) {
@@ -2505,7 +2722,7 @@ class TransitSet : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_TransitSet_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   void Swap(TransitSet* other);
   friend void swap(TransitSet& a, TransitSet& b) {
@@ -2624,7 +2841,7 @@ class TransitGenerator : public ::google::protobuf::Message /* @@protoc_insertio
                &_TransitGenerator_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   void Swap(TransitGenerator* other);
   friend void swap(TransitGenerator& a, TransitGenerator& b) {
@@ -2779,7 +2996,7 @@ class VehicleClass_Attribute : public ::google::protobuf::Message /* @@protoc_in
                &_VehicleClass_Attribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   void Swap(VehicleClass_Attribute* other);
   friend void swap(VehicleClass_Attribute& a, VehicleClass_Attribute& b) {
@@ -2949,7 +3166,7 @@ class VehicleClass : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_VehicleClass_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   void Swap(VehicleClass* other);
   friend void swap(VehicleClass& a, VehicleClass& b) {
@@ -3127,7 +3344,7 @@ class VehicleCostClass_Attribute : public ::google::protobuf::Message /* @@proto
                &_VehicleCostClass_Attribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   void Swap(VehicleCostClass_Attribute* other);
   friend void swap(VehicleCostClass_Attribute& a, VehicleCostClass_Attribute& b) {
@@ -3299,7 +3516,7 @@ class VehicleCostClass : public ::google::protobuf::Message /* @@protoc_insertio
                &_VehicleCostClass_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   void Swap(VehicleCostClass* other);
   friend void swap(VehicleCostClass& a, VehicleCostClass& b) {
@@ -3449,7 +3666,7 @@ class Vehicle_Task_Attribute : public ::google::protobuf::Message /* @@protoc_in
                &_Vehicle_Task_Attribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   void Swap(Vehicle_Task_Attribute* other);
   friend void swap(Vehicle_Task_Attribute& a, Vehicle_Task_Attribute& b) {
@@ -3594,7 +3811,7 @@ class Vehicle_Task : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_Vehicle_Task_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   void Swap(Vehicle_Task* other);
   friend void swap(Vehicle_Task& a, Vehicle_Task& b) {
@@ -3731,7 +3948,7 @@ class Vehicle_Shift : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_Vehicle_Shift_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   void Swap(Vehicle_Shift* other);
   friend void swap(Vehicle_Shift& a, Vehicle_Shift& b) {
@@ -3865,7 +4082,7 @@ class Vehicle_Capacity : public ::google::protobuf::Message /* @@protoc_insertio
                &_Vehicle_Capacity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   void Swap(Vehicle_Capacity* other);
   friend void swap(Vehicle_Capacity& a, Vehicle_Capacity& b) {
@@ -4000,7 +4217,7 @@ class Vehicle : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Vehicle_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   void Swap(Vehicle* other);
   friend void swap(Vehicle& a, Vehicle& b) {
@@ -4234,7 +4451,7 @@ class TaskSequence : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_TaskSequence_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   void Swap(TaskSequence* other);
   friend void swap(TaskSequence& a, TaskSequence& b) {
@@ -4402,7 +4619,7 @@ class TransitRule_Trigger : public ::google::protobuf::Message /* @@protoc_inser
                &_TransitRule_Trigger_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   void Swap(TransitRule_Trigger* other);
   friend void swap(TransitRule_Trigger& a, TransitRule_Trigger& b) {
@@ -4529,7 +4746,7 @@ class TransitRule : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_TransitRule_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   void Swap(TransitRule* other);
   friend void swap(TransitRule& a, TransitRule& b) {
@@ -4725,7 +4942,7 @@ class Compartment_Capacity : public ::google::protobuf::Message /* @@protoc_inse
                &_Compartment_Capacity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   void Swap(Compartment_Capacity* other);
   friend void swap(Compartment_Capacity& a, Compartment_Capacity& b) {
@@ -4860,7 +5077,7 @@ class Compartment : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_Compartment_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   void Swap(Compartment* other);
   friend void swap(Compartment& a, Compartment& b) {
@@ -4997,7 +5214,7 @@ class CompartmentSet_GroupLimit : public ::google::protobuf::Message /* @@protoc
                &_CompartmentSet_GroupLimit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   void Swap(CompartmentSet_GroupLimit* other);
   friend void swap(CompartmentSet_GroupLimit& a, CompartmentSet_GroupLimit& b) {
@@ -5178,7 +5395,7 @@ class CompartmentSet : public ::google::protobuf::Message /* @@protoc_insertion_
                &_CompartmentSet_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   void Swap(CompartmentSet* other);
   friend void swap(CompartmentSet& a, CompartmentSet& b) {
@@ -5338,7 +5555,7 @@ class Model : public ::google::protobuf::Message /* @@protoc_insertion_point(cla
                &_Model_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   void Swap(Model* other);
   friend void swap(Model& a, Model& b) {
@@ -5587,7 +5804,7 @@ class SolveRequest : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_SolveRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   void Swap(SolveRequest* other);
   friend void swap(SolveRequest& a, SolveRequest& b) {
@@ -5775,7 +5992,7 @@ class SolutionResponse_StopAttribute : public ::google::protobuf::Message /* @@p
                &_SolutionResponse_StopAttribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   void Swap(SolutionResponse_StopAttribute* other);
   friend void swap(SolutionResponse_StopAttribute& a, SolutionResponse_StopAttribute& b) {
@@ -5970,7 +6187,7 @@ class SolutionResponse_InterStopAttribute : public ::google::protobuf::Message /
                &_SolutionResponse_InterStopAttribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   void Swap(SolutionResponse_InterStopAttribute* other);
   friend void swap(SolutionResponse_InterStopAttribute& a, SolutionResponse_InterStopAttribute& b) {
@@ -6125,7 +6342,7 @@ class SolutionResponse_Stop : public ::google::protobuf::Message /* @@protoc_ins
                &_SolutionResponse_Stop_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   void Swap(SolutionResponse_Stop* other);
   friend void swap(SolutionResponse_Stop& a, SolutionResponse_Stop& b) {
@@ -6337,7 +6554,7 @@ class SolutionResponse_InterStop : public ::google::protobuf::Message /* @@proto
                &_SolutionResponse_InterStop_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   void Swap(SolutionResponse_InterStop* other);
   friend void swap(SolutionResponse_InterStop& a, SolutionResponse_InterStop& b) {
@@ -6490,7 +6707,7 @@ class SolutionResponse_TransitRuleAttribute : public ::google::protobuf::Message
                &_SolutionResponse_TransitRuleAttribute_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   void Swap(SolutionResponse_TransitRuleAttribute* other);
   friend void swap(SolutionResponse_TransitRuleAttribute& a, SolutionResponse_TransitRuleAttribute& b) {
@@ -6683,7 +6900,7 @@ class SolutionResponse_Route : public ::google::protobuf::Message /* @@protoc_in
                &_SolutionResponse_Route_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    38;
+    39;
 
   void Swap(SolutionResponse_Route* other);
   friend void swap(SolutionResponse_Route& a, SolutionResponse_Route& b) {
@@ -6857,7 +7074,7 @@ class SolutionResponse_Infeasibility_Info : public ::google::protobuf::Message /
                &_SolutionResponse_Infeasibility_Info_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    39;
+    40;
 
   void Swap(SolutionResponse_Infeasibility_Info* other);
   friend void swap(SolutionResponse_Infeasibility_Info& a, SolutionResponse_Infeasibility_Info& b) {
@@ -7050,7 +7267,7 @@ class SolutionResponse_Infeasibility : public ::google::protobuf::Message /* @@p
                &_SolutionResponse_Infeasibility_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    40;
+    41;
 
   void Swap(SolutionResponse_Infeasibility* other);
   friend void swap(SolutionResponse_Infeasibility& a, SolutionResponse_Infeasibility& b) {
@@ -7187,7 +7404,7 @@ class SolutionResponse : public ::google::protobuf::Message /* @@protoc_insertio
                &_SolutionResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    41;
+    42;
 
   void Swap(SolutionResponse* other);
   friend void swap(SolutionResponse& a, SolutionResponse& b) {
@@ -8675,6 +8892,104 @@ Job_Task_Attribute::windows() const {
 
 // -------------------------------------------------------------------
 
+// Job_Task_TaskRelation
+
+// required .IVR8.Job.Task.TaskRelation.Type type = 1;
+inline bool Job_Task_TaskRelation::has_type() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void Job_Task_TaskRelation::set_has_type() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void Job_Task_TaskRelation::clear_has_type() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void Job_Task_TaskRelation::clear_type() {
+  type_ = 0;
+  clear_has_type();
+}
+inline ::IVR8::Job_Task_TaskRelation_Type Job_Task_TaskRelation::type() const {
+  // @@protoc_insertion_point(field_get:IVR8.Job.Task.TaskRelation.type)
+  return static_cast< ::IVR8::Job_Task_TaskRelation_Type >(type_);
+}
+inline void Job_Task_TaskRelation::set_type(::IVR8::Job_Task_TaskRelation_Type value) {
+  assert(::IVR8::Job_Task_TaskRelation_Type_IsValid(value));
+  set_has_type();
+  type_ = value;
+  // @@protoc_insertion_point(field_set:IVR8.Job.Task.TaskRelation.type)
+}
+
+// repeated string taskIds = 2;
+inline int Job_Task_TaskRelation::taskids_size() const {
+  return taskids_.size();
+}
+inline void Job_Task_TaskRelation::clear_taskids() {
+  taskids_.Clear();
+}
+inline const ::std::string& Job_Task_TaskRelation::taskids(int index) const {
+  // @@protoc_insertion_point(field_get:IVR8.Job.Task.TaskRelation.taskIds)
+  return taskids_.Get(index);
+}
+inline ::std::string* Job_Task_TaskRelation::mutable_taskids(int index) {
+  // @@protoc_insertion_point(field_mutable:IVR8.Job.Task.TaskRelation.taskIds)
+  return taskids_.Mutable(index);
+}
+inline void Job_Task_TaskRelation::set_taskids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:IVR8.Job.Task.TaskRelation.taskIds)
+  taskids_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Job_Task_TaskRelation::set_taskids(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:IVR8.Job.Task.TaskRelation.taskIds)
+  taskids_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Job_Task_TaskRelation::set_taskids(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  taskids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:IVR8.Job.Task.TaskRelation.taskIds)
+}
+inline void Job_Task_TaskRelation::set_taskids(int index, const char* value, size_t size) {
+  taskids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IVR8.Job.Task.TaskRelation.taskIds)
+}
+inline ::std::string* Job_Task_TaskRelation::add_taskids() {
+  // @@protoc_insertion_point(field_add_mutable:IVR8.Job.Task.TaskRelation.taskIds)
+  return taskids_.Add();
+}
+inline void Job_Task_TaskRelation::add_taskids(const ::std::string& value) {
+  taskids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:IVR8.Job.Task.TaskRelation.taskIds)
+}
+#if LANG_CXX11
+inline void Job_Task_TaskRelation::add_taskids(::std::string&& value) {
+  taskids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:IVR8.Job.Task.TaskRelation.taskIds)
+}
+#endif
+inline void Job_Task_TaskRelation::add_taskids(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  taskids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:IVR8.Job.Task.TaskRelation.taskIds)
+}
+inline void Job_Task_TaskRelation::add_taskids(const char* value, size_t size) {
+  taskids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:IVR8.Job.Task.TaskRelation.taskIds)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Job_Task_TaskRelation::taskids() const {
+  // @@protoc_insertion_point(field_list:IVR8.Job.Task.TaskRelation.taskIds)
+  return taskids_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Job_Task_TaskRelation::mutable_taskids() {
+  // @@protoc_insertion_point(field_mutable_list:IVR8.Job.Task.TaskRelation.taskIds)
+  return &taskids_;
+}
+
+// -------------------------------------------------------------------
+
 // Job_Task
 
 // required string taskId = 1;
@@ -8869,6 +9184,122 @@ inline ::google::protobuf::RepeatedField<int>*
 Job_Task::mutable_tripconstraints() {
   // @@protoc_insertion_point(field_mutable_list:IVR8.Job.Task.tripConstraints)
   return &tripconstraints_;
+}
+
+// optional .IVR8.Job.Task.TaskRelation predecessors = 5;
+inline bool Job_Task::has_predecessors() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
+}
+inline void Job_Task::set_has_predecessors() {
+  _has_bits_[0] |= 0x00000004u;
+}
+inline void Job_Task::clear_has_predecessors() {
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline void Job_Task::clear_predecessors() {
+  if (predecessors_ != NULL) predecessors_->Clear();
+  clear_has_predecessors();
+}
+inline const ::IVR8::Job_Task_TaskRelation& Job_Task::_internal_predecessors() const {
+  return *predecessors_;
+}
+inline const ::IVR8::Job_Task_TaskRelation& Job_Task::predecessors() const {
+  const ::IVR8::Job_Task_TaskRelation* p = predecessors_;
+  // @@protoc_insertion_point(field_get:IVR8.Job.Task.predecessors)
+  return p != NULL ? *p : *reinterpret_cast<const ::IVR8::Job_Task_TaskRelation*>(
+      &::IVR8::_Job_Task_TaskRelation_default_instance_);
+}
+inline ::IVR8::Job_Task_TaskRelation* Job_Task::release_predecessors() {
+  // @@protoc_insertion_point(field_release:IVR8.Job.Task.predecessors)
+  clear_has_predecessors();
+  ::IVR8::Job_Task_TaskRelation* temp = predecessors_;
+  predecessors_ = NULL;
+  return temp;
+}
+inline ::IVR8::Job_Task_TaskRelation* Job_Task::mutable_predecessors() {
+  set_has_predecessors();
+  if (predecessors_ == NULL) {
+    auto* p = CreateMaybeMessage<::IVR8::Job_Task_TaskRelation>(GetArenaNoVirtual());
+    predecessors_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:IVR8.Job.Task.predecessors)
+  return predecessors_;
+}
+inline void Job_Task::set_allocated_predecessors(::IVR8::Job_Task_TaskRelation* predecessors) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete predecessors_;
+  }
+  if (predecessors) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      predecessors = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, predecessors, submessage_arena);
+    }
+    set_has_predecessors();
+  } else {
+    clear_has_predecessors();
+  }
+  predecessors_ = predecessors;
+  // @@protoc_insertion_point(field_set_allocated:IVR8.Job.Task.predecessors)
+}
+
+// optional .IVR8.Job.Task.TaskRelation successors = 6;
+inline bool Job_Task::has_successors() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void Job_Task::set_has_successors() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void Job_Task::clear_has_successors() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void Job_Task::clear_successors() {
+  if (successors_ != NULL) successors_->Clear();
+  clear_has_successors();
+}
+inline const ::IVR8::Job_Task_TaskRelation& Job_Task::_internal_successors() const {
+  return *successors_;
+}
+inline const ::IVR8::Job_Task_TaskRelation& Job_Task::successors() const {
+  const ::IVR8::Job_Task_TaskRelation* p = successors_;
+  // @@protoc_insertion_point(field_get:IVR8.Job.Task.successors)
+  return p != NULL ? *p : *reinterpret_cast<const ::IVR8::Job_Task_TaskRelation*>(
+      &::IVR8::_Job_Task_TaskRelation_default_instance_);
+}
+inline ::IVR8::Job_Task_TaskRelation* Job_Task::release_successors() {
+  // @@protoc_insertion_point(field_release:IVR8.Job.Task.successors)
+  clear_has_successors();
+  ::IVR8::Job_Task_TaskRelation* temp = successors_;
+  successors_ = NULL;
+  return temp;
+}
+inline ::IVR8::Job_Task_TaskRelation* Job_Task::mutable_successors() {
+  set_has_successors();
+  if (successors_ == NULL) {
+    auto* p = CreateMaybeMessage<::IVR8::Job_Task_TaskRelation>(GetArenaNoVirtual());
+    successors_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:IVR8.Job.Task.successors)
+  return successors_;
+}
+inline void Job_Task::set_allocated_successors(::IVR8::Job_Task_TaskRelation* successors) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete successors_;
+  }
+  if (successors) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      successors = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, successors, submessage_arena);
+    }
+    set_has_successors();
+  } else {
+    clear_has_successors();
+  }
+  successors_ = successors;
+  // @@protoc_insertion_point(field_set_allocated:IVR8.Job.Task.successors)
 }
 
 // -------------------------------------------------------------------
@@ -14704,6 +15135,8 @@ SolutionResponse::infeasibilities() const {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -14726,6 +15159,11 @@ template <> struct is_proto_enum< ::IVR8::Job_CompartmentRelation_Type> : ::std:
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::IVR8::Job_CompartmentRelation_Type>() {
   return ::IVR8::Job_CompartmentRelation_Type_descriptor();
+}
+template <> struct is_proto_enum< ::IVR8::Job_Task_TaskRelation_Type> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::IVR8::Job_Task_TaskRelation_Type>() {
+  return ::IVR8::Job_Task_TaskRelation_Type_descriptor();
 }
 template <> struct is_proto_enum< ::IVR8::Job_Task_TripConstraint> : ::std::true_type {};
 template <>
