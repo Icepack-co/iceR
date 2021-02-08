@@ -49,7 +49,9 @@ message Window {
   optional float slackCostCoef = 3 [default = 0];
   optional float tardyCostCoef = 4 [default = 0];
   optional float slackMax = 5 [default = -1];
-  optional float tardyMax = 6 [default = -1];  // an override for the window to ignore the dimension value
+  optional float tardyMax = 6
+      [default =
+           -1];  // an override for the window to ignore the dimension value
 }
 
 // Locations allow us to uniquely identify the positions at which Tasks occur
@@ -63,7 +65,7 @@ message Location {
     repeated Window departureWindows = 5;
   }
   required string id = 1;
-  optional Geocode geocode = 2;  
+  optional Geocode geocode = 2;
   repeated Attribute attributes = 3;
 }
 
@@ -105,10 +107,20 @@ message Job {
       FIRST = 0;  // first on trip
       LAST = 1;   // last on trip. Could have both first and last constraints.
     }
+    message TaskRelation {
+      enum Type {
+        INCLUSIVE = 0;
+        EXCLUSIVE = 1;
+      }
+      required Type type = 1;
+      repeated string taskIds = 2;
+    }
     required string taskId = 1;
     required string locationId = 2;
     repeated Attribute attributes = 3;
     repeated TripConstraint tripConstraints = 4;  // if empty, no constraints
+    optional TaskRelation predecessors = 5; // if empty, all are permitted
+    optional TaskRelation successors = 6;   // if empty, all are permitted
   }
 
   required string id = 1;
@@ -134,7 +146,7 @@ message TransitSet {
 // https://docs.icepack.ai/ivr/transit-generator/
 message TransitGenerator {
   required string id = 1;
-  optional string requestId = 2;        // used to recover a cached transitSet
+  optional string requestId = 2;  // used to recover a cached transitSet
   optional TransitSet transitSet = 3;
 }
 
@@ -142,7 +154,7 @@ message TransitGenerator {
 message VehicleClass {
   message Attribute {
     required string dimensionId = 1;
-    optional string transitGeneratorId = 2;   // links to a transit-gen object
+    optional string transitGeneratorId = 2;  // links to a transit-gen object
     optional float transitCoef = 3;
     optional float taskCoef = 4;
     optional float locationCoef = 5;
@@ -242,8 +254,8 @@ message CompartmentSet {
 }
 
 // The encapsulating model.
-// Potentially versioned on the server side (through the request ID - see https://docs.icepack.ai/ivr/ivrdata/)
-// https://docs.icepack.ai/ivr/model/
+// Potentially versioned on the server side (through the request ID - see
+// https://docs.icepack.ai/ivr/ivrdata/) https://docs.icepack.ai/ivr/model/
 message Model {
   required DimensionConfiguration dimensions = 1;
   repeated Location locations = 2;
@@ -262,12 +274,16 @@ message Model {
 // https://docs.icepack.ai/ivr/solve-request/
 message SolveRequest {
   enum SolveType {
-    Optimise = 0;     // Ignores provided routes, Solves using internal seed mechanisms
-    Evaluate = 1;     // Evaluates the provided route sequence. Single solution response.
-    ReOptimise = 2;   // Uses routes as starting solution and continues to optimise.
+    Optimise =
+        0;  // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate =
+        1;  // Evaluates the provided route sequence. Single solution response.
+    ReOptimise =
+        2;  // Uses routes as starting solution and continues to optimise.
   }
   optional Model model = 1;     // either model or modelID should be specified
-  optional string modelID = 2;  // the ID from a data-upload type: https://docs.icepack.ai/ivr/ivrdata/
+  optional string modelID = 2;  // the ID from a data-upload type:
+                                // https://docs.icepack.ai/ivr/ivrdata/
   repeated TaskSequence routes = 3;  // for solveType = [Evaluate, ReOptimise].
   optional SolveType solveType = 4 [default = Optimise];
 }
