@@ -391,7 +391,7 @@ compartmentsToTable <- function(nodes, solResp, solveReq){
     veh<- m$vehicles[[vindex]]
     cset <- NULL
     if(veh$compartmentSetId != ''){
-      cset <- m$compartmentSets[[which(m$compartmentSets %>% lapply(function(i){i$id == veh$compartmentSetId}))]]
+      cset <- m$compartmentSets[[which(m$compartmentSets %>% lapply(function(i){i$id == veh$compartmentSetId}) %>% unlist)]]
     }else{
       vclass <- m$vehicleClasses[[which(m$vehicleClasses %>% lapply(function(i){i$id == veh$classId }) %>% unlist)]]
       cset <- m$compartmentSets[[which(m$compartmentSets %>% lapply(function(i){i$id == vclass$compartmentSetId}) %>% unlist)]]
