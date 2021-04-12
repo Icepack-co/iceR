@@ -102,6 +102,7 @@ message Job {
       required string dimensionId = 1;
       optional float quantity = 2;
       repeated Window windows = 3;
+      repeated string vehicleIds = 4; // when empty, applies to all vehicles.
     }
     enum TripConstraint {
       FIRST = 0;  // first on trip
