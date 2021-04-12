@@ -1675,6 +1675,28 @@ class Job_Task_Attribute : public ::google::protobuf::Message /* @@protoc_insert
   const ::google::protobuf::RepeatedPtrField< ::IVR7::Window >&
       windows() const;
 
+  // repeated string vehicleIds = 4;
+  int vehicleids_size() const;
+  void clear_vehicleids();
+  static const int kVehicleIdsFieldNumber = 4;
+  const ::std::string& vehicleids(int index) const;
+  ::std::string* mutable_vehicleids(int index);
+  void set_vehicleids(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_vehicleids(int index, ::std::string&& value);
+  #endif
+  void set_vehicleids(int index, const char* value);
+  void set_vehicleids(int index, const char* value, size_t size);
+  ::std::string* add_vehicleids();
+  void add_vehicleids(const ::std::string& value);
+  #if LANG_CXX11
+  void add_vehicleids(::std::string&& value);
+  #endif
+  void add_vehicleids(const char* value);
+  void add_vehicleids(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& vehicleids() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_vehicleids();
+
   // required string dimensionId = 1;
   bool has_dimensionid() const;
   void clear_dimensionid();
@@ -1708,6 +1730,7 @@ class Job_Task_Attribute : public ::google::protobuf::Message /* @@protoc_insert
   ::google::protobuf::internal::HasBits<1> _has_bits_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   ::google::protobuf::RepeatedPtrField< ::IVR7::Window > windows_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> vehicleids_;
   ::google::protobuf::internal::ArenaStringPtr dimensionid_;
   float quantity_;
   friend struct ::protobuf_ivr7_2dkt461v8eoaif_2eproto::TableStruct;
@@ -7639,6 +7662,75 @@ inline const ::google::protobuf::RepeatedPtrField< ::IVR7::Window >&
 Job_Task_Attribute::windows() const {
   // @@protoc_insertion_point(field_list:IVR7.Job.Task.Attribute.windows)
   return windows_;
+}
+
+// repeated string vehicleIds = 4;
+inline int Job_Task_Attribute::vehicleids_size() const {
+  return vehicleids_.size();
+}
+inline void Job_Task_Attribute::clear_vehicleids() {
+  vehicleids_.Clear();
+}
+inline const ::std::string& Job_Task_Attribute::vehicleids(int index) const {
+  // @@protoc_insertion_point(field_get:IVR7.Job.Task.Attribute.vehicleIds)
+  return vehicleids_.Get(index);
+}
+inline ::std::string* Job_Task_Attribute::mutable_vehicleids(int index) {
+  // @@protoc_insertion_point(field_mutable:IVR7.Job.Task.Attribute.vehicleIds)
+  return vehicleids_.Mutable(index);
+}
+inline void Job_Task_Attribute::set_vehicleids(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:IVR7.Job.Task.Attribute.vehicleIds)
+  vehicleids_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void Job_Task_Attribute::set_vehicleids(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:IVR7.Job.Task.Attribute.vehicleIds)
+  vehicleids_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void Job_Task_Attribute::set_vehicleids(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  vehicleids_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:IVR7.Job.Task.Attribute.vehicleIds)
+}
+inline void Job_Task_Attribute::set_vehicleids(int index, const char* value, size_t size) {
+  vehicleids_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:IVR7.Job.Task.Attribute.vehicleIds)
+}
+inline ::std::string* Job_Task_Attribute::add_vehicleids() {
+  // @@protoc_insertion_point(field_add_mutable:IVR7.Job.Task.Attribute.vehicleIds)
+  return vehicleids_.Add();
+}
+inline void Job_Task_Attribute::add_vehicleids(const ::std::string& value) {
+  vehicleids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:IVR7.Job.Task.Attribute.vehicleIds)
+}
+#if LANG_CXX11
+inline void Job_Task_Attribute::add_vehicleids(::std::string&& value) {
+  vehicleids_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:IVR7.Job.Task.Attribute.vehicleIds)
+}
+#endif
+inline void Job_Task_Attribute::add_vehicleids(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  vehicleids_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:IVR7.Job.Task.Attribute.vehicleIds)
+}
+inline void Job_Task_Attribute::add_vehicleids(const char* value, size_t size) {
+  vehicleids_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:IVR7.Job.Task.Attribute.vehicleIds)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+Job_Task_Attribute::vehicleids() const {
+  // @@protoc_insertion_point(field_list:IVR7.Job.Task.Attribute.vehicleIds)
+  return vehicleids_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+Job_Task_Attribute::mutable_vehicleids() {
+  // @@protoc_insertion_point(field_mutable_list:IVR7.Job.Task.Attribute.vehicleIds)
+  return &vehicleids_;
 }
 
 // -------------------------------------------------------------------

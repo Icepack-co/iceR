@@ -1092,8 +1092,10 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_Attribute, dimensionid_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_Attribute, quantity_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_Attribute, windows_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_Attribute, vehicleids_),
   0,
   1,
+  ~0u,
   ~0u,
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_TaskRelation, _has_bits_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVR8::Job_Task_TaskRelation, _internal_metadata_),
@@ -1549,40 +1551,40 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROT
   { 78, 86, sizeof(::IVR8::Location)},
   { 89, 96, sizeof(::IVR8::Job_VehicleRelation)},
   { 98, 105, sizeof(::IVR8::Job_CompartmentRelation)},
-  { 107, 115, sizeof(::IVR8::Job_Task_Attribute)},
-  { 118, 125, sizeof(::IVR8::Job_Task_TaskRelation)},
-  { 127, 138, sizeof(::IVR8::Job_Task)},
-  { 144, 155, sizeof(::IVR8::Job)},
-  { 161, 169, sizeof(::IVR8::TransitSet_TransitValue)},
-  { 172, 178, sizeof(::IVR8::TransitSet)},
-  { 179, 187, sizeof(::IVR8::TransitGenerator)},
-  { 190, 200, sizeof(::IVR8::VehicleClass_Attribute)},
-  { 205, 214, sizeof(::IVR8::VehicleClass)},
-  { 218, 229, sizeof(::IVR8::VehicleCostClass_Attribute)},
-  { 235, 243, sizeof(::IVR8::VehicleCostClass)},
-  { 246, 254, sizeof(::IVR8::Vehicle_Task_Attribute)},
-  { 257, 264, sizeof(::IVR8::Vehicle_Task)},
-  { 266, 273, sizeof(::IVR8::Vehicle_Shift)},
-  { 275, 282, sizeof(::IVR8::Vehicle_Capacity)},
-  { 284, 296, sizeof(::IVR8::Vehicle)},
-  { 303, 311, sizeof(::IVR8::TaskSequence)},
-  { 314, 321, sizeof(::IVR8::TransitRule_Trigger)},
-  { 323, 334, sizeof(::IVR8::TransitRule)},
-  { 340, 347, sizeof(::IVR8::Compartment_Capacity)},
-  { 349, 356, sizeof(::IVR8::Compartment)},
-  { 358, 368, sizeof(::IVR8::CompartmentSet_GroupLimit)},
-  { 373, 381, sizeof(::IVR8::CompartmentSet)},
-  { 384, 400, sizeof(::IVR8::Model)},
-  { 411, 420, sizeof(::IVR8::SolveRequest)},
-  { 424, 437, sizeof(::IVR8::SolutionResponse_StopAttribute)},
-  { 445, 454, sizeof(::IVR8::SolutionResponse_InterStopAttribute)},
-  { 458, 470, sizeof(::IVR8::SolutionResponse_Stop)},
-  { 477, 486, sizeof(::IVR8::SolutionResponse_InterStop)},
-  { 490, 502, sizeof(::IVR8::SolutionResponse_TransitRuleAttribute)},
-  { 509, 519, sizeof(::IVR8::SolutionResponse_Route)},
-  { 524, 535, sizeof(::IVR8::SolutionResponse_Infeasibility_Info)},
-  { 541, 548, sizeof(::IVR8::SolutionResponse_Infeasibility)},
-  { 550, 558, sizeof(::IVR8::SolutionResponse)},
+  { 107, 116, sizeof(::IVR8::Job_Task_Attribute)},
+  { 120, 127, sizeof(::IVR8::Job_Task_TaskRelation)},
+  { 129, 140, sizeof(::IVR8::Job_Task)},
+  { 146, 157, sizeof(::IVR8::Job)},
+  { 163, 171, sizeof(::IVR8::TransitSet_TransitValue)},
+  { 174, 180, sizeof(::IVR8::TransitSet)},
+  { 181, 189, sizeof(::IVR8::TransitGenerator)},
+  { 192, 202, sizeof(::IVR8::VehicleClass_Attribute)},
+  { 207, 216, sizeof(::IVR8::VehicleClass)},
+  { 220, 231, sizeof(::IVR8::VehicleCostClass_Attribute)},
+  { 237, 245, sizeof(::IVR8::VehicleCostClass)},
+  { 248, 256, sizeof(::IVR8::Vehicle_Task_Attribute)},
+  { 259, 266, sizeof(::IVR8::Vehicle_Task)},
+  { 268, 275, sizeof(::IVR8::Vehicle_Shift)},
+  { 277, 284, sizeof(::IVR8::Vehicle_Capacity)},
+  { 286, 298, sizeof(::IVR8::Vehicle)},
+  { 305, 313, sizeof(::IVR8::TaskSequence)},
+  { 316, 323, sizeof(::IVR8::TransitRule_Trigger)},
+  { 325, 336, sizeof(::IVR8::TransitRule)},
+  { 342, 349, sizeof(::IVR8::Compartment_Capacity)},
+  { 351, 358, sizeof(::IVR8::Compartment)},
+  { 360, 370, sizeof(::IVR8::CompartmentSet_GroupLimit)},
+  { 375, 383, sizeof(::IVR8::CompartmentSet)},
+  { 386, 402, sizeof(::IVR8::Model)},
+  { 413, 422, sizeof(::IVR8::SolveRequest)},
+  { 426, 439, sizeof(::IVR8::SolutionResponse_StopAttribute)},
+  { 447, 456, sizeof(::IVR8::SolutionResponse_InterStopAttribute)},
+  { 460, 472, sizeof(::IVR8::SolutionResponse_Stop)},
+  { 479, 488, sizeof(::IVR8::SolutionResponse_InterStop)},
+  { 492, 504, sizeof(::IVR8::SolutionResponse_TransitRuleAttribute)},
+  { 511, 521, sizeof(::IVR8::SolutionResponse_Route)},
+  { 526, 537, sizeof(::IVR8::SolutionResponse_Infeasibility_Info)},
+  { 543, 550, sizeof(::IVR8::SolutionResponse_Infeasibility)},
+  { 552, 560, sizeof(::IVR8::SolutionResponse)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -1676,7 +1678,7 @@ void AddDescriptorsImpl() {
       "nsionId\030\001 \002(\t\022\021\n\tvehicleId\030\002 \001(\t\022\020\n\010quan"
       "tity\030\003 \001(\002\022$\n\016arrivalWindows\030\004 \003(\0132\014.IVR"
       "8.Window\022&\n\020departureWindows\030\005 \003(\0132\014.IVR"
-      "8.Window\"\310\007\n\003Job\022\n\n\002id\030\001 \002(\t\022\"\n\npickupTa"
+      "8.Window\"\334\007\n\003Job\022\n\n\002id\030\001 \002(\t\022\"\n\npickupTa"
       "sk\030\002 \001(\0132\016.IVR8.Job.Task\022#\n\013dropoffTask\030"
       "\003 \001(\0132\016.IVR8.Job.Task\022\017\n\007penalty\030\004 \002(\002\0223"
       "\n\020vehicleRelations\030\005 \001(\0132\031.IVR8.Job.Vehi"
@@ -1688,119 +1690,120 @@ void AddDescriptorsImpl() {
       "CompartmentRelation\0220\n\004type\030\001 \002(\0162\".IVR8"
       ".Job.CompartmentRelation.Type\022\026\n\016compart"
       "mentIds\030\002 \003(\t\"$\n\004Type\022\r\n\tINCLUSIVE\020\000\022\r\n\t"
-      "EXCLUSIVE\020\001\032\345\003\n\004Task\022\016\n\006taskId\030\001 \002(\t\022\022\n\n"
+      "EXCLUSIVE\020\001\032\371\003\n\004Task\022\016\n\006taskId\030\001 \002(\t\022\022\n\n"
       "locationId\030\002 \002(\t\022,\n\nattributes\030\003 \003(\0132\030.I"
       "VR8.Job.Task.Attribute\0226\n\017tripConstraint"
       "s\030\004 \003(\0162\035.IVR8.Job.Task.TripConstraint\0221"
       "\n\014predecessors\030\005 \001(\0132\033.IVR8.Job.Task.Tas"
       "kRelation\022/\n\nsuccessors\030\006 \001(\0132\033.IVR8.Job"
-      ".Task.TaskRelation\032Q\n\tAttribute\022\023\n\013dimen"
+      ".Task.TaskRelation\032e\n\tAttribute\022\023\n\013dimen"
       "sionId\030\001 \002(\t\022\020\n\010quantity\030\002 \001(\002\022\035\n\007window"
-      "s\030\003 \003(\0132\014.IVR8.Window\032u\n\014TaskRelation\022.\n"
-      "\004type\030\001 \002(\0162 .IVR8.Job.Task.TaskRelation"
-      ".Type\022\017\n\007taskIds\030\002 \003(\t\"$\n\004Type\022\r\n\tINCLUS"
-      "IVE\020\000\022\r\n\tEXCLUSIVE\020\001\"%\n\016TripConstraint\022\t"
-      "\n\005FIRST\020\000\022\010\n\004LAST\020\001\"z\n\nTransitSet\022/\n\010tra"
-      "nsits\030\001 \003(\0132\035.IVR8.TransitSet.TransitVal"
-      "ue\032;\n\014TransitValue\022\016\n\006fromId\030\001 \002(\t\022\014\n\004to"
-      "Id\030\002 \002(\t\022\r\n\005value\030\003 \002(\002\"W\n\020TransitGenera"
-      "tor\022\n\n\002id\030\001 \002(\t\022\021\n\trequestId\030\002 \001(\t\022$\n\ntr"
-      "ansitSet\030\003 \001(\0132\020.IVR8.TransitSet\"\371\001\n\014Veh"
-      "icleClass\022\n\n\002id\030\001 \002(\t\0220\n\nattributes\030\002 \003("
-      "\0132\034.IVR8.VehicleClass.Attribute\022\026\n\016trans"
-      "itRuleIds\030\003 \003(\t\022\030\n\020compartmentSetId\030\004 \001("
-      "\t\032y\n\tAttribute\022\023\n\013dimensionId\030\001 \002(\t\022\032\n\022t"
-      "ransitGeneratorId\030\002 \001(\t\022\023\n\013transitCoef\030\003"
-      " \001(\002\022\020\n\010taskCoef\030\004 \001(\002\022\024\n\014locationCoef\030\005"
-      " \001(\002\"\201\002\n\020VehicleCostClass\022\n\n\002id\030\001 \002(\t\022\021\n"
-      "\tfixedCost\030\002 \002(\002\0224\n\nattributes\030\003 \003(\0132 .I"
-      "VR8.VehicleCostClass.Attribute\032\227\001\n\tAttri"
-      "bute\022\023\n\013dimensionId\030\001 \002(\t\022\027\n\017transitCost"
-      "Coef\030\002 \001(\002\022\024\n\014taskCostCoef\030\003 \001(\002\022\030\n\020loca"
-      "tionCostCoef\030\004 \001(\002\022\025\n\rslackCostCoef\030\005 \001("
-      "\002\022\025\n\rtardyCostCoef\030\006 \001(\002\"\351\003\n\007Vehicle\022\n\n\002"
-      "id\030\001 \002(\t\022\017\n\007classId\030\002 \002(\t\022\023\n\013costClassId"
-      "\030\003 \002(\t\022\"\n\005shift\030\004 \002(\0132\023.IVR8.Vehicle.Shi"
-      "ft\022*\n\ncapacities\030\005 \003(\0132\026.IVR8.Vehicle.Ca"
-      "pacity\022\026\n\016transitRuleIds\030\006 \003(\t\022\030\n\020compar"
-      "tmentSetId\030\007 \001(\t\032\237\001\n\004Task\022\022\n\nlocationId\030"
-      "\001 \002(\t\0220\n\nattributes\030\002 \003(\0132\034.IVR8.Vehicle"
-      ".Task.Attribute\032Q\n\tAttribute\022\023\n\013dimensio"
-      "nId\030\001 \002(\t\022\020\n\010quantity\030\002 \001(\002\022\035\n\007windows\030\003"
-      " \003(\0132\014.IVR8.Window\032U\n\005Shift\022&\n\nshiftStar"
-      "t\030\001 \002(\0132\022.IVR8.Vehicle.Task\022$\n\010shiftEnd\030"
-      "\002 \001(\0132\022.IVR8.Vehicle.Task\0321\n\010Capacity\022\023\n"
-      "\013dimensionId\030\001 \002(\t\022\020\n\010capacity\030\002 \002(\002\"H\n\014"
-      "TaskSequence\022\021\n\tvehicleId\030\001 \002(\t\022\016\n\006taskI"
-      "d\030\002 \003(\t\022\025\n\rcompartmentId\030\003 \003(\t\"\335\001\n\013Trans"
-      "itRule\022\n\n\002id\030\001 \002(\t\022\023\n\013dimensionId\030\002 \002(\t\022"
-      "\036\n\020useStandingState\030\003 \001(\010:\004true\022\036\n\017useTr"
-      "ansitState\030\004 \001(\010:\005false\022\024\n\014ruleIdPrefix\030"
-      "\005 \002(\t\022+\n\010triggers\030\006 \003(\0132\031.IVR8.TransitRu"
-      "le.Trigger\032*\n\007Trigger\022\r\n\005value\030\001 \002(\002\022\020\n\010"
-      "quantity\030\002 \002(\002\"|\n\013Compartment\022\n\n\002id\030\001 \002("
-      "\t\022.\n\ncapacities\030\002 \003(\0132\032.IVR8.Compartment"
-      ".Capacity\0321\n\010Capacity\022\023\n\013dimensionId\030\001 \002"
-      "(\t\022\020\n\010capacity\030\002 \002(\002\"\356\001\n\016CompartmentSet\022"
-      "\n\n\002id\030\001 \002(\t\022\026\n\016compartmentIds\030\002 \003(\t\0224\n\013g"
-      "roupLimits\030\003 \003(\0132\037.IVR8.CompartmentSet.G"
-      "roupLimit\032\201\001\n\nGroupLimit\022\026\n\016compartmentI"
-      "ds\030\001 \003(\t\022\024\n\014coefficients\030\002 \003(\002\022\023\n\013dimens"
-      "ionId\030\003 \002(\t\022\r\n\005limit\030\004 \002(\002\022!\n\022checkStand"
-      "ingState\030\005 \001(\010:\005false\"\324\003\n\005Model\0220\n\ndimen"
-      "sions\030\001 \002(\0132\034.IVR8.DimensionConfiguratio"
-      "n\022!\n\tlocations\030\002 \003(\0132\016.IVR8.Location\022\027\n\004"
-      "jobs\030\003 \003(\0132\t.IVR8.Job\022\037\n\010vehicles\030\004 \003(\0132"
-      "\r.IVR8.Vehicle\022*\n\016vehicleClasses\030\005 \003(\0132\022"
-      ".IVR8.VehicleClass\0222\n\022vehicleCostClasses"
-      "\030\006 \003(\0132\026.IVR8.VehicleCostClass\022\'\n\014transi"
-      "tRules\030\007 \003(\0132\021.IVR8.TransitRule\0221\n\021trans"
-      "itGenerators\030\010 \003(\0132\026.IVR8.TransitGenerat"
-      "or\022(\n\014taskSequence\030\t \003(\0132\022.IVR8.TaskSequ"
-      "ence\022\'\n\014compartments\030\n \003(\0132\021.IVR8.Compar"
-      "tment\022-\n\017compartmentSets\030\013 \003(\0132\024.IVR8.Co"
-      "mpartmentSet\"\323\001\n\014SolveRequest\022\032\n\005model\030\001"
-      " \001(\0132\013.IVR8.Model\022\017\n\007modelID\030\002 \001(\t\022\"\n\006ro"
-      "utes\030\003 \003(\0132\022.IVR8.TaskSequence\0229\n\tsolveT"
-      "ype\030\004 \001(\0162\034.IVR8.SolveRequest.SolveType:"
-      "\010Optimise\"7\n\tSolveType\022\014\n\010Optimise\020\000\022\014\n\010"
-      "Evaluate\020\001\022\016\n\nReOptimise\020\002\"\234\n\n\020SolutionR"
-      "esponse\022\021\n\tobjective\030\001 \002(\002\022,\n\006routes\030\002 \003"
-      "(\0132\034.IVR8.SolutionResponse.Route\022=\n\017infe"
-      "asibilities\030\003 \003(\0132$.IVR8.SolutionRespons"
-      "e.Infeasibility\032\240\001\n\rStopAttribute\022\r\n\005dim"
-      "Id\030\001 \002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010endValue"
-      "\030\003 \002(\002\022\014\n\004cost\030\004 \002(\002\022\022\n\nslackValue\030\005 \002(\002"
-      "\022\021\n\tslackCost\030\006 \002(\002\022\022\n\ntardyValue\030\007 \002(\002\022"
-      "\021\n\ttardyCost\030\010 \002(\002\032W\n\022InterStopAttribute"
-      "\022\r\n\005dimId\030\001 \002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010e"
-      "ndValue\030\003 \002(\002\022\014\n\004cost\030\004 \002(\002\032\250\001\n\004Stop\022\n\n\002"
-      "id\030\001 \002(\005\022\020\n\010sequence\030\002 \002(\005\022\022\n\nlocationId"
-      "\030\003 \002(\t\022\016\n\006taskId\030\004 \002(\t\022\r\n\005jobId\030\005 \002(\t\0228\n"
-      "\nattributes\030\006 \003(\0132$.IVR8.SolutionRespons"
-      "e.StopAttribute\022\025\n\rcompartmentId\030\007 \001(\t\032\226"
-      "\001\n\tInterStop\022\022\n\nfromStopId\030\001 \002(\005\022\020\n\010toSt"
-      "opId\030\002 \002(\005\022=\n\nattributes\030\003 \003(\0132).IVR8.So"
-      "lutionResponse.InterStopAttribute\022$\n\rrou"
-      "teSegments\030\004 \003(\0132\r.IVR8.Geocode\032\217\001\n\024Tran"
-      "sitRuleAttribute\022\016\n\006ruleId\030\001 \002(\t\022\r\n\005dimI"
-      "d\030\002 \002(\t\022\022\n\nfromStopId\030\003 \002(\005\022\020\n\010toStopId\030"
-      "\004 \002(\005\022\022\n\nstartValue\030\005 \002(\002\022\020\n\010endValue\030\006 "
-      "\002(\002\022\014\n\004cost\030\007 \002(\002\032\333\001\n\005Route\022\021\n\tvehicleId"
-      "\030\001 \002(\t\022*\n\005stops\030\002 \003(\0132\033.IVR8.SolutionRes"
-      "ponse.Stop\0224\n\ninterStops\030\003 \003(\0132 .IVR8.So"
-      "lutionResponse.InterStop\022\021\n\tfixedCost\030\004 "
-      "\003(\002\022J\n\025transitRuleAttributes\030\005 \003(\0132+.IVR"
-      "8.SolutionResponse.TransitRuleAttribute\032"
-      "\327\001\n\rInfeasibility\022\016\n\006taskId\030\001 \002(\t\022D\n\021inf"
-      "easibilityInfo\030\002 \003(\0132).IVR8.SolutionResp"
-      "onse.Infeasibility.Info\032p\n\004Info\022\017\n\007messa"
-      "ge\030\001 \002(\t\022\r\n\005dimId\030\002 \001(\t\022\r\n\005limit\030\003 \001(\002\022\r"
-      "\n\005value\030\004 \001(\002\022\r\n\005count\030\005 \001(\003\022\033\n\023constrai"
-      "ningTaskIds\030\006 \003(\tB\020\n\016icepackai.IVR8"
+      "s\030\003 \003(\0132\014.IVR8.Window\022\022\n\nvehicleIds\030\004 \003("
+      "\t\032u\n\014TaskRelation\022.\n\004type\030\001 \002(\0162 .IVR8.J"
+      "ob.Task.TaskRelation.Type\022\017\n\007taskIds\030\002 \003"
+      "(\t\"$\n\004Type\022\r\n\tINCLUSIVE\020\000\022\r\n\tEXCLUSIVE\020\001"
+      "\"%\n\016TripConstraint\022\t\n\005FIRST\020\000\022\010\n\004LAST\020\001\""
+      "z\n\nTransitSet\022/\n\010transits\030\001 \003(\0132\035.IVR8.T"
+      "ransitSet.TransitValue\032;\n\014TransitValue\022\016"
+      "\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\r\n\005value\030\003 "
+      "\002(\002\"W\n\020TransitGenerator\022\n\n\002id\030\001 \002(\t\022\021\n\tr"
+      "equestId\030\002 \001(\t\022$\n\ntransitSet\030\003 \001(\0132\020.IVR"
+      "8.TransitSet\"\371\001\n\014VehicleClass\022\n\n\002id\030\001 \002("
+      "\t\0220\n\nattributes\030\002 \003(\0132\034.IVR8.VehicleClas"
+      "s.Attribute\022\026\n\016transitRuleIds\030\003 \003(\t\022\030\n\020c"
+      "ompartmentSetId\030\004 \001(\t\032y\n\tAttribute\022\023\n\013di"
+      "mensionId\030\001 \002(\t\022\032\n\022transitGeneratorId\030\002 "
+      "\001(\t\022\023\n\013transitCoef\030\003 \001(\002\022\020\n\010taskCoef\030\004 \001"
+      "(\002\022\024\n\014locationCoef\030\005 \001(\002\"\201\002\n\020VehicleCost"
+      "Class\022\n\n\002id\030\001 \002(\t\022\021\n\tfixedCost\030\002 \002(\002\0224\n\n"
+      "attributes\030\003 \003(\0132 .IVR8.VehicleCostClass"
+      ".Attribute\032\227\001\n\tAttribute\022\023\n\013dimensionId\030"
+      "\001 \002(\t\022\027\n\017transitCostCoef\030\002 \001(\002\022\024\n\014taskCo"
+      "stCoef\030\003 \001(\002\022\030\n\020locationCostCoef\030\004 \001(\002\022\025"
+      "\n\rslackCostCoef\030\005 \001(\002\022\025\n\rtardyCostCoef\030\006"
+      " \001(\002\"\351\003\n\007Vehicle\022\n\n\002id\030\001 \002(\t\022\017\n\007classId\030"
+      "\002 \002(\t\022\023\n\013costClassId\030\003 \002(\t\022\"\n\005shift\030\004 \002("
+      "\0132\023.IVR8.Vehicle.Shift\022*\n\ncapacities\030\005 \003"
+      "(\0132\026.IVR8.Vehicle.Capacity\022\026\n\016transitRul"
+      "eIds\030\006 \003(\t\022\030\n\020compartmentSetId\030\007 \001(\t\032\237\001\n"
+      "\004Task\022\022\n\nlocationId\030\001 \002(\t\0220\n\nattributes\030"
+      "\002 \003(\0132\034.IVR8.Vehicle.Task.Attribute\032Q\n\tA"
+      "ttribute\022\023\n\013dimensionId\030\001 \002(\t\022\020\n\010quantit"
+      "y\030\002 \001(\002\022\035\n\007windows\030\003 \003(\0132\014.IVR8.Window\032U"
+      "\n\005Shift\022&\n\nshiftStart\030\001 \002(\0132\022.IVR8.Vehic"
+      "le.Task\022$\n\010shiftEnd\030\002 \001(\0132\022.IVR8.Vehicle"
+      ".Task\0321\n\010Capacity\022\023\n\013dimensionId\030\001 \002(\t\022\020"
+      "\n\010capacity\030\002 \002(\002\"H\n\014TaskSequence\022\021\n\tvehi"
+      "cleId\030\001 \002(\t\022\016\n\006taskId\030\002 \003(\t\022\025\n\rcompartme"
+      "ntId\030\003 \003(\t\"\335\001\n\013TransitRule\022\n\n\002id\030\001 \002(\t\022\023"
+      "\n\013dimensionId\030\002 \002(\t\022\036\n\020useStandingState\030"
+      "\003 \001(\010:\004true\022\036\n\017useTransitState\030\004 \001(\010:\005fa"
+      "lse\022\024\n\014ruleIdPrefix\030\005 \002(\t\022+\n\010triggers\030\006 "
+      "\003(\0132\031.IVR8.TransitRule.Trigger\032*\n\007Trigge"
+      "r\022\r\n\005value\030\001 \002(\002\022\020\n\010quantity\030\002 \002(\002\"|\n\013Co"
+      "mpartment\022\n\n\002id\030\001 \002(\t\022.\n\ncapacities\030\002 \003("
+      "\0132\032.IVR8.Compartment.Capacity\0321\n\010Capacit"
+      "y\022\023\n\013dimensionId\030\001 \002(\t\022\020\n\010capacity\030\002 \002(\002"
+      "\"\356\001\n\016CompartmentSet\022\n\n\002id\030\001 \002(\t\022\026\n\016compa"
+      "rtmentIds\030\002 \003(\t\0224\n\013groupLimits\030\003 \003(\0132\037.I"
+      "VR8.CompartmentSet.GroupLimit\032\201\001\n\nGroupL"
+      "imit\022\026\n\016compartmentIds\030\001 \003(\t\022\024\n\014coeffici"
+      "ents\030\002 \003(\002\022\023\n\013dimensionId\030\003 \002(\t\022\r\n\005limit"
+      "\030\004 \002(\002\022!\n\022checkStandingState\030\005 \001(\010:\005fals"
+      "e\"\324\003\n\005Model\0220\n\ndimensions\030\001 \002(\0132\034.IVR8.D"
+      "imensionConfiguration\022!\n\tlocations\030\002 \003(\013"
+      "2\016.IVR8.Location\022\027\n\004jobs\030\003 \003(\0132\t.IVR8.Jo"
+      "b\022\037\n\010vehicles\030\004 \003(\0132\r.IVR8.Vehicle\022*\n\016ve"
+      "hicleClasses\030\005 \003(\0132\022.IVR8.VehicleClass\0222"
+      "\n\022vehicleCostClasses\030\006 \003(\0132\026.IVR8.Vehicl"
+      "eCostClass\022\'\n\014transitRules\030\007 \003(\0132\021.IVR8."
+      "TransitRule\0221\n\021transitGenerators\030\010 \003(\0132\026"
+      ".IVR8.TransitGenerator\022(\n\014taskSequence\030\t"
+      " \003(\0132\022.IVR8.TaskSequence\022\'\n\014compartments"
+      "\030\n \003(\0132\021.IVR8.Compartment\022-\n\017compartment"
+      "Sets\030\013 \003(\0132\024.IVR8.CompartmentSet\"\323\001\n\014Sol"
+      "veRequest\022\032\n\005model\030\001 \001(\0132\013.IVR8.Model\022\017\n"
+      "\007modelID\030\002 \001(\t\022\"\n\006routes\030\003 \003(\0132\022.IVR8.Ta"
+      "skSequence\0229\n\tsolveType\030\004 \001(\0162\034.IVR8.Sol"
+      "veRequest.SolveType:\010Optimise\"7\n\tSolveTy"
+      "pe\022\014\n\010Optimise\020\000\022\014\n\010Evaluate\020\001\022\016\n\nReOpti"
+      "mise\020\002\"\234\n\n\020SolutionResponse\022\021\n\tobjective"
+      "\030\001 \002(\002\022,\n\006routes\030\002 \003(\0132\034.IVR8.SolutionRe"
+      "sponse.Route\022=\n\017infeasibilities\030\003 \003(\0132$."
+      "IVR8.SolutionResponse.Infeasibility\032\240\001\n\r"
+      "StopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\nstartVal"
+      "ue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004cost\030\004 \002(\002"
+      "\022\022\n\nslackValue\030\005 \002(\002\022\021\n\tslackCost\030\006 \002(\002\022"
+      "\022\n\ntardyValue\030\007 \002(\002\022\021\n\ttardyCost\030\010 \002(\002\032W"
+      "\n\022InterStopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\ns"
+      "tartValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004cos"
+      "t\030\004 \002(\002\032\250\001\n\004Stop\022\n\n\002id\030\001 \002(\005\022\020\n\010sequence"
+      "\030\002 \002(\005\022\022\n\nlocationId\030\003 \002(\t\022\016\n\006taskId\030\004 \002"
+      "(\t\022\r\n\005jobId\030\005 \002(\t\0228\n\nattributes\030\006 \003(\0132$."
+      "IVR8.SolutionResponse.StopAttribute\022\025\n\rc"
+      "ompartmentId\030\007 \001(\t\032\226\001\n\tInterStop\022\022\n\nfrom"
+      "StopId\030\001 \002(\005\022\020\n\010toStopId\030\002 \002(\005\022=\n\nattrib"
+      "utes\030\003 \003(\0132).IVR8.SolutionResponse.Inter"
+      "StopAttribute\022$\n\rrouteSegments\030\004 \003(\0132\r.I"
+      "VR8.Geocode\032\217\001\n\024TransitRuleAttribute\022\016\n\006"
+      "ruleId\030\001 \002(\t\022\r\n\005dimId\030\002 \002(\t\022\022\n\nfromStopI"
+      "d\030\003 \002(\005\022\020\n\010toStopId\030\004 \002(\005\022\022\n\nstartValue\030"
+      "\005 \002(\002\022\020\n\010endValue\030\006 \002(\002\022\014\n\004cost\030\007 \002(\002\032\333\001"
+      "\n\005Route\022\021\n\tvehicleId\030\001 \002(\t\022*\n\005stops\030\002 \003("
+      "\0132\033.IVR8.SolutionResponse.Stop\0224\n\ninterS"
+      "tops\030\003 \003(\0132 .IVR8.SolutionResponse.Inter"
+      "Stop\022\021\n\tfixedCost\030\004 \003(\002\022J\n\025transitRuleAt"
+      "tributes\030\005 \003(\0132+.IVR8.SolutionResponse.T"
+      "ransitRuleAttribute\032\327\001\n\rInfeasibility\022\016\n"
+      "\006taskId\030\001 \002(\t\022D\n\021infeasibilityInfo\030\002 \003(\013"
+      "2).IVR8.SolutionResponse.Infeasibility.I"
+      "nfo\032p\n\004Info\022\017\n\007message\030\001 \002(\t\022\r\n\005dimId\030\002 "
+      "\001(\t\022\r\n\005limit\030\003 \001(\002\022\r\n\005value\030\004 \001(\002\022\r\n\005cou"
+      "nt\030\005 \001(\003\022\033\n\023constrainingTaskIds\030\006 \003(\tB\020\n"
+      "\016icepackai.IVR8"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 5835);
+      descriptor, 5855);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "ivr8-yni1c9k2swof.proto", &protobuf_RegisterTypes);
 }
@@ -5221,6 +5224,7 @@ void Job_Task_Attribute::InitAsDefaultInstance() {
 const int Job_Task_Attribute::kDimensionIdFieldNumber;
 const int Job_Task_Attribute::kQuantityFieldNumber;
 const int Job_Task_Attribute::kWindowsFieldNumber;
+const int Job_Task_Attribute::kVehicleIdsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Job_Task_Attribute::Job_Task_Attribute()
@@ -5234,7 +5238,8 @@ Job_Task_Attribute::Job_Task_Attribute(const Job_Task_Attribute& from)
   : ::google::protobuf::Message(),
       _internal_metadata_(NULL),
       _has_bits_(from._has_bits_),
-      windows_(from.windows_) {
+      windows_(from.windows_),
+      vehicleids_(from.vehicleids_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   dimensionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   if (from.has_dimensionid()) {
@@ -5279,6 +5284,7 @@ void Job_Task_Attribute::Clear() {
   (void) cached_has_bits;
 
   windows_.Clear();
+  vehicleids_.Clear();
   cached_has_bits = _has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
     dimensionid_.ClearNonDefaultToEmptyNoArena();
@@ -5340,6 +5346,23 @@ bool Job_Task_Attribute::MergePartialFromCodedStream(
         break;
       }
 
+      // repeated string vehicleIds = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_vehicleids()));
+          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+            this->vehicleids(this->vehicleids_size() - 1).data(),
+            static_cast<int>(this->vehicleids(this->vehicleids_size() - 1).length()),
+            ::google::protobuf::internal::WireFormat::PARSE,
+            "IVR8.Job.Task.Attribute.vehicleIds");
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -5391,6 +5414,16 @@ void Job_Task_Attribute::SerializeWithCachedSizes(
       output);
   }
 
+  // repeated string vehicleIds = 4;
+  for (int i = 0, n = this->vehicleids_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vehicleids(i).data(), static_cast<int>(this->vehicleids(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "IVR8.Job.Task.Attribute.vehicleIds");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      4, this->vehicleids(i), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -5430,6 +5463,16 @@ void Job_Task_Attribute::SerializeWithCachedSizes(
         3, this->windows(static_cast<int>(i)), deterministic, target);
   }
 
+  // repeated string vehicleIds = 4;
+  for (int i = 0, n = this->vehicleids_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->vehicleids(i).data(), static_cast<int>(this->vehicleids(i).length()),
+      ::google::protobuf::internal::WireFormat::SERIALIZE,
+      "IVR8.Job.Task.Attribute.vehicleIds");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(4, this->vehicleids(i), target);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target);
@@ -5462,6 +5505,14 @@ size_t Job_Task_Attribute::ByteSizeLong() const {
         ::google::protobuf::internal::WireFormatLite::MessageSize(
           this->windows(static_cast<int>(i)));
     }
+  }
+
+  // repeated string vehicleIds = 4;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->vehicleids_size());
+  for (int i = 0, n = this->vehicleids_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->vehicleids(i));
   }
 
   // optional float quantity = 2;
@@ -5497,6 +5548,7 @@ void Job_Task_Attribute::MergeFrom(const Job_Task_Attribute& from) {
   (void) cached_has_bits;
 
   windows_.MergeFrom(from.windows_);
+  vehicleids_.MergeFrom(from.vehicleids_);
   cached_has_bits = from._has_bits_[0];
   if (cached_has_bits & 3u) {
     if (cached_has_bits & 0x00000001u) {
@@ -5537,6 +5589,7 @@ void Job_Task_Attribute::Swap(Job_Task_Attribute* other) {
 void Job_Task_Attribute::InternalSwap(Job_Task_Attribute* other) {
   using std::swap;
   CastToBase(&windows_)->InternalSwap(CastToBase(&other->windows_));
+  vehicleids_.InternalSwap(CastToBase(&other->vehicleids_));
   dimensionid_.Swap(&other->dimensionid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(quantity_, other->quantity_);
