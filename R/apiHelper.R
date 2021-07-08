@@ -53,6 +53,7 @@ apiHelper <- setRefClass("apiHelper",
                           'ivr7-kt461v8eoaif',
                           'ivr8-yni1c9k2swof',
                           'nvd-hap0j2y4zlm1',
+                          'ndd-cmibu6krtqja',
                           'ns3-tbfvuwtge2iq',
                           'matrix-vyv95n7wchpl',
                           'ivrdata-o43e0dvs78zq')
@@ -151,6 +152,7 @@ getResponse <- function(apiHelper, requestID){
                        'ivr8-yni1c9k2swof' = {read(IVR8.SolutionResponse, solRes$solution)},
                        'ivr7-kt461v8eoaif' = {read(IVR7.SolutionResponse, solRes$solution)},
                        'nvd-hap0j2y4zlm1' = {read(NVD.SolutionResponse, solRes$solution)},
+                       'ndd-cmibu6krtqja' = {read(NDD.SolutionResponse, solRes$solution)},
                        'ns3-tbfvuwtge2iq' = {read(NS3.SolutionResponse, solRes$solution)},
                        'matrix-vyv95n7wchpl' = {read(Matrix.MatrixResponse, solRes$solution)},
         )

@@ -321,7 +321,7 @@ DataFrame ivr7NodesToDF(ivr_tabular& t){
   return NULL;
 }
 
-DataFrame frontierToDF(vector<nvd_frontier_item>& frontier){
+DataFrame frontierToDF(vector<frontier_item>& frontier){
   // we need to translate this into a columnar format.
   vector<NumericVector> objs;
   vector<string> objNames;
@@ -560,26 +560,21 @@ List tabulate(Reference solResponse, Reference solveRequest){
   Function tobytes("toBytes");
   Vector<RAWSXP> solResp = tobytes(solResponse);
   Vector<RAWSXP> sr = tobytes(solveRequest);
+  string outdata = bytesToString(solResp);
+  string indata =  bytesToString(sr);
   Function _tab_transitrules("transitRulesToTable");
   Function _tab_infeasibilities("infeasibilitiesToTable");
   if(srType == "TSP.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
-
-    auto t = tabulateTSPdata(indata, outdata);
+  auto t = tabulateTSPdata(indata, outdata);
     return(List::create( _["edges"] = tspEdgesToDF(t.nodes, t.edges),
                          _["nodes"] = tspStopsToDF(t.nodes)));
   }
   if(srType == "TSPTW.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     auto t = tabulateTSPTWdata(indata, outdata);
     return(List::create( _["edges"] = tsptwEdgesToDF(t.nodes, t.edges),
                          _["nodes"] = tsptwStopsToDF(t.nodes)));
   }
   if(srType == "IVR7.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     auto t = tabulateIVR7(indata, outdata);
     auto ns = ivr7NodesToDF(t);
     return List::create(_["nodes"] = ns,
@@ -588,8 +583,6 @@ List tabulate(Reference solResponse, Reference solveRequest){
                         _["infeasibilities"] = _tab_infeasibilities(solResponse));
   }
   if(srType == "IVR8.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     auto t = tabulateIVR8(indata, outdata);
     auto ns = ivr7NodesToDF(t); // this is okay, it knows how to do both.
     Function _tab_compartments("compartmentsToTable");
@@ -608,8 +601,6 @@ List tabulate(Reference solResponse, Reference solveRequest){
     return(tabcvrp(_["sr"] = solveRequest, _["resp"] = solResponse));
   }
   if(srType == "NVD.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     auto t = tabulateNVD(indata, outdata);
     if(t.frontier.size() == 0){
       auto ns = ivr7NodesToDF(t.tab);
@@ -619,15 +610,22 @@ List tabulate(Reference solResponse, Reference solveRequest){
       return(List::create(_["frontier"] = frontierToDF(t.frontier)));
     }
   }
+  if(srType == "NDD.SolveRequest"){
+    auto t = tabulateNDD(indata, outdata);
+    if(t.frontier.size() == 0){
+      auto ns = ivr7NodesToDF(t.tab);
+      return List::create(_["nodes"] = ns,
+                          _["edges"] = ivr7EdgesToDF(ns, t.tab));
+    }else{
+      return(List::create(_["frontier"] = frontierToDF(t.frontier)));
+    }
+  }
+
   if(srType == "Matrix.MatrixRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     auto t = matrixToDf(indata, outdata); // long form tabulation
     return List::create(_["elements"] = t);
   }
   if(srType == "NS3.SolveRequest"){
-    string outdata = bytesToString(solResp);
-    string indata =  bytesToString(sr);
     return ns3ToTable(indata, outdata);
   }
   return NULL;

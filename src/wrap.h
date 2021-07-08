@@ -101,22 +101,29 @@ struct matrix_tabular{
   vector<double> distances;
   vector<double> durations;
 };
-
 // -- END IVR OBJECTS
 
-// -- NVD OBJECTS
-
-struct nvd_frontier_item{
+// Frontier objects
+struct frontier_item{
   int solutionIndex;
   vector<double> objectiveValues;
   vector<string> objectiveNames;
 };
+
+// -- NVD OBJECTS
 struct nvd_tabular{
-  vector<nvd_frontier_item> frontier;
+  vector<frontier_item> frontier;
   ivr_tabular tab;
 };
-
 // -- END NVD OBJECTS
+
+
+// -- NDD OBJECTS
+struct ndd_tabular{
+  vector<frontier_item> frontier;
+  ivr_tabular tab;
+};
+// -- END NDD OBJECTS
 
 // -- NS3 OBJECTS
 // just a note, R likes things in columnar format.
@@ -198,5 +205,6 @@ tspTabular tabulateTSPTWdata(string& tspSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR7(string& ivrSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR8(string& ivrSolveRequest, string& solRespString);
 nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString);
+ndd_tabular tabulateNDD(string& nddSolveRequest, string& nddRespString);
 matrix_tabular tabulateMatrix(string& matrixRequest, string& matrixResp);
 ns3_tabular tabulateNS3(string& ns3Request, string& ns3Resp);
