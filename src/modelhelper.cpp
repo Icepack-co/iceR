@@ -355,6 +355,26 @@ DataFrame frontierToDF(vector<frontier_item>& frontier){
   return (asdf(df));
 }
 
+DataFrame isrMatchingsToDF(isr_tabular& t){
+  return(DataFrame::create(
+    _["collectionId"] = t.matchings.collectionId,
+    _["segmentId"] = t.matchings.segmentId,
+    _["longitude"] = t.matchings.longitude,
+    _["latitude"] = t.matchings.latitude,
+    _["stringsAsFactors"] = false));
+                //_["geometry"] = geomVecsToSfDf(tab.geomtab.geom),
+}
+
+DataFrame isrSegmentsToDF(isr_tabular& t){
+  return(DataFrame::create(
+      _["id"] = t.segments.id,
+      _["name"] = t.segments.name,
+      _["weight"] = t.segments.weight,
+      _["duration"] = t.segments.duration,
+      _["geometry"] = geomVecsToSfDf(t.segments.geom),
+      _["stringsAsFactors"] = false));
+}
+
 DataFrame ivr7EdgesToDF(DataFrame nodes, ivr_tabular& t){
   auto& route_edges = t.edge_rows;
   if(route_edges.size() > 0){
@@ -581,6 +601,16 @@ List tabulate(Reference solResponse, Reference solveRequest){
                         _["edges"] = ivr7EdgesToDF(ns, t),
                         _["transitRules"] = _tab_transitrules(solResponse),
                         _["infeasibilities"] = _tab_infeasibilities(solResponse));
+  }
+  if(srType == "ISR.SolveRequest"){
+    auto t = tabulateISR(indata, outdata);
+    auto ns = ivr7NodesToDF(t.tab);
+    return List::create(_["nodes"] = ns,
+                        _["edges"] = ivr7EdgesToDF(ns, t.tab),
+                        _["matchings"] = isrMatchingsToDF(t),
+                        _["segments"] = isrSegmentsToDF(t),
+                        _["infeasibilities"] = _tab_infeasibilities(solResponse));
+    // todo: add matchings here.
   }
   if(srType == "IVR8.SolveRequest"){
     auto t = tabulateIVR8(indata, outdata);

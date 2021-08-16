@@ -1,0 +1,213 @@
+syntax = "proto2";
+option java_package = "icepackai.ISR";
+package ISR;
+
+// -- INPUT DEFINITIONS -- //
+
+// This schema is used for doing low-level street routing 
+// and decompositions for very large data-sets. It's purpose is 
+// to give very accurate street-level sequencing for large data-sets
+// It's not designed to be a hammer for all nails. Handle side constraints 
+// in a secondary solve if required.
+
+message Configuration {
+  enum eMeasurementUnit {
+    SECONDS = 0;     // time
+    MINUTES = 1;     // time
+    HOURS = 2;       // time
+    DAYS = 3;        // time
+    KILOMETRES = 4;  // distance
+    MILES = 5;       // distance
+  }
+
+  enum eDrivingSide {
+    LEFT = 0;
+    RIGHT = 1;
+  }
+
+  enum eCollectionSide{
+    DRIVINGSIDE_ONLY = 0;
+    BOTH = 1;
+  }
+
+  required eMeasurementUnit timeUnit = 1 [default = MINUTES];
+  // global speed multiplier. 1.1 = 10% slower. 0.9 = faster.
+  required float timeCoef = 2 [default = 1.0]; 
+   // cost per time unit
+  required float timeCostCoef = 3 [default = 1.0]; 
+  // distance units: kms/miles
+  required eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
+  // cost per distance unit
+  required float distanceCostCoef = 5 [default = 1.0];
+
+  required eDrivingSide drivingSide = 6;
+  
+  required eCollectionSide collectionSide = 7;
+}
+
+message Geocode {
+  // long and lat values in decimal degrees
+  required float longitude = 1;
+  required float latitude = 2;
+}
+
+// locations where collections are offloaded
+message OffloadSite {
+  // id of the offload site
+  required string id = 1;
+  
+  // the location of the site
+  required Geocode location = 2;
+
+  // the fixed time it takes to offload at this location
+  required float fixedOffloadTime = 3 [default = 0.0];
+
+  // the variable time component per unit quantity.
+  required float offloadTimePerQuantity = 4 [default = 0.0];
+}
+
+// Collections on the same street between intersections will not be split
+// Stop times >= 0
+// Quantities >= 0
+message Collection {
+  // the identifier for this collection
+  required string id = 1;
+
+  // the geographic location where this collection occurs
+  required Geocode location = 2;
+  
+  // the stop time to pickup 
+  required float stopTime = 3 [default = 0.0];
+
+  // the quantity this contributes to the vehicles capacity
+  required float quantity = 4 [default = 0.0];
+  
+  // the location id of the destination of this collection
+  required string offloadSiteId = 5;
+}
+
+message Vehicle{
+  // the start and end location for the vehicle
+  required string id = 1;
+
+  required Geocode startLocation = 2;
+  required Geocode endLocation = 3;
+  
+  // the shift start and end times for the vehicle (in the configuration units)
+  required float startTime = 4;
+  required float endTime = 5;
+  
+  // in the same units as the collection quantities
+  required float capacity = 6;
+
+  //required bool canReload = 6 [default = true]; 
+}
+
+message CollectionSequence {
+  required string vehicleId = 1;
+  repeated string collectionId = 2;
+}
+
+
+message Model {
+  required Configuration configuration = 1;
+  
+  repeated Collection collections = 2;
+
+  repeated OffloadSite offloadSites = 3;
+
+  repeated Vehicle vehicles = 4;
+
+  repeated CollectionSequence collectionSequence = 5;
+}
+
+message SolveRequest {
+  enum SolveType {
+    Optimise = 0;         // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate = 1;         // Evaluates the provided route sequence. Single solution response.
+    ReOptimise = 2;       // Uses routes as starting solution and continues to optimise.
+    NetworkMatchings = 3; // no solve, returns the matchings only.
+  }
+  optional Model model = 1;     // either model or modelID should be specified
+  optional string modelID = 2;  // the ID from a data-upload type:
+                                // https://docs.icepack.ai/ivr/ivrdata/
+  repeated CollectionSequence routes = 3;  // for solveType = [Evaluate, ReOptimise].
+  optional SolveType solveType = 4 [default = Optimise];
+}
+
+// -- OUTPUT DEFINITIONS -- //
+
+message SolutionResponse {
+
+  message StopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+  }
+  
+  message InterStopAttribute {
+    required string dimId = 1;
+    required float startValue = 2;
+    required float endValue = 3;
+    required float cost = 4;
+  }
+  
+  message Stop {
+    required int32 id = 1;
+    required int32 sequence = 2;
+    optional string collectionId = 3;
+    optional string offloadSiteId = 4;
+    repeated StopAttribute attributes = 5;
+    optional int32 segmentId = 6;
+    required Geocode location = 7;
+  }
+
+  message InterStop {
+    required int32 fromStopId = 1;
+    required int32 toStopId = 2;
+    repeated InterStopAttribute attributes = 3;
+    repeated Geocode geometry = 4;
+  }
+  
+  message Route {
+    required string vehicleId = 1;
+    repeated Stop stops = 2;
+    repeated InterStop interStops = 3;
+  }
+
+  message Infeasibility {
+    required string collectionId = 1;
+    message Info {
+      required string message = 1;
+      optional string dimId = 2;
+      optional float limit = 3;
+      optional float value = 4;
+      optional int64 count = 5;
+      repeated string constrainingCollectionIds = 6;
+    }
+    repeated Info infeasibilityInfo = 2;
+  }
+
+  // for each collection, the point at which it's matched on the network
+  message Matching {
+    required string collectionId = 1;
+    required Geocode collectionPoint = 2;
+    required int32 segmentId = 3;
+  }
+
+  // road network segments that were actively matched to by the collections
+  message Segment {
+    required int32 id = 1;
+    required string name = 2;
+    required float weight = 3;
+    required float duration = 4;
+    repeated Geocode geometry = 5;
+  }
+
+  required float objective = 1;               // the routing cost of the solution returned
+  repeated Route routes = 2;                  // the list of routes for each vehicle
+  repeated Infeasibility infeasibilities = 3; // infeasibilities generated
+  repeated Matching matchings = 4;            // for each point, the location on the segment it matched to
+  repeated Segment segments = 5;              // only segments that had a matching
+}
