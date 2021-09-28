@@ -55,6 +55,7 @@ apiHelper <- setRefClass("apiHelper",
                           'nvd-hap0j2y4zlm1',
                           'ndd-cmibu6krtqja',
                           'ns3-tbfvuwtge2iq',
+                          'isr-z4foi53qznrv',
                           'matrix-vyv95n7wchpl',
                           'ivrdata-o43e0dvs78zq')
                if(length(modelType) == 0){
@@ -106,11 +107,17 @@ postSolveRequest <- function(apiHelper, solveRequest){
 #' @export
 #' @rawNamespace useDynLib(iceR)
 getSolutionInstance <- function(apiHelper, solveRequest, paretoResponse, solutionIndex){
-  if(solutionIndex > resp$frontier %>% length){
+  if(solutionIndex > paretoResponse$frontier %>% length){
     stop("A solution was selected outside of the defined frontier")
   }
+  # this method was previously
+
   nsr <- solveRequest
-  nsr$model$visitSequence <- resp$frontier[[solutionIndex]]$visitSequence
+  if('visitSequence' %in% names(nsr$model)){
+    nsr$model$visitSequence <- paretoResponse$frontier[[solutionIndex]]$visitSequence
+  }else{ # then it's ndd not nvd
+    nsr$model$taskSequence <- paretoResponse$frontier[[solutionIndex]]$taskSequence
+  }
   nsr$solveType <- 1                                      # pop this in evaluate mode.
   requestID <- postSolveRequest(apiHelper, nsr)           # submit the model to the api
   resp <- getResponse(apiHelper, requestID)               # retrieve the model response
@@ -153,6 +160,7 @@ getResponse <- function(apiHelper, requestID){
                        'ivr7-kt461v8eoaif' = {read(IVR7.SolutionResponse, solRes$solution)},
                        'nvd-hap0j2y4zlm1' = {read(NVD.SolutionResponse, solRes$solution)},
                        'ndd-cmibu6krtqja' = {read(NDD.SolutionResponse, solRes$solution)},
+                       'isr-z4foi53qznrv' = {read(ISR.SolutionResponse, solRes$solution)},
                        'ns3-tbfvuwtge2iq' = {read(NS3.SolutionResponse, solRes$solution)},
                        'matrix-vyv95n7wchpl' = {read(Matrix.MatrixResponse, solRes$solution)},
         )
@@ -393,10 +401,12 @@ compartmentsToTable <- function(nodes, solResp, solveReq){
     veh<- m$vehicles[[vindex]]
     cset <- NULL
     if(veh$compartmentSetId != ''){
-      cset <- m$compartmentSets[[which(m$compartmentSets %>% lapply(function(i){i$id == veh$compartmentSetId}) %>% unlist)]]
+      cset <- m$compartmentSets[[m$compartmentSets %>% lapply(function(i){i$id == veh$compartmentSetId}) %>% unlist]]
     }else{
-      vclass <- m$vehicleClasses[[which(m$vehicleClasses %>% lapply(function(i){i$id == veh$classId }) %>% unlist)]]
-      cset <- m$compartmentSets[[which(m$compartmentSets %>% lapply(function(i){i$id == vclass$compartmentSetId}) %>% unlist)]]
+      vclass <- m$vehicleClasses[[m$vehicleClasses %>% lapply(function(i){i$id == veh$classId }) %>% unlist]]
+      if(vclass$compartmentSetId != ''){
+        cset <- m$compartmentSets[[m$compartmentSets %>% lapply(function(i){i$id == vclass$compartmentSetId}) %>% unlist]]
+      }
     }
     if(is.null(cset)){
       next # there is no compartment set assigned to this vehicle, nothing to do here.
