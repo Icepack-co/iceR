@@ -15,9 +15,11 @@ protofiles:
 	tsp-mcvfz472gty6.proto \
 	tsptw-kcxbievqo879.proto \
 	nvd-hap0j2y4zlm1.proto \
+	ndd-cmibu6krtqja.proto \
 	ivrdata-o43e0dvs78zq.proto \
 	ns3-tbfvuwtge2iq.proto \
 	matrix-vyv95n7wchpl.proto \
+	isr-z4foi53qznrv.proto \
 	problem.proto
 
 clean:

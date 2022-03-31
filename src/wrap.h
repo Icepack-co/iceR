@@ -83,6 +83,7 @@ struct stop_row {
   unordered_map<string, stop_block> dimVals;
   double x;
   double y;
+  int segmentid = -1;
 };
 struct edge_row {
   int fromStopId;
@@ -95,28 +96,65 @@ struct ivr_tabular{
   vector<edge_row> edge_rows;
 };
 
+// -- END IVR OBJECTS
+
+
+// ISR OBJECTS
+
+struct matching{
+  vector<string> collectionId;
+  vector<double> longitude;
+  vector<double> latitude;
+  vector<int> segmentId;
+};
+
+struct segment{
+  vector<int> id;
+  vector<string> name;
+  vector<double> weight;
+  vector<double> duration;
+  vector<geomvecs> geom;
+};
+
+
+struct isr_tabular{
+  ivr_tabular tab;
+  matching matchings;
+  segment segments;
+};
+
+// -- END ISR
+
+// -- Matrix objects
 struct matrix_tabular{
   vector<string> fids;
   vector<string> tids;
   vector<double> distances;
   vector<double> durations;
 };
+// -- END Matrix Objects
 
-// -- END IVR OBJECTS
-
-// -- NVD OBJECTS
-
-struct nvd_frontier_item{
+// Frontier objects
+struct frontier_item{
   int solutionIndex;
   vector<double> objectiveValues;
   vector<string> objectiveNames;
 };
+
+// -- NVD OBJECTS
 struct nvd_tabular{
-  vector<nvd_frontier_item> frontier;
+  vector<frontier_item> frontier;
   ivr_tabular tab;
 };
-
 // -- END NVD OBJECTS
+
+
+// -- NDD OBJECTS
+struct ndd_tabular{
+  vector<frontier_item> frontier;
+  ivr_tabular tab;
+};
+// -- END NDD OBJECTS
 
 // -- NS3 OBJECTS
 // just a note, R likes things in columnar format.
@@ -198,5 +236,7 @@ tspTabular tabulateTSPTWdata(string& tspSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR7(string& ivrSolveRequest, string& solRespString);
 ivr_tabular tabulateIVR8(string& ivrSolveRequest, string& solRespString);
 nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString);
+ndd_tabular tabulateNDD(string& nddSolveRequest, string& nddRespString);
 matrix_tabular tabulateMatrix(string& matrixRequest, string& matrixResp);
 ns3_tabular tabulateNS3(string& ns3Request, string& ns3Resp);
+isr_tabular tabulateISR(string& isrSolveRequest, string& solRespString);

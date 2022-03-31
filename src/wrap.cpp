@@ -4,8 +4,10 @@
 #include "ivr7-kt461v8eoaif.pb.h"
 #include "ivr8-yni1c9k2swof.pb.h"
 #include "nvd-hap0j2y4zlm1.pb.h"
+#include "ndd-cmibu6krtqja.pb.h"
 #include "matrix-vyv95n7wchpl.pb.h"
 #include "ns3-tbfvuwtge2iq.pb.h"
+#include "isr-z4foi53qznrv.pb.h"
 #include "wrap.h"
 #include <unordered_map>
 using namespace std;
@@ -346,6 +348,277 @@ ivr_tabular tabulateIVR8(string& ivrSolveRequest, string& solRespString){
   return ivr_tabular();
 }
 
+
+isr_tabular tabulateISR(string& isrSolveRequest, string& solRespString){
+  ISR::SolutionResponse sr;
+  if (sr.ParseFromString(solRespString)) {
+    ISR::SolveRequest r;
+    if(r.ParseFromString(isrSolveRequest)){
+
+      // first get all the dimension names
+      unordered_set<string> dimensions;
+      for (int i = 0; i < sr.routes_size(); i++) {
+        auto& r = sr.routes(i);
+        for (int j = 0; j < r.stops_size(); j++) {
+          auto& s = r.stops(j);
+          for (int k = 0; k < s.attributes_size(); k++) {
+            dimensions.insert(s.attributes(k).dimid());
+          }
+        }
+      }
+      isr_tabular t;
+
+      // tabulate matchings and segments if they exist.
+      for(int i =0 ; i < sr.matchings_size(); i++){
+        auto m = sr.matchings(i);
+        t.matchings.collectionId.push_back(m.collectionid());
+        t.matchings.segmentId.push_back(m.segmentid());
+        t.matchings.longitude.push_back(m.collectionpoint().longitude());
+        t.matchings.latitude.push_back(m.collectionpoint().latitude());
+      }
+      for(int i = 0; i< sr.segments_size(); i++){
+        auto S = sr.segments(i);
+        t.segments.id.push_back(S.id());
+        t.segments.name.push_back(S.name());
+        t.segments.weight.push_back(S.weight());
+        t.segments.duration.push_back(S.duration());
+        geomvecs tvec;
+        for(int j = 0 ; j < S.geometry_size(); j++){
+          tvec.xs.push_back(S.geometry(j).longitude());
+          tvec.ys.push_back(S.geometry(j).latitude());
+        }
+        t.segments.geom.push_back(tvec);
+      }
+
+
+      // set up a row block with each attribute mask
+      // run through all the route_rows. add em all up.
+      for (int i = 0; i < sr.routes_size(); i++) {
+        auto& r = sr.routes(i);
+        for (int j = 0; j < r.stops_size(); j++) {
+          auto& s = r.stops(j);
+          stop_row rw;
+          rw.stopid = s.id();
+          if(s.has_collectionid()){
+            rw.jobid = s.collectionid();
+            rw.location = s.collectionid();
+          }else{
+            if(s.has_offloadsiteid()){
+              rw.jobid = s.offloadsiteid();
+              rw.location = s.offloadsiteid();
+            }else{
+              if(j == 0){
+                rw.jobid = "vehicle_start" + r.vehicleid();
+                rw.location = "vehicle_start" + r.vehicleid();
+              }else{
+                rw.jobid = "vehicle_end_" + r.vehicleid();
+                rw.location = "vehicle_start" + r.vehicleid();
+              }
+            }
+          }
+          rw.sequence = s.sequence();
+          rw.taskid = s.collectionid();
+          rw.vehicleid = r.vehicleid();
+          rw.x = s.location().longitude();
+          rw.y= s.location().latitude();
+          if(s.has_segmentid()){
+            rw.segmentid = s.segmentid();
+          }
+
+          for (auto dim : dimensions) {
+            rw.dimVals.insert(pair<string, stop_block>(dim, stop_block()));
+          }
+
+          for (int k = 0; k < s.attributes_size(); k++) {
+            auto& a = s.attributes(k);
+            string d = a.dimid();
+            auto& item = rw.dimVals[d];
+            if (a.has_startvalue()) {
+              item.start = a.startvalue();
+            }
+            if (a.has_endvalue()) {
+              item.end = a.endvalue();
+            }
+            if (a.has_cost()) {
+              item.cost = a.cost();
+            }
+          }
+          t.tab.route_rows.push_back(rw);
+        }
+
+        for (int j = 0; j < r.interstops_size(); j++) {
+          auto& is = r.interstops(j);
+          edge_row er;
+          er.fromStopId = is.fromstopid();
+          er.toStopId = is.tostopid();
+          er.geom.xs.resize(is.geometry_size());
+          er.geom.ys.resize(is.geometry_size());
+          for(int g = 0; g <  is.geometry_size(); g++){
+            auto& seg = is.geometry(g);
+            er.geom.xs[g] = seg.longitude();
+            er.geom.ys[g] = seg.latitude();
+          }
+
+          for (auto dim : dimensions) {
+            er.dimVals.insert(pair<string, edge_block>(dim, edge_block()));
+          }
+          for (int k = 0; k < is.attributes_size(); k++) {
+            auto& a = is.attributes(k);
+            string d = a.dimid();
+            auto& item = er.dimVals[d];
+            if (a.has_startvalue()) {
+              item.start = a.startvalue();
+            }
+            if (a.has_endvalue()) {
+              item.end = a.endvalue();
+            }
+            if (a.has_cost()) {
+              item.cost = a.cost();
+            }
+          }
+          t.tab.edge_rows.push_back(er);
+        }
+      }
+      return t;
+    }
+  }
+  return isr_tabular();
+}
+
+
+ndd_tabular tabulateNDD(string& nddSolveRequest, string& nddRespString){
+  NDD::SolutionResponse sr;
+  if (sr.ParseFromString(nddRespString)) {
+    ndd_tabular t;
+    if(sr.has_instance()){
+      auto soln = sr.instance();
+      NDD::SolveRequest r;
+      if(r.ParseFromString(nddSolveRequest)){
+        unordered_map<string, int> idlookup;
+        auto m = r.model();
+        for(int i = 0; i < m.locations_size(); i++){
+          auto &p =  m.locations(i);
+          idlookup.insert(pair<string,int>(p.id(), i));
+        }
+
+        // first get all the dimension names
+        unordered_set<string> dimensions;
+        for (int i = 0; i < soln.routes_size(); i++) {
+          auto& r = soln.routes(i);
+          for (int j = 0; j < r.stops_size(); j++) {
+            auto& s = r.stops(j);
+            for (int k = 0; k < s.attributes_size(); k++) {
+              dimensions.insert(s.attributes(k).dimid());
+            }
+          }
+        }
+        // set up a row block with each attribute mask
+        // run through all the route_rows. add em all up.
+        for (int i = 0; i < soln.routes_size(); i++) {
+          auto& r = soln.routes(i);
+          int dayIndex = r.day() + 1; // convert to 1-based for R.
+          for (int j = 0; j < r.stops_size(); j++) {
+            auto& s = r.stops(j);
+            stop_row rw;
+            rw.dayIndex = dayIndex;
+            rw.stopid = s.id();
+            rw.jobid = s.jobid();
+            rw.location = s.locationid();
+            rw.sequence = s.sequence();
+            rw.taskid = s.taskid();
+            rw.vehicleid = r.vehicleid();
+            auto it = idlookup.find(rw.location);
+            if(it != idlookup.end()){
+              auto& p = m.locations(it->second);
+              rw.x = p.geocode().longitude();
+              rw.y= p.geocode().latitude();
+            }
+            for (auto dim : dimensions) {
+              rw.dimVals.insert(pair<string, stop_block>(dim, stop_block()));
+            }
+
+            for (int k = 0; k < s.attributes_size(); k++) {
+              auto& a = s.attributes(k);
+              string d = a.dimid();
+              auto& item = rw.dimVals[d];
+              if (a.has_startvalue()) {
+                item.start = a.startvalue();
+              }
+              if (a.has_endvalue()) {
+                item.end = a.endvalue();
+              }
+              if (a.has_slackvalue()) {
+                item.slackval = a.slackvalue();
+              }
+              if (a.has_slackcost()) {
+                item.slackcost = a.slackcost();
+              }
+              if (a.has_tardyvalue()) {
+                item.tardyval = a.tardyvalue();
+              }
+              if (a.has_tardycost()) {
+                item.tardycost = a.tardycost();
+              }
+              if (a.has_cost()) {
+                item.cost = a.cost();
+              }
+            }
+            t.tab.route_rows.push_back(rw);
+          }
+
+          for (int j = 0; j < r.interstops_size(); j++) {
+            auto& is = r.interstops(j);
+            edge_row er;
+            er.fromStopId = is.fromstopid();
+            er.toStopId = is.tostopid();
+            er.geom.xs.resize(is.routesegments_size());
+            er.geom.ys.resize(is.routesegments_size());
+            for(int g = 0; g <  is.routesegments_size(); g++){
+              auto& seg = is.routesegments(g);
+              er.geom.xs[g] = seg.longitude();
+              er.geom.ys[g] = seg.latitude();
+            }
+
+            for (auto dim : dimensions) {
+              er.dimVals.insert(pair<string, edge_block>(dim, edge_block()));
+            }
+            for (int k = 0; k < is.attributes_size(); k++) {
+              auto& a = is.attributes(k);
+              string d = a.dimid();
+              auto& item = er.dimVals[d];
+              if (a.has_startvalue()) {
+                item.start = a.startvalue();
+              }
+              if (a.has_endvalue()) {
+                item.end = a.endvalue();
+              }
+              if (a.has_cost()) {
+                item.cost = a.cost();
+              }
+            }
+            t.tab.edge_rows.push_back(er);
+          }
+        }
+      }
+    }
+    if(sr.frontier_size() > 0){
+      // then add all the frontier items.
+      for(int i = 0; i < sr.frontier_size(); i++){
+        auto f = sr.frontier(i);
+        frontier_item fi;
+        for(int j = 0; j < f.objectives_size(); j++){
+          fi.objectiveValues.push_back(f.objectives(j));
+          fi.objectiveNames.push_back(f.objectivenames(j));
+        }
+        fi.solutionIndex = i + 1;
+        t.frontier.push_back(fi);
+      }
+    }
+    return t;
+  }
+  return ndd_tabular();
+}
+
 nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString){
   NVD::SolutionResponse sr;
   if (sr.ParseFromString(nvdRespString)) {
@@ -477,7 +750,7 @@ nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString){
       // then add all the frontier items.
       for(int i = 0; i < sr.frontier_size(); i++){
         auto f = sr.frontier(i);
-        nvd_frontier_item fi;
+        frontier_item fi;
         for(int j = 0; j < f.objectives_size(); j++){
           fi.objectiveValues.push_back(f.objectives(j));
           fi.objectiveNames.push_back(f.objectivenames(j));
@@ -489,7 +762,6 @@ nvd_tabular tabulateNVD(string& nvdSolveRequest, string& nvdRespString){
     return t;
   }
   return nvd_tabular();
-
 }
 
 matrix_tabular tabulateMatrix(string& matrixRequest, string& matrixResp){
