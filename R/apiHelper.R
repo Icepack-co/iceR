@@ -394,6 +394,9 @@ compartmentsToTable <- function(nodes, solResp, solveReq){
   m <- solveReq$model
   cdims <- m$dimensions$capacityDimensions %>% lapply(function(i){i$id}) %>% unlist
   res <- list()
+  if(m$compartments %>% length == 0 & m$compartmentSets %>% length == 0){
+    return (res)
+  }
 
   for(v in vids){
     # find the compartments associated with this vehicle.
