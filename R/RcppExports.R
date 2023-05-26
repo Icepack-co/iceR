@@ -9,4 +9,3 @@
 tabulate <- function(solResponse, solveRequest) {
     .Call('_iceR_tabulate', PACKAGE = 'iceR', solResponse, solveRequest)
 }
-

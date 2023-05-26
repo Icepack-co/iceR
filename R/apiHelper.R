@@ -29,14 +29,14 @@ apiHelper <- setRefClass("apiHelper",
                  stop(paste0("'apiToken' definition not found in config file: ", configFile))
                }
                if(!('endpoint' %in% names(x))){
-                 stop(paste0("'endpoint' definition not found in config file: ",configFile))
+                 stop(paste0("'endpoint' definition not found in config file: ", configFile))
                }
                if(x$apiToken == ''){
-                 stop(paste0("'apiToken' definition in ",configFile," cannot be blank"))
+                 stop(paste0("'apiToken' definition in ", configFile," cannot be blank"))
                }
                if(x$endpoint == ''){
-                 stop(paste0("'endpoint' definition in ",configFile," cannot be blank"))
-               }else{
+                 stop(paste0("'endpoint' definition in ", configFile," cannot be blank"))
+               } else {
                  # check if the endpoint needs to be padded.
                  if(substr(x$endpoint, nchar(x$endpoint), nchar(x$endpoint))[[1]] != "/"){
                    x$endpoint <- paste0(x$endpoint, "/")
@@ -58,12 +58,13 @@ apiHelper <- setRefClass("apiHelper",
                           'isr-z4foi53qznrv',
                           'matrix-vyv95n7wchpl',
                           'ivrdata-o43e0dvs78zq')
+
                if(length(modelType) == 0){
                  stop(paste0("No model type provided. Should be one of the following:\n", paste0(models, collapse =',')))
                }
                if(!(modelType %in% models)){
                  stop(paste0("Invalid model type provided. Should be one of the following:\n", paste0(models, collapse =',')))
-               }else{
+               } else {
                  readProtoFiles(system.file("data", paste0(modelType, '.proto'), package = "iceR", mustWork = TRUE))
                }
                # grab the route associated with the model type.
@@ -78,7 +79,7 @@ apiHelper <- setRefClass("apiHelper",
 #' @export
 #' @rawNamespace useDynLib(iceR)
 postSolveRequest <- function(apiHelper, solveRequest){
-  if(solveRequest$isInitialized()){
+  if(solveRequest$isInitialized()) {
     p <- new (problem.ProblemEnvelope)
     p$type <- apiHelper$modelType
     p$subType <- 0
@@ -88,18 +89,18 @@ postSolveRequest <- function(apiHelper, solveRequest){
                      body = body,
                      add_headers(`Content-Type`="application/protobuf",
                                  Authorization=paste0("Apitoken ",apiHelper$apiToken)))
-    if(postResp$status_code == 200){
+    if(postResp$status_code == 200) {
       requestID <- content(postResp)$requestid
       apiHelper$activeProblems[[length(apiHelper$activeProblems) + 1]] <- requestID
       return(requestID)
-    }else{
+    } else {
       if(postResp$status_code == 405 && length(content(postResp)) == 0){
         stop('Unexpected http error code: ', postResp$status_code, "\nDid you specify the end-point correctly?\n")
       }else{
         stop('Unexpected http error code: ', postResp$status_code, "\n", content(postResp))
       }
     }
-  }else{
+  } else {
     stop("Problem payload not initialised. Have you set all the fields on the problem object?")
   }
 }
@@ -107,15 +108,15 @@ postSolveRequest <- function(apiHelper, solveRequest){
 #' @export
 #' @rawNamespace useDynLib(iceR)
 getSolutionInstance <- function(apiHelper, solveRequest, paretoResponse, solutionIndex){
-  if(solutionIndex > paretoResponse$frontier %>% length){
+  if(solutionIndex > paretoResponse$frontier %>% length) {
     stop("A solution was selected outside of the defined frontier")
   }
   # this method was previously
 
   nsr <- solveRequest
-  if('visitSequence' %in% names(nsr$model)){
+  if('visitSequence' %in% names(nsr$model)) {
     nsr$model$visitSequence <- paretoResponse$frontier[[solutionIndex]]$visitSequence
-  }else{ # then it's ndd not nvd
+  } else { # then it's ndd not nvd
     nsr$model$taskSequence <- paretoResponse$frontier[[solutionIndex]]$taskSequence
   }
   nsr$solveType <- 1                                      # pop this in evaluate mode.
@@ -126,7 +127,8 @@ getSolutionInstance <- function(apiHelper, solveRequest, paretoResponse, solutio
 
 #' @export
 #' @rawNamespace useDynLib(iceR)
-getResponse <- function(apiHelper, requestID){
+getResponse <- function(apiHelper, requestID, getSolverTime = FALSE){
+	solResLogs <- c()
   repeat {
     getResp <- GET(url = paste0(apiHelper$endpoint,apiHelper$route, requestID),
                    add_headers(`Content-Type` = "application/protobuf",
@@ -141,7 +143,9 @@ getResponse <- function(apiHelper, requestID){
     # unmarshal solver response object
     solRes <- read(problem.SolverResponse, result$content)
 
-    map(solRes$logs, function(i) { i$toString() }) %>% unlist %>% cat
+    solResStr <- map(solRes$logs, function(i) { i$toString() }) %>% unlist 
+	solResLogs <- append(solResLogs, solResStr)
+    cat(solResStr)
 
     if (solRes$state != 1 &&
         solRes$logs[[length(solRes$logs)]]$type != 2) {
@@ -150,8 +154,8 @@ getResponse <- function(apiHelper, requestID){
       apiHelper$activeProblems <- apiHelper$activeProblems[apiHelper$activeProblems != requestID]
       if(length(solRes$solution) == 0){
         return(NULL)
-      }else{
-        return (switch(apiHelper$modelType,
+      } else {
+        solutionResponse <- (switch(apiHelper$modelType,
                        "tsp-mcvfz472gty6"={read(TSP.SolutionResponse,solRes$solution)},
                        "cvrp-jkfdoctmp51n" ={read(CVRP.SolutionResponse,solRes$solution)},
                        'tsptw-kcxbievqo879'={read(TSPTW.SolutionResponse, solRes$solution)},
@@ -165,6 +169,13 @@ getResponse <- function(apiHelper, requestID){
                        'matrix-vyv95n7wchpl' = {read(Matrix.MatrixResponse, solRes$solution)},
         )
         )
+		if(getSolverTime){
+			log_line <- solResLogs[grepl("Solved in: ", solResLogs)][1]
+		    duration <- sub("s.*", "", sub(".*Solved in: ", "", log_line)) %>% as.numeric()
+			return(list(resp=solutionResponse, solverTime=duration))
+		} else {
+			return(solutionResponse)
+		}
       }
       break;
     }
