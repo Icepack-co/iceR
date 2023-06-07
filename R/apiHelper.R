@@ -171,7 +171,7 @@ getResponse <- function(apiHelper, requestID, getSolverTime = FALSE){
         )
 		if(getSolverTime){
 			log_line <- solResLogs[grepl("Solved in: ", solResLogs)][1]
-		    duration <- sub("s.*", "", sub(".*Solved in: ", "", log_line)) %>% as.numeric()
+			duration <- sub("s.*", "", sub(".*Solved in: ", "", log_line)) %>% as.numeric()
 			return(list(resp=solutionResponse, solverTime=duration))
 		} else {
 			return(solutionResponse)
