@@ -174,6 +174,37 @@ getResponse <- function(apiHelper, requestID){
 
 #' @export
 #' @rawNamespace useDynLib(iceR)
+getSolveTime <- function(apiHelper, requestID){
+  getResp <- GET(url = paste0(apiHelper$endpoint,apiHelper$route, requestID),
+                 add_headers(`Content-Type` = "application/protobuf",
+                             Authorization = paste0("Apitoken ", apiHelper$apiToken)))
+  if (getResp$status_code != 200) {
+    break;
+  }
+  resp_payload <- content(getResp)
+
+  result <- read(descriptor = problem.ProblemEnvelope, resp_payload)
+
+  # unmarshal solver response object
+  solRes <- read(problem.SolverResponse, result$content)
+
+  solveTimeString <- solRes$logs[[1]][[2]]
+
+  solveTimeSeconds <- sub(' s', '', sub('.*: ','', solveTimeString)) %>% as.numeric()
+
+  if (solveTimeSeconds >= 60) {
+    mins <- round(solveTimeSeconds/60)
+    remainingSeconds <- solveTimeSeconds - mins*60
+    solveTime <- paste0(mins,"m ", round(remainingSeconds, 3),"s")
+  } else {
+    solveTime <- paste0(round(solveTimeSeconds, 3),"s")
+  }
+
+  return(solveTime)
+}
+
+#' @export
+#' @rawNamespace useDynLib(iceR)
 plotResponseLeaflet <- function(solutionResponse, solveRequest){
   l<- tabulate(solutionResponse, solveRequest)
   m <- leaflet() %>%
