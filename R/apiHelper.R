@@ -188,6 +188,12 @@ getSolveTime <- function(apiHelper, requestID){
   # unmarshal solver response object
   solRes <- read(problem.SolverResponse, result$content)
 
+  if(length(solRes$logs) < 1){
+    return(NA)
+  }
+  if(length(solRes$logs[[1]]) < 2){
+    return(NA)
+  }
   solveTimeString <- solRes$logs[[1]][[2]]
 
   solveTimeSeconds <- sub(' s', '', sub('.*: ','', solveTimeString)) %>% as.numeric()
