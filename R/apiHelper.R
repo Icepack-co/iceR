@@ -194,14 +194,11 @@ getSolveTime <- function(apiHelper, requestID){
   if(length(solRes$logs[[1]]) < 2){
     return(NA)
   }
-  solveTimeString <- solRes$logs[[1]][[2]]
-
-  solveTimeSeconds <- sub(' s', '', sub('.*: ','', solveTimeString)) %>% as.numeric()
+  solveTimeSeconds <- sub(' s', '', sub('.*: ','',  solRes$logs[[1]][[2]])) %>% as.numeric()
 
   if (solveTimeSeconds >= 60) {
     mins <- round(solveTimeSeconds/60)
-    remainingSeconds <- solveTimeSeconds - mins*60
-    solveTime <- paste0(mins,"m ", round(remainingSeconds, 3),"s")
+    solveTime <- paste0(mins,"m ", round(solveTimeSeconds - mins*60, 3),"s")
   } else {
     solveTime <- paste0(round(solveTimeSeconds, 3),"s")
   }
