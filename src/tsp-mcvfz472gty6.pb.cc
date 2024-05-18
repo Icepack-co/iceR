@@ -4,303 +4,312 @@
 #include "tsp-mcvfz472gty6.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_tsp_2dmcvfz472gty6_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_tsp_2dmcvfz472gty6_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Edge_Geometry;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_tsp_2dmcvfz472gty6_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Geocode;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_tsp_2dmcvfz472gty6_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Edge;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_tsp_2dmcvfz472gty6_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TSP;
-}  // namespace protobuf_tsp_2dmcvfz472gty6_2eproto
+// Must be included last.
+#include "google/protobuf/port_def.inc"
+PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace TSP {
-class GeocodeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Geocode>
-      _instance;
-} _Geocode_default_instance_;
-class TSPDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TSP>
-      _instance;
-} _TSP_default_instance_;
-class SolveRequestDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolveRequest>
-      _instance;
-} _SolveRequest_default_instance_;
-class Edge_GeometryDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Edge_Geometry>
-      _instance;
-} _Edge_Geometry_default_instance_;
-class EdgeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Edge>
-      _instance;
-} _Edge_default_instance_;
-class SolutionResponseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse>
-      _instance;
-} _SolutionResponse_default_instance_;
-}  // namespace TSP
-namespace protobuf_tsp_2dmcvfz472gty6_2eproto {
-static void InitDefaultsGeocode() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_Geocode_default_instance_;
-    new (ptr) ::TSP::Geocode();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::Geocode::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Geocode =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGeocode}, {}};
-
-static void InitDefaultsTSP() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_TSP_default_instance_;
-    new (ptr) ::TSP::TSP();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::TSP::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_TSP =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTSP}, {
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsSolveRequest() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_SolveRequest_default_instance_;
-    new (ptr) ::TSP::SolveRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::SolveRequest::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolveRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolveRequest}, {
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_TSP.base,}};
-
-static void InitDefaultsEdge_Geometry() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_Edge_Geometry_default_instance_;
-    new (ptr) ::TSP::Edge_Geometry();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::Edge_Geometry::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Edge_Geometry =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsEdge_Geometry}, {}};
-
-static void InitDefaultsEdge() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_Edge_default_instance_;
-    new (ptr) ::TSP::Edge();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::Edge::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Edge =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsEdge}, {
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge_Geometry.base,}};
-
-static void InitDefaultsSolutionResponse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::TSP::_SolutionResponse_default_instance_;
-    new (ptr) ::TSP::SolutionResponse();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::TSP::SolutionResponse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolutionResponse}, {
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Geocode.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TSP.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolveRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Edge_Geometry.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Edge.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[6];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Geocode, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Geocode, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Geocode, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Geocode, x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Geocode, y_),
-  0,
-  1,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::TSP, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::TSP, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::TSP, points_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::TSP, distancetype_),
-  ~0u,
-  0,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, model_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, modelid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, visitsequence_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolveRequest, solvetype_),
-  1,
-  0,
-  ~0u,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge_Geometry, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge_Geometry, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge_Geometry, x_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge_Geometry, y_),
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, from_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, to_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, distance_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::Edge, geometry_),
-  0,
-  1,
-  2,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolutionResponse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolutionResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolutionResponse, tour_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::TSP::SolutionResponse, edges_),
-  ~0u,
-  ~0u,
-};
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::TSP::Geocode)},
-  { 11, 18, sizeof(::TSP::TSP)},
-  { 20, 29, sizeof(::TSP::SolveRequest)},
-  { 33, 40, sizeof(::TSP::Edge_Geometry)},
-  { 42, 51, sizeof(::TSP::Edge)},
-  { 55, 62, sizeof(::TSP::SolutionResponse)},
-};
-
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_Geocode_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_TSP_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_SolveRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_Edge_Geometry_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_Edge_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::TSP::_SolutionResponse_default_instance_),
-};
-
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "tsp-mcvfz472gty6.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
-
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 6);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\026tsp-mcvfz472gty6.proto\022\003TSP\"+\n\007Geocode"
-      "\022\n\n\002id\030\001 \002(\t\022\t\n\001x\030\002 \002(\002\022\t\n\001y\030\003 \002(\002\"\236\001\n\003T"
-      "SP\022\034\n\006points\030\001 \003(\0132\014.TSP.Geocode\0229\n\014dist"
-      "ancetype\030\002 \001(\0162\026.TSP.TSP.eDistanceType:\013"
-      "RoadNetwork\">\n\reDistanceType\022\017\n\013RoadNetw"
-      "ork\020\001\022\r\n\tEuclidean\020\002\022\r\n\tHaversine\020\003\"\302\001\n\014"
-      "SolveRequest\022\027\n\005model\030\001 \001(\0132\010.TSP.TSP\022\017\n"
-      "\007modelID\030\002 \001(\t\022\025\n\rvisitSequence\030\003 \003(\t\0228\n"
-      "\tsolveType\030\004 \001(\0162\033.TSP.SolveRequest.Solv"
-      "eType:\010Optimise\"7\n\tSolveType\022\014\n\010Optimise"
-      "\020\000\022\014\n\010Evaluate\020\001\022\016\n\nReOptimise\020\002\"z\n\004Edge"
-      "\022\014\n\004from\030\001 \002(\t\022\n\n\002to\030\002 \002(\t\022\020\n\010distance\030\003"
-      " \001(\002\022$\n\010geometry\030\004 \003(\0132\022.TSP.Edge.Geomet"
-      "ry\032 \n\010Geometry\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\":\n\020"
-      "SolutionResponse\022\014\n\004tour\030\001 \003(\t\022\030\n\005edges\030"
-      "\002 \003(\0132\t.TSP.EdgeB\017\n\ricepackai.TSP"
+        template <typename>
+PROTOBUF_CONSTEXPR Geocode::Geocode(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.x_)*/ 0,
+      /*decltype(_impl_.y_)*/ 0,
+    } {}
+struct GeocodeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GeocodeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GeocodeDefaultTypeInternal() {}
+  union {
+    Geocode _instance;
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 633);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "tsp-mcvfz472gty6.proto", &protobuf_RegisterTypes);
-}
+};
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GeocodeDefaultTypeInternal _Geocode_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR TSP::TSP(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.points_)*/ {},
+      /*decltype(_impl_.distancetype_)*/ 1,
+    } {}
+struct TSPDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TSPDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TSPDefaultTypeInternal() {}
+  union {
+    TSP _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TSPDefaultTypeInternal _TSP_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolveRequest::SolveRequest(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.visitsequence_)*/ {},
+      /*decltype(_impl_.modelid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.model_)*/ nullptr,
+      /*decltype(_impl_.solvetype_)*/ 0,
+    } {}
+struct SolveRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolveRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolveRequestDefaultTypeInternal() {}
+  union {
+    SolveRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolveRequestDefaultTypeInternal _SolveRequest_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Edge_Geometry::Edge_Geometry(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.x_)*/ 0,
+      /*decltype(_impl_.y_)*/ 0,
+    } {}
+struct Edge_GeometryDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Edge_GeometryDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Edge_GeometryDefaultTypeInternal() {}
+  union {
+    Edge_Geometry _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Edge_GeometryDefaultTypeInternal _Edge_Geometry_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Edge::Edge(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.geometry_)*/ {},
+      /*decltype(_impl_.from_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.to_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.distance_)*/ 0,
+    } {}
+struct EdgeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EdgeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EdgeDefaultTypeInternal() {}
+  union {
+    Edge _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EdgeDefaultTypeInternal _Edge_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse::SolutionResponse(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.tour_)*/ {},
+      /*decltype(_impl_.edges_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
+struct SolutionResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponseDefaultTypeInternal() {}
+  union {
+    SolutionResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponseDefaultTypeInternal _SolutionResponse_default_instance_;
+}  // namespace TSP
+static ::_pb::Metadata file_level_metadata_tsp_2dmcvfz472gty6_2eproto[6];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_tsp_2dmcvfz472gty6_2eproto[2];
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_tsp_2dmcvfz472gty6_2eproto = nullptr;
+const ::uint32_t TableStruct_tsp_2dmcvfz472gty6_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::TSP::Geocode, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Geocode, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::Geocode, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Geocode, _impl_.x_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Geocode, _impl_.y_),
+    0,
+    1,
+    2,
+    PROTOBUF_FIELD_OFFSET(::TSP::TSP, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::TSP::TSP, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::TSP, _impl_.points_),
+    PROTOBUF_FIELD_OFFSET(::TSP::TSP, _impl_.distancetype_),
+    ~0u,
+    0,
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _impl_.model_),
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _impl_.modelid_),
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _impl_.visitsequence_),
+    PROTOBUF_FIELD_OFFSET(::TSP::SolveRequest, _impl_.solvetype_),
+    1,
+    0,
+    ~0u,
+    2,
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge_Geometry, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge_Geometry, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge_Geometry, _impl_.x_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge_Geometry, _impl_.y_),
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _impl_.from_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _impl_.to_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _impl_.distance_),
+    PROTOBUF_FIELD_OFFSET(::TSP::Edge, _impl_.geometry_),
+    0,
+    1,
+    2,
+    ~0u,
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::TSP::SolutionResponse, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::TSP::SolutionResponse, _impl_.tour_),
+    PROTOBUF_FIELD_OFFSET(::TSP::SolutionResponse, _impl_.edges_),
+};
+
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 11, -1, sizeof(::TSP::Geocode)},
+        {14, 24, -1, sizeof(::TSP::TSP)},
+        {26, 38, -1, sizeof(::TSP::SolveRequest)},
+        {42, 52, -1, sizeof(::TSP::Edge_Geometry)},
+        {54, 66, -1, sizeof(::TSP::Edge)},
+        {70, -1, -1, sizeof(::TSP::SolutionResponse)},
+};
+
+static const ::_pb::Message* const file_default_instances[] = {
+    &::TSP::_Geocode_default_instance_._instance,
+    &::TSP::_TSP_default_instance_._instance,
+    &::TSP::_SolveRequest_default_instance_._instance,
+    &::TSP::_Edge_Geometry_default_instance_._instance,
+    &::TSP::_Edge_default_instance_._instance,
+    &::TSP::_SolutionResponse_default_instance_._instance,
+};
+const char descriptor_table_protodef_tsp_2dmcvfz472gty6_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\026tsp-mcvfz472gty6.proto\022\003TSP\"+\n\007Geocode"
+    "\022\n\n\002id\030\001 \002(\t\022\t\n\001x\030\002 \002(\002\022\t\n\001y\030\003 \002(\002\"\236\001\n\003T"
+    "SP\022\034\n\006points\030\001 \003(\0132\014.TSP.Geocode\0229\n\014dist"
+    "ancetype\030\002 \001(\0162\026.TSP.TSP.eDistanceType:\013"
+    "RoadNetwork\">\n\reDistanceType\022\017\n\013RoadNetw"
+    "ork\020\001\022\r\n\tEuclidean\020\002\022\r\n\tHaversine\020\003\"\302\001\n\014"
+    "SolveRequest\022\027\n\005model\030\001 \001(\0132\010.TSP.TSP\022\017\n"
+    "\007modelID\030\002 \001(\t\022\025\n\rvisitSequence\030\003 \003(\t\0228\n"
+    "\tsolveType\030\004 \001(\0162\033.TSP.SolveRequest.Solv"
+    "eType:\010Optimise\"7\n\tSolveType\022\014\n\010Optimise"
+    "\020\000\022\014\n\010Evaluate\020\001\022\016\n\nReOptimise\020\002\"z\n\004Edge"
+    "\022\014\n\004from\030\001 \002(\t\022\n\n\002to\030\002 \002(\t\022\020\n\010distance\030\003"
+    " \001(\002\022$\n\010geometry\030\004 \003(\0132\022.TSP.Edge.Geomet"
+    "ry\032 \n\010Geometry\022\t\n\001x\030\001 \002(\002\022\t\n\001y\030\002 \002(\002\":\n\020"
+    "SolutionResponse\022\014\n\004tour\030\001 \003(\t\022\030\n\005edges\030"
+    "\002 \003(\0132\t.TSP.EdgeB\017\n\ricepackai.TSP"
+};
+static ::absl::once_flag descriptor_table_tsp_2dmcvfz472gty6_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_tsp_2dmcvfz472gty6_2eproto = {
+    false,
+    false,
+    633,
+    descriptor_table_protodef_tsp_2dmcvfz472gty6_2eproto,
+    "tsp-mcvfz472gty6.proto",
+    &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+    nullptr,
+    0,
+    6,
+    schemas,
+    file_default_instances,
+    TableStruct_tsp_2dmcvfz472gty6_2eproto::offsets,
+    file_level_metadata_tsp_2dmcvfz472gty6_2eproto,
+    file_level_enum_descriptors_tsp_2dmcvfz472gty6_2eproto,
+    file_level_service_descriptors_tsp_2dmcvfz472gty6_2eproto,
+};
+
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter() {
+  return &descriptor_table_tsp_2dmcvfz472gty6_2eproto;
 }
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_tsp_2dmcvfz472gty6_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_tsp_2dmcvfz472gty6_2eproto(&descriptor_table_tsp_2dmcvfz472gty6_2eproto);
 namespace TSP {
 const ::google::protobuf::EnumDescriptor* TSP_eDistanceType_descriptor() {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_enum_descriptors[0];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_tsp_2dmcvfz472gty6_2eproto);
+  return file_level_enum_descriptors_tsp_2dmcvfz472gty6_2eproto[0];
 }
 bool TSP_eDistanceType_IsValid(int value) {
   switch (value) {
@@ -312,18 +321,21 @@ bool TSP_eDistanceType_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const TSP_eDistanceType TSP::RoadNetwork;
-const TSP_eDistanceType TSP::Euclidean;
-const TSP_eDistanceType TSP::Haversine;
-const TSP_eDistanceType TSP::eDistanceType_MIN;
-const TSP_eDistanceType TSP::eDistanceType_MAX;
-const int TSP::eDistanceType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr TSP_eDistanceType TSP::RoadNetwork;
+constexpr TSP_eDistanceType TSP::Euclidean;
+constexpr TSP_eDistanceType TSP::Haversine;
+constexpr TSP_eDistanceType TSP::eDistanceType_MIN;
+constexpr TSP_eDistanceType TSP::eDistanceType_MAX;
+constexpr int TSP::eDistanceType_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* SolveRequest_SolveType_descriptor() {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_enum_descriptors[1];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_tsp_2dmcvfz472gty6_2eproto);
+  return file_level_enum_descriptors_tsp_2dmcvfz472gty6_2eproto[1];
 }
 bool SolveRequest_SolveType_IsValid(int value) {
   switch (value) {
@@ -335,337 +347,266 @@ bool SolveRequest_SolveType_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const SolveRequest_SolveType SolveRequest::Optimise;
-const SolveRequest_SolveType SolveRequest::Evaluate;
-const SolveRequest_SolveType SolveRequest::ReOptimise;
-const SolveRequest_SolveType SolveRequest::SolveType_MIN;
-const SolveRequest_SolveType SolveRequest::SolveType_MAX;
-const int SolveRequest::SolveType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr SolveRequest_SolveType SolveRequest::Optimise;
+constexpr SolveRequest_SolveType SolveRequest::Evaluate;
+constexpr SolveRequest_SolveType SolveRequest::ReOptimise;
+constexpr SolveRequest_SolveType SolveRequest::SolveType_MIN;
+constexpr SolveRequest_SolveType SolveRequest::SolveType_MAX;
+constexpr int SolveRequest::SolveType_ARRAYSIZE;
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
-void Geocode::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Geocode::kIdFieldNumber;
-const int Geocode::kXFieldNumber;
-const int Geocode::kYFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Geocode::Geocode()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Geocode.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.Geocode)
-}
-Geocode::Geocode(const Geocode& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_id()) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+class Geocode::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Geocode>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
-  ::memcpy(&x_, &from.x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&y_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(y_));
+  static void set_has_x(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_y(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
+};
+
+Geocode::Geocode(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.Geocode)
+}
+Geocode::Geocode(const Geocode& from) : ::google::protobuf::Message() {
+  Geocode* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.x_){},
+      decltype(_impl_.y_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.x_, &from._impl_.x_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.y_) -
+    reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.y_));
+
   // @@protoc_insertion_point(copy_constructor:TSP.Geocode)
 }
-
-void Geocode::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&y_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(y_));
+inline void Geocode::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.x_){0},
+      decltype(_impl_.y_){0},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Geocode::~Geocode() {
   // @@protoc_insertion_point(destructor:TSP.Geocode)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Geocode::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Geocode::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
 }
-
 void Geocode::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Geocode::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Geocode& Geocode::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Geocode.base);
-  return *internal_default_instance();
-}
-
-
-void Geocode::Clear() {
+PROTOBUF_NOINLINE void Geocode::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    id_.ClearNonDefaultToEmptyNoArena();
+    _impl_.id_.ClearNonDefaultToEmpty();
   }
-  if (cached_has_bits & 6u) {
-    ::memset(&x_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&y_) -
-        reinterpret_cast<char*>(&x_)) + sizeof(y_));
+  if (cached_has_bits & 0x00000006u) {
+    ::memset(&_impl_.x_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.y_) -
+        reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.y_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Geocode::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.Geocode)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.Geocode.id");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float x = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_x();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &x_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float y = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_y();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &y_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.Geocode)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.Geocode)
-  return false;
-#undef DO_
+const char* Geocode::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Geocode::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string id = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Geocode.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 22, 2> Geocode::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Geocode_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string id = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.id_)}},
+    // required float x = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.x_)}},
+    // required float y = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.y_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string id = 1;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float x = 2;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.x_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float y = 3;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.y_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\13\2\0\0\0\0\0\0"
+    "TSP.Geocode"
+    "id"
+  }},
+};
 
-  // required float x = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->x(), output);
-  }
-
-  // required float y = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->y(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.Geocode)
-}
-
-::google::protobuf::uint8* Geocode::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Geocode::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Geocode.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.Geocode.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required float x = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->x(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_x(), target);
   }
 
   // required float y = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->y(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_y(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.Geocode)
   return target;
 }
 
-size_t Geocode::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:TSP.Geocode)
-  size_t total_size = 0;
-
-  if (has_id()) {
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-  }
-
-  if (has_x()) {
-    // required float x = 2;
-    total_size += 1 + 4;
-  }
-
-  if (has_y()) {
-    // required float y = 3;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Geocode::ByteSizeLong() const {
+::size_t Geocode::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.Geocode)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-
-    // required float x = 2;
-    total_size += 1 + 4;
-
-    // required float y = 3;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Geocode::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Geocode* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Geocode>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.Geocode)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.Geocode)
-    MergeFrom(*source);
-  }
-}
-
-void Geocode::MergeFrom(const Geocode& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // required string id = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_id();
-      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
     }
+
+    // required float x = 2;
     if (cached_has_bits & 0x00000002u) {
-      x_ = from.x_;
+      total_size += 5;
     }
+
+    // required float y = 3;
     if (cached_has_bits & 0x00000004u) {
-      y_ = from.y_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Geocode::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.Geocode)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Geocode::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Geocode::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Geocode::GetClassData() const { return &_class_data_; }
+
+
+void Geocode::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Geocode*>(&to_msg);
+  auto& from = static_cast<const Geocode&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.Geocode)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.x_ = from._impl_.x_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.y_ = from._impl_.y_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Geocode::CopyFrom(const Geocode& from) {
@@ -675,280 +616,220 @@ void Geocode::CopyFrom(const Geocode& from) {
   MergeFrom(from);
 }
 
-bool Geocode::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+PROTOBUF_NOINLINE bool Geocode::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void Geocode::Swap(Geocode* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Geocode::InternalSwap(Geocode* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(x_, other->x_);
-  swap(y_, other->y_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Geocode, _impl_.y_)
+      + sizeof(Geocode::_impl_.y_)
+      - PROTOBUF_FIELD_OFFSET(Geocode, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
 }
 
 ::google::protobuf::Metadata Geocode::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[0]);
 }
-
-
 // ===================================================================
 
-void TSP::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TSP::kPointsFieldNumber;
-const int TSP::kDistancetypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TSP::_Internal {
+ public:
+  using HasBits = decltype(std::declval<TSP>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(TSP, _impl_._has_bits_);
+  static void set_has_distancetype(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
 
-TSP::TSP()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_TSP.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.TSP)
+TSP::TSP(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.TSP)
 }
-TSP::TSP(const TSP& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      points_(from.points_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  distancetype_ = from.distancetype_;
+TSP::TSP(const TSP& from) : ::google::protobuf::Message() {
+  TSP* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.points_){from._impl_.points_},
+      decltype(_impl_.distancetype_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _this->_impl_.distancetype_ = from._impl_.distancetype_;
+
   // @@protoc_insertion_point(copy_constructor:TSP.TSP)
 }
-
-void TSP::SharedCtor() {
-  distancetype_ = 1;
+inline void TSP::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.points_){arena},
+      decltype(_impl_.distancetype_){1},
+  };
 }
-
 TSP::~TSP() {
   // @@protoc_insertion_point(destructor:TSP.TSP)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void TSP::SharedDtor() {
+inline void TSP::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.points_.~RepeatedPtrField();
 }
-
 void TSP::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* TSP::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const TSP& TSP::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_TSP.base);
-  return *internal_default_instance();
-}
-
-
-void TSP::Clear() {
+PROTOBUF_NOINLINE void TSP::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.TSP)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  points_.Clear();
-  distancetype_ = 1;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_mutable_points()->Clear();
+  _impl_.distancetype_ = 1;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool TSP::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.TSP)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .TSP.Geocode points = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_points()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::TSP::TSP_eDistanceType_IsValid(value)) {
-            set_distancetype(static_cast< ::TSP::TSP_eDistanceType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                2, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.TSP)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.TSP)
-  return false;
-#undef DO_
+const char* TSP::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void TSP::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.TSP)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated .TSP.Geocode points = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->points(static_cast<int>(i)),
-      output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 2, 0, 2> TSP::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(TSP, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_TSP_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
+    {::_pbi::TcParser::FastEr1S1,
+     {16, 0, 3, PROTOBUF_FIELD_OFFSET(TSP, _impl_.distancetype_)}},
+    // repeated .TSP.Geocode points = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(TSP, _impl_.points_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .TSP.Geocode points = 1;
+    {PROTOBUF_FIELD_OFFSET(TSP, _impl_.points_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
+    {PROTOBUF_FIELD_OFFSET(TSP, _impl_.distancetype_), _Internal::kHasBitsOffset + 0, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::TSP::Geocode>()},
+    {1, 3},
+  }}, {{
+  }},
+};
 
-  cached_has_bits = _has_bits_[0];
-  // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->distancetype(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.TSP)
-}
-
-::google::protobuf::uint8* TSP::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* TSP::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.TSP)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .TSP.Geocode points = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->points_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_points_size()); i < n; i++) {
+    const auto& repfield = this->_internal_points().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->points(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->distancetype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        2, this->_internal_distancetype(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.TSP)
   return target;
 }
 
-size_t TSP::ByteSizeLong() const {
+::size_t TSP::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.TSP)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // repeated .TSP.Geocode points = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->points_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->points(static_cast<int>(i)));
-    }
-  }
-
-  // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
-  if (has_distancetype()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->distancetype());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TSP::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.TSP)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TSP* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TSP>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.TSP)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.TSP)
-    MergeFrom(*source);
-  }
-}
-
-void TSP::MergeFrom(const TSP& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.TSP)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  points_.MergeFrom(from.points_);
-  if (from.has_distancetype()) {
-    set_distancetype(from.distancetype());
+  // repeated .TSP.Geocode points = 1;
+  total_size += 1UL * this->_internal_points_size();
+  for (const auto& msg : this->_internal_points()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // optional .TSP.TSP.eDistanceType distancetype = 2 [default = RoadNetwork];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_distancetype());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void TSP::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.TSP)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData TSP::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    TSP::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*TSP::GetClassData() const { return &_class_data_; }
+
+
+void TSP::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<TSP*>(&to_msg);
+  auto& from = static_cast<const TSP&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.TSP)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_points()->MergeFrom(from._internal_points());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_distancetype(from._internal_distancetype());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TSP::CopyFrom(const TSP& from) {
@@ -958,400 +839,308 @@ void TSP::CopyFrom(const TSP& from) {
   MergeFrom(from);
 }
 
-bool TSP::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->points())) return false;
+PROTOBUF_NOINLINE bool TSP::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_points()))
+    return false;
   return true;
 }
 
-void TSP::Swap(TSP* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TSP::InternalSwap(TSP* other) {
   using std::swap;
-  CastToBase(&points_)->InternalSwap(CastToBase(&other->points_));
-  swap(distancetype_, other->distancetype_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.points_.InternalSwap(&other->_impl_.points_);
+  swap(_impl_.distancetype_, other->_impl_.distancetype_);
 }
 
 ::google::protobuf::Metadata TSP::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[1]);
 }
-
-
 // ===================================================================
 
-void SolveRequest::InitAsDefaultInstance() {
-  ::TSP::_SolveRequest_default_instance_._instance.get_mutable()->model_ = const_cast< ::TSP::TSP*>(
-      ::TSP::TSP::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolveRequest::kModelFieldNumber;
-const int SolveRequest::kModelIDFieldNumber;
-const int SolveRequest::kVisitSequenceFieldNumber;
-const int SolveRequest::kSolveTypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolveRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolveRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_._has_bits_);
+  static const ::TSP::TSP& model(const SolveRequest* msg);
+  static void set_has_model(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_modelid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_solvetype(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
 
-SolveRequest::SolveRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_SolveRequest.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.SolveRequest)
+const ::TSP::TSP& SolveRequest::_Internal::model(const SolveRequest* msg) {
+  return *msg->_impl_.model_;
 }
-SolveRequest::SolveRequest(const SolveRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      visitsequence_(from.visitsequence_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  modelid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_modelid()) {
-    modelid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modelid_);
+SolveRequest::SolveRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.SolveRequest)
+}
+SolveRequest::SolveRequest(const SolveRequest& from) : ::google::protobuf::Message() {
+  SolveRequest* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.visitsequence_){from._impl_.visitsequence_},
+      decltype(_impl_.modelid_){},
+      decltype(_impl_.model_){nullptr},
+      decltype(_impl_.solvetype_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.modelid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.modelid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.modelid_.Set(from._internal_modelid(), _this->GetArenaForAllocation());
   }
-  if (from.has_model()) {
-    model_ = new ::TSP::TSP(*from.model_);
-  } else {
-    model_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.model_ = new ::TSP::TSP(*from._impl_.model_);
   }
-  solvetype_ = from.solvetype_;
+  _this->_impl_.solvetype_ = from._impl_.solvetype_;
+
   // @@protoc_insertion_point(copy_constructor:TSP.SolveRequest)
 }
-
-void SolveRequest::SharedCtor() {
-  modelid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&solvetype_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(solvetype_));
+inline void SolveRequest::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.visitsequence_){arena},
+      decltype(_impl_.modelid_){},
+      decltype(_impl_.model_){nullptr},
+      decltype(_impl_.solvetype_){0},
+  };
+  _impl_.modelid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.modelid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolveRequest::~SolveRequest() {
   // @@protoc_insertion_point(destructor:TSP.SolveRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolveRequest::SharedDtor() {
-  modelid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete model_;
+inline void SolveRequest::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_visitsequence()->~RepeatedPtrField();
+  _impl_.modelid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.model_;
 }
-
 void SolveRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolveRequest::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolveRequest& SolveRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_SolveRequest.base);
-  return *internal_default_instance();
-}
-
-
-void SolveRequest::Clear() {
+PROTOBUF_NOINLINE void SolveRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  visitsequence_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  _internal_mutable_visitsequence()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      modelid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.modelid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(model_ != NULL);
-      model_->Clear();
+      ABSL_DCHECK(_impl_.model_ != nullptr);
+      _impl_.model_->Clear();
     }
   }
-  solvetype_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.solvetype_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolveRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.SolveRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .TSP.TSP model = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_model()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional string modelID = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_modelid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->modelid().data(), static_cast<int>(this->modelid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.SolveRequest.modelID");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string visitSequence = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_visitsequence()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->visitsequence(this->visitsequence_size() - 1).data(),
-            static_cast<int>(this->visitsequence(this->visitsequence_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.SolveRequest.visitSequence");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::TSP::SolveRequest_SolveType_IsValid(value)) {
-            set_solvetype(static_cast< ::TSP::SolveRequest_SolveType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                4, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.SolveRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.SolveRequest)
-  return false;
-#undef DO_
+const char* SolveRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolveRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // optional .TSP.TSP model = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_model(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 2, 45, 2> SolveRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolveRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
+    {::_pbi::TcParser::FastEr0S1,
+     {32, 2, 2, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_)}},
+    // optional .TSP.TSP model = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 1, 0, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_)}},
+    // optional string modelID = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.modelid_)}},
+    // repeated string visitSequence = 3;
+    {::_pbi::TcParser::FastSR1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.visitsequence_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional .TSP.TSP model = 1;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // optional string modelID = 2;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.modelid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated string visitSequence = 3;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.visitsequence_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+    // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_), _Internal::kHasBitsOffset + 2, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::TSP::TSP>()},
+    {0, 3},
+  }}, {{
+    "\20\0\7\15\0\0\0\0"
+    "TSP.SolveRequest"
+    "modelID"
+    "visitSequence"
+  }},
+};
 
-  // optional string modelID = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->modelid().data(), static_cast<int>(this->modelid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolveRequest.modelID");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->modelid(), output);
-  }
-
-  // repeated string visitSequence = 3;
-  for (int i = 0, n = this->visitsequence_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->visitsequence(i).data(), static_cast<int>(this->visitsequence(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolveRequest.visitSequence");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->visitsequence(i), output);
-  }
-
-  // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->solvetype(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.SolveRequest)
-}
-
-::google::protobuf::uint8* SolveRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolveRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .TSP.TSP model = 1;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_model(), deterministic, target);
+      InternalWriteMessage(1, _Internal::model(this),
+        _Internal::model(this).GetCachedSize(), target, stream);
   }
 
   // optional string modelID = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->modelid().data(), static_cast<int>(this->modelid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolveRequest.modelID");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->modelid(), target);
+    const std::string& _s = this->_internal_modelid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.SolveRequest.modelID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // repeated string visitSequence = 3;
-  for (int i = 0, n = this->visitsequence_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->visitsequence(i).data(), static_cast<int>(this->visitsequence(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolveRequest.visitSequence");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->visitsequence(i), target);
+  for (int i = 0, n = this->_internal_visitsequence_size(); i < n; ++i) {
+    const auto& s = this->_internal_visitsequence().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.SolveRequest.visitSequence");
+    target = stream->WriteString(3, s, target);
   }
 
   // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->solvetype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        4, this->_internal_solvetype(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.SolveRequest)
   return target;
 }
 
-size_t SolveRequest::ByteSizeLong() const {
+::size_t SolveRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.SolveRequest)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated string visitSequence = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->visitsequence_size());
-  for (int i = 0, n = this->visitsequence_size(); i < n; i++) {
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_visitsequence().size());
+  for (int i = 0, n = _internal_visitsequence().size(); i < n; ++i) {
     total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->visitsequence(i));
+        _internal_visitsequence().Get(i));
   }
-
-  if (_has_bits_[0 / 32] & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     // optional string modelID = 2;
-    if (has_modelid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->modelid());
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_modelid());
     }
 
     // optional .TSP.TSP model = 1;
-    if (has_model()) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *model_);
+          *_impl_.model_);
     }
 
     // optional .TSP.SolveRequest.SolveType solveType = 4 [default = Optimise];
-    if (has_solvetype()) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->solvetype());
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_solvetype());
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolveRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.SolveRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolveRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolveRequest>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.SolveRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.SolveRequest)
-    MergeFrom(*source);
-  }
-}
+const ::google::protobuf::Message::ClassData SolveRequest::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolveRequest::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolveRequest::GetClassData() const { return &_class_data_; }
 
-void SolveRequest::MergeFrom(const SolveRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.SolveRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+
+void SolveRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolveRequest*>(&to_msg);
+  auto& from = static_cast<const SolveRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.SolveRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  visitsequence_.MergeFrom(from.visitsequence_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  _this->_internal_mutable_visitsequence()->MergeFrom(from._internal_visitsequence());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_modelid();
-      modelid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modelid_);
+      _this->_internal_set_modelid(from._internal_modelid());
     }
     if (cached_has_bits & 0x00000002u) {
-      mutable_model()->::TSP::TSP::MergeFrom(from.model());
+      _this->_internal_mutable_model()->::TSP::TSP::MergeFrom(
+          from._internal_model());
     }
     if (cached_has_bits & 0x00000004u) {
-      solvetype_ = from.solvetype_;
+      _this->_impl_.solvetype_ = from._impl_.solvetype_;
     }
-    _has_bits_[0] |= cached_has_bits;
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-}
-
-void SolveRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.SolveRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolveRequest::CopyFrom(const SolveRequest& from) {
@@ -1361,292 +1150,225 @@ void SolveRequest::CopyFrom(const SolveRequest& from) {
   MergeFrom(from);
 }
 
-bool SolveRequest::IsInitialized() const {
-  if (has_model()) {
-    if (!this->model_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool SolveRequest::IsInitialized() const {
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.model_->IsInitialized()) return false;
   }
   return true;
 }
 
-void SolveRequest::Swap(SolveRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolveRequest::InternalSwap(SolveRequest* other) {
   using std::swap;
-  visitsequence_.InternalSwap(CastToBase(&other->visitsequence_));
-  modelid_.Swap(&other->modelid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(model_, other->model_);
-  swap(solvetype_, other->solvetype_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.visitsequence_.InternalSwap(&other->_impl_.visitsequence_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.modelid_, lhs_arena,
+                                       &other->_impl_.modelid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_)
+      + sizeof(SolveRequest::_impl_.solvetype_)
+      - PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_)>(
+          reinterpret_cast<char*>(&_impl_.model_),
+          reinterpret_cast<char*>(&other->_impl_.model_));
 }
 
 ::google::protobuf::Metadata SolveRequest::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[2]);
 }
-
-
 // ===================================================================
 
-void Edge_Geometry::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Edge_Geometry::kXFieldNumber;
-const int Edge_Geometry::kYFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Edge_Geometry::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Edge_Geometry>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_._has_bits_);
+  static void set_has_x(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_y(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-Edge_Geometry::Edge_Geometry()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge_Geometry.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.Edge.Geometry)
+Edge_Geometry::Edge_Geometry(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.Edge.Geometry)
 }
 Edge_Geometry::Edge_Geometry(const Edge_Geometry& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&x_, &from.x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&y_) -
-    reinterpret_cast<char*>(&x_)) + sizeof(y_));
+    : ::google::protobuf::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:TSP.Edge.Geometry)
 }
-
-void Edge_Geometry::SharedCtor() {
-  ::memset(&x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&y_) -
-      reinterpret_cast<char*>(&x_)) + sizeof(y_));
+inline void Edge_Geometry::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.x_){0},
+      decltype(_impl_.y_){0},
+  };
 }
-
 Edge_Geometry::~Edge_Geometry() {
   // @@protoc_insertion_point(destructor:TSP.Edge.Geometry)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Edge_Geometry::SharedDtor() {
+inline void Edge_Geometry::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void Edge_Geometry::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Edge_Geometry::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Edge_Geometry& Edge_Geometry::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge_Geometry.base);
-  return *internal_default_instance();
-}
-
-
-void Edge_Geometry::Clear() {
+PROTOBUF_NOINLINE void Edge_Geometry::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.Edge.Geometry)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
-    ::memset(&x_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&y_) -
-        reinterpret_cast<char*>(&x_)) + sizeof(y_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.x_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.y_) -
+        reinterpret_cast<char*>(&_impl_.x_)) + sizeof(_impl_.y_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Edge_Geometry::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.Edge.Geometry)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required float x = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
-          set_has_x();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &x_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float y = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_y();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &y_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.Edge.Geometry)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.Edge.Geometry)
-  return false;
-#undef DO_
+const char* Edge_Geometry::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Edge_Geometry::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.Edge.Geometry)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required float x = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->x(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Edge_Geometry::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Edge_Geometry_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float y = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.y_)}},
+    // required float x = 1;
+    {::_pbi::TcParser::FastF32S1,
+     {13, 0, 0, PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.x_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required float x = 1;
+    {PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.x_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float y = 2;
+    {PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.y_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
-  // required float y = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->y(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.Edge.Geometry)
-}
-
-::google::protobuf::uint8* Edge_Geometry::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Edge_Geometry::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.Edge.Geometry)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required float x = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->x(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_x(), target);
   }
 
   // required float y = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->y(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_y(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.Edge.Geometry)
   return target;
 }
 
-size_t Edge_Geometry::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:TSP.Edge.Geometry)
-  size_t total_size = 0;
-
-  if (has_x()) {
-    // required float x = 1;
-    total_size += 1 + 4;
-  }
-
-  if (has_y()) {
-    // required float y = 2;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Edge_Geometry::ByteSizeLong() const {
+::size_t Edge_Geometry::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.Edge.Geometry)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required float x = 1;
-    total_size += 1 + 4;
-
-    // required float y = 2;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Edge_Geometry::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.Edge.Geometry)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Edge_Geometry* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Edge_Geometry>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.Edge.Geometry)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.Edge.Geometry)
-    MergeFrom(*source);
-  }
-}
-
-void Edge_Geometry::MergeFrom(const Edge_Geometry& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.Edge.Geometry)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required float x = 1;
     if (cached_has_bits & 0x00000001u) {
-      x_ = from.x_;
+      total_size += 5;
     }
+
+    // required float y = 2;
     if (cached_has_bits & 0x00000002u) {
-      y_ = from.y_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Edge_Geometry::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.Edge.Geometry)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Edge_Geometry::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Edge_Geometry::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Edge_Geometry::GetClassData() const { return &_class_data_; }
+
+
+void Edge_Geometry::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Edge_Geometry*>(&to_msg);
+  auto& from = static_cast<const Edge_Geometry&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.Edge.Geometry)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.x_ = from._impl_.x_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.y_ = from._impl_.y_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Edge_Geometry::CopyFrom(const Edge_Geometry& from) {
@@ -1656,412 +1378,316 @@ void Edge_Geometry::CopyFrom(const Edge_Geometry& from) {
   MergeFrom(from);
 }
 
-bool Edge_Geometry::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+PROTOBUF_NOINLINE bool Edge_Geometry::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void Edge_Geometry::Swap(Edge_Geometry* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Edge_Geometry::InternalSwap(Edge_Geometry* other) {
   using std::swap;
-  swap(x_, other->x_);
-  swap(y_, other->y_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.y_)
+      + sizeof(Edge_Geometry::_impl_.y_)
+      - PROTOBUF_FIELD_OFFSET(Edge_Geometry, _impl_.x_)>(
+          reinterpret_cast<char*>(&_impl_.x_),
+          reinterpret_cast<char*>(&other->_impl_.x_));
 }
 
 ::google::protobuf::Metadata Edge_Geometry::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[3]);
 }
-
-
 // ===================================================================
 
-void Edge::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Edge::kFromFieldNumber;
-const int Edge::kToFieldNumber;
-const int Edge::kDistanceFieldNumber;
-const int Edge::kGeometryFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Edge::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Edge>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Edge, _impl_._has_bits_);
+  static void set_has_from(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_to(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_distance(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-Edge::Edge()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.Edge)
+Edge::Edge(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.Edge)
 }
-Edge::Edge(const Edge& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      geometry_(from.geometry_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_from()) {
-    from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
+Edge::Edge(const Edge& from) : ::google::protobuf::Message() {
+  Edge* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.geometry_){from._impl_.geometry_},
+      decltype(_impl_.from_){},
+      decltype(_impl_.to_){},
+      decltype(_impl_.distance_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.from_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.from_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.from_.Set(from._internal_from(), _this->GetArenaForAllocation());
   }
-  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_to()) {
-    to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
+  _impl_.to_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.to_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.to_.Set(from._internal_to(), _this->GetArenaForAllocation());
   }
-  distance_ = from.distance_;
+  _this->_impl_.distance_ = from._impl_.distance_;
+
   // @@protoc_insertion_point(copy_constructor:TSP.Edge)
 }
-
-void Edge::SharedCtor() {
-  from_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  to_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  distance_ = 0;
+inline void Edge::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.geometry_){arena},
+      decltype(_impl_.from_){},
+      decltype(_impl_.to_){},
+      decltype(_impl_.distance_){0},
+  };
+  _impl_.from_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.from_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.to_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.to_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Edge::~Edge() {
   // @@protoc_insertion_point(destructor:TSP.Edge)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Edge::SharedDtor() {
-  from_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  to_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void Edge::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.geometry_.~RepeatedPtrField();
+  _impl_.from_.Destroy();
+  _impl_.to_.Destroy();
 }
-
 void Edge::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Edge::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Edge& Edge::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_Edge.base);
-  return *internal_default_instance();
-}
-
-
-void Edge::Clear() {
+PROTOBUF_NOINLINE void Edge::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.Edge)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  geometry_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  _internal_mutable_geometry()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      from_.ClearNonDefaultToEmptyNoArena();
+      _impl_.from_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      to_.ClearNonDefaultToEmptyNoArena();
+      _impl_.to_.ClearNonDefaultToEmpty();
     }
   }
-  distance_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.distance_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Edge::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.Edge)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string from = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_from()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->from().data(), static_cast<int>(this->from().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.Edge.from");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string to = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_to()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->to().data(), static_cast<int>(this->to().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.Edge.to");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional float distance = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_distance();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &distance_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .TSP.Edge.Geometry geometry = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_geometry()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.Edge)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.Edge)
-  return false;
-#undef DO_
+const char* Edge::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Edge::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.Edge)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string from = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->from().data(), static_cast<int>(this->from().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Edge.from");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->from(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 1, 23, 2> Edge::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Edge, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Edge_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .TSP.Edge.Geometry geometry = 4;
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(Edge, _impl_.geometry_)}},
+    // required string from = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Edge, _impl_.from_)}},
+    // required string to = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Edge, _impl_.to_)}},
+    // optional float distance = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(Edge, _impl_.distance_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string from = 1;
+    {PROTOBUF_FIELD_OFFSET(Edge, _impl_.from_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required string to = 2;
+    {PROTOBUF_FIELD_OFFSET(Edge, _impl_.to_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // optional float distance = 3;
+    {PROTOBUF_FIELD_OFFSET(Edge, _impl_.distance_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // repeated .TSP.Edge.Geometry geometry = 4;
+    {PROTOBUF_FIELD_OFFSET(Edge, _impl_.geometry_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::TSP::Edge_Geometry>()},
+  }}, {{
+    "\10\4\2\0\0\0\0\0"
+    "TSP.Edge"
+    "from"
+    "to"
+  }},
+};
 
-  // required string to = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->to().data(), static_cast<int>(this->to().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Edge.to");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->to(), output);
-  }
-
-  // optional float distance = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->distance(), output);
-  }
-
-  // repeated .TSP.Edge.Geometry geometry = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->geometry(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.Edge)
-}
-
-::google::protobuf::uint8* Edge::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Edge::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.Edge)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string from = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->from().data(), static_cast<int>(this->from().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Edge.from");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->from(), target);
+    const std::string& _s = this->_internal_from();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.Edge.from");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required string to = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->to().data(), static_cast<int>(this->to().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.Edge.to");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->to(), target);
+    const std::string& _s = this->_internal_to();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.Edge.to");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // optional float distance = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->distance(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_distance(), target);
   }
 
   // repeated .TSP.Edge.Geometry geometry = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_geometry_size()); i < n; i++) {
+    const auto& repfield = this->_internal_geometry().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->geometry(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.Edge)
   return target;
 }
 
-size_t Edge::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:TSP.Edge)
-  size_t total_size = 0;
-
-  if (has_from()) {
-    // required string from = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->from());
-  }
-
-  if (has_to()) {
-    // required string to = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->to());
-  }
-
-  return total_size;
-}
-size_t Edge::ByteSizeLong() const {
+::size_t Edge::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.Edge)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required string from = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->from());
-
-    // required string to = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->to());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // repeated .TSP.Edge.Geometry geometry = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->geometry_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->geometry(static_cast<int>(i)));
-    }
-  }
-
-  // optional float distance = 3;
-  if (has_distance()) {
-    total_size += 1 + 4;
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Edge::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.Edge)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Edge* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Edge>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.Edge)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.Edge)
-    MergeFrom(*source);
-  }
-}
-
-void Edge::MergeFrom(const Edge& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.Edge)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  geometry_.MergeFrom(from.geometry_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_from();
-      from_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.from_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      set_has_to();
-      to_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.to_);
-    }
-    if (cached_has_bits & 0x00000004u) {
-      distance_ = from.distance_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // repeated .TSP.Edge.Geometry geometry = 4;
+  total_size += 1UL * this->_internal_geometry_size();
+  for (const auto& msg : this->_internal_geometry()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required string from = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_from());
+    }
+
+    // required string to = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_to());
+    }
+
+  }
+  // optional float distance = 3;
+  if (cached_has_bits & 0x00000004u) {
+    total_size += 5;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Edge::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.Edge)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Edge::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Edge::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Edge::GetClassData() const { return &_class_data_; }
+
+
+void Edge::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Edge*>(&to_msg);
+  auto& from = static_cast<const Edge&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.Edge)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_geometry()->MergeFrom(from._internal_geometry());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_from(from._internal_from());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_to(from._internal_to());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.distance_ = from._impl_.distance_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Edge::CopyFrom(const Edge& from) {
@@ -2071,285 +1697,210 @@ void Edge::CopyFrom(const Edge& from) {
   MergeFrom(from);
 }
 
-bool Edge::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->geometry())) return false;
+PROTOBUF_NOINLINE bool Edge::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_geometry()))
+    return false;
   return true;
 }
 
-void Edge::Swap(Edge* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Edge::InternalSwap(Edge* other) {
   using std::swap;
-  CastToBase(&geometry_)->InternalSwap(CastToBase(&other->geometry_));
-  from_.Swap(&other->from_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  to_.Swap(&other->to_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(distance_, other->distance_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.geometry_.InternalSwap(&other->_impl_.geometry_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.from_, lhs_arena,
+                                       &other->_impl_.from_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.to_, lhs_arena,
+                                       &other->_impl_.to_, rhs_arena);
+        swap(_impl_.distance_, other->_impl_.distance_);
 }
 
 ::google::protobuf::Metadata Edge::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[4]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse::kTourFieldNumber;
-const int SolutionResponse::kEdgesFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse::_Internal {
+ public:
+};
 
-SolutionResponse::SolutionResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_SolutionResponse.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:TSP.SolutionResponse)
+SolutionResponse::SolutionResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:TSP.SolutionResponse)
 }
-SolutionResponse::SolutionResponse(const SolutionResponse& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      tour_(from.tour_),
-      edges_(from.edges_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+SolutionResponse::SolutionResponse(const SolutionResponse& from) : ::google::protobuf::Message() {
+  SolutionResponse* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.tour_){from._impl_.tour_},
+      decltype(_impl_.edges_){from._impl_.edges_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+
   // @@protoc_insertion_point(copy_constructor:TSP.SolutionResponse)
 }
-
-void SolutionResponse::SharedCtor() {
+inline void SolutionResponse::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.tour_){arena},
+      decltype(_impl_.edges_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
 }
-
 SolutionResponse::~SolutionResponse() {
   // @@protoc_insertion_point(destructor:TSP.SolutionResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse::SharedDtor() {
+inline void SolutionResponse::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_tour()->~RepeatedPtrField();
+  _impl_.edges_.~RepeatedPtrField();
 }
-
 void SolutionResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse::descriptor() {
-  ::protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse& SolutionResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_tsp_2dmcvfz472gty6_2eproto::scc_info_SolutionResponse.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:TSP.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  tour_.Clear();
-  edges_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_mutable_tour()->Clear();
+  _internal_mutable_edges()->Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:TSP.SolutionResponse)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated string tour = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_tour()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->tour(this->tour_size() - 1).data(),
-            static_cast<int>(this->tour(this->tour_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "TSP.SolutionResponse.tour");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .TSP.Edge edges = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_edges()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:TSP.SolutionResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:TSP.SolutionResponse)
-  return false;
-#undef DO_
+const char* SolutionResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:TSP.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated string tour = 1;
-  for (int i = 0, n = this->tour_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->tour(i).data(), static_cast<int>(this->tour(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolutionResponse.tour");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      1, this->tour(i), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 33, 2> SolutionResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .TSP.Edge edges = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.edges_)}},
+    // repeated string tour = 1;
+    {::_pbi::TcParser::FastSR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.tour_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated string tour = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.tour_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+    // repeated .TSP.Edge edges = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.edges_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::TSP::Edge>()},
+  }}, {{
+    "\24\4\0\0\0\0\0\0"
+    "TSP.SolutionResponse"
+    "tour"
+  }},
+};
 
-  // repeated .TSP.Edge edges = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->edges_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->edges(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:TSP.SolutionResponse)
-}
-
-::google::protobuf::uint8* SolutionResponse::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:TSP.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated string tour = 1;
-  for (int i = 0, n = this->tour_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->tour(i).data(), static_cast<int>(this->tour(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "TSP.SolutionResponse.tour");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(1, this->tour(i), target);
+  for (int i = 0, n = this->_internal_tour_size(); i < n; ++i) {
+    const auto& s = this->_internal_tour().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "TSP.SolutionResponse.tour");
+    target = stream->WriteString(1, s, target);
   }
 
   // repeated .TSP.Edge edges = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->edges_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_edges_size()); i < n; i++) {
+    const auto& repfield = this->_internal_edges().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->edges(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:TSP.SolutionResponse)
   return target;
 }
 
-size_t SolutionResponse::ByteSizeLong() const {
+::size_t SolutionResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:TSP.SolutionResponse)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // repeated string tour = 1;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->tour_size());
-  for (int i = 0, n = this->tour_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->tour(i));
-  }
-
-  // repeated .TSP.Edge edges = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->edges_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->edges(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:TSP.SolutionResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:TSP.SolutionResponse)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:TSP.SolutionResponse)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse::MergeFrom(const SolutionResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:TSP.SolutionResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  tour_.MergeFrom(from.tour_);
-  edges_.MergeFrom(from.edges_);
+  // repeated string tour = 1;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_tour().size());
+  for (int i = 0, n = _internal_tour().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_tour().Get(i));
+  }
+  // repeated .TSP.Edge edges = 2;
+  total_size += 1UL * this->_internal_edges_size();
+  for (const auto& msg : this->_internal_edges()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:TSP.SolutionResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:TSP.SolutionResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_tour()->MergeFrom(from._internal_tour());
+  _this->_internal_mutable_edges()->MergeFrom(from._internal_edges());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse::CopyFrom(const SolutionResponse& from) {
@@ -2359,52 +1910,29 @@ void SolutionResponse::CopyFrom(const SolutionResponse& from) {
   MergeFrom(from);
 }
 
-bool SolutionResponse::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->edges())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_edges()))
+    return false;
   return true;
 }
 
-void SolutionResponse::Swap(SolutionResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse::InternalSwap(SolutionResponse* other) {
   using std::swap;
-  tour_.InternalSwap(CastToBase(&other->tour_));
-  CastToBase(&edges_)->InternalSwap(CastToBase(&other->edges_));
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tour_.InternalSwap(&other->_impl_.tour_);
+  _impl_.edges_.InternalSwap(&other->_impl_.edges_);
 }
 
 ::google::protobuf::Metadata SolutionResponse::GetMetadata() const {
-  protobuf_tsp_2dmcvfz472gty6_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_tsp_2dmcvfz472gty6_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_tsp_2dmcvfz472gty6_2eproto_getter, &descriptor_table_tsp_2dmcvfz472gty6_2eproto_once,
+      file_level_metadata_tsp_2dmcvfz472gty6_2eproto[5]);
 }
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace TSP
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::Geocode* Arena::CreateMaybeMessage< ::TSP::Geocode >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::Geocode >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::TSP* Arena::CreateMaybeMessage< ::TSP::TSP >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::TSP >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::SolveRequest* Arena::CreateMaybeMessage< ::TSP::SolveRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::SolveRequest >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::Edge_Geometry* Arena::CreateMaybeMessage< ::TSP::Edge_Geometry >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::Edge_Geometry >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::Edge* Arena::CreateMaybeMessage< ::TSP::Edge >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::Edge >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::TSP::SolutionResponse* Arena::CreateMaybeMessage< ::TSP::SolutionResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::TSP::SolutionResponse >(arena);
-}
 }  // namespace protobuf
 }  // namespace google
-
 // @@protoc_insertion_point(global_scope)
+#include "google/protobuf/port_undef.inc"

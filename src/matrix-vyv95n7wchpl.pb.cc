@@ -4,269 +4,276 @@
 #include "matrix-vyv95n7wchpl.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_matrix_2dvyv95n7wchpl_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_matrix_2dvyv95n7wchpl_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Geocode;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_matrix_2dvyv95n7wchpl_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MatrixResponse_Element;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_matrix_2dvyv95n7wchpl_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Location;
-}  // namespace protobuf_matrix_2dvyv95n7wchpl_2eproto
+// Must be included last.
+#include "google/protobuf/port_def.inc"
+PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace Matrix {
-class GeocodeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Geocode>
-      _instance;
-} _Geocode_default_instance_;
-class LocationDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Location>
-      _instance;
-} _Location_default_instance_;
-class MatrixRequestDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<MatrixRequest>
-      _instance;
-} _MatrixRequest_default_instance_;
-class MatrixResponse_ElementDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<MatrixResponse_Element>
-      _instance;
-} _MatrixResponse_Element_default_instance_;
-class MatrixResponseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<MatrixResponse>
-      _instance;
-} _MatrixResponse_default_instance_;
-}  // namespace Matrix
-namespace protobuf_matrix_2dvyv95n7wchpl_2eproto {
-static void InitDefaultsGeocode() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Matrix::_Geocode_default_instance_;
-    new (ptr) ::Matrix::Geocode();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Matrix::Geocode::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Geocode =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGeocode}, {}};
-
-static void InitDefaultsLocation() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Matrix::_Location_default_instance_;
-    new (ptr) ::Matrix::Location();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Matrix::Location::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Location =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsLocation}, {
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsMatrixRequest() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Matrix::_MatrixRequest_default_instance_;
-    new (ptr) ::Matrix::MatrixRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Matrix::MatrixRequest::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_MatrixRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMatrixRequest}, {
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Location.base,}};
-
-static void InitDefaultsMatrixResponse_Element() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Matrix::_MatrixResponse_Element_default_instance_;
-    new (ptr) ::Matrix::MatrixResponse_Element();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Matrix::MatrixResponse_Element::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_MatrixResponse_Element =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMatrixResponse_Element}, {}};
-
-static void InitDefaultsMatrixResponse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::Matrix::_MatrixResponse_default_instance_;
-    new (ptr) ::Matrix::MatrixResponse();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::Matrix::MatrixResponse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_MatrixResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsMatrixResponse}, {
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixResponse_Element.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Geocode.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Location.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_MatrixRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_MatrixResponse_Element.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_MatrixResponse.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[5];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[2];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Geocode, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Geocode, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Geocode, longitude_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Geocode, latitude_),
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Location, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Location, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Location, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::Location, geocode_),
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, locations_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, sources_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, destinations_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, distanceunit_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixRequest, durationunit_),
-  ~0u,
-  ~0u,
-  ~0u,
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, fromid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, toid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, distance_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse_Element, duration_),
-  0,
-  1,
-  2,
-  3,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::Matrix::MatrixResponse, elements_),
-  ~0u,
-};
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 7, sizeof(::Matrix::Geocode)},
-  { 9, 16, sizeof(::Matrix::Location)},
-  { 18, 28, sizeof(::Matrix::MatrixRequest)},
-  { 33, 42, sizeof(::Matrix::MatrixResponse_Element)},
-  { 46, 52, sizeof(::Matrix::MatrixResponse)},
-};
-
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Matrix::_Geocode_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Matrix::_Location_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Matrix::_MatrixRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Matrix::_MatrixResponse_Element_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::Matrix::_MatrixResponse_default_instance_),
-};
-
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "matrix-vyv95n7wchpl.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
-
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 5);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\031matrix-vyv95n7wchpl.proto\022\006Matrix\".\n\007G"
-      "eocode\022\021\n\tlongitude\030\001 \002(\002\022\020\n\010latitude\030\002 "
-      "\002(\002\"8\n\010Location\022\n\n\002id\030\001 \002(\t\022 \n\007geocode\030\002"
-      " \002(\0132\017.Matrix.Geocode\"\322\002\n\rMatrixRequest\022"
-      "#\n\tlocations\030\001 \003(\0132\020.Matrix.Location\022\017\n\007"
-      "sources\030\002 \003(\t\022\024\n\014destinations\030\003 \003(\t\022E\n\014d"
-      "istanceUnit\030\004 \002(\0162#.Matrix.MatrixRequest"
-      ".eDistanceUnit:\nKILOMETRES\022B\n\014durationUn"
-      "it\030\005 \002(\0162#.Matrix.MatrixRequest.eDuratio"
-      "nUnit:\007MINUTES\">\n\reDurationUnit\022\013\n\007SECON"
-      "DS\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003\"*"
-      "\n\reDistanceUnit\022\016\n\nKILOMETRES\020\000\022\t\n\005MILES"
-      "\020\001\"\217\001\n\016MatrixResponse\0220\n\010elements\030\001 \003(\0132"
-      "\036.Matrix.MatrixResponse.Element\032K\n\007Eleme"
-      "nt\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\020\n\010dist"
-      "ance\030\003 \002(\002\022\020\n\010duration\030\004 \002(\002B\022\n\020icepacka"
-      "i.Matrix"
+        template <typename>
+PROTOBUF_CONSTEXPR Geocode::Geocode(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.longitude_)*/ 0,
+      /*decltype(_impl_.latitude_)*/ 0,
+    } {}
+struct GeocodeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GeocodeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GeocodeDefaultTypeInternal() {}
+  union {
+    Geocode _instance;
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 648);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "matrix-vyv95n7wchpl.proto", &protobuf_RegisterTypes);
-}
+};
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GeocodeDefaultTypeInternal _Geocode_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Location::Location(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.geocode_)*/ nullptr,
+    } {}
+struct LocationDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR LocationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~LocationDefaultTypeInternal() {}
+  union {
+    Location _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 LocationDefaultTypeInternal _Location_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR MatrixRequest::MatrixRequest(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.locations_)*/ {},
+      /*decltype(_impl_.sources_)*/ {},
+      /*decltype(_impl_.destinations_)*/ {},
+      /*decltype(_impl_.distanceunit_)*/ 0,
+      /*decltype(_impl_.durationunit_)*/ 1,
+    } {}
+struct MatrixRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MatrixRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MatrixRequestDefaultTypeInternal() {}
+  union {
+    MatrixRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MatrixRequestDefaultTypeInternal _MatrixRequest_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR MatrixResponse_Element::MatrixResponse_Element(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.fromid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.toid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.distance_)*/ 0,
+      /*decltype(_impl_.duration_)*/ 0,
+    } {}
+struct MatrixResponse_ElementDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MatrixResponse_ElementDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MatrixResponse_ElementDefaultTypeInternal() {}
+  union {
+    MatrixResponse_Element _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MatrixResponse_ElementDefaultTypeInternal _MatrixResponse_Element_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR MatrixResponse::MatrixResponse(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.elements_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
+struct MatrixResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MatrixResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MatrixResponseDefaultTypeInternal() {}
+  union {
+    MatrixResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MatrixResponseDefaultTypeInternal _MatrixResponse_default_instance_;
+}  // namespace Matrix
+static ::_pb::Metadata file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[5];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_matrix_2dvyv95n7wchpl_2eproto[2];
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_matrix_2dvyv95n7wchpl_2eproto = nullptr;
+const ::uint32_t TableStruct_matrix_2dvyv95n7wchpl_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::Matrix::Geocode, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::Geocode, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Matrix::Geocode, _impl_.longitude_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::Geocode, _impl_.latitude_),
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::Matrix::Location, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::Location, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Matrix::Location, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::Location, _impl_.geocode_),
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_.locations_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_.sources_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_.destinations_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_.distanceunit_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixRequest, _impl_.durationunit_),
+    ~0u,
+    ~0u,
+    ~0u,
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _impl_.fromid_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _impl_.toid_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _impl_.distance_),
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse_Element, _impl_.duration_),
+    0,
+    1,
+    2,
+    3,
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::Matrix::MatrixResponse, _impl_.elements_),
+};
+
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 10, -1, sizeof(::Matrix::Geocode)},
+        {12, 22, -1, sizeof(::Matrix::Location)},
+        {24, 37, -1, sizeof(::Matrix::MatrixRequest)},
+        {42, 54, -1, sizeof(::Matrix::MatrixResponse_Element)},
+        {58, -1, -1, sizeof(::Matrix::MatrixResponse)},
+};
+
+static const ::_pb::Message* const file_default_instances[] = {
+    &::Matrix::_Geocode_default_instance_._instance,
+    &::Matrix::_Location_default_instance_._instance,
+    &::Matrix::_MatrixRequest_default_instance_._instance,
+    &::Matrix::_MatrixResponse_Element_default_instance_._instance,
+    &::Matrix::_MatrixResponse_default_instance_._instance,
+};
+const char descriptor_table_protodef_matrix_2dvyv95n7wchpl_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\031matrix-vyv95n7wchpl.proto\022\006Matrix\".\n\007G"
+    "eocode\022\021\n\tlongitude\030\001 \002(\002\022\020\n\010latitude\030\002 "
+    "\002(\002\"8\n\010Location\022\n\n\002id\030\001 \002(\t\022 \n\007geocode\030\002"
+    " \002(\0132\017.Matrix.Geocode\"\322\002\n\rMatrixRequest\022"
+    "#\n\tlocations\030\001 \003(\0132\020.Matrix.Location\022\017\n\007"
+    "sources\030\002 \003(\t\022\024\n\014destinations\030\003 \003(\t\022E\n\014d"
+    "istanceUnit\030\004 \002(\0162#.Matrix.MatrixRequest"
+    ".eDistanceUnit:\nKILOMETRES\022B\n\014durationUn"
+    "it\030\005 \002(\0162#.Matrix.MatrixRequest.eDuratio"
+    "nUnit:\007MINUTES\">\n\reDurationUnit\022\013\n\007SECON"
+    "DS\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003\"*"
+    "\n\reDistanceUnit\022\016\n\nKILOMETRES\020\000\022\t\n\005MILES"
+    "\020\001\"\217\001\n\016MatrixResponse\0220\n\010elements\030\001 \003(\0132"
+    "\036.Matrix.MatrixResponse.Element\032K\n\007Eleme"
+    "nt\022\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\020\n\010dist"
+    "ance\030\003 \002(\002\022\020\n\010duration\030\004 \002(\002B\022\n\020icepacka"
+    "i.Matrix"
+};
+static ::absl::once_flag descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_matrix_2dvyv95n7wchpl_2eproto = {
+    false,
+    false,
+    648,
+    descriptor_table_protodef_matrix_2dvyv95n7wchpl_2eproto,
+    "matrix-vyv95n7wchpl.proto",
+    &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+    nullptr,
+    0,
+    5,
+    schemas,
+    file_default_instances,
+    TableStruct_matrix_2dvyv95n7wchpl_2eproto::offsets,
+    file_level_metadata_matrix_2dvyv95n7wchpl_2eproto,
+    file_level_enum_descriptors_matrix_2dvyv95n7wchpl_2eproto,
+    file_level_service_descriptors_matrix_2dvyv95n7wchpl_2eproto,
+};
+
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter() {
+  return &descriptor_table_matrix_2dvyv95n7wchpl_2eproto;
 }
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_matrix_2dvyv95n7wchpl_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_matrix_2dvyv95n7wchpl_2eproto(&descriptor_table_matrix_2dvyv95n7wchpl_2eproto);
 namespace Matrix {
 const ::google::protobuf::EnumDescriptor* MatrixRequest_eDurationUnit_descriptor() {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_enum_descriptors[0];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_matrix_2dvyv95n7wchpl_2eproto);
+  return file_level_enum_descriptors_matrix_2dvyv95n7wchpl_2eproto[0];
 }
 bool MatrixRequest_eDurationUnit_IsValid(int value) {
   switch (value) {
@@ -279,19 +286,22 @@ bool MatrixRequest_eDurationUnit_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const MatrixRequest_eDurationUnit MatrixRequest::SECONDS;
-const MatrixRequest_eDurationUnit MatrixRequest::MINUTES;
-const MatrixRequest_eDurationUnit MatrixRequest::HOURS;
-const MatrixRequest_eDurationUnit MatrixRequest::DAYS;
-const MatrixRequest_eDurationUnit MatrixRequest::eDurationUnit_MIN;
-const MatrixRequest_eDurationUnit MatrixRequest::eDurationUnit_MAX;
-const int MatrixRequest::eDurationUnit_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr MatrixRequest_eDurationUnit MatrixRequest::SECONDS;
+constexpr MatrixRequest_eDurationUnit MatrixRequest::MINUTES;
+constexpr MatrixRequest_eDurationUnit MatrixRequest::HOURS;
+constexpr MatrixRequest_eDurationUnit MatrixRequest::DAYS;
+constexpr MatrixRequest_eDurationUnit MatrixRequest::eDurationUnit_MIN;
+constexpr MatrixRequest_eDurationUnit MatrixRequest::eDurationUnit_MAX;
+constexpr int MatrixRequest::eDurationUnit_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* MatrixRequest_eDistanceUnit_descriptor() {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_enum_descriptors[1];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_matrix_2dvyv95n7wchpl_2eproto);
+  return file_level_enum_descriptors_matrix_2dvyv95n7wchpl_2eproto[1];
 }
 bool MatrixRequest_eDistanceUnit_IsValid(int value) {
   switch (value) {
@@ -302,273 +312,207 @@ bool MatrixRequest_eDistanceUnit_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const MatrixRequest_eDistanceUnit MatrixRequest::KILOMETRES;
-const MatrixRequest_eDistanceUnit MatrixRequest::MILES;
-const MatrixRequest_eDistanceUnit MatrixRequest::eDistanceUnit_MIN;
-const MatrixRequest_eDistanceUnit MatrixRequest::eDistanceUnit_MAX;
-const int MatrixRequest::eDistanceUnit_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr MatrixRequest_eDistanceUnit MatrixRequest::KILOMETRES;
+constexpr MatrixRequest_eDistanceUnit MatrixRequest::MILES;
+constexpr MatrixRequest_eDistanceUnit MatrixRequest::eDistanceUnit_MIN;
+constexpr MatrixRequest_eDistanceUnit MatrixRequest::eDistanceUnit_MAX;
+constexpr int MatrixRequest::eDistanceUnit_ARRAYSIZE;
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
-void Geocode::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Geocode::kLongitudeFieldNumber;
-const int Geocode::kLatitudeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Geocode::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Geocode>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_);
+  static void set_has_longitude(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_latitude(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-Geocode::Geocode()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Geocode.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Matrix.Geocode)
+Geocode::Geocode(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Matrix.Geocode)
 }
 Geocode::Geocode(const Geocode& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&longitude_, &from.longitude_,
-    static_cast<size_t>(reinterpret_cast<char*>(&latitude_) -
-    reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+    : ::google::protobuf::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:Matrix.Geocode)
 }
-
-void Geocode::SharedCtor() {
-  ::memset(&longitude_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&latitude_) -
-      reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+inline void Geocode::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.longitude_){0},
+      decltype(_impl_.latitude_){0},
+  };
 }
-
 Geocode::~Geocode() {
   // @@protoc_insertion_point(destructor:Matrix.Geocode)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Geocode::SharedDtor() {
+inline void Geocode::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void Geocode::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Geocode::descriptor() {
-  ::protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Geocode& Geocode::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Geocode.base);
-  return *internal_default_instance();
-}
-
-
-void Geocode::Clear() {
+PROTOBUF_NOINLINE void Geocode::Clear() {
 // @@protoc_insertion_point(message_clear_start:Matrix.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
-    ::memset(&longitude_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&latitude_) -
-        reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.longitude_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.latitude_) -
+        reinterpret_cast<char*>(&_impl_.longitude_)) + sizeof(_impl_.latitude_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Geocode::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Matrix.Geocode)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required float longitude = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
-          set_has_longitude();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &longitude_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float latitude = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_latitude();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &latitude_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Matrix.Geocode)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Matrix.Geocode)
-  return false;
-#undef DO_
+const char* Geocode::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Geocode::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Matrix.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required float longitude = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->longitude(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Geocode::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Geocode_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float latitude = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_)}},
+    // required float longitude = 1;
+    {::_pbi::TcParser::FastF32S1,
+     {13, 0, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required float longitude = 1;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float latitude = 2;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
-  // required float latitude = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->latitude(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Matrix.Geocode)
-}
-
-::google::protobuf::uint8* Geocode::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Geocode::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:Matrix.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required float longitude = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->longitude(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_longitude(), target);
   }
 
   // required float latitude = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->latitude(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_latitude(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:Matrix.Geocode)
   return target;
 }
 
-size_t Geocode::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:Matrix.Geocode)
-  size_t total_size = 0;
-
-  if (has_longitude()) {
-    // required float longitude = 1;
-    total_size += 1 + 4;
-  }
-
-  if (has_latitude()) {
-    // required float latitude = 2;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Geocode::ByteSizeLong() const {
+::size_t Geocode::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Matrix.Geocode)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required float longitude = 1;
-    total_size += 1 + 4;
-
-    // required float latitude = 2;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Geocode::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Matrix.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Geocode* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Geocode>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Matrix.Geocode)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Matrix.Geocode)
-    MergeFrom(*source);
-  }
-}
-
-void Geocode::MergeFrom(const Geocode& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Matrix.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required float longitude = 1;
     if (cached_has_bits & 0x00000001u) {
-      longitude_ = from.longitude_;
+      total_size += 5;
     }
+
+    // required float latitude = 2;
     if (cached_has_bits & 0x00000002u) {
-      latitude_ = from.latitude_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Geocode::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Matrix.Geocode)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Geocode::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Geocode::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Geocode::GetClassData() const { return &_class_data_; }
+
+
+void Geocode::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Geocode*>(&to_msg);
+  auto& from = static_cast<const Geocode&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Matrix.Geocode)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.longitude_ = from._impl_.longitude_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.latitude_ = from._impl_.latitude_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Geocode::CopyFrom(const Geocode& from) {
@@ -578,322 +522,259 @@ void Geocode::CopyFrom(const Geocode& from) {
   MergeFrom(from);
 }
 
-bool Geocode::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+PROTOBUF_NOINLINE bool Geocode::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void Geocode::Swap(Geocode* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Geocode::InternalSwap(Geocode* other) {
   using std::swap;
-  swap(longitude_, other->longitude_);
-  swap(latitude_, other->latitude_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_)
+      + sizeof(Geocode::_impl_.latitude_)
+      - PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_)>(
+          reinterpret_cast<char*>(&_impl_.longitude_),
+          reinterpret_cast<char*>(&other->_impl_.longitude_));
 }
 
 ::google::protobuf::Metadata Geocode::GetMetadata() const {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter, &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+      file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[0]);
 }
-
-
 // ===================================================================
 
-void Location::InitAsDefaultInstance() {
-  ::Matrix::_Location_default_instance_._instance.get_mutable()->geocode_ = const_cast< ::Matrix::Geocode*>(
-      ::Matrix::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Location::kIdFieldNumber;
-const int Location::kGeocodeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Location::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Location>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Location, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::Matrix::Geocode& geocode(const Location* msg);
+  static void set_has_geocode(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-Location::Location()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Location.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Matrix.Location)
+const ::Matrix::Geocode& Location::_Internal::geocode(const Location* msg) {
+  return *msg->_impl_.geocode_;
 }
-Location::Location(const Location& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_id()) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+Location::Location(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Matrix.Location)
+}
+Location::Location(const Location& from) : ::google::protobuf::Message() {
+  Location* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.geocode_){nullptr},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
   }
-  if (from.has_geocode()) {
-    geocode_ = new ::Matrix::Geocode(*from.geocode_);
-  } else {
-    geocode_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.geocode_ = new ::Matrix::Geocode(*from._impl_.geocode_);
   }
+
   // @@protoc_insertion_point(copy_constructor:Matrix.Location)
 }
-
-void Location::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  geocode_ = NULL;
+inline void Location::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.geocode_){nullptr},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Location::~Location() {
   // @@protoc_insertion_point(destructor:Matrix.Location)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Location::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete geocode_;
+inline void Location::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.geocode_;
 }
-
 void Location::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Location::descriptor() {
-  ::protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Location& Location::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_Location.base);
-  return *internal_default_instance();
-}
-
-
-void Location::Clear() {
+PROTOBUF_NOINLINE void Location::Clear() {
 // @@protoc_insertion_point(message_clear_start:Matrix.Location)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      id_.ClearNonDefaultToEmptyNoArena();
+      _impl_.id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(geocode_ != NULL);
-      geocode_->Clear();
+      ABSL_DCHECK(_impl_.geocode_ != nullptr);
+      _impl_.geocode_->Clear();
     }
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Location::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Matrix.Location)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "Matrix.Location.id");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .Matrix.Geocode geocode = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_geocode()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Matrix.Location)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Matrix.Location)
-  return false;
-#undef DO_
+const char* Location::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Location::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Matrix.Location)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string id = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.Location.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 26, 2> Location::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Location, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Location_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required .Matrix.Geocode geocode = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Location, _impl_.geocode_)}},
+    // required string id = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Location, _impl_.id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string id = 1;
+    {PROTOBUF_FIELD_OFFSET(Location, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .Matrix.Geocode geocode = 2;
+    {PROTOBUF_FIELD_OFFSET(Location, _impl_.geocode_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::Matrix::Geocode>()},
+  }}, {{
+    "\17\2\0\0\0\0\0\0"
+    "Matrix.Location"
+    "id"
+  }},
+};
 
-  // required .Matrix.Geocode geocode = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_geocode(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Matrix.Location)
-}
-
-::google::protobuf::uint8* Location::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Location::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:Matrix.Location)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.Location.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "Matrix.Location.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .Matrix.Geocode geocode = 2;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_geocode(), deterministic, target);
+      InternalWriteMessage(2, _Internal::geocode(this),
+        _Internal::geocode(this).GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:Matrix.Location)
   return target;
 }
 
-size_t Location::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:Matrix.Location)
-  size_t total_size = 0;
-
-  if (has_id()) {
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-  }
-
-  if (has_geocode()) {
-    // required .Matrix.Geocode geocode = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *geocode_);
-  }
-
-  return total_size;
-}
-size_t Location::ByteSizeLong() const {
+::size_t Location::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Matrix.Location)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-
-    // required .Matrix.Geocode geocode = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *geocode_);
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Location::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Matrix.Location)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Location* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Location>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Matrix.Location)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Matrix.Location)
-    MergeFrom(*source);
-  }
-}
-
-void Location::MergeFrom(const Location& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Matrix.Location)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required string id = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_id();
-      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
     }
+
+    // required .Matrix.Geocode geocode = 2;
     if (cached_has_bits & 0x00000002u) {
-      mutable_geocode()->::Matrix::Geocode::MergeFrom(from.geocode());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.geocode_);
     }
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Location::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Matrix.Location)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Location::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Location::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Location::GetClassData() const { return &_class_data_; }
+
+
+void Location::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Location*>(&to_msg);
+  auto& from = static_cast<const Location&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Matrix.Location)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_geocode()->::Matrix::Geocode::MergeFrom(
+          from._internal_geocode());
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Location::CopyFrom(const Location& from) {
@@ -903,451 +784,318 @@ void Location::CopyFrom(const Location& from) {
   MergeFrom(from);
 }
 
-bool Location::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-  if (has_geocode()) {
-    if (!this->geocode_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool Location::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.geocode_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Location::Swap(Location* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Location::InternalSwap(Location* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(geocode_, other->geocode_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  swap(_impl_.geocode_, other->_impl_.geocode_);
 }
 
 ::google::protobuf::Metadata Location::GetMetadata() const {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter, &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+      file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[1]);
 }
-
-
 // ===================================================================
 
-void MatrixRequest::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int MatrixRequest::kLocationsFieldNumber;
-const int MatrixRequest::kSourcesFieldNumber;
-const int MatrixRequest::kDestinationsFieldNumber;
-const int MatrixRequest::kDistanceUnitFieldNumber;
-const int MatrixRequest::kDurationUnitFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class MatrixRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<MatrixRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_._has_bits_);
+  static void set_has_distanceunit(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_durationunit(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-MatrixRequest::MatrixRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixRequest.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Matrix.MatrixRequest)
+MatrixRequest::MatrixRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Matrix.MatrixRequest)
 }
-MatrixRequest::MatrixRequest(const MatrixRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      locations_(from.locations_),
-      sources_(from.sources_),
-      destinations_(from.destinations_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&distanceunit_, &from.distanceunit_,
-    static_cast<size_t>(reinterpret_cast<char*>(&durationunit_) -
-    reinterpret_cast<char*>(&distanceunit_)) + sizeof(durationunit_));
+MatrixRequest::MatrixRequest(const MatrixRequest& from) : ::google::protobuf::Message() {
+  MatrixRequest* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.locations_){from._impl_.locations_},
+      decltype(_impl_.sources_){from._impl_.sources_},
+      decltype(_impl_.destinations_){from._impl_.destinations_},
+      decltype(_impl_.distanceunit_){},
+      decltype(_impl_.durationunit_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  ::memcpy(&_impl_.distanceunit_, &from._impl_.distanceunit_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.durationunit_) -
+    reinterpret_cast<char*>(&_impl_.distanceunit_)) + sizeof(_impl_.durationunit_));
+
   // @@protoc_insertion_point(copy_constructor:Matrix.MatrixRequest)
 }
-
-void MatrixRequest::SharedCtor() {
-  distanceunit_ = 0;
-  durationunit_ = 1;
+inline void MatrixRequest::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.locations_){arena},
+      decltype(_impl_.sources_){arena},
+      decltype(_impl_.destinations_){arena},
+      decltype(_impl_.distanceunit_){0},
+      decltype(_impl_.durationunit_){1},
+  };
 }
-
 MatrixRequest::~MatrixRequest() {
   // @@protoc_insertion_point(destructor:Matrix.MatrixRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void MatrixRequest::SharedDtor() {
+inline void MatrixRequest::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.locations_.~RepeatedPtrField();
+  _internal_mutable_sources()->~RepeatedPtrField();
+  _internal_mutable_destinations()->~RepeatedPtrField();
 }
-
 void MatrixRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* MatrixRequest::descriptor() {
-  ::protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const MatrixRequest& MatrixRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixRequest.base);
-  return *internal_default_instance();
-}
-
-
-void MatrixRequest::Clear() {
+PROTOBUF_NOINLINE void MatrixRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:Matrix.MatrixRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  locations_.Clear();
-  sources_.Clear();
-  destinations_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
-    distanceunit_ = 0;
-    durationunit_ = 1;
+  _internal_mutable_locations()->Clear();
+  _internal_mutable_sources()->Clear();
+  _internal_mutable_destinations()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    _impl_.distanceunit_ = 0;
+    _impl_.durationunit_ = 1;
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool MatrixRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Matrix.MatrixRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .Matrix.Location locations = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_locations()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string sources = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_sources()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->sources(this->sources_size() - 1).data(),
-            static_cast<int>(this->sources(this->sources_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "Matrix.MatrixRequest.sources");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string destinations = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_destinations()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->destinations(this->destinations_size() - 1).data(),
-            static_cast<int>(this->destinations(this->destinations_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "Matrix.MatrixRequest.destinations");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::Matrix::MatrixRequest_eDistanceUnit_IsValid(value)) {
-            set_distanceunit(static_cast< ::Matrix::MatrixRequest_eDistanceUnit >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                4, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::Matrix::MatrixRequest_eDurationUnit_IsValid(value)) {
-            set_durationunit(static_cast< ::Matrix::MatrixRequest_eDurationUnit >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                5, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Matrix.MatrixRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Matrix.MatrixRequest)
-  return false;
-#undef DO_
+const char* MatrixRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void MatrixRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Matrix.MatrixRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated .Matrix.Location locations = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->locations(static_cast<int>(i)),
-      output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 3, 48, 2> MatrixRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    3,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_MatrixRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .Matrix.Location locations = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.locations_)}},
+    // repeated string sources = 2;
+    {::_pbi::TcParser::FastSR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.sources_)}},
+    // repeated string destinations = 3;
+    {::_pbi::TcParser::FastSR1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.destinations_)}},
+    // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
+    {::_pbi::TcParser::FastEr0S1,
+     {32, 0, 1, PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.distanceunit_)}},
+    // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
+    {::_pbi::TcParser::FastEr0S1,
+     {40, 1, 3, PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.durationunit_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .Matrix.Location locations = 1;
+    {PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.locations_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated string sources = 2;
+    {PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.sources_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+    // repeated string destinations = 3;
+    {PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.destinations_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+    // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
+    {PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.distanceunit_), _Internal::kHasBitsOffset + 0, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
+    {PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.durationunit_), _Internal::kHasBitsOffset + 1, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::Matrix::Location>()},
+    {0, 2},
+    {0, 4},
+  }}, {{
+    "\24\0\7\14\0\0\0\0"
+    "Matrix.MatrixRequest"
+    "sources"
+    "destinations"
+  }},
+};
 
-  // repeated string sources = 2;
-  for (int i = 0, n = this->sources_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->sources(i).data(), static_cast<int>(this->sources(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixRequest.sources");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->sources(i), output);
-  }
-
-  // repeated string destinations = 3;
-  for (int i = 0, n = this->destinations_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->destinations(i).data(), static_cast<int>(this->destinations(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixRequest.destinations");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      3, this->destinations(i), output);
-  }
-
-  cached_has_bits = _has_bits_[0];
-  // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->distanceunit(), output);
-  }
-
-  // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      5, this->durationunit(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Matrix.MatrixRequest)
-}
-
-::google::protobuf::uint8* MatrixRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* MatrixRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:Matrix.MatrixRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .Matrix.Location locations = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->locations_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_locations_size()); i < n; i++) {
+    const auto& repfield = this->_internal_locations().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->locations(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated string sources = 2;
-  for (int i = 0, n = this->sources_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->sources(i).data(), static_cast<int>(this->sources(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixRequest.sources");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(2, this->sources(i), target);
+  for (int i = 0, n = this->_internal_sources_size(); i < n; ++i) {
+    const auto& s = this->_internal_sources().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "Matrix.MatrixRequest.sources");
+    target = stream->WriteString(2, s, target);
   }
 
   // repeated string destinations = 3;
-  for (int i = 0, n = this->destinations_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->destinations(i).data(), static_cast<int>(this->destinations(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixRequest.destinations");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(3, this->destinations(i), target);
+  for (int i = 0, n = this->_internal_destinations_size(); i < n; ++i) {
+    const auto& s = this->_internal_destinations().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "Matrix.MatrixRequest.destinations");
+    target = stream->WriteString(3, s, target);
   }
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->distanceunit(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        4, this->_internal_distanceunit(), target);
   }
 
   // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      5, this->durationunit(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        5, this->_internal_durationunit(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:Matrix.MatrixRequest)
   return target;
 }
 
-size_t MatrixRequest::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:Matrix.MatrixRequest)
-  size_t total_size = 0;
-
-  if (has_distanceunit()) {
-    // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->distanceunit());
-  }
-
-  if (has_durationunit()) {
-    // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->durationunit());
-  }
-
-  return total_size;
-}
-size_t MatrixRequest::ByteSizeLong() const {
+::size_t MatrixRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Matrix.MatrixRequest)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->distanceunit());
-
-    // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->durationunit());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // repeated .Matrix.Location locations = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->locations_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->locations(static_cast<int>(i)));
-    }
-  }
-
-  // repeated string sources = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->sources_size());
-  for (int i = 0, n = this->sources_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->sources(i));
-  }
-
-  // repeated string destinations = 3;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->destinations_size());
-  for (int i = 0, n = this->destinations_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->destinations(i));
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void MatrixRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Matrix.MatrixRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const MatrixRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const MatrixRequest>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Matrix.MatrixRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Matrix.MatrixRequest)
-    MergeFrom(*source);
-  }
-}
-
-void MatrixRequest::MergeFrom(const MatrixRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  locations_.MergeFrom(from.locations_);
-  sources_.MergeFrom(from.sources_);
-  destinations_.MergeFrom(from.destinations_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
-    if (cached_has_bits & 0x00000001u) {
-      distanceunit_ = from.distanceunit_;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      durationunit_ = from.durationunit_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // repeated .Matrix.Location locations = 1;
+  total_size += 1UL * this->_internal_locations_size();
+  for (const auto& msg : this->_internal_locations()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // repeated string sources = 2;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_sources().size());
+  for (int i = 0, n = _internal_sources().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_sources().Get(i));
+  }
+  // repeated string destinations = 3;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_destinations().size());
+  for (int i = 0, n = _internal_destinations().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_destinations().Get(i));
+  }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required .Matrix.MatrixRequest.eDistanceUnit distanceUnit = 4 [default = KILOMETRES];
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_distanceunit());
+    }
+
+    // required .Matrix.MatrixRequest.eDurationUnit durationUnit = 5 [default = MINUTES];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_durationunit());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void MatrixRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Matrix.MatrixRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData MatrixRequest::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    MatrixRequest::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*MatrixRequest::GetClassData() const { return &_class_data_; }
+
+
+void MatrixRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<MatrixRequest*>(&to_msg);
+  auto& from = static_cast<const MatrixRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_locations()->MergeFrom(from._internal_locations());
+  _this->_internal_mutable_sources()->MergeFrom(from._internal_sources());
+  _this->_internal_mutable_destinations()->MergeFrom(from._internal_destinations());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.distanceunit_ = from._impl_.distanceunit_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.durationunit_ = from._impl_.durationunit_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void MatrixRequest::CopyFrom(const MatrixRequest& from) {
@@ -1357,419 +1105,328 @@ void MatrixRequest::CopyFrom(const MatrixRequest& from) {
   MergeFrom(from);
 }
 
-bool MatrixRequest::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->locations())) return false;
+PROTOBUF_NOINLINE bool MatrixRequest::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_locations()))
+    return false;
   return true;
 }
 
-void MatrixRequest::Swap(MatrixRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void MatrixRequest::InternalSwap(MatrixRequest* other) {
   using std::swap;
-  CastToBase(&locations_)->InternalSwap(CastToBase(&other->locations_));
-  sources_.InternalSwap(CastToBase(&other->sources_));
-  destinations_.InternalSwap(CastToBase(&other->destinations_));
-  swap(distanceunit_, other->distanceunit_);
-  swap(durationunit_, other->durationunit_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.locations_.InternalSwap(&other->_impl_.locations_);
+  _impl_.sources_.InternalSwap(&other->_impl_.sources_);
+  _impl_.destinations_.InternalSwap(&other->_impl_.destinations_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.durationunit_)
+      + sizeof(MatrixRequest::_impl_.durationunit_)
+      - PROTOBUF_FIELD_OFFSET(MatrixRequest, _impl_.distanceunit_)>(
+          reinterpret_cast<char*>(&_impl_.distanceunit_),
+          reinterpret_cast<char*>(&other->_impl_.distanceunit_));
 }
 
 ::google::protobuf::Metadata MatrixRequest::GetMetadata() const {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter, &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+      file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[2]);
 }
-
-
 // ===================================================================
 
-void MatrixResponse_Element::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int MatrixResponse_Element::kFromIdFieldNumber;
-const int MatrixResponse_Element::kToIdFieldNumber;
-const int MatrixResponse_Element::kDistanceFieldNumber;
-const int MatrixResponse_Element::kDurationFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class MatrixResponse_Element::_Internal {
+ public:
+  using HasBits = decltype(std::declval<MatrixResponse_Element>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_._has_bits_);
+  static void set_has_fromid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_toid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_distance(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_duration(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
+};
 
-MatrixResponse_Element::MatrixResponse_Element()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixResponse_Element.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Matrix.MatrixResponse.Element)
+MatrixResponse_Element::MatrixResponse_Element(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Matrix.MatrixResponse.Element)
 }
-MatrixResponse_Element::MatrixResponse_Element(const MatrixResponse_Element& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_fromid()) {
-    fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+MatrixResponse_Element::MatrixResponse_Element(const MatrixResponse_Element& from) : ::google::protobuf::Message() {
+  MatrixResponse_Element* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.fromid_){},
+      decltype(_impl_.toid_){},
+      decltype(_impl_.distance_){},
+      decltype(_impl_.duration_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.fromid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fromid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.fromid_.Set(from._internal_fromid(), _this->GetArenaForAllocation());
   }
-  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_toid()) {
-    toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+  _impl_.toid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.toid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.toid_.Set(from._internal_toid(), _this->GetArenaForAllocation());
   }
-  ::memcpy(&distance_, &from.distance_,
-    static_cast<size_t>(reinterpret_cast<char*>(&duration_) -
-    reinterpret_cast<char*>(&distance_)) + sizeof(duration_));
+  ::memcpy(&_impl_.distance_, &from._impl_.distance_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.duration_) -
+    reinterpret_cast<char*>(&_impl_.distance_)) + sizeof(_impl_.duration_));
+
   // @@protoc_insertion_point(copy_constructor:Matrix.MatrixResponse.Element)
 }
-
-void MatrixResponse_Element::SharedCtor() {
-  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&distance_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&duration_) -
-      reinterpret_cast<char*>(&distance_)) + sizeof(duration_));
+inline void MatrixResponse_Element::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.fromid_){},
+      decltype(_impl_.toid_){},
+      decltype(_impl_.distance_){0},
+      decltype(_impl_.duration_){0},
+  };
+  _impl_.fromid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fromid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.toid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.toid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 MatrixResponse_Element::~MatrixResponse_Element() {
   // @@protoc_insertion_point(destructor:Matrix.MatrixResponse.Element)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void MatrixResponse_Element::SharedDtor() {
-  fromid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  toid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void MatrixResponse_Element::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.fromid_.Destroy();
+  _impl_.toid_.Destroy();
 }
-
 void MatrixResponse_Element::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* MatrixResponse_Element::descriptor() {
-  ::protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const MatrixResponse_Element& MatrixResponse_Element::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixResponse_Element.base);
-  return *internal_default_instance();
-}
-
-
-void MatrixResponse_Element::Clear() {
+PROTOBUF_NOINLINE void MatrixResponse_Element::Clear() {
 // @@protoc_insertion_point(message_clear_start:Matrix.MatrixResponse.Element)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      fromid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.fromid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      toid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.toid_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 12u) {
-    ::memset(&distance_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&duration_) -
-        reinterpret_cast<char*>(&distance_)) + sizeof(duration_));
+  if (cached_has_bits & 0x0000000cu) {
+    ::memset(&_impl_.distance_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.duration_) -
+        reinterpret_cast<char*>(&_impl_.distance_)) + sizeof(_impl_.duration_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool MatrixResponse_Element::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Matrix.MatrixResponse.Element)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string fromId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_fromid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->fromid().data(), static_cast<int>(this->fromid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "Matrix.MatrixResponse.Element.fromId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string toId = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_toid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->toid().data(), static_cast<int>(this->toid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "Matrix.MatrixResponse.Element.toId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float distance = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_distance();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &distance_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float duration = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_duration();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &duration_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Matrix.MatrixResponse.Element)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Matrix.MatrixResponse.Element)
-  return false;
-#undef DO_
+const char* MatrixResponse_Element::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void MatrixResponse_Element::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Matrix.MatrixResponse.Element)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string fromId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->fromid().data(), static_cast<int>(this->fromid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixResponse.Element.fromId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->fromid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 48, 2> MatrixResponse_Element::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_MatrixResponse_Element_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float duration = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.duration_)}},
+    // required string fromId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.fromid_)}},
+    // required string toId = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.toid_)}},
+    // required float distance = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.distance_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string fromId = 1;
+    {PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.fromid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required string toId = 2;
+    {PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.toid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float distance = 3;
+    {PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.distance_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float duration = 4;
+    {PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.duration_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\35\6\4\0\0\0\0\0"
+    "Matrix.MatrixResponse.Element"
+    "fromId"
+    "toId"
+  }},
+};
 
-  // required string toId = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->toid().data(), static_cast<int>(this->toid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixResponse.Element.toId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->toid(), output);
-  }
-
-  // required float distance = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->distance(), output);
-  }
-
-  // required float duration = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->duration(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Matrix.MatrixResponse.Element)
-}
-
-::google::protobuf::uint8* MatrixResponse_Element::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* MatrixResponse_Element::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:Matrix.MatrixResponse.Element)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string fromId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->fromid().data(), static_cast<int>(this->fromid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixResponse.Element.fromId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->fromid(), target);
+    const std::string& _s = this->_internal_fromid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "Matrix.MatrixResponse.Element.fromId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required string toId = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->toid().data(), static_cast<int>(this->toid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "Matrix.MatrixResponse.Element.toId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->toid(), target);
+    const std::string& _s = this->_internal_toid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "Matrix.MatrixResponse.Element.toId");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // required float distance = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->distance(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_distance(), target);
   }
 
   // required float duration = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->duration(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_duration(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:Matrix.MatrixResponse.Element)
   return target;
 }
 
-size_t MatrixResponse_Element::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:Matrix.MatrixResponse.Element)
-  size_t total_size = 0;
-
-  if (has_fromid()) {
-    // required string fromId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->fromid());
-  }
-
-  if (has_toid()) {
-    // required string toId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->toid());
-  }
-
-  if (has_distance()) {
-    // required float distance = 3;
-    total_size += 1 + 4;
-  }
-
-  if (has_duration()) {
-    // required float duration = 4;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t MatrixResponse_Element::ByteSizeLong() const {
+::size_t MatrixResponse_Element::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Matrix.MatrixResponse.Element)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string fromId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->fromid());
-
-    // required string toId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->toid());
-
-    // required float distance = 3;
-    total_size += 1 + 4;
-
-    // required float duration = 4;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void MatrixResponse_Element::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Matrix.MatrixResponse.Element)
-  GOOGLE_DCHECK_NE(&from, this);
-  const MatrixResponse_Element* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const MatrixResponse_Element>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Matrix.MatrixResponse.Element)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Matrix.MatrixResponse.Element)
-    MergeFrom(*source);
-  }
-}
-
-void MatrixResponse_Element::MergeFrom(const MatrixResponse_Element& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixResponse.Element)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // required string fromId = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_fromid();
-      fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_fromid());
     }
+
+    // required string toId = 2;
     if (cached_has_bits & 0x00000002u) {
-      set_has_toid();
-      toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_toid());
     }
+
+    // required float distance = 3;
     if (cached_has_bits & 0x00000004u) {
-      distance_ = from.distance_;
+      total_size += 5;
     }
+
+    // required float duration = 4;
     if (cached_has_bits & 0x00000008u) {
-      duration_ = from.duration_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void MatrixResponse_Element::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Matrix.MatrixResponse.Element)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData MatrixResponse_Element::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    MatrixResponse_Element::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*MatrixResponse_Element::GetClassData() const { return &_class_data_; }
+
+
+void MatrixResponse_Element::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<MatrixResponse_Element*>(&to_msg);
+  auto& from = static_cast<const MatrixResponse_Element&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixResponse.Element)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_fromid(from._internal_fromid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_toid(from._internal_toid());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.distance_ = from._impl_.distance_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.duration_ = from._impl_.duration_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void MatrixResponse_Element::CopyFrom(const MatrixResponse_Element& from) {
@@ -1779,235 +1436,184 @@ void MatrixResponse_Element::CopyFrom(const MatrixResponse_Element& from) {
   MergeFrom(from);
 }
 
-bool MatrixResponse_Element::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+PROTOBUF_NOINLINE bool MatrixResponse_Element::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void MatrixResponse_Element::Swap(MatrixResponse_Element* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void MatrixResponse_Element::InternalSwap(MatrixResponse_Element* other) {
   using std::swap;
-  fromid_.Swap(&other->fromid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  toid_.Swap(&other->toid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(distance_, other->distance_);
-  swap(duration_, other->duration_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.fromid_, lhs_arena,
+                                       &other->_impl_.fromid_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.toid_, lhs_arena,
+                                       &other->_impl_.toid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.duration_)
+      + sizeof(MatrixResponse_Element::_impl_.duration_)
+      - PROTOBUF_FIELD_OFFSET(MatrixResponse_Element, _impl_.distance_)>(
+          reinterpret_cast<char*>(&_impl_.distance_),
+          reinterpret_cast<char*>(&other->_impl_.distance_));
 }
 
 ::google::protobuf::Metadata MatrixResponse_Element::GetMetadata() const {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter, &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+      file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[3]);
 }
-
-
 // ===================================================================
 
-void MatrixResponse::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int MatrixResponse::kElementsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class MatrixResponse::_Internal {
+ public:
+};
 
-MatrixResponse::MatrixResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixResponse.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:Matrix.MatrixResponse)
+MatrixResponse::MatrixResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:Matrix.MatrixResponse)
 }
-MatrixResponse::MatrixResponse(const MatrixResponse& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      elements_(from.elements_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+MatrixResponse::MatrixResponse(const MatrixResponse& from) : ::google::protobuf::Message() {
+  MatrixResponse* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.elements_){from._impl_.elements_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+
   // @@protoc_insertion_point(copy_constructor:Matrix.MatrixResponse)
 }
-
-void MatrixResponse::SharedCtor() {
+inline void MatrixResponse::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.elements_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
 }
-
 MatrixResponse::~MatrixResponse() {
   // @@protoc_insertion_point(destructor:Matrix.MatrixResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void MatrixResponse::SharedDtor() {
+inline void MatrixResponse::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.elements_.~RepeatedPtrField();
 }
-
 void MatrixResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* MatrixResponse::descriptor() {
-  ::protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const MatrixResponse& MatrixResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_matrix_2dvyv95n7wchpl_2eproto::scc_info_MatrixResponse.base);
-  return *internal_default_instance();
-}
-
-
-void MatrixResponse::Clear() {
+PROTOBUF_NOINLINE void MatrixResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:Matrix.MatrixResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  elements_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_mutable_elements()->Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool MatrixResponse::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:Matrix.MatrixResponse)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .Matrix.MatrixResponse.Element elements = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_elements()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:Matrix.MatrixResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:Matrix.MatrixResponse)
-  return false;
-#undef DO_
+const char* MatrixResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void MatrixResponse::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:Matrix.MatrixResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated .Matrix.MatrixResponse.Element elements = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->elements(static_cast<int>(i)),
-      output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> MatrixResponse::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_MatrixResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .Matrix.MatrixResponse.Element elements = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(MatrixResponse, _impl_.elements_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .Matrix.MatrixResponse.Element elements = 1;
+    {PROTOBUF_FIELD_OFFSET(MatrixResponse, _impl_.elements_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::Matrix::MatrixResponse_Element>()},
+  }}, {{
+  }},
+};
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:Matrix.MatrixResponse)
-}
-
-::google::protobuf::uint8* MatrixResponse::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* MatrixResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:Matrix.MatrixResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .Matrix.MatrixResponse.Element elements = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->elements_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_elements_size()); i < n; i++) {
+    const auto& repfield = this->_internal_elements().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->elements(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:Matrix.MatrixResponse)
   return target;
 }
 
-size_t MatrixResponse::ByteSizeLong() const {
+::size_t MatrixResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:Matrix.MatrixResponse)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // repeated .Matrix.MatrixResponse.Element elements = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->elements_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->elements(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void MatrixResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:Matrix.MatrixResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const MatrixResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const MatrixResponse>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:Matrix.MatrixResponse)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:Matrix.MatrixResponse)
-    MergeFrom(*source);
-  }
-}
-
-void MatrixResponse::MergeFrom(const MatrixResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  elements_.MergeFrom(from.elements_);
+  // repeated .Matrix.MatrixResponse.Element elements = 1;
+  total_size += 1UL * this->_internal_elements_size();
+  for (const auto& msg : this->_internal_elements()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void MatrixResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:Matrix.MatrixResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData MatrixResponse::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    MatrixResponse::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*MatrixResponse::GetClassData() const { return &_class_data_; }
+
+
+void MatrixResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<MatrixResponse*>(&to_msg);
+  auto& from = static_cast<const MatrixResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Matrix.MatrixResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_elements()->MergeFrom(from._internal_elements());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void MatrixResponse::CopyFrom(const MatrixResponse& from) {
@@ -2017,48 +1623,28 @@ void MatrixResponse::CopyFrom(const MatrixResponse& from) {
   MergeFrom(from);
 }
 
-bool MatrixResponse::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->elements())) return false;
+PROTOBUF_NOINLINE bool MatrixResponse::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_elements()))
+    return false;
   return true;
 }
 
-void MatrixResponse::Swap(MatrixResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void MatrixResponse::InternalSwap(MatrixResponse* other) {
   using std::swap;
-  CastToBase(&elements_)->InternalSwap(CastToBase(&other->elements_));
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.elements_.InternalSwap(&other->_impl_.elements_);
 }
 
 ::google::protobuf::Metadata MatrixResponse::GetMetadata() const {
-  protobuf_matrix_2dvyv95n7wchpl_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_matrix_2dvyv95n7wchpl_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_getter, &descriptor_table_matrix_2dvyv95n7wchpl_2eproto_once,
+      file_level_metadata_matrix_2dvyv95n7wchpl_2eproto[4]);
 }
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace Matrix
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Matrix::Geocode* Arena::CreateMaybeMessage< ::Matrix::Geocode >(Arena* arena) {
-  return Arena::CreateInternal< ::Matrix::Geocode >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Matrix::Location* Arena::CreateMaybeMessage< ::Matrix::Location >(Arena* arena) {
-  return Arena::CreateInternal< ::Matrix::Location >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Matrix::MatrixRequest* Arena::CreateMaybeMessage< ::Matrix::MatrixRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::Matrix::MatrixRequest >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Matrix::MatrixResponse_Element* Arena::CreateMaybeMessage< ::Matrix::MatrixResponse_Element >(Arena* arena) {
-  return Arena::CreateInternal< ::Matrix::MatrixResponse_Element >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::Matrix::MatrixResponse* Arena::CreateMaybeMessage< ::Matrix::MatrixResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::Matrix::MatrixResponse >(arena);
-}
 }  // namespace protobuf
 }  // namespace google
-
 // @@protoc_insertion_point(global_scope)
+#include "google/protobuf/port_undef.inc"

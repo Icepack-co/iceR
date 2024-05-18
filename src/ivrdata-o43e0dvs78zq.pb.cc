@@ -4,553 +4,476 @@
 #include "ivrdata-o43e0dvs78zq.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_ivrdata_2do43e0dvs78zq_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_ivrdata_2do43e0dvs78zq_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_TransitSet_TransitValue;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_ivrdata_2do43e0dvs78zq_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_TransitSet;
-}  // namespace protobuf_ivrdata_2do43e0dvs78zq_2eproto
+// Must be included last.
+#include "google/protobuf/port_def.inc"
+PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace IVRData {
-class TransitSet_TransitValueDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TransitSet_TransitValue>
-      _instance;
-} _TransitSet_TransitValue_default_instance_;
-class TransitSetDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<TransitSet>
-      _instance;
-} _TransitSet_default_instance_;
-class CachedTransitSetDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<CachedTransitSet>
-      _instance;
-} _CachedTransitSet_default_instance_;
-class CachedModelDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<CachedModel>
-      _instance;
-} _CachedModel_default_instance_;
-}  // namespace IVRData
-namespace protobuf_ivrdata_2do43e0dvs78zq_2eproto {
-static void InitDefaultsTransitSet_TransitValue() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::IVRData::_TransitSet_TransitValue_default_instance_;
-    new (ptr) ::IVRData::TransitSet_TransitValue();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::IVRData::TransitSet_TransitValue::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_TransitSet_TransitValue =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsTransitSet_TransitValue}, {}};
-
-static void InitDefaultsTransitSet() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::IVRData::_TransitSet_default_instance_;
-    new (ptr) ::IVRData::TransitSet();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::IVRData::TransitSet::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_TransitSet =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsTransitSet}, {
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet_TransitValue.base,}};
-
-static void InitDefaultsCachedTransitSet() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::IVRData::_CachedTransitSet_default_instance_;
-    new (ptr) ::IVRData::CachedTransitSet();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::IVRData::CachedTransitSet::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_CachedTransitSet =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCachedTransitSet}, {
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet.base,}};
-
-static void InitDefaultsCachedModel() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::IVRData::_CachedModel_default_instance_;
-    new (ptr) ::IVRData::CachedModel();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::IVRData::CachedModel::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_CachedModel =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCachedModel}, {}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_TransitSet_TransitValue.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_TransitSet.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_CachedTransitSet.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_CachedModel.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[4];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, fromid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, toid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, value_),
-  0,
-  1,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::TransitSet, transits_),
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedTransitSet, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedTransitSet, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedTransitSet, transitset_),
-  0,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedModel, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedModel, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::IVRData::CachedModel, model_),
-  0,
-};
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::IVRData::TransitSet_TransitValue)},
-  { 11, 17, sizeof(::IVRData::TransitSet)},
-  { 18, 24, sizeof(::IVRData::CachedTransitSet)},
-  { 25, 31, sizeof(::IVRData::CachedModel)},
-};
-
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::IVRData::_TransitSet_TransitValue_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::IVRData::_TransitSet_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::IVRData::_CachedTransitSet_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::IVRData::_CachedModel_default_instance_),
-};
-
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "ivrdata-o43e0dvs78zq.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
-
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 4);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\032ivrdata-o43e0dvs78zq.proto\022\007IVRData\"}\n"
-      "\nTransitSet\0222\n\010transits\030\001 \003(\0132 .IVRData."
-      "TransitSet.TransitValue\032;\n\014TransitValue\022"
-      "\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\r\n\005value\030\003"
-      " \002(\002\";\n\020CachedTransitSet\022\'\n\ntransitSet\030\001"
-      " \002(\0132\023.IVRData.TransitSet\"\034\n\013CachedModel"
-      "\022\r\n\005model\030\001 \002(\014B\023\n\021icepackai.IVRData"
+        template <typename>
+PROTOBUF_CONSTEXPR TransitSet_TransitValue::TransitSet_TransitValue(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.fromid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.toid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.value_)*/ 0,
+    } {}
+struct TransitSet_TransitValueDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TransitSet_TransitValueDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TransitSet_TransitValueDefaultTypeInternal() {}
+  union {
+    TransitSet_TransitValue _instance;
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 276);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "ivrdata-o43e0dvs78zq.proto", &protobuf_RegisterTypes);
-}
+};
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TransitSet_TransitValueDefaultTypeInternal _TransitSet_TransitValue_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR TransitSet::TransitSet(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_.transits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+    } {}
+struct TransitSetDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TransitSetDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TransitSetDefaultTypeInternal() {}
+  union {
+    TransitSet _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TransitSetDefaultTypeInternal _TransitSet_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR CachedTransitSet::CachedTransitSet(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.transitset_)*/ nullptr,
+    } {}
+struct CachedTransitSetDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CachedTransitSetDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CachedTransitSetDefaultTypeInternal() {}
+  union {
+    CachedTransitSet _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CachedTransitSetDefaultTypeInternal _CachedTransitSet_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR CachedModel::CachedModel(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.model_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+    } {}
+struct CachedModelDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CachedModelDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CachedModelDefaultTypeInternal() {}
+  union {
+    CachedModel _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CachedModelDefaultTypeInternal _CachedModel_default_instance_;
+}  // namespace IVRData
+static ::_pb::Metadata file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto[4];
+static constexpr const ::_pb::EnumDescriptor**
+    file_level_enum_descriptors_ivrdata_2do43e0dvs78zq_2eproto = nullptr;
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_ivrdata_2do43e0dvs78zq_2eproto = nullptr;
+const ::uint32_t TableStruct_ivrdata_2do43e0dvs78zq_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _impl_.fromid_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _impl_.toid_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet_TransitValue, _impl_.value_),
+    0,
+    1,
+    2,
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::IVRData::TransitSet, _impl_.transits_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedTransitSet, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedTransitSet, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedTransitSet, _impl_.transitset_),
+    0,
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedModel, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedModel, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::IVRData::CachedModel, _impl_.model_),
+    0,
+};
+
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 11, -1, sizeof(::IVRData::TransitSet_TransitValue)},
+        {14, -1, -1, sizeof(::IVRData::TransitSet)},
+        {23, 32, -1, sizeof(::IVRData::CachedTransitSet)},
+        {33, 42, -1, sizeof(::IVRData::CachedModel)},
+};
+
+static const ::_pb::Message* const file_default_instances[] = {
+    &::IVRData::_TransitSet_TransitValue_default_instance_._instance,
+    &::IVRData::_TransitSet_default_instance_._instance,
+    &::IVRData::_CachedTransitSet_default_instance_._instance,
+    &::IVRData::_CachedModel_default_instance_._instance,
+};
+const char descriptor_table_protodef_ivrdata_2do43e0dvs78zq_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\032ivrdata-o43e0dvs78zq.proto\022\007IVRData\"}\n"
+    "\nTransitSet\0222\n\010transits\030\001 \003(\0132 .IVRData."
+    "TransitSet.TransitValue\032;\n\014TransitValue\022"
+    "\016\n\006fromId\030\001 \002(\t\022\014\n\004toId\030\002 \002(\t\022\r\n\005value\030\003"
+    " \002(\002\";\n\020CachedTransitSet\022\'\n\ntransitSet\030\001"
+    " \002(\0132\023.IVRData.TransitSet\"\034\n\013CachedModel"
+    "\022\r\n\005model\030\001 \002(\014B\023\n\021icepackai.IVRData"
+};
+static ::absl::once_flag descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_ivrdata_2do43e0dvs78zq_2eproto = {
+    false,
+    false,
+    276,
+    descriptor_table_protodef_ivrdata_2do43e0dvs78zq_2eproto,
+    "ivrdata-o43e0dvs78zq.proto",
+    &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once,
+    nullptr,
+    0,
+    4,
+    schemas,
+    file_default_instances,
+    TableStruct_ivrdata_2do43e0dvs78zq_2eproto::offsets,
+    file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto,
+    file_level_enum_descriptors_ivrdata_2do43e0dvs78zq_2eproto,
+    file_level_service_descriptors_ivrdata_2do43e0dvs78zq_2eproto,
+};
+
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_getter() {
+  return &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto;
 }
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_ivrdata_2do43e0dvs78zq_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_ivrdata_2do43e0dvs78zq_2eproto(&descriptor_table_ivrdata_2do43e0dvs78zq_2eproto);
 namespace IVRData {
-
 // ===================================================================
 
-void TransitSet_TransitValue::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TransitSet_TransitValue::kFromIdFieldNumber;
-const int TransitSet_TransitValue::kToIdFieldNumber;
-const int TransitSet_TransitValue::kValueFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TransitSet_TransitValue::_Internal {
+ public:
+  using HasBits = decltype(std::declval<TransitSet_TransitValue>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_._has_bits_);
+  static void set_has_fromid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_toid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_value(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
+};
 
-TransitSet_TransitValue::TransitSet_TransitValue()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet_TransitValue.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:IVRData.TransitSet.TransitValue)
+TransitSet_TransitValue::TransitSet_TransitValue(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:IVRData.TransitSet.TransitValue)
 }
-TransitSet_TransitValue::TransitSet_TransitValue(const TransitSet_TransitValue& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_fromid()) {
-    fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+TransitSet_TransitValue::TransitSet_TransitValue(const TransitSet_TransitValue& from) : ::google::protobuf::Message() {
+  TransitSet_TransitValue* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.fromid_){},
+      decltype(_impl_.toid_){},
+      decltype(_impl_.value_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.fromid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fromid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.fromid_.Set(from._internal_fromid(), _this->GetArenaForAllocation());
   }
-  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_toid()) {
-    toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+  _impl_.toid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.toid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.toid_.Set(from._internal_toid(), _this->GetArenaForAllocation());
   }
-  value_ = from.value_;
+  _this->_impl_.value_ = from._impl_.value_;
+
   // @@protoc_insertion_point(copy_constructor:IVRData.TransitSet.TransitValue)
 }
-
-void TransitSet_TransitValue::SharedCtor() {
-  fromid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  toid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  value_ = 0;
+inline void TransitSet_TransitValue::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.fromid_){},
+      decltype(_impl_.toid_){},
+      decltype(_impl_.value_){0},
+  };
+  _impl_.fromid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.fromid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.toid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.toid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 TransitSet_TransitValue::~TransitSet_TransitValue() {
   // @@protoc_insertion_point(destructor:IVRData.TransitSet.TransitValue)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void TransitSet_TransitValue::SharedDtor() {
-  fromid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  toid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void TransitSet_TransitValue::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.fromid_.Destroy();
+  _impl_.toid_.Destroy();
 }
-
 void TransitSet_TransitValue::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* TransitSet_TransitValue::descriptor() {
-  ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const TransitSet_TransitValue& TransitSet_TransitValue::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet_TransitValue.base);
-  return *internal_default_instance();
-}
-
-
-void TransitSet_TransitValue::Clear() {
+PROTOBUF_NOINLINE void TransitSet_TransitValue::Clear() {
 // @@protoc_insertion_point(message_clear_start:IVRData.TransitSet.TransitValue)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      fromid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.fromid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      toid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.toid_.ClearNonDefaultToEmpty();
     }
   }
-  value_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.value_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool TransitSet_TransitValue::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:IVRData.TransitSet.TransitValue)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string fromId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_fromid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->fromid().data(), static_cast<int>(this->fromid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "IVRData.TransitSet.TransitValue.fromId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string toId = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_toid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->toid().data(), static_cast<int>(this->toid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "IVRData.TransitSet.TransitValue.toId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float value = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_value();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &value_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:IVRData.TransitSet.TransitValue)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IVRData.TransitSet.TransitValue)
-  return false;
-#undef DO_
+const char* TransitSet_TransitValue::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void TransitSet_TransitValue::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IVRData.TransitSet.TransitValue)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string fromId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->fromid().data(), static_cast<int>(this->fromid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "IVRData.TransitSet.TransitValue.fromId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->fromid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 50, 2> TransitSet_TransitValue::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_TransitSet_TransitValue_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string fromId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.fromid_)}},
+    // required string toId = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.toid_)}},
+    // required float value = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.value_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string fromId = 1;
+    {PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.fromid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required string toId = 2;
+    {PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.toid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float value = 3;
+    {PROTOBUF_FIELD_OFFSET(TransitSet_TransitValue, _impl_.value_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\37\6\4\0\0\0\0\0"
+    "IVRData.TransitSet.TransitValue"
+    "fromId"
+    "toId"
+  }},
+};
 
-  // required string toId = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->toid().data(), static_cast<int>(this->toid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "IVRData.TransitSet.TransitValue.toId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->toid(), output);
-  }
-
-  // required float value = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->value(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:IVRData.TransitSet.TransitValue)
-}
-
-::google::protobuf::uint8* TransitSet_TransitValue::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* TransitSet_TransitValue::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:IVRData.TransitSet.TransitValue)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string fromId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->fromid().data(), static_cast<int>(this->fromid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "IVRData.TransitSet.TransitValue.fromId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->fromid(), target);
+    const std::string& _s = this->_internal_fromid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "IVRData.TransitSet.TransitValue.fromId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required string toId = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->toid().data(), static_cast<int>(this->toid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "IVRData.TransitSet.TransitValue.toId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->toid(), target);
+    const std::string& _s = this->_internal_toid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "IVRData.TransitSet.TransitValue.toId");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // required float value = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->value(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_value(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:IVRData.TransitSet.TransitValue)
   return target;
 }
 
-size_t TransitSet_TransitValue::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:IVRData.TransitSet.TransitValue)
-  size_t total_size = 0;
-
-  if (has_fromid()) {
-    // required string fromId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->fromid());
-  }
-
-  if (has_toid()) {
-    // required string toId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->toid());
-  }
-
-  if (has_value()) {
-    // required float value = 3;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t TransitSet_TransitValue::ByteSizeLong() const {
+::size_t TransitSet_TransitValue::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:IVRData.TransitSet.TransitValue)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required string fromId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->fromid());
-
-    // required string toId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->toid());
-
-    // required float value = 3;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TransitSet_TransitValue::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:IVRData.TransitSet.TransitValue)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TransitSet_TransitValue* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TransitSet_TransitValue>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:IVRData.TransitSet.TransitValue)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:IVRData.TransitSet.TransitValue)
-    MergeFrom(*source);
-  }
-}
-
-void TransitSet_TransitValue::MergeFrom(const TransitSet_TransitValue& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:IVRData.TransitSet.TransitValue)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // required string fromId = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_fromid();
-      fromid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fromid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_fromid());
     }
+
+    // required string toId = 2;
     if (cached_has_bits & 0x00000002u) {
-      set_has_toid();
-      toid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.toid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_toid());
     }
+
+    // required float value = 3;
     if (cached_has_bits & 0x00000004u) {
-      value_ = from.value_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void TransitSet_TransitValue::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:IVRData.TransitSet.TransitValue)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData TransitSet_TransitValue::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    TransitSet_TransitValue::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*TransitSet_TransitValue::GetClassData() const { return &_class_data_; }
+
+
+void TransitSet_TransitValue::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<TransitSet_TransitValue*>(&to_msg);
+  auto& from = static_cast<const TransitSet_TransitValue&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:IVRData.TransitSet.TransitValue)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_fromid(from._internal_fromid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_toid(from._internal_toid());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.value_ = from._impl_.value_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TransitSet_TransitValue::CopyFrom(const TransitSet_TransitValue& from) {
@@ -560,234 +483,179 @@ void TransitSet_TransitValue::CopyFrom(const TransitSet_TransitValue& from) {
   MergeFrom(from);
 }
 
-bool TransitSet_TransitValue::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+PROTOBUF_NOINLINE bool TransitSet_TransitValue::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void TransitSet_TransitValue::Swap(TransitSet_TransitValue* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TransitSet_TransitValue::InternalSwap(TransitSet_TransitValue* other) {
   using std::swap;
-  fromid_.Swap(&other->fromid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  toid_.Swap(&other->toid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(value_, other->value_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.fromid_, lhs_arena,
+                                       &other->_impl_.fromid_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.toid_, lhs_arena,
+                                       &other->_impl_.toid_, rhs_arena);
+        swap(_impl_.value_, other->_impl_.value_);
 }
 
 ::google::protobuf::Metadata TransitSet_TransitValue::GetMetadata() const {
-  protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_getter, &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once,
+      file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto[0]);
 }
-
-
 // ===================================================================
 
-void TransitSet::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int TransitSet::kTransitsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class TransitSet::_Internal {
+ public:
+};
 
-TransitSet::TransitSet()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:IVRData.TransitSet)
+TransitSet::TransitSet(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:IVRData.TransitSet)
 }
-TransitSet::TransitSet(const TransitSet& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      transits_(from.transits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+TransitSet::TransitSet(const TransitSet& from) : ::google::protobuf::Message() {
+  TransitSet* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.transits_){from._impl_.transits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+
   // @@protoc_insertion_point(copy_constructor:IVRData.TransitSet)
 }
-
-void TransitSet::SharedCtor() {
+inline void TransitSet::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_.transits_){arena},
+      /*decltype(_impl_._cached_size_)*/ {},
+  };
 }
-
 TransitSet::~TransitSet() {
   // @@protoc_insertion_point(destructor:IVRData.TransitSet)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void TransitSet::SharedDtor() {
+inline void TransitSet::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.transits_.~RepeatedPtrField();
 }
-
 void TransitSet::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* TransitSet::descriptor() {
-  ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const TransitSet& TransitSet::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_TransitSet.base);
-  return *internal_default_instance();
-}
-
-
-void TransitSet::Clear() {
+PROTOBUF_NOINLINE void TransitSet::Clear() {
 // @@protoc_insertion_point(message_clear_start:IVRData.TransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  transits_.Clear();
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_mutable_transits()->Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool TransitSet::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:IVRData.TransitSet)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .IVRData.TransitSet.TransitValue transits = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_transits()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:IVRData.TransitSet)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IVRData.TransitSet)
-  return false;
-#undef DO_
+const char* TransitSet::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void TransitSet::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IVRData.TransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated .IVRData.TransitSet.TransitValue transits = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->transits_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->transits(static_cast<int>(i)),
-      output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> TransitSet::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_TransitSet_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .IVRData.TransitSet.TransitValue transits = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(TransitSet, _impl_.transits_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .IVRData.TransitSet.TransitValue transits = 1;
+    {PROTOBUF_FIELD_OFFSET(TransitSet, _impl_.transits_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::IVRData::TransitSet_TransitValue>()},
+  }}, {{
+  }},
+};
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:IVRData.TransitSet)
-}
-
-::google::protobuf::uint8* TransitSet::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* TransitSet::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:IVRData.TransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .IVRData.TransitSet.TransitValue transits = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->transits_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_transits_size()); i < n; i++) {
+    const auto& repfield = this->_internal_transits().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->transits(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:IVRData.TransitSet)
   return target;
 }
 
-size_t TransitSet::ByteSizeLong() const {
+::size_t TransitSet::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:IVRData.TransitSet)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // repeated .IVRData.TransitSet.TransitValue transits = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->transits_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->transits(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void TransitSet::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:IVRData.TransitSet)
-  GOOGLE_DCHECK_NE(&from, this);
-  const TransitSet* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const TransitSet>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:IVRData.TransitSet)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:IVRData.TransitSet)
-    MergeFrom(*source);
-  }
-}
-
-void TransitSet::MergeFrom(const TransitSet& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:IVRData.TransitSet)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  transits_.MergeFrom(from.transits_);
+  // repeated .IVRData.TransitSet.TransitValue transits = 1;
+  total_size += 1UL * this->_internal_transits_size();
+  for (const auto& msg : this->_internal_transits()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void TransitSet::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:IVRData.TransitSet)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData TransitSet::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    TransitSet::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*TransitSet::GetClassData() const { return &_class_data_; }
+
+
+void TransitSet::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<TransitSet*>(&to_msg);
+  auto& from = static_cast<const TransitSet&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:IVRData.TransitSet)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_transits()->MergeFrom(from._internal_transits());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void TransitSet::CopyFrom(const TransitSet& from) {
@@ -797,237 +665,199 @@ void TransitSet::CopyFrom(const TransitSet& from) {
   MergeFrom(from);
 }
 
-bool TransitSet::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->transits())) return false;
+PROTOBUF_NOINLINE bool TransitSet::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_transits()))
+    return false;
   return true;
 }
 
-void TransitSet::Swap(TransitSet* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void TransitSet::InternalSwap(TransitSet* other) {
   using std::swap;
-  CastToBase(&transits_)->InternalSwap(CastToBase(&other->transits_));
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.transits_.InternalSwap(&other->_impl_.transits_);
 }
 
 ::google::protobuf::Metadata TransitSet::GetMetadata() const {
-  protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_getter, &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once,
+      file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto[1]);
 }
-
-
 // ===================================================================
 
-void CachedTransitSet::InitAsDefaultInstance() {
-  ::IVRData::_CachedTransitSet_default_instance_._instance.get_mutable()->transitset_ = const_cast< ::IVRData::TransitSet*>(
-      ::IVRData::TransitSet::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CachedTransitSet::kTransitSetFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-CachedTransitSet::CachedTransitSet()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_CachedTransitSet.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:IVRData.CachedTransitSet)
-}
-CachedTransitSet::CachedTransitSet(const CachedTransitSet& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_transitset()) {
-    transitset_ = new ::IVRData::TransitSet(*from.transitset_);
-  } else {
-    transitset_ = NULL;
+class CachedTransitSet::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CachedTransitSet>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(CachedTransitSet, _impl_._has_bits_);
+  static const ::IVRData::TransitSet& transitset(const CachedTransitSet* msg);
+  static void set_has_transitset(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+const ::IVRData::TransitSet& CachedTransitSet::_Internal::transitset(const CachedTransitSet* msg) {
+  return *msg->_impl_.transitset_;
+}
+CachedTransitSet::CachedTransitSet(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:IVRData.CachedTransitSet)
+}
+CachedTransitSet::CachedTransitSet(const CachedTransitSet& from) : ::google::protobuf::Message() {
+  CachedTransitSet* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.transitset_){nullptr},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.transitset_ = new ::IVRData::TransitSet(*from._impl_.transitset_);
+  }
+
   // @@protoc_insertion_point(copy_constructor:IVRData.CachedTransitSet)
 }
-
-void CachedTransitSet::SharedCtor() {
-  transitset_ = NULL;
+inline void CachedTransitSet::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.transitset_){nullptr},
+  };
 }
-
 CachedTransitSet::~CachedTransitSet() {
   // @@protoc_insertion_point(destructor:IVRData.CachedTransitSet)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void CachedTransitSet::SharedDtor() {
-  if (this != internal_default_instance()) delete transitset_;
+inline void CachedTransitSet::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete _impl_.transitset_;
 }
-
 void CachedTransitSet::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* CachedTransitSet::descriptor() {
-  ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const CachedTransitSet& CachedTransitSet::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_CachedTransitSet.base);
-  return *internal_default_instance();
-}
-
-
-void CachedTransitSet::Clear() {
+PROTOBUF_NOINLINE void CachedTransitSet::Clear() {
 // @@protoc_insertion_point(message_clear_start:IVRData.CachedTransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(transitset_ != NULL);
-    transitset_->Clear();
+    ABSL_DCHECK(_impl_.transitset_ != nullptr);
+    _impl_.transitset_->Clear();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool CachedTransitSet::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:IVRData.CachedTransitSet)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .IVRData.TransitSet transitSet = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_transitset()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:IVRData.CachedTransitSet)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IVRData.CachedTransitSet)
-  return false;
-#undef DO_
+const char* CachedTransitSet::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void CachedTransitSet::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IVRData.CachedTransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .IVRData.TransitSet transitSet = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_transitset(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2> CachedTransitSet::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(CachedTransitSet, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_CachedTransitSet_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required .IVRData.TransitSet transitSet = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(CachedTransitSet, _impl_.transitset_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required .IVRData.TransitSet transitSet = 1;
+    {PROTOBUF_FIELD_OFFSET(CachedTransitSet, _impl_.transitset_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::IVRData::TransitSet>()},
+  }}, {{
+  }},
+};
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:IVRData.CachedTransitSet)
-}
-
-::google::protobuf::uint8* CachedTransitSet::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* CachedTransitSet::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:IVRData.CachedTransitSet)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required .IVRData.TransitSet transitSet = 1;
   if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_transitset(), deterministic, target);
+      InternalWriteMessage(1, _Internal::transitset(this),
+        _Internal::transitset(this).GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:IVRData.CachedTransitSet)
   return target;
 }
 
-size_t CachedTransitSet::ByteSizeLong() const {
+::size_t CachedTransitSet::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:IVRData.CachedTransitSet)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required .IVRData.TransitSet transitSet = 1;
-  if (has_transitset()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *transitset_);
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CachedTransitSet::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:IVRData.CachedTransitSet)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CachedTransitSet* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const CachedTransitSet>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:IVRData.CachedTransitSet)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:IVRData.CachedTransitSet)
-    MergeFrom(*source);
-  }
-}
-
-void CachedTransitSet::MergeFrom(const CachedTransitSet& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:IVRData.CachedTransitSet)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (from.has_transitset()) {
-    mutable_transitset()->::IVRData::TransitSet::MergeFrom(from.transitset());
+  // required .IVRData.TransitSet transitSet = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *_impl_.transitset_);
   }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void CachedTransitSet::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:IVRData.CachedTransitSet)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData CachedTransitSet::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    CachedTransitSet::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*CachedTransitSet::GetClassData() const { return &_class_data_; }
+
+
+void CachedTransitSet::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<CachedTransitSet*>(&to_msg);
+  auto& from = static_cast<const CachedTransitSet&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:IVRData.CachedTransitSet)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_mutable_transitset()->::IVRData::TransitSet::MergeFrom(
+        from._internal_transitset());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CachedTransitSet::CopyFrom(const CachedTransitSet& from) {
@@ -1037,237 +867,204 @@ void CachedTransitSet::CopyFrom(const CachedTransitSet& from) {
   MergeFrom(from);
 }
 
-bool CachedTransitSet::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (has_transitset()) {
-    if (!this->transitset_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool CachedTransitSet::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!_impl_.transitset_->IsInitialized()) return false;
   }
   return true;
 }
 
-void CachedTransitSet::Swap(CachedTransitSet* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void CachedTransitSet::InternalSwap(CachedTransitSet* other) {
   using std::swap;
-  swap(transitset_, other->transitset_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.transitset_, other->_impl_.transitset_);
 }
 
 ::google::protobuf::Metadata CachedTransitSet::GetMetadata() const {
-  protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_getter, &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once,
+      file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto[2]);
 }
-
-
 // ===================================================================
 
-void CachedModel::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CachedModel::kModelFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-CachedModel::CachedModel()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_CachedModel.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:IVRData.CachedModel)
-}
-CachedModel::CachedModel(const CachedModel& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  model_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_model()) {
-    model_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.model_);
+class CachedModel::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CachedModel>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(CachedModel, _impl_._has_bits_);
+  static void set_has_model(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+CachedModel::CachedModel(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:IVRData.CachedModel)
+}
+CachedModel::CachedModel(const CachedModel& from) : ::google::protobuf::Message() {
+  CachedModel* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.model_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.model_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.model_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.model_.Set(from._internal_model(), _this->GetArenaForAllocation());
+  }
+
   // @@protoc_insertion_point(copy_constructor:IVRData.CachedModel)
 }
-
-void CachedModel::SharedCtor() {
-  model_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CachedModel::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.model_){},
+  };
+  _impl_.model_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.model_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 CachedModel::~CachedModel() {
   // @@protoc_insertion_point(destructor:IVRData.CachedModel)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void CachedModel::SharedDtor() {
-  model_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CachedModel::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.model_.Destroy();
 }
-
 void CachedModel::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* CachedModel::descriptor() {
-  ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const CachedModel& CachedModel::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_ivrdata_2do43e0dvs78zq_2eproto::scc_info_CachedModel.base);
-  return *internal_default_instance();
-}
-
-
-void CachedModel::Clear() {
+PROTOBUF_NOINLINE void CachedModel::Clear() {
 // @@protoc_insertion_point(message_clear_start:IVRData.CachedModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    model_.ClearNonDefaultToEmptyNoArena();
+    _impl_.model_.ClearNonDefaultToEmpty();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool CachedModel::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:IVRData.CachedModel)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required bytes model = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_model()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:IVRData.CachedModel)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:IVRData.CachedModel)
-  return false;
-#undef DO_
+const char* CachedModel::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void CachedModel::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:IVRData.CachedModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required bytes model = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      1, this->model(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> CachedModel::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(CachedModel, _impl_._has_bits_),
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_CachedModel_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required bytes model = 1;
+    {::_pbi::TcParser::FastBS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(CachedModel, _impl_.model_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required bytes model = 1;
+    {PROTOBUF_FIELD_OFFSET(CachedModel, _impl_.model_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:IVRData.CachedModel)
-}
-
-::google::protobuf::uint8* CachedModel::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* CachedModel::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:IVRData.CachedModel)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required bytes model = 1;
   if (cached_has_bits & 0x00000001u) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        1, this->model(), target);
+    const std::string& _s = this->_internal_model();
+    target = stream->WriteBytesMaybeAliased(1, _s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:IVRData.CachedModel)
   return target;
 }
 
-size_t CachedModel::ByteSizeLong() const {
+::size_t CachedModel::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:IVRData.CachedModel)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required bytes model = 1;
-  if (has_model()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->model());
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CachedModel::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:IVRData.CachedModel)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CachedModel* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const CachedModel>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:IVRData.CachedModel)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:IVRData.CachedModel)
-    MergeFrom(*source);
-  }
-}
-
-void CachedModel::MergeFrom(const CachedModel& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:IVRData.CachedModel)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (from.has_model()) {
-    set_has_model();
-    model_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.model_);
+  // required bytes model = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_model());
   }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void CachedModel::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:IVRData.CachedModel)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData CachedModel::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    CachedModel::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*CachedModel::GetClassData() const { return &_class_data_; }
+
+
+void CachedModel::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<CachedModel*>(&to_msg);
+  auto& from = static_cast<const CachedModel&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:IVRData.CachedModel)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_model(from._internal_model());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CachedModel::CopyFrom(const CachedModel& from) {
@@ -1277,46 +1074,33 @@ void CachedModel::CopyFrom(const CachedModel& from) {
   MergeFrom(from);
 }
 
-bool CachedModel::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+PROTOBUF_NOINLINE bool CachedModel::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void CachedModel::Swap(CachedModel* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void CachedModel::InternalSwap(CachedModel* other) {
   using std::swap;
-  model_.Swap(&other->model_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.model_, lhs_arena,
+                                       &other->_impl_.model_, rhs_arena);
 }
 
 ::google::protobuf::Metadata CachedModel::GetMetadata() const {
-  protobuf_ivrdata_2do43e0dvs78zq_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_ivrdata_2do43e0dvs78zq_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_getter, &descriptor_table_ivrdata_2do43e0dvs78zq_2eproto_once,
+      file_level_metadata_ivrdata_2do43e0dvs78zq_2eproto[3]);
 }
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace IVRData
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::IVRData::TransitSet_TransitValue* Arena::CreateMaybeMessage< ::IVRData::TransitSet_TransitValue >(Arena* arena) {
-  return Arena::CreateInternal< ::IVRData::TransitSet_TransitValue >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::IVRData::TransitSet* Arena::CreateMaybeMessage< ::IVRData::TransitSet >(Arena* arena) {
-  return Arena::CreateInternal< ::IVRData::TransitSet >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::IVRData::CachedTransitSet* Arena::CreateMaybeMessage< ::IVRData::CachedTransitSet >(Arena* arena) {
-  return Arena::CreateInternal< ::IVRData::CachedTransitSet >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::IVRData::CachedModel* Arena::CreateMaybeMessage< ::IVRData::CachedModel >(Arena* arena) {
-  return Arena::CreateInternal< ::IVRData::CachedModel >(arena);
-}
 }  // namespace protobuf
 }  // namespace google
-
 // @@protoc_insertion_point(global_scope)
+#include "google/protobuf/port_undef.inc"

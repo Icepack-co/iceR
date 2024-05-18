@@ -1,5 +1,5 @@
 CXX = g++-4.8.1
-PKG_CXXFLAGS = -std=c++11
+PKG_CXXFLAGS = -std=c++17
 PKG_LIBS = -L/usr/local/lib -lprotobuf
 
 PROTOC=/usr/local/bin/protoc
