@@ -191,10 +191,20 @@ getSolveTime <- function(apiHelper, requestID){
   if(length(solRes$logs) < 1){
     return(NA)
   }
-  if(length(solRes$logs[[1]]) < 2){
+
+  index <- 0
+  for (x in 1:length(solRes$logs[[1]])) {
+    if(grepl("Solved in", solRes$logs[[1]][[x]], fixed = TRUE)) {
+      index <- x
+      break
+    }
+  }
+
+  if (index == 0) {
     return(NA)
   }
-  solveTimeSeconds <- sub(' s', '', sub('.*: ','',  solRes$logs[[1]][[2]])) %>% as.numeric()
+
+  solveTimeSeconds <- sub(' s', '', sub('.*: ','',  solRes$logs[[1]][[index]])) %>% as.numeric()
 
   if (solveTimeSeconds >= 60) {
     mins <- round(solveTimeSeconds/60)
