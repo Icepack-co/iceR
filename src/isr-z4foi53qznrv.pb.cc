@@ -4,835 +4,901 @@
 #include "isr-z4foi53qznrv.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_isr_2dz4foi53qznrv_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_CollectionSequence;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Configuration;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_Geocode;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Infeasibility_Info;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_InterStopAttribute;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_StopAttribute;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Collection;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_OffloadSite;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Infeasibility;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Matching;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Segment;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_Vehicle;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_InterStop;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_Route;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_Stop;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_isr_2dz4foi53qznrv_2eproto ::google::protobuf::internal::SCCInfo<5> scc_info_Model;
-}  // namespace protobuf_isr_2dz4foi53qznrv_2eproto
+// Must be included last.
+#include "google/protobuf/port_def.inc"
+PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace ISR {
-class ConfigurationDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Configuration>
-      _instance;
-} _Configuration_default_instance_;
-class GeocodeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Geocode>
-      _instance;
-} _Geocode_default_instance_;
-class OffloadSiteDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<OffloadSite>
-      _instance;
-} _OffloadSite_default_instance_;
-class CollectionDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Collection>
-      _instance;
-} _Collection_default_instance_;
-class VehicleDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Vehicle>
-      _instance;
-} _Vehicle_default_instance_;
-class CollectionSequenceDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<CollectionSequence>
-      _instance;
-} _CollectionSequence_default_instance_;
-class ModelDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Model>
-      _instance;
-} _Model_default_instance_;
-class SolveRequestDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolveRequest>
-      _instance;
-} _SolveRequest_default_instance_;
-class SolutionResponse_StopAttributeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_StopAttribute>
-      _instance;
-} _SolutionResponse_StopAttribute_default_instance_;
-class SolutionResponse_InterStopAttributeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_InterStopAttribute>
-      _instance;
-} _SolutionResponse_InterStopAttribute_default_instance_;
-class SolutionResponse_StopDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Stop>
-      _instance;
-} _SolutionResponse_Stop_default_instance_;
-class SolutionResponse_InterStopDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_InterStop>
-      _instance;
-} _SolutionResponse_InterStop_default_instance_;
-class SolutionResponse_RouteDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Route>
-      _instance;
-} _SolutionResponse_Route_default_instance_;
-class SolutionResponse_Infeasibility_InfoDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Infeasibility_Info>
-      _instance;
-} _SolutionResponse_Infeasibility_Info_default_instance_;
-class SolutionResponse_InfeasibilityDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Infeasibility>
-      _instance;
-} _SolutionResponse_Infeasibility_default_instance_;
-class SolutionResponse_MatchingDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Matching>
-      _instance;
-} _SolutionResponse_Matching_default_instance_;
-class SolutionResponse_SegmentDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse_Segment>
-      _instance;
-} _SolutionResponse_Segment_default_instance_;
-class SolutionResponseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolutionResponse>
-      _instance;
-} _SolutionResponse_default_instance_;
-}  // namespace ISR
-namespace protobuf_isr_2dz4foi53qznrv_2eproto {
-static void InitDefaultsConfiguration() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_Configuration_default_instance_;
-    new (ptr) ::ISR::Configuration();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::Configuration::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Configuration =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsConfiguration}, {}};
-
-static void InitDefaultsGeocode() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_Geocode_default_instance_;
-    new (ptr) ::ISR::Geocode();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::Geocode::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_Geocode =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGeocode}, {}};
-
-static void InitDefaultsOffloadSite() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_OffloadSite_default_instance_;
-    new (ptr) ::ISR::OffloadSite();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::OffloadSite::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_OffloadSite =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsOffloadSite}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsCollection() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_Collection_default_instance_;
-    new (ptr) ::ISR::Collection();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::Collection::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Collection =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsCollection}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsVehicle() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_Vehicle_default_instance_;
-    new (ptr) ::ISR::Vehicle();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::Vehicle::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_Vehicle =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsVehicle}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsCollectionSequence() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_CollectionSequence_default_instance_;
-    new (ptr) ::ISR::CollectionSequence();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::CollectionSequence::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_CollectionSequence =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsCollectionSequence}, {}};
-
-static void InitDefaultsModel() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_Model_default_instance_;
-    new (ptr) ::ISR::Model();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::Model::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<5> scc_info_Model =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 5, InitDefaultsModel}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Configuration.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Collection.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_OffloadSite.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Vehicle.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_CollectionSequence.base,}};
-
-static void InitDefaultsSolveRequest() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolveRequest_default_instance_;
-    new (ptr) ::ISR::SolveRequest();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolveRequest::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_SolveRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSolveRequest}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Model.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_CollectionSequence.base,}};
-
-static void InitDefaultsSolutionResponse_StopAttribute() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_StopAttribute_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_StopAttribute();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_StopAttribute::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_StopAttribute =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_StopAttribute}, {}};
-
-static void InitDefaultsSolutionResponse_InterStopAttribute() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_InterStopAttribute_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_InterStopAttribute();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_InterStopAttribute::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_InterStopAttribute =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_InterStopAttribute}, {}};
-
-static void InitDefaultsSolutionResponse_Stop() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Stop_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Stop();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Stop::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_Stop =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSolutionResponse_Stop}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_StopAttribute.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsSolutionResponse_InterStop() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_InterStop_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_InterStop();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_InterStop::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_InterStop =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSolutionResponse_InterStop}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStopAttribute.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsSolutionResponse_Route() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Route_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Route();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Route::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<2> scc_info_SolutionResponse_Route =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsSolutionResponse_Route}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Stop.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStop.base,}};
-
-static void InitDefaultsSolutionResponse_Infeasibility_Info() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Infeasibility_Info_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Infeasibility_Info();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Infeasibility_Info::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SolutionResponse_Infeasibility_Info =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolutionResponse_Infeasibility_Info}, {}};
-
-static void InitDefaultsSolutionResponse_Infeasibility() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Infeasibility_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Infeasibility();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Infeasibility::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Infeasibility =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolutionResponse_Infeasibility}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility_Info.base,}};
-
-static void InitDefaultsSolutionResponse_Matching() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Matching_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Matching();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Matching::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Matching =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolutionResponse_Matching}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsSolutionResponse_Segment() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_Segment_default_instance_;
-    new (ptr) ::ISR::SolutionResponse_Segment();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse_Segment::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolutionResponse_Segment =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolutionResponse_Segment}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base,}};
-
-static void InitDefaultsSolutionResponse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::ISR::_SolutionResponse_default_instance_;
-    new (ptr) ::ISR::SolutionResponse();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::ISR::SolutionResponse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<4> scc_info_SolutionResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsSolutionResponse}, {
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Route.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Matching.base,
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Segment.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_Configuration.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Geocode.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_OffloadSite.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Collection.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Vehicle.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_CollectionSequence.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Model.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolveRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_StopAttribute.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_InterStopAttribute.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Stop.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_InterStop.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Route.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Infeasibility_Info.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Infeasibility.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Matching.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse_Segment.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolutionResponse.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[18];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[4];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, timeunit_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, timecoef_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, timecostcoef_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, distanceunit_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, distancecostcoef_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, drivingside_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Configuration, collectionside_),
-  3,
-  4,
-  5,
-  6,
-  2,
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Geocode, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Geocode, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Geocode, longitude_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Geocode, latitude_),
-  0,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, location_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, fixedoffloadtime_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::OffloadSite, offloadtimeperquantity_),
-  0,
-  1,
-  2,
-  3,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, location_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, stoptime_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, quantity_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Collection, offloadsiteid_),
-  0,
-  2,
-  3,
-  4,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, startlocation_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, endlocation_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, starttime_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, endtime_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Vehicle, capacity_),
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::CollectionSequence, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::CollectionSequence, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::CollectionSequence, vehicleid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::CollectionSequence, collectionid_),
-  0,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, configuration_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, collections_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, offloadsites_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, vehicles_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::Model, collectionsequence_),
-  0,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, model_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, modelid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, routes_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolveRequest, solvetype_),
-  1,
-  0,
-  ~0u,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, dimid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, startvalue_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, endvalue_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, cost_),
-  0,
-  1,
-  2,
-  3,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, dimid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, startvalue_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, endvalue_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, cost_),
-  0,
-  1,
-  2,
-  3,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, sequence_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, collectionid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, offloadsiteid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, attributes_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, segmentid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Stop, location_),
-  3,
-  4,
-  0,
-  1,
-  ~0u,
-  5,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, fromstopid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, tostopid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, attributes_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, geometry_),
-  0,
-  1,
-  ~0u,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Route, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Route, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Route, vehicleid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Route, stops_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Route, interstops_),
-  0,
-  ~0u,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, message_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, dimid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, limit_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, value_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, count_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, constrainingcollectionids_),
-  0,
-  1,
-  2,
-  3,
-  4,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, collectionid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, infeasibilityinfo_),
-  0,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Matching, collectionid_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Matching, collectionpoint_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Matching, segmentid_),
-  0,
-  1,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, weight_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, duration_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse_Segment, geometry_),
-  1,
-  0,
-  2,
-  3,
-  ~0u,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, objective_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, routes_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, infeasibilities_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, matchings_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ISR::SolutionResponse, segments_),
-  0,
-  ~0u,
-  ~0u,
-  ~0u,
-  ~0u,
-};
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 12, sizeof(::ISR::Configuration)},
-  { 19, 26, sizeof(::ISR::Geocode)},
-  { 28, 37, sizeof(::ISR::OffloadSite)},
-  { 41, 51, sizeof(::ISR::Collection)},
-  { 56, 67, sizeof(::ISR::Vehicle)},
-  { 73, 80, sizeof(::ISR::CollectionSequence)},
-  { 82, 92, sizeof(::ISR::Model)},
-  { 97, 106, sizeof(::ISR::SolveRequest)},
-  { 110, 119, sizeof(::ISR::SolutionResponse_StopAttribute)},
-  { 123, 132, sizeof(::ISR::SolutionResponse_InterStopAttribute)},
-  { 136, 148, sizeof(::ISR::SolutionResponse_Stop)},
-  { 155, 164, sizeof(::ISR::SolutionResponse_InterStop)},
-  { 168, 176, sizeof(::ISR::SolutionResponse_Route)},
-  { 179, 190, sizeof(::ISR::SolutionResponse_Infeasibility_Info)},
-  { 196, 203, sizeof(::ISR::SolutionResponse_Infeasibility)},
-  { 205, 213, sizeof(::ISR::SolutionResponse_Matching)},
-  { 216, 226, sizeof(::ISR::SolutionResponse_Segment)},
-  { 231, 241, sizeof(::ISR::SolutionResponse)},
-};
-
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_Configuration_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_Geocode_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_OffloadSite_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_Collection_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_Vehicle_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_CollectionSequence_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_Model_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolveRequest_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_StopAttribute_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_InterStopAttribute_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Stop_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_InterStop_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Route_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Infeasibility_Info_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Infeasibility_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Matching_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_Segment_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::ISR::_SolutionResponse_default_instance_),
-};
-
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "isr-z4foi53qznrv.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
-
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 18);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\026isr-z4foi53qznrv.proto\022\003ISR\"\211\004\n\rConfig"
-      "uration\022>\n\010timeUnit\030\001 \002(\0162#.ISR.Configur"
-      "ation.eMeasurementUnit:\007MINUTES\022\023\n\010timeC"
-      "oef\030\002 \002(\002:\0011\022\027\n\014timeCostCoef\030\003 \002(\002:\0011\022E\n"
-      "\014distanceUnit\030\004 \002(\0162#.ISR.Configuration."
-      "eMeasurementUnit:\nKILOMETRES\022\033\n\020distance"
-      "CostCoef\030\005 \002(\002:\0011\0224\n\013drivingSide\030\006 \002(\0162\037"
-      ".ISR.Configuration.eDrivingSide\022:\n\016colle"
-      "ctionSide\030\007 \002(\0162\".ISR.Configuration.eCol"
-      "lectionSide\"\\\n\020eMeasurementUnit\022\013\n\007SECON"
-      "DS\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003\022\016"
-      "\n\nKILOMETRES\020\004\022\t\n\005MILES\020\005\"#\n\014eDrivingSid"
-      "e\022\010\n\004LEFT\020\000\022\t\n\005RIGHT\020\001\"1\n\017eCollectionSid"
-      "e\022\024\n\020DRIVINGSIDE_ONLY\020\000\022\010\n\004BOTH\020\001\".\n\007Geo"
-      "code\022\021\n\tlongitude\030\001 \002(\002\022\020\n\010latitude\030\002 \002("
-      "\002\"y\n\013OffloadSite\022\n\n\002id\030\001 \002(\t\022\036\n\010location"
-      "\030\002 \002(\0132\014.ISR.Geocode\022\033\n\020fixedOffloadTime"
-      "\030\003 \002(\002:\0010\022!\n\026offloadTimePerQuantity\030\004 \002("
-      "\002:\0010\"y\n\nCollection\022\n\n\002id\030\001 \002(\t\022\036\n\010locati"
-      "on\030\002 \002(\0132\014.ISR.Geocode\022\023\n\010stopTime\030\003 \002(\002"
-      ":\0010\022\023\n\010quantity\030\004 \002(\002:\0010\022\025\n\roffloadSiteI"
-      "d\030\005 \002(\t\"\223\001\n\007Vehicle\022\n\n\002id\030\001 \002(\t\022#\n\rstart"
-      "Location\030\002 \002(\0132\014.ISR.Geocode\022!\n\013endLocat"
-      "ion\030\003 \002(\0132\014.ISR.Geocode\022\021\n\tstartTime\030\004 \002"
-      "(\002\022\017\n\007endTime\030\005 \002(\002\022\020\n\010capacity\030\006 \002(\002\"=\n"
-      "\022CollectionSequence\022\021\n\tvehicleId\030\001 \002(\t\022\024"
-      "\n\014collectionId\030\002 \003(\t\"\325\001\n\005Model\022)\n\rconfig"
-      "uration\030\001 \002(\0132\022.ISR.Configuration\022$\n\013col"
-      "lections\030\002 \003(\0132\017.ISR.Collection\022&\n\014offlo"
-      "adSites\030\003 \003(\0132\020.ISR.OffloadSite\022\036\n\010vehic"
-      "les\030\004 \003(\0132\014.ISR.Vehicle\0223\n\022collectionSeq"
-      "uence\030\005 \003(\0132\027.ISR.CollectionSequence\"\354\001\n"
-      "\014SolveRequest\022\031\n\005model\030\001 \001(\0132\n.ISR.Model"
-      "\022\017\n\007modelID\030\002 \001(\t\022\'\n\006routes\030\003 \003(\0132\027.ISR."
-      "CollectionSequence\0228\n\tsolveType\030\004 \001(\0162\033."
-      "ISR.SolveRequest.SolveType:\010Optimise\"M\n\t"
-      "SolveType\022\014\n\010Optimise\020\000\022\014\n\010Evaluate\020\001\022\016\n"
-      "\nReOptimise\020\002\022\024\n\020NetworkMatchings\020\003\"\227\n\n\020"
-      "SolutionResponse\022\021\n\tobjective\030\001 \002(\002\022+\n\006r"
-      "outes\030\002 \003(\0132\033.ISR.SolutionResponse.Route"
-      "\022<\n\017infeasibilities\030\003 \003(\0132#.ISR.Solution"
-      "Response.Infeasibility\0221\n\tmatchings\030\004 \003("
-      "\0132\036.ISR.SolutionResponse.Matching\022/\n\010seg"
-      "ments\030\005 \003(\0132\035.ISR.SolutionResponse.Segme"
-      "nt\032R\n\rStopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\nst"
-      "artValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004cost"
-      "\030\004 \002(\002\032W\n\022InterStopAttribute\022\r\n\005dimId\030\001 "
-      "\002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002("
-      "\002\022\014\n\004cost\030\004 \002(\002\032\275\001\n\004Stop\022\n\n\002id\030\001 \002(\005\022\020\n\010"
-      "sequence\030\002 \002(\005\022\024\n\014collectionId\030\003 \001(\t\022\025\n\r"
-      "offloadSiteId\030\004 \001(\t\0227\n\nattributes\030\005 \003(\0132"
-      "#.ISR.SolutionResponse.StopAttribute\022\021\n\t"
-      "segmentId\030\006 \001(\005\022\036\n\010location\030\007 \002(\0132\014.ISR."
-      "Geocode\032\217\001\n\tInterStop\022\022\n\nfromStopId\030\001 \002("
-      "\005\022\020\n\010toStopId\030\002 \002(\005\022<\n\nattributes\030\003 \003(\0132"
-      "(.ISR.SolutionResponse.InterStopAttribut"
-      "e\022\036\n\010geometry\030\004 \003(\0132\014.ISR.Geocode\032z\n\005Rou"
-      "te\022\021\n\tvehicleId\030\001 \002(\t\022)\n\005stops\030\002 \003(\0132\032.I"
-      "SR.SolutionResponse.Stop\0223\n\ninterStops\030\003"
-      " \003(\0132\037.ISR.SolutionResponse.InterStop\032\342\001"
-      "\n\rInfeasibility\022\024\n\014collectionId\030\001 \002(\t\022C\n"
-      "\021infeasibilityInfo\030\002 \003(\0132(.ISR.SolutionR"
-      "esponse.Infeasibility.Info\032v\n\004Info\022\017\n\007me"
-      "ssage\030\001 \002(\t\022\r\n\005dimId\030\002 \001(\t\022\r\n\005limit\030\003 \001("
-      "\002\022\r\n\005value\030\004 \001(\002\022\r\n\005count\030\005 \001(\003\022!\n\031const"
-      "rainingCollectionIds\030\006 \003(\t\032Z\n\010Matching\022\024"
-      "\n\014collectionId\030\001 \002(\t\022%\n\017collectionPoint\030"
-      "\002 \002(\0132\014.ISR.Geocode\022\021\n\tsegmentId\030\003 \002(\005\032e"
-      "\n\007Segment\022\n\n\002id\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006w"
-      "eight\030\003 \002(\002\022\020\n\010duration\030\004 \002(\002\022\036\n\010geometr"
-      "y\030\005 \003(\0132\014.ISR.GeocodeB\017\n\ricepackai.ISR"
+        template <typename>
+PROTOBUF_CONSTEXPR Configuration::Configuration(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.drivingside_)*/ 0,
+      /*decltype(_impl_.collectionside_)*/ 0,
+      /*decltype(_impl_.distancecostcoef_)*/ 1,
+      /*decltype(_impl_.timeunit_)*/ 1,
+      /*decltype(_impl_.timecoef_)*/ 1,
+      /*decltype(_impl_.timecostcoef_)*/ 1,
+      /*decltype(_impl_.distanceunit_)*/ 4,
+    } {}
+struct ConfigurationDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ConfigurationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ConfigurationDefaultTypeInternal() {}
+  union {
+    Configuration _instance;
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2838);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "isr-z4foi53qznrv.proto", &protobuf_RegisterTypes);
-}
+};
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ConfigurationDefaultTypeInternal _Configuration_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Geocode::Geocode(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.longitude_)*/ 0,
+      /*decltype(_impl_.latitude_)*/ 0,
+    } {}
+struct GeocodeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR GeocodeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~GeocodeDefaultTypeInternal() {}
+  union {
+    Geocode _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GeocodeDefaultTypeInternal _Geocode_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR OffloadSite::OffloadSite(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.location_)*/ nullptr,
+      /*decltype(_impl_.fixedoffloadtime_)*/ 0,
+      /*decltype(_impl_.offloadtimeperquantity_)*/ 0,
+    } {}
+struct OffloadSiteDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR OffloadSiteDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~OffloadSiteDefaultTypeInternal() {}
+  union {
+    OffloadSite _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OffloadSiteDefaultTypeInternal _OffloadSite_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Collection::Collection(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.offloadsiteid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.location_)*/ nullptr,
+      /*decltype(_impl_.stoptime_)*/ 0,
+      /*decltype(_impl_.quantity_)*/ 0,
+    } {}
+struct CollectionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CollectionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CollectionDefaultTypeInternal() {}
+  union {
+    Collection _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CollectionDefaultTypeInternal _Collection_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Vehicle::Vehicle(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.id_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.startlocation_)*/ nullptr,
+      /*decltype(_impl_.endlocation_)*/ nullptr,
+      /*decltype(_impl_.starttime_)*/ 0,
+      /*decltype(_impl_.endtime_)*/ 0,
+      /*decltype(_impl_.capacity_)*/ 0,
+    } {}
+struct VehicleDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR VehicleDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~VehicleDefaultTypeInternal() {}
+  union {
+    Vehicle _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 VehicleDefaultTypeInternal _Vehicle_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR CollectionSequence::CollectionSequence(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.collectionid_)*/ {},
+      /*decltype(_impl_.vehicleid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+    } {}
+struct CollectionSequenceDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CollectionSequenceDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CollectionSequenceDefaultTypeInternal() {}
+  union {
+    CollectionSequence _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CollectionSequenceDefaultTypeInternal _CollectionSequence_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR Model::Model(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.collections_)*/ {},
+      /*decltype(_impl_.offloadsites_)*/ {},
+      /*decltype(_impl_.vehicles_)*/ {},
+      /*decltype(_impl_.collectionsequence_)*/ {},
+      /*decltype(_impl_.configuration_)*/ nullptr,
+    } {}
+struct ModelDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ModelDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ModelDefaultTypeInternal() {}
+  union {
+    Model _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ModelDefaultTypeInternal _Model_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolveRequest::SolveRequest(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.routes_)*/ {},
+      /*decltype(_impl_.modelid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.model_)*/ nullptr,
+      /*decltype(_impl_.solvetype_)*/ 0,
+    } {}
+struct SolveRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolveRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolveRequestDefaultTypeInternal() {}
+  union {
+    SolveRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolveRequestDefaultTypeInternal _SolveRequest_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_StopAttribute::SolutionResponse_StopAttribute(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.dimid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.startvalue_)*/ 0,
+      /*decltype(_impl_.endvalue_)*/ 0,
+      /*decltype(_impl_.cost_)*/ 0,
+    } {}
+struct SolutionResponse_StopAttributeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_StopAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_StopAttributeDefaultTypeInternal() {}
+  union {
+    SolutionResponse_StopAttribute _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_StopAttributeDefaultTypeInternal _SolutionResponse_StopAttribute_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_InterStopAttribute::SolutionResponse_InterStopAttribute(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.dimid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.startvalue_)*/ 0,
+      /*decltype(_impl_.endvalue_)*/ 0,
+      /*decltype(_impl_.cost_)*/ 0,
+    } {}
+struct SolutionResponse_InterStopAttributeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_InterStopAttributeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_InterStopAttributeDefaultTypeInternal() {}
+  union {
+    SolutionResponse_InterStopAttribute _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_InterStopAttributeDefaultTypeInternal _SolutionResponse_InterStopAttribute_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Stop::SolutionResponse_Stop(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.attributes_)*/ {},
+      /*decltype(_impl_.collectionid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.offloadsiteid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.location_)*/ nullptr,
+      /*decltype(_impl_.id_)*/ 0,
+      /*decltype(_impl_.sequence_)*/ 0,
+      /*decltype(_impl_.segmentid_)*/ 0,
+    } {}
+struct SolutionResponse_StopDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_StopDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_StopDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Stop _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_StopDefaultTypeInternal _SolutionResponse_Stop_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_InterStop::SolutionResponse_InterStop(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.attributes_)*/ {},
+      /*decltype(_impl_.geometry_)*/ {},
+      /*decltype(_impl_.fromstopid_)*/ 0,
+      /*decltype(_impl_.tostopid_)*/ 0,
+    } {}
+struct SolutionResponse_InterStopDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_InterStopDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_InterStopDefaultTypeInternal() {}
+  union {
+    SolutionResponse_InterStop _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_InterStopDefaultTypeInternal _SolutionResponse_InterStop_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Route::SolutionResponse_Route(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.stops_)*/ {},
+      /*decltype(_impl_.interstops_)*/ {},
+      /*decltype(_impl_.vehicleid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+    } {}
+struct SolutionResponse_RouteDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_RouteDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_RouteDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Route _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_RouteDefaultTypeInternal _SolutionResponse_Route_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Infeasibility_Info::SolutionResponse_Infeasibility_Info(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.constrainingcollectionids_)*/ {},
+      /*decltype(_impl_.message_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.dimid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.limit_)*/ 0,
+      /*decltype(_impl_.value_)*/ 0,
+      /*decltype(_impl_.count_)*/ ::int64_t{0},
+    } {}
+struct SolutionResponse_Infeasibility_InfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_Infeasibility_InfoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_Infeasibility_InfoDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Infeasibility_Info _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_Infeasibility_InfoDefaultTypeInternal _SolutionResponse_Infeasibility_Info_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Infeasibility::SolutionResponse_Infeasibility(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.infeasibilityinfo_)*/ {},
+      /*decltype(_impl_.collectionid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+    } {}
+struct SolutionResponse_InfeasibilityDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_InfeasibilityDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_InfeasibilityDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Infeasibility _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_InfeasibilityDefaultTypeInternal _SolutionResponse_Infeasibility_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Matching::SolutionResponse_Matching(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.collectionid_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.collectionpoint_)*/ nullptr,
+      /*decltype(_impl_.segmentid_)*/ 0,
+    } {}
+struct SolutionResponse_MatchingDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_MatchingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_MatchingDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Matching _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_MatchingDefaultTypeInternal _SolutionResponse_Matching_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse_Segment::SolutionResponse_Segment(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.geometry_)*/ {},
+      /*decltype(_impl_.name_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.id_)*/ 0,
+      /*decltype(_impl_.weight_)*/ 0,
+      /*decltype(_impl_.duration_)*/ 0,
+    } {}
+struct SolutionResponse_SegmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponse_SegmentDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponse_SegmentDefaultTypeInternal() {}
+  union {
+    SolutionResponse_Segment _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponse_SegmentDefaultTypeInternal _SolutionResponse_Segment_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolutionResponse::SolutionResponse(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.routes_)*/ {},
+      /*decltype(_impl_.infeasibilities_)*/ {},
+      /*decltype(_impl_.matchings_)*/ {},
+      /*decltype(_impl_.segments_)*/ {},
+      /*decltype(_impl_.objective_)*/ 0,
+    } {}
+struct SolutionResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolutionResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolutionResponseDefaultTypeInternal() {}
+  union {
+    SolutionResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolutionResponseDefaultTypeInternal _SolutionResponse_default_instance_;
+}  // namespace ISR
+static ::_pb::Metadata file_level_metadata_isr_2dz4foi53qznrv_2eproto[18];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto[4];
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_isr_2dz4foi53qznrv_2eproto = nullptr;
+const ::uint32_t TableStruct_isr_2dz4foi53qznrv_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.timeunit_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.timecoef_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.timecostcoef_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.distanceunit_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.distancecostcoef_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.drivingside_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Configuration, _impl_.collectionside_),
+    3,
+    4,
+    5,
+    6,
+    2,
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::ISR::Geocode, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Geocode, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::Geocode, _impl_.longitude_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Geocode, _impl_.latitude_),
+    0,
+    1,
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _impl_.location_),
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _impl_.fixedoffloadtime_),
+    PROTOBUF_FIELD_OFFSET(::ISR::OffloadSite, _impl_.offloadtimeperquantity_),
+    0,
+    1,
+    2,
+    3,
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_.location_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_.stoptime_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_.quantity_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Collection, _impl_.offloadsiteid_),
+    0,
+    2,
+    3,
+    4,
+    1,
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.startlocation_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.endlocation_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.starttime_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.endtime_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Vehicle, _impl_.capacity_),
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    PROTOBUF_FIELD_OFFSET(::ISR::CollectionSequence, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::CollectionSequence, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::CollectionSequence, _impl_.vehicleid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::CollectionSequence, _impl_.collectionid_),
+    0,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_.configuration_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_.collections_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_.offloadsites_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_.vehicles_),
+    PROTOBUF_FIELD_OFFSET(::ISR::Model, _impl_.collectionsequence_),
+    0,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _impl_.model_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _impl_.modelid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _impl_.routes_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolveRequest, _impl_.solvetype_),
+    1,
+    0,
+    ~0u,
+    2,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _impl_.dimid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _impl_.startvalue_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _impl_.endvalue_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_StopAttribute, _impl_.cost_),
+    0,
+    1,
+    2,
+    3,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _impl_.dimid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _impl_.startvalue_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _impl_.endvalue_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStopAttribute, _impl_.cost_),
+    0,
+    1,
+    2,
+    3,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.sequence_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.collectionid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.offloadsiteid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.attributes_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.segmentid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Stop, _impl_.location_),
+    3,
+    4,
+    0,
+    1,
+    ~0u,
+    5,
+    2,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _impl_.fromstopid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _impl_.tostopid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _impl_.attributes_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_InterStop, _impl_.geometry_),
+    0,
+    1,
+    ~0u,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Route, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Route, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Route, _impl_.vehicleid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Route, _impl_.stops_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Route, _impl_.interstops_),
+    0,
+    ~0u,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.message_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.dimid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.limit_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.value_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.count_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility_Info, _impl_.constrainingcollectionids_),
+    0,
+    1,
+    2,
+    3,
+    4,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _impl_.collectionid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Infeasibility, _impl_.infeasibilityinfo_),
+    0,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _impl_.collectionid_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _impl_.collectionpoint_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Matching, _impl_.segmentid_),
+    0,
+    1,
+    2,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_.id_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_.name_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_.weight_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_.duration_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse_Segment, _impl_.geometry_),
+    1,
+    0,
+    2,
+    3,
+    ~0u,
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_.objective_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_.routes_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_.infeasibilities_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_.matchings_),
+    PROTOBUF_FIELD_OFFSET(::ISR::SolutionResponse, _impl_.segments_),
+    0,
+    ~0u,
+    ~0u,
+    ~0u,
+    ~0u,
+};
+
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 15, -1, sizeof(::ISR::Configuration)},
+        {22, 32, -1, sizeof(::ISR::Geocode)},
+        {34, 46, -1, sizeof(::ISR::OffloadSite)},
+        {50, 63, -1, sizeof(::ISR::Collection)},
+        {68, 82, -1, sizeof(::ISR::Vehicle)},
+        {88, 98, -1, sizeof(::ISR::CollectionSequence)},
+        {100, 113, -1, sizeof(::ISR::Model)},
+        {118, 130, -1, sizeof(::ISR::SolveRequest)},
+        {134, 146, -1, sizeof(::ISR::SolutionResponse_StopAttribute)},
+        {150, 162, -1, sizeof(::ISR::SolutionResponse_InterStopAttribute)},
+        {166, 181, -1, sizeof(::ISR::SolutionResponse_Stop)},
+        {188, 200, -1, sizeof(::ISR::SolutionResponse_InterStop)},
+        {204, 215, -1, sizeof(::ISR::SolutionResponse_Route)},
+        {218, 232, -1, sizeof(::ISR::SolutionResponse_Infeasibility_Info)},
+        {238, 248, -1, sizeof(::ISR::SolutionResponse_Infeasibility)},
+        {250, 261, -1, sizeof(::ISR::SolutionResponse_Matching)},
+        {264, 277, -1, sizeof(::ISR::SolutionResponse_Segment)},
+        {282, 295, -1, sizeof(::ISR::SolutionResponse)},
+};
+
+static const ::_pb::Message* const file_default_instances[] = {
+    &::ISR::_Configuration_default_instance_._instance,
+    &::ISR::_Geocode_default_instance_._instance,
+    &::ISR::_OffloadSite_default_instance_._instance,
+    &::ISR::_Collection_default_instance_._instance,
+    &::ISR::_Vehicle_default_instance_._instance,
+    &::ISR::_CollectionSequence_default_instance_._instance,
+    &::ISR::_Model_default_instance_._instance,
+    &::ISR::_SolveRequest_default_instance_._instance,
+    &::ISR::_SolutionResponse_StopAttribute_default_instance_._instance,
+    &::ISR::_SolutionResponse_InterStopAttribute_default_instance_._instance,
+    &::ISR::_SolutionResponse_Stop_default_instance_._instance,
+    &::ISR::_SolutionResponse_InterStop_default_instance_._instance,
+    &::ISR::_SolutionResponse_Route_default_instance_._instance,
+    &::ISR::_SolutionResponse_Infeasibility_Info_default_instance_._instance,
+    &::ISR::_SolutionResponse_Infeasibility_default_instance_._instance,
+    &::ISR::_SolutionResponse_Matching_default_instance_._instance,
+    &::ISR::_SolutionResponse_Segment_default_instance_._instance,
+    &::ISR::_SolutionResponse_default_instance_._instance,
+};
+const char descriptor_table_protodef_isr_2dz4foi53qznrv_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\026isr-z4foi53qznrv.proto\022\003ISR\"\211\004\n\rConfig"
+    "uration\022>\n\010timeUnit\030\001 \002(\0162#.ISR.Configur"
+    "ation.eMeasurementUnit:\007MINUTES\022\023\n\010timeC"
+    "oef\030\002 \002(\002:\0011\022\027\n\014timeCostCoef\030\003 \002(\002:\0011\022E\n"
+    "\014distanceUnit\030\004 \002(\0162#.ISR.Configuration."
+    "eMeasurementUnit:\nKILOMETRES\022\033\n\020distance"
+    "CostCoef\030\005 \002(\002:\0011\0224\n\013drivingSide\030\006 \002(\0162\037"
+    ".ISR.Configuration.eDrivingSide\022:\n\016colle"
+    "ctionSide\030\007 \002(\0162\".ISR.Configuration.eCol"
+    "lectionSide\"\\\n\020eMeasurementUnit\022\013\n\007SECON"
+    "DS\020\000\022\013\n\007MINUTES\020\001\022\t\n\005HOURS\020\002\022\010\n\004DAYS\020\003\022\016"
+    "\n\nKILOMETRES\020\004\022\t\n\005MILES\020\005\"#\n\014eDrivingSid"
+    "e\022\010\n\004LEFT\020\000\022\t\n\005RIGHT\020\001\"1\n\017eCollectionSid"
+    "e\022\024\n\020DRIVINGSIDE_ONLY\020\000\022\010\n\004BOTH\020\001\".\n\007Geo"
+    "code\022\021\n\tlongitude\030\001 \002(\002\022\020\n\010latitude\030\002 \002("
+    "\002\"y\n\013OffloadSite\022\n\n\002id\030\001 \002(\t\022\036\n\010location"
+    "\030\002 \002(\0132\014.ISR.Geocode\022\033\n\020fixedOffloadTime"
+    "\030\003 \002(\002:\0010\022!\n\026offloadTimePerQuantity\030\004 \002("
+    "\002:\0010\"y\n\nCollection\022\n\n\002id\030\001 \002(\t\022\036\n\010locati"
+    "on\030\002 \002(\0132\014.ISR.Geocode\022\023\n\010stopTime\030\003 \002(\002"
+    ":\0010\022\023\n\010quantity\030\004 \002(\002:\0010\022\025\n\roffloadSiteI"
+    "d\030\005 \002(\t\"\223\001\n\007Vehicle\022\n\n\002id\030\001 \002(\t\022#\n\rstart"
+    "Location\030\002 \002(\0132\014.ISR.Geocode\022!\n\013endLocat"
+    "ion\030\003 \002(\0132\014.ISR.Geocode\022\021\n\tstartTime\030\004 \002"
+    "(\002\022\017\n\007endTime\030\005 \002(\002\022\020\n\010capacity\030\006 \002(\002\"=\n"
+    "\022CollectionSequence\022\021\n\tvehicleId\030\001 \002(\t\022\024"
+    "\n\014collectionId\030\002 \003(\t\"\325\001\n\005Model\022)\n\rconfig"
+    "uration\030\001 \002(\0132\022.ISR.Configuration\022$\n\013col"
+    "lections\030\002 \003(\0132\017.ISR.Collection\022&\n\014offlo"
+    "adSites\030\003 \003(\0132\020.ISR.OffloadSite\022\036\n\010vehic"
+    "les\030\004 \003(\0132\014.ISR.Vehicle\0223\n\022collectionSeq"
+    "uence\030\005 \003(\0132\027.ISR.CollectionSequence\"\354\001\n"
+    "\014SolveRequest\022\031\n\005model\030\001 \001(\0132\n.ISR.Model"
+    "\022\017\n\007modelID\030\002 \001(\t\022\'\n\006routes\030\003 \003(\0132\027.ISR."
+    "CollectionSequence\0228\n\tsolveType\030\004 \001(\0162\033."
+    "ISR.SolveRequest.SolveType:\010Optimise\"M\n\t"
+    "SolveType\022\014\n\010Optimise\020\000\022\014\n\010Evaluate\020\001\022\016\n"
+    "\nReOptimise\020\002\022\024\n\020NetworkMatchings\020\003\"\227\n\n\020"
+    "SolutionResponse\022\021\n\tobjective\030\001 \002(\002\022+\n\006r"
+    "outes\030\002 \003(\0132\033.ISR.SolutionResponse.Route"
+    "\022<\n\017infeasibilities\030\003 \003(\0132#.ISR.Solution"
+    "Response.Infeasibility\0221\n\tmatchings\030\004 \003("
+    "\0132\036.ISR.SolutionResponse.Matching\022/\n\010seg"
+    "ments\030\005 \003(\0132\035.ISR.SolutionResponse.Segme"
+    "nt\032R\n\rStopAttribute\022\r\n\005dimId\030\001 \002(\t\022\022\n\nst"
+    "artValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002(\002\022\014\n\004cost"
+    "\030\004 \002(\002\032W\n\022InterStopAttribute\022\r\n\005dimId\030\001 "
+    "\002(\t\022\022\n\nstartValue\030\002 \002(\002\022\020\n\010endValue\030\003 \002("
+    "\002\022\014\n\004cost\030\004 \002(\002\032\275\001\n\004Stop\022\n\n\002id\030\001 \002(\005\022\020\n\010"
+    "sequence\030\002 \002(\005\022\024\n\014collectionId\030\003 \001(\t\022\025\n\r"
+    "offloadSiteId\030\004 \001(\t\0227\n\nattributes\030\005 \003(\0132"
+    "#.ISR.SolutionResponse.StopAttribute\022\021\n\t"
+    "segmentId\030\006 \001(\005\022\036\n\010location\030\007 \002(\0132\014.ISR."
+    "Geocode\032\217\001\n\tInterStop\022\022\n\nfromStopId\030\001 \002("
+    "\005\022\020\n\010toStopId\030\002 \002(\005\022<\n\nattributes\030\003 \003(\0132"
+    "(.ISR.SolutionResponse.InterStopAttribut"
+    "e\022\036\n\010geometry\030\004 \003(\0132\014.ISR.Geocode\032z\n\005Rou"
+    "te\022\021\n\tvehicleId\030\001 \002(\t\022)\n\005stops\030\002 \003(\0132\032.I"
+    "SR.SolutionResponse.Stop\0223\n\ninterStops\030\003"
+    " \003(\0132\037.ISR.SolutionResponse.InterStop\032\342\001"
+    "\n\rInfeasibility\022\024\n\014collectionId\030\001 \002(\t\022C\n"
+    "\021infeasibilityInfo\030\002 \003(\0132(.ISR.SolutionR"
+    "esponse.Infeasibility.Info\032v\n\004Info\022\017\n\007me"
+    "ssage\030\001 \002(\t\022\r\n\005dimId\030\002 \001(\t\022\r\n\005limit\030\003 \001("
+    "\002\022\r\n\005value\030\004 \001(\002\022\r\n\005count\030\005 \001(\003\022!\n\031const"
+    "rainingCollectionIds\030\006 \003(\t\032Z\n\010Matching\022\024"
+    "\n\014collectionId\030\001 \002(\t\022%\n\017collectionPoint\030"
+    "\002 \002(\0132\014.ISR.Geocode\022\021\n\tsegmentId\030\003 \002(\005\032e"
+    "\n\007Segment\022\n\n\002id\030\001 \002(\005\022\014\n\004name\030\002 \002(\t\022\016\n\006w"
+    "eight\030\003 \002(\002\022\020\n\010duration\030\004 \002(\002\022\036\n\010geometr"
+    "y\030\005 \003(\0132\014.ISR.GeocodeB\017\n\ricepackai.ISR"
+};
+static ::absl::once_flag descriptor_table_isr_2dz4foi53qznrv_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_isr_2dz4foi53qznrv_2eproto = {
+    false,
+    false,
+    2838,
+    descriptor_table_protodef_isr_2dz4foi53qznrv_2eproto,
+    "isr-z4foi53qznrv.proto",
+    &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+    nullptr,
+    0,
+    18,
+    schemas,
+    file_default_instances,
+    TableStruct_isr_2dz4foi53qznrv_2eproto::offsets,
+    file_level_metadata_isr_2dz4foi53qznrv_2eproto,
+    file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto,
+    file_level_service_descriptors_isr_2dz4foi53qznrv_2eproto,
+};
+
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_isr_2dz4foi53qznrv_2eproto_getter() {
+  return &descriptor_table_isr_2dz4foi53qznrv_2eproto;
 }
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_isr_2dz4foi53qznrv_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_isr_2dz4foi53qznrv_2eproto(&descriptor_table_isr_2dz4foi53qznrv_2eproto);
 namespace ISR {
 const ::google::protobuf::EnumDescriptor* Configuration_eMeasurementUnit_descriptor() {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_isr_2dz4foi53qznrv_2eproto::file_level_enum_descriptors[0];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_isr_2dz4foi53qznrv_2eproto);
+  return file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto[0];
 }
 bool Configuration_eMeasurementUnit_IsValid(int value) {
   switch (value) {
@@ -847,21 +913,24 @@ bool Configuration_eMeasurementUnit_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Configuration_eMeasurementUnit Configuration::SECONDS;
-const Configuration_eMeasurementUnit Configuration::MINUTES;
-const Configuration_eMeasurementUnit Configuration::HOURS;
-const Configuration_eMeasurementUnit Configuration::DAYS;
-const Configuration_eMeasurementUnit Configuration::KILOMETRES;
-const Configuration_eMeasurementUnit Configuration::MILES;
-const Configuration_eMeasurementUnit Configuration::eMeasurementUnit_MIN;
-const Configuration_eMeasurementUnit Configuration::eMeasurementUnit_MAX;
-const int Configuration::eMeasurementUnit_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr Configuration_eMeasurementUnit Configuration::SECONDS;
+constexpr Configuration_eMeasurementUnit Configuration::MINUTES;
+constexpr Configuration_eMeasurementUnit Configuration::HOURS;
+constexpr Configuration_eMeasurementUnit Configuration::DAYS;
+constexpr Configuration_eMeasurementUnit Configuration::KILOMETRES;
+constexpr Configuration_eMeasurementUnit Configuration::MILES;
+constexpr Configuration_eMeasurementUnit Configuration::eMeasurementUnit_MIN;
+constexpr Configuration_eMeasurementUnit Configuration::eMeasurementUnit_MAX;
+constexpr int Configuration::eMeasurementUnit_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* Configuration_eDrivingSide_descriptor() {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_isr_2dz4foi53qznrv_2eproto::file_level_enum_descriptors[1];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_isr_2dz4foi53qznrv_2eproto);
+  return file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto[1];
 }
 bool Configuration_eDrivingSide_IsValid(int value) {
   switch (value) {
@@ -872,17 +941,20 @@ bool Configuration_eDrivingSide_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Configuration_eDrivingSide Configuration::LEFT;
-const Configuration_eDrivingSide Configuration::RIGHT;
-const Configuration_eDrivingSide Configuration::eDrivingSide_MIN;
-const Configuration_eDrivingSide Configuration::eDrivingSide_MAX;
-const int Configuration::eDrivingSide_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr Configuration_eDrivingSide Configuration::LEFT;
+constexpr Configuration_eDrivingSide Configuration::RIGHT;
+constexpr Configuration_eDrivingSide Configuration::eDrivingSide_MIN;
+constexpr Configuration_eDrivingSide Configuration::eDrivingSide_MAX;
+constexpr int Configuration::eDrivingSide_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* Configuration_eCollectionSide_descriptor() {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_isr_2dz4foi53qznrv_2eproto::file_level_enum_descriptors[2];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_isr_2dz4foi53qznrv_2eproto);
+  return file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto[2];
 }
 bool Configuration_eCollectionSide_IsValid(int value) {
   switch (value) {
@@ -893,17 +965,20 @@ bool Configuration_eCollectionSide_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const Configuration_eCollectionSide Configuration::DRIVINGSIDE_ONLY;
-const Configuration_eCollectionSide Configuration::BOTH;
-const Configuration_eCollectionSide Configuration::eCollectionSide_MIN;
-const Configuration_eCollectionSide Configuration::eCollectionSide_MAX;
-const int Configuration::eCollectionSide_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr Configuration_eCollectionSide Configuration::DRIVINGSIDE_ONLY;
+constexpr Configuration_eCollectionSide Configuration::BOTH;
+constexpr Configuration_eCollectionSide Configuration::eCollectionSide_MIN;
+constexpr Configuration_eCollectionSide Configuration::eCollectionSide_MAX;
+constexpr int Configuration::eCollectionSide_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* SolveRequest_SolveType_descriptor() {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_isr_2dz4foi53qznrv_2eproto::file_level_enum_descriptors[3];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_isr_2dz4foi53qznrv_2eproto);
+  return file_level_enum_descriptors_isr_2dz4foi53qznrv_2eproto[3];
 }
 bool SolveRequest_SolveType_IsValid(int value) {
   switch (value) {
@@ -916,505 +991,347 @@ bool SolveRequest_SolveType_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const SolveRequest_SolveType SolveRequest::Optimise;
-const SolveRequest_SolveType SolveRequest::Evaluate;
-const SolveRequest_SolveType SolveRequest::ReOptimise;
-const SolveRequest_SolveType SolveRequest::NetworkMatchings;
-const SolveRequest_SolveType SolveRequest::SolveType_MIN;
-const SolveRequest_SolveType SolveRequest::SolveType_MAX;
-const int SolveRequest::SolveType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr SolveRequest_SolveType SolveRequest::Optimise;
+constexpr SolveRequest_SolveType SolveRequest::Evaluate;
+constexpr SolveRequest_SolveType SolveRequest::ReOptimise;
+constexpr SolveRequest_SolveType SolveRequest::NetworkMatchings;
+constexpr SolveRequest_SolveType SolveRequest::SolveType_MIN;
+constexpr SolveRequest_SolveType SolveRequest::SolveType_MAX;
+constexpr int SolveRequest::SolveType_ARRAYSIZE;
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
-void Configuration::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Configuration::kTimeUnitFieldNumber;
-const int Configuration::kTimeCoefFieldNumber;
-const int Configuration::kTimeCostCoefFieldNumber;
-const int Configuration::kDistanceUnitFieldNumber;
-const int Configuration::kDistanceCostCoefFieldNumber;
-const int Configuration::kDrivingSideFieldNumber;
-const int Configuration::kCollectionSideFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Configuration::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Configuration>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Configuration, _impl_._has_bits_);
+  static void set_has_timeunit(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_timecoef(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_timecostcoef(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static void set_has_distanceunit(HasBits* has_bits) {
+    (*has_bits)[0] |= 64u;
+  }
+  static void set_has_distancecostcoef(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_drivingside(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_collectionside(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000007f) ^ 0x0000007f) != 0;
+  }
+};
 
-Configuration::Configuration()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Configuration.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.Configuration)
+Configuration::Configuration(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.Configuration)
 }
 Configuration::Configuration(const Configuration& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&drivingside_, &from.drivingside_,
-    static_cast<size_t>(reinterpret_cast<char*>(&distanceunit_) -
-    reinterpret_cast<char*>(&drivingside_)) + sizeof(distanceunit_));
+    : ::google::protobuf::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ISR.Configuration)
 }
-
-void Configuration::SharedCtor() {
-  ::memset(&drivingside_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&collectionside_) -
-      reinterpret_cast<char*>(&drivingside_)) + sizeof(collectionside_));
-  distancecostcoef_ = 1;
-  timeunit_ = 1;
-  timecoef_ = 1;
-  timecostcoef_ = 1;
-  distanceunit_ = 4;
+inline void Configuration::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.drivingside_){0},
+      decltype(_impl_.collectionside_){0},
+      decltype(_impl_.distancecostcoef_){1},
+      decltype(_impl_.timeunit_){1},
+      decltype(_impl_.timecoef_){1},
+      decltype(_impl_.timecostcoef_){1},
+      decltype(_impl_.distanceunit_){4},
+  };
 }
-
 Configuration::~Configuration() {
   // @@protoc_insertion_point(destructor:ISR.Configuration)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Configuration::SharedDtor() {
+inline void Configuration::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void Configuration::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Configuration::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Configuration& Configuration::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Configuration.base);
-  return *internal_default_instance();
-}
-
-
-void Configuration::Clear() {
+PROTOBUF_NOINLINE void Configuration::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.Configuration)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 127u) {
-    ::memset(&drivingside_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&collectionside_) -
-        reinterpret_cast<char*>(&drivingside_)) + sizeof(collectionside_));
-    distancecostcoef_ = 1;
-    timeunit_ = 1;
-    timecoef_ = 1;
-    timecostcoef_ = 1;
-    distanceunit_ = 4;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000007fu) {
+    ::memset(&_impl_.drivingside_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.collectionside_) -
+        reinterpret_cast<char*>(&_impl_.drivingside_)) + sizeof(_impl_.collectionside_));
+    _impl_.distancecostcoef_ = 1;
+    _impl_.timeunit_ = 1;
+    _impl_.timecoef_ = 1;
+    _impl_.timecostcoef_ = 1;
+    _impl_.distanceunit_ = 4;
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Configuration::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.Configuration)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::ISR::Configuration_eMeasurementUnit_IsValid(value)) {
-            set_timeunit(static_cast< ::ISR::Configuration_eMeasurementUnit >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                1, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float timeCoef = 2 [default = 1];
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_timecoef();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &timecoef_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float timeCostCoef = 3 [default = 1];
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_timecostcoef();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &timecostcoef_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::ISR::Configuration_eMeasurementUnit_IsValid(value)) {
-            set_distanceunit(static_cast< ::ISR::Configuration_eMeasurementUnit >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                4, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float distanceCostCoef = 5 [default = 1];
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-          set_has_distancecostcoef();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &distancecostcoef_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Configuration.eDrivingSide drivingSide = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::ISR::Configuration_eDrivingSide_IsValid(value)) {
-            set_drivingside(static_cast< ::ISR::Configuration_eDrivingSide >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                6, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Configuration.eCollectionSide collectionSide = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::ISR::Configuration_eCollectionSide_IsValid(value)) {
-            set_collectionside(static_cast< ::ISR::Configuration_eCollectionSide >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                7, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.Configuration)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.Configuration)
-  return false;
-#undef DO_
+const char* Configuration::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Configuration::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.Configuration)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      1, this->timeunit(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 7, 4, 0, 2> Configuration::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Configuration, _impl_._has_bits_),
+    0, // no _extensions_
+    7, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967168,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    7,  // num_field_entries
+    4,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Configuration_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
+    {::_pbi::TcParser::FastEr0S1,
+     {8, 3, 5, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timeunit_)}},
+    // required float timeCoef = 2 [default = 1];
+    {::_pbi::TcParser::FastF32S1,
+     {21, 4, 0, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timecoef_)}},
+    // required float timeCostCoef = 3 [default = 1];
+    {::_pbi::TcParser::FastF32S1,
+     {29, 5, 0, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timecostcoef_)}},
+    // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
+    {::_pbi::TcParser::FastEr0S1,
+     {32, 6, 5, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.distanceunit_)}},
+    // required float distanceCostCoef = 5 [default = 1];
+    {::_pbi::TcParser::FastF32S1,
+     {45, 2, 0, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.distancecostcoef_)}},
+    // required .ISR.Configuration.eDrivingSide drivingSide = 6;
+    {::_pbi::TcParser::FastEr0S1,
+     {48, 0, 1, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.drivingside_)}},
+    // required .ISR.Configuration.eCollectionSide collectionSide = 7;
+    {::_pbi::TcParser::FastEr0S1,
+     {56, 1, 1, PROTOBUF_FIELD_OFFSET(Configuration, _impl_.collectionside_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timeunit_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // required float timeCoef = 2 [default = 1];
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timecoef_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float timeCostCoef = 3 [default = 1];
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.timecostcoef_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.distanceunit_), _Internal::kHasBitsOffset + 6, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // required float distanceCostCoef = 5 [default = 1];
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.distancecostcoef_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required .ISR.Configuration.eDrivingSide drivingSide = 6;
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.drivingside_), _Internal::kHasBitsOffset + 0, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // required .ISR.Configuration.eCollectionSide collectionSide = 7;
+    {PROTOBUF_FIELD_OFFSET(Configuration, _impl_.collectionside_), _Internal::kHasBitsOffset + 1, 3,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {0, 6},
+    {0, 6},
+    {0, 2},
+    {0, 2},
+  }}, {{
+  }},
+};
 
-  // required float timeCoef = 2 [default = 1];
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->timecoef(), output);
-  }
-
-  // required float timeCostCoef = 3 [default = 1];
-  if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->timecostcoef(), output);
-  }
-
-  // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
-  if (cached_has_bits & 0x00000040u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->distanceunit(), output);
-  }
-
-  // required float distanceCostCoef = 5 [default = 1];
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->distancecostcoef(), output);
-  }
-
-  // required .ISR.Configuration.eDrivingSide drivingSide = 6;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      6, this->drivingside(), output);
-  }
-
-  // required .ISR.Configuration.eCollectionSide collectionSide = 7;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      7, this->collectionside(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.Configuration)
-}
-
-::google::protobuf::uint8* Configuration::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Configuration::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.Configuration)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      1, this->timeunit(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        1, this->_internal_timeunit(), target);
   }
 
   // required float timeCoef = 2 [default = 1];
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->timecoef(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_timecoef(), target);
   }
 
   // required float timeCostCoef = 3 [default = 1];
   if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->timecostcoef(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_timecostcoef(), target);
   }
 
   // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
   if (cached_has_bits & 0x00000040u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->distanceunit(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        4, this->_internal_distanceunit(), target);
   }
 
   // required float distanceCostCoef = 5 [default = 1];
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->distancecostcoef(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_distancecostcoef(), target);
   }
 
   // required .ISR.Configuration.eDrivingSide drivingSide = 6;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      6, this->drivingside(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        6, this->_internal_drivingside(), target);
   }
 
   // required .ISR.Configuration.eCollectionSide collectionSide = 7;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      7, this->collectionside(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        7, this->_internal_collectionside(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.Configuration)
   return target;
 }
 
-size_t Configuration::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.Configuration)
-  size_t total_size = 0;
-
-  if (has_drivingside()) {
-    // required .ISR.Configuration.eDrivingSide drivingSide = 6;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->drivingside());
-  }
-
-  if (has_collectionside()) {
-    // required .ISR.Configuration.eCollectionSide collectionSide = 7;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->collectionside());
-  }
-
-  if (has_distancecostcoef()) {
-    // required float distanceCostCoef = 5 [default = 1];
-    total_size += 1 + 4;
-  }
-
-  if (has_timeunit()) {
-    // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->timeunit());
-  }
-
-  if (has_timecoef()) {
-    // required float timeCoef = 2 [default = 1];
-    total_size += 1 + 4;
-  }
-
-  if (has_timecostcoef()) {
-    // required float timeCostCoef = 3 [default = 1];
-    total_size += 1 + 4;
-  }
-
-  if (has_distanceunit()) {
-    // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->distanceunit());
-  }
-
-  return total_size;
-}
-size_t Configuration::ByteSizeLong() const {
+::size_t Configuration::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.Configuration)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000007f) ^ 0x0000007f) == 0) {  // All required fields are present.
-    // required .ISR.Configuration.eDrivingSide drivingSide = 6;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->drivingside());
-
-    // required .ISR.Configuration.eCollectionSide collectionSide = 7;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->collectionside());
-
-    // required float distanceCostCoef = 5 [default = 1];
-    total_size += 1 + 4;
-
-    // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->timeunit());
-
-    // required float timeCoef = 2 [default = 1];
-    total_size += 1 + 4;
-
-    // required float timeCostCoef = 3 [default = 1];
-    total_size += 1 + 4;
-
-    // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->distanceunit());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Configuration::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.Configuration)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Configuration* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Configuration>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.Configuration)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.Configuration)
-    MergeFrom(*source);
-  }
-}
-
-void Configuration::MergeFrom(const Configuration& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.Configuration)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 127u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000007fu) {
+    // required .ISR.Configuration.eDrivingSide drivingSide = 6;
     if (cached_has_bits & 0x00000001u) {
-      drivingside_ = from.drivingside_;
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_drivingside());
     }
+
+    // required .ISR.Configuration.eCollectionSide collectionSide = 7;
     if (cached_has_bits & 0x00000002u) {
-      collectionside_ = from.collectionside_;
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_collectionside());
     }
+
+    // required float distanceCostCoef = 5 [default = 1];
     if (cached_has_bits & 0x00000004u) {
-      distancecostcoef_ = from.distancecostcoef_;
+      total_size += 5;
     }
+
+    // required .ISR.Configuration.eMeasurementUnit timeUnit = 1 [default = MINUTES];
     if (cached_has_bits & 0x00000008u) {
-      timeunit_ = from.timeunit_;
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_timeunit());
     }
+
+    // required float timeCoef = 2 [default = 1];
     if (cached_has_bits & 0x00000010u) {
-      timecoef_ = from.timecoef_;
+      total_size += 5;
     }
+
+    // required float timeCostCoef = 3 [default = 1];
     if (cached_has_bits & 0x00000020u) {
-      timecostcoef_ = from.timecostcoef_;
+      total_size += 5;
     }
+
+    // required .ISR.Configuration.eMeasurementUnit distanceUnit = 4 [default = KILOMETRES];
     if (cached_has_bits & 0x00000040u) {
-      distanceunit_ = from.distanceunit_;
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_distanceunit());
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Configuration::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.Configuration)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Configuration::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Configuration::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Configuration::GetClassData() const { return &_class_data_; }
+
+
+void Configuration::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Configuration*>(&to_msg);
+  auto& from = static_cast<const Configuration&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.Configuration)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000007fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.drivingside_ = from._impl_.drivingside_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.collectionside_ = from._impl_.collectionside_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.distancecostcoef_ = from._impl_.distancecostcoef_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.timeunit_ = from._impl_.timeunit_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.timecoef_ = from._impl_.timecoef_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      _this->_impl_.timecostcoef_ = from._impl_.timecostcoef_;
+    }
+    if (cached_has_bits & 0x00000040u) {
+      _this->_impl_.distanceunit_ = from._impl_.distanceunit_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Configuration::CopyFrom(const Configuration& from) {
@@ -1424,292 +1341,220 @@ void Configuration::CopyFrom(const Configuration& from) {
   MergeFrom(from);
 }
 
-bool Configuration::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000007f) != 0x0000007f) return false;
+PROTOBUF_NOINLINE bool Configuration::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void Configuration::Swap(Configuration* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Configuration::InternalSwap(Configuration* other) {
   using std::swap;
-  swap(drivingside_, other->drivingside_);
-  swap(collectionside_, other->collectionside_);
-  swap(distancecostcoef_, other->distancecostcoef_);
-  swap(timeunit_, other->timeunit_);
-  swap(timecoef_, other->timecoef_);
-  swap(timecostcoef_, other->timecostcoef_);
-  swap(distanceunit_, other->distanceunit_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Configuration, _impl_.distanceunit_)
+      + sizeof(Configuration::_impl_.distanceunit_)
+      - PROTOBUF_FIELD_OFFSET(Configuration, _impl_.drivingside_)>(
+          reinterpret_cast<char*>(&_impl_.drivingside_),
+          reinterpret_cast<char*>(&other->_impl_.drivingside_));
 }
 
 ::google::protobuf::Metadata Configuration::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[0]);
 }
-
-
 // ===================================================================
 
-void Geocode::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Geocode::kLongitudeFieldNumber;
-const int Geocode::kLatitudeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Geocode::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Geocode>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_);
+  static void set_has_longitude(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_latitude(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-Geocode::Geocode()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.Geocode)
+Geocode::Geocode(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.Geocode)
 }
 Geocode::Geocode(const Geocode& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&longitude_, &from.longitude_,
-    static_cast<size_t>(reinterpret_cast<char*>(&latitude_) -
-    reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+    : ::google::protobuf::Message(), _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:ISR.Geocode)
 }
-
-void Geocode::SharedCtor() {
-  ::memset(&longitude_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&latitude_) -
-      reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+inline void Geocode::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.longitude_){0},
+      decltype(_impl_.latitude_){0},
+  };
 }
-
 Geocode::~Geocode() {
   // @@protoc_insertion_point(destructor:ISR.Geocode)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Geocode::SharedDtor() {
+inline void Geocode::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
 }
-
 void Geocode::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Geocode::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Geocode& Geocode::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Geocode.base);
-  return *internal_default_instance();
-}
-
-
-void Geocode::Clear() {
+PROTOBUF_NOINLINE void Geocode::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
-    ::memset(&longitude_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&latitude_) -
-        reinterpret_cast<char*>(&longitude_)) + sizeof(latitude_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.longitude_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.latitude_) -
+        reinterpret_cast<char*>(&_impl_.longitude_)) + sizeof(_impl_.latitude_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Geocode::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.Geocode)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required float longitude = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
-          set_has_longitude();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &longitude_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float latitude = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_latitude();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &latitude_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.Geocode)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.Geocode)
-  return false;
-#undef DO_
+const char* Geocode::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Geocode::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required float longitude = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->longitude(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 0, 2> Geocode::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Geocode, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_Geocode_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float latitude = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_)}},
+    // required float longitude = 1;
+    {::_pbi::TcParser::FastF32S1,
+     {13, 0, 0, PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required float longitude = 1;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float latitude = 2;
+    {PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
 
-  // required float latitude = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->latitude(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.Geocode)
-}
-
-::google::protobuf::uint8* Geocode::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Geocode::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.Geocode)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required float longitude = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->longitude(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_longitude(), target);
   }
 
   // required float latitude = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->latitude(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_latitude(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.Geocode)
   return target;
 }
 
-size_t Geocode::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.Geocode)
-  size_t total_size = 0;
-
-  if (has_longitude()) {
-    // required float longitude = 1;
-    total_size += 1 + 4;
-  }
-
-  if (has_latitude()) {
-    // required float latitude = 2;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Geocode::ByteSizeLong() const {
+::size_t Geocode::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.Geocode)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required float longitude = 1;
-    total_size += 1 + 4;
-
-    // required float latitude = 2;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Geocode::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Geocode* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Geocode>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.Geocode)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.Geocode)
-    MergeFrom(*source);
-  }
-}
-
-void Geocode::MergeFrom(const Geocode& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.Geocode)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required float longitude = 1;
     if (cached_has_bits & 0x00000001u) {
-      longitude_ = from.longitude_;
+      total_size += 5;
     }
+
+    // required float latitude = 2;
     if (cached_has_bits & 0x00000002u) {
-      latitude_ = from.latitude_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Geocode::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.Geocode)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Geocode::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Geocode::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Geocode::GetClassData() const { return &_class_data_; }
+
+
+void Geocode::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Geocode*>(&to_msg);
+  auto& from = static_cast<const Geocode&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.Geocode)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.longitude_ = from._impl_.longitude_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.latitude_ = from._impl_.latitude_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Geocode::CopyFrom(const Geocode& from) {
@@ -1719,405 +1564,320 @@ void Geocode::CopyFrom(const Geocode& from) {
   MergeFrom(from);
 }
 
-bool Geocode::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
+PROTOBUF_NOINLINE bool Geocode::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void Geocode::Swap(Geocode* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Geocode::InternalSwap(Geocode* other) {
   using std::swap;
-  swap(longitude_, other->longitude_);
-  swap(latitude_, other->latitude_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Geocode, _impl_.latitude_)
+      + sizeof(Geocode::_impl_.latitude_)
+      - PROTOBUF_FIELD_OFFSET(Geocode, _impl_.longitude_)>(
+          reinterpret_cast<char*>(&_impl_.longitude_),
+          reinterpret_cast<char*>(&other->_impl_.longitude_));
 }
 
 ::google::protobuf::Metadata Geocode::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[1]);
 }
-
-
 // ===================================================================
 
-void OffloadSite::InitAsDefaultInstance() {
-  ::ISR::_OffloadSite_default_instance_._instance.get_mutable()->location_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int OffloadSite::kIdFieldNumber;
-const int OffloadSite::kLocationFieldNumber;
-const int OffloadSite::kFixedOffloadTimeFieldNumber;
-const int OffloadSite::kOffloadTimePerQuantityFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class OffloadSite::_Internal {
+ public:
+  using HasBits = decltype(std::declval<OffloadSite>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::ISR::Geocode& location(const OffloadSite* msg);
+  static void set_has_location(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_fixedoffloadtime(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_offloadtimeperquantity(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
+};
 
-OffloadSite::OffloadSite()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_OffloadSite.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.OffloadSite)
+const ::ISR::Geocode& OffloadSite::_Internal::location(const OffloadSite* msg) {
+  return *msg->_impl_.location_;
 }
-OffloadSite::OffloadSite(const OffloadSite& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_id()) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+OffloadSite::OffloadSite(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.OffloadSite)
+}
+OffloadSite::OffloadSite(const OffloadSite& from) : ::google::protobuf::Message() {
+  OffloadSite* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.fixedoffloadtime_){},
+      decltype(_impl_.offloadtimeperquantity_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
   }
-  if (from.has_location()) {
-    location_ = new ::ISR::Geocode(*from.location_);
-  } else {
-    location_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.location_ = new ::ISR::Geocode(*from._impl_.location_);
   }
-  ::memcpy(&fixedoffloadtime_, &from.fixedoffloadtime_,
-    static_cast<size_t>(reinterpret_cast<char*>(&offloadtimeperquantity_) -
-    reinterpret_cast<char*>(&fixedoffloadtime_)) + sizeof(offloadtimeperquantity_));
+  ::memcpy(&_impl_.fixedoffloadtime_, &from._impl_.fixedoffloadtime_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.offloadtimeperquantity_) -
+    reinterpret_cast<char*>(&_impl_.fixedoffloadtime_)) + sizeof(_impl_.offloadtimeperquantity_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.OffloadSite)
 }
-
-void OffloadSite::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&location_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&offloadtimeperquantity_) -
-      reinterpret_cast<char*>(&location_)) + sizeof(offloadtimeperquantity_));
+inline void OffloadSite::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.fixedoffloadtime_){0},
+      decltype(_impl_.offloadtimeperquantity_){0},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 OffloadSite::~OffloadSite() {
   // @@protoc_insertion_point(destructor:ISR.OffloadSite)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void OffloadSite::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete location_;
+inline void OffloadSite::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.location_;
 }
-
 void OffloadSite::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* OffloadSite::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const OffloadSite& OffloadSite::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_OffloadSite.base);
-  return *internal_default_instance();
-}
-
-
-void OffloadSite::Clear() {
+PROTOBUF_NOINLINE void OffloadSite::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.OffloadSite)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      id_.ClearNonDefaultToEmptyNoArena();
+      _impl_.id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(location_ != NULL);
-      location_->Clear();
+      ABSL_DCHECK(_impl_.location_ != nullptr);
+      _impl_.location_->Clear();
     }
   }
-  if (cached_has_bits & 12u) {
-    ::memset(&fixedoffloadtime_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&offloadtimeperquantity_) -
-        reinterpret_cast<char*>(&fixedoffloadtime_)) + sizeof(offloadtimeperquantity_));
+  if (cached_has_bits & 0x0000000cu) {
+    ::memset(&_impl_.fixedoffloadtime_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.offloadtimeperquantity_) -
+        reinterpret_cast<char*>(&_impl_.fixedoffloadtime_)) + sizeof(_impl_.offloadtimeperquantity_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool OffloadSite::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.OffloadSite)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.OffloadSite.id");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode location = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_location()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float fixedOffloadTime = 3 [default = 0];
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_fixedoffloadtime();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &fixedoffloadtime_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float offloadTimePerQuantity = 4 [default = 0];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_offloadtimeperquantity();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &offloadtimeperquantity_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.OffloadSite)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.OffloadSite)
-  return false;
-#undef DO_
+const char* OffloadSite::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void OffloadSite::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.OffloadSite)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string id = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.OffloadSite.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 1, 26, 2> OffloadSite::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_OffloadSite_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float offloadTimePerQuantity = 4 [default = 0];
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.offloadtimeperquantity_)}},
+    // required string id = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.id_)}},
+    // required .ISR.Geocode location = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.location_)}},
+    // required float fixedOffloadTime = 3 [default = 0];
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.fixedoffloadtime_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string id = 1;
+    {PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .ISR.Geocode location = 2;
+    {PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.location_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required float fixedOffloadTime = 3 [default = 0];
+    {PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.fixedoffloadtime_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float offloadTimePerQuantity = 4 [default = 0];
+    {PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.offloadtimeperquantity_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\17\2\0\0\0\0\0\0"
+    "ISR.OffloadSite"
+    "id"
+  }},
+};
 
-  // required .ISR.Geocode location = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_location(), output);
-  }
-
-  // required float fixedOffloadTime = 3 [default = 0];
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->fixedoffloadtime(), output);
-  }
-
-  // required float offloadTimePerQuantity = 4 [default = 0];
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->offloadtimeperquantity(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.OffloadSite)
-}
-
-::google::protobuf::uint8* OffloadSite::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* OffloadSite::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.OffloadSite)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.OffloadSite.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.OffloadSite.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .ISR.Geocode location = 2;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_location(), deterministic, target);
+      InternalWriteMessage(2, _Internal::location(this),
+        _Internal::location(this).GetCachedSize(), target, stream);
   }
 
   // required float fixedOffloadTime = 3 [default = 0];
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->fixedoffloadtime(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_fixedoffloadtime(), target);
   }
 
   // required float offloadTimePerQuantity = 4 [default = 0];
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->offloadtimeperquantity(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_offloadtimeperquantity(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.OffloadSite)
   return target;
 }
 
-size_t OffloadSite::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.OffloadSite)
-  size_t total_size = 0;
-
-  if (has_id()) {
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-  }
-
-  if (has_location()) {
-    // required .ISR.Geocode location = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
-  }
-
-  if (has_fixedoffloadtime()) {
-    // required float fixedOffloadTime = 3 [default = 0];
-    total_size += 1 + 4;
-  }
-
-  if (has_offloadtimeperquantity()) {
-    // required float offloadTimePerQuantity = 4 [default = 0];
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t OffloadSite::ByteSizeLong() const {
+::size_t OffloadSite::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.OffloadSite)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-
-    // required .ISR.Geocode location = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
-
-    // required float fixedOffloadTime = 3 [default = 0];
-    total_size += 1 + 4;
-
-    // required float offloadTimePerQuantity = 4 [default = 0];
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void OffloadSite::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.OffloadSite)
-  GOOGLE_DCHECK_NE(&from, this);
-  const OffloadSite* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const OffloadSite>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.OffloadSite)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.OffloadSite)
-    MergeFrom(*source);
-  }
-}
-
-void OffloadSite::MergeFrom(const OffloadSite& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.OffloadSite)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // required string id = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_id();
-      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
     }
+
+    // required .ISR.Geocode location = 2;
     if (cached_has_bits & 0x00000002u) {
-      mutable_location()->::ISR::Geocode::MergeFrom(from.location());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.location_);
     }
+
+    // required float fixedOffloadTime = 3 [default = 0];
     if (cached_has_bits & 0x00000004u) {
-      fixedoffloadtime_ = from.fixedoffloadtime_;
+      total_size += 5;
     }
+
+    // required float offloadTimePerQuantity = 4 [default = 0];
     if (cached_has_bits & 0x00000008u) {
-      offloadtimeperquantity_ = from.offloadtimeperquantity_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void OffloadSite::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.OffloadSite)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData OffloadSite::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    OffloadSite::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*OffloadSite::GetClassData() const { return &_class_data_; }
+
+
+void OffloadSite::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<OffloadSite*>(&to_msg);
+  auto& from = static_cast<const OffloadSite&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.OffloadSite)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_location()->::ISR::Geocode::MergeFrom(
+          from._internal_location());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.fixedoffloadtime_ = from._impl_.fixedoffloadtime_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.offloadtimeperquantity_ = from._impl_.offloadtimeperquantity_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void OffloadSite::CopyFrom(const OffloadSite& from) {
@@ -2127,474 +1887,374 @@ void OffloadSite::CopyFrom(const OffloadSite& from) {
   MergeFrom(from);
 }
 
-bool OffloadSite::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
-  if (has_location()) {
-    if (!this->location_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool OffloadSite::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.location_->IsInitialized()) return false;
   }
   return true;
 }
 
-void OffloadSite::Swap(OffloadSite* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void OffloadSite::InternalSwap(OffloadSite* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(location_, other->location_);
-  swap(fixedoffloadtime_, other->fixedoffloadtime_);
-  swap(offloadtimeperquantity_, other->offloadtimeperquantity_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.offloadtimeperquantity_)
+      + sizeof(OffloadSite::_impl_.offloadtimeperquantity_)
+      - PROTOBUF_FIELD_OFFSET(OffloadSite, _impl_.location_)>(
+          reinterpret_cast<char*>(&_impl_.location_),
+          reinterpret_cast<char*>(&other->_impl_.location_));
 }
 
 ::google::protobuf::Metadata OffloadSite::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[2]);
 }
-
-
 // ===================================================================
 
-void Collection::InitAsDefaultInstance() {
-  ::ISR::_Collection_default_instance_._instance.get_mutable()->location_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Collection::kIdFieldNumber;
-const int Collection::kLocationFieldNumber;
-const int Collection::kStopTimeFieldNumber;
-const int Collection::kQuantityFieldNumber;
-const int Collection::kOffloadSiteIdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Collection::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Collection>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Collection, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::ISR::Geocode& location(const Collection* msg);
+  static void set_has_location(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_stoptime(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_quantity(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_offloadsiteid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000001f) ^ 0x0000001f) != 0;
+  }
+};
 
-Collection::Collection()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Collection.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.Collection)
+const ::ISR::Geocode& Collection::_Internal::location(const Collection* msg) {
+  return *msg->_impl_.location_;
 }
-Collection::Collection(const Collection& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_id()) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+Collection::Collection(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.Collection)
+}
+Collection::Collection(const Collection& from) : ::google::protobuf::Message() {
+  Collection* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.offloadsiteid_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.stoptime_){},
+      decltype(_impl_.quantity_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
   }
-  offloadsiteid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_offloadsiteid()) {
-    offloadsiteid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.offloadsiteid_);
+  _impl_.offloadsiteid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.offloadsiteid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.offloadsiteid_.Set(from._internal_offloadsiteid(), _this->GetArenaForAllocation());
   }
-  if (from.has_location()) {
-    location_ = new ::ISR::Geocode(*from.location_);
-  } else {
-    location_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.location_ = new ::ISR::Geocode(*from._impl_.location_);
   }
-  ::memcpy(&stoptime_, &from.stoptime_,
-    static_cast<size_t>(reinterpret_cast<char*>(&quantity_) -
-    reinterpret_cast<char*>(&stoptime_)) + sizeof(quantity_));
+  ::memcpy(&_impl_.stoptime_, &from._impl_.stoptime_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.quantity_) -
+    reinterpret_cast<char*>(&_impl_.stoptime_)) + sizeof(_impl_.quantity_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.Collection)
 }
-
-void Collection::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  offloadsiteid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&location_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&quantity_) -
-      reinterpret_cast<char*>(&location_)) + sizeof(quantity_));
+inline void Collection::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.offloadsiteid_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.stoptime_){0},
+      decltype(_impl_.quantity_){0},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.offloadsiteid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.offloadsiteid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Collection::~Collection() {
   // @@protoc_insertion_point(destructor:ISR.Collection)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Collection::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  offloadsiteid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete location_;
+inline void Collection::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
+  _impl_.offloadsiteid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.location_;
 }
-
 void Collection::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Collection::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Collection& Collection::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Collection.base);
-  return *internal_default_instance();
-}
-
-
-void Collection::Clear() {
+PROTOBUF_NOINLINE void Collection::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.Collection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      id_.ClearNonDefaultToEmptyNoArena();
+      _impl_.id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      offloadsiteid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.offloadsiteid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(location_ != NULL);
-      location_->Clear();
+      ABSL_DCHECK(_impl_.location_ != nullptr);
+      _impl_.location_->Clear();
     }
   }
-  if (cached_has_bits & 24u) {
-    ::memset(&stoptime_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&quantity_) -
-        reinterpret_cast<char*>(&stoptime_)) + sizeof(quantity_));
+  if (cached_has_bits & 0x00000018u) {
+    ::memset(&_impl_.stoptime_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.quantity_) -
+        reinterpret_cast<char*>(&_impl_.stoptime_)) + sizeof(_impl_.quantity_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Collection::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.Collection)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.Collection.id");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode location = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_location()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float stopTime = 3 [default = 0];
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_stoptime();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &stoptime_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float quantity = 4 [default = 0];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_quantity();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &quantity_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string offloadSiteId = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_offloadsiteid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.Collection.offloadSiteId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.Collection)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.Collection)
-  return false;
-#undef DO_
+const char* Collection::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Collection::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.Collection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string id = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Collection.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 1, 38, 2> Collection::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Collection, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Collection_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string id = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Collection, _impl_.id_)}},
+    // required .ISR.Geocode location = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 2, 0, PROTOBUF_FIELD_OFFSET(Collection, _impl_.location_)}},
+    // required float stopTime = 3 [default = 0];
+    {::_pbi::TcParser::FastF32S1,
+     {29, 3, 0, PROTOBUF_FIELD_OFFSET(Collection, _impl_.stoptime_)}},
+    // required float quantity = 4 [default = 0];
+    {::_pbi::TcParser::FastF32S1,
+     {37, 4, 0, PROTOBUF_FIELD_OFFSET(Collection, _impl_.quantity_)}},
+    // required string offloadSiteId = 5;
+    {::_pbi::TcParser::FastSS1,
+     {42, 1, 0, PROTOBUF_FIELD_OFFSET(Collection, _impl_.offloadsiteid_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string id = 1;
+    {PROTOBUF_FIELD_OFFSET(Collection, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .ISR.Geocode location = 2;
+    {PROTOBUF_FIELD_OFFSET(Collection, _impl_.location_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required float stopTime = 3 [default = 0];
+    {PROTOBUF_FIELD_OFFSET(Collection, _impl_.stoptime_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float quantity = 4 [default = 0];
+    {PROTOBUF_FIELD_OFFSET(Collection, _impl_.quantity_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required string offloadSiteId = 5;
+    {PROTOBUF_FIELD_OFFSET(Collection, _impl_.offloadsiteid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\16\2\0\0\0\15\0\0"
+    "ISR.Collection"
+    "id"
+    "offloadSiteId"
+  }},
+};
 
-  // required .ISR.Geocode location = 2;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_location(), output);
-  }
-
-  // required float stopTime = 3 [default = 0];
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->stoptime(), output);
-  }
-
-  // required float quantity = 4 [default = 0];
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->quantity(), output);
-  }
-
-  // required string offloadSiteId = 5;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Collection.offloadSiteId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      5, this->offloadsiteid(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.Collection)
-}
-
-::google::protobuf::uint8* Collection::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Collection::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.Collection)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Collection.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.Collection.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .ISR.Geocode location = 2;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_location(), deterministic, target);
+      InternalWriteMessage(2, _Internal::location(this),
+        _Internal::location(this).GetCachedSize(), target, stream);
   }
 
   // required float stopTime = 3 [default = 0];
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->stoptime(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_stoptime(), target);
   }
 
   // required float quantity = 4 [default = 0];
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->quantity(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_quantity(), target);
   }
 
   // required string offloadSiteId = 5;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Collection.offloadSiteId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        5, this->offloadsiteid(), target);
+    const std::string& _s = this->_internal_offloadsiteid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.Collection.offloadSiteId");
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.Collection)
   return target;
 }
 
-size_t Collection::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.Collection)
-  size_t total_size = 0;
-
-  if (has_id()) {
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-  }
-
-  if (has_offloadsiteid()) {
-    // required string offloadSiteId = 5;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->offloadsiteid());
-  }
-
-  if (has_location()) {
-    // required .ISR.Geocode location = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
-  }
-
-  if (has_stoptime()) {
-    // required float stopTime = 3 [default = 0];
-    total_size += 1 + 4;
-  }
-
-  if (has_quantity()) {
-    // required float quantity = 4 [default = 0];
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Collection::ByteSizeLong() const {
+::size_t Collection::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.Collection)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000001f) ^ 0x0000001f) == 0) {  // All required fields are present.
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-
-    // required string offloadSiteId = 5;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->offloadsiteid());
-
-    // required .ISR.Geocode location = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
-
-    // required float stopTime = 3 [default = 0];
-    total_size += 1 + 4;
-
-    // required float quantity = 4 [default = 0];
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Collection::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.Collection)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Collection* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Collection>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.Collection)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.Collection)
-    MergeFrom(*source);
-  }
-}
-
-void Collection::MergeFrom(const Collection& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.Collection)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 31u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    // required string id = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_id();
-      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
     }
+
+    // required string offloadSiteId = 5;
     if (cached_has_bits & 0x00000002u) {
-      set_has_offloadsiteid();
-      offloadsiteid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.offloadsiteid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_offloadsiteid());
     }
+
+    // required .ISR.Geocode location = 2;
     if (cached_has_bits & 0x00000004u) {
-      mutable_location()->::ISR::Geocode::MergeFrom(from.location());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.location_);
     }
+
+    // required float stopTime = 3 [default = 0];
     if (cached_has_bits & 0x00000008u) {
-      stoptime_ = from.stoptime_;
+      total_size += 5;
     }
+
+    // required float quantity = 4 [default = 0];
     if (cached_has_bits & 0x00000010u) {
-      quantity_ = from.quantity_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Collection::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.Collection)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Collection::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Collection::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Collection::GetClassData() const { return &_class_data_; }
+
+
+void Collection::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Collection*>(&to_msg);
+  auto& from = static_cast<const Collection&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.Collection)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_offloadsiteid(from._internal_offloadsiteid());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_location()->::ISR::Geocode::MergeFrom(
+          from._internal_location());
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.stoptime_ = from._impl_.stoptime_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.quantity_ = from._impl_.quantity_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Collection::CopyFrom(const Collection& from) {
@@ -2604,502 +2264,399 @@ void Collection::CopyFrom(const Collection& from) {
   MergeFrom(from);
 }
 
-bool Collection::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001f) != 0x0000001f) return false;
-  if (has_location()) {
-    if (!this->location_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool Collection::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!_impl_.location_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Collection::Swap(Collection* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Collection::InternalSwap(Collection* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  offloadsiteid_.Swap(&other->offloadsiteid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(location_, other->location_);
-  swap(stoptime_, other->stoptime_);
-  swap(quantity_, other->quantity_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.offloadsiteid_, lhs_arena,
+                                       &other->_impl_.offloadsiteid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Collection, _impl_.quantity_)
+      + sizeof(Collection::_impl_.quantity_)
+      - PROTOBUF_FIELD_OFFSET(Collection, _impl_.location_)>(
+          reinterpret_cast<char*>(&_impl_.location_),
+          reinterpret_cast<char*>(&other->_impl_.location_));
 }
 
 ::google::protobuf::Metadata Collection::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[3]);
 }
-
-
 // ===================================================================
 
-void Vehicle::InitAsDefaultInstance() {
-  ::ISR::_Vehicle_default_instance_._instance.get_mutable()->startlocation_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-  ::ISR::_Vehicle_default_instance_._instance.get_mutable()->endlocation_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Vehicle::kIdFieldNumber;
-const int Vehicle::kStartLocationFieldNumber;
-const int Vehicle::kEndLocationFieldNumber;
-const int Vehicle::kStartTimeFieldNumber;
-const int Vehicle::kEndTimeFieldNumber;
-const int Vehicle::kCapacityFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class Vehicle::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Vehicle>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Vehicle, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::ISR::Geocode& startlocation(const Vehicle* msg);
+  static void set_has_startlocation(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static const ::ISR::Geocode& endlocation(const Vehicle* msg);
+  static void set_has_endlocation(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_starttime(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_endtime(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_capacity(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000003f) ^ 0x0000003f) != 0;
+  }
+};
 
-Vehicle::Vehicle()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Vehicle.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.Vehicle)
+const ::ISR::Geocode& Vehicle::_Internal::startlocation(const Vehicle* msg) {
+  return *msg->_impl_.startlocation_;
 }
-Vehicle::Vehicle(const Vehicle& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_id()) {
-    id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+const ::ISR::Geocode& Vehicle::_Internal::endlocation(const Vehicle* msg) {
+  return *msg->_impl_.endlocation_;
+}
+Vehicle::Vehicle(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.Vehicle)
+}
+Vehicle::Vehicle(const Vehicle& from) : ::google::protobuf::Message() {
+  Vehicle* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.startlocation_){nullptr},
+      decltype(_impl_.endlocation_){nullptr},
+      decltype(_impl_.starttime_){},
+      decltype(_impl_.endtime_){},
+      decltype(_impl_.capacity_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.id_.Set(from._internal_id(), _this->GetArenaForAllocation());
   }
-  if (from.has_startlocation()) {
-    startlocation_ = new ::ISR::Geocode(*from.startlocation_);
-  } else {
-    startlocation_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.startlocation_ = new ::ISR::Geocode(*from._impl_.startlocation_);
   }
-  if (from.has_endlocation()) {
-    endlocation_ = new ::ISR::Geocode(*from.endlocation_);
-  } else {
-    endlocation_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.endlocation_ = new ::ISR::Geocode(*from._impl_.endlocation_);
   }
-  ::memcpy(&starttime_, &from.starttime_,
-    static_cast<size_t>(reinterpret_cast<char*>(&capacity_) -
-    reinterpret_cast<char*>(&starttime_)) + sizeof(capacity_));
+  ::memcpy(&_impl_.starttime_, &from._impl_.starttime_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.capacity_) -
+    reinterpret_cast<char*>(&_impl_.starttime_)) + sizeof(_impl_.capacity_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.Vehicle)
 }
-
-void Vehicle::SharedCtor() {
-  id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&startlocation_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&capacity_) -
-      reinterpret_cast<char*>(&startlocation_)) + sizeof(capacity_));
+inline void Vehicle::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.id_){},
+      decltype(_impl_.startlocation_){nullptr},
+      decltype(_impl_.endlocation_){nullptr},
+      decltype(_impl_.starttime_){0},
+      decltype(_impl_.endtime_){0},
+      decltype(_impl_.capacity_){0},
+  };
+  _impl_.id_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.id_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 Vehicle::~Vehicle() {
   // @@protoc_insertion_point(destructor:ISR.Vehicle)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Vehicle::SharedDtor() {
-  id_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete startlocation_;
-  if (this != internal_default_instance()) delete endlocation_;
+inline void Vehicle::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.id_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.startlocation_;
+  if (this != internal_default_instance()) delete _impl_.endlocation_;
 }
-
 void Vehicle::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Vehicle::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Vehicle& Vehicle::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Vehicle.base);
-  return *internal_default_instance();
-}
-
-
-void Vehicle::Clear() {
+PROTOBUF_NOINLINE void Vehicle::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.Vehicle)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      id_.ClearNonDefaultToEmptyNoArena();
+      _impl_.id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(startlocation_ != NULL);
-      startlocation_->Clear();
+      ABSL_DCHECK(_impl_.startlocation_ != nullptr);
+      _impl_.startlocation_->Clear();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(endlocation_ != NULL);
-      endlocation_->Clear();
+      ABSL_DCHECK(_impl_.endlocation_ != nullptr);
+      _impl_.endlocation_->Clear();
     }
   }
-  if (cached_has_bits & 56u) {
-    ::memset(&starttime_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&capacity_) -
-        reinterpret_cast<char*>(&starttime_)) + sizeof(capacity_));
+  if (cached_has_bits & 0x00000038u) {
+    ::memset(&_impl_.starttime_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.capacity_) -
+        reinterpret_cast<char*>(&_impl_.starttime_)) + sizeof(_impl_.capacity_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Vehicle::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.Vehicle)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->id().data(), static_cast<int>(this->id().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.Vehicle.id");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode startLocation = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_startlocation()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode endLocation = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_endlocation()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float startTime = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_starttime();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &starttime_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float endTime = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(45u /* 45 & 0xFF */)) {
-          set_has_endtime();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &endtime_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float capacity = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(53u /* 53 & 0xFF */)) {
-          set_has_capacity();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &capacity_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.Vehicle)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.Vehicle)
-  return false;
-#undef DO_
+const char* Vehicle::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Vehicle::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.Vehicle)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string id = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Vehicle.id");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 6, 2, 22, 2> Vehicle::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Vehicle, _impl_._has_bits_),
+    0, // no _extensions_
+    6, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967232,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    6,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Vehicle_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string id = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.id_)}},
+    // required .ISR.Geocode startLocation = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.startlocation_)}},
+    // required .ISR.Geocode endLocation = 3;
+    {::_pbi::TcParser::FastMtS1,
+     {26, 2, 1, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.endlocation_)}},
+    // required float startTime = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.starttime_)}},
+    // required float endTime = 5;
+    {::_pbi::TcParser::FastF32S1,
+     {45, 4, 0, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.endtime_)}},
+    // required float capacity = 6;
+    {::_pbi::TcParser::FastF32S1,
+     {53, 5, 0, PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.capacity_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string id = 1;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .ISR.Geocode startLocation = 2;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.startlocation_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required .ISR.Geocode endLocation = 3;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.endlocation_), _Internal::kHasBitsOffset + 2, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required float startTime = 4;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.starttime_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float endTime = 5;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.endtime_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float capacity = 6;
+    {PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.capacity_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\13\2\0\0\0\0\0\0"
+    "ISR.Vehicle"
+    "id"
+  }},
+};
 
-  // required .ISR.Geocode startLocation = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_startlocation(), output);
-  }
-
-  // required .ISR.Geocode endLocation = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3, this->_internal_endlocation(), output);
-  }
-
-  // required float startTime = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->starttime(), output);
-  }
-
-  // required float endTime = 5;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(5, this->endtime(), output);
-  }
-
-  // required float capacity = 6;
-  if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(6, this->capacity(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.Vehicle)
-}
-
-::google::protobuf::uint8* Vehicle::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Vehicle::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.Vehicle)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string id = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.Vehicle.id");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+    const std::string& _s = this->_internal_id();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.Vehicle.id");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .ISR.Geocode startLocation = 2;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_startlocation(), deterministic, target);
+      InternalWriteMessage(2, _Internal::startlocation(this),
+        _Internal::startlocation(this).GetCachedSize(), target, stream);
   }
 
   // required .ISR.Geocode endLocation = 3;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->_internal_endlocation(), deterministic, target);
+      InternalWriteMessage(3, _Internal::endlocation(this),
+        _Internal::endlocation(this).GetCachedSize(), target, stream);
   }
 
   // required float startTime = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->starttime(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_starttime(), target);
   }
 
   // required float endTime = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(5, this->endtime(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        5, this->_internal_endtime(), target);
   }
 
   // required float capacity = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(6, this->capacity(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        6, this->_internal_capacity(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.Vehicle)
   return target;
 }
 
-size_t Vehicle::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.Vehicle)
-  size_t total_size = 0;
-
-  if (has_id()) {
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-  }
-
-  if (has_startlocation()) {
-    // required .ISR.Geocode startLocation = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *startlocation_);
-  }
-
-  if (has_endlocation()) {
-    // required .ISR.Geocode endLocation = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *endlocation_);
-  }
-
-  if (has_starttime()) {
-    // required float startTime = 4;
-    total_size += 1 + 4;
-  }
-
-  if (has_endtime()) {
-    // required float endTime = 5;
-    total_size += 1 + 4;
-  }
-
-  if (has_capacity()) {
-    // required float capacity = 6;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t Vehicle::ByteSizeLong() const {
+::size_t Vehicle::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.Vehicle)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000003f) ^ 0x0000003f) == 0) {  // All required fields are present.
-    // required string id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->id());
-
-    // required .ISR.Geocode startLocation = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *startlocation_);
-
-    // required .ISR.Geocode endLocation = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *endlocation_);
-
-    // required float startTime = 4;
-    total_size += 1 + 4;
-
-    // required float endTime = 5;
-    total_size += 1 + 4;
-
-    // required float capacity = 6;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Vehicle::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.Vehicle)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Vehicle* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Vehicle>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.Vehicle)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.Vehicle)
-    MergeFrom(*source);
-  }
-}
-
-void Vehicle::MergeFrom(const Vehicle& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.Vehicle)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 63u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000003fu) {
+    // required string id = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_id();
-      id_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.id_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_id());
     }
+
+    // required .ISR.Geocode startLocation = 2;
     if (cached_has_bits & 0x00000002u) {
-      mutable_startlocation()->::ISR::Geocode::MergeFrom(from.startlocation());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.startlocation_);
     }
+
+    // required .ISR.Geocode endLocation = 3;
     if (cached_has_bits & 0x00000004u) {
-      mutable_endlocation()->::ISR::Geocode::MergeFrom(from.endlocation());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.endlocation_);
     }
+
+    // required float startTime = 4;
     if (cached_has_bits & 0x00000008u) {
-      starttime_ = from.starttime_;
+      total_size += 5;
     }
+
+    // required float endTime = 5;
     if (cached_has_bits & 0x00000010u) {
-      endtime_ = from.endtime_;
+      total_size += 5;
     }
+
+    // required float capacity = 6;
     if (cached_has_bits & 0x00000020u) {
-      capacity_ = from.capacity_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Vehicle::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.Vehicle)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Vehicle::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Vehicle::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Vehicle::GetClassData() const { return &_class_data_; }
+
+
+void Vehicle::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Vehicle*>(&to_msg);
+  auto& from = static_cast<const Vehicle&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.Vehicle)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000003fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_id(from._internal_id());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_startlocation()->::ISR::Geocode::MergeFrom(
+          from._internal_startlocation());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_endlocation()->::ISR::Geocode::MergeFrom(
+          from._internal_endlocation());
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.starttime_ = from._impl_.starttime_;
+    }
+    if (cached_has_bits & 0x00000010u) {
+      _this->_impl_.endtime_ = from._impl_.endtime_;
+    }
+    if (cached_has_bits & 0x00000020u) {
+      _this->_impl_.capacity_ = from._impl_.capacity_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Vehicle::CopyFrom(const Vehicle& from) {
@@ -3109,307 +2666,247 @@ void Vehicle::CopyFrom(const Vehicle& from) {
   MergeFrom(from);
 }
 
-bool Vehicle::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000003f) != 0x0000003f) return false;
-  if (has_startlocation()) {
-    if (!this->startlocation_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool Vehicle::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
   }
-  if (has_endlocation()) {
-    if (!this->endlocation_->IsInitialized()) return false;
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.startlocation_->IsInitialized()) return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!_impl_.endlocation_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Vehicle::Swap(Vehicle* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Vehicle::InternalSwap(Vehicle* other) {
   using std::swap;
-  id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(startlocation_, other->startlocation_);
-  swap(endlocation_, other->endlocation_);
-  swap(starttime_, other->starttime_);
-  swap(endtime_, other->endtime_);
-  swap(capacity_, other->capacity_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, lhs_arena,
+                                       &other->_impl_.id_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.capacity_)
+      + sizeof(Vehicle::_impl_.capacity_)
+      - PROTOBUF_FIELD_OFFSET(Vehicle, _impl_.startlocation_)>(
+          reinterpret_cast<char*>(&_impl_.startlocation_),
+          reinterpret_cast<char*>(&other->_impl_.startlocation_));
 }
 
 ::google::protobuf::Metadata Vehicle::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[4]);
 }
-
-
 // ===================================================================
 
-void CollectionSequence::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int CollectionSequence::kVehicleIdFieldNumber;
-const int CollectionSequence::kCollectionIdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-CollectionSequence::CollectionSequence()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_CollectionSequence.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.CollectionSequence)
-}
-CollectionSequence::CollectionSequence(const CollectionSequence& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      collectionid_(from.collectionid_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  vehicleid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_vehicleid()) {
-    vehicleid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vehicleid_);
+class CollectionSequence::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CollectionSequence>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_._has_bits_);
+  static void set_has_vehicleid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+CollectionSequence::CollectionSequence(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.CollectionSequence)
+}
+CollectionSequence::CollectionSequence(const CollectionSequence& from) : ::google::protobuf::Message() {
+  CollectionSequence* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collectionid_){from._impl_.collectionid_},
+      decltype(_impl_.vehicleid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.vehicleid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.vehicleid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.vehicleid_.Set(from._internal_vehicleid(), _this->GetArenaForAllocation());
+  }
+
   // @@protoc_insertion_point(copy_constructor:ISR.CollectionSequence)
 }
-
-void CollectionSequence::SharedCtor() {
-  vehicleid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CollectionSequence::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collectionid_){arena},
+      decltype(_impl_.vehicleid_){},
+  };
+  _impl_.vehicleid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.vehicleid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 CollectionSequence::~CollectionSequence() {
   // @@protoc_insertion_point(destructor:ISR.CollectionSequence)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void CollectionSequence::SharedDtor() {
-  vehicleid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void CollectionSequence::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_collectionid()->~RepeatedPtrField();
+  _impl_.vehicleid_.Destroy();
 }
-
 void CollectionSequence::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* CollectionSequence::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const CollectionSequence& CollectionSequence::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_CollectionSequence.base);
-  return *internal_default_instance();
-}
-
-
-void CollectionSequence::Clear() {
+PROTOBUF_NOINLINE void CollectionSequence::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.CollectionSequence)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  collectionid_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_collectionid()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    vehicleid_.ClearNonDefaultToEmptyNoArena();
+    _impl_.vehicleid_.ClearNonDefaultToEmpty();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool CollectionSequence::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.CollectionSequence)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string vehicleId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_vehicleid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.CollectionSequence.vehicleId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string collectionId = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_collectionid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->collectionid(this->collectionid_size() - 1).data(),
-            static_cast<int>(this->collectionid(this->collectionid_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.CollectionSequence.collectionId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.CollectionSequence)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.CollectionSequence)
-  return false;
-#undef DO_
+const char* CollectionSequence::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void CollectionSequence::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.CollectionSequence)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string vehicleId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.CollectionSequence.vehicleId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->vehicleid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 52, 2> CollectionSequence::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_CollectionSequence_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated string collectionId = 2;
+    {::_pbi::TcParser::FastSR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_.collectionid_)}},
+    // required string vehicleId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_.vehicleid_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string vehicleId = 1;
+    {PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_.vehicleid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated string collectionId = 2;
+    {PROTOBUF_FIELD_OFFSET(CollectionSequence, _impl_.collectionid_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+  }},
+  // no aux_entries
+  {{
+    "\26\11\14\0\0\0\0\0"
+    "ISR.CollectionSequence"
+    "vehicleId"
+    "collectionId"
+  }},
+};
 
-  // repeated string collectionId = 2;
-  for (int i = 0, n = this->collectionid_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid(i).data(), static_cast<int>(this->collectionid(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.CollectionSequence.collectionId");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      2, this->collectionid(i), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.CollectionSequence)
-}
-
-::google::protobuf::uint8* CollectionSequence::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* CollectionSequence::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.CollectionSequence)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string vehicleId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.CollectionSequence.vehicleId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->vehicleid(), target);
+    const std::string& _s = this->_internal_vehicleid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.CollectionSequence.vehicleId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // repeated string collectionId = 2;
-  for (int i = 0, n = this->collectionid_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid(i).data(), static_cast<int>(this->collectionid(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.CollectionSequence.collectionId");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(2, this->collectionid(i), target);
+  for (int i = 0, n = this->_internal_collectionid_size(); i < n; ++i) {
+    const auto& s = this->_internal_collectionid().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.CollectionSequence.collectionId");
+    target = stream->WriteString(2, s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.CollectionSequence)
   return target;
 }
 
-size_t CollectionSequence::ByteSizeLong() const {
+::size_t CollectionSequence::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.CollectionSequence)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required string vehicleId = 1;
-  if (has_vehicleid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->vehicleid());
-  }
-  // repeated string collectionId = 2;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->collectionid_size());
-  for (int i = 0, n = this->collectionid_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->collectionid(i));
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void CollectionSequence::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.CollectionSequence)
-  GOOGLE_DCHECK_NE(&from, this);
-  const CollectionSequence* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const CollectionSequence>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.CollectionSequence)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.CollectionSequence)
-    MergeFrom(*source);
-  }
-}
-
-void CollectionSequence::MergeFrom(const CollectionSequence& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.CollectionSequence)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  collectionid_.MergeFrom(from.collectionid_);
-  if (from.has_vehicleid()) {
-    set_has_vehicleid();
-    vehicleid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vehicleid_);
+  // repeated string collectionId = 2;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_collectionid().size());
+  for (int i = 0, n = _internal_collectionid().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_collectionid().Get(i));
   }
+  // required string vehicleId = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_vehicleid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void CollectionSequence::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.CollectionSequence)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData CollectionSequence::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    CollectionSequence::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*CollectionSequence::GetClassData() const { return &_class_data_; }
+
+
+void CollectionSequence::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<CollectionSequence*>(&to_msg);
+  auto& from = static_cast<const CollectionSequence&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.CollectionSequence)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_collectionid()->MergeFrom(from._internal_collectionid());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_vehicleid(from._internal_vehicleid());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void CollectionSequence::CopyFrom(const CollectionSequence& from) {
@@ -3419,415 +2916,312 @@ void CollectionSequence::CopyFrom(const CollectionSequence& from) {
   MergeFrom(from);
 }
 
-bool CollectionSequence::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+PROTOBUF_NOINLINE bool CollectionSequence::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void CollectionSequence::Swap(CollectionSequence* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void CollectionSequence::InternalSwap(CollectionSequence* other) {
   using std::swap;
-  collectionid_.InternalSwap(CastToBase(&other->collectionid_));
-  vehicleid_.Swap(&other->vehicleid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.collectionid_.InternalSwap(&other->_impl_.collectionid_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.vehicleid_, lhs_arena,
+                                       &other->_impl_.vehicleid_, rhs_arena);
 }
 
 ::google::protobuf::Metadata CollectionSequence::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[5]);
 }
-
-
 // ===================================================================
 
-void Model::InitAsDefaultInstance() {
-  ::ISR::_Model_default_instance_._instance.get_mutable()->configuration_ = const_cast< ::ISR::Configuration*>(
-      ::ISR::Configuration::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int Model::kConfigurationFieldNumber;
-const int Model::kCollectionsFieldNumber;
-const int Model::kOffloadSitesFieldNumber;
-const int Model::kVehiclesFieldNumber;
-const int Model::kCollectionSequenceFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-Model::Model()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Model.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.Model)
-}
-Model::Model(const Model& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      collections_(from.collections_),
-      offloadsites_(from.offloadsites_),
-      vehicles_(from.vehicles_),
-      collectionsequence_(from.collectionsequence_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  if (from.has_configuration()) {
-    configuration_ = new ::ISR::Configuration(*from.configuration_);
-  } else {
-    configuration_ = NULL;
+class Model::_Internal {
+ public:
+  using HasBits = decltype(std::declval<Model>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(Model, _impl_._has_bits_);
+  static const ::ISR::Configuration& configuration(const Model* msg);
+  static void set_has_configuration(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+const ::ISR::Configuration& Model::_Internal::configuration(const Model* msg) {
+  return *msg->_impl_.configuration_;
+}
+Model::Model(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.Model)
+}
+Model::Model(const Model& from) : ::google::protobuf::Message() {
+  Model* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collections_){from._impl_.collections_},
+      decltype(_impl_.offloadsites_){from._impl_.offloadsites_},
+      decltype(_impl_.vehicles_){from._impl_.vehicles_},
+      decltype(_impl_.collectionsequence_){from._impl_.collectionsequence_},
+      decltype(_impl_.configuration_){nullptr},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.configuration_ = new ::ISR::Configuration(*from._impl_.configuration_);
+  }
+
   // @@protoc_insertion_point(copy_constructor:ISR.Model)
 }
-
-void Model::SharedCtor() {
-  configuration_ = NULL;
+inline void Model::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collections_){arena},
+      decltype(_impl_.offloadsites_){arena},
+      decltype(_impl_.vehicles_){arena},
+      decltype(_impl_.collectionsequence_){arena},
+      decltype(_impl_.configuration_){nullptr},
+  };
 }
-
 Model::~Model() {
   // @@protoc_insertion_point(destructor:ISR.Model)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void Model::SharedDtor() {
-  if (this != internal_default_instance()) delete configuration_;
+inline void Model::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.collections_.~RepeatedPtrField();
+  _impl_.offloadsites_.~RepeatedPtrField();
+  _impl_.vehicles_.~RepeatedPtrField();
+  _impl_.collectionsequence_.~RepeatedPtrField();
+  if (this != internal_default_instance()) delete _impl_.configuration_;
 }
-
 void Model::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* Model::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const Model& Model::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_Model.base);
-  return *internal_default_instance();
-}
-
-
-void Model::Clear() {
+PROTOBUF_NOINLINE void Model::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.Model)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  collections_.Clear();
-  offloadsites_.Clear();
-  vehicles_.Clear();
-  collectionsequence_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_collections()->Clear();
+  _internal_mutable_offloadsites()->Clear();
+  _internal_mutable_vehicles()->Clear();
+  _internal_mutable_collectionsequence()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(configuration_ != NULL);
-    configuration_->Clear();
+    ABSL_DCHECK(_impl_.configuration_ != nullptr);
+    _impl_.configuration_->Clear();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool Model::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.Model)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required .ISR.Configuration configuration = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_configuration()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.Collection collections = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_collections()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.OffloadSite offloadSites = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_offloadsites()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.Vehicle vehicles = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_vehicles()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.CollectionSequence collectionSequence = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_collectionsequence()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.Model)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.Model)
-  return false;
-#undef DO_
+const char* Model::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void Model::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.Model)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required .ISR.Configuration configuration = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_configuration(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 5, 0, 2> Model::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(Model, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    5,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_Model_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required .ISR.Configuration configuration = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Model, _impl_.configuration_)}},
+    // repeated .ISR.Collection collections = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 1, PROTOBUF_FIELD_OFFSET(Model, _impl_.collections_)}},
+    // repeated .ISR.OffloadSite offloadSites = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 2, PROTOBUF_FIELD_OFFSET(Model, _impl_.offloadsites_)}},
+    // repeated .ISR.Vehicle vehicles = 4;
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 3, PROTOBUF_FIELD_OFFSET(Model, _impl_.vehicles_)}},
+    // repeated .ISR.CollectionSequence collectionSequence = 5;
+    {::_pbi::TcParser::FastMtR1,
+     {42, 63, 4, PROTOBUF_FIELD_OFFSET(Model, _impl_.collectionsequence_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required .ISR.Configuration configuration = 1;
+    {PROTOBUF_FIELD_OFFSET(Model, _impl_.configuration_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.Collection collections = 2;
+    {PROTOBUF_FIELD_OFFSET(Model, _impl_.collections_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.OffloadSite offloadSites = 3;
+    {PROTOBUF_FIELD_OFFSET(Model, _impl_.offloadsites_), -1, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.Vehicle vehicles = 4;
+    {PROTOBUF_FIELD_OFFSET(Model, _impl_.vehicles_), -1, 3,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.CollectionSequence collectionSequence = 5;
+    {PROTOBUF_FIELD_OFFSET(Model, _impl_.collectionsequence_), -1, 4,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Configuration>()},
+    {::_pbi::TcParser::GetTable<::ISR::Collection>()},
+    {::_pbi::TcParser::GetTable<::ISR::OffloadSite>()},
+    {::_pbi::TcParser::GetTable<::ISR::Vehicle>()},
+    {::_pbi::TcParser::GetTable<::ISR::CollectionSequence>()},
+  }}, {{
+  }},
+};
 
-  // repeated .ISR.Collection collections = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->collections_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->collections(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.OffloadSite offloadSites = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->offloadsites_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->offloadsites(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.Vehicle vehicles = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->vehicles_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->vehicles(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.CollectionSequence collectionSequence = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->collectionsequence_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->collectionsequence(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.Model)
-}
-
-::google::protobuf::uint8* Model::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* Model::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.Model)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required .ISR.Configuration configuration = 1;
   if (cached_has_bits & 0x00000001u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_configuration(), deterministic, target);
+      InternalWriteMessage(1, _Internal::configuration(this),
+        _Internal::configuration(this).GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.Collection collections = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->collections_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_collections_size()); i < n; i++) {
+    const auto& repfield = this->_internal_collections().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->collections(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.OffloadSite offloadSites = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->offloadsites_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_offloadsites_size()); i < n; i++) {
+    const auto& repfield = this->_internal_offloadsites().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->offloadsites(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.Vehicle vehicles = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->vehicles_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_vehicles_size()); i < n; i++) {
+    const auto& repfield = this->_internal_vehicles().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->vehicles(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.CollectionSequence collectionSequence = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->collectionsequence_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_collectionsequence_size()); i < n; i++) {
+    const auto& repfield = this->_internal_collectionsequence().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->collectionsequence(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.Model)
   return target;
 }
 
-size_t Model::ByteSizeLong() const {
+::size_t Model::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.Model)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required .ISR.Configuration configuration = 1;
-  if (has_configuration()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *configuration_);
-  }
-  // repeated .ISR.Collection collections = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->collections_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->collections(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.OffloadSite offloadSites = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->offloadsites_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->offloadsites(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.Vehicle vehicles = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->vehicles_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->vehicles(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.CollectionSequence collectionSequence = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->collectionsequence_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->collectionsequence(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void Model::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.Model)
-  GOOGLE_DCHECK_NE(&from, this);
-  const Model* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Model>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.Model)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.Model)
-    MergeFrom(*source);
-  }
-}
-
-void Model::MergeFrom(const Model& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.Model)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  collections_.MergeFrom(from.collections_);
-  offloadsites_.MergeFrom(from.offloadsites_);
-  vehicles_.MergeFrom(from.vehicles_);
-  collectionsequence_.MergeFrom(from.collectionsequence_);
-  if (from.has_configuration()) {
-    mutable_configuration()->::ISR::Configuration::MergeFrom(from.configuration());
+  // repeated .ISR.Collection collections = 2;
+  total_size += 1UL * this->_internal_collections_size();
+  for (const auto& msg : this->_internal_collections()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // repeated .ISR.OffloadSite offloadSites = 3;
+  total_size += 1UL * this->_internal_offloadsites_size();
+  for (const auto& msg : this->_internal_offloadsites()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // repeated .ISR.Vehicle vehicles = 4;
+  total_size += 1UL * this->_internal_vehicles_size();
+  for (const auto& msg : this->_internal_vehicles()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // repeated .ISR.CollectionSequence collectionSequence = 5;
+  total_size += 1UL * this->_internal_collectionsequence_size();
+  for (const auto& msg : this->_internal_collectionsequence()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // required .ISR.Configuration configuration = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSize(
+        *_impl_.configuration_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void Model::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.Model)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData Model::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    Model::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*Model::GetClassData() const { return &_class_data_; }
+
+
+void Model::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<Model*>(&to_msg);
+  auto& from = static_cast<const Model&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.Model)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_collections()->MergeFrom(from._internal_collections());
+  _this->_internal_mutable_offloadsites()->MergeFrom(from._internal_offloadsites());
+  _this->_internal_mutable_vehicles()->MergeFrom(from._internal_vehicles());
+  _this->_internal_mutable_collectionsequence()->MergeFrom(from._internal_collectionsequence());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_mutable_configuration()->::ISR::Configuration::MergeFrom(
+        from._internal_configuration());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void Model::CopyFrom(const Model& from) {
@@ -3837,405 +3231,323 @@ void Model::CopyFrom(const Model& from) {
   MergeFrom(from);
 }
 
-bool Model::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->collections())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->offloadsites())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->vehicles())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->collectionsequence())) return false;
-  if (has_configuration()) {
-    if (!this->configuration_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool Model::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_collections()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_offloadsites()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_vehicles()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_collectionsequence()))
+    return false;
+  if ((_impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!_impl_.configuration_->IsInitialized()) return false;
   }
   return true;
 }
 
-void Model::Swap(Model* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void Model::InternalSwap(Model* other) {
   using std::swap;
-  CastToBase(&collections_)->InternalSwap(CastToBase(&other->collections_));
-  CastToBase(&offloadsites_)->InternalSwap(CastToBase(&other->offloadsites_));
-  CastToBase(&vehicles_)->InternalSwap(CastToBase(&other->vehicles_));
-  CastToBase(&collectionsequence_)->InternalSwap(CastToBase(&other->collectionsequence_));
-  swap(configuration_, other->configuration_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.collections_.InternalSwap(&other->_impl_.collections_);
+  _impl_.offloadsites_.InternalSwap(&other->_impl_.offloadsites_);
+  _impl_.vehicles_.InternalSwap(&other->_impl_.vehicles_);
+  _impl_.collectionsequence_.InternalSwap(&other->_impl_.collectionsequence_);
+  swap(_impl_.configuration_, other->_impl_.configuration_);
 }
 
 ::google::protobuf::Metadata Model::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[6]);
 }
-
-
 // ===================================================================
 
-void SolveRequest::InitAsDefaultInstance() {
-  ::ISR::_SolveRequest_default_instance_._instance.get_mutable()->model_ = const_cast< ::ISR::Model*>(
-      ::ISR::Model::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolveRequest::kModelFieldNumber;
-const int SolveRequest::kModelIDFieldNumber;
-const int SolveRequest::kRoutesFieldNumber;
-const int SolveRequest::kSolveTypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolveRequest::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolveRequest>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_._has_bits_);
+  static const ::ISR::Model& model(const SolveRequest* msg);
+  static void set_has_model(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_modelid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_solvetype(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
 
-SolveRequest::SolveRequest()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolveRequest.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolveRequest)
+const ::ISR::Model& SolveRequest::_Internal::model(const SolveRequest* msg) {
+  return *msg->_impl_.model_;
 }
-SolveRequest::SolveRequest(const SolveRequest& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      routes_(from.routes_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  modelid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_modelid()) {
-    modelid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modelid_);
+SolveRequest::SolveRequest(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolveRequest)
+}
+SolveRequest::SolveRequest(const SolveRequest& from) : ::google::protobuf::Message() {
+  SolveRequest* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.routes_){from._impl_.routes_},
+      decltype(_impl_.modelid_){},
+      decltype(_impl_.model_){nullptr},
+      decltype(_impl_.solvetype_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.modelid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.modelid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.modelid_.Set(from._internal_modelid(), _this->GetArenaForAllocation());
   }
-  if (from.has_model()) {
-    model_ = new ::ISR::Model(*from.model_);
-  } else {
-    model_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.model_ = new ::ISR::Model(*from._impl_.model_);
   }
-  solvetype_ = from.solvetype_;
+  _this->_impl_.solvetype_ = from._impl_.solvetype_;
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolveRequest)
 }
-
-void SolveRequest::SharedCtor() {
-  modelid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&model_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&solvetype_) -
-      reinterpret_cast<char*>(&model_)) + sizeof(solvetype_));
+inline void SolveRequest::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.routes_){arena},
+      decltype(_impl_.modelid_){},
+      decltype(_impl_.model_){nullptr},
+      decltype(_impl_.solvetype_){0},
+  };
+  _impl_.modelid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.modelid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolveRequest::~SolveRequest() {
   // @@protoc_insertion_point(destructor:ISR.SolveRequest)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolveRequest::SharedDtor() {
-  modelid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete model_;
+inline void SolveRequest::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.routes_.~RepeatedPtrField();
+  _impl_.modelid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.model_;
 }
-
 void SolveRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolveRequest::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolveRequest& SolveRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolveRequest.base);
-  return *internal_default_instance();
-}
-
-
-void SolveRequest::Clear() {
+PROTOBUF_NOINLINE void SolveRequest::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  routes_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  _internal_mutable_routes()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      modelid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.modelid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(model_ != NULL);
-      model_->Clear();
+      ABSL_DCHECK(_impl_.model_ != nullptr);
+      _impl_.model_->Clear();
     }
   }
-  solvetype_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.solvetype_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolveRequest::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolveRequest)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // optional .ISR.Model model = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_model()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional string modelID = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_modelid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->modelid().data(), static_cast<int>(this->modelid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolveRequest.modelID");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.CollectionSequence routes = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_routes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::ISR::SolveRequest_SolveType_IsValid(value)) {
-            set_solvetype(static_cast< ::ISR::SolveRequest_SolveType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                4, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolveRequest)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolveRequest)
-  return false;
-#undef DO_
+const char* SolveRequest::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolveRequest::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // optional .ISR.Model model = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, this->_internal_model(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 3, 32, 2> SolveRequest::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    3,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolveRequest_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
+    {::_pbi::TcParser::FastEr0S1,
+     {32, 2, 3, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_)}},
+    // optional .ISR.Model model = 1;
+    {::_pbi::TcParser::FastMtS1,
+     {10, 1, 0, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_)}},
+    // optional string modelID = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.modelid_)}},
+    // repeated .ISR.CollectionSequence routes = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 1, PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.routes_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // optional .ISR.Model model = 1;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // optional string modelID = 2;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.modelid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated .ISR.CollectionSequence routes = 3;
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.routes_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
+    {PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_), _Internal::kHasBitsOffset + 2, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Model>()},
+    {::_pbi::TcParser::GetTable<::ISR::CollectionSequence>()},
+    {0, 4},
+  }}, {{
+    "\20\0\7\0\0\0\0\0"
+    "ISR.SolveRequest"
+    "modelID"
+  }},
+};
 
-  // optional string modelID = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->modelid().data(), static_cast<int>(this->modelid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolveRequest.modelID");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->modelid(), output);
-  }
-
-  // repeated .ISR.CollectionSequence routes = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->routes(static_cast<int>(i)),
-      output);
-  }
-
-  // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      4, this->solvetype(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolveRequest)
-}
-
-::google::protobuf::uint8* SolveRequest::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolveRequest::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolveRequest)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .ISR.Model model = 1;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->_internal_model(), deterministic, target);
+      InternalWriteMessage(1, _Internal::model(this),
+        _Internal::model(this).GetCachedSize(), target, stream);
   }
 
   // optional string modelID = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->modelid().data(), static_cast<int>(this->modelid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolveRequest.modelID");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->modelid(), target);
+    const std::string& _s = this->_internal_modelid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolveRequest.modelID");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // repeated .ISR.CollectionSequence routes = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_routes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_routes().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->routes(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      4, this->solvetype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        4, this->_internal_solvetype(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolveRequest)
   return target;
 }
 
-size_t SolveRequest::ByteSizeLong() const {
+::size_t SolveRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolveRequest)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .ISR.CollectionSequence routes = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->routes_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->routes(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_routes_size();
+  for (const auto& msg : this->_internal_routes()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
-  if (_has_bits_[0 / 32] & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     // optional string modelID = 2;
-    if (has_modelid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->modelid());
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_modelid());
     }
 
     // optional .ISR.Model model = 1;
-    if (has_model()) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSize(
-          *model_);
+          *_impl_.model_);
     }
 
     // optional .ISR.SolveRequest.SolveType solveType = 4 [default = Optimise];
-    if (has_solvetype()) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::EnumSize(this->solvetype());
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_solvetype());
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolveRequest::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolveRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolveRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolveRequest>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolveRequest)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolveRequest)
-    MergeFrom(*source);
-  }
-}
+const ::google::protobuf::Message::ClassData SolveRequest::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolveRequest::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolveRequest::GetClassData() const { return &_class_data_; }
 
-void SolveRequest::MergeFrom(const SolveRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolveRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+
+void SolveRequest::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolveRequest*>(&to_msg);
+  auto& from = static_cast<const SolveRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolveRequest)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  routes_.MergeFrom(from.routes_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  _this->_internal_mutable_routes()->MergeFrom(from._internal_routes());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_modelid();
-      modelid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.modelid_);
+      _this->_internal_set_modelid(from._internal_modelid());
     }
     if (cached_has_bits & 0x00000002u) {
-      mutable_model()->::ISR::Model::MergeFrom(from.model());
+      _this->_internal_mutable_model()->::ISR::Model::MergeFrom(
+          from._internal_model());
     }
     if (cached_has_bits & 0x00000004u) {
-      solvetype_ = from.solvetype_;
+      _this->_impl_.solvetype_ = from._impl_.solvetype_;
     }
-    _has_bits_[0] |= cached_has_bits;
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-}
-
-void SolveRequest::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolveRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolveRequest::CopyFrom(const SolveRequest& from) {
@@ -4245,392 +3557,310 @@ void SolveRequest::CopyFrom(const SolveRequest& from) {
   MergeFrom(from);
 }
 
-bool SolveRequest::IsInitialized() const {
-  if (!::google::protobuf::internal::AllAreInitialized(this->routes())) return false;
-  if (has_model()) {
-    if (!this->model_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool SolveRequest::IsInitialized() const {
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_routes()))
+    return false;
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.model_->IsInitialized()) return false;
   }
   return true;
 }
 
-void SolveRequest::Swap(SolveRequest* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolveRequest::InternalSwap(SolveRequest* other) {
   using std::swap;
-  CastToBase(&routes_)->InternalSwap(CastToBase(&other->routes_));
-  modelid_.Swap(&other->modelid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(model_, other->model_);
-  swap(solvetype_, other->solvetype_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.routes_.InternalSwap(&other->_impl_.routes_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.modelid_, lhs_arena,
+                                       &other->_impl_.modelid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.solvetype_)
+      + sizeof(SolveRequest::_impl_.solvetype_)
+      - PROTOBUF_FIELD_OFFSET(SolveRequest, _impl_.model_)>(
+          reinterpret_cast<char*>(&_impl_.model_),
+          reinterpret_cast<char*>(&other->_impl_.model_));
 }
 
 ::google::protobuf::Metadata SolveRequest::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[7]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_StopAttribute::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_StopAttribute::kDimIdFieldNumber;
-const int SolutionResponse_StopAttribute::kStartValueFieldNumber;
-const int SolutionResponse_StopAttribute::kEndValueFieldNumber;
-const int SolutionResponse_StopAttribute::kCostFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_StopAttribute::SolutionResponse_StopAttribute()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_StopAttribute.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.StopAttribute)
-}
-SolutionResponse_StopAttribute::SolutionResponse_StopAttribute(const SolutionResponse_StopAttribute& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_dimid()) {
-    dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+class SolutionResponse_StopAttribute::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_StopAttribute>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_._has_bits_);
+  static void set_has_dimid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
-  ::memcpy(&startvalue_, &from.startvalue_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cost_) -
-    reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+  static void set_has_startvalue(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_endvalue(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_cost(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
+};
+
+SolutionResponse_StopAttribute::SolutionResponse_StopAttribute(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.StopAttribute)
+}
+SolutionResponse_StopAttribute::SolutionResponse_StopAttribute(const SolutionResponse_StopAttribute& from) : ::google::protobuf::Message() {
+  SolutionResponse_StopAttribute* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.startvalue_){},
+      decltype(_impl_.endvalue_){},
+      decltype(_impl_.cost_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.dimid_.Set(from._internal_dimid(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.startvalue_, &from._impl_.startvalue_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.cost_) -
+    reinterpret_cast<char*>(&_impl_.startvalue_)) + sizeof(_impl_.cost_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.StopAttribute)
 }
-
-void SolutionResponse_StopAttribute::SharedCtor() {
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&startvalue_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cost_) -
-      reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+inline void SolutionResponse_StopAttribute::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.startvalue_){0},
+      decltype(_impl_.endvalue_){0},
+      decltype(_impl_.cost_){0},
+  };
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_StopAttribute::~SolutionResponse_StopAttribute() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.StopAttribute)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_StopAttribute::SharedDtor() {
-  dimid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_StopAttribute::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.dimid_.Destroy();
 }
-
 void SolutionResponse_StopAttribute::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_StopAttribute::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_StopAttribute& SolutionResponse_StopAttribute::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_StopAttribute.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_StopAttribute::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_StopAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.StopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    dimid_.ClearNonDefaultToEmptyNoArena();
+    _impl_.dimid_.ClearNonDefaultToEmpty();
   }
-  if (cached_has_bits & 14u) {
-    ::memset(&startvalue_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&cost_) -
-        reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&_impl_.startvalue_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.cost_) -
+        reinterpret_cast<char*>(&_impl_.startvalue_)) + sizeof(_impl_.cost_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_StopAttribute::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.StopAttribute)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string dimId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_dimid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->dimid().data(), static_cast<int>(this->dimid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.StopAttribute.dimId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float startValue = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_startvalue();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &startvalue_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float endValue = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_endvalue();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &endvalue_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float cost = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_cost();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &cost_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.StopAttribute)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.StopAttribute)
-  return false;
-#undef DO_
+const char* SolutionResponse_StopAttribute::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_StopAttribute::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.StopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string dimId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.StopAttribute.dimId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->dimid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 48, 2> SolutionResponse_StopAttribute::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_SolutionResponse_StopAttribute_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float cost = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.cost_)}},
+    // required string dimId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.dimid_)}},
+    // required float startValue = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.startvalue_)}},
+    // required float endValue = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.endvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string dimId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.dimid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float startValue = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.startvalue_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float endValue = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.endvalue_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float cost = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.cost_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\42\5\0\0\0\0\0\0"
+    "ISR.SolutionResponse.StopAttribute"
+    "dimId"
+  }},
+};
 
-  // required float startValue = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->startvalue(), output);
-  }
-
-  // required float endValue = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->endvalue(), output);
-  }
-
-  // required float cost = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->cost(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.StopAttribute)
-}
-
-::google::protobuf::uint8* SolutionResponse_StopAttribute::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_StopAttribute::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.StopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string dimId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.StopAttribute.dimId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->dimid(), target);
+    const std::string& _s = this->_internal_dimid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.StopAttribute.dimId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required float startValue = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->startvalue(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_startvalue(), target);
   }
 
   // required float endValue = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->endvalue(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_endvalue(), target);
   }
 
   // required float cost = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->cost(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_cost(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.StopAttribute)
   return target;
 }
 
-size_t SolutionResponse_StopAttribute::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.StopAttribute)
-  size_t total_size = 0;
-
-  if (has_dimid()) {
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-  }
-
-  if (has_startvalue()) {
-    // required float startValue = 2;
-    total_size += 1 + 4;
-  }
-
-  if (has_endvalue()) {
-    // required float endValue = 3;
-    total_size += 1 + 4;
-  }
-
-  if (has_cost()) {
-    // required float cost = 4;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_StopAttribute::ByteSizeLong() const {
+::size_t SolutionResponse_StopAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.StopAttribute)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-
-    // required float startValue = 2;
-    total_size += 1 + 4;
-
-    // required float endValue = 3;
-    total_size += 1 + 4;
-
-    // required float cost = 4;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_StopAttribute::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.StopAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_StopAttribute* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_StopAttribute>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.StopAttribute)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.StopAttribute)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_StopAttribute::MergeFrom(const SolutionResponse_StopAttribute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.StopAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // required string dimId = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_dimid();
-      dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_dimid());
     }
+
+    // required float startValue = 2;
     if (cached_has_bits & 0x00000002u) {
-      startvalue_ = from.startvalue_;
+      total_size += 5;
     }
+
+    // required float endValue = 3;
     if (cached_has_bits & 0x00000004u) {
-      endvalue_ = from.endvalue_;
+      total_size += 5;
     }
+
+    // required float cost = 4;
     if (cached_has_bits & 0x00000008u) {
-      cost_ = from.cost_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_StopAttribute::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.StopAttribute)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_StopAttribute::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_StopAttribute::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_StopAttribute::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_StopAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_StopAttribute*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_StopAttribute&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.StopAttribute)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_dimid(from._internal_dimid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.startvalue_ = from._impl_.startvalue_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.endvalue_ = from._impl_.endvalue_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.cost_ = from._impl_.cost_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_StopAttribute::CopyFrom(const SolutionResponse_StopAttribute& from) {
@@ -4640,389 +3870,307 @@ void SolutionResponse_StopAttribute::CopyFrom(const SolutionResponse_StopAttribu
   MergeFrom(from);
 }
 
-bool SolutionResponse_StopAttribute::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_StopAttribute::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void SolutionResponse_StopAttribute::Swap(SolutionResponse_StopAttribute* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_StopAttribute::InternalSwap(SolutionResponse_StopAttribute* other) {
   using std::swap;
-  dimid_.Swap(&other->dimid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(startvalue_, other->startvalue_);
-  swap(endvalue_, other->endvalue_);
-  swap(cost_, other->cost_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.dimid_, lhs_arena,
+                                       &other->_impl_.dimid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.cost_)
+      + sizeof(SolutionResponse_StopAttribute::_impl_.cost_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_StopAttribute, _impl_.startvalue_)>(
+          reinterpret_cast<char*>(&_impl_.startvalue_),
+          reinterpret_cast<char*>(&other->_impl_.startvalue_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_StopAttribute::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[8]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_InterStopAttribute::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_InterStopAttribute::kDimIdFieldNumber;
-const int SolutionResponse_InterStopAttribute::kStartValueFieldNumber;
-const int SolutionResponse_InterStopAttribute::kEndValueFieldNumber;
-const int SolutionResponse_InterStopAttribute::kCostFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_InterStopAttribute::SolutionResponse_InterStopAttribute()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStopAttribute.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.InterStopAttribute)
-}
-SolutionResponse_InterStopAttribute::SolutionResponse_InterStopAttribute(const SolutionResponse_InterStopAttribute& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_dimid()) {
-    dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+class SolutionResponse_InterStopAttribute::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_InterStopAttribute>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_._has_bits_);
+  static void set_has_dimid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
-  ::memcpy(&startvalue_, &from.startvalue_,
-    static_cast<size_t>(reinterpret_cast<char*>(&cost_) -
-    reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+  static void set_has_startvalue(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_endvalue(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_cost(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
+};
+
+SolutionResponse_InterStopAttribute::SolutionResponse_InterStopAttribute(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.InterStopAttribute)
+}
+SolutionResponse_InterStopAttribute::SolutionResponse_InterStopAttribute(const SolutionResponse_InterStopAttribute& from) : ::google::protobuf::Message() {
+  SolutionResponse_InterStopAttribute* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.startvalue_){},
+      decltype(_impl_.endvalue_){},
+      decltype(_impl_.cost_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.dimid_.Set(from._internal_dimid(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.startvalue_, &from._impl_.startvalue_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.cost_) -
+    reinterpret_cast<char*>(&_impl_.startvalue_)) + sizeof(_impl_.cost_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.InterStopAttribute)
 }
-
-void SolutionResponse_InterStopAttribute::SharedCtor() {
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&startvalue_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&cost_) -
-      reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+inline void SolutionResponse_InterStopAttribute::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.startvalue_){0},
+      decltype(_impl_.endvalue_){0},
+      decltype(_impl_.cost_){0},
+  };
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_InterStopAttribute::~SolutionResponse_InterStopAttribute() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.InterStopAttribute)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_InterStopAttribute::SharedDtor() {
-  dimid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_InterStopAttribute::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.dimid_.Destroy();
 }
-
 void SolutionResponse_InterStopAttribute::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_InterStopAttribute::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_InterStopAttribute& SolutionResponse_InterStopAttribute::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStopAttribute.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_InterStopAttribute::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_InterStopAttribute::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.InterStopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    dimid_.ClearNonDefaultToEmptyNoArena();
+    _impl_.dimid_.ClearNonDefaultToEmpty();
   }
-  if (cached_has_bits & 14u) {
-    ::memset(&startvalue_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&cost_) -
-        reinterpret_cast<char*>(&startvalue_)) + sizeof(cost_));
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&_impl_.startvalue_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.cost_) -
+        reinterpret_cast<char*>(&_impl_.startvalue_)) + sizeof(_impl_.cost_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_InterStopAttribute::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.InterStopAttribute)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string dimId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_dimid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->dimid().data(), static_cast<int>(this->dimid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.InterStopAttribute.dimId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float startValue = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
-          set_has_startvalue();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &startvalue_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float endValue = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_endvalue();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &endvalue_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float cost = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_cost();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &cost_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.InterStopAttribute)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.InterStopAttribute)
-  return false;
-#undef DO_
+const char* SolutionResponse_InterStopAttribute::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_InterStopAttribute::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.InterStopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string dimId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.InterStopAttribute.dimId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->dimid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 0, 53, 2> SolutionResponse_InterStopAttribute::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_SolutionResponse_InterStopAttribute_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // required float cost = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.cost_)}},
+    // required string dimId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.dimid_)}},
+    // required float startValue = 2;
+    {::_pbi::TcParser::FastF32S1,
+     {21, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.startvalue_)}},
+    // required float endValue = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.endvalue_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string dimId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.dimid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float startValue = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.startvalue_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float endValue = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.endvalue_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float cost = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.cost_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+  }},
+  // no aux_entries
+  {{
+    "\47\5\0\0\0\0\0\0"
+    "ISR.SolutionResponse.InterStopAttribute"
+    "dimId"
+  }},
+};
 
-  // required float startValue = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->startvalue(), output);
-  }
-
-  // required float endValue = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->endvalue(), output);
-  }
-
-  // required float cost = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->cost(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.InterStopAttribute)
-}
-
-::google::protobuf::uint8* SolutionResponse_InterStopAttribute::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_InterStopAttribute::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.InterStopAttribute)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string dimId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.InterStopAttribute.dimId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->dimid(), target);
+    const std::string& _s = this->_internal_dimid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.InterStopAttribute.dimId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required float startValue = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->startvalue(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        2, this->_internal_startvalue(), target);
   }
 
   // required float endValue = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->endvalue(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_endvalue(), target);
   }
 
   // required float cost = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->cost(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_cost(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.InterStopAttribute)
   return target;
 }
 
-size_t SolutionResponse_InterStopAttribute::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.InterStopAttribute)
-  size_t total_size = 0;
-
-  if (has_dimid()) {
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-  }
-
-  if (has_startvalue()) {
-    // required float startValue = 2;
-    total_size += 1 + 4;
-  }
-
-  if (has_endvalue()) {
-    // required float endValue = 3;
-    total_size += 1 + 4;
-  }
-
-  if (has_cost()) {
-    // required float cost = 4;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_InterStopAttribute::ByteSizeLong() const {
+::size_t SolutionResponse_InterStopAttribute::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.InterStopAttribute)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string dimId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->dimid());
-
-    // required float startValue = 2;
-    total_size += 1 + 4;
-
-    // required float endValue = 3;
-    total_size += 1 + 4;
-
-    // required float cost = 4;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_InterStopAttribute::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.InterStopAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_InterStopAttribute* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_InterStopAttribute>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.InterStopAttribute)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.InterStopAttribute)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_InterStopAttribute::MergeFrom(const SolutionResponse_InterStopAttribute& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.InterStopAttribute)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // required string dimId = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_dimid();
-      dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_dimid());
     }
+
+    // required float startValue = 2;
     if (cached_has_bits & 0x00000002u) {
-      startvalue_ = from.startvalue_;
+      total_size += 5;
     }
+
+    // required float endValue = 3;
     if (cached_has_bits & 0x00000004u) {
-      endvalue_ = from.endvalue_;
+      total_size += 5;
     }
+
+    // required float cost = 4;
     if (cached_has_bits & 0x00000008u) {
-      cost_ = from.cost_;
+      total_size += 5;
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_InterStopAttribute::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.InterStopAttribute)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_InterStopAttribute::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_InterStopAttribute::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_InterStopAttribute::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_InterStopAttribute::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_InterStopAttribute*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_InterStopAttribute&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.InterStopAttribute)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_dimid(from._internal_dimid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.startvalue_ = from._impl_.startvalue_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.endvalue_ = from._impl_.endvalue_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.cost_ = from._impl_.cost_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_InterStopAttribute::CopyFrom(const SolutionResponse_InterStopAttribute& from) {
@@ -5032,550 +4180,426 @@ void SolutionResponse_InterStopAttribute::CopyFrom(const SolutionResponse_InterS
   MergeFrom(from);
 }
 
-bool SolutionResponse_InterStopAttribute::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_InterStopAttribute::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void SolutionResponse_InterStopAttribute::Swap(SolutionResponse_InterStopAttribute* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_InterStopAttribute::InternalSwap(SolutionResponse_InterStopAttribute* other) {
   using std::swap;
-  dimid_.Swap(&other->dimid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(startvalue_, other->startvalue_);
-  swap(endvalue_, other->endvalue_);
-  swap(cost_, other->cost_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.dimid_, lhs_arena,
+                                       &other->_impl_.dimid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.cost_)
+      + sizeof(SolutionResponse_InterStopAttribute::_impl_.cost_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStopAttribute, _impl_.startvalue_)>(
+          reinterpret_cast<char*>(&_impl_.startvalue_),
+          reinterpret_cast<char*>(&other->_impl_.startvalue_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_InterStopAttribute::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[9]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Stop::InitAsDefaultInstance() {
-  ::ISR::_SolutionResponse_Stop_default_instance_._instance.get_mutable()->location_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Stop::kIdFieldNumber;
-const int SolutionResponse_Stop::kSequenceFieldNumber;
-const int SolutionResponse_Stop::kCollectionIdFieldNumber;
-const int SolutionResponse_Stop::kOffloadSiteIdFieldNumber;
-const int SolutionResponse_Stop::kAttributesFieldNumber;
-const int SolutionResponse_Stop::kSegmentIdFieldNumber;
-const int SolutionResponse_Stop::kLocationFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse_Stop::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Stop>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_sequence(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static void set_has_collectionid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_offloadsiteid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_segmentid(HasBits* has_bits) {
+    (*has_bits)[0] |= 32u;
+  }
+  static const ::ISR::Geocode& location(const SolutionResponse_Stop* msg);
+  static void set_has_location(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000001c) ^ 0x0000001c) != 0;
+  }
+};
 
-SolutionResponse_Stop::SolutionResponse_Stop()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Stop.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Stop)
+const ::ISR::Geocode& SolutionResponse_Stop::_Internal::location(const SolutionResponse_Stop* msg) {
+  return *msg->_impl_.location_;
 }
-SolutionResponse_Stop::SolutionResponse_Stop(const SolutionResponse_Stop& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      attributes_(from.attributes_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_collectionid()) {
-    collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+SolutionResponse_Stop::SolutionResponse_Stop(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Stop)
+}
+SolutionResponse_Stop::SolutionResponse_Stop(const SolutionResponse_Stop& from) : ::google::protobuf::Message() {
+  SolutionResponse_Stop* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.attributes_){from._impl_.attributes_},
+      decltype(_impl_.collectionid_){},
+      decltype(_impl_.offloadsiteid_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.id_){},
+      decltype(_impl_.sequence_){},
+      decltype(_impl_.segmentid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.collectionid_.Set(from._internal_collectionid(), _this->GetArenaForAllocation());
   }
-  offloadsiteid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_offloadsiteid()) {
-    offloadsiteid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.offloadsiteid_);
+  _impl_.offloadsiteid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.offloadsiteid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.offloadsiteid_.Set(from._internal_offloadsiteid(), _this->GetArenaForAllocation());
   }
-  if (from.has_location()) {
-    location_ = new ::ISR::Geocode(*from.location_);
-  } else {
-    location_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    _this->_impl_.location_ = new ::ISR::Geocode(*from._impl_.location_);
   }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&segmentid_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(segmentid_));
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.segmentid_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.segmentid_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Stop)
 }
-
-void SolutionResponse_Stop::SharedCtor() {
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  offloadsiteid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&location_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&segmentid_) -
-      reinterpret_cast<char*>(&location_)) + sizeof(segmentid_));
+inline void SolutionResponse_Stop::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.attributes_){arena},
+      decltype(_impl_.collectionid_){},
+      decltype(_impl_.offloadsiteid_){},
+      decltype(_impl_.location_){nullptr},
+      decltype(_impl_.id_){0},
+      decltype(_impl_.sequence_){0},
+      decltype(_impl_.segmentid_){0},
+  };
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.offloadsiteid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.offloadsiteid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Stop::~SolutionResponse_Stop() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Stop)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Stop::SharedDtor() {
-  collectionid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  offloadsiteid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete location_;
+inline void SolutionResponse_Stop::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.attributes_.~RepeatedPtrField();
+  _impl_.collectionid_.Destroy();
+  _impl_.offloadsiteid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.location_;
 }
-
 void SolutionResponse_Stop::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Stop::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Stop& SolutionResponse_Stop::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Stop.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Stop::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Stop::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Stop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 7u) {
+  _internal_mutable_attributes()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      collectionid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.collectionid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      offloadsiteid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.offloadsiteid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(location_ != NULL);
-      location_->Clear();
+      ABSL_DCHECK(_impl_.location_ != nullptr);
+      _impl_.location_->Clear();
     }
   }
-  if (cached_has_bits & 56u) {
-    ::memset(&id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&segmentid_) -
-        reinterpret_cast<char*>(&id_)) + sizeof(segmentid_));
+  if (cached_has_bits & 0x00000038u) {
+    ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.segmentid_) -
+        reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.segmentid_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Stop::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Stop)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_id();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required int32 sequence = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          set_has_sequence();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &sequence_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional string collectionId = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_collectionid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Stop.collectionId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional string offloadSiteId = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_offloadsiteid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Stop.offloadSiteId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_attributes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional int32 segmentId = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(48u /* 48 & 0xFF */)) {
-          set_has_segmentid();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &segmentid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode location = 7;
-      case 7: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_location()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Stop)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Stop)
-  return false;
-#undef DO_
+const char* SolutionResponse_Stop::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Stop::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Stop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required int32 id = 1;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 7, 2, 59, 2> SolutionResponse_Stop::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_._has_bits_),
+    0, // no _extensions_
+    7, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967168,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    7,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_Stop_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required int32 id = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_Stop, _impl_.id_), 3>(),
+     {8, 3, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.id_)}},
+    // required int32 sequence = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_Stop, _impl_.sequence_), 4>(),
+     {16, 4, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.sequence_)}},
+    // optional string collectionId = 3;
+    {::_pbi::TcParser::FastSS1,
+     {26, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.collectionid_)}},
+    // optional string offloadSiteId = 4;
+    {::_pbi::TcParser::FastSS1,
+     {34, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.offloadsiteid_)}},
+    // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
+    {::_pbi::TcParser::FastMtR1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.attributes_)}},
+    // optional int32 segmentId = 6;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_Stop, _impl_.segmentid_), 5>(),
+     {48, 5, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.segmentid_)}},
+    // required .ISR.Geocode location = 7;
+    {::_pbi::TcParser::FastMtS1,
+     {58, 2, 1, PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.location_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required int32 id = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.id_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // required int32 sequence = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.sequence_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional string collectionId = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.collectionid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // optional string offloadSiteId = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.offloadsiteid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.attributes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // optional int32 segmentId = 6;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.segmentid_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // required .ISR.Geocode location = 7;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.location_), _Internal::kHasBitsOffset + 2, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_StopAttribute>()},
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\31\0\0\14\15\0\0\0"
+    "ISR.SolutionResponse.Stop"
+    "collectionId"
+    "offloadSiteId"
+  }},
+};
 
-  // required int32 sequence = 2;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->sequence(), output);
-  }
-
-  // optional string collectionId = 3;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Stop.collectionId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      3, this->collectionid(), output);
-  }
-
-  // optional string offloadSiteId = 4;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Stop.offloadSiteId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      4, this->offloadsiteid(), output);
-  }
-
-  // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->attributes_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->attributes(static_cast<int>(i)),
-      output);
-  }
-
-  // optional int32 segmentId = 6;
-  if (cached_has_bits & 0x00000020u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(6, this->segmentid(), output);
-  }
-
-  // required .ISR.Geocode location = 7;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->_internal_location(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Stop)
-}
-
-::google::protobuf::uint8* SolutionResponse_Stop::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Stop::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Stop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required int32 id = 1;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_id(), target);
   }
 
   // required int32 sequence = 2;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->sequence(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<2>(
+            stream, this->_internal_sequence(), target);
   }
 
   // optional string collectionId = 3;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Stop.collectionId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        3, this->collectionid(), target);
+    const std::string& _s = this->_internal_collectionid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Stop.collectionId");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
   // optional string offloadSiteId = 4;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->offloadsiteid().data(), static_cast<int>(this->offloadsiteid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Stop.offloadSiteId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        4, this->offloadsiteid(), target);
+    const std::string& _s = this->_internal_offloadsiteid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Stop.offloadSiteId");
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
   // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->attributes_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_attributes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_attributes().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->attributes(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // optional int32 segmentId = 6;
   if (cached_has_bits & 0x00000020u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(6, this->segmentid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<6>(
+            stream, this->_internal_segmentid(), target);
   }
 
   // required .ISR.Geocode location = 7;
   if (cached_has_bits & 0x00000004u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        7, this->_internal_location(), deterministic, target);
+      InternalWriteMessage(7, _Internal::location(this),
+        _Internal::location(this).GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Stop)
   return target;
 }
 
-size_t SolutionResponse_Stop::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.Stop)
-  size_t total_size = 0;
-
-  if (has_location()) {
-    // required .ISR.Geocode location = 7;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
-  }
-
-  if (has_id()) {
-    // required int32 id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
-  }
-
-  if (has_sequence()) {
-    // required int32 sequence = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->sequence());
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_Stop::ByteSizeLong() const {
+::size_t SolutionResponse_Stop::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Stop)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000001c) ^ 0x0000001c) == 0) {  // All required fields are present.
-    // required .ISR.Geocode location = 7;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *location_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
-    // required int32 id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
-
-    // required int32 sequence = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->sequence());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
   // repeated .ISR.SolutionResponse.StopAttribute attributes = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->attributes_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->attributes(static_cast<int>(i)));
-    }
+  total_size += 1UL * this->_internal_attributes_size();
+  for (const auto& msg : this->_internal_attributes()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
-
-  if (_has_bits_[0 / 32] & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     // optional string collectionId = 3;
-    if (has_collectionid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->collectionid());
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_collectionid());
     }
 
     // optional string offloadSiteId = 4;
-    if (has_offloadsiteid()) {
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_offloadsiteid());
+    }
+
+  }
+  if (cached_has_bits & 0x0000001cu) {
+    // required .ISR.Geocode location = 7;
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->offloadsiteid());
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.location_);
+    }
+
+    // required int32 id = 1;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_id());
+    }
+
+    // required int32 sequence = 2;
+    if (cached_has_bits & 0x00000010u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_sequence());
     }
 
   }
   // optional int32 segmentId = 6;
-  if (has_segmentid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->segmentid());
+  if (cached_has_bits & 0x00000020u) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+        this->_internal_segmentid());
   }
 
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Stop::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Stop)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Stop* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Stop>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Stop)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Stop)
-    MergeFrom(*source);
-  }
-}
+const ::google::protobuf::Message::ClassData SolutionResponse_Stop::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Stop::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Stop::GetClassData() const { return &_class_data_; }
 
-void SolutionResponse_Stop::MergeFrom(const SolutionResponse_Stop& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Stop)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+
+void SolutionResponse_Stop::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Stop*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Stop&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Stop)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  attributes_.MergeFrom(from.attributes_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 63u) {
+  _this->_internal_mutable_attributes()->MergeFrom(from._internal_attributes());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000003fu) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_collectionid();
-      collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+      _this->_internal_set_collectionid(from._internal_collectionid());
     }
     if (cached_has_bits & 0x00000002u) {
-      set_has_offloadsiteid();
-      offloadsiteid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.offloadsiteid_);
+      _this->_internal_set_offloadsiteid(from._internal_offloadsiteid());
     }
     if (cached_has_bits & 0x00000004u) {
-      mutable_location()->::ISR::Geocode::MergeFrom(from.location());
+      _this->_internal_mutable_location()->::ISR::Geocode::MergeFrom(
+          from._internal_location());
     }
     if (cached_has_bits & 0x00000008u) {
-      id_ = from.id_;
+      _this->_impl_.id_ = from._impl_.id_;
     }
     if (cached_has_bits & 0x00000010u) {
-      sequence_ = from.sequence_;
+      _this->_impl_.sequence_ = from._impl_.sequence_;
     }
     if (cached_has_bits & 0x00000020u) {
-      segmentid_ = from.segmentid_;
+      _this->_impl_.segmentid_ = from._impl_.segmentid_;
     }
-    _has_bits_[0] |= cached_has_bits;
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-}
-
-void SolutionResponse_Stop::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Stop)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Stop::CopyFrom(const SolutionResponse_Stop& from) {
@@ -5585,394 +4609,296 @@ void SolutionResponse_Stop::CopyFrom(const SolutionResponse_Stop& from) {
   MergeFrom(from);
 }
 
-bool SolutionResponse_Stop::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000001c) != 0x0000001c) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->attributes())) return false;
-  if (has_location()) {
-    if (!this->location_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Stop::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_attributes()))
+    return false;
+  if ((_impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!_impl_.location_->IsInitialized()) return false;
   }
   return true;
 }
 
-void SolutionResponse_Stop::Swap(SolutionResponse_Stop* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Stop::InternalSwap(SolutionResponse_Stop* other) {
   using std::swap;
-  CastToBase(&attributes_)->InternalSwap(CastToBase(&other->attributes_));
-  collectionid_.Swap(&other->collectionid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  offloadsiteid_.Swap(&other->offloadsiteid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(location_, other->location_);
-  swap(id_, other->id_);
-  swap(sequence_, other->sequence_);
-  swap(segmentid_, other->segmentid_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.attributes_.InternalSwap(&other->_impl_.attributes_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.collectionid_, lhs_arena,
+                                       &other->_impl_.collectionid_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.offloadsiteid_, lhs_arena,
+                                       &other->_impl_.offloadsiteid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.segmentid_)
+      + sizeof(SolutionResponse_Stop::_impl_.segmentid_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_Stop, _impl_.location_)>(
+          reinterpret_cast<char*>(&_impl_.location_),
+          reinterpret_cast<char*>(&other->_impl_.location_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_Stop::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[10]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_InterStop::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_InterStop::kFromStopIdFieldNumber;
-const int SolutionResponse_InterStop::kToStopIdFieldNumber;
-const int SolutionResponse_InterStop::kAttributesFieldNumber;
-const int SolutionResponse_InterStop::kGeometryFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse_InterStop::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_InterStop>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_._has_bits_);
+  static void set_has_fromstopid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_tostopid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
+};
 
-SolutionResponse_InterStop::SolutionResponse_InterStop()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStop.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.InterStop)
+SolutionResponse_InterStop::SolutionResponse_InterStop(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.InterStop)
 }
-SolutionResponse_InterStop::SolutionResponse_InterStop(const SolutionResponse_InterStop& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      attributes_(from.attributes_),
-      geometry_(from.geometry_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::memcpy(&fromstopid_, &from.fromstopid_,
-    static_cast<size_t>(reinterpret_cast<char*>(&tostopid_) -
-    reinterpret_cast<char*>(&fromstopid_)) + sizeof(tostopid_));
+SolutionResponse_InterStop::SolutionResponse_InterStop(const SolutionResponse_InterStop& from) : ::google::protobuf::Message() {
+  SolutionResponse_InterStop* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.attributes_){from._impl_.attributes_},
+      decltype(_impl_.geometry_){from._impl_.geometry_},
+      decltype(_impl_.fromstopid_){},
+      decltype(_impl_.tostopid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  ::memcpy(&_impl_.fromstopid_, &from._impl_.fromstopid_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.tostopid_) -
+    reinterpret_cast<char*>(&_impl_.fromstopid_)) + sizeof(_impl_.tostopid_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.InterStop)
 }
-
-void SolutionResponse_InterStop::SharedCtor() {
-  ::memset(&fromstopid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&tostopid_) -
-      reinterpret_cast<char*>(&fromstopid_)) + sizeof(tostopid_));
+inline void SolutionResponse_InterStop::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.attributes_){arena},
+      decltype(_impl_.geometry_){arena},
+      decltype(_impl_.fromstopid_){0},
+      decltype(_impl_.tostopid_){0},
+  };
 }
-
 SolutionResponse_InterStop::~SolutionResponse_InterStop() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.InterStop)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_InterStop::SharedDtor() {
+inline void SolutionResponse_InterStop::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.attributes_.~RepeatedPtrField();
+  _impl_.geometry_.~RepeatedPtrField();
 }
-
 void SolutionResponse_InterStop::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_InterStop::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_InterStop& SolutionResponse_InterStop::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_InterStop.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_InterStop::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_InterStop::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.InterStop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.Clear();
-  geometry_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
-    ::memset(&fromstopid_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&tostopid_) -
-        reinterpret_cast<char*>(&fromstopid_)) + sizeof(tostopid_));
+  _internal_mutable_attributes()->Clear();
+  _internal_mutable_geometry()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.fromstopid_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.tostopid_) -
+        reinterpret_cast<char*>(&_impl_.fromstopid_)) + sizeof(_impl_.tostopid_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_InterStop::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.InterStop)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 fromStopId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_fromstopid();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &fromstopid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required int32 toStopId = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          set_has_tostopid();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &tostopid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_attributes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.Geocode geometry = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_geometry()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.InterStop)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.InterStop)
-  return false;
-#undef DO_
+const char* SolutionResponse_InterStop::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_InterStop::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.InterStop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required int32 fromStopId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->fromstopid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 2, 0, 2> SolutionResponse_InterStop::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_InterStop_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .ISR.Geocode geometry = 4;
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 1, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.geometry_)}},
+    // required int32 fromStopId = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_InterStop, _impl_.fromstopid_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.fromstopid_)}},
+    // required int32 toStopId = 2;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_InterStop, _impl_.tostopid_), 1>(),
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.tostopid_)}},
+    // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.attributes_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required int32 fromStopId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.fromstopid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // required int32 toStopId = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.tostopid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.attributes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.Geocode geometry = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.geometry_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_InterStopAttribute>()},
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+  }},
+};
 
-  // required int32 toStopId = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->tostopid(), output);
-  }
-
-  // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->attributes_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->attributes(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.Geocode geometry = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->geometry(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.InterStop)
-}
-
-::google::protobuf::uint8* SolutionResponse_InterStop::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_InterStop::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.InterStop)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required int32 fromStopId = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->fromstopid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_fromstopid(), target);
   }
 
   // required int32 toStopId = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->tostopid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<2>(
+            stream, this->_internal_tostopid(), target);
   }
 
   // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->attributes_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_attributes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_attributes().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->attributes(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.Geocode geometry = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_geometry_size()); i < n; i++) {
+    const auto& repfield = this->_internal_geometry().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->geometry(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.InterStop)
   return target;
 }
 
-size_t SolutionResponse_InterStop::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.InterStop)
-  size_t total_size = 0;
-
-  if (has_fromstopid()) {
-    // required int32 fromStopId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->fromstopid());
-  }
-
-  if (has_tostopid()) {
-    // required int32 toStopId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->tostopid());
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_InterStop::ByteSizeLong() const {
+::size_t SolutionResponse_InterStop::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.InterStop)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required int32 fromStopId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->fromstopid());
-
-    // required int32 toStopId = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->tostopid());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->attributes_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->attributes(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.Geocode geometry = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->geometry_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->geometry(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_InterStop::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.InterStop)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_InterStop* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_InterStop>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.InterStop)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.InterStop)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_InterStop::MergeFrom(const SolutionResponse_InterStop& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.InterStop)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  attributes_.MergeFrom(from.attributes_);
-  geometry_.MergeFrom(from.geometry_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
-    if (cached_has_bits & 0x00000001u) {
-      fromstopid_ = from.fromstopid_;
-    }
-    if (cached_has_bits & 0x00000002u) {
-      tostopid_ = from.tostopid_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // repeated .ISR.SolutionResponse.InterStopAttribute attributes = 3;
+  total_size += 1UL * this->_internal_attributes_size();
+  for (const auto& msg : this->_internal_attributes()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // repeated .ISR.Geocode geometry = 4;
+  total_size += 1UL * this->_internal_geometry_size();
+  for (const auto& msg : this->_internal_geometry()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // required int32 fromStopId = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_fromstopid());
+    }
+
+    // required int32 toStopId = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_tostopid());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_InterStop::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.InterStop)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_InterStop::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_InterStop::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_InterStop::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_InterStop::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_InterStop*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_InterStop&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.InterStop)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_attributes()->MergeFrom(from._internal_attributes());
+  _this->_internal_mutable_geometry()->MergeFrom(from._internal_geometry());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.fromstopid_ = from._impl_.fromstopid_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.tostopid_ = from._impl_.tostopid_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_InterStop::CopyFrom(const SolutionResponse_InterStop& from) {
@@ -5982,339 +4908,269 @@ void SolutionResponse_InterStop::CopyFrom(const SolutionResponse_InterStop& from
   MergeFrom(from);
 }
 
-bool SolutionResponse_InterStop::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000003) != 0x00000003) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->attributes())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->geometry())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_InterStop::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_attributes()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_geometry()))
+    return false;
   return true;
 }
 
-void SolutionResponse_InterStop::Swap(SolutionResponse_InterStop* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_InterStop::InternalSwap(SolutionResponse_InterStop* other) {
   using std::swap;
-  CastToBase(&attributes_)->InternalSwap(CastToBase(&other->attributes_));
-  CastToBase(&geometry_)->InternalSwap(CastToBase(&other->geometry_));
-  swap(fromstopid_, other->fromstopid_);
-  swap(tostopid_, other->tostopid_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.attributes_.InternalSwap(&other->_impl_.attributes_);
+  _impl_.geometry_.InternalSwap(&other->_impl_.geometry_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.tostopid_)
+      + sizeof(SolutionResponse_InterStop::_impl_.tostopid_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_InterStop, _impl_.fromstopid_)>(
+          reinterpret_cast<char*>(&_impl_.fromstopid_),
+          reinterpret_cast<char*>(&other->_impl_.fromstopid_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_InterStop::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[11]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Route::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Route::kVehicleIdFieldNumber;
-const int SolutionResponse_Route::kStopsFieldNumber;
-const int SolutionResponse_Route::kInterStopsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_Route::SolutionResponse_Route()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Route.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Route)
-}
-SolutionResponse_Route::SolutionResponse_Route(const SolutionResponse_Route& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      stops_(from.stops_),
-      interstops_(from.interstops_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  vehicleid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_vehicleid()) {
-    vehicleid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vehicleid_);
+class SolutionResponse_Route::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Route>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_._has_bits_);
+  static void set_has_vehicleid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+SolutionResponse_Route::SolutionResponse_Route(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Route)
+}
+SolutionResponse_Route::SolutionResponse_Route(const SolutionResponse_Route& from) : ::google::protobuf::Message() {
+  SolutionResponse_Route* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.stops_){from._impl_.stops_},
+      decltype(_impl_.interstops_){from._impl_.interstops_},
+      decltype(_impl_.vehicleid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.vehicleid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.vehicleid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.vehicleid_.Set(from._internal_vehicleid(), _this->GetArenaForAllocation());
+  }
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Route)
 }
-
-void SolutionResponse_Route::SharedCtor() {
-  vehicleid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Route::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.stops_){arena},
+      decltype(_impl_.interstops_){arena},
+      decltype(_impl_.vehicleid_){},
+  };
+  _impl_.vehicleid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.vehicleid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Route::~SolutionResponse_Route() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Route)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Route::SharedDtor() {
-  vehicleid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Route::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.stops_.~RepeatedPtrField();
+  _impl_.interstops_.~RepeatedPtrField();
+  _impl_.vehicleid_.Destroy();
 }
-
 void SolutionResponse_Route::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Route::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Route& SolutionResponse_Route::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Route.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Route::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Route::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Route)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  stops_.Clear();
-  interstops_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_stops()->Clear();
+  _internal_mutable_interstops()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    vehicleid_.ClearNonDefaultToEmptyNoArena();
+    _impl_.vehicleid_.ClearNonDefaultToEmpty();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Route::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Route)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string vehicleId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_vehicleid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Route.vehicleId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Stop stops = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_stops()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.InterStop interStops = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_interstops()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Route)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Route)
-  return false;
-#undef DO_
+const char* SolutionResponse_Route::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Route::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Route)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string vehicleId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Route.vehicleId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->vehicleid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 2, 44, 2> SolutionResponse_Route::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_Route_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string vehicleId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.vehicleid_)}},
+    // repeated .ISR.SolutionResponse.Stop stops = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.stops_)}},
+    // repeated .ISR.SolutionResponse.InterStop interStops = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 1, PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.interstops_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string vehicleId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.vehicleid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated .ISR.SolutionResponse.Stop stops = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.stops_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.SolutionResponse.InterStop interStops = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Route, _impl_.interstops_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Stop>()},
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_InterStop>()},
+  }}, {{
+    "\32\11\0\0\0\0\0\0"
+    "ISR.SolutionResponse.Route"
+    "vehicleId"
+  }},
+};
 
-  // repeated .ISR.SolutionResponse.Stop stops = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->stops_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->stops(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.SolutionResponse.InterStop interStops = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->interstops_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->interstops(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Route)
-}
-
-::google::protobuf::uint8* SolutionResponse_Route::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Route::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Route)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string vehicleId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->vehicleid().data(), static_cast<int>(this->vehicleid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Route.vehicleId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->vehicleid(), target);
+    const std::string& _s = this->_internal_vehicleid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Route.vehicleId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // repeated .ISR.SolutionResponse.Stop stops = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->stops_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_stops_size()); i < n; i++) {
+    const auto& repfield = this->_internal_stops().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->stops(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.SolutionResponse.InterStop interStops = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->interstops_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_interstops_size()); i < n; i++) {
+    const auto& repfield = this->_internal_interstops().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->interstops(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Route)
   return target;
 }
 
-size_t SolutionResponse_Route::ByteSizeLong() const {
+::size_t SolutionResponse_Route::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Route)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required string vehicleId = 1;
-  if (has_vehicleid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->vehicleid());
-  }
-  // repeated .ISR.SolutionResponse.Stop stops = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->stops_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->stops(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.SolutionResponse.InterStop interStops = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->interstops_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->interstops(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_Route::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Route)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Route* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Route>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Route)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Route)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_Route::MergeFrom(const SolutionResponse_Route& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Route)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  stops_.MergeFrom(from.stops_);
-  interstops_.MergeFrom(from.interstops_);
-  if (from.has_vehicleid()) {
-    set_has_vehicleid();
-    vehicleid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.vehicleid_);
+  // repeated .ISR.SolutionResponse.Stop stops = 2;
+  total_size += 1UL * this->_internal_stops_size();
+  for (const auto& msg : this->_internal_stops()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // repeated .ISR.SolutionResponse.InterStop interStops = 3;
+  total_size += 1UL * this->_internal_interstops_size();
+  for (const auto& msg : this->_internal_interstops()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // required string vehicleId = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_vehicleid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Route::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Route)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_Route::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Route::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Route::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_Route::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Route*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Route&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Route)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_stops()->MergeFrom(from._internal_stops());
+  _this->_internal_mutable_interstops()->MergeFrom(from._internal_interstops());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_vehicleid(from._internal_vehicleid());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Route::CopyFrom(const SolutionResponse_Route& from) {
@@ -6324,478 +5180,382 @@ void SolutionResponse_Route::CopyFrom(const SolutionResponse_Route& from) {
   MergeFrom(from);
 }
 
-bool SolutionResponse_Route::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->stops())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->interstops())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Route::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_stops()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_interstops()))
+    return false;
   return true;
 }
 
-void SolutionResponse_Route::Swap(SolutionResponse_Route* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Route::InternalSwap(SolutionResponse_Route* other) {
   using std::swap;
-  CastToBase(&stops_)->InternalSwap(CastToBase(&other->stops_));
-  CastToBase(&interstops_)->InternalSwap(CastToBase(&other->interstops_));
-  vehicleid_.Swap(&other->vehicleid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.stops_.InternalSwap(&other->_impl_.stops_);
+  _impl_.interstops_.InternalSwap(&other->_impl_.interstops_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.vehicleid_, lhs_arena,
+                                       &other->_impl_.vehicleid_, rhs_arena);
 }
 
 ::google::protobuf::Metadata SolutionResponse_Route::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[12]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Infeasibility_Info::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Infeasibility_Info::kMessageFieldNumber;
-const int SolutionResponse_Infeasibility_Info::kDimIdFieldNumber;
-const int SolutionResponse_Infeasibility_Info::kLimitFieldNumber;
-const int SolutionResponse_Infeasibility_Info::kValueFieldNumber;
-const int SolutionResponse_Infeasibility_Info::kCountFieldNumber;
-const int SolutionResponse_Infeasibility_Info::kConstrainingCollectionIdsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse_Infeasibility_Info::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Infeasibility_Info>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_._has_bits_);
+  static void set_has_message(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_dimid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_limit(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_value(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static void set_has_count(HasBits* has_bits) {
+    (*has_bits)[0] |= 16u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
 
-SolutionResponse_Infeasibility_Info::SolutionResponse_Infeasibility_Info()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility_Info.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Infeasibility.Info)
+SolutionResponse_Infeasibility_Info::SolutionResponse_Infeasibility_Info(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Infeasibility.Info)
 }
-SolutionResponse_Infeasibility_Info::SolutionResponse_Infeasibility_Info(const SolutionResponse_Infeasibility_Info& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      constrainingcollectionids_(from.constrainingcollectionids_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_message()) {
-    message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
+SolutionResponse_Infeasibility_Info::SolutionResponse_Infeasibility_Info(const SolutionResponse_Infeasibility_Info& from) : ::google::protobuf::Message() {
+  SolutionResponse_Infeasibility_Info* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.constrainingcollectionids_){from._impl_.constrainingcollectionids_},
+      decltype(_impl_.message_){},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.limit_){},
+      decltype(_impl_.value_){},
+      decltype(_impl_.count_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.message_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.message_.Set(from._internal_message(), _this->GetArenaForAllocation());
   }
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_dimid()) {
-    dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.dimid_.Set(from._internal_dimid(), _this->GetArenaForAllocation());
   }
-  ::memcpy(&limit_, &from.limit_,
-    static_cast<size_t>(reinterpret_cast<char*>(&count_) -
-    reinterpret_cast<char*>(&limit_)) + sizeof(count_));
+  ::memcpy(&_impl_.limit_, &from._impl_.limit_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.count_) -
+    reinterpret_cast<char*>(&_impl_.limit_)) + sizeof(_impl_.count_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Infeasibility.Info)
 }
-
-void SolutionResponse_Infeasibility_Info::SharedCtor() {
-  message_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dimid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&limit_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&count_) -
-      reinterpret_cast<char*>(&limit_)) + sizeof(count_));
+inline void SolutionResponse_Infeasibility_Info::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.constrainingcollectionids_){arena},
+      decltype(_impl_.message_){},
+      decltype(_impl_.dimid_){},
+      decltype(_impl_.limit_){0},
+      decltype(_impl_.value_){0},
+      decltype(_impl_.count_){::int64_t{0}},
+  };
+  _impl_.message_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.message_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.dimid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.dimid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Infeasibility_Info::~SolutionResponse_Infeasibility_Info() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Infeasibility.Info)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Infeasibility_Info::SharedDtor() {
-  message_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  dimid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Infeasibility_Info::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _internal_mutable_constrainingcollectionids()->~RepeatedPtrField();
+  _impl_.message_.Destroy();
+  _impl_.dimid_.Destroy();
 }
-
 void SolutionResponse_Infeasibility_Info::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Infeasibility_Info::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Infeasibility_Info& SolutionResponse_Infeasibility_Info::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility_Info.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Infeasibility_Info::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Infeasibility_Info::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Infeasibility.Info)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  constrainingcollectionids_.Clear();
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  _internal_mutable_constrainingcollectionids()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      message_.ClearNonDefaultToEmptyNoArena();
+      _impl_.message_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      dimid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.dimid_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 28u) {
-    ::memset(&limit_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&count_) -
-        reinterpret_cast<char*>(&limit_)) + sizeof(count_));
+  if (cached_has_bits & 0x0000001cu) {
+    ::memset(&_impl_.limit_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.count_) -
+        reinterpret_cast<char*>(&_impl_.limit_)) + sizeof(_impl_.count_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Infeasibility_Info::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Infeasibility.Info)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string message = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_message()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->message().data(), static_cast<int>(this->message().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Infeasibility.Info.message");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional string dimId = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_dimid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->dimid().data(), static_cast<int>(this->dimid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Infeasibility.Info.dimId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional float limit = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_limit();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &limit_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional float value = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_value();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &value_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional int64 count = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
-          set_has_count();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &count_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated string constrainingCollectionIds = 6;
-      case 6: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->add_constrainingcollectionids()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->constrainingcollectionids(this->constrainingcollectionids_size() - 1).data(),
-            static_cast<int>(this->constrainingcollectionids(this->constrainingcollectionids_size() - 1).length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Infeasibility.Info.constrainingCollectionIds");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Infeasibility.Info)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Infeasibility.Info)
-  return false;
-#undef DO_
+const char* SolutionResponse_Infeasibility_Info::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Infeasibility_Info::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Infeasibility.Info)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string message = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->message().data(), static_cast<int>(this->message().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.message");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->message(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 6, 0, 85, 2> SolutionResponse_Infeasibility_Info::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_._has_bits_),
+    0, // no _extensions_
+    6, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967232,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    6,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_SolutionResponse_Infeasibility_Info_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string message = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.message_)}},
+    // optional string dimId = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.dimid_)}},
+    // optional float limit = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.limit_)}},
+    // optional float value = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.value_)}},
+    // optional int64 count = 5;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(SolutionResponse_Infeasibility_Info, _impl_.count_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.count_)}},
+    // repeated string constrainingCollectionIds = 6;
+    {::_pbi::TcParser::FastSR1,
+     {50, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.constrainingcollectionids_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string message = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.message_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // optional string dimId = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.dimid_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // optional float limit = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.limit_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // optional float value = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.value_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // optional int64 count = 5;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.count_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    // repeated string constrainingCollectionIds = 6;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.constrainingcollectionids_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kRawString | ::_fl::kRepSString)},
+  }},
+  // no aux_entries
+  {{
+    "\47\7\5\0\0\0\31\0"
+    "ISR.SolutionResponse.Infeasibility.Info"
+    "message"
+    "dimId"
+    "constrainingCollectionIds"
+  }},
+};
 
-  // optional string dimId = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.dimId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->dimid(), output);
-  }
-
-  // optional float limit = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->limit(), output);
-  }
-
-  // optional float value = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->value(), output);
-  }
-
-  // optional int64 count = 5;
-  if (cached_has_bits & 0x00000010u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(5, this->count(), output);
-  }
-
-  // repeated string constrainingCollectionIds = 6;
-  for (int i = 0, n = this->constrainingcollectionids_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->constrainingcollectionids(i).data(), static_cast<int>(this->constrainingcollectionids(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.constrainingCollectionIds");
-    ::google::protobuf::internal::WireFormatLite::WriteString(
-      6, this->constrainingcollectionids(i), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Infeasibility.Info)
-}
-
-::google::protobuf::uint8* SolutionResponse_Infeasibility_Info::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Infeasibility_Info::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Infeasibility.Info)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string message = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->message().data(), static_cast<int>(this->message().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.message");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->message(), target);
+    const std::string& _s = this->_internal_message();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Infeasibility.Info.message");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // optional string dimId = 2;
   if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->dimid().data(), static_cast<int>(this->dimid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.dimId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->dimid(), target);
+    const std::string& _s = this->_internal_dimid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Infeasibility.Info.dimId");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // optional float limit = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->limit(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_limit(), target);
   }
 
   // optional float value = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->value(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_value(), target);
   }
 
   // optional int64 count = 5;
   if (cached_has_bits & 0x00000010u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(5, this->count(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt64ToArrayWithField<5>(
+            stream, this->_internal_count(), target);
   }
 
   // repeated string constrainingCollectionIds = 6;
-  for (int i = 0, n = this->constrainingcollectionids_size(); i < n; i++) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->constrainingcollectionids(i).data(), static_cast<int>(this->constrainingcollectionids(i).length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.Info.constrainingCollectionIds");
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteStringToArray(6, this->constrainingcollectionids(i), target);
+  for (int i = 0, n = this->_internal_constrainingcollectionids_size(); i < n; ++i) {
+    const auto& s = this->_internal_constrainingcollectionids().Get(i);
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Infeasibility.Info.constrainingCollectionIds");
+    target = stream->WriteString(6, s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Infeasibility.Info)
   return target;
 }
 
-size_t SolutionResponse_Infeasibility_Info::ByteSizeLong() const {
+::size_t SolutionResponse_Infeasibility_Info::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Infeasibility.Info)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated string constrainingCollectionIds = 6;
+  total_size += 1 * ::google::protobuf::internal::FromIntSize(_internal_constrainingcollectionids().size());
+  for (int i = 0, n = _internal_constrainingcollectionids().size(); i < n; ++i) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+        _internal_constrainingcollectionids().Get(i));
   }
   // required string message = 1;
-  if (has_message()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->message());
-  }
-  // repeated string constrainingCollectionIds = 6;
-  total_size += 1 *
-      ::google::protobuf::internal::FromIntSize(this->constrainingcollectionids_size());
-  for (int i = 0, n = this->constrainingcollectionids_size(); i < n; i++) {
-    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
-      this->constrainingcollectionids(i));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_message());
   }
 
-  if (_has_bits_[0 / 32] & 30u) {
+  if (cached_has_bits & 0x0000001eu) {
     // optional string dimId = 2;
-    if (has_dimid()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::StringSize(
-          this->dimid());
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_dimid());
     }
 
     // optional float limit = 3;
-    if (has_limit()) {
-      total_size += 1 + 4;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 5;
     }
 
     // optional float value = 4;
-    if (has_value()) {
-      total_size += 1 + 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 5;
     }
 
     // optional int64 count = 5;
-    if (has_count()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int64Size(
-          this->count());
+    if (cached_has_bits & 0x00000010u) {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+          this->_internal_count());
     }
 
   }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Infeasibility_Info::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Infeasibility.Info)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Infeasibility_Info* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Infeasibility_Info>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Infeasibility.Info)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Infeasibility.Info)
-    MergeFrom(*source);
-  }
-}
+const ::google::protobuf::Message::ClassData SolutionResponse_Infeasibility_Info::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Infeasibility_Info::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Infeasibility_Info::GetClassData() const { return &_class_data_; }
 
-void SolutionResponse_Infeasibility_Info::MergeFrom(const SolutionResponse_Infeasibility_Info& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Infeasibility.Info)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+
+void SolutionResponse_Infeasibility_Info::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Infeasibility_Info*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Infeasibility_Info&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Infeasibility.Info)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  constrainingcollectionids_.MergeFrom(from.constrainingcollectionids_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 31u) {
+  _this->_internal_mutable_constrainingcollectionids()->MergeFrom(from._internal_constrainingcollectionids());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000001fu) {
     if (cached_has_bits & 0x00000001u) {
-      set_has_message();
-      message_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.message_);
+      _this->_internal_set_message(from._internal_message());
     }
     if (cached_has_bits & 0x00000002u) {
-      set_has_dimid();
-      dimid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.dimid_);
+      _this->_internal_set_dimid(from._internal_dimid());
     }
     if (cached_has_bits & 0x00000004u) {
-      limit_ = from.limit_;
+      _this->_impl_.limit_ = from._impl_.limit_;
     }
     if (cached_has_bits & 0x00000008u) {
-      value_ = from.value_;
+      _this->_impl_.value_ = from._impl_.value_;
     }
     if (cached_has_bits & 0x00000010u) {
-      count_ = from.count_;
+      _this->_impl_.count_ = from._impl_.count_;
     }
-    _has_bits_[0] |= cached_has_bits;
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-}
-
-void SolutionResponse_Infeasibility_Info::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Infeasibility.Info)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Infeasibility_Info::CopyFrom(const SolutionResponse_Infeasibility_Info& from) {
@@ -6805,297 +5565,243 @@ void SolutionResponse_Infeasibility_Info::CopyFrom(const SolutionResponse_Infeas
   MergeFrom(from);
 }
 
-bool SolutionResponse_Infeasibility_Info::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Infeasibility_Info::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void SolutionResponse_Infeasibility_Info::Swap(SolutionResponse_Infeasibility_Info* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Infeasibility_Info::InternalSwap(SolutionResponse_Infeasibility_Info* other) {
   using std::swap;
-  constrainingcollectionids_.InternalSwap(CastToBase(&other->constrainingcollectionids_));
-  message_.Swap(&other->message_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  dimid_.Swap(&other->dimid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(limit_, other->limit_);
-  swap(value_, other->value_);
-  swap(count_, other->count_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.constrainingcollectionids_.InternalSwap(&other->_impl_.constrainingcollectionids_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, lhs_arena,
+                                       &other->_impl_.message_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.dimid_, lhs_arena,
+                                       &other->_impl_.dimid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.count_)
+      + sizeof(SolutionResponse_Infeasibility_Info::_impl_.count_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility_Info, _impl_.limit_)>(
+          reinterpret_cast<char*>(&_impl_.limit_),
+          reinterpret_cast<char*>(&other->_impl_.limit_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_Infeasibility_Info::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[13]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Infeasibility::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Infeasibility::kCollectionIdFieldNumber;
-const int SolutionResponse_Infeasibility::kInfeasibilityInfoFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_Infeasibility::SolutionResponse_Infeasibility()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Infeasibility)
-}
-SolutionResponse_Infeasibility::SolutionResponse_Infeasibility(const SolutionResponse_Infeasibility& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      infeasibilityinfo_(from.infeasibilityinfo_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_collectionid()) {
-    collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+class SolutionResponse_Infeasibility::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Infeasibility>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_._has_bits_);
+  static void set_has_collectionid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
   }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
+
+SolutionResponse_Infeasibility::SolutionResponse_Infeasibility(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Infeasibility)
+}
+SolutionResponse_Infeasibility::SolutionResponse_Infeasibility(const SolutionResponse_Infeasibility& from) : ::google::protobuf::Message() {
+  SolutionResponse_Infeasibility* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.infeasibilityinfo_){from._impl_.infeasibilityinfo_},
+      decltype(_impl_.collectionid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.collectionid_.Set(from._internal_collectionid(), _this->GetArenaForAllocation());
+  }
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Infeasibility)
 }
-
-void SolutionResponse_Infeasibility::SharedCtor() {
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Infeasibility::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.infeasibilityinfo_){arena},
+      decltype(_impl_.collectionid_){},
+  };
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Infeasibility::~SolutionResponse_Infeasibility() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Infeasibility)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Infeasibility::SharedDtor() {
-  collectionid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Infeasibility::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.infeasibilityinfo_.~RepeatedPtrField();
+  _impl_.collectionid_.Destroy();
 }
-
 void SolutionResponse_Infeasibility::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Infeasibility::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Infeasibility& SolutionResponse_Infeasibility::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Infeasibility.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Infeasibility::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Infeasibility::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Infeasibility)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  infeasibilityinfo_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_infeasibilityinfo()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    collectionid_.ClearNonDefaultToEmptyNoArena();
+    _impl_.collectionid_.ClearNonDefaultToEmpty();
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Infeasibility::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Infeasibility)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string collectionId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_collectionid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Infeasibility.collectionId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_infeasibilityinfo()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Infeasibility)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Infeasibility)
-  return false;
-#undef DO_
+const char* SolutionResponse_Infeasibility::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Infeasibility::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Infeasibility)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string collectionId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.collectionId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->collectionid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 55, 2> SolutionResponse_Infeasibility::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_Infeasibility_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_.infeasibilityinfo_)}},
+    // required string collectionId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_.collectionid_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string collectionId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_.collectionid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Infeasibility, _impl_.infeasibilityinfo_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Infeasibility_Info>()},
+  }}, {{
+    "\42\14\0\0\0\0\0\0"
+    "ISR.SolutionResponse.Infeasibility"
+    "collectionId"
+  }},
+};
 
-  // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->infeasibilityinfo_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->infeasibilityinfo(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Infeasibility)
-}
-
-::google::protobuf::uint8* SolutionResponse_Infeasibility::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Infeasibility::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Infeasibility)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string collectionId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Infeasibility.collectionId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->collectionid(), target);
+    const std::string& _s = this->_internal_collectionid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Infeasibility.collectionId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->infeasibilityinfo_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_infeasibilityinfo_size()); i < n; i++) {
+    const auto& repfield = this->_internal_infeasibilityinfo().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->infeasibilityinfo(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Infeasibility)
   return target;
 }
 
-size_t SolutionResponse_Infeasibility::ByteSizeLong() const {
+::size_t SolutionResponse_Infeasibility::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Infeasibility)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required string collectionId = 1;
-  if (has_collectionid()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->collectionid());
-  }
-  // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->infeasibilityinfo_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->infeasibilityinfo(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_Infeasibility::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Infeasibility)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Infeasibility* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Infeasibility>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Infeasibility)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Infeasibility)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_Infeasibility::MergeFrom(const SolutionResponse_Infeasibility& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Infeasibility)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  infeasibilityinfo_.MergeFrom(from.infeasibilityinfo_);
-  if (from.has_collectionid()) {
-    set_has_collectionid();
-    collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+  // repeated .ISR.SolutionResponse.Infeasibility.Info infeasibilityInfo = 2;
+  total_size += 1UL * this->_internal_infeasibilityinfo_size();
+  for (const auto& msg : this->_internal_infeasibilityinfo()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // required string collectionId = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_collectionid());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Infeasibility::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Infeasibility)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_Infeasibility::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Infeasibility::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Infeasibility::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_Infeasibility::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Infeasibility*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Infeasibility&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Infeasibility)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_infeasibilityinfo()->MergeFrom(from._internal_infeasibilityinfo());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_collectionid(from._internal_collectionid());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Infeasibility::CopyFrom(const SolutionResponse_Infeasibility& from) {
@@ -7105,369 +5811,291 @@ void SolutionResponse_Infeasibility::CopyFrom(const SolutionResponse_Infeasibili
   MergeFrom(from);
 }
 
-bool SolutionResponse_Infeasibility::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->infeasibilityinfo())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Infeasibility::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_infeasibilityinfo()))
+    return false;
   return true;
 }
 
-void SolutionResponse_Infeasibility::Swap(SolutionResponse_Infeasibility* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Infeasibility::InternalSwap(SolutionResponse_Infeasibility* other) {
   using std::swap;
-  CastToBase(&infeasibilityinfo_)->InternalSwap(CastToBase(&other->infeasibilityinfo_));
-  collectionid_.Swap(&other->collectionid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.infeasibilityinfo_.InternalSwap(&other->_impl_.infeasibilityinfo_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.collectionid_, lhs_arena,
+                                       &other->_impl_.collectionid_, rhs_arena);
 }
 
 ::google::protobuf::Metadata SolutionResponse_Infeasibility::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[14]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Matching::InitAsDefaultInstance() {
-  ::ISR::_SolutionResponse_Matching_default_instance_._instance.get_mutable()->collectionpoint_ = const_cast< ::ISR::Geocode*>(
-      ::ISR::Geocode::internal_default_instance());
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Matching::kCollectionIdFieldNumber;
-const int SolutionResponse_Matching::kCollectionPointFieldNumber;
-const int SolutionResponse_Matching::kSegmentIdFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse_Matching::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Matching>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_._has_bits_);
+  static void set_has_collectionid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static const ::ISR::Geocode& collectionpoint(const SolutionResponse_Matching* msg);
+  static void set_has_collectionpoint(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_segmentid(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
+};
 
-SolutionResponse_Matching::SolutionResponse_Matching()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Matching.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Matching)
+const ::ISR::Geocode& SolutionResponse_Matching::_Internal::collectionpoint(const SolutionResponse_Matching* msg) {
+  return *msg->_impl_.collectionpoint_;
 }
-SolutionResponse_Matching::SolutionResponse_Matching(const SolutionResponse_Matching& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_collectionid()) {
-    collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+SolutionResponse_Matching::SolutionResponse_Matching(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Matching)
+}
+SolutionResponse_Matching::SolutionResponse_Matching(const SolutionResponse_Matching& from) : ::google::protobuf::Message() {
+  SolutionResponse_Matching* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collectionid_){},
+      decltype(_impl_.collectionpoint_){nullptr},
+      decltype(_impl_.segmentid_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.collectionid_.Set(from._internal_collectionid(), _this->GetArenaForAllocation());
   }
-  if (from.has_collectionpoint()) {
-    collectionpoint_ = new ::ISR::Geocode(*from.collectionpoint_);
-  } else {
-    collectionpoint_ = NULL;
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.collectionpoint_ = new ::ISR::Geocode(*from._impl_.collectionpoint_);
   }
-  segmentid_ = from.segmentid_;
+  _this->_impl_.segmentid_ = from._impl_.segmentid_;
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Matching)
 }
-
-void SolutionResponse_Matching::SharedCtor() {
-  collectionid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&collectionpoint_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&segmentid_) -
-      reinterpret_cast<char*>(&collectionpoint_)) + sizeof(segmentid_));
+inline void SolutionResponse_Matching::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.collectionid_){},
+      decltype(_impl_.collectionpoint_){nullptr},
+      decltype(_impl_.segmentid_){0},
+  };
+  _impl_.collectionid_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.collectionid_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Matching::~SolutionResponse_Matching() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Matching)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Matching::SharedDtor() {
-  collectionid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete collectionpoint_;
+inline void SolutionResponse_Matching::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.collectionid_.Destroy();
+  if (this != internal_default_instance()) delete _impl_.collectionpoint_;
 }
-
 void SolutionResponse_Matching::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Matching::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Matching& SolutionResponse_Matching::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Matching.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Matching::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Matching::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Matching)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      collectionid_.ClearNonDefaultToEmptyNoArena();
+      _impl_.collectionid_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(collectionpoint_ != NULL);
-      collectionpoint_->Clear();
+      ABSL_DCHECK(_impl_.collectionpoint_ != nullptr);
+      _impl_.collectionpoint_->Clear();
     }
   }
-  segmentid_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.segmentid_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Matching::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Matching)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string collectionId = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_collectionid()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Matching.collectionId");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .ISR.Geocode collectionPoint = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-               input, mutable_collectionpoint()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required int32 segmentId = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-          set_has_segmentid();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &segmentid_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Matching)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Matching)
-  return false;
-#undef DO_
+const char* SolutionResponse_Matching::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Matching::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Matching)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string collectionId = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Matching.collectionId");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->collectionid(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 1, 50, 2> SolutionResponse_Matching::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_Matching_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string collectionId = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.collectionid_)}},
+    // required .ISR.Geocode collectionPoint = 2;
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.collectionpoint_)}},
+    // required int32 segmentId = 3;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_Matching, _impl_.segmentid_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.segmentid_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string collectionId = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.collectionid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .ISR.Geocode collectionPoint = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.collectionpoint_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required int32 segmentId = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.segmentid_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\35\14\0\0\0\0\0\0"
+    "ISR.SolutionResponse.Matching"
+    "collectionId"
+  }},
+};
 
-  // required .ISR.Geocode collectionPoint = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, this->_internal_collectionpoint(), output);
-  }
-
-  // required int32 segmentId = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->segmentid(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Matching)
-}
-
-::google::protobuf::uint8* SolutionResponse_Matching::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Matching::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Matching)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string collectionId = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->collectionid().data(), static_cast<int>(this->collectionid().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Matching.collectionId");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->collectionid(), target);
+    const std::string& _s = this->_internal_collectionid();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Matching.collectionId");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .ISR.Geocode collectionPoint = 2;
   if (cached_has_bits & 0x00000002u) {
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->_internal_collectionpoint(), deterministic, target);
+      InternalWriteMessage(2, _Internal::collectionpoint(this),
+        _Internal::collectionpoint(this).GetCachedSize(), target, stream);
   }
 
   // required int32 segmentId = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->segmentid(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<3>(
+            stream, this->_internal_segmentid(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Matching)
   return target;
 }
 
-size_t SolutionResponse_Matching::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.Matching)
-  size_t total_size = 0;
-
-  if (has_collectionid()) {
-    // required string collectionId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->collectionid());
-  }
-
-  if (has_collectionpoint()) {
-    // required .ISR.Geocode collectionPoint = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *collectionpoint_);
-  }
-
-  if (has_segmentid()) {
-    // required int32 segmentId = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->segmentid());
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_Matching::ByteSizeLong() const {
+::size_t SolutionResponse_Matching::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Matching)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required string collectionId = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->collectionid());
-
-    // required .ISR.Geocode collectionPoint = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::MessageSize(
-        *collectionpoint_);
-
-    // required int32 segmentId = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->segmentid());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_Matching::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Matching)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Matching* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Matching>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Matching)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Matching)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_Matching::MergeFrom(const SolutionResponse_Matching& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Matching)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // required string collectionId = 1;
     if (cached_has_bits & 0x00000001u) {
-      set_has_collectionid();
-      collectionid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.collectionid_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_collectionid());
     }
+
+    // required .ISR.Geocode collectionPoint = 2;
     if (cached_has_bits & 0x00000002u) {
-      mutable_collectionpoint()->::ISR::Geocode::MergeFrom(from.collectionpoint());
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *_impl_.collectionpoint_);
     }
+
+    // required int32 segmentId = 3;
     if (cached_has_bits & 0x00000004u) {
-      segmentid_ = from.segmentid_;
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_segmentid());
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Matching::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Matching)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_Matching::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Matching::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Matching::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_Matching::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Matching*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Matching&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Matching)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_collectionid(from._internal_collectionid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_collectionpoint()->::ISR::Geocode::MergeFrom(
+          from._internal_collectionpoint());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.segmentid_ = from._impl_.segmentid_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Matching::CopyFrom(const SolutionResponse_Matching& from) {
@@ -7477,439 +6105,339 @@ void SolutionResponse_Matching::CopyFrom(const SolutionResponse_Matching& from) 
   MergeFrom(from);
 }
 
-bool SolutionResponse_Matching::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
-  if (has_collectionpoint()) {
-    if (!this->collectionpoint_->IsInitialized()) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Matching::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if ((_impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!_impl_.collectionpoint_->IsInitialized()) return false;
   }
   return true;
 }
 
-void SolutionResponse_Matching::Swap(SolutionResponse_Matching* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Matching::InternalSwap(SolutionResponse_Matching* other) {
   using std::swap;
-  collectionid_.Swap(&other->collectionid_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(collectionpoint_, other->collectionpoint_);
-  swap(segmentid_, other->segmentid_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.collectionid_, lhs_arena,
+                                       &other->_impl_.collectionid_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.segmentid_)
+      + sizeof(SolutionResponse_Matching::_impl_.segmentid_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_Matching, _impl_.collectionpoint_)>(
+          reinterpret_cast<char*>(&_impl_.collectionpoint_),
+          reinterpret_cast<char*>(&other->_impl_.collectionpoint_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_Matching::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[15]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse_Segment::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse_Segment::kIdFieldNumber;
-const int SolutionResponse_Segment::kNameFieldNumber;
-const int SolutionResponse_Segment::kWeightFieldNumber;
-const int SolutionResponse_Segment::kDurationFieldNumber;
-const int SolutionResponse_Segment::kGeometryFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolutionResponse_Segment::SolutionResponse_Segment()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Segment.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse.Segment)
-}
-SolutionResponse_Segment::SolutionResponse_Segment(const SolutionResponse_Segment& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      geometry_(from.geometry_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_name()) {
-    name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
+class SolutionResponse_Segment::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse_Segment>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_._has_bits_);
+  static void set_has_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
-  ::memcpy(&id_, &from.id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&duration_) -
-    reinterpret_cast<char*>(&id_)) + sizeof(duration_));
+  static void set_has_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_weight(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_duration(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
+};
+
+SolutionResponse_Segment::SolutionResponse_Segment(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse.Segment)
+}
+SolutionResponse_Segment::SolutionResponse_Segment(const SolutionResponse_Segment& from) : ::google::protobuf::Message() {
+  SolutionResponse_Segment* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.geometry_){from._impl_.geometry_},
+      decltype(_impl_.name_){},
+      decltype(_impl_.id_){},
+      decltype(_impl_.weight_){},
+      decltype(_impl_.duration_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.name_.Set(from._internal_name(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.id_, &from._impl_.id_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.duration_) -
+    reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.duration_));
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse.Segment)
 }
-
-void SolutionResponse_Segment::SharedCtor() {
-  name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&duration_) -
-      reinterpret_cast<char*>(&id_)) + sizeof(duration_));
+inline void SolutionResponse_Segment::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.geometry_){arena},
+      decltype(_impl_.name_){},
+      decltype(_impl_.id_){0},
+      decltype(_impl_.weight_){0},
+      decltype(_impl_.duration_){0},
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.name_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolutionResponse_Segment::~SolutionResponse_Segment() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse.Segment)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse_Segment::SharedDtor() {
-  name_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolutionResponse_Segment::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.geometry_.~RepeatedPtrField();
+  _impl_.name_.Destroy();
 }
-
 void SolutionResponse_Segment::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse_Segment::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse_Segment& SolutionResponse_Segment::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse_Segment.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse_Segment::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse_Segment::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse.Segment)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  geometry_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_geometry()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    name_.ClearNonDefaultToEmptyNoArena();
+    _impl_.name_.ClearNonDefaultToEmpty();
   }
-  if (cached_has_bits & 14u) {
-    ::memset(&id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&duration_) -
-        reinterpret_cast<char*>(&id_)) + sizeof(duration_));
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&_impl_.id_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.duration_) -
+        reinterpret_cast<char*>(&_impl_.id_)) + sizeof(_impl_.duration_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse_Segment::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse.Segment)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int32 id = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_id();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, &id_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string name = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_name()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->name().data(), static_cast<int>(this->name().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "ISR.SolutionResponse.Segment.name");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float weight = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
-          set_has_weight();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &weight_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required float duration = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(37u /* 37 & 0xFF */)) {
-          set_has_duration();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &duration_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.Geocode geometry = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_geometry()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse.Segment)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse.Segment)
-  return false;
-#undef DO_
+const char* SolutionResponse_Segment::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse_Segment::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse.Segment)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required int32 id = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->id(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 1, 41, 2> SolutionResponse_Segment::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_Segment_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required int32 id = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(SolutionResponse_Segment, _impl_.id_), 1>(),
+     {8, 1, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.id_)}},
+    // required string name = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.name_)}},
+    // required float weight = 3;
+    {::_pbi::TcParser::FastF32S1,
+     {29, 2, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.weight_)}},
+    // required float duration = 4;
+    {::_pbi::TcParser::FastF32S1,
+     {37, 3, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.duration_)}},
+    // repeated .ISR.Geocode geometry = 5;
+    {::_pbi::TcParser::FastMtR1,
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.geometry_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required int32 id = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.id_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // required string name = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required float weight = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.weight_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // required float duration = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.duration_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // repeated .ISR.Geocode geometry = 5;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.geometry_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::Geocode>()},
+  }}, {{
+    "\34\0\4\0\0\0\0\0"
+    "ISR.SolutionResponse.Segment"
+    "name"
+  }},
+};
 
-  // required string name = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Segment.name");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->name(), output);
-  }
-
-  // required float weight = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(3, this->weight(), output);
-  }
-
-  // required float duration = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(4, this->duration(), output);
-  }
-
-  // repeated .ISR.Geocode geometry = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->geometry(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse.Segment)
-}
-
-::google::protobuf::uint8* SolutionResponse_Segment::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse_Segment::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse.Segment)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required int32 id = 1;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->id(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt32ToArrayWithField<1>(
+            stream, this->_internal_id(), target);
   }
 
   // required string name = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->name().data(), static_cast<int>(this->name().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "ISR.SolutionResponse.Segment.name");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->name(), target);
+    const std::string& _s = this->_internal_name();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "ISR.SolutionResponse.Segment.name");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // required float weight = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(3, this->weight(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        3, this->_internal_weight(), target);
   }
 
   // required float duration = 4;
   if (cached_has_bits & 0x00000008u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(4, this->duration(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        4, this->_internal_duration(), target);
   }
 
   // repeated .ISR.Geocode geometry = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->geometry_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_geometry_size()); i < n; i++) {
+    const auto& repfield = this->_internal_geometry().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->geometry(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse.Segment)
   return target;
 }
 
-size_t SolutionResponse_Segment::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ISR.SolutionResponse.Segment)
-  size_t total_size = 0;
-
-  if (has_name()) {
-    // required string name = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
-  }
-
-  if (has_id()) {
-    // required int32 id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
-  }
-
-  if (has_weight()) {
-    // required float weight = 3;
-    total_size += 1 + 4;
-  }
-
-  if (has_duration()) {
-    // required float duration = 4;
-    total_size += 1 + 4;
-  }
-
-  return total_size;
-}
-size_t SolutionResponse_Segment::ByteSizeLong() const {
+::size_t SolutionResponse_Segment::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse.Segment)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
-    // required string name = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->name());
-
-    // required int32 id = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int32Size(
-        this->id());
-
-    // required float weight = 3;
-    total_size += 1 + 4;
-
-    // required float duration = 4;
-    total_size += 1 + 4;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // repeated .ISR.Geocode geometry = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->geometry_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->geometry(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse_Segment::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse.Segment)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse_Segment* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse_Segment>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse.Segment)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse.Segment)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse_Segment::MergeFrom(const SolutionResponse_Segment& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Segment)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  geometry_.MergeFrom(from.geometry_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 15u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_name();
-      name_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.name_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      id_ = from.id_;
-    }
-    if (cached_has_bits & 0x00000004u) {
-      weight_ = from.weight_;
-    }
-    if (cached_has_bits & 0x00000008u) {
-      duration_ = from.duration_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // repeated .ISR.Geocode geometry = 5;
+  total_size += 1UL * this->_internal_geometry_size();
+  for (const auto& msg : this->_internal_geometry()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // required string name = 2;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_name());
+    }
+
+    // required int32 id = 1;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this->_internal_id());
+    }
+
+    // required float weight = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 5;
+    }
+
+    // required float duration = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += 5;
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse_Segment::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse.Segment)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse_Segment::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse_Segment::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse_Segment::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse_Segment::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse_Segment*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse_Segment&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse.Segment)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_geometry()->MergeFrom(from._internal_geometry());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_name(from._internal_name());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.id_ = from._impl_.id_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.weight_ = from._impl_.weight_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.duration_ = from._impl_.duration_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse_Segment::CopyFrom(const SolutionResponse_Segment& from) {
@@ -7919,405 +6447,305 @@ void SolutionResponse_Segment::CopyFrom(const SolutionResponse_Segment& from) {
   MergeFrom(from);
 }
 
-bool SolutionResponse_Segment::IsInitialized() const {
-  if ((_has_bits_[0] & 0x0000000f) != 0x0000000f) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->geometry())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse_Segment::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_geometry()))
+    return false;
   return true;
 }
 
-void SolutionResponse_Segment::Swap(SolutionResponse_Segment* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse_Segment::InternalSwap(SolutionResponse_Segment* other) {
   using std::swap;
-  CastToBase(&geometry_)->InternalSwap(CastToBase(&other->geometry_));
-  name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(id_, other->id_);
-  swap(weight_, other->weight_);
-  swap(duration_, other->duration_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.geometry_.InternalSwap(&other->_impl_.geometry_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, lhs_arena,
+                                       &other->_impl_.name_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.duration_)
+      + sizeof(SolutionResponse_Segment::_impl_.duration_)
+      - PROTOBUF_FIELD_OFFSET(SolutionResponse_Segment, _impl_.id_)>(
+          reinterpret_cast<char*>(&_impl_.id_),
+          reinterpret_cast<char*>(&other->_impl_.id_));
 }
 
 ::google::protobuf::Metadata SolutionResponse_Segment::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[16]);
 }
-
-
 // ===================================================================
 
-void SolutionResponse::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolutionResponse::kObjectiveFieldNumber;
-const int SolutionResponse::kRoutesFieldNumber;
-const int SolutionResponse::kInfeasibilitiesFieldNumber;
-const int SolutionResponse::kMatchingsFieldNumber;
-const int SolutionResponse::kSegmentsFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class SolutionResponse::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolutionResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_._has_bits_);
+  static void set_has_objective(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
+};
 
-SolutionResponse::SolutionResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:ISR.SolutionResponse)
+SolutionResponse::SolutionResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:ISR.SolutionResponse)
 }
-SolutionResponse::SolutionResponse(const SolutionResponse& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      routes_(from.routes_),
-      infeasibilities_(from.infeasibilities_),
-      matchings_(from.matchings_),
-      segments_(from.segments_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  objective_ = from.objective_;
+SolutionResponse::SolutionResponse(const SolutionResponse& from) : ::google::protobuf::Message() {
+  SolutionResponse* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.routes_){from._impl_.routes_},
+      decltype(_impl_.infeasibilities_){from._impl_.infeasibilities_},
+      decltype(_impl_.matchings_){from._impl_.matchings_},
+      decltype(_impl_.segments_){from._impl_.segments_},
+      decltype(_impl_.objective_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _this->_impl_.objective_ = from._impl_.objective_;
+
   // @@protoc_insertion_point(copy_constructor:ISR.SolutionResponse)
 }
-
-void SolutionResponse::SharedCtor() {
-  objective_ = 0;
+inline void SolutionResponse::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.routes_){arena},
+      decltype(_impl_.infeasibilities_){arena},
+      decltype(_impl_.matchings_){arena},
+      decltype(_impl_.segments_){arena},
+      decltype(_impl_.objective_){0},
+  };
 }
-
 SolutionResponse::~SolutionResponse() {
   // @@protoc_insertion_point(destructor:ISR.SolutionResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolutionResponse::SharedDtor() {
+inline void SolutionResponse::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.routes_.~RepeatedPtrField();
+  _impl_.infeasibilities_.~RepeatedPtrField();
+  _impl_.matchings_.~RepeatedPtrField();
+  _impl_.segments_.~RepeatedPtrField();
 }
-
 void SolutionResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolutionResponse::descriptor() {
-  ::protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolutionResponse& SolutionResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_isr_2dz4foi53qznrv_2eproto::scc_info_SolutionResponse.base);
-  return *internal_default_instance();
-}
-
-
-void SolutionResponse::Clear() {
+PROTOBUF_NOINLINE void SolutionResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:ISR.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  routes_.Clear();
-  infeasibilities_.Clear();
-  matchings_.Clear();
-  segments_.Clear();
-  objective_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _internal_mutable_routes()->Clear();
+  _internal_mutable_infeasibilities()->Clear();
+  _internal_mutable_matchings()->Clear();
+  _internal_mutable_segments()->Clear();
+  _impl_.objective_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolutionResponse::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:ISR.SolutionResponse)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required float objective = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
-          set_has_objective();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &objective_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Route routes = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_routes()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_infeasibilities()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Matching matchings = 4;
-      case 4: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_matchings()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // repeated .ISR.SolutionResponse.Segment segments = 5;
-      case 5: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_segments()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:ISR.SolutionResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:ISR.SolutionResponse)
-  return false;
-#undef DO_
+const char* SolutionResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolutionResponse::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:ISR.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required float objective = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(1, this->objective(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 4, 0, 2> SolutionResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    4,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolutionResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required float objective = 1;
+    {::_pbi::TcParser::FastF32S1,
+     {13, 0, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.objective_)}},
+    // repeated .ISR.SolutionResponse.Route routes = 2;
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.routes_)}},
+    // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
+    {::_pbi::TcParser::FastMtR1,
+     {26, 63, 1, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.infeasibilities_)}},
+    // repeated .ISR.SolutionResponse.Matching matchings = 4;
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 2, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.matchings_)}},
+    // repeated .ISR.SolutionResponse.Segment segments = 5;
+    {::_pbi::TcParser::FastMtR1,
+     {42, 63, 3, PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.segments_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required float objective = 1;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.objective_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // repeated .ISR.SolutionResponse.Route routes = 2;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.routes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.infeasibilities_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.SolutionResponse.Matching matchings = 4;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.matchings_), -1, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .ISR.SolutionResponse.Segment segments = 5;
+    {PROTOBUF_FIELD_OFFSET(SolutionResponse, _impl_.segments_), -1, 3,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Route>()},
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Infeasibility>()},
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Matching>()},
+    {::_pbi::TcParser::GetTable<::ISR::SolutionResponse_Segment>()},
+  }}, {{
+  }},
+};
 
-  // repeated .ISR.SolutionResponse.Route routes = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->routes(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->infeasibilities_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->infeasibilities(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.SolutionResponse.Matching matchings = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->matchings_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      4,
-      this->matchings(static_cast<int>(i)),
-      output);
-  }
-
-  // repeated .ISR.SolutionResponse.Segment segments = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->segments_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      5,
-      this->segments(static_cast<int>(i)),
-      output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:ISR.SolutionResponse)
-}
-
-::google::protobuf::uint8* SolutionResponse::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolutionResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:ISR.SolutionResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required float objective = 1;
   if (cached_has_bits & 0x00000001u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(1, this->objective(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(
+        1, this->_internal_objective(), target);
   }
 
   // repeated .ISR.SolutionResponse.Route routes = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->routes_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_routes_size()); i < n; i++) {
+    const auto& repfield = this->_internal_routes().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->routes(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(2, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->infeasibilities_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_infeasibilities_size()); i < n; i++) {
+    const auto& repfield = this->_internal_infeasibilities().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->infeasibilities(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(3, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.SolutionResponse.Matching matchings = 4;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->matchings_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_matchings_size()); i < n; i++) {
+    const auto& repfield = this->_internal_matchings().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        4, this->matchings(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(4, repfield, repfield.GetCachedSize(), target, stream);
   }
 
   // repeated .ISR.SolutionResponse.Segment segments = 5;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->segments_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_segments_size()); i < n; i++) {
+    const auto& repfield = this->_internal_segments().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        5, this->segments(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ISR.SolutionResponse)
   return target;
 }
 
-size_t SolutionResponse::ByteSizeLong() const {
+::size_t SolutionResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ISR.SolutionResponse)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required float objective = 1;
-  if (has_objective()) {
-    total_size += 1 + 4;
-  }
-  // repeated .ISR.SolutionResponse.Route routes = 2;
-  {
-    unsigned int count = static_cast<unsigned int>(this->routes_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->routes(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
-  {
-    unsigned int count = static_cast<unsigned int>(this->infeasibilities_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->infeasibilities(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.SolutionResponse.Matching matchings = 4;
-  {
-    unsigned int count = static_cast<unsigned int>(this->matchings_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->matchings(static_cast<int>(i)));
-    }
-  }
-
-  // repeated .ISR.SolutionResponse.Segment segments = 5;
-  {
-    unsigned int count = static_cast<unsigned int>(this->segments_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->segments(static_cast<int>(i)));
-    }
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolutionResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ISR.SolutionResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolutionResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolutionResponse>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ISR.SolutionResponse)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ISR.SolutionResponse)
-    MergeFrom(*source);
-  }
-}
-
-void SolutionResponse::MergeFrom(const SolutionResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  routes_.MergeFrom(from.routes_);
-  infeasibilities_.MergeFrom(from.infeasibilities_);
-  matchings_.MergeFrom(from.matchings_);
-  segments_.MergeFrom(from.segments_);
-  if (from.has_objective()) {
-    set_objective(from.objective());
+  // repeated .ISR.SolutionResponse.Route routes = 2;
+  total_size += 1UL * this->_internal_routes_size();
+  for (const auto& msg : this->_internal_routes()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // repeated .ISR.SolutionResponse.Infeasibility infeasibilities = 3;
+  total_size += 1UL * this->_internal_infeasibilities_size();
+  for (const auto& msg : this->_internal_infeasibilities()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // repeated .ISR.SolutionResponse.Matching matchings = 4;
+  total_size += 1UL * this->_internal_matchings_size();
+  for (const auto& msg : this->_internal_matchings()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // repeated .ISR.SolutionResponse.Segment segments = 5;
+  total_size += 1UL * this->_internal_segments_size();
+  for (const auto& msg : this->_internal_segments()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+  }
+  // required float objective = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 5;
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolutionResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ISR.SolutionResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolutionResponse::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolutionResponse::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolutionResponse::GetClassData() const { return &_class_data_; }
+
+
+void SolutionResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolutionResponse*>(&to_msg);
+  auto& from = static_cast<const SolutionResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:ISR.SolutionResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_routes()->MergeFrom(from._internal_routes());
+  _this->_internal_mutable_infeasibilities()->MergeFrom(from._internal_infeasibilities());
+  _this->_internal_mutable_matchings()->MergeFrom(from._internal_matchings());
+  _this->_internal_mutable_segments()->MergeFrom(from._internal_segments());
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_internal_set_objective(from._internal_objective());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolutionResponse::CopyFrom(const SolutionResponse& from) {
@@ -8327,95 +6755,42 @@ void SolutionResponse::CopyFrom(const SolutionResponse& from) {
   MergeFrom(from);
 }
 
-bool SolutionResponse::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000001) != 0x00000001) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->routes())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->infeasibilities())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->matchings())) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->segments())) return false;
+PROTOBUF_NOINLINE bool SolutionResponse::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_routes()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_infeasibilities()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_matchings()))
+    return false;
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_segments()))
+    return false;
   return true;
 }
 
-void SolutionResponse::Swap(SolutionResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolutionResponse::InternalSwap(SolutionResponse* other) {
   using std::swap;
-  CastToBase(&routes_)->InternalSwap(CastToBase(&other->routes_));
-  CastToBase(&infeasibilities_)->InternalSwap(CastToBase(&other->infeasibilities_));
-  CastToBase(&matchings_)->InternalSwap(CastToBase(&other->matchings_));
-  CastToBase(&segments_)->InternalSwap(CastToBase(&other->segments_));
-  swap(objective_, other->objective_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.routes_.InternalSwap(&other->_impl_.routes_);
+  _impl_.infeasibilities_.InternalSwap(&other->_impl_.infeasibilities_);
+  _impl_.matchings_.InternalSwap(&other->_impl_.matchings_);
+  _impl_.segments_.InternalSwap(&other->_impl_.segments_);
+        swap(_impl_.objective_, other->_impl_.objective_);
 }
 
 ::google::protobuf::Metadata SolutionResponse::GetMetadata() const {
-  protobuf_isr_2dz4foi53qznrv_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_isr_2dz4foi53qznrv_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_isr_2dz4foi53qznrv_2eproto_getter, &descriptor_table_isr_2dz4foi53qznrv_2eproto_once,
+      file_level_metadata_isr_2dz4foi53qznrv_2eproto[17]);
 }
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace ISR
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::Configuration* Arena::CreateMaybeMessage< ::ISR::Configuration >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::Configuration >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::Geocode* Arena::CreateMaybeMessage< ::ISR::Geocode >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::Geocode >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::OffloadSite* Arena::CreateMaybeMessage< ::ISR::OffloadSite >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::OffloadSite >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::Collection* Arena::CreateMaybeMessage< ::ISR::Collection >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::Collection >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::Vehicle* Arena::CreateMaybeMessage< ::ISR::Vehicle >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::Vehicle >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::CollectionSequence* Arena::CreateMaybeMessage< ::ISR::CollectionSequence >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::CollectionSequence >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::Model* Arena::CreateMaybeMessage< ::ISR::Model >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::Model >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolveRequest* Arena::CreateMaybeMessage< ::ISR::SolveRequest >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolveRequest >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_StopAttribute* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_StopAttribute >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_StopAttribute >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_InterStopAttribute* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_InterStopAttribute >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_InterStopAttribute >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Stop* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Stop >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Stop >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_InterStop* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_InterStop >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_InterStop >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Route* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Route >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Route >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Infeasibility_Info* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Infeasibility_Info >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Infeasibility_Info >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Infeasibility* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Infeasibility >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Infeasibility >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Matching* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Matching >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Matching >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse_Segment* Arena::CreateMaybeMessage< ::ISR::SolutionResponse_Segment >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse_Segment >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ISR::SolutionResponse* Arena::CreateMaybeMessage< ::ISR::SolutionResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::ISR::SolutionResponse >(arena);
-}
 }  // namespace protobuf
 }  // namespace google
-
 // @@protoc_insertion_point(global_scope)
+#include "google/protobuf/port_undef.inc"

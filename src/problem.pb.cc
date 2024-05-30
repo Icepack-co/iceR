@@ -4,198 +4,211 @@
 #include "problem.pb.h"
 
 #include <algorithm>
-
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/wire_format_lite_inl.h>
-#include <google/protobuf/descriptor.h>
-#include <google/protobuf/generated_message_reflection.h>
-#include <google/protobuf/reflection_ops.h>
-#include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
+#include "google/protobuf/io/coded_stream.h"
+#include "google/protobuf/extension_set.h"
+#include "google/protobuf/wire_format_lite.h"
+#include "google/protobuf/descriptor.h"
+#include "google/protobuf/generated_message_reflection.h"
+#include "google/protobuf/reflection_ops.h"
+#include "google/protobuf/wire_format.h"
+#include "google/protobuf/generated_message_tctable_impl.h"
 // @@protoc_insertion_point(includes)
 
-namespace protobuf_problem_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_problem_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SolverInfo;
-}  // namespace protobuf_problem_2eproto
+// Must be included last.
+#include "google/protobuf/port_def.inc"
+PROTOBUF_PRAGMA_INIT_SEG
+namespace _pb = ::google::protobuf;
+namespace _pbi = ::google::protobuf::internal;
+namespace _fl = ::google::protobuf::internal::field_layout;
 namespace problem {
-class ProblemEnvelopeDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<ProblemEnvelope>
-      _instance;
-} _ProblemEnvelope_default_instance_;
-class SolverInfoDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolverInfo>
-      _instance;
-} _SolverInfo_default_instance_;
-class SolverResponseDefaultTypeInternal {
- public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SolverResponse>
-      _instance;
-} _SolverResponse_default_instance_;
-}  // namespace problem
-namespace protobuf_problem_2eproto {
-static void InitDefaultsProblemEnvelope() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::problem::_ProblemEnvelope_default_instance_;
-    new (ptr) ::problem::ProblemEnvelope();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::problem::ProblemEnvelope::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_ProblemEnvelope =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsProblemEnvelope}, {}};
-
-static void InitDefaultsSolverInfo() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::problem::_SolverInfo_default_instance_;
-    new (ptr) ::problem::SolverInfo();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::problem::SolverInfo::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<0> scc_info_SolverInfo =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSolverInfo}, {}};
-
-static void InitDefaultsSolverResponse() {
-  GOOGLE_PROTOBUF_VERIFY_VERSION;
-
-  {
-    void* ptr = &::problem::_SolverResponse_default_instance_;
-    new (ptr) ::problem::SolverResponse();
-    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
-  }
-  ::problem::SolverResponse::InitAsDefaultInstance();
-}
-
-::google::protobuf::internal::SCCInfo<1> scc_info_SolverResponse =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSolverResponse}, {
-      &protobuf_problem_2eproto::scc_info_SolverInfo.base,}};
-
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_ProblemEnvelope.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolverInfo.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SolverResponse.base);
-}
-
-::google::protobuf::Metadata file_level_metadata[3];
-const ::google::protobuf::EnumDescriptor* file_level_enum_descriptors[3];
-
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::ProblemEnvelope, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::ProblemEnvelope, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::ProblemEnvelope, type_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::ProblemEnvelope, subtype_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::ProblemEnvelope, content_),
-  0,
-  2,
-  1,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverInfo, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverInfo, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverInfo, unixdatetime_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverInfo, infomessage_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverInfo, type_),
-  1,
-  0,
-  2,
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverResponse, _has_bits_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverResponse, logs_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverResponse, state_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::problem::SolverResponse, solution_),
-  ~0u,
-  1,
-  0,
-};
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, sizeof(::problem::ProblemEnvelope)},
-  { 11, 19, sizeof(::problem::SolverInfo)},
-  { 22, 30, sizeof(::problem::SolverResponse)},
-};
-
-static ::google::protobuf::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::google::protobuf::Message*>(&::problem::_ProblemEnvelope_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::problem::_SolverInfo_default_instance_),
-  reinterpret_cast<const ::google::protobuf::Message*>(&::problem::_SolverResponse_default_instance_),
-};
-
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "problem.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, file_level_enum_descriptors, NULL);
-}
-
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
-
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 3);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\rproblem.proto\022\007problem\"\214\001\n\017ProblemEnve"
-      "lope\022\014\n\004type\030\001 \002(\t\0228\n\007subType\030\002 \002(\0162 .pr"
-      "oblem.ProblemEnvelope.SubType:\005INPUT\022\017\n\007"
-      "content\030\003 \001(\014\" \n\007SubType\022\t\n\005INPUT\020\000\022\n\n\006O"
-      "UTPUT\020\001\"\243\001\n\nSolverInfo\022\024\n\014unixDateTime\030\001"
-      " \002(\003\022\023\n\013infoMessage\030\002 \002(\t\0223\n\004type\030\003 \002(\0162"
-      "%.problem.SolverInfo.SolverMessageType\"5"
-      "\n\021SolverMessageType\022\010\n\004INFO\020\000\022\013\n\007WARNING"
-      "\020\001\022\t\n\005ERROR\020\002\"\252\001\n\016SolverResponse\022!\n\004logs"
-      "\030\001 \003(\0132\023.problem.SolverInfo\0221\n\005state\030\002 \002"
-      "(\0162\".problem.SolverResponse.SolveState\022\020"
-      "\n\010solution\030\003 \001(\014\"0\n\nSolveState\022\007\n\003WIP\020\000\022"
-      "\r\n\tCOMPLETED\020\001\022\n\n\006FAILED\020\002B\023\n\021icepackai."
-      "problem"
+        template <typename>
+PROTOBUF_CONSTEXPR ProblemEnvelope::ProblemEnvelope(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.type_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.content_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.subtype_)*/ 0,
+    } {}
+struct ProblemEnvelopeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProblemEnvelopeDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProblemEnvelopeDefaultTypeInternal() {}
+  union {
+    ProblemEnvelope _instance;
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 527);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "problem.proto", &protobuf_RegisterTypes);
-}
+};
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProblemEnvelopeDefaultTypeInternal _ProblemEnvelope_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolverInfo::SolverInfo(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.infomessage_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.unixdatetime_)*/ ::int64_t{0},
+      /*decltype(_impl_.type_)*/ 0,
+    } {}
+struct SolverInfoDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolverInfoDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolverInfoDefaultTypeInternal() {}
+  union {
+    SolverInfo _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolverInfoDefaultTypeInternal _SolverInfo_default_instance_;
+        template <typename>
+PROTOBUF_CONSTEXPR SolverResponse::SolverResponse(::_pbi::ConstantInitialized)
+    : _impl_{
+      /*decltype(_impl_._has_bits_)*/ {},
+      /*decltype(_impl_._cached_size_)*/ {},
+      /*decltype(_impl_.logs_)*/ {},
+      /*decltype(_impl_.solution_)*/ {
+          &::_pbi::fixed_address_empty_string,
+          ::_pbi::ConstantInitialized{},
+      },
+      /*decltype(_impl_.state_)*/ 0,
+    } {}
+struct SolverResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SolverResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SolverResponseDefaultTypeInternal() {}
+  union {
+    SolverResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SolverResponseDefaultTypeInternal _SolverResponse_default_instance_;
+}  // namespace problem
+static ::_pb::Metadata file_level_metadata_problem_2eproto[3];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_problem_2eproto[3];
+static constexpr const ::_pb::ServiceDescriptor**
+    file_level_service_descriptors_problem_2eproto = nullptr;
+const ::uint32_t TableStruct_problem_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
+    protodesc_cold) = {
+    PROTOBUF_FIELD_OFFSET(::problem::ProblemEnvelope, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::problem::ProblemEnvelope, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::problem::ProblemEnvelope, _impl_.type_),
+    PROTOBUF_FIELD_OFFSET(::problem::ProblemEnvelope, _impl_.subtype_),
+    PROTOBUF_FIELD_OFFSET(::problem::ProblemEnvelope, _impl_.content_),
+    0,
+    2,
+    1,
+    PROTOBUF_FIELD_OFFSET(::problem::SolverInfo, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverInfo, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::problem::SolverInfo, _impl_.unixdatetime_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverInfo, _impl_.infomessage_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverInfo, _impl_.type_),
+    1,
+    0,
+    2,
+    PROTOBUF_FIELD_OFFSET(::problem::SolverResponse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverResponse, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::problem::SolverResponse, _impl_.logs_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverResponse, _impl_.state_),
+    PROTOBUF_FIELD_OFFSET(::problem::SolverResponse, _impl_.solution_),
+    ~0u,
+    1,
+    0,
+};
+
+static const ::_pbi::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, 11, -1, sizeof(::problem::ProblemEnvelope)},
+        {14, 25, -1, sizeof(::problem::SolverInfo)},
+        {28, 39, -1, sizeof(::problem::SolverResponse)},
+};
+
+static const ::_pb::Message* const file_default_instances[] = {
+    &::problem::_ProblemEnvelope_default_instance_._instance,
+    &::problem::_SolverInfo_default_instance_._instance,
+    &::problem::_SolverResponse_default_instance_._instance,
+};
+const char descriptor_table_protodef_problem_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+    "\n\rproblem.proto\022\007problem\"\214\001\n\017ProblemEnve"
+    "lope\022\014\n\004type\030\001 \002(\t\0228\n\007subType\030\002 \002(\0162 .pr"
+    "oblem.ProblemEnvelope.SubType:\005INPUT\022\017\n\007"
+    "content\030\003 \001(\014\" \n\007SubType\022\t\n\005INPUT\020\000\022\n\n\006O"
+    "UTPUT\020\001\"\243\001\n\nSolverInfo\022\024\n\014unixDateTime\030\001"
+    " \002(\003\022\023\n\013infoMessage\030\002 \002(\t\0223\n\004type\030\003 \002(\0162"
+    "%.problem.SolverInfo.SolverMessageType\"5"
+    "\n\021SolverMessageType\022\010\n\004INFO\020\000\022\013\n\007WARNING"
+    "\020\001\022\t\n\005ERROR\020\002\"\252\001\n\016SolverResponse\022!\n\004logs"
+    "\030\001 \003(\0132\023.problem.SolverInfo\0221\n\005state\030\002 \002"
+    "(\0162\".problem.SolverResponse.SolveState\022\020"
+    "\n\010solution\030\003 \001(\014\"0\n\nSolveState\022\007\n\003WIP\020\000\022"
+    "\r\n\tCOMPLETED\020\001\022\n\n\006FAILED\020\002B\023\n\021icepackai."
+    "problem"
+};
+static ::absl::once_flag descriptor_table_problem_2eproto_once;
+const ::_pbi::DescriptorTable descriptor_table_problem_2eproto = {
+    false,
+    false,
+    527,
+    descriptor_table_protodef_problem_2eproto,
+    "problem.proto",
+    &descriptor_table_problem_2eproto_once,
+    nullptr,
+    0,
+    3,
+    schemas,
+    file_default_instances,
+    TableStruct_problem_2eproto::offsets,
+    file_level_metadata_problem_2eproto,
+    file_level_enum_descriptors_problem_2eproto,
+    file_level_service_descriptors_problem_2eproto,
+};
+
+// This function exists to be marked as weak.
+// It can significantly speed up compilation by breaking up LLVM's SCC
+// in the .pb.cc translation units. Large translation units see a
+// reduction of more than 35% of walltime for optimized builds. Without
+// the weak attribute all the messages in the file, including all the
+// vtables and everything they use become part of the same SCC through
+// a cycle like:
+// GetMetadata -> descriptor table -> default instances ->
+//   vtables -> GetMetadata
+// By adding a weak function here we break the connection from the
+// individual vtables back into the descriptor table.
+PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_problem_2eproto_getter() {
+  return &descriptor_table_problem_2eproto;
 }
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_problem_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
+static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_problem_2eproto(&descriptor_table_problem_2eproto);
 namespace problem {
 const ::google::protobuf::EnumDescriptor* ProblemEnvelope_SubType_descriptor() {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_problem_2eproto::file_level_enum_descriptors[0];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_problem_2eproto);
+  return file_level_enum_descriptors_problem_2eproto[0];
 }
 bool ProblemEnvelope_SubType_IsValid(int value) {
   switch (value) {
@@ -206,17 +219,20 @@ bool ProblemEnvelope_SubType_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const ProblemEnvelope_SubType ProblemEnvelope::INPUT;
-const ProblemEnvelope_SubType ProblemEnvelope::OUTPUT;
-const ProblemEnvelope_SubType ProblemEnvelope::SubType_MIN;
-const ProblemEnvelope_SubType ProblemEnvelope::SubType_MAX;
-const int ProblemEnvelope::SubType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr ProblemEnvelope_SubType ProblemEnvelope::INPUT;
+constexpr ProblemEnvelope_SubType ProblemEnvelope::OUTPUT;
+constexpr ProblemEnvelope_SubType ProblemEnvelope::SubType_MIN;
+constexpr ProblemEnvelope_SubType ProblemEnvelope::SubType_MAX;
+constexpr int ProblemEnvelope::SubType_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* SolverInfo_SolverMessageType_descriptor() {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_problem_2eproto::file_level_enum_descriptors[1];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_problem_2eproto);
+  return file_level_enum_descriptors_problem_2eproto[1];
 }
 bool SolverInfo_SolverMessageType_IsValid(int value) {
   switch (value) {
@@ -228,18 +244,21 @@ bool SolverInfo_SolverMessageType_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const SolverInfo_SolverMessageType SolverInfo::INFO;
-const SolverInfo_SolverMessageType SolverInfo::WARNING;
-const SolverInfo_SolverMessageType SolverInfo::ERROR;
-const SolverInfo_SolverMessageType SolverInfo::SolverMessageType_MIN;
-const SolverInfo_SolverMessageType SolverInfo::SolverMessageType_MAX;
-const int SolverInfo::SolverMessageType_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr SolverInfo_SolverMessageType SolverInfo::INFO;
+constexpr SolverInfo_SolverMessageType SolverInfo::WARNING;
+constexpr SolverInfo_SolverMessageType SolverInfo::ERROR;
+constexpr SolverInfo_SolverMessageType SolverInfo::SolverMessageType_MIN;
+constexpr SolverInfo_SolverMessageType SolverInfo::SolverMessageType_MAX;
+constexpr int SolverInfo::SolverMessageType_ARRAYSIZE;
+
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::google::protobuf::EnumDescriptor* SolverResponse_SolveState_descriptor() {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return protobuf_problem_2eproto::file_level_enum_descriptors[2];
+  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_problem_2eproto);
+  return file_level_enum_descriptors_problem_2eproto[2];
 }
 bool SolverResponse_SolveState_IsValid(int value) {
   switch (value) {
@@ -251,351 +270,276 @@ bool SolverResponse_SolveState_IsValid(int value) {
       return false;
   }
 }
+#if (__cplusplus < 201703) && \
+  (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const SolverResponse_SolveState SolverResponse::WIP;
-const SolverResponse_SolveState SolverResponse::COMPLETED;
-const SolverResponse_SolveState SolverResponse::FAILED;
-const SolverResponse_SolveState SolverResponse::SolveState_MIN;
-const SolverResponse_SolveState SolverResponse::SolveState_MAX;
-const int SolverResponse::SolveState_ARRAYSIZE;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+constexpr SolverResponse_SolveState SolverResponse::WIP;
+constexpr SolverResponse_SolveState SolverResponse::COMPLETED;
+constexpr SolverResponse_SolveState SolverResponse::FAILED;
+constexpr SolverResponse_SolveState SolverResponse::SolveState_MIN;
+constexpr SolverResponse_SolveState SolverResponse::SolveState_MAX;
+constexpr int SolverResponse::SolveState_ARRAYSIZE;
 
+#endif  // (__cplusplus < 201703) &&
+        // (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 // ===================================================================
 
-void ProblemEnvelope::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int ProblemEnvelope::kTypeFieldNumber;
-const int ProblemEnvelope::kSubTypeFieldNumber;
-const int ProblemEnvelope::kContentFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+class ProblemEnvelope::_Internal {
+ public:
+  using HasBits = decltype(std::declval<ProblemEnvelope>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_._has_bits_);
+  static void set_has_type(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_subtype(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_content(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000005) ^ 0x00000005) != 0;
+  }
+};
 
-ProblemEnvelope::ProblemEnvelope()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_problem_2eproto::scc_info_ProblemEnvelope.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:problem.ProblemEnvelope)
+ProblemEnvelope::ProblemEnvelope(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:problem.ProblemEnvelope)
 }
-ProblemEnvelope::ProblemEnvelope(const ProblemEnvelope& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_type()) {
-    type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
+ProblemEnvelope::ProblemEnvelope(const ProblemEnvelope& from) : ::google::protobuf::Message() {
+  ProblemEnvelope* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.type_){},
+      decltype(_impl_.content_){},
+      decltype(_impl_.subtype_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.type_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.type_.Set(from._internal_type(), _this->GetArenaForAllocation());
   }
-  content_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_content()) {
-    content_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_);
+  _impl_.content_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.content_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    _this->_impl_.content_.Set(from._internal_content(), _this->GetArenaForAllocation());
   }
-  subtype_ = from.subtype_;
+  _this->_impl_.subtype_ = from._impl_.subtype_;
+
   // @@protoc_insertion_point(copy_constructor:problem.ProblemEnvelope)
 }
-
-void ProblemEnvelope::SharedCtor() {
-  type_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  content_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  subtype_ = 0;
+inline void ProblemEnvelope::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.type_){},
+      decltype(_impl_.content_){},
+      decltype(_impl_.subtype_){0},
+  };
+  _impl_.type_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.type_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.content_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.content_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 ProblemEnvelope::~ProblemEnvelope() {
   // @@protoc_insertion_point(destructor:problem.ProblemEnvelope)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void ProblemEnvelope::SharedDtor() {
-  type_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  content_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void ProblemEnvelope::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.type_.Destroy();
+  _impl_.content_.Destroy();
 }
-
 void ProblemEnvelope::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* ProblemEnvelope::descriptor() {
-  ::protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const ProblemEnvelope& ProblemEnvelope::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_problem_2eproto::scc_info_ProblemEnvelope.base);
-  return *internal_default_instance();
-}
-
-
-void ProblemEnvelope::Clear() {
+PROTOBUF_NOINLINE void ProblemEnvelope::Clear() {
 // @@protoc_insertion_point(message_clear_start:problem.ProblemEnvelope)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 3u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
-      type_.ClearNonDefaultToEmptyNoArena();
+      _impl_.type_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      content_.ClearNonDefaultToEmptyNoArena();
+      _impl_.content_.ClearNonDefaultToEmpty();
     }
   }
-  subtype_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.subtype_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool ProblemEnvelope::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:problem.ProblemEnvelope)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required string type = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_type()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->type().data(), static_cast<int>(this->type().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "problem.ProblemEnvelope.type");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::problem::ProblemEnvelope_SubType_IsValid(value)) {
-            set_subtype(static_cast< ::problem::ProblemEnvelope_SubType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                2, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional bytes content = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_content()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:problem.ProblemEnvelope)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:problem.ProblemEnvelope)
-  return false;
-#undef DO_
+const char* ProblemEnvelope::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void ProblemEnvelope::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:problem.ProblemEnvelope)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required string type = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "problem.ProblemEnvelope.type");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->type(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 1, 36, 2> ProblemEnvelope::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_ProblemEnvelope_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required string type = 1;
+    {::_pbi::TcParser::FastSS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.type_)}},
+    // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
+    {::_pbi::TcParser::FastEr0S1,
+     {16, 2, 1, PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.subtype_)}},
+    // optional bytes content = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.content_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required string type = 1;
+    {PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.type_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
+    {PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.subtype_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // optional bytes content = 3;
+    {PROTOBUF_FIELD_OFFSET(ProblemEnvelope, _impl_.content_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }}, {{
+    {0, 2},
+  }}, {{
+    "\27\4\0\0\0\0\0\0"
+    "problem.ProblemEnvelope"
+    "type"
+  }},
+};
 
-  // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->subtype(), output);
-  }
-
-  // optional bytes content = 3;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      3, this->content(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:problem.ProblemEnvelope)
-}
-
-::google::protobuf::uint8* ProblemEnvelope::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* ProblemEnvelope::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:problem.ProblemEnvelope)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required string type = 1;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "problem.ProblemEnvelope.type");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        1, this->type(), target);
+    const std::string& _s = this->_internal_type();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "problem.ProblemEnvelope.type");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
   // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->subtype(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        2, this->_internal_subtype(), target);
   }
 
   // optional bytes content = 3;
   if (cached_has_bits & 0x00000002u) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        3, this->content(), target);
+    const std::string& _s = this->_internal_content();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:problem.ProblemEnvelope)
   return target;
 }
 
-size_t ProblemEnvelope::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:problem.ProblemEnvelope)
-  size_t total_size = 0;
-
-  if (has_type()) {
-    // required string type = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->type());
-  }
-
-  if (has_subtype()) {
-    // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->subtype());
-  }
-
-  return total_size;
-}
-size_t ProblemEnvelope::ByteSizeLong() const {
+::size_t ProblemEnvelope::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:problem.ProblemEnvelope)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000005) ^ 0x00000005) == 0) {  // All required fields are present.
-    // required string type = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->type());
-
-    // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->subtype());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  // optional bytes content = 3;
-  if (has_content()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->content());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void ProblemEnvelope::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:problem.ProblemEnvelope)
-  GOOGLE_DCHECK_NE(&from, this);
-  const ProblemEnvelope* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const ProblemEnvelope>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:problem.ProblemEnvelope)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:problem.ProblemEnvelope)
-    MergeFrom(*source);
-  }
-}
-
-void ProblemEnvelope::MergeFrom(const ProblemEnvelope& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:problem.ProblemEnvelope)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_type();
-      type_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.type_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      set_has_content();
-      content_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.content_);
-    }
-    if (cached_has_bits & 0x00000004u) {
-      subtype_ = from.subtype_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // required string type = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_type());
   }
+
+  // optional bytes content = 3;
+  if (cached_has_bits & 0x00000002u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_content());
+  }
+
+  // required .problem.ProblemEnvelope.SubType subType = 2 [default = INPUT];
+  if (cached_has_bits & 0x00000004u) {
+    total_size += 1 +
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_subtype());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void ProblemEnvelope::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:problem.ProblemEnvelope)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData ProblemEnvelope::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    ProblemEnvelope::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*ProblemEnvelope::GetClassData() const { return &_class_data_; }
+
+
+void ProblemEnvelope::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<ProblemEnvelope*>(&to_msg);
+  auto& from = static_cast<const ProblemEnvelope&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:problem.ProblemEnvelope)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_type(from._internal_type());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_content(from._internal_content());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.subtype_ = from._impl_.subtype_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void ProblemEnvelope::CopyFrom(const ProblemEnvelope& from) {
@@ -605,367 +549,281 @@ void ProblemEnvelope::CopyFrom(const ProblemEnvelope& from) {
   MergeFrom(from);
 }
 
-bool ProblemEnvelope::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000005) != 0x00000005) return false;
+PROTOBUF_NOINLINE bool ProblemEnvelope::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void ProblemEnvelope::Swap(ProblemEnvelope* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void ProblemEnvelope::InternalSwap(ProblemEnvelope* other) {
   using std::swap;
-  type_.Swap(&other->type_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  content_.Swap(&other->content_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(subtype_, other->subtype_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.type_, lhs_arena,
+                                       &other->_impl_.type_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.content_, lhs_arena,
+                                       &other->_impl_.content_, rhs_arena);
+  swap(_impl_.subtype_, other->_impl_.subtype_);
 }
 
 ::google::protobuf::Metadata ProblemEnvelope::GetMetadata() const {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_problem_2eproto_getter, &descriptor_table_problem_2eproto_once,
+      file_level_metadata_problem_2eproto[0]);
 }
-
-
 // ===================================================================
 
-void SolverInfo::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolverInfo::kUnixDateTimeFieldNumber;
-const int SolverInfo::kInfoMessageFieldNumber;
-const int SolverInfo::kTypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolverInfo::SolverInfo()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_problem_2eproto::scc_info_SolverInfo.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:problem.SolverInfo)
-}
-SolverInfo::SolverInfo(const SolverInfo& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  infomessage_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_infomessage()) {
-    infomessage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.infomessage_);
+class SolverInfo::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolverInfo>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_._has_bits_);
+  static void set_has_unixdatetime(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
-  ::memcpy(&unixdatetime_, &from.unixdatetime_,
-    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
-    reinterpret_cast<char*>(&unixdatetime_)) + sizeof(type_));
+  static void set_has_infomessage(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_type(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
+};
+
+SolverInfo::SolverInfo(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:problem.SolverInfo)
+}
+SolverInfo::SolverInfo(const SolverInfo& from) : ::google::protobuf::Message() {
+  SolverInfo* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.infomessage_){},
+      decltype(_impl_.unixdatetime_){},
+      decltype(_impl_.type_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.infomessage_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.infomessage_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.infomessage_.Set(from._internal_infomessage(), _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.unixdatetime_, &from._impl_.unixdatetime_,
+    static_cast<::size_t>(reinterpret_cast<char*>(&_impl_.type_) -
+    reinterpret_cast<char*>(&_impl_.unixdatetime_)) + sizeof(_impl_.type_));
+
   // @@protoc_insertion_point(copy_constructor:problem.SolverInfo)
 }
-
-void SolverInfo::SharedCtor() {
-  infomessage_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  ::memset(&unixdatetime_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&type_) -
-      reinterpret_cast<char*>(&unixdatetime_)) + sizeof(type_));
+inline void SolverInfo::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.infomessage_){},
+      decltype(_impl_.unixdatetime_){::int64_t{0}},
+      decltype(_impl_.type_){0},
+  };
+  _impl_.infomessage_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.infomessage_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolverInfo::~SolverInfo() {
   // @@protoc_insertion_point(destructor:problem.SolverInfo)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolverInfo::SharedDtor() {
-  infomessage_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolverInfo::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.infomessage_.Destroy();
 }
-
 void SolverInfo::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolverInfo::descriptor() {
-  ::protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolverInfo& SolverInfo::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_problem_2eproto::scc_info_SolverInfo.base);
-  return *internal_default_instance();
-}
-
-
-void SolverInfo::Clear() {
+PROTOBUF_NOINLINE void SolverInfo::Clear() {
 // @@protoc_insertion_point(message_clear_start:problem.SolverInfo)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    infomessage_.ClearNonDefaultToEmptyNoArena();
+    _impl_.infomessage_.ClearNonDefaultToEmpty();
   }
-  if (cached_has_bits & 6u) {
-    ::memset(&unixdatetime_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&type_) -
-        reinterpret_cast<char*>(&unixdatetime_)) + sizeof(type_));
+  if (cached_has_bits & 0x00000006u) {
+    ::memset(&_impl_.unixdatetime_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.type_) -
+        reinterpret_cast<char*>(&_impl_.unixdatetime_)) + sizeof(_impl_.type_));
   }
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolverInfo::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:problem.SolverInfo)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required int64 unixDateTime = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
-          set_has_unixdatetime();
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int64, ::google::protobuf::internal::WireFormatLite::TYPE_INT64>(
-                 input, &unixdatetime_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required string infoMessage = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
-                input, this->mutable_infomessage()));
-          ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-            this->infomessage().data(), static_cast<int>(this->infomessage().length()),
-            ::google::protobuf::internal::WireFormat::PARSE,
-            "problem.SolverInfo.infoMessage");
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .problem.SolverInfo.SolverMessageType type = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::problem::SolverInfo_SolverMessageType_IsValid(value)) {
-            set_type(static_cast< ::problem::SolverInfo_SolverMessageType >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                3, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:problem.SolverInfo)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:problem.SolverInfo)
-  return false;
-#undef DO_
+const char* SolverInfo::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolverInfo::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:problem.SolverInfo)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
-  // required int64 unixDateTime = 1;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt64(1, this->unixdatetime(), output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 1, 38, 2> SolverInfo::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolverInfo_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // required int64 unixDateTime = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(SolverInfo, _impl_.unixdatetime_), 1>(),
+     {8, 1, 0, PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.unixdatetime_)}},
+    // required string infoMessage = 2;
+    {::_pbi::TcParser::FastSS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.infomessage_)}},
+    // required .problem.SolverInfo.SolverMessageType type = 3;
+    {::_pbi::TcParser::FastEr0S1,
+     {24, 2, 2, PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.type_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // required int64 unixDateTime = 1;
+    {PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.unixdatetime_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
+    // required string infoMessage = 2;
+    {PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.infomessage_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kRawString | ::_fl::kRepAString)},
+    // required .problem.SolverInfo.SolverMessageType type = 3;
+    {PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.type_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+  }}, {{
+    {0, 3},
+  }}, {{
+    "\22\0\13\0\0\0\0\0"
+    "problem.SolverInfo"
+    "infoMessage"
+  }},
+};
 
-  // required string infoMessage = 2;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->infomessage().data(), static_cast<int>(this->infomessage().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "problem.SolverInfo.infoMessage");
-    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->infomessage(), output);
-  }
-
-  // required .problem.SolverInfo.SolverMessageType type = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      3, this->type(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:problem.SolverInfo)
-}
-
-::google::protobuf::uint8* SolverInfo::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolverInfo::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:problem.SolverInfo)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required int64 unixDateTime = 1;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt64ToArray(1, this->unixdatetime(), target);
+    target = ::google::protobuf::internal::WireFormatLite::
+        WriteInt64ToArrayWithField<1>(
+            stream, this->_internal_unixdatetime(), target);
   }
 
   // required string infoMessage = 2;
   if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->infomessage().data(), static_cast<int>(this->infomessage().length()),
-      ::google::protobuf::internal::WireFormat::SERIALIZE,
-      "problem.SolverInfo.infoMessage");
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
-        2, this->infomessage(), target);
+    const std::string& _s = this->_internal_infomessage();
+    ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(_s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormat::SERIALIZE,
+                                "problem.SolverInfo.infoMessage");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   // required .problem.SolverInfo.SolverMessageType type = 3;
   if (cached_has_bits & 0x00000004u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      3, this->type(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        3, this->_internal_type(), target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:problem.SolverInfo)
   return target;
 }
 
-size_t SolverInfo::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:problem.SolverInfo)
-  size_t total_size = 0;
-
-  if (has_infomessage()) {
-    // required string infoMessage = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->infomessage());
-  }
-
-  if (has_unixdatetime()) {
-    // required int64 unixDateTime = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->unixdatetime());
-  }
-
-  if (has_type()) {
-    // required .problem.SolverInfo.SolverMessageType type = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
-  }
-
-  return total_size;
-}
-size_t SolverInfo::ByteSizeLong() const {
+::size_t SolverInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:problem.SolverInfo)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  if (((_has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
-    // required string infoMessage = 2;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::StringSize(
-        this->infomessage());
-
-    // required int64 unixDateTime = 1;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::Int64Size(
-        this->unixdatetime());
-
-    // required .problem.SolverInfo.SolverMessageType type = 3;
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->type());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolverInfo::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:problem.SolverInfo)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolverInfo* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolverInfo>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:problem.SolverInfo)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:problem.SolverInfo)
-    MergeFrom(*source);
-  }
-}
-
-void SolverInfo::MergeFrom(const SolverInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:problem.SolverInfo)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 7u) {
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // required string infoMessage = 2;
     if (cached_has_bits & 0x00000001u) {
-      set_has_infomessage();
-      infomessage_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.infomessage_);
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this->_internal_infomessage());
     }
+
+    // required int64 unixDateTime = 1;
     if (cached_has_bits & 0x00000002u) {
-      unixdatetime_ = from.unixdatetime_;
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+          this->_internal_unixdatetime());
     }
+
+    // required .problem.SolverInfo.SolverMessageType type = 3;
     if (cached_has_bits & 0x00000004u) {
-      type_ = from.type_;
+      total_size += 1 +
+                    ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
     }
-    _has_bits_[0] |= cached_has_bits;
+
   }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolverInfo::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:problem.SolverInfo)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolverInfo::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolverInfo::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolverInfo::GetClassData() const { return &_class_data_; }
+
+
+void SolverInfo::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolverInfo*>(&to_msg);
+  auto& from = static_cast<const SolverInfo&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:problem.SolverInfo)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_infomessage(from._internal_infomessage());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.unixdatetime_ = from._impl_.unixdatetime_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.type_ = from._impl_.type_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolverInfo::CopyFrom(const SolverInfo& from) {
@@ -975,330 +833,270 @@ void SolverInfo::CopyFrom(const SolverInfo& from) {
   MergeFrom(from);
 }
 
-bool SolverInfo::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000007) != 0x00000007) return false;
+PROTOBUF_NOINLINE bool SolverInfo::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
   return true;
 }
 
-void SolverInfo::Swap(SolverInfo* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolverInfo::InternalSwap(SolverInfo* other) {
   using std::swap;
-  infomessage_.Swap(&other->infomessage_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(unixdatetime_, other->unixdatetime_);
-  swap(type_, other->type_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.infomessage_, lhs_arena,
+                                       &other->_impl_.infomessage_, rhs_arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.type_)
+      + sizeof(SolverInfo::_impl_.type_)
+      - PROTOBUF_FIELD_OFFSET(SolverInfo, _impl_.unixdatetime_)>(
+          reinterpret_cast<char*>(&_impl_.unixdatetime_),
+          reinterpret_cast<char*>(&other->_impl_.unixdatetime_));
 }
 
 ::google::protobuf::Metadata SolverInfo::GetMetadata() const {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_problem_2eproto_getter, &descriptor_table_problem_2eproto_once,
+      file_level_metadata_problem_2eproto[1]);
 }
-
-
 // ===================================================================
 
-void SolverResponse::InitAsDefaultInstance() {
-}
-#if !defined(_MSC_VER) || _MSC_VER >= 1900
-const int SolverResponse::kLogsFieldNumber;
-const int SolverResponse::kStateFieldNumber;
-const int SolverResponse::kSolutionFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
-
-SolverResponse::SolverResponse()
-  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_problem_2eproto::scc_info_SolverResponse.base);
-  SharedCtor();
-  // @@protoc_insertion_point(constructor:problem.SolverResponse)
-}
-SolverResponse::SolverResponse(const SolverResponse& from)
-  : ::google::protobuf::Message(),
-      _internal_metadata_(NULL),
-      _has_bits_(from._has_bits_),
-      logs_(from.logs_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  solution_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  if (from.has_solution()) {
-    solution_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.solution_);
+class SolverResponse::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SolverResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+    8 * PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_._has_bits_);
+  static void set_has_state(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
-  state_ = from.state_;
+  static void set_has_solution(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000002) ^ 0x00000002) != 0;
+  }
+};
+
+SolverResponse::SolverResponse(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:problem.SolverResponse)
+}
+SolverResponse::SolverResponse(const SolverResponse& from) : ::google::protobuf::Message() {
+  SolverResponse* const _this = this;
+  (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.logs_){from._impl_.logs_},
+      decltype(_impl_.solution_){},
+      decltype(_impl_.state_){},
+  };
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  _impl_.solution_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.solution_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if ((from._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    _this->_impl_.solution_.Set(from._internal_solution(), _this->GetArenaForAllocation());
+  }
+  _this->_impl_.state_ = from._impl_.state_;
+
   // @@protoc_insertion_point(copy_constructor:problem.SolverResponse)
 }
-
-void SolverResponse::SharedCtor() {
-  solution_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
-  state_ = 0;
+inline void SolverResponse::SharedCtor(::_pb::Arena* arena) {
+  (void)arena;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){},
+      /*decltype(_impl_._cached_size_)*/ {},
+      decltype(_impl_.logs_){arena},
+      decltype(_impl_.solution_){},
+      decltype(_impl_.state_){0},
+  };
+  _impl_.solution_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        _impl_.solution_.Set("", GetArenaForAllocation());
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
-
 SolverResponse::~SolverResponse() {
   // @@protoc_insertion_point(destructor:problem.SolverResponse)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
-
-void SolverResponse::SharedDtor() {
-  solution_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+inline void SolverResponse::SharedDtor() {
+  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.logs_.~RepeatedPtrField();
+  _impl_.solution_.Destroy();
 }
-
 void SolverResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const ::google::protobuf::Descriptor* SolverResponse::descriptor() {
-  ::protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+  _impl_._cached_size_.Set(size);
 }
 
-const SolverResponse& SolverResponse::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_problem_2eproto::scc_info_SolverResponse.base);
-  return *internal_default_instance();
-}
-
-
-void SolverResponse::Clear() {
+PROTOBUF_NOINLINE void SolverResponse::Clear() {
 // @@protoc_insertion_point(message_clear_start:problem.SolverResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  logs_.Clear();
-  cached_has_bits = _has_bits_[0];
+  _internal_mutable_logs()->Clear();
+  cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000001u) {
-    solution_.ClearNonDefaultToEmptyNoArena();
+    _impl_.solution_.ClearNonDefaultToEmpty();
   }
-  state_ = 0;
-  _has_bits_.Clear();
-  _internal_metadata_.Clear();
+  _impl_.state_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
-bool SolverResponse::MergePartialFromCodedStream(
-    ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
-  ::google::protobuf::uint32 tag;
-  // @@protoc_insertion_point(parse_start:problem.SolverResponse)
-  for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
-    tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // repeated .problem.SolverInfo logs = 1;
-      case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
-                input, add_logs()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // required .problem.SolverResponse.SolveState state = 2;
-      case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
-          int value;
-          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          if (::problem::SolverResponse_SolveState_IsValid(value)) {
-            set_state(static_cast< ::problem::SolverResponse_SolveState >(value));
-          } else {
-            mutable_unknown_fields()->AddVarint(
-                2, static_cast< ::google::protobuf::uint64>(value));
-          }
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      // optional bytes solution = 3;
-      case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
-          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_solution()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
-      }
-
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::google::protobuf::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
-      }
-    }
-  }
-success:
-  // @@protoc_insertion_point(parse_success:problem.SolverResponse)
-  return true;
-failure:
-  // @@protoc_insertion_point(parse_failure:problem.SolverResponse)
-  return false;
-#undef DO_
+const char* SolverResponse::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
 }
 
-void SolverResponse::SerializeWithCachedSizes(
-    ::google::protobuf::io::CodedOutputStream* output) const {
-  // @@protoc_insertion_point(serialize_start:problem.SolverResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
 
-  // repeated .problem.SolverInfo logs = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->logs_size()); i < n; i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1,
-      this->logs(static_cast<int>(i)),
-      output);
-  }
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 2, 0, 2> SolverResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    &_SolverResponse_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // repeated .problem.SolverInfo logs = 1;
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.logs_)}},
+    // required .problem.SolverResponse.SolveState state = 2;
+    {::_pbi::TcParser::FastEr0S1,
+     {16, 1, 2, PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.state_)}},
+    // optional bytes solution = 3;
+    {::_pbi::TcParser::FastBS1,
+     {26, 0, 0, PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.solution_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .problem.SolverInfo logs = 1;
+    {PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.logs_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // required .problem.SolverResponse.SolveState state = 2;
+    {PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.state_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kEnumRange)},
+    // optional bytes solution = 3;
+    {PROTOBUF_FIELD_OFFSET(SolverResponse, _impl_.solution_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBytes | ::_fl::kRepAString)},
+  }}, {{
+    {::_pbi::TcParser::GetTable<::problem::SolverInfo>()},
+    {0, 3},
+  }}, {{
+  }},
+};
 
-  cached_has_bits = _has_bits_[0];
-  // required .problem.SolverResponse.SolveState state = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::google::protobuf::internal::WireFormatLite::WriteEnum(
-      2, this->state(), output);
-  }
-
-  // optional bytes solution = 3;
-  if (cached_has_bits & 0x00000001u) {
-    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
-      3, this->solution(), output);
-  }
-
-  if (_internal_metadata_.have_unknown_fields()) {
-    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        _internal_metadata_.unknown_fields(), output);
-  }
-  // @@protoc_insertion_point(serialize_end:problem.SolverResponse)
-}
-
-::google::protobuf::uint8* SolverResponse::InternalSerializeWithCachedSizesToArray(
-    bool deterministic, ::google::protobuf::uint8* target) const {
-  (void)deterministic; // Unused
+::uint8_t* SolverResponse::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
   // @@protoc_insertion_point(serialize_to_array_start:problem.SolverResponse)
-  ::google::protobuf::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
 
   // repeated .problem.SolverInfo logs = 1;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->logs_size()); i < n; i++) {
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_logs_size()); i < n; i++) {
+    const auto& repfield = this->_internal_logs().Get(i);
     target = ::google::protobuf::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, this->logs(static_cast<int>(i)), deterministic, target);
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  cached_has_bits = _has_bits_[0];
+  cached_has_bits = _impl_._has_bits_[0];
   // required .problem.SolverResponse.SolveState state = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
-      2, this->state(), target);
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+        2, this->_internal_state(), target);
   }
 
   // optional bytes solution = 3;
   if (cached_has_bits & 0x00000001u) {
-    target =
-      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
-        3, this->solution(), target);
+    const std::string& _s = this->_internal_solution();
+    target = stream->WriteBytesMaybeAliased(3, _s, target);
   }
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:problem.SolverResponse)
   return target;
 }
 
-size_t SolverResponse::ByteSizeLong() const {
+::size_t SolverResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:problem.SolverResponse)
-  size_t total_size = 0;
+  ::size_t total_size = 0;
 
-  if (_internal_metadata_.have_unknown_fields()) {
-    total_size +=
-      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
-  }
-  // required .problem.SolverResponse.SolveState state = 2;
-  if (has_state()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::EnumSize(this->state());
-  }
-  // repeated .problem.SolverInfo logs = 1;
-  {
-    unsigned int count = static_cast<unsigned int>(this->logs_size());
-    total_size += 1UL * count;
-    for (unsigned int i = 0; i < count; i++) {
-      total_size +=
-        ::google::protobuf::internal::WireFormatLite::MessageSize(
-          this->logs(static_cast<int>(i)));
-    }
-  }
-
-  // optional bytes solution = 3;
-  if (has_solution()) {
-    total_size += 1 +
-      ::google::protobuf::internal::WireFormatLite::BytesSize(
-        this->solution());
-  }
-
-  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
-  SetCachedSize(cached_size);
-  return total_size;
-}
-
-void SolverResponse::MergeFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:problem.SolverResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  const SolverResponse* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SolverResponse>(
-          &from);
-  if (source == NULL) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:problem.SolverResponse)
-    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
-  } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:problem.SolverResponse)
-    MergeFrom(*source);
-  }
-}
-
-void SolverResponse::MergeFrom(const SolverResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:problem.SolverResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
-  ::google::protobuf::uint32 cached_has_bits = 0;
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  logs_.MergeFrom(from.logs_);
-  cached_has_bits = from._has_bits_[0];
-  if (cached_has_bits & 3u) {
-    if (cached_has_bits & 0x00000001u) {
-      set_has_solution();
-      solution_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.solution_);
-    }
-    if (cached_has_bits & 0x00000002u) {
-      state_ = from.state_;
-    }
-    _has_bits_[0] |= cached_has_bits;
+  // repeated .problem.SolverInfo logs = 1;
+  total_size += 1UL * this->_internal_logs_size();
+  for (const auto& msg : this->_internal_logs()) {
+    total_size +=
+      ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
   }
+  // optional bytes solution = 3;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::BytesSize(
+                                    this->_internal_solution());
+  }
+
+  // required .problem.SolverResponse.SolveState state = 2;
+  if (cached_has_bits & 0x00000002u) {
+    total_size += 1 +
+                  ::_pbi::WireFormatLite::EnumSize(this->_internal_state());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-void SolverResponse::CopyFrom(const ::google::protobuf::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:problem.SolverResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
+const ::google::protobuf::Message::ClassData SolverResponse::_class_data_ = {
+    ::google::protobuf::Message::CopyWithSourceCheck,
+    SolverResponse::MergeImpl
+};
+const ::google::protobuf::Message::ClassData*SolverResponse::GetClassData() const { return &_class_data_; }
+
+
+void SolverResponse::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<SolverResponse*>(&to_msg);
+  auto& from = static_cast<const SolverResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:problem.SolverResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_logs()->MergeFrom(from._internal_logs());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_solution(from._internal_solution());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.state_ = from._impl_.state_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void SolverResponse::CopyFrom(const SolverResponse& from) {
@@ -1308,46 +1106,37 @@ void SolverResponse::CopyFrom(const SolverResponse& from) {
   MergeFrom(from);
 }
 
-bool SolverResponse::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
-  if (!::google::protobuf::internal::AllAreInitialized(this->logs())) return false;
+PROTOBUF_NOINLINE bool SolverResponse::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) {
+    return false;
+  }
+  if (!::google::protobuf::internal::AllAreInitialized(_internal_logs()))
+    return false;
   return true;
 }
 
-void SolverResponse::Swap(SolverResponse* other) {
-  if (other == this) return;
-  InternalSwap(other);
-}
 void SolverResponse::InternalSwap(SolverResponse* other) {
   using std::swap;
-  CastToBase(&logs_)->InternalSwap(CastToBase(&other->logs_));
-  solution_.Swap(&other->solution_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(state_, other->state_);
-  swap(_has_bits_[0], other->_has_bits_[0]);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.logs_.InternalSwap(&other->_impl_.logs_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.solution_, lhs_arena,
+                                       &other->_impl_.solution_, rhs_arena);
+  swap(_impl_.state_, other->_impl_.state_);
 }
 
 ::google::protobuf::Metadata SolverResponse::GetMetadata() const {
-  protobuf_problem_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_problem_2eproto::file_level_metadata[kIndexInFileMessages];
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_problem_2eproto_getter, &descriptor_table_problem_2eproto_once,
+      file_level_metadata_problem_2eproto[2]);
 }
-
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace problem
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::problem::ProblemEnvelope* Arena::CreateMaybeMessage< ::problem::ProblemEnvelope >(Arena* arena) {
-  return Arena::CreateInternal< ::problem::ProblemEnvelope >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::problem::SolverInfo* Arena::CreateMaybeMessage< ::problem::SolverInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::problem::SolverInfo >(arena);
-}
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::problem::SolverResponse* Arena::CreateMaybeMessage< ::problem::SolverResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::problem::SolverResponse >(arena);
-}
 }  // namespace protobuf
 }  // namespace google
-
 // @@protoc_insertion_point(global_scope)
+#include "google/protobuf/port_undef.inc"
