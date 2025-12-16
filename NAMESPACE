@@ -3,7 +3,6 @@
 export(compartmentsToTable)
 export(getResponse)
 export(getSolutionInstance)
-export(getSolveTime)
 export(infeasibilitiesToTable)
 export(plotResponse)
 export(plotResponseLeaflet)
