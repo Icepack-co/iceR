@@ -441,7 +441,7 @@ DataFrame ivr7EdgesToDF(DataFrame nodes, ivr_tabular& t){
         break;
       }
     }
-    Rcout << endl;
+    // Rcout << endl;
     if(hasDayInd){
       df = _left_join(_["x"] = df,
                       _["y"] = _select(nodes,

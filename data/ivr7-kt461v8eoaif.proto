@@ -228,9 +228,10 @@ message Model {
 // https://docs.icepack.ai/ivr/solve-request/
 message SolveRequest {
   enum SolveType {
-    Optimise = 0;   // Ignores provided routes, Solves using internal seed mechanisms
-    Evaluate = 1;   // Evaluates the provided route sequence. Single solution response.
-    ReOptimise = 2; // Uses routes as starting solution and continues to optimise.
+    Optimise = 0;             // Ignores provided routes, Solves using internal seed mechanisms
+    Evaluate = 1;             // Evaluates the provided route sequence. Single solution response.
+    ReOptimise = 2;           // Uses routes as starting solution and continues to optimise.
+    ExperimentalOptimise = 3; // Uses experimental decomposition code-path (beta)
   }
   optional Model model = 1;     // either model or modelID should be specified
   optional string modelID = 2;  // the ID from a data-upload type: https://docs.icepack.ai/ivr/ivrdata/

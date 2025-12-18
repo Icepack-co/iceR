@@ -126,7 +126,7 @@ getSolutionInstance <- function(apiHelper, solveRequest, paretoResponse, solutio
 
 #' @export
 #' @rawNamespace useDynLib(iceR)
-getResponse <- function(apiHelper, requestID){
+getResponse <- function(apiHelper, requestID, silent = F){
   repeat {
     getResp <- GET(url = paste0(apiHelper$endpoint,apiHelper$route, requestID),
                    add_headers(`Content-Type` = "application/protobuf",
@@ -141,7 +141,9 @@ getResponse <- function(apiHelper, requestID){
     # unmarshal solver response object
     solRes <- read(problem.SolverResponse, result$content)
 
-    map(solRes$logs, function(i) { i$toString() }) %>% unlist %>% cat
+    if(!silent){
+      map(solRes$logs, function(i) { i$toString() }) %>% unlist %>% cat
+    }
 
     if (solRes$state != 1 &&
         solRes$logs[[length(solRes$logs)]]$type != 2) {
@@ -170,50 +172,6 @@ getResponse <- function(apiHelper, requestID){
     }
   }
   return(solRes)
-}
-
-#' @export
-#' @rawNamespace useDynLib(iceR)
-getSolveTime <- function(apiHelper, requestID){
-  getResp <- GET(url = paste0(apiHelper$endpoint,apiHelper$route, requestID),
-                 add_headers(`Content-Type` = "application/protobuf",
-                             Authorization = paste0("Apitoken ", apiHelper$apiToken)))
-  if (getResp$status_code != 200) {
-    break;
-  }
-  resp_payload <- content(getResp)
-
-  result <- read(descriptor = problem.ProblemEnvelope, resp_payload)
-
-  # unmarshal solver response object
-  solRes <- read(problem.SolverResponse, result$content)
-
-  if(length(solRes$logs) < 1){
-    return(NA)
-  }
-
-  index <- 0
-  for (x in 1:length(solRes$logs[[1]])) {
-    if(grepl("Solved in", solRes$logs[[1]][[x]], fixed = TRUE)) {
-      index <- x
-      break
-    }
-  }
-
-  if (index == 0) {
-    return(NA)
-  }
-
-  solveTimeSeconds <- sub(' s', '', sub('.*: ','',  solRes$logs[[1]][[index]])) %>% as.numeric()
-
-  if (solveTimeSeconds >= 60) {
-    mins <- round(solveTimeSeconds/60)
-    solveTime <- paste0(mins,"m ", round(solveTimeSeconds - mins*60, 3),"s")
-  } else {
-    solveTime <- paste0(round(solveTimeSeconds, 3),"s")
-  }
-
-  return(solveTime)
 }
 
 #' @export
